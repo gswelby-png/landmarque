@@ -51,6 +51,14 @@
 </head>
 <body>
 
+  <div style="text-align:center; padding: 2.5rem 1rem 1.5rem;">
+    {% if logo_url %}
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" style="max-width:200px; height:auto; margin-bottom:1.2rem; display:block; margin-left:auto; margin-right:auto;">
+    {% endif %}
+    <h1 style="font-weight:700; font-size:1.6rem; color:#fff; letter-spacing:2px; text-transform:uppercase; margin:0 0 .4rem;">{{ estate_name }}</h1>
+    <p style="font-weight:700; font-size:.9rem; color:rgba(255,255,255,.5); letter-spacing:1px; text-transform:uppercase; margin:0;">{{ car_park_name }}</p>
+  </div>
+
   <div class="placeholder">
     <p class="placeholder-label">Step 3 of 3</p>
     <p class="placeholder-title">Receipt — confirmation goes here</p>

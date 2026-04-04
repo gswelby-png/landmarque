@@ -172,14 +172,6 @@ def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 
-@app.get("/payment", response_class=HTMLResponse)
-def payment(request: Request):
-    return templates.TemplateResponse("driver/payment_mockup.html", {"request": request})
-
-
-@app.get("/receipt", response_class=HTMLResponse)
-def receipt(request: Request):
-    return templates.TemplateResponse("driver/receipt_placeholder.html", {"request": request})
 
 
 @app.get("/robots.txt", response_class=PlainTextResponse)

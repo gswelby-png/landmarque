@@ -14,14 +14,33 @@ router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
 
-@router.get("/payment", response_class=HTMLResponse)
-def payment_page(request: Request):
-    return templates.TemplateResponse("driver/payment_mockup.html", {"request": request})
+@router.get("/payment/{slug}", response_class=HTMLResponse)
+def payment_page(slug: str, request: Request, db: Session = Depends(get_db)):
+    car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        raise HTTPException(status_code=404)
+    return templates.TemplateResponse("driver/payment_mockup.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name,
+        "car_park_name": car_park.name,
+        "logo_url": getattr(car_park, "logo_url", None) or "",
+        "brand": {"accent": car_park.brand_accent or "#8B3A2A"},
+    })
 
 
-@router.get("/receipt", response_class=HTMLResponse)
-def receipt_page(request: Request):
-    return templates.TemplateResponse("driver/receipt_placeholder.html", {"request": request})
+@router.get("/receipt/{slug}", response_class=HTMLResponse)
+def receipt_page(slug: str, request: Request, db: Session = Depends(get_db)):
+    car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        raise HTTPException(status_code=404)
+    return templates.TemplateResponse("driver/receipt_placeholder.html", {
+        "request": request,
+        "estate_name": car_park.owner.name,
+        "car_park_name": car_park.name,
+        "logo_url": getattr(car_park, "logo_url", None) or "",
+        "brand": {"accent": car_park.brand_accent or "#8B3A2A"},
+    })
 
 
 @router.get("/mockup", response_class=HTMLResponse)
