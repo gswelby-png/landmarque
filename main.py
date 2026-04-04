@@ -1,7 +1,7 @@
 from dotenv import load_dotenv
 load_dotenv()
 
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, Form
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse, HTMLResponse, PlainTextResponse
 from fastapi.templating import Jinja2Templates
@@ -170,6 +170,24 @@ app.include_router(admin.router)
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
+
+@app.get("/contact", response_class=HTMLResponse)
+def contact_get(request: Request, sent: bool = False):
+    return templates.TemplateResponse("contact.html", {"request": request, "sent": sent})
+
+
+@app.post("/contact")
+async def contact_post(
+    request: Request,
+    name: str = Form(""),
+    email: str = Form(""),
+    organisation: str = Form(""),
+    message: str = Form(""),
+):
+    # Log enquiry — email sending to be wired in later
+    print(f"ENQUIRY | {name} | {email} | {organisation} | {message}")
+    return RedirectResponse("/contact?sent=1", status_code=303)
 
 
 @app.get("/payment")

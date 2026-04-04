@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Get in Touch — ParCark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #8B3A2A;
+      --dark: #0a0a0a;
+    }
+    body {
+      background: var(--dark);
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2.5rem;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0,0,0,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .nav-brand {
+      font-size: .92rem; font-weight: 800;
+      letter-spacing: 5px; text-transform: uppercase; text-decoration: none;
+    }
+    .nav-links { display: flex; align-items: center; gap: 2rem; }
+    .nav-links a {
+      color: rgba(255,255,255,.5); text-decoration: none;
+      font-size: .72rem; font-weight: 600; letter-spacing: 2px;
+      text-transform: uppercase; transition: color .15s;
+    }
+    .nav-links a:hover { color: #fff; }
+    .nav-links .nav-cta {
+      background: var(--accent); color: #fff !important;
+      padding: .5rem 1.4rem; border-radius: 3px;
+    }
+
+    /* Page */
+    .page {
+      max-width: 560px;
+      margin: 0 auto;
+      padding: 10rem 2rem 5rem;
+    }
+
+    .page-tag {
+      font-size: .63rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+    }
+    .page-title {
+      font-size: clamp(1.6rem, 5vw, 2.2rem);
+      font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; margin-bottom: .75rem;
+    }
+    .page-rule {
+      width: 36px; height: 1px;
+      background: var(--accent); margin-bottom: 1.75rem;
+    }
+    .page-sub {
+      font-size: .95rem; font-weight: 300;
+      color: rgba(255,255,255,.5); line-height: 1.85;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Form */
+    .form-group { margin-bottom: 1.25rem; }
+    label {
+      display: block; font-size: .63rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      color: rgba(255,255,255,.4); margin-bottom: .4rem;
+    }
+    input, textarea {
+      width: 100%;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 3px;
+      padding: .85rem 1rem;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: .9rem; color: #fff; outline: none;
+      transition: border-color .15s;
+    }
+    input::placeholder, textarea::placeholder { color: rgba(255,255,255,.2); }
+    input:focus, textarea:focus {
+      border-color: var(--accent);
+      box-shadow: 0 0 0 3px rgba(139,58,42,.15);
+    }
+    textarea { resize: vertical; min-height: 130px; }
+
+    .btn-submit {
+      width: 100%; background: var(--accent); border: none; color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: 700;
+      font-size: .75rem; letter-spacing: 3px; text-transform: uppercase;
+      padding: 1rem; border-radius: 3px; cursor: pointer;
+      transition: filter .15s; margin-top: .5rem;
+    }
+    .btn-submit:hover { filter: brightness(110%); }
+
+    /* Success */
+    .alert-ok {
+      background: rgba(26,107,42,.15);
+      border-left: 3px solid #1a6b2a;
+      color: #6fcf82;
+      font-size: .85rem; font-weight: 600;
+      padding: 1rem 1.25rem;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      line-height: 1.6;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 2.25rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-brand { font-size: .78rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; }
+    .foot-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
+    .foot-links a { color: rgba(255,255,255,.22); text-decoration: none; font-size: .68rem; font-weight: 300; transition: color .15s; }
+    .foot-links a:hover { color: rgba(255,255,255,.55); }
+    .foot-copy { font-size: .65rem; color: rgba(255,255,255,.15); font-weight: 300; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.25rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
+    <div class="nav-links">
+      <a href="/owner/login">Owner login</a>
+      <a href="/contact" class="nav-cta">Get in touch</a>
+    </div>
+  </nav>
+
+  <div class="page">
+
+    <p class="page-tag">Contact</p>
+    <h1 class="page-title">Get in touch</h1>
+    <div class="page-rule"></div>
+    <p class="page-sub">Interested in cashless parking for your estate, nature reserve or rural venue? Leave your details and we'll get back to you within one working day.</p>
+
+    {% if sent %}
+    <div class="alert-ok">Thanks — we've received your message and will be in touch shortly.</div>
+    {% endif %}
+
+    <form method="post" action="/contact">
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" name="name" required placeholder="Jane Smith">
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" name="email" required placeholder="jane@yourestate.co.uk">
+      </div>
+      <div class="form-group">
+        <label>Estate or organisation</label>
+        <input type="text" name="organisation" placeholder="Shere Manor Estate">
+      </div>
+      <div class="form-group">
+        <label>Message</label>
+        <textarea name="message" placeholder="Tell us a bit about your car park and what you're looking for…"></textarea>
+      </div>
+      <button type="submit" class="btn-submit">Send message</button>
+    </form>
+
+  </div>
+
+  <footer>
+    <a href="/" class="foot-brand"><span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.25)">CAR</span><span style="color:#8B3A2A">K</span></a>
+    <div class="foot-links">
+      <a href="mailto:info@parcark.co.uk">info@parcark.co.uk</a>
+      <a href="/owner/login">Owner login</a>
+      <a href="/admin/login">Admin</a>
+    </div>
+    <span class="foot-copy">&copy; 2026 ParCark Ltd &middot; Surrey, UK</span>
+  </footer>
+
+</body>
+</html>
