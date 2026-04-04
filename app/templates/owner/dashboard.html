@@ -47,22 +47,19 @@
 </div>
 
 {% if car_parks %}
-<div class="row g-3">
+<div class="d-flex flex-column gap-3">
   {% for cp in car_parks %}
-  <div class="col-md-6">
-    <div class="card p-3">
-      <div class="d-flex justify-content-between align-items-start">
-        <div>
-          <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
-          <p class="text-muted small mb-2">{{ cp.address or "No address" }}</p>
-          <code class="small">/park/{{ cp.slug }}</code>
-        </div>
+  <div class="card p-3">
+    <div class="d-flex justify-content-between align-items-center">
+      <div>
+        <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
+        <p class="text-muted small mb-0">{{ cp.address or "No address" }}</p>
+      </div>
+      <div class="d-flex align-items-center gap-2">
         <span class="badge {% if cp.is_active %}bg-success{% else %}bg-secondary{% endif %}">
           {% if cp.is_active %}Active{% else %}Inactive{% endif %}
         </span>
-      </div>
-      <div class="mt-2">
-        <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">Manage pricing</a>
+        <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">View details</a>
       </div>
     </div>
   </div>
