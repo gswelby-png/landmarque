@@ -1,11 +1,11 @@
 {% extends "base.html" %}
-{% block title %}Dashboard — {{ owner.name }}{% endblock %}
+{% block title %}Dashboard{% endblock %}
 {% block navbar %}
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <span class="navbar-brand"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></span>
     <div class="navbar-nav ms-auto align-items-center">
-      <span class="nav-link text-light">{{ owner.name }}</span>
+      <span class="nav-link text-light">{{ owner_name }}</span>
       <a href="/owner/logout" class="nav-link" title="Sign out" style="display:flex;align-items:center;">
         <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/>
@@ -17,6 +17,30 @@
   </div>
 </nav>
 {% endblock %}
+{% block head %}
+<style>
+  .cp-detail { display: none; }
+  .tab-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: .5rem 1rem;
+    font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    font-size: .78rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #888;
+    cursor: pointer;
+    transition: color .15s, border-color .15s;
+  }
+  .tab-btn.active { color: #8B3A2A; border-bottom-color: #8B3A2A; }
+  .tab-pane { display: none; padding-top: 1rem; }
+  .tab-pane.active { display: block; }
+  .parking-log-table th { font-size: .72rem; letter-spacing: 1px; text-transform: uppercase; color: #888; font-weight: 600; }
+  .parking-log-table td { font-size: .88rem; vertical-align: middle; }
+</style>
+{% endblock %}
 {% block content %}
 <h4 class="fw-bold mb-4 mt-5 pt-4">Dashboard</h4>
 
@@ -24,7 +48,7 @@
   <div class="col-md-4">
     <div class="card p-3 text-center">
       <div class="text-muted small mb-1">Today's earnings</div>
-      <div class="fs-3 fw-bold text-success">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+      <div class="fs-3 fw-bold">£{{ "%.2f"|format(today_revenue / 100) }}</div>
     </div>
   </div>
   <div class="col-md-4">
@@ -46,10 +70,12 @@
   <a href="/owner/car-parks/new" class="btn btn-sm btn-success">+ Add car park</a>
 </div>
 
-{% if car_parks %}
+{% if cp_data %}
 <div class="d-flex flex-column gap-3">
-  {% for cp in car_parks %}
-  <div class="card p-3">
+  {% for cp in cp_data %}
+  <div class="card p-3" id="card-{{ cp.id }}">
+
+    <!-- Header row -->
     <div class="d-flex justify-content-between align-items-center">
       <div class="d-flex align-items-center gap-3">
         <span class="btn btn-sm {% if cp.is_active %}btn-success{% else %}btn-secondary{% endif %}" style="pointer-events:none; min-width:70px;">
@@ -57,10 +83,86 @@
         </span>
         <div>
           <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
-          <p class="text-muted small mb-0">{{ cp.address or "No address" }}</p>
+          <p class="text-muted small mb-0">{{ cp.address }}</p>
         </div>
       </div>
-      <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">View details</a>
+      <button class="btn btn-sm btn-outline-secondary" onclick="toggleDetail({{ cp.id }}, this)">View details</button>
+    </div>
+
+    <!-- Expandable detail -->
+    <div class="cp-detail mt-3 pt-3 border-top" id="detail-{{ cp.id }}">
+
+      <!-- Tabs -->
+      <div class="d-flex gap-0 border-bottom mb-0">
+        <button class="tab-btn active" onclick="switchTab({{ cp.id }}, 'settings', this)">Settings</button>
+        <button class="tab-btn" onclick="switchTab({{ cp.id }}, 'log', this)">Parking Log</button>
+      </div>
+
+      <!-- Settings tab -->
+      <div class="tab-pane active" id="tab-{{ cp.id }}-settings">
+        {% if cp.rules %}
+        <table class="table table-sm mb-0">
+          <thead>
+            <tr>
+              <th>Day type</th>
+              <th>Hourly rate</th>
+              <th>Max hours</th>
+              <th>All-day rate</th>
+              <th>Valid from</th>
+              <th>Valid to</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for r in cp.rules %}
+            <tr>
+              <td>{{ r.day_type }}</td>
+              <td>{{ r.hourly }}</td>
+              <td>{{ r.max_hours }}</td>
+              <td>{{ r.all_day }}</td>
+              <td>{{ r.valid_from }}</td>
+              <td>{{ r.valid_to }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted small mt-2">No pricing rules set.</p>
+        {% endif %}
+        <div class="mt-3">
+          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success">+ Add pricing rule</a>
+        </div>
+      </div>
+
+      <!-- Parking Log tab -->
+      <div class="tab-pane" id="tab-{{ cp.id }}-log">
+        {% if cp.transactions %}
+        <table class="table table-sm parking-log-table mb-0">
+          <thead>
+            <tr>
+              <th>Plate</th>
+              <th>Duration</th>
+              <th>Paid</th>
+              <th>Your share</th>
+              <th>Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in cp.transactions %}
+            <tr>
+              <td style="letter-spacing:1px; font-weight:600;">{{ t.plate }}</td>
+              <td>{{ t.duration }}</td>
+              <td>{{ t.amount }}</td>
+              <td class="text-success fw-semibold">{{ t.share }}</td>
+              <td class="text-muted">{{ t.time }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted small mt-2">No parking recorded yet.</p>
+        {% endif %}
+      </div>
+
     </div>
   </div>
   {% endfor %}
@@ -70,4 +172,23 @@
   No car parks yet. <a href="/owner/car-parks/new">Add your first one.</a>
 </div>
 {% endif %}
+
+<script>
+  function toggleDetail(id, btn) {
+    const detail = document.getElementById('detail-' + id);
+    const open = detail.style.display === 'block';
+    detail.style.display = open ? 'none' : 'block';
+    btn.textContent = open ? 'View details' : 'Hide details';
+  }
+
+  function switchTab(id, tab, btn) {
+    // Deactivate all tab buttons for this card
+    document.querySelectorAll('#card-' + id + ' .tab-btn').forEach(b => b.classList.remove('active'));
+    // Hide all panes for this card
+    document.querySelectorAll('#card-' + id + ' .tab-pane').forEach(p => p.classList.remove('active'));
+    // Activate selected
+    btn.classList.add('active');
+    document.getElementById('tab-' + id + '-' + tab).classList.add('active');
+  }
+</script>
 {% endblock %}
