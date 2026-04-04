@@ -48,16 +48,7 @@
     padding: 0 .35rem;
   }
 
-  .status-pill {
-    font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-    padding: .25rem .65rem; border-radius: 2px; border: none; cursor: pointer;
-    transition: filter .15s;
-  }
-  .status-pill.on  { background: #e9f7ee; color: #1a6b2a; }
-  .status-pill.off { background: #f0f0f0; color: #999; }
-  .status-pill:hover { filter: brightness(96%); }
-
-  .sec-btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
+.sec-btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
   .btn-sec {
     font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
     color: var(--muted); background: none; border: 1px solid var(--border);
@@ -153,7 +144,6 @@
 <!-- Car parks -->
 <div class="d-flex align-items-center justify-content-between mb-3" style="margin-top:3.75rem;">
   <h6 class="fw-bold mb-0" style="letter-spacing:.5px;">Car parks</h6>
-  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px; text-transform:uppercase;">Add new car park</a>
 </div>
 
 {% if cp_data %}
@@ -177,11 +167,6 @@
         </div>
       </div>
       <div class="cp-right">
-        <form method="post" action="/owner/car-parks/{{ cp.id }}/toggle">
-          <button type="submit" class="status-pill {% if cp.is_active %}on{% else %}off{% endif %}" title="Click to toggle">
-            {% if cp.is_active %}Active{% else %}Inactive{% endif %}
-          </button>
-        </form>
         <div class="sec-btn-row">
           <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'edit', this)">Edit</button>
           <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'prices', this)">Prices</button>
@@ -317,14 +302,99 @@
 
   </div>
   {% endfor %}
+
+  <!-- New car park card (hidden until button clicked) -->
+  <div class="card" id="card-new" style="display:none;">
+    <div class="cp-header">
+      <div>
+        <div class="cp-name" style="color:var(--muted);">New car park</div>
+        <div class="cp-addr">Fill in the details and save</div>
+      </div>
+    </div>
+    <div class="sec-body" style="display:block; border-top:1px solid var(--border);">
+      <div style="padding:1.25rem 1.5rem; background:#faf9f7;">
+        <form method="post" action="/owner/car-parks/new">
+          <div class="row g-2 align-items-end">
+            <div class="col-md-4">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Name</label>
+              <input type="text" name="name" class="form-control form-control-sm" placeholder="e.g. Village Car Park" required>
+            </div>
+            <div class="col-md-4">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Address</label>
+              <input type="text" name="address" class="form-control form-control-sm" placeholder="e.g. Shere, Surrey">
+            </div>
+            <div class="col-md-3">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Description</label>
+              <input type="text" name="description" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row g-2 align-items-end mt-1">
+            <div class="col-md-5">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">URL slug</label>
+              <input type="text" name="slug" class="form-control form-control-sm" placeholder="e.g. village-car-park"
+                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
+            </div>
+            <div class="col-md-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary w-100" onclick="document.getElementById('card-new').style.display='none'">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </div>
 
 {% else %}
-<div class="card p-5 text-center mb-5" style="color:var(--muted);">
-  <p class="mb-3" style="font-size:.88rem;">No car parks yet.</p>
-  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">+ Add your first car park</a>
+<!-- No car parks yet — show new card directly -->
+<div class="d-flex flex-column gap-3 mb-5">
+  <div class="card" id="card-new">
+    <div class="cp-header">
+      <div>
+        <div class="cp-name" style="color:var(--muted);">New car park</div>
+        <div class="cp-addr">Fill in the details and save</div>
+      </div>
+    </div>
+    <div class="sec-body" style="display:block; border-top:1px solid var(--border);">
+      <div style="padding:1.25rem 1.5rem; background:#faf9f7;">
+        <form method="post" action="/owner/car-parks/new">
+          <div class="row g-2 align-items-end">
+            <div class="col-md-4">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Name</label>
+              <input type="text" name="name" class="form-control form-control-sm" placeholder="e.g. Village Car Park" required>
+            </div>
+            <div class="col-md-4">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Address</label>
+              <input type="text" name="address" class="form-control form-control-sm" placeholder="e.g. Shere, Surrey">
+            </div>
+            <div class="col-md-3">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Description</label>
+              <input type="text" name="description" class="form-control form-control-sm">
+            </div>
+          </div>
+          <div class="row g-2 align-items-end mt-1">
+            <div class="col-md-5">
+              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">URL slug</label>
+              <input type="text" name="slug" class="form-control form-control-sm" placeholder="e.g. village-car-park"
+                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
+            </div>
+            <div class="col-md-2">
+              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 {% endif %}
+
+<div class="text-end mb-5" style="margin-top:-.5rem;">
+  <button class="btn btn-sm btn-success" onclick="showNewCard()" style="font-size:.72rem; letter-spacing:1px; text-transform:uppercase;">Add new car park</button>
+</div>
 
 <script>
 // Auto-refresh every 3 minutes to keep live counts current
@@ -343,6 +413,13 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('pw-panel').style.display = 'block';
 });
 {% endif %}
+
+function showNewCard() {
+  const card = document.getElementById('card-new');
+  card.style.display = 'block';
+  card.scrollIntoView({behavior: 'smooth', block: 'start'});
+  setTimeout(() => card.querySelector('input[name=name]').focus(), 300);
+}
 
 function toggleSection(id, sec, btn) {
   const card = document.getElementById('card-' + id);
