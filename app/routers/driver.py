@@ -17,29 +17,34 @@ templates = Jinja2Templates(directory="app/templates")
 @router.get("/payment/{slug}", response_class=HTMLResponse)
 def payment_page(slug: str, request: Request, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
-    if not car_park:
-        raise HTTPException(status_code=404)
+    estate_name = car_park.owner.name if car_park else ""
+    car_park_name = car_park.name if car_park else ""
+    logo_url = (getattr(car_park, "logo_url", None) or "") if car_park else ""
+    accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/payment_mockup.html", {
         "request": request,
         "slug": slug,
-        "estate_name": car_park.owner.name,
-        "car_park_name": car_park.name,
-        "logo_url": getattr(car_park, "logo_url", None) or "",
-        "brand": {"accent": car_park.brand_accent or "#8B3A2A"},
+        "estate_name": estate_name,
+        "car_park_name": car_park_name,
+        "logo_url": logo_url,
+        "brand": {"accent": accent},
     })
 
 
 @router.get("/receipt/{slug}", response_class=HTMLResponse)
 def receipt_page(slug: str, request: Request, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
-    if not car_park:
-        raise HTTPException(status_code=404)
+    estate_name = car_park.owner.name if car_park else ""
+    car_park_name = car_park.name if car_park else ""
+    logo_url = (getattr(car_park, "logo_url", None) or "") if car_park else ""
+    accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/receipt_placeholder.html", {
         "request": request,
-        "estate_name": car_park.owner.name,
-        "car_park_name": car_park.name,
-        "logo_url": getattr(car_park, "logo_url", None) or "",
-        "brand": {"accent": car_park.brand_accent or "#8B3A2A"},
+        "slug": slug,
+        "estate_name": estate_name,
+        "car_park_name": car_park_name,
+        "logo_url": logo_url,
+        "brand": {"accent": accent},
     })
 
 
