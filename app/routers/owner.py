@@ -107,6 +107,12 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
     for cp in car_parks:
         rules = db.query(PricingRule).filter(PricingRule.car_park_id == cp.id).order_by(PricingRule.valid_from.desc()).all()
         from datetime import timezone as tz
+
+        def make_aware(dt):
+            if dt is None:
+                return None
+            return dt.replace(tzinfo=tz.utc) if dt.tzinfo is None else dt
+
         now_utc = datetime.now(tz.utc)
 
         txns = (
@@ -115,25 +121,19 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             .all()
         )
 
-        def sort_key(t):
-            if t.is_all_day or t.expires_at is None:
-                return (0, datetime.max.replace(tzinfo=tz.utc))
-            exp = t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at
-            active = exp > now_utc
-            return (0 if active else 1, exp if active else -exp.timestamp())
-
-        txns_sorted = sorted(txns, key=lambda t: (
-            0 if (t.is_all_day or (t.expires_at and (t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at) > now_utc)) else 1,
-            t.expires_at or datetime.max.replace(tzinfo=tz.utc)
-        ))
-
         def is_active(t):
             if t.is_all_day:
-                return t.parked_at and (now_utc - (t.parked_at.replace(tzinfo=tz.utc) if t.parked_at.tzinfo is None else t.parked_at)).days == 0
-            if not t.expires_at:
-                return False
-            exp = t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at
-            return exp > now_utc
+                pa = make_aware(t.parked_at)
+                return pa is not None and (now_utc - pa).days == 0
+            exp = make_aware(t.expires_at)
+            return exp is not None and exp > now_utc
+
+        def sort_key(t):
+            active = is_active(t)
+            exp = make_aware(t.expires_at) or datetime.max.replace(tzinfo=tz.utc)
+            return (0 if active else 1, exp)
+
+        txns_sorted = sorted(txns, key=sort_key)
 
         cp_data.append({
             "id": cp.id,
