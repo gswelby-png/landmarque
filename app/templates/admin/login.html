@@ -1,25 +1,139 @@
-{% extends "base.html" %}
-{% block title %}Admin Login — ParCark{% endblock %}
-{% block content %}
-<div class="row justify-content-center mt-5">
-  <div class="col-md-4">
-    <div class="text-center mb-4">
-      <h3 class="fw-bold"><span style="color:#8B3A2A">PAR</span><span>CAR</span><span style="color:#8B3A2A">K</span> Admin</h3>
-    </div>
-    <div class="card p-4">
-      {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
-      <form method="post" action="/admin/login">
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" name="email" class="form-control" required autofocus>
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" name="password" class="form-control" required>
-        </div>
-        <button type="submit" class="btn btn-dark w-100">Sign in</button>
-      </form>
-    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin — ParCark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0a0a;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+    }
+    .brand {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .brand-name {
+      font-size: 2rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+    }
+    .brand-sub {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.3);
+      margin-top: .5rem;
+    }
+    .accent-bar {
+      width: 32px;
+      height: 2px;
+      background: #8B3A2A;
+      margin: 1rem auto 0;
+    }
+    .panel {
+      background: #fff;
+      border-top: 3px solid #8B3A2A;
+      border-radius: 3px;
+      padding: 2rem;
+      width: 100%;
+      max-width: 360px;
+      box-shadow: 0 8px 40px rgba(0,0,0,.5);
+    }
+    .panel-title {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #888;
+      margin-bottom: 1.5rem;
+    }
+    .alert {
+      background: #fdf0ee;
+      border-left: 3px solid #8B3A2A;
+      color: #8B3A2A;
+      font-size: .82rem;
+      padding: .75rem 1rem;
+      margin-bottom: 1.25rem;
+      border-radius: 2px;
+    }
+    label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #777;
+      margin-bottom: .35rem;
+    }
+    input {
+      width: 100%;
+      border: 1px solid #e0e0e0;
+      border-radius: 3px;
+      padding: .75rem 1rem;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: .95rem;
+      color: #111;
+      outline: none;
+      margin-bottom: 1rem;
+      transition: border-color .15s;
+    }
+    input:focus { border-color: #8B3A2A; }
+    button {
+      width: 100%;
+      background: #111;
+      border: none;
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: .85rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: background .15s;
+    }
+    button:hover { background: #8B3A2A; }
+    .footer-note {
+      margin-top: 1.5rem;
+      font-size: .68rem;
+      color: rgba(255,255,255,0.2);
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="brand">
+    <div class="brand-name"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></div>
+    <div class="brand-sub">Admin Portal</div>
+    <div class="accent-bar"></div>
   </div>
-</div>
-{% endblock %}
+
+  <div class="panel">
+    <div class="panel-title">Sign in to continue</div>
+    {% if error %}<div class="alert">{{ error }}</div>{% endif %}
+    <form method="post" action="/admin/login">
+      <label>Email</label>
+      <input type="email" name="email" required autofocus>
+      <label>Password</label>
+      <input type="password" name="password" required>
+      <button type="submit">Sign in</button>
+    </form>
+  </div>
+
+  <p class="footer-note">Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.2)">CAR</span><span style="color:#8B3A2A">K</span></p>
+
+</body>
+</html>
