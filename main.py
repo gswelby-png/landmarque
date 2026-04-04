@@ -35,6 +35,13 @@ def migrate():
                 conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
                 conn.commit()
                 log.info("migrate(): added welcome_text column")
+        # Backfill Shere Manor logo if not set
+        with engine.connect() as conn:
+            conn.execute(text(
+                "UPDATE car_parks SET logo_url = 'https://sheremanorestate.co.uk/images/default/logo_sticky.svg' "
+                "WHERE slug = 'shere-manor' AND (logo_url IS NULL OR logo_url = '')"
+            ))
+            conn.commit()
     except Exception as e:
         log.error(f"migrate() failed: {e}")
 
@@ -71,6 +78,7 @@ def seed():
             brand_primary="#1e3a1e",
             brand_accent="#8B3A2A",
             brand_text="#f5f0e8",
+            logo_url="https://sheremanorestate.co.uk/images/default/logo_sticky.svg",
         )
         db.add(cp)
         db.flush()
