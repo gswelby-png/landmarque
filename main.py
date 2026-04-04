@@ -5,7 +5,8 @@ from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import RedirectResponse
 from fastapi.templating import Jinja2Templates
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
+import random
 
 from app.database import engine, SessionLocal
 from app import models
@@ -68,6 +69,28 @@ def seed():
             all_day_pence=1200,
             valid_from=date(2026, 1, 1),
         ))
+        db.commit()
+
+        # Dummy transactions
+        plates = ["AB12CDE","XY98ZZZ","LM45NOP","QR67STU","VW23ABC","EF89GHI",
+                  "JK34LMN","PQ56RST","UV78WXY","CD11EFG","HI22JKL","MN33OPQ",
+                  "RS44TUV","WX55YZA","BC66DEF","GH77IJK","LM88NOP","QR99STU",
+                  "VW00XYZ","AB33CDE","XY44ZZZ","LM55NOP","QR66STU","VW77ABC",
+                  "EF00GHI","JK11LMN","PQ22RST","UV33WXY","CD44EFG","HI55JKL"]
+        now = datetime.now(timezone.utc)
+        for i in range(38):
+            is_all_day = random.choice([True, False, False])
+            dur = None if is_all_day else random.choice([1, 2, 3, 4])
+            amount = 1200 if is_all_day else 300 * dur
+            commission = int(amount * 10 / 100)
+            parked_at = now - timedelta(days=random.randint(1, 30), hours=random.randint(0, 10), minutes=random.randint(0, 59))
+            db.add(models.Transaction(car_park_id=cp.id, number_plate=random.choice(plates), duration_hours=dur, is_all_day=is_all_day, amount_pence=amount, commission_pence=commission, owner_amount_pence=amount - commission, status=models.TransactionStatus.paid, parked_at=parked_at, expires_at=None if is_all_day else parked_at + timedelta(hours=dur)))
+        for i in range(12):
+            dur = random.choice([1, 2, 3, 4])
+            amount = 300 * dur
+            commission = int(amount * 10 / 100)
+            parked_at = now - timedelta(minutes=random.randint(5, 90))
+            db.add(models.Transaction(car_park_id=cp.id, number_plate=random.choice(plates), duration_hours=dur, is_all_day=False, amount_pence=amount, commission_pence=commission, owner_amount_pence=amount - commission, status=models.TransactionStatus.paid, parked_at=parked_at, expires_at=parked_at + timedelta(hours=dur)))
         db.commit()
     finally:
         db.close()
