@@ -14,6 +14,16 @@ router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
 
+@router.get("/payment", response_class=HTMLResponse)
+def payment_page(request: Request):
+    return templates.TemplateResponse("driver/payment_mockup.html", {"request": request})
+
+
+@router.get("/receipt", response_class=HTMLResponse)
+def receipt_page(request: Request):
+    return templates.TemplateResponse("driver/receipt_placeholder.html", {"request": request})
+
+
 @router.get("/mockup", response_class=HTMLResponse)
 def payment_mockup(request: Request):
     return templates.TemplateResponse("driver/payment_mockup.html", {"request": request})

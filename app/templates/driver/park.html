@@ -114,14 +114,12 @@
     </div>
 
     <div class="payment-panel">
-      <form method="post" action="/park/{{ car_park_slug }}/checkout">
-
         <div class="mb-3">
           <label class="form-label fw-semibold" style="font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:#555;">
             Enter your registration
           </label>
-          <input type="text" name="number_plate" class="form-control form-control-lg text-uppercase"
-                 required maxlength="10"
+          <input type="text" class="form-control form-control-lg text-uppercase"
+                 maxlength="10"
                  style="letter-spacing:4px; font-weight:700; font-size:1.1rem;">
         </div>
 
@@ -134,14 +132,12 @@
             <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
               <span>{{ opt.label }}</span>
               <span class="duration-price">{{ opt.price_display }}</span>
-              <input type="radio" name="duration" value="{{ opt.value }}" class="d-none" required>
             </label>
             {% endfor %}
           </div>
         </div>
 
-        <button type="submit" class="btn-pay">Pay</button>
-      </form>
+        <a href="/payment" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
     </div>
 
     <p class="stripe-note" style="padding:1rem 0; color:rgba(255,255,255,.5); display:flex; align-items:center; justify-content:center; gap:.4rem;">

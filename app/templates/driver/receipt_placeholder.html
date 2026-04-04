@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment — ParCark</title>
+  <title>Receipt — ParCark</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -26,7 +26,6 @@
       text-align: center;
       max-width: 480px;
       width: 100%;
-      margin-bottom: 2rem;
     }
     .placeholder-label {
       font-size: .65rem;
@@ -41,24 +40,6 @@
       font-weight: 700;
       color: rgba(255,255,255,.6);
     }
-    .btn-pay {
-      display: block;
-      width: 100%;
-      max-width: 480px;
-      background: #8B3A2A;
-      color: #fff;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: .85rem;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      padding: 1rem;
-      border-radius: 4px;
-      text-decoration: none;
-      text-align: center;
-      transition: filter .15s;
-    }
-    .btn-pay:hover { filter: brightness(110%); }
     .powered {
       margin-top: 2rem;
       font-size: .65rem;
@@ -71,13 +52,11 @@
 <body>
 
   <div class="placeholder">
-    <p class="placeholder-label">Step 2 of 3</p>
-    <p class="placeholder-title">Payment — Stripe goes here</p>
+    <p class="placeholder-label">Step 3 of 3</p>
+    <p class="placeholder-title">Receipt — confirmation goes here</p>
   </div>
 
-  <a href="/receipt" class="btn-pay">Pay</a>
-
-  <p class="powered">
+  <p class="powered" style="margin-top:2rem;">
     <span style="color:#8B3A2A">PAR</span><span>CAR</span><span style="color:#8B3A2A">K</span>
   </p>
 
