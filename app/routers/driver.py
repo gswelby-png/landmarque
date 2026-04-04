@@ -7,16 +7,29 @@ import stripe
 import os
 
 from ..database import get_db
-from ..models import CarPark, Transaction, TransactionStatus
+from ..models import CarPark, Transaction, TransactionStatus, SlugRedirect
 from ..pricing import get_active_rule, calculate_price, build_duration_options
 
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
 
+def _follow_slug(slug: str, path_prefix: str, db: Session):
+    """Return a RedirectResponse if slug has moved, else None."""
+    redirect = db.query(SlugRedirect).filter(SlugRedirect.old_slug == slug).first()
+    if redirect:
+        new_slug = redirect.car_park.slug
+        return RedirectResponse(f"{path_prefix}/{new_slug}", status_code=301)
+    return None
+
+
 @router.get("/payment/{slug}", response_class=HTMLResponse)
 def payment_page(slug: str, request: Request, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        redir = _follow_slug(slug, "/payment", db)
+        if redir:
+            return redir
     estate_name = car_park.owner.name if car_park else ""
     car_park_name = car_park.name if car_park else ""
     logo_url = (getattr(car_park, "logo_url", None) or "") if car_park else ""
@@ -34,6 +47,10 @@ def payment_page(slug: str, request: Request, db: Session = Depends(get_db)):
 @router.get("/receipt/{slug}", response_class=HTMLResponse)
 def receipt_page(slug: str, request: Request, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        redir = _follow_slug(slug, "/receipt", db)
+        if redir:
+            return redir
     estate_name = car_park.owner.name if car_park else ""
     car_park_name = car_park.name if car_park else ""
     logo_url = (getattr(car_park, "logo_url", None) or "") if car_park else ""
@@ -57,6 +74,9 @@ def payment_mockup(request: Request):
 def park_landing(slug: str, request: Request, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == slug, CarPark.is_active == True).first()
     if not car_park:
+        redir = _follow_slug(slug, "/park", db)
+        if redir:
+            return redir
         raise HTTPException(status_code=404, detail="Car park not found")
 
     rule = get_active_rule(db, car_park.id, date.today())

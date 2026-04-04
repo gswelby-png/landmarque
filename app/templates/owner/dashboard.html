@@ -208,7 +208,17 @@
               <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Description</label>
               <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
             </div>
-            <div class="col-md-1">
+          </div>
+          <div class="row g-2 align-items-end mt-1">
+            <div class="col-md-5">
+              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">
+                URL slug
+                <span style="font-weight:300; letter-spacing:0; text-transform:none; margin-left:.4rem; color:#bbb;">— old URLs will redirect automatically</span>
+              </label>
+              <input type="text" name="slug" class="form-control form-control-sm" value="{{ cp.slug }}"
+                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only">
+            </div>
+            <div class="col-md-2">
               <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
             </div>
           </div>

@@ -11,7 +11,7 @@ from datetime import date, datetime, timezone
 from jose import JWTError
 
 from ..database import get_db
-from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType
+from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType, SlugRedirect
 from ..auth import hash_password, verify_password, create_token, decode_token
 
 router = APIRouter(prefix="/owner")
@@ -292,6 +292,7 @@ def edit_car_park(
     name: str = Form(...),
     address: str = Form(""),
     description: str = Form(""),
+    slug: str = Form(""),
     db: Session = Depends(get_db),
 ):
     owner = current_owner(request, db)
@@ -301,6 +302,15 @@ def edit_car_park(
     cp.name = name
     cp.address = address
     cp.description = description
+    if slug and slug != cp.slug:
+        old_slug = cp.slug
+        # Check new slug not already taken
+        if not db.query(CarPark).filter(CarPark.slug == slug, CarPark.id != cp_id).first():
+            cp.slug = slug
+            # Preserve the old slug as a redirect (upsert)
+            existing = db.query(SlugRedirect).filter(SlugRedirect.old_slug == old_slug).first()
+            if not existing:
+                db.add(SlugRedirect(old_slug=old_slug, car_park_id=cp_id))
     db.commit()
     return RedirectResponse("/owner/dashboard", status_code=303)
 

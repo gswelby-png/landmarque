@@ -88,6 +88,18 @@ class PricingRule(Base):
     car_park = relationship("CarPark", back_populates="pricing_rules")
 
 
+class SlugRedirect(Base):
+    """Keeps old slugs alive after a car park is renamed."""
+    __tablename__ = "slug_redirects"
+
+    id = Column(Integer, primary_key=True)
+    old_slug = Column(String, unique=True, nullable=False)
+    car_park_id = Column(Integer, ForeignKey("car_parks.id"), nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+    car_park = relationship("CarPark")
+
+
 class Transaction(Base):
     __tablename__ = "transactions"
 
