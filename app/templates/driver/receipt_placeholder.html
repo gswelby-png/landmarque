@@ -11,62 +11,84 @@
       background: #000;
       min-height: 100vh;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 2rem 1rem;
+      padding-bottom: 60px;
+    }
+    .estate-header {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+    .estate-logo {
+      max-width: 220px;
+      height: auto;
+      margin-bottom: 1.4rem;
+    }
+    .estate-name {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.9rem;
       color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .car-park-name {
+      color: #fff;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: .5px;
+      margin: 0;
     }
     .placeholder {
-      background: #111;
-      border: 1px dashed rgba(255,255,255,.15);
+      background: #fff;
       border-radius: 8px;
       padding: 3rem 2rem;
       text-align: center;
-      max-width: 480px;
-      width: 100%;
+      margin-bottom: 1rem;
     }
     .placeholder-label {
       font-size: .65rem;
       font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.3);
+      color: #bbb;
       margin-bottom: 1rem;
     }
     .placeholder-title {
-      font-size: 1.4rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      color: rgba(255,255,255,.6);
+      color: #aaa;
     }
-    .powered {
-      margin-top: 2rem;
-      font-size: .65rem;
-      color: rgba(255,255,255,.15);
-      display: flex;
-      gap: .25rem;
+    .stripe-note {
+      font-size: .75rem;
+      text-align: center;
+      margin-top: .9rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.3);
     }
   </style>
 </head>
 <body>
 
-  <div style="text-align:center; padding: 2.5rem 1rem 1.5rem;">
-    {% if logo_url %}
-    <img src="{{ logo_url }}" alt="{{ estate_name }}" style="max-width:200px; height:auto; margin-bottom:1.2rem; display:block; margin-left:auto; margin-right:auto;">
-    {% endif %}
-    <h1 style="font-weight:700; font-size:1.6rem; color:#fff; letter-spacing:2px; text-transform:uppercase; margin:0 0 .4rem;">{{ estate_name }}</h1>
-    <p style="font-weight:700; font-size:.9rem; color:rgba(255,255,255,.5); letter-spacing:1px; text-transform:uppercase; margin:0;">{{ car_park_name }}</p>
-  </div>
+  <div class="container" style="max-width:520px; padding: 0 1rem;">
 
-  <div class="placeholder">
-    <p class="placeholder-label">Step 3 of 3</p>
-    <p class="placeholder-title">Receipt — confirmation goes here</p>
-  </div>
+    <div class="estate-header">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
+      {% endif %}
+      <h1 class="estate-name">{{ estate_name }}</h1>
+      <p class="car-park-name">{{ car_park_name }}</p>
+    </div>
 
-  <p class="powered" style="margin-top:2rem;">
-    <span style="color:#8B3A2A">PAR</span><span>CAR</span><span style="color:#8B3A2A">K</span>
-  </p>
+    <div class="placeholder">
+      <p class="placeholder-label">Receipt</p>
+      <p class="placeholder-title">Confirmation goes here</p>
+    </div>
+
+    <p class="stripe-note" style="padding:1rem 0;">
+      Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.4)">CAR</span><span style="color:#8B3A2A">K</span>
+    </p>
+
+  </div>
 
 </body>
 </html>
