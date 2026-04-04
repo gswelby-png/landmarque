@@ -107,25 +107,6 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             if exp and exp > now_utc:
                 live_count += 1
 
-    # ── Commission chart (last 6 months) ────────────────────────────────────
-    chart_labels = []
-    chart_data = []
-    for m in range(5, -1, -1):
-        month_offset = today.month - m
-        year_offset = today.year
-        while month_offset <= 0:
-            month_offset += 12
-            year_offset -= 1
-        m_start = date(year_offset, month_offset, 1)
-        m_end = date(year_offset, month_offset + 1, 1) if month_offset < 12 else date(year_offset + 1, 1, 1)
-        comm = db.query(func.sum(Transaction.commission_pence)).filter(
-            Transaction.status == TransactionStatus.paid,
-            Transaction.parked_at >= m_start,
-            Transaction.parked_at < m_end,
-        ).scalar() or 0
-        chart_labels.append(m_start.strftime("%b"))
-        chart_data.append(round(comm / 100, 2))
-
     # ── Recent activity (last 20) ────────────────────────────────────────────
     recent_raw = (
         db.query(Transaction)
@@ -183,14 +164,6 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         txn_count = db.query(func.count(Transaction.id)).join(CarPark).filter(
             CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid
         ).scalar() or 0
-        month_rev = db.query(func.sum(Transaction.owner_amount_pence)).join(CarPark).filter(
-            CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid,
-            Transaction.parked_at >= month_start,
-        ).scalar() or 0
-        month_comm = db.query(func.sum(Transaction.commission_pence)).join(CarPark).filter(
-            CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid,
-            Transaction.parked_at >= month_start,
-        ).scalar() or 0
         # Per car park stats
         cp_list = []
         for cp in o.car_parks:
@@ -234,8 +207,6 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             "total_revenue": rev_all,
             "commission": comm_all,
             "txn_count": txn_count,
-            "month_rev": month_rev,
-            "month_comm": month_comm,
             "car_parks": cp_list,
         })
 
@@ -247,14 +218,11 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         "avg_txn": avg_txn,
         "active_parks": active_parks,
         "live_count": live_count,
-        "chart_labels": chart_labels,
-        "chart_data": chart_data,
         "recent": recent,
         "busiest_day": busiest_day,
         "best_cp": best_cp,
         "owner_stats": owner_stats,
         "owner_count": len(owners),
-        "current_month": today.strftime("%B %Y"),
     })
 
 

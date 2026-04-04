@@ -111,12 +111,6 @@
   </div>
 </div>
 
-<!-- Commission chart -->
-<div class="card p-3 mb-4">
-  <div class="sec">Commission — last 6 months</div>
-  <canvas id="chart" height="65"></canvas>
-</div>
-
 <!-- Intelligence -->
 <div class="row g-3 mb-5">
   <div class="col-md-4">
@@ -260,69 +254,8 @@
   </div>
 </div>
 
-<!-- Payouts -->
-<p class="sec">{{ current_month }} — payouts</p>
-<div class="card mb-5">
-  <div class="table-responsive">
-    <table class="tbl">
-      <thead>
-        <tr>
-          <th>Owner</th>
-          <th>Gross this month</th>
-          <th>Owed to owner</th>
-          <th>ParCark cut</th>
-          <th>Rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for o in owner_stats %}
-        <tr>
-          <td>
-            <div class="o-name">{{ o.name }}</div>
-          </td>
-          <td>£{{ "%.2f"|format((o.month_rev + o.month_comm) / 100) }}</td>
-          <td class="v-grn">£{{ "%.2f"|format(o.month_rev / 100) }}</td>
-          <td class="v-acc">£{{ "%.2f"|format(o.month_comm / 100) }}</td>
-          <td>{{ o.commission_pct }}%</td>
-        </tr>
-        {% else %}
-        <tr><td colspan="5" style="text-align:center; color:var(--muted); padding:2.5rem;">No data yet.</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</div>
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
-new Chart(document.getElementById('chart').getContext('2d'), {
-  type: 'bar',
-  data: {
-    labels: {{ chart_labels | tojson }},
-    datasets: [{
-      data: {{ chart_data | tojson }},
-      backgroundColor: 'rgba(139,58,42,0.12)',
-      borderColor: '#8B3A2A',
-      borderWidth: 1.5,
-      borderRadius: 3,
-      hoverBackgroundColor: 'rgba(139,58,42,0.28)',
-    }]
-  },
-  options: {
-    plugins: { legend: { display: false } },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: { callback: v => '£' + v.toFixed(0), font: { family:'Raleway', size:11 }, color:'#bbb' },
-        grid: { color:'rgba(0,0,0,.05)' }, border: { display:false },
-      },
-      x: {
-        ticks: { font: { family:'Raleway', size:11 }, color:'#bbb' },
-        grid: { display:false }, border: { display:false },
-      }
-    }
-  }
-});
 
 function toggleEstate(id) {
   const row = document.getElementById('exp-' + id);
