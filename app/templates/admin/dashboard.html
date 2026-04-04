@@ -6,6 +6,7 @@
   <div class="container">
     <a class="navbar-brand" href="/"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
     <div class="d-flex align-items-center gap-3">
+      <span id="refresh-timer" style="color:rgba(255,255,255,.2); font-size:.65rem; letter-spacing:1px; font-family:monospace;"></span>
       <span style="color:rgba(255,255,255,.35); font-size:.68rem; letter-spacing:3px; text-transform:uppercase;">Admin</span>
       <a href="/admin/logout" style="color:rgba(255,255,255,.5); font-size:.72rem; letter-spacing:1px; text-decoration:none; transition:color .15s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='rgba(255,255,255,.5)'">Sign out</a>
     </div>
@@ -63,6 +64,12 @@
   .pw-form input { border:1px solid var(--border); border-radius:3px; padding:.3rem .65rem; font-size:.78rem; font-family:'Raleway',sans-serif; outline:none; width:180px; }
   .pw-form input:focus { border-color:var(--accent); }
 
+  /* ── Flags ── */
+  .flag { display:flex; align-items:center; gap:.75rem; padding:.6rem 1rem; border-radius:3px; font-size:.82rem; margin-bottom:.4rem; font-weight:600; }
+  .flag-critical { background:#fff2f0; color:#8B3A2A; border-left:3px solid #8B3A2A; }
+  .flag-warning  { background:#fffbf0; color:#7a5c00; border-left:3px solid #e6a817; }
+  .flag-dot { width:6px; height:6px; border-radius:50%; background:currentColor; flex-shrink:0; }
+
   /* ── Values ── */
   .v-bold { font-weight:700; }
   .v-acc  { font-weight:700; color:var(--accent); }
@@ -72,7 +79,18 @@
 
 {% block content %}
 
-<div class="d-flex align-items-center justify-content-between mt-5 pt-3 mb-4">
+{% if flags %}
+<div class="mt-5 pt-3 mb-4">
+  {% for f in flags %}
+  <div class="flag flag-{{ f.level }}">
+    <span class="flag-dot"></span>
+    {{ f.msg }}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<div class="d-flex align-items-center justify-content-between {% if not flags %}mt-5 pt-3 {% endif %}mb-4">
   <h4 style="font-weight:700; letter-spacing:.5px; margin:0;">Overview</h4>
   <a href="/admin/export-csv" class="act" style="text-decoration:none;">&#8595; Export CSV</a>
 </div>
@@ -256,6 +274,16 @@
 
 
 <script>
+
+// Auto-refresh every 2 minutes
+let secs = 120;
+const timer = document.getElementById('refresh-timer');
+setInterval(() => {
+  secs--;
+  if (secs <= 0) { location.reload(); return; }
+  const m = Math.floor(secs / 60), s = String(secs % 60).padStart(2, '0');
+  if (timer) timer.textContent = `↻ ${m}:${s}`;
+}, 1000);
 
 function toggleEstate(id) {
   const row = document.getElementById('exp-' + id);

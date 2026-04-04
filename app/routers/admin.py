@@ -1,7 +1,7 @@
 import csv
 import io
 from collections import Counter
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timezone, timedelta
 
 from fastapi import APIRouter, Depends, Request, Form, HTTPException
 from fastapi.responses import HTMLResponse, RedirectResponse, StreamingResponse
@@ -11,7 +11,7 @@ from sqlalchemy import func
 from jose import JWTError
 
 from ..database import get_db
-from ..models import AdminUser, Owner, CarPark, Transaction, TransactionStatus
+from ..models import AdminUser, Owner, CarPark, PricingRule, Transaction, TransactionStatus
 from ..auth import hash_password, verify_password, create_token, decode_token
 
 router = APIRouter(prefix="/admin")
@@ -210,6 +210,38 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             "car_parks": cp_list,
         })
 
+    # ── Automated flags ───────────────────────────────────────────────────────
+    flags = []
+    thirty_ago = today - timedelta(days=30)
+    seven_ago  = today - timedelta(days=7)
+
+    active_cp_list = db.query(CarPark).filter(CarPark.is_active == True).all()
+    for cp in active_cp_list:
+        # Critical: active park with no pricing rules — drivers get a 503
+        has_rules = db.query(PricingRule.id).filter(PricingRule.car_park_id == cp.id).first()
+        if not has_rules:
+            flags.append({"level": "critical", "msg": f"{cp.name} is active but has no pricing rules — drivers will see an error"})
+            continue
+
+        # Warning: active park, never had a transaction, set up 7+ days ago
+        last_txn = db.query(func.max(Transaction.parked_at)).filter(
+            Transaction.car_park_id == cp.id,
+            Transaction.status == TransactionStatus.paid,
+        ).scalar()
+        created_date = make_aware(cp.created_at).date() if cp.created_at else None
+        if last_txn is None:
+            if created_date and created_date <= seven_ago:
+                flags.append({"level": "warning", "msg": f"{cp.name} has never received a payment"})
+        else:
+            last_date = make_aware(last_txn).date()
+            if last_date < thirty_ago:
+                flags.append({"level": "warning", "msg": f"{cp.name} — no activity for {(today - last_date).days} days"})
+
+    # Warning: owner with no car parks (onboarding incomplete)
+    for o in owners:
+        if not o.car_parks:
+            flags.append({"level": "warning", "msg": f"{o.name} has no car parks set up yet"})
+
     return templates.TemplateResponse("admin/dashboard.html", {
         "request": request,
         "total_revenue": total_revenue,
@@ -223,6 +255,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         "best_cp": best_cp,
         "owner_stats": owner_stats,
         "owner_count": len(owners),
+        "flags": flags,
     })
 
 
