@@ -137,11 +137,6 @@
   </div>
 </div>
 
-<!-- Chart -->
-<div class="card mb-5" style="padding: 1.25rem 1.5rem;">
-  <canvas id="revenueChart" height="70"></canvas>
-</div>
-
 <!-- Car parks -->
 <div class="d-flex align-items-center justify-content-between mb-3">
   <h6 class="fw-bold mb-0" style="letter-spacing:.5px;">Your car parks</h6>
@@ -293,41 +288,9 @@
 </div>
 {% endif %}
 
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
 // Auto-refresh every 3 minutes to keep live counts current
 setTimeout(() => location.reload(), 180000);
-
-new Chart(document.getElementById('revenueChart').getContext('2d'), {
-  type: 'bar',
-  data: {
-    labels: {{ chart_labels | tojson }},
-    datasets: [{
-      data: {{ chart_data | tojson }},
-      backgroundColor: 'rgba(139,58,42,0.12)',
-      borderColor: '#8B3A2A',
-      borderWidth: 1.5,
-      borderRadius: 3,
-      hoverBackgroundColor: 'rgba(139,58,42,0.28)',
-    }]
-  },
-  options: {
-    plugins: { legend: { display: false } },
-    scales: {
-      y: {
-        beginAtZero: true,
-        ticks: { callback: v => '£' + v.toFixed(0), font: { family: 'Raleway', size: 11 }, color: '#aaa' },
-        grid: { color: 'rgba(0,0,0,.05)' },
-        border: { display: false },
-      },
-      x: {
-        ticks: { font: { family: 'Raleway', size: 11 }, color: '#aaa' },
-        grid: { display: false },
-        border: { display: false },
-      }
-    }
-  }
-});
 
 function toggleDetail(id, btn) {
   const body = document.getElementById('body-' + id);

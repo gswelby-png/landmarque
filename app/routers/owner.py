@@ -144,38 +144,7 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
     )
 
 
-    # ── Monthly revenue chart (last 6 months) ────────────────────────────────
-    # Build month labels and totals
-    from datetime import timedelta
-    chart_labels = []
-    chart_data = []
-    for m in range(5, -1, -1):
-        # Walk back m months from today
-        ref = today.replace(day=1)
-        month_offset = ref.month - m
-        year_offset = ref.year
-        while month_offset <= 0:
-            month_offset += 12
-            year_offset -= 1
-        m_start = date(year_offset, month_offset, 1)
-        if month_offset == 12:
-            m_end = date(year_offset + 1, 1, 1)
-        else:
-            m_end = date(year_offset, month_offset + 1, 1)
 
-        rev = (
-            db.query(func.sum(Transaction.owner_amount_pence))
-            .join(CarPark)
-            .filter(
-                CarPark.owner_id == owner.id,
-                Transaction.status == TransactionStatus.paid,
-                Transaction.parked_at >= m_start,
-                Transaction.parked_at < m_end,
-            )
-            .scalar() or 0
-        )
-        chart_labels.append(m_start.strftime("%b %Y"))
-        chart_data.append(round(rev / 100, 2))
 
     # ── Per car park data ────────────────────────────────────────────────────
     car_parks = db.query(CarPark).filter(CarPark.owner_id == owner.id).all()
@@ -265,8 +234,6 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
         "today_revenue": today_revenue,
         "month_revenue": month_revenue,
         "ytd_revenue": ytd_revenue,
-        "chart_labels": chart_labels,
-        "chart_data": chart_data,
         "cp_data": cp_data,
         "pw_ok": pw_ok,
         "pw_error": pw_error,
