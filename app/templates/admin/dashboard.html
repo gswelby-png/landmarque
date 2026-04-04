@@ -45,6 +45,17 @@
   .act { font-size:.68rem; font-weight:700; letter-spacing:.5px; padding:.25rem .65rem; border-radius:3px; text-decoration:none; border:1px solid var(--border); color:var(--muted); background:none; cursor:pointer; transition:border-color .12s, color .12s; white-space:nowrap; }
   .act:hover { border-color:var(--accent); color:var(--accent); }
 
+  /* ── Expandable rows ── */
+  .exp-row { display:none; background:#faf9f7; }
+  .exp-row > td { padding: 0; border-bottom: 2px solid var(--border); }
+  .exp-inner { padding: 1rem 1.5rem; }
+
+  /* ── Car park sub-table ── */
+  .cp-tbl { width:100%; border-collapse:collapse; font-size:.8rem; }
+  .cp-tbl th { font-size:.6rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); padding:.4rem .75rem; border-bottom:1px solid var(--border); text-align:left; }
+  .cp-tbl td { padding:.55rem .75rem; border-bottom:1px solid #ece; vertical-align:middle; }
+  .cp-tbl tbody tr:last-child td { border-bottom:none; }
+
   /* ── Inline reset PW ── */
   .pw-row { display:none; background:#faf9f7; }
   .pw-row td { padding:.6rem .9rem; }
@@ -157,10 +168,17 @@
       </thead>
       <tbody>
         {% for o in owner_stats %}
-        <tr>
+
+        <!-- Estate row -->
+        <tr style="cursor:pointer;" onclick="toggleEstate({{ o.id }})">
           <td>
-            <div class="o-name">{{ o.name }}</div>
-            <div class="o-email">{{ o.email }}</div>
+            <div class="d-flex align-items-center gap-2">
+              <svg id="chevron-{{ o.id }}" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#bbb" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0; transition:transform .2s;"><polyline points="9 18 15 12 9 6"/></svg>
+              <div>
+                <div class="o-name">{{ o.name }}</div>
+                <div class="o-email">{{ o.email }}</div>
+              </div>
+            </div>
           </td>
           <td>{{ o.car_park_count }}</td>
           <td>{{ o.txn_count }}</td>
@@ -168,13 +186,61 @@
           <td class="v-acc">£{{ "%.2f"|format(o.commission / 100) }}</td>
           <td>{{ o.commission_pct }}%</td>
           <td>{% if o.is_active %}<span class="badge-on">Active</span>{% else %}<span class="badge-off">Inactive</span>{% endif %}</td>
-          <td>
+          <td onclick="event.stopPropagation()">
             <div class="d-flex gap-2">
               <a href="/admin/owners/{{ o.id }}/edit" class="act">Edit</a>
               <button class="act" onclick="togglePw({{ o.id }})">Reset PW</button>
             </div>
           </td>
         </tr>
+
+        <!-- Car parks expand -->
+        <tr class="exp-row" id="exp-{{ o.id }}">
+          <td colspan="8">
+            <div class="exp-inner">
+              {% if o.car_parks %}
+              <table class="cp-tbl">
+                <thead>
+                  <tr>
+                    <th>Car park</th>
+                    <th>Status</th>
+                    <th>Live</th>
+                    <th>This month</th>
+                    <th>All-time</th>
+                    <th>Transactions</th>
+                    <th>Warden URL</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {% for cp in o.car_parks %}
+                  <tr>
+                    <td style="font-weight:700;">{{ cp.name }}</td>
+                    <td>{% if cp.is_active %}<span class="badge-on">Active</span>{% else %}<span class="badge-off">Off</span>{% endif %}</td>
+                    <td>
+                      {% if cp.live > 0 %}
+                      <span style="color:#1a6b2a; font-weight:700;">{{ cp.live }}</span>
+                      {% else %}
+                      <span style="color:#ccc;">—</span>
+                      {% endif %}
+                    </td>
+                    <td>£{{ "%.2f"|format(cp.month_rev / 100) }}</td>
+                    <td class="v-bold">£{{ "%.2f"|format(cp.total_rev / 100) }}</td>
+                    <td>{{ cp.txn_count }}</td>
+                    <td>
+                      <span style="font-family:monospace; font-size:.72rem; color:var(--muted);">/check/{{ cp.slug }}</span>
+                    </td>
+                  </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+              {% else %}
+              <p style="font-size:.8rem; color:var(--muted); margin:0;">No car parks yet.</p>
+              {% endif %}
+            </div>
+          </td>
+        </tr>
+
+        <!-- Reset PW row -->
         <tr class="pw-row" id="pw-{{ o.id }}">
           <td colspan="8">
             <form method="post" action="/admin/owners/{{ o.id }}/reset-password" class="pw-form">
@@ -185,6 +251,7 @@
             </form>
           </td>
         </tr>
+
         {% else %}
         <tr><td colspan="8" style="text-align:center; color:var(--muted); padding:2.5rem;">No estates yet.</td></tr>
         {% endfor %}
@@ -256,6 +323,14 @@ new Chart(document.getElementById('chart').getContext('2d'), {
     }
   }
 });
+
+function toggleEstate(id) {
+  const row = document.getElementById('exp-' + id);
+  const open = row.style.display === 'table-row';
+  row.style.display = open ? 'none' : 'table-row';
+  const chevron = document.getElementById('chevron-' + id);
+  chevron.style.transform = open ? '' : 'rotate(90deg)';
+}
 
 function togglePw(id) {
   const row = document.getElementById('pw-' + id);

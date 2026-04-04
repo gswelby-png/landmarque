@@ -191,6 +191,39 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid,
             Transaction.parked_at >= month_start,
         ).scalar() or 0
+        # Per car park stats
+        cp_list = []
+        for cp in o.car_parks:
+            cp_txns = db.query(Transaction).filter(
+                Transaction.car_park_id == cp.id,
+                Transaction.status == TransactionStatus.paid,
+            ).all()
+            cp_live = 0
+            for t in cp_txns:
+                if t.is_all_day:
+                    pa = make_aware(t.parked_at)
+                    if pa and (now_utc - pa).days == 0:
+                        cp_live += 1
+                else:
+                    exp = make_aware(t.expires_at)
+                    if exp and exp > now_utc:
+                        cp_live += 1
+            cp_month = sum(
+                t.owner_amount_pence for t in cp_txns
+                if t.parked_at and make_aware(t.parked_at).date() >= month_start
+            )
+            cp_total = sum(t.owner_amount_pence for t in cp_txns)
+            cp_list.append({
+                "id": cp.id,
+                "name": cp.name,
+                "slug": cp.slug,
+                "is_active": cp.is_active,
+                "live": cp_live,
+                "month_rev": cp_month,
+                "total_rev": cp_total,
+                "txn_count": len(cp_txns),
+            })
+
         owner_stats.append({
             "id": o.id,
             "name": o.name,
@@ -203,6 +236,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             "txn_count": txn_count,
             "month_rev": month_rev,
             "month_comm": month_comm,
+            "car_parks": cp_list,
         })
 
     return templates.TemplateResponse("admin/dashboard.html", {
