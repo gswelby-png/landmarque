@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Receipt — ParCark</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <title>Payment Confirmed — ParCark</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -23,7 +23,6 @@
       margin-bottom: 1.4rem;
     }
     .estate-name {
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.9rem;
       color: #fff;
@@ -38,32 +37,81 @@
       letter-spacing: .5px;
       margin: 0;
     }
-    .placeholder {
+    .panel {
       background: #fff;
       border-radius: 8px;
-      padding: 3rem 2rem;
-      text-align: center;
+      overflow: hidden;
       margin-bottom: 1rem;
     }
-    .placeholder-label {
+    .panel-top {
+      background: #1a6b2a;
+      padding: 2rem 2rem 1.75rem;
+      text-align: center;
+    }
+    .tick-circle {
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .confirm-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+    .panel-body {
+      padding: 1.5rem 2rem;
+    }
+    .detail-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: .85rem 0;
+      border-bottom: 1px solid #f0ede8;
+    }
+    .detail-row:last-child { border-bottom: none; }
+    .detail-label {
       font-size: .65rem;
       font-weight: 700;
-      letter-spacing: 4px;
+      letter-spacing: 2px;
       text-transform: uppercase;
-      color: #bbb;
-      margin-bottom: 1rem;
+      color: #999;
     }
-    .placeholder-title {
-      font-size: 1.2rem;
+    .detail-value {
+      font-size: .9rem;
       font-weight: 700;
-      color: #aaa;
+      color: #111;
+      text-align: right;
+    }
+    .detail-value.plate {
+      font-size: 1.3rem;
+      letter-spacing: 5px;
+      font-weight: 800;
+    }
+    .detail-value.ref {
+      color: #8B3A2A;
+      letter-spacing: 2px;
+    }
+    .screenshot-note {
+      text-align: center;
+      font-size: .78rem;
+      color: rgba(255,255,255,.4);
+      font-weight: 300;
+      line-height: 1.6;
+      padding: .5rem 0 1rem;
     }
     .stripe-note {
       font-size: .75rem;
       text-align: center;
-      margin-top: .9rem;
       font-weight: 300;
       color: rgba(255,255,255,.3);
+      padding: .5rem 0 1rem;
     }
   </style>
 </head>
@@ -79,22 +127,38 @@
       <p class="car-park-name">{{ car_park_name }}</p>
     </div>
 
-    <div class="placeholder">
-      <p class="placeholder-label">Receipt</p>
-      <p class="placeholder-title">Confirmation goes here</p>
+    <div class="panel">
+      <div class="panel-top">
+        <div class="tick-circle">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="20 6 9 17 4 12"/>
+          </svg>
+        </div>
+        <p class="confirm-title">Payment Confirmed</p>
+      </div>
+      <div class="panel-body">
+        <div class="detail-row">
+          <span class="detail-label">Plate</span>
+          <span class="detail-value plate">AB12 CDE</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Valid until</span>
+          <span class="detail-value">16:30 today</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Amount paid</span>
+          <span class="detail-value">£6.00</span>
+        </div>
+        <div class="detail-row">
+          <span class="detail-label">Reference</span>
+          <span class="detail-value ref">PKC-00142</span>
+        </div>
+      </div>
     </div>
 
-    <div class="placeholder">
-      <p class="placeholder-label">Transaction details</p>
-      <p class="placeholder-title" style="font-size:.95rem; color:#ccc;">Plate, duration, amount</p>
-    </div>
+    <p class="screenshot-note">Screenshot this page as your parking receipt.</p>
 
-    <div class="placeholder">
-      <p class="placeholder-label">Reference</p>
-      <p class="placeholder-title" style="font-size:.95rem; color:#ccc;">Booking reference / QR</p>
-    </div>
-
-    <p class="stripe-note" style="padding:1rem 0;">
+    <p class="stripe-note">
       Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.4)">CAR</span><span style="color:#8B3A2A">K</span>
     </p>
 
