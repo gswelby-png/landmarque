@@ -1,13 +1,14 @@
 {% extends "base.html" %}
 {% block title %}Dashboard{% endblock %}
+
 {% block navbar %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
-    <div class="navbar-nav ms-auto align-items-center gap-2">
-      <span class="nav-link text-light" style="font-size:.85rem;">{{ owner_name }}</span>
-      <a href="/owner/logout" class="nav-link" title="Sign out" style="display:flex;align-items:center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+    <div class="d-flex align-items-center gap-3">
+      <span style="color:rgba(255,255,255,.6); font-size:.8rem; letter-spacing:.5px;">{{ owner_name }}</span>
+      <a href="/owner/logout" title="Sign out" style="display:flex; align-items:center; opacity:.7; transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19.5a6 6 0 0 1 11 0"/>
         </svg>
       </a>
@@ -15,226 +16,182 @@
   </div>
 </nav>
 {% endblock %}
+
 {% block head %}
 <style>
-  /* ── Tab system ── */
-  .cp-detail { display: none; }
-  .tab-btn {
-    background: none;
-    border: none;
-    border-bottom: 2px solid transparent;
-    padding: .5rem 1.1rem;
-    font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    font-size: .7rem;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    color: var(--muted);
-    cursor: pointer;
-    transition: color .15s, border-color .15s;
+  /* ── Page ── */
+  .page-heading { font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; margin: 0; }
+
+  /* ── Stat cards ── */
+  .stat { padding: 1.25rem 1.5rem; }
+  .stat-l { font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
+  .stat-v { font-size: 1.9rem; font-weight: 700; color: var(--text); line-height: 1; }
+
+  /* ── Car park card ── */
+  .cp-header { padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
+  .cp-name   { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; display: flex; align-items: center; gap: .6rem; }
+  .cp-addr   { font-size: .8rem; color: var(--muted); margin-bottom: .45rem; }
+  .cp-stats  { font-size: .75rem; color: var(--muted); }
+  .cp-stats b { color: var(--text); font-weight: 700; }
+  .cp-right  { display: flex; align-items: center; gap: .6rem; flex-shrink: 0; margin-top: .15rem; }
+
+  .live-dot {
+    display: inline-flex; align-items: center; justify-content: center;
+    background: #e9f7ee; color: #1a6b2a;
+    font-size: .65rem; font-weight: 700; letter-spacing: .5px;
+    min-width: 1.4rem; height: 1.4rem; border-radius: 50%;
+    padding: 0 .35rem;
   }
-  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-  .tab-pane { display: none; padding-top: 1rem; }
-  .tab-pane.active { display: block; }
 
-  /* ── Parking log ── */
-  .parking-log-table th { font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
-  .parking-log-table td { font-size: .88rem; vertical-align: middle; }
-
-  /* ── Per-car-park revenue row ── */
-  .cp-rev {
-    font-size: .72rem;
-    color: var(--muted);
-    font-weight: 600;
-    letter-spacing: .5px;
-    margin-top: .2rem;
-  }
-  .cp-rev b { color: var(--text); font-weight: 700; }
-
-  /* ── Delete rule button ── */
-  .btn-rule-del {
-    background: none;
-    border: none;
-    color: #ccc;
-    font-size: .78rem;
-    padding: 2px 6px;
-    cursor: pointer;
-    line-height: 1;
-    border-radius: 2px;
-    transition: color .12s, background .12s;
-  }
-  .btn-rule-del:hover { color: #fff; background: var(--accent); }
-
-  /* ── Toggle badge variants ── */
-  .status-badge {
-    display: inline-block;
-    font-size: .68rem;
-    font-weight: 700;
-    letter-spacing: 1.5px;
-    text-transform: uppercase;
-    padding: .3rem .75rem;
-    border-radius: 2px;
-    cursor: pointer;
-    border: none;
+  .status-pill {
+    font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+    padding: .25rem .65rem; border-radius: 2px; border: none; cursor: pointer;
     transition: filter .15s;
   }
-  .status-badge.active  { background: #e9f7ee; color: #1a6b2a; }
-  .status-badge.inactive { background: #f0f0f0; color: #888; }
-  .status-badge:hover { filter: brightness(95%); }
+  .status-pill.on  { background: #e9f7ee; color: #1a6b2a; }
+  .status-pill.off { background: #f0f0f0; color: #999; }
+  .status-pill:hover { filter: brightness(96%); }
 
-  /* ── Password change ── */
-  .pw-form-wrap { display: none; }
-  .pw-alert {
-    font-size: .8rem;
-    padding: .5rem 1rem;
-    border-radius: 3px;
-    margin-bottom: 1rem;
-    font-weight: 600;
+  .btn-details {
+    font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+    color: var(--muted); background: none; border: 1px solid var(--border);
+    border-radius: 3px; padding: .3rem .75rem; cursor: pointer; white-space: nowrap;
+    transition: border-color .15s, color .15s;
   }
-  .pw-alert.ok { background: #e9f7ee; color: #1a6b2a; }
-  .pw-alert.err { background: #fdf5f3; color: var(--accent); }
+  .btn-details:hover { border-color: var(--accent); color: var(--accent); }
 
-  /* ── Warden URL display ── */
-  .warden-url {
-    font-size: .75rem;
-    color: var(--muted);
-    background: #f7f6f4;
-    border: 1px solid var(--border);
-    border-radius: 3px;
-    padding: .35rem .75rem;
-    font-family: monospace;
-    word-break: break-all;
-  }
+  /* ── Expanded area ── */
+  .cp-body { display: none; border-top: 1px solid var(--border); }
 
-  /* ── Chart card ── */
-  .chart-card {
-    border-top: 3px solid var(--accent);
+  .tab-bar { display: flex; border-bottom: 1px solid var(--border); padding: 0 1.5rem; }
+  .tab-btn {
+    background: none; border: none; border-bottom: 2px solid transparent;
+    padding: .65rem 1rem .65rem 0; margin-right: 1.5rem;
+    font-family: 'Raleway', sans-serif; font-size: .7rem; font-weight: 700;
+    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
+    cursor: pointer; transition: color .15s, border-color .15s;
   }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+  .tab-pane { display: none; }
+  .tab-pane.active { display: block; }
+
+  /* ── Pricing table ── */
+  .pricing-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .pricing-table th {
+    font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--muted); padding: .5rem .75rem; border-bottom: 1px solid var(--border);
+    text-align: left; white-space: nowrap;
+  }
+  .pricing-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--text); }
+  .pricing-table tbody tr:last-child td { border-bottom: none; }
+  .btn-del { background: none; border: none; color: #ccc; font-size: .82rem; cursor: pointer; padding: .1rem .3rem; border-radius: 2px; transition: color .12s, background .12s; }
+  .btn-del:hover { color: #fff; background: var(--accent); }
+
+  /* ── Action footer ── */
+  .tab-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
+  .tab-footer .spacer { flex: 1; }
+  .warden-line { font-size: .72rem; color: var(--muted); display: flex; align-items: center; gap: .5rem; }
+  .warden-line code { font-size: .72rem; background: #f5f4f2; border: 1px solid var(--border); border-radius: 2px; padding: .15rem .4rem; color: #555; }
+  .btn-copy { font-size: .68rem; color: var(--muted); background: none; border: 1px solid var(--border); border-radius: 2px; padding: .15rem .5rem; cursor: pointer; transition: border-color .12s, color .12s; }
+  .btn-copy:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* ── Edit form ── */
+  .edit-form-wrap { display: none; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); background: #faf9f7; }
+  .edit-form-wrap label { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: .3rem; }
+
+  /* ── Parking log ── */
+  .log-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+  .log-table th { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .5rem .75rem; border-bottom: 1px solid var(--border); text-align: left; }
+  .log-table td { padding: .55rem .75rem; font-size: .85rem; border-bottom: 1px solid #f3f2f0; }
+  .log-table tbody tr:last-child td { border-bottom: none; }
 </style>
 {% endblock %}
+
 {% block content %}
 
-<!-- Page header -->
-<div class="d-flex align-items-end justify-content-between mt-5 pt-4 mb-4">
-  <div>
-    <p class="section-tag mb-0">Owner portal</p>
-    <h4 class="fw-bold mb-0">Dashboard</h4>
-  </div>
+<!-- Heading -->
+<div class="d-flex align-items-center justify-content-between mt-5 pt-3 mb-4">
+  <h4 class="page-heading">Dashboard</h4>
 </div>
 
 <!-- Stats -->
 <div class="row g-3 mb-4">
   <div class="col-md-4">
-    <div class="card stat-card">
-      <div class="stat-label">Today</div>
-      <div class="stat-value">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+    <div class="card stat">
+      <div class="stat-l">Today</div>
+      <div class="stat-v">£{{ "%.2f"|format(today_revenue / 100) }}</div>
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card stat-card">
-      <div class="stat-label">This month</div>
-      <div class="stat-value">£{{ "%.2f"|format(month_revenue / 100) }}</div>
+    <div class="card stat">
+      <div class="stat-l">This month</div>
+      <div class="stat-v">£{{ "%.2f"|format(month_revenue / 100) }}</div>
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card stat-card">
-      <div class="stat-label">Year to date</div>
-      <div class="stat-value">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
+    <div class="card stat">
+      <div class="stat-l">Year to date</div>
+      <div class="stat-v">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
     </div>
   </div>
 </div>
 
-<!-- Revenue chart -->
-<div class="card chart-card p-3 mb-5">
-  <p class="section-tag mb-2">Revenue — last 6 months</p>
-  <canvas id="revenueChart" height="80"></canvas>
+<!-- Chart -->
+<div class="card mb-5" style="padding: 1.25rem 1.5rem;">
+  <canvas id="revenueChart" height="70"></canvas>
 </div>
 
-<!-- Car parks header -->
-<div class="d-flex align-items-center mb-3">
-  <div class="geo-rule" style="margin:0; flex:1; margin-right:1.5rem;">
-    <span>Your car parks</span>
-  </div>
-  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1.5px; text-transform:uppercase; flex-shrink:0;">+ Add car park</a>
+<!-- Car parks -->
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h6 class="fw-bold mb-0" style="letter-spacing:.5px;">Your car parks</h6>
+  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px; text-transform:uppercase;">+ Add</a>
 </div>
 
 {% if cp_data %}
-<div class="d-flex flex-column gap-3">
+<div class="d-flex flex-column gap-3 mb-5">
   {% for cp in cp_data %}
   <div class="card" id="card-{{ cp.id }}">
 
-    <!-- Card header -->
-    <div class="d-flex justify-content-between align-items-start p-3">
-      <div class="d-flex align-items-start gap-3">
-        <!-- Active / Inactive toggle -->
-        <form method="post" action="/owner/car-parks/{{ cp.id }}/toggle" style="display:inline;">
-          <button type="submit" class="status-badge {% if cp.is_active %}active{% else %}inactive{% endif %}" title="Click to toggle">
+    <div class="cp-header">
+      <div>
+        <div class="cp-name">
+          {{ cp.name }}
+          {% if cp.live_count > 0 %}
+          <span class="live-dot" title="{{ cp.live_count }} vehicle{{ 's' if cp.live_count != 1 else '' }} parked">{{ cp.live_count }}</span>
+          {% endif %}
+        </div>
+        <div class="cp-addr">{{ cp.address }}</div>
+        <div class="cp-stats">
+          Today&nbsp;<b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b>
+          &ensp;·&ensp;Month&nbsp;<b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b>
+          &ensp;·&ensp;YTD&nbsp;<b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b>
+        </div>
+      </div>
+      <div class="cp-right">
+        <form method="post" action="/owner/car-parks/{{ cp.id }}/toggle">
+          <button type="submit" class="status-pill {% if cp.is_active %}on{% else %}off{% endif %}" title="Click to toggle">
             {% if cp.is_active %}Active{% else %}Inactive{% endif %}
           </button>
         </form>
-        <div>
-          <div class="d-flex align-items-center gap-2">
-            <span class="fw-bold" style="font-size:.95rem; letter-spacing:.5px;">{{ cp.name }}</span>
-            {% if cp.live_count > 0 %}
-            <span style="background:#e9f7ee; color:#1a6b2a; font-size:.65rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px;">{{ cp.live_count }}</span>
-            {% endif %}
-          </div>
-          <div style="font-size:.8rem; color:var(--muted);">{{ cp.address }}</div>
-          <div class="cp-rev">
-            Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b>
-            &nbsp;·&nbsp; Month <b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b>
-            &nbsp;·&nbsp; YTD <b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b>
-          </div>
-        </div>
+        <button class="btn-details" onclick="toggleDetail({{ cp.id }}, this)">Details</button>
       </div>
-      <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px; flex-shrink:0;" onclick="toggleDetail({{ cp.id }}, this)">View details</button>
     </div>
 
-    <!-- Expandable -->
-    <div class="cp-detail border-top" id="detail-{{ cp.id }}">
+    <div class="cp-body" id="body-{{ cp.id }}">
 
-      <!-- Tabs -->
-      <div class="d-flex border-bottom px-3">
+      <div class="tab-bar">
         <button class="tab-btn active" onclick="switchTab({{ cp.id }}, 'settings', this)">Settings</button>
         <button class="tab-btn" onclick="switchTab({{ cp.id }}, 'log', this)">Parking log</button>
       </div>
 
-      <!-- ── Settings tab ── -->
-      <div class="tab-pane active p-3" id="tab-{{ cp.id }}-settings">
+      <!-- Settings -->
+      <div class="tab-pane active" id="tab-{{ cp.id }}-settings">
 
-        <!-- Edit car park inline -->
-        <div class="mb-3">
-          <button class="tab-btn" style="padding:.2rem .5rem;font-size:.68rem;" onclick="toggleSection('edit-{{ cp.id }}', this)">&#9998; Edit details</button>
-          <div id="edit-{{ cp.id }}" style="display:none;" class="mt-2">
-            <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
-              <div class="row g-2 align-items-end">
-                <div class="col-md-4">
-                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Name</label>
-                  <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
-                </div>
-                <div class="col-md-4">
-                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Address</label>
-                  <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
-                </div>
-                <div class="col-md-3">
-                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Description</label>
-                  <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
-                </div>
-                <div class="col-md-1">
-                  <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        <!-- Pricing rules -->
         {% if cp.rules %}
-        <table class="table table-sm mb-0">
+        <table class="pricing-table">
           <thead>
-            <tr>
-              <th>Day type</th><th>Hourly</th><th>Max hours</th><th>All day</th><th>From</th><th>To</th><th></th>
-            </tr>
+            <tr><th>Day type</th><th>Hourly</th><th>Max hrs</th><th>All day</th><th>From</th><th>To</th><th></th></tr>
           </thead>
           <tbody>
             {% for r in cp.rules %}
@@ -245,9 +202,9 @@
               <td>{{ r.all_day }}</td>
               <td>{{ r.valid_from }}</td>
               <td>{{ r.valid_to }}</td>
-              <td>
-                <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" style="display:inline;" onsubmit="return confirm('Delete this pricing rule?')">
-                  <button type="submit" class="btn-rule-del" title="Delete">&#10005;</button>
+              <td style="width:2rem; text-align:center;">
+                <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')">
+                  <button type="submit" class="btn-del">&#10005;</button>
                 </form>
               </td>
             </tr>
@@ -255,30 +212,54 @@
           </tbody>
         </table>
         {% else %}
-        <p class="text-muted" style="font-size:.82rem;">No pricing rules set.</p>
+        <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
         {% endif %}
 
-        <!-- Actions row -->
-        <div class="mt-3 d-flex flex-wrap gap-2 align-items-center">
-          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">+ Pricing rule</a>
-          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;">&#8595; QR code</a>
-          <div class="ms-auto d-flex align-items-center gap-2">
-            <span style="font-size:.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase;">Warden check</span>
-            <span class="warden-url">/check/{{ cp.slug }}</span>
-            <button class="btn btn-sm btn-outline-secondary" style="font-size:.68rem;" onclick="copyWardenUrl('{{ cp.slug }}', this)">Copy</button>
+        <!-- Edit form (hidden) -->
+        <div class="edit-form-wrap" id="edit-{{ cp.id }}">
+          <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
+            <div class="row g-2 align-items-end">
+              <div class="col-md-4">
+                <label>Name</label>
+                <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
+              </div>
+              <div class="col-md-4">
+                <label>Address</label>
+                <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
+              </div>
+              <div class="col-md-3">
+                <label>Description</label>
+                <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
+              </div>
+              <div class="col-md-1">
+                <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
+              </div>
+            </div>
+          </form>
+        </div>
+
+        <div class="tab-footer">
+          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;">+ Add rule</a>
+          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; QR</a>
+          <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;" onclick="toggleEdit('{{ cp.id }}')">Edit</button>
+          <div class="spacer"></div>
+          <div class="warden-line">
+            <span>Warden</span>
+            <code>/check/{{ cp.slug }}</code>
+            <button class="btn-copy" onclick="copyWarden('{{ cp.slug }}', this)">Copy</button>
           </div>
         </div>
       </div>
 
-      <!-- ── Parking log tab ── -->
-      <div class="tab-pane p-3" id="tab-{{ cp.id }}-log">
+      <!-- Parking log -->
+      <div class="tab-pane" id="tab-{{ cp.id }}-log">
         {% if cp.transactions %}
-        <table class="table table-sm parking-log-table mb-0" style="table-layout:fixed; width:100%;">
+        <table class="log-table">
           <thead>
             <tr>
-              <th style="width:33%;">Plate</th>
+              <th style="width:34%;">Plate</th>
               <th style="width:33%;">Duration</th>
-              <th style="width:34%;">Expires</th>
+              <th style="width:33%;">Expires</th>
             </tr>
           </thead>
           <tbody>
@@ -293,10 +274,10 @@
           </tbody>
         </table>
         {% else %}
-        <p class="text-muted" style="font-size:.82rem;">No parking recorded yet.</p>
+        <p style="padding:1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No parking recorded yet.</p>
         {% endif %}
-        <div class="mt-3">
-          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;">&#8595; Export CSV</a>
+        <div class="tab-footer">
+          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; Export CSV</a>
         </div>
       </div>
 
@@ -304,78 +285,72 @@
   </div>
   {% endfor %}
 </div>
+
 {% else %}
-<div class="card p-5 text-center" style="color:var(--muted);">
-  <p class="mb-2" style="font-size:.88rem;">No car parks yet.</p>
+<div class="card p-5 text-center mb-5" style="color:var(--muted);">
+  <p class="mb-3" style="font-size:.88rem;">No car parks yet.</p>
   <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">+ Add your first car park</a>
 </div>
 {% endif %}
 
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
-  // ── Revenue chart ──────────────────────────────────────────────────────────
-  new Chart(document.getElementById('revenueChart').getContext('2d'), {
-    type: 'bar',
-    data: {
-      labels: {{ chart_labels | tojson }},
-      datasets: [{
-        data: {{ chart_data | tojson }},
-        backgroundColor: 'rgba(139,58,42,0.18)',
-        borderColor: '#8B3A2A',
-        borderWidth: 2,
-        borderRadius: 3,
-        hoverBackgroundColor: 'rgba(139,58,42,0.35)',
-      }]
-    },
-    options: {
-      plugins: { legend: { display: false } },
-      scales: {
-        y: {
-          beginAtZero: true,
-          ticks: { callback: v => '£' + v.toFixed(0), font: { family: 'Raleway', size: 11 } },
-          grid: { color: 'rgba(0,0,0,.06)' },
-          border: { display: false },
-        },
-        x: {
-          ticks: { font: { family: 'Raleway', size: 11 } },
-          grid: { display: false },
-          border: { display: false },
-        }
+new Chart(document.getElementById('revenueChart').getContext('2d'), {
+  type: 'bar',
+  data: {
+    labels: {{ chart_labels | tojson }},
+    datasets: [{
+      data: {{ chart_data | tojson }},
+      backgroundColor: 'rgba(139,58,42,0.12)',
+      borderColor: '#8B3A2A',
+      borderWidth: 1.5,
+      borderRadius: 3,
+      hoverBackgroundColor: 'rgba(139,58,42,0.28)',
+    }]
+  },
+  options: {
+    plugins: { legend: { display: false } },
+    scales: {
+      y: {
+        beginAtZero: true,
+        ticks: { callback: v => '£' + v.toFixed(0), font: { family: 'Raleway', size: 11 }, color: '#aaa' },
+        grid: { color: 'rgba(0,0,0,.05)' },
+        border: { display: false },
+      },
+      x: {
+        ticks: { font: { family: 'Raleway', size: 11 }, color: '#aaa' },
+        grid: { display: false },
+        border: { display: false },
       }
     }
+  }
+});
+
+function toggleDetail(id, btn) {
+  const body = document.getElementById('body-' + id);
+  const open = body.style.display === 'block';
+  body.style.display = open ? 'none' : 'block';
+  btn.textContent = open ? 'Details' : 'Close';
+}
+
+function switchTab(id, tab, btn) {
+  document.querySelectorAll('#card-' + id + ' .tab-btn').forEach(b => b.classList.remove('active'));
+  document.querySelectorAll('#card-' + id + ' .tab-pane').forEach(p => p.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('tab-' + id + '-' + tab).classList.add('active');
+}
+
+function toggleEdit(id) {
+  const el = document.getElementById('edit-' + id);
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+}
+
+function copyWarden(slug, btn) {
+  navigator.clipboard.writeText(window.location.origin + '/check/' + slug).then(() => {
+    const t = btn.textContent;
+    btn.textContent = 'Copied';
+    setTimeout(() => btn.textContent = t, 1800);
   });
-
-  // ── Car park detail toggle ─────────────────────────────────────────────────
-  function toggleDetail(id, btn) {
-    const detail = document.getElementById('detail-' + id);
-    const open = detail.style.display === 'block';
-    detail.style.display = open ? 'none' : 'block';
-    btn.textContent = open ? 'View details' : 'Hide details';
-  }
-
-  function switchTab(id, tab, btn) {
-    document.querySelectorAll('#card-' + id + ' .tab-btn').forEach(b => b.classList.remove('active'));
-    document.querySelectorAll('#card-' + id + ' .tab-pane').forEach(p => p.classList.remove('active'));
-    btn.classList.add('active');
-    document.getElementById('tab-' + id + '-' + tab).classList.add('active');
-  }
-
-  function toggleSection(id, btn) {
-    const el = document.getElementById(id);
-    const open = el.style.display === 'block';
-    el.style.display = open ? 'none' : 'block';
-  }
-
-  // ── Warden URL copy ────────────────────────────────────────────────────────
-  function copyWardenUrl(slug, btn) {
-    const url = window.location.origin + '/check/' + slug;
-    navigator.clipboard.writeText(url).then(() => {
-      const orig = btn.textContent;
-      btn.textContent = 'Copied!';
-      setTimeout(() => btn.textContent = orig, 1800);
-    });
-  }
-
+}
 </script>
 {% endblock %}
