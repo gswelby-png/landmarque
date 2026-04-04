@@ -51,16 +51,16 @@
   {% for cp in car_parks %}
   <div class="card p-3">
     <div class="d-flex justify-content-between align-items-center">
-      <div>
-        <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
-        <p class="text-muted small mb-0">{{ cp.address or "No address" }}</p>
-      </div>
-      <div class="d-flex align-items-center gap-2">
-        <span class="badge {% if cp.is_active %}bg-success{% else %}bg-secondary{% endif %}">
+      <div class="d-flex align-items-center gap-3">
+        <span class="btn btn-sm {% if cp.is_active %}btn-success{% else %}btn-secondary{% endif %}" style="pointer-events:none; min-width:70px;">
           {% if cp.is_active %}Active{% else %}Inactive{% endif %}
         </span>
-        <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">View details</a>
+        <div>
+          <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
+          <p class="text-muted small mb-0">{{ cp.address or "No address" }}</p>
+        </div>
       </div>
+      <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">View details</a>
     </div>
   </div>
   {% endfor %}
