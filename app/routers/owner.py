@@ -377,7 +377,7 @@ def add_pricing_rule(
     )
     db.add(rule)
     db.commit()
-    return RedirectResponse(f"/owner/car-parks/{cp_id}/pricing", status_code=303)
+    return RedirectResponse("/owner/dashboard", status_code=303)
 
 
 @router.post("/car-parks/{cp_id}/pricing/{rule_id}/delete")
