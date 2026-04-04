@@ -210,6 +210,13 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
                     "all_day": f"£{r.all_day_pence/100:.2f}" if r.all_day_pence else "—",
                     "valid_from": str(r.valid_from),
                     "valid_to": str(r.valid_to) if r.valid_to else "Open",
+                    # Raw values for edit form pre-population
+                    "day_type_raw": r.day_type.value,
+                    "hourly_raw": f"{r.hourly_rate_pence/100:.2f}",
+                    "max_hours_raw": r.max_hourly_hours or "",
+                    "all_day_raw": f"{r.all_day_pence/100:.2f}" if r.all_day_pence else "",
+                    "valid_from_raw": str(r.valid_from),
+                    "valid_to_raw": str(r.valid_to) if r.valid_to else "",
                 }
                 for r in rules
             ],
@@ -394,6 +401,36 @@ def delete_pricing_rule(
     rule = db.query(PricingRule).filter(PricingRule.id == rule_id, PricingRule.car_park_id == cp_id).first()
     if rule:
         db.delete(rule)
+        db.commit()
+    return RedirectResponse("/owner/dashboard", status_code=303)
+
+
+@router.post("/car-parks/{cp_id}/pricing/{rule_id}/update")
+def update_pricing_rule(
+    cp_id: int,
+    rule_id: int,
+    request: Request,
+    day_type: str = Form(...),
+    hourly_rate: float = Form(...),
+    max_hourly_hours: int = Form(None),
+    all_day_price: float = Form(None),
+    valid_from: str = Form(...),
+    valid_to: str = Form(None),
+    db: Session = Depends(get_db),
+):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.id == cp_id, CarPark.owner_id == owner.id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    rule = db.query(PricingRule).filter(PricingRule.id == rule_id, PricingRule.car_park_id == cp_id).first()
+    if rule:
+        rule.day_type = day_type
+        rule.hourly_rate_pence = int(hourly_rate * 100)
+        rule.max_hourly_hours = max_hourly_hours
+        rule.all_day_pence = int(all_day_price * 100) if all_day_price else None
+        from datetime import date as _date
+        rule.valid_from = _date.fromisoformat(valid_from)
+        rule.valid_to = _date.fromisoformat(valid_to) if valid_to else None
         db.commit()
     return RedirectResponse("/owner/dashboard", status_code=303)
 

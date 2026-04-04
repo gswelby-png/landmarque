@@ -231,9 +231,50 @@
             <td>{{ r.all_day }}</td>
             <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
             <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
-            <td style="width:2rem; text-align:center;">
-              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')">
+            <td style="width:4rem; text-align:right; white-space:nowrap;">
+              <button class="btn-del" style="color:#888; margin-right:.2rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">&#9998;</button>
+              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')" style="display:inline;">
                 <button type="submit" class="btn-del">&#10005;</button>
+              </form>
+            </td>
+          </tr>
+          <tr id="rule-edit-{{ cp.id }}-{{ r.id }}" style="display:none;">
+            <td colspan="7" style="padding:1rem 1.25rem; background:#faf9f7;">
+              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/update">
+                <div class="row g-2">
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Day type</label>
+                    <select name="day_type" class="form-select form-select-sm" required>
+                      <option value="weekday" {% if r.day_type_raw == 'weekday' %}selected{% endif %}>Weekday</option>
+                      <option value="weekend" {% if r.day_type_raw == 'weekend' %}selected{% endif %}>Weekend</option>
+                      <option value="bank_holiday" {% if r.day_type_raw == 'bank_holiday' %}selected{% endif %}>Bank holiday</option>
+                    </select>
+                  </div>
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Hourly (£)</label>
+                    <input type="number" name="hourly_rate" class="form-control form-control-sm" step="0.01" min="0" value="{{ r.hourly_raw }}" required>
+                  </div>
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Max hours</label>
+                    <input type="number" name="max_hourly_hours" class="form-control form-control-sm" min="1" value="{{ r.max_hours_raw }}">
+                  </div>
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">All day (£)</label>
+                    <input type="number" name="all_day_price" class="form-control form-control-sm" step="0.01" min="0" value="{{ r.all_day_raw }}">
+                  </div>
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid from</label>
+                    <input type="date" name="valid_from" class="form-control form-control-sm" value="{{ r.valid_from_raw }}" required>
+                  </div>
+                  <div class="col-sm-6 col-md-2">
+                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid to <span style="font-weight:300;">(optional)</span></label>
+                    <input type="date" name="valid_to" class="form-control form-control-sm" value="{{ r.valid_to_raw }}">
+                  </div>
+                </div>
+                <div class="d-flex gap-2 mt-2">
+                  <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem;">Save</button>
+                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">Cancel</button>
+                </div>
               </form>
             </td>
           </tr>
@@ -301,10 +342,9 @@
       <table class="log-table">
         <thead>
           <tr>
-            <th style="width:25%;">Plate</th>
-            <th style="width:20%;">Duration</th>
-            <th style="width:15%;">Amount</th>
-            <th style="width:40%;">Expires</th>
+            <th style="width:30%;">Plate</th>
+            <th style="width:25%;">Duration</th>
+            <th style="width:45%;">Expires</th>
           </tr>
         </thead>
         <tbody>
@@ -313,7 +353,6 @@
           <tr>
             <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
             <td style="color:{{ c }};">{{ t.duration }}</td>
-            <td style="font-weight:700; color:{{ c }};">{{ t.amount }}</td>
             <td style="color:{{ c }}; font-size:.78rem;">{{ t.expires }}</td>
           </tr>
           {% endfor %}
@@ -441,6 +480,11 @@ document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('pw-panel').style.display = 'block';
 });
 {% endif %}
+
+function toggleRuleEdit(cpId, ruleId) {
+  const row = document.getElementById('rule-edit-' + cpId + '-' + ruleId);
+  row.style.display = row.style.display === 'table-row' ? 'none' : 'table-row';
+}
 
 function toggleNewRule(id, btn) {
   const el = document.getElementById('new-rule-' + id);
