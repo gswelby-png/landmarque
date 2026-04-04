@@ -156,9 +156,11 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
                 {
                     "plate": t.number_plate,
                     "duration": "All day" if t.is_all_day else f"{t.duration_hours} hour{'s' if t.duration_hours > 1 else ''}",
-                    "hours": "—" if t.is_all_day else str(t.duration_hours),
-                    "arrived": t.parked_at.strftime("%d %b %H:%M") if t.parked_at else "—",
-                    "expires": "All day" if t.is_all_day else (t.expires_at.strftime("%H:%M") if t.expires_at else "—"),
+                    "expires": (
+                        make_aware(t.parked_at).replace(hour=23, minute=59, second=0).strftime("%d %b %Y %H:%M")
+                        if t.is_all_day and t.parked_at
+                        else (make_aware(t.expires_at).strftime("%d %b %Y %H:%M") if t.expires_at else "—")
+                    ),
                     "active": is_active(t),
                 }
                 for t in txns_sorted
