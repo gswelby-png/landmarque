@@ -106,13 +106,35 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
     cp_data = []
     for cp in car_parks:
         rules = db.query(PricingRule).filter(PricingRule.car_park_id == cp.id).order_by(PricingRule.valid_from.desc()).all()
+        from datetime import timezone as tz
+        now_utc = datetime.now(tz.utc)
+
         txns = (
             db.query(Transaction)
             .filter(Transaction.car_park_id == cp.id, Transaction.status == TransactionStatus.paid)
-            .order_by(Transaction.parked_at.desc())
-            .limit(20)
             .all()
         )
+
+        def sort_key(t):
+            if t.is_all_day or t.expires_at is None:
+                return (0, datetime.max.replace(tzinfo=tz.utc))
+            exp = t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at
+            active = exp > now_utc
+            return (0 if active else 1, exp if active else -exp.timestamp())
+
+        txns_sorted = sorted(txns, key=lambda t: (
+            0 if (t.is_all_day or (t.expires_at and (t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at) > now_utc)) else 1,
+            t.expires_at or datetime.max.replace(tzinfo=tz.utc)
+        ))
+
+        def is_active(t):
+            if t.is_all_day:
+                return t.parked_at and (now_utc - (t.parked_at.replace(tzinfo=tz.utc) if t.parked_at.tzinfo is None else t.parked_at)).days == 0
+            if not t.expires_at:
+                return False
+            exp = t.expires_at.replace(tzinfo=tz.utc) if t.expires_at.tzinfo is None else t.expires_at
+            return exp > now_utc
+
         cp_data.append({
             "id": cp.id,
             "name": cp.name,
@@ -133,12 +155,13 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             "transactions": [
                 {
                     "plate": t.number_plate,
-                    "duration": "All day" if t.is_all_day else f"{t.duration_hours}hr",
-                    "amount": f"£{t.amount_pence/100:.2f}",
-                    "share": f"£{t.owner_amount_pence/100:.2f}",
-                    "time": t.parked_at.strftime("%d %b %H:%M") if t.parked_at else "—",
+                    "duration": "All day" if t.is_all_day else f"{t.duration_hours} hour{'s' if t.duration_hours > 1 else ''}",
+                    "hours": "—" if t.is_all_day else str(t.duration_hours),
+                    "arrived": t.parked_at.strftime("%d %b %H:%M") if t.parked_at else "—",
+                    "expires": "All day" if t.is_all_day else (t.expires_at.strftime("%H:%M") if t.expires_at else "—"),
+                    "active": is_active(t),
                 }
-                for t in txns
+                for t in txns_sorted
             ],
         })
 
