@@ -232,7 +232,7 @@
             <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
             <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
             <td style="width:4rem; text-align:right; white-space:nowrap;">
-              <button class="btn-del" style="color:#888; margin-right:.2rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">&#9998;</button>
+              <button class="btn-del rule-edit-toggle" data-cp="{{ cp.id }}" style="color:#888; margin-right:.2rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">&#9998;</button>
               <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')" style="display:inline;">
                 <button type="submit" class="btn-del">&#10005;</button>
               </form>
@@ -286,7 +286,7 @@
       <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
       {% endif %}
       <div class="tab-footer">
-        <button class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;" onclick="toggleNewRule({{ cp.id }}, this)">+ New rule</button>
+        <button id="btn-new-rule-{{ cp.id }}" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;" onclick="toggleNewRule({{ cp.id }})">+ New rule</button>
       </div>
 
       <!-- Inline new rule form -->
@@ -325,7 +325,7 @@
           </div>
           <div class="d-flex gap-2 mt-2">
             <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem;">Save rule</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;" onclick="toggleNewRule({{ cp.id }}, null)">Cancel</button>
+            <button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;" onclick="toggleNewRule({{ cp.id }})">Cancel</button>
           </div>
         </form>
       </div>
@@ -489,14 +489,30 @@ document.addEventListener('DOMContentLoaded', () => {
 
 function toggleRuleEdit(cpId, ruleId) {
   const row = document.getElementById('rule-edit-' + cpId + '-' + ruleId);
-  row.style.display = row.style.display === 'table-row' ? 'none' : 'table-row';
+  const isOpen = row.style.display === 'table-row';
+  // Close all edit rows for this cp
+  document.querySelectorAll('[id^="rule-edit-' + cpId + '-"]').forEach(r => r.style.display = 'none');
+  if (!isOpen) {
+    row.style.display = 'table-row';
+    // Hide new rule button and form
+    document.getElementById('btn-new-rule-' + cpId).style.display = 'none';
+    document.getElementById('new-rule-' + cpId).style.display = 'none';
+  } else {
+    document.getElementById('btn-new-rule-' + cpId).style.display = '';
+  }
 }
 
-function toggleNewRule(id, btn) {
+function toggleNewRule(id) {
   const el = document.getElementById('new-rule-' + id);
   const isOpen = el.style.display === 'block';
   el.style.display = isOpen ? 'none' : 'block';
-  if (!isOpen) el.querySelector('input[name=hourly_rate]').focus();
+  // Hide/show all rule edit buttons for this cp
+  document.querySelectorAll('.rule-edit-toggle[data-cp="' + id + '"]').forEach(b => b.style.display = isOpen ? '' : 'none');
+  // Close any open edit rows
+  if (!isOpen) {
+    document.querySelectorAll('[id^="rule-edit-' + id + '-"]').forEach(r => r.style.display = 'none');
+    el.querySelector('input[name=hourly_rate]').focus();
+  }
 }
 
 function showNewCard() {
