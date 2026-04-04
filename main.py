@@ -19,16 +19,24 @@ models.Base.metadata.create_all(bind=engine)
 
 def migrate():
     """Add new columns to existing tables without dropping data."""
+    import logging
     from sqlalchemy import inspect, text
-    inspector = inspect(engine)
-    columns = [c["name"] for c in inspector.get_columns("car_parks")]
-    with engine.connect() as conn:
-        if "logo_url" not in columns:
-            conn.execute(text("ALTER TABLE car_parks ADD COLUMN logo_url VARCHAR"))
-            conn.commit()
-        if "welcome_text" not in columns:
-            conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
-            conn.commit()
+    log = logging.getLogger("parcark.migrate")
+    try:
+        inspector = inspect(engine)
+        columns = [c["name"] for c in inspector.get_columns("car_parks")]
+        log.info(f"migrate(): existing car_parks columns: {columns}")
+        with engine.connect() as conn:
+            if "logo_url" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN logo_url VARCHAR"))
+                conn.commit()
+                log.info("migrate(): added logo_url column")
+            if "welcome_text" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
+                conn.commit()
+                log.info("migrate(): added welcome_text column")
+    except Exception as e:
+        log.error(f"migrate() failed: {e}")
 
 
 def seed():
