@@ -122,34 +122,21 @@
   </div>
 </div>
 
-<!-- Flash messages -->
-{% if pw_ok %}
-<div class="pw-alert ok mb-3">Password updated successfully.</div>
-{% elif pw_error %}
-<div class="pw-alert err mb-3">Password change failed — check your current password and try again.</div>
-{% endif %}
-
 <!-- Stats -->
 <div class="row g-3 mb-4">
-  <div class="col-6 col-md-3">
-    <div class="card stat-card" style="border-left-color: #1a6b2a;">
-      <div class="stat-label">Cars parked now</div>
-      <div class="stat-value">{{ live_count }}</div>
-    </div>
-  </div>
-  <div class="col-6 col-md-3">
+  <div class="col-md-4">
     <div class="card stat-card">
       <div class="stat-label">Today</div>
       <div class="stat-value">£{{ "%.2f"|format(today_revenue / 100) }}</div>
     </div>
   </div>
-  <div class="col-6 col-md-3">
+  <div class="col-md-4">
     <div class="card stat-card">
       <div class="stat-label">This month</div>
       <div class="stat-value">£{{ "%.2f"|format(month_revenue / 100) }}</div>
     </div>
   </div>
-  <div class="col-6 col-md-3">
+  <div class="col-md-4">
     <div class="card stat-card">
       <div class="stat-label">Year to date</div>
       <div class="stat-value">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
@@ -186,7 +173,12 @@
           </button>
         </form>
         <div>
-          <div class="fw-bold" style="font-size:.95rem; letter-spacing:.5px;">{{ cp.name }}</div>
+          <div class="d-flex align-items-center gap-2">
+            <span class="fw-bold" style="font-size:.95rem; letter-spacing:.5px;">{{ cp.name }}</span>
+            {% if cp.live_count > 0 %}
+            <span style="background:#e9f7ee; color:#1a6b2a; font-size:.65rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px;">{{ cp.live_count }} now</span>
+            {% endif %}
+          </div>
           <div style="font-size:.8rem; color:var(--muted);">{{ cp.address }}</div>
           <div class="cp-rev">
             Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b>
@@ -319,37 +311,6 @@
 </div>
 {% endif %}
 
-<!-- Password change -->
-<div class="geo-rule mt-5">
-  <span>Account</span>
-</div>
-
-<div class="card p-3 mb-5">
-  <div class="d-flex justify-content-between align-items-center">
-    <div>
-      <div style="font-size:.82rem; font-weight:700; letter-spacing:.5px;">Change password</div>
-      <div style="font-size:.75rem; color:var(--muted);">Update your owner portal login</div>
-    </div>
-    <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;" onclick="toggleSection('pw-form', this)">Change</button>
-  </div>
-  <div id="pw-form" class="pw-form-wrap mt-3 pt-3 border-top">
-    <form method="post" action="/owner/change-password">
-      <div class="row g-2">
-        <div class="col-md-4">
-          <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Current password</label>
-          <input type="password" name="current_password" class="form-control form-control-sm" required>
-        </div>
-        <div class="col-md-4">
-          <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">New password</label>
-          <input type="password" name="new_password" class="form-control form-control-sm" required minlength="6">
-        </div>
-        <div class="col-md-auto d-flex align-items-end">
-          <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">Save password</button>
-        </div>
-      </div>
-    </form>
-  </div>
-</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
@@ -416,9 +377,5 @@
     });
   }
 
-  // Auto-open password section if redirected with pw_ok or pw_error
-  {% if pw_ok or pw_error %}
-  document.getElementById('pw-form').style.display = 'block';
-  {% endif %}
 </script>
 {% endblock %}

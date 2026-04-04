@@ -49,8 +49,26 @@ def _is_active_txn(t, now_utc):
 # ── Auth ────────────────────────────────────────────────────────────────────
 
 @router.get("/login", response_class=HTMLResponse)
-def login_page(request: Request):
-    return templates.TemplateResponse("owner/login.html", {"request": request, "error": None})
+def login_page(request: Request, pw_ok: bool = Query(False), pw_error: bool = Query(False)):
+    return templates.TemplateResponse("owner/login.html", {"request": request, "error": None, "pw_ok": pw_ok, "pw_error": pw_error})
+
+
+@router.post("/reset-password")
+def reset_password(
+    request: Request,
+    email: str = Form(...),
+    current_password: str = Form(...),
+    new_password: str = Form(...),
+    db: Session = Depends(get_db),
+):
+    owner = db.query(Owner).filter(Owner.email == email).first()
+    if not owner or not verify_password(current_password, owner.password_hash):
+        return RedirectResponse("/owner/login?pw_error=1", status_code=303)
+    if len(new_password) < 6:
+        return RedirectResponse("/owner/login?pw_error=1", status_code=303)
+    owner.password_hash = hash_password(new_password)
+    db.commit()
+    return RedirectResponse("/owner/login?pw_ok=1", status_code=303)
 
 
 @router.post("/login")
@@ -125,14 +143,6 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
         .scalar() or 0
     )
 
-    # ── Live car count ───────────────────────────────────────────────────────
-    all_txns = (
-        db.query(Transaction)
-        .join(CarPark)
-        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
-        .all()
-    )
-    live_count = sum(1 for t in all_txns if _is_active_txn(t, now_utc))
 
     # ── Monthly revenue chart (last 6 months) ────────────────────────────────
     # Build month labels and totals
@@ -180,6 +190,9 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
             .all()
         )
 
+        # Per-car-park live count
+        cp_live = sum(1 for t in txns if _is_active_txn(t, now_utc))
+
         # Per-car-park revenue
         cp_today_rev = sum(
             t.owner_amount_pence for t in txns
@@ -215,6 +228,7 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
             "description": cp.description or "",
             "slug": cp.slug,
             "is_active": cp.is_active,
+            "live_count": cp_live,
             "today_rev": cp_today_rev,
             "month_rev": cp_month_rev,
             "ytd_rev": cp_ytd_rev,
@@ -251,7 +265,6 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
         "today_revenue": today_revenue,
         "month_revenue": month_revenue,
         "ytd_revenue": ytd_revenue,
-        "live_count": live_count,
         "chart_labels": chart_labels,
         "chart_data": chart_data,
         "cp_data": cp_data,

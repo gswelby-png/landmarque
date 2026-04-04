@@ -124,7 +124,7 @@
     <div class="divider"></div>
   </div>
 
-  <div class="panel">
+  <div class="panel" id="panel-signin" style="display:block;">
     <div class="panel-title">Sign in to your account</div>
     {% if error %}
     <div class="alert">{{ error }}</div>
@@ -136,9 +136,43 @@
       <input type="password" name="password" required>
       <button type="submit">Sign in</button>
     </form>
+    <p style="text-align:center; margin-top:1.25rem;">
+      <a href="#" onclick="switchPanel('pw'); return false;" style="font-size:.72rem; color:#aaa; text-decoration:none; letter-spacing:1px;">Change password</a>
+    </p>
+  </div>
+
+  <div class="panel" id="panel-pw" style="display:none;">
+    <div class="panel-title">Change password</div>
+    {% if pw_ok %}
+    <div class="alert" style="background:#e9f7ee; border-left-color:#1a6b2a; color:#1a6b2a;">Password updated — please sign in.</div>
+    {% elif pw_error %}
+    <div class="alert">Incorrect email or password. Please try again.</div>
+    {% endif %}
+    <form method="post" action="/owner/reset-password">
+      <label>Email</label>
+      <input type="email" name="email" required>
+      <label>Current password</label>
+      <input type="password" name="current_password" required>
+      <label>New password</label>
+      <input type="password" name="new_password" required minlength="6">
+      <button type="submit">Update password</button>
+    </form>
+    <p style="text-align:center; margin-top:1.25rem;">
+      <a href="#" onclick="switchPanel('signin'); return false;" style="font-size:.72rem; color:#aaa; text-decoration:none; letter-spacing:1px;">Back to sign in</a>
+    </p>
   </div>
 
   <p class="footer-note">Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,0.3)">CAR</span><span style="color:#8B3A2A">K</span></p>
+
+  <script>
+    function switchPanel(name) {
+      document.getElementById('panel-signin').style.display = name === 'signin' ? 'block' : 'none';
+      document.getElementById('panel-pw').style.display = name === 'pw' ? 'block' : 'none';
+    }
+    {% if pw_ok or pw_error %}
+    switchPanel('pw');
+    {% endif %}
+  </script>
 
 </body>
 </html>
