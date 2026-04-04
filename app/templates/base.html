@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#8B3A2A">
+  <meta name="theme-color" content="#0D1B10">
   <title>{% block title %}ParCark{% endblock %}</title>
   {% block meta %}
   <meta name="description" content="ParCark — white-labelled cashless parking for private estates and rural landowners.">
@@ -12,14 +12,15 @@
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root {
-      --accent:       #8B3A2A;
-      --accent-dark:  #6b2c1e;
-      --accent-light: #fdf0ee;
+      --accent:       #BF9640;
+      --accent-dark:  #9A7A2E;
+      --accent-light: #FAF5E8;
       --surface:      #ffffff;
-      --bg:           #f4f3f1;
-      --border:       #e2e0dc;
+      --bg:           #F4F2ED;
+      --border:       #E0DDD6;
       --text:         #111111;
-      --muted:        #787470;
+      --muted:        #716D66;
+      --nav-bg:       #0D1B10;
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -32,13 +33,15 @@
     }
 
     /* ── Navbar ── */
-    .navbar-brand { font-weight: 700; letter-spacing: 3px; }
+    .navbar.bg-dark,
+    .navbar.navbar-dark.bg-dark { background-color: var(--nav-bg) !important; }
+    .navbar-brand { font-weight: 800; letter-spacing: 4px; font-size: .88rem; text-transform: uppercase; }
 
     /* ── Cards ── */
     .card {
       border: 1px solid var(--border);
       border-radius: 4px;
-      box-shadow: 0 1px 3px rgba(0,0,0,.04);
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
       background: var(--surface);
     }
     .card-accent { border-left: 3px solid var(--accent); }
@@ -46,7 +49,7 @@
     /* ── Buttons ── */
     .btn { border-radius: 3px; font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: 600; }
     .btn-success, .btn-success:hover, .btn-success:focus, .btn-success:active {
-      background-color: var(--accent) !important; border-color: var(--accent) !important;
+      background-color: var(--accent) !important; border-color: var(--accent) !important; color: #fff !important;
     }
     .btn-primary, .btn-primary:hover, .btn-primary:focus {
       background-color: var(--accent) !important; border-color: var(--accent) !important;
@@ -62,13 +65,14 @@
       border-color: var(--border);
       border-radius: 3px;
       font-size: .88rem;
+      background: #fff;
     }
     .form-control:focus, .form-select:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(139,58,42,.1);
+      box-shadow: 0 0 0 3px rgba(191,150,64,.12);
     }
     .form-label {
-      font-size: .68rem;
+      font-size: .65rem;
       font-weight: 700;
       letter-spacing: 1.5px;
       text-transform: uppercase;
@@ -81,52 +85,44 @@
     .bg-success    { background-color: var(--accent) !important; }
     a              { color: var(--accent); }
     a:hover        { color: var(--accent-dark); }
-    .nav-link      { color: rgba(255,255,255,0.8) !important; }
+    .nav-link      { color: rgba(255,255,255,.75) !important; }
     .nav-link:hover{ color: #fff !important; }
 
     /* ── Section label ── */
     .section-tag {
-      font-size: .65rem; font-weight: 700; letter-spacing: 3px;
+      font-size: .63rem; font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; color: var(--accent); margin-bottom: .4rem;
     }
-
-    /* ── Stat cards ── */
-    .stat-card { border-left: 3px solid var(--accent); padding: 1.1rem 1.25rem; }
-    .stat-card .stat-label {
-      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--muted); margin-bottom: .4rem;
-    }
-    .stat-card .stat-value { font-size: 2rem; font-weight: 700; color: var(--text); line-height: 1; }
 
     /* ── Tables ── */
     .table { font-size: .88rem; }
     .table thead th {
-      font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      font-size: .63rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
       color: var(--muted); border-bottom: 2px solid var(--border);
       background: transparent; padding-top: .75rem; padding-bottom: .75rem;
     }
     .table td { vertical-align: middle; border-color: var(--border); }
-    .table-hover tbody tr:hover { background: #faf9f7; }
+    .table-hover tbody tr:hover { background: #faf9f6; }
 
     /* ── Geometric rule ── */
     .geo-rule { display: flex; align-items: center; gap: 1rem; margin: 2rem 0; }
     .geo-rule::before { content: ''; width: 24px; height: 3px; background: var(--accent); flex-shrink: 0; }
     .geo-rule::after  { content: ''; flex: 1; height: 1px; background: var(--border); }
     .geo-rule span {
-      font-size: .65rem; font-weight: 700; letter-spacing: 3px;
+      font-size: .63rem; font-weight: 700; letter-spacing: 3px;
       text-transform: uppercase; color: var(--muted); white-space: nowrap;
     }
 
-    /* ── Alert ── */
+    /* ── Alert helpers ── */
     .alert-parcark {
       background: var(--accent-light); border-left: 3px solid var(--accent);
-      color: var(--accent); font-size: .82rem; padding: .75rem 1rem;
-      border-radius: 3px; margin-bottom: 1.25rem; font-weight: 600;
+      color: var(--accent-dark); font-size: .82rem; padding: .75rem 1rem;
+      border-radius: 3px; font-weight: 600;
     }
     .alert-ok {
-      background: #e9f7ee; border-left: 3px solid #1a6b2a;
-      color: #1a6b2a; font-size: .82rem; padding: .75rem 1rem;
-      border-radius: 3px; margin-bottom: 1.25rem; font-weight: 600;
+      background: #e8f5ec; border-left: 3px solid #1a6b2a;
+      color: #155223; font-size: .82rem; padding: .75rem 1rem;
+      border-radius: 3px; font-weight: 600;
     }
   </style>
   {% block head %}{% endblock %}

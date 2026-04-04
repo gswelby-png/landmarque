@@ -3,19 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#000000">
   <meta name="description" content="ParCark — white-labelled cashless parking for private estates and rural landowners. QR code parking, no apps, no barriers.">
   <meta property="og:title" content="ParCark — Cashless Parking for Private Estates">
-  <meta property="og:description" content="White-labelled cashless parking for private estates across Surrey and beyond. QR code — driver pays in seconds.">
+  <meta property="og:description" content="White-labelled cashless parking for private estates. Your brand. Your revenue.">
   <meta property="og:type" content="website">
   <title>ParCark — Cashless Parking for Private Estates</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --red: #8B3A2A; }
+    :root {
+      --gold:      #BF9640;
+      --gold-dk:   #9A7A2E;
+      --dark:      #060C08;
+      --nav-bg:    #0D1B10;
+    }
 
     body {
-      background: #050505;
+      background: var(--dark);
       color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       min-height: 100vh;
@@ -31,22 +35,17 @@
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(5,5,5,0.92);
+      background: rgba(13,27,16,.96);
       backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.04);
+      border-bottom: 1px solid rgba(255,255,255,.05);
     }
 
-    .nav-logo {
-      display: flex;
-      align-items: center;
-      gap: .55rem;
-      text-decoration: none;
-    }
-    .nav-wordmark {
-      font-weight: 800;
-      letter-spacing: 4px;
+    .nav-brand {
       font-size: .92rem;
+      font-weight: 800;
+      letter-spacing: 5px;
       text-transform: uppercase;
+      text-decoration: none;
     }
 
     .nav-links {
@@ -55,23 +54,23 @@
       gap: 2rem;
     }
     .nav-links a {
-      color: rgba(255,255,255,.55);
+      color: rgba(255,255,255,.5);
       text-decoration: none;
-      font-size: .78rem;
+      font-size: .72rem;
       font-weight: 600;
-      letter-spacing: 1.5px;
+      letter-spacing: 2px;
       text-transform: uppercase;
       transition: color .15s;
     }
     .nav-links a:hover { color: #fff; }
     .nav-links .nav-cta {
-      background: var(--red);
+      background: var(--gold);
       color: #fff !important;
-      padding: .5rem 1.25rem;
+      padding: .5rem 1.4rem;
       border-radius: 3px;
       transition: filter .15s !important;
     }
-    .nav-links .nav-cta:hover { filter: brightness(115%); }
+    .nav-links .nav-cta:hover { filter: brightness(110%); }
 
     /* ── Hero ── */
     .hero {
@@ -81,114 +80,102 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 8rem 2rem 6rem;
+      padding: 8rem 2rem 5rem;
     }
 
-    .hero-mark {
-      margin-bottom: 2.5rem;
-    }
-
-    .hero-tag {
-      font-size: .7rem;
+    .hero-eyebrow {
+      font-size: .65rem;
       font-weight: 700;
       letter-spacing: 5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.3);
-      margin-bottom: 1.75rem;
+      color: rgba(255,255,255,.28);
+      margin-bottom: 2rem;
     }
 
     .hero-wordmark {
-      font-size: clamp(3rem, 10vw, 6rem);
+      font-size: clamp(3.5rem, 11vw, 7rem);
       font-weight: 800;
-      letter-spacing: 8px;
+      letter-spacing: clamp(6px, 2vw, 16px);
       text-transform: uppercase;
       line-height: 1;
-      margin-bottom: 1.5rem;
+      margin-bottom: 1.75rem;
     }
 
     .hero-rule {
-      width: 40px;
-      height: 2px;
-      background: var(--red);
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
       margin: 0 auto 2rem;
     }
 
     .hero-sub {
-      max-width: 480px;
-      font-size: 1.05rem;
+      max-width: 420px;
+      font-size: 1rem;
       font-weight: 300;
-      line-height: 1.8;
-      color: rgba(255,255,255,.6);
-      margin-bottom: 2.75rem;
-      letter-spacing: .2px;
+      line-height: 1.85;
+      color: rgba(255,255,255,.55);
+      margin-bottom: 3rem;
+      letter-spacing: .1px;
     }
 
     .hero-cta {
       display: inline-flex;
       align-items: center;
       gap: .6rem;
-      background: var(--red);
+      background: var(--gold);
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      font-size: .82rem;
-      letter-spacing: 2.5px;
+      font-size: .75rem;
+      letter-spacing: 3px;
       text-transform: uppercase;
       padding: 1rem 2.5rem;
       border-radius: 3px;
       transition: filter .2s;
     }
-    .hero-cta:hover { filter: brightness(115%); color: #fff; }
+    .hero-cta:hover { filter: brightness(110%); color: #fff; }
 
-    /* ── Stats strip ── */
-    .stats-strip {
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      padding: 3rem 2rem;
+    /* ── Value strip ── */
+    .value-strip {
+      border-top: 1px solid rgba(255,255,255,.05);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      padding: 2.75rem 2rem;
       display: flex;
       justify-content: center;
-      gap: 5rem;
+      gap: 4rem;
       flex-wrap: wrap;
     }
-    .stat-item { text-align: center; }
-    .stat-n {
-      font-size: 2rem;
+    .val-item { text-align: center; }
+    .val-n {
+      font-size: 1.6rem;
       font-weight: 800;
-      color: #fff;
+      color: var(--gold);
       letter-spacing: -1px;
       line-height: 1;
-      margin-bottom: .35rem;
+      margin-bottom: .4rem;
     }
-    .stat-n span { color: var(--red); }
-    .stat-l {
-      font-size: .65rem;
-      font-weight: 600;
+    .val-l {
+      font-size: .6rem;
+      font-weight: 700;
       letter-spacing: 3px;
       text-transform: uppercase;
-      color: rgba(255,255,255,.3);
+      color: rgba(255,255,255,.28);
     }
 
     /* ── Section ── */
     .section {
       padding: 6rem 2rem;
-      max-width: 920px;
+      max-width: 880px;
       margin: 0 auto;
     }
     .section-header { text-align: center; margin-bottom: 4rem; }
     .section-header .tag {
-      font-size: .68rem;
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: .75rem;
+      font-size: .63rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--gold); margin-bottom: .75rem;
     }
     .section-header h2 {
-      font-size: clamp(1.6rem, 4vw, 2.2rem);
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #fff;
+      font-size: clamp(1.5rem, 4vw, 2rem);
+      font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff;
     }
 
     /* ── Steps ── */
@@ -197,135 +184,89 @@
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
       gap: 2.5rem;
     }
-    .step {
-      border-top: 1px solid rgba(255,255,255,.08);
-      padding-top: 1.5rem;
-      position: relative;
-    }
+    .step { position: relative; padding-top: 1.5rem; }
     .step::before {
       content: '';
-      position: absolute;
-      top: -1px; left: 0;
-      width: 32px; height: 2px;
-      background: var(--red);
+      position: absolute; top: 0; left: 0;
+      width: 28px; height: 1px; background: var(--gold);
     }
     .step-num {
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: var(--red);
-      text-transform: uppercase;
-      margin-bottom: .75rem;
+      font-size: .6rem; font-weight: 700; letter-spacing: 3px;
+      color: var(--gold); text-transform: uppercase; margin-bottom: .75rem;
     }
-    .step h3 {
-      font-size: .95rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-      margin-bottom: .6rem;
-      color: #fff;
-    }
-    .step p {
-      font-size: .85rem;
-      font-weight: 300;
-      color: rgba(255,255,255,.5);
-      line-height: 1.75;
-    }
+    .step h3 { font-size: .9rem; font-weight: 700; letter-spacing: .5px; margin-bottom: .6rem; color: #fff; }
+    .step p { font-size: .82rem; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.8; }
 
     /* ── For who ── */
-    .for-who {
+    .for-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
       gap: 1px;
-      background: rgba(255,255,255,.06);
-      border: 1px solid rgba(255,255,255,.06);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.05);
       border-radius: 4px;
       overflow: hidden;
     }
     .for-item {
-      background: #0c0c0c;
+      background: #0C150E;
       padding: 1.75rem 1.5rem;
     }
-    .for-icon {
-      width: 32px;
-      height: 32px;
-      background: rgba(139,58,42,.15);
-      border-radius: 3px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 1rem;
-    }
-    .for-item h4 {
-      font-size: .88rem;
-      font-weight: 700;
-      letter-spacing: .5px;
-      color: #fff;
-      margin-bottom: .35rem;
-    }
-    .for-item p {
-      font-size: .78rem;
-      font-weight: 300;
-      color: rgba(255,255,255,.4);
-      line-height: 1.6;
+    .for-item h4 { font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+    .for-item p { font-size: .78rem; font-weight: 300; color: rgba(255,255,255,.38); line-height: 1.65; }
+    .for-label {
+      font-size: .58rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: .65rem;
     }
 
     /* ── Footer ── */
     footer {
-      border-top: 1px solid rgba(255,255,255,.06);
-      padding: 2.5rem 2.5rem;
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 2.25rem 2.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
       flex-wrap: wrap;
       gap: 1rem;
     }
-    footer .foot-logo {
-      display: flex;
-      align-items: center;
-      gap: .5rem;
-      text-decoration: none;
-    }
-    footer .foot-wordmark {
+    .foot-brand {
       font-size: .78rem;
-      font-weight: 700;
-      letter-spacing: 3px;
+      font-weight: 800;
+      letter-spacing: 4px;
       text-transform: uppercase;
+      text-decoration: none;
     }
     .foot-links {
       display: flex;
       gap: 2rem;
       align-items: center;
+      flex-wrap: wrap;
     }
     .foot-links a {
-      color: rgba(255,255,255,.25);
+      color: rgba(255,255,255,.22);
       text-decoration: none;
-      font-size: .72rem;
+      font-size: .68rem;
       font-weight: 300;
-      letter-spacing: .5px;
       transition: color .15s;
     }
-    .foot-links a:hover { color: rgba(255,255,255,.6); }
+    .foot-links a:hover { color: rgba(255,255,255,.55); }
+    .foot-copy {
+      font-size: .65rem;
+      color: rgba(255,255,255,.15);
+      font-weight: 300;
+    }
 
     @media (max-width: 600px) {
       nav { padding: 1.2rem 1.25rem; }
       .nav-links a:not(.nav-cta) { display: none; }
-      .stats-strip { gap: 2.5rem; }
+      .value-strip { gap: 2rem; }
       footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
   <nav>
-    <a href="/" class="nav-logo">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
-        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
-        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
-      </svg>
-      <span class="nav-wordmark"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></span>
-    </a>
+    <a href="/" class="nav-brand"><span style="color:#BF9640">PAR</span><span style="color:#fff">CAR</span><span style="color:#BF9640">K</span></a>
     <div class="nav-links">
       <a href="/owner/login">Owner login</a>
       <a href="mailto:info@parcark.co.uk" class="nav-cta">Get in touch</a>
@@ -334,16 +275,9 @@
 
   <!-- Hero -->
   <section class="hero">
-    <div class="hero-mark">
-      <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.2"/>
-        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
-        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
-      </svg>
-    </div>
-    <p class="hero-tag">Cashless parking — simply done</p>
+    <p class="hero-eyebrow">Cashless parking — simply done</p>
     <h1 class="hero-wordmark">
-      <span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span>
+      <span style="color:#BF9640">PAR</span><span style="color:#fff">CAR</span><span style="color:#BF9640">K</span>
     </h1>
     <div class="hero-rule"></div>
     <p class="hero-sub">
@@ -351,27 +285,27 @@
     </p>
     <a href="mailto:info@parcark.co.uk" class="hero-cta">
       Get in touch
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
   </section>
 
-  <!-- Stats -->
-  <div class="stats-strip">
-    <div class="stat-item">
-      <div class="stat-n">2<span>min</span></div>
-      <div class="stat-l">Setup to live</div>
+  <!-- Value strip -->
+  <div class="value-strip">
+    <div class="val-item">
+      <div class="val-n">£0</div>
+      <div class="val-l">Upfront cost</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-n">0<span>£</span></div>
-      <div class="stat-l">Upfront cost</div>
+    <div class="val-item">
+      <div class="val-n">100%</div>
+      <div class="val-l">Your branding</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-n">100<span>%</span></div>
-      <div class="stat-l">Your branding</div>
+    <div class="val-item">
+      <div class="val-n">Zero</div>
+      <div class="val-l">Hardware needed</div>
     </div>
-    <div class="stat-item">
-      <div class="stat-n">24<span>/7</span></div>
-      <div class="stat-l">Automated</div>
+    <div class="val-item">
+      <div class="val-n">Monthly</div>
+      <div class="val-l">Automated payouts</div>
     </div>
   </div>
 
@@ -385,7 +319,7 @@
       <div class="step">
         <p class="step-num">01</p>
         <h3>We set you up</h3>
-        <p>Your branded parking page is live in days. Your name, your colours, your car park.</p>
+        <p>Your branded parking page is live within days. Your name, your colours, your car park.</p>
       </div>
       <div class="step">
         <p class="step-num">02</p>
@@ -400,7 +334,7 @@
       <div class="step">
         <p class="step-num">04</p>
         <h3>Revenue lands</h3>
-        <p>Your share lands in your account automatically. No invoices, no chasing.</p>
+        <p>Your share arrives in your account automatically, every month. No invoices, no chasing.</p>
       </div>
     </div>
   </section>
@@ -411,54 +345,38 @@
       <p class="tag">Who it's for</p>
       <h2>Built for private land</h2>
     </div>
-    <div class="for-who">
+    <div class="for-grid">
       <div class="for-item">
-        <div class="for-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        </div>
+        <p class="for-label">Estates</p>
         <h4>Country estates</h4>
         <p>Manage multiple car parks across your estate from one dashboard.</p>
       </div>
       <div class="for-item">
-        <div class="for-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        </div>
+        <p class="for-label">Countryside</p>
         <h4>Nature reserves</h4>
-        <p>Capture parking revenue from walkers and day visitors without staff.</p>
+        <p>Capture revenue from walkers and day visitors without staff on site.</p>
       </div>
       <div class="for-item">
-        <div class="for-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        </div>
+        <p class="for-label">Venues</p>
         <h4>Rural venues</h4>
         <p>Farm shops, vineyards, heritage sites — any venue with a car park.</p>
       </div>
       <div class="for-item">
-        <div class="for-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-        </div>
+        <p class="for-label">Community</p>
         <h4>Parish councils</h4>
-        <p>Village car parks, community land — transparent revenue reporting.</p>
+        <p>Village car parks and community land with transparent revenue reporting.</p>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
-    <a href="/" class="foot-logo">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
-        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
-        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
-      </svg>
-      <span class="foot-wordmark"><span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.25)">CAR</span><span style="color:#8B3A2A">K</span></span>
-    </a>
+    <a href="/" class="foot-brand"><span style="color:#BF9640">PAR</span><span style="color:rgba(255,255,255,.25)">CAR</span><span style="color:#BF9640">K</span></a>
     <div class="foot-links">
       <a href="mailto:info@parcark.co.uk">info@parcark.co.uk</a>
       <a href="/owner/login">Owner login</a>
       <a href="/admin/login">Admin</a>
-      <span style="color:rgba(255,255,255,.15); font-size:.7rem;">&copy; 2026 ParCark Ltd &middot; Surrey, UK</span>
     </div>
+    <span class="foot-copy">&copy; 2026 ParCark Ltd &middot; Surrey, UK</span>
   </footer>
 
 </body>

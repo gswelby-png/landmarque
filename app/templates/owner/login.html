@@ -9,147 +9,77 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
-      background: #050505;
+      background: #060C08;
       min-height: 100vh;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
       padding: 2rem 1rem;
       -webkit-font-smoothing: antialiased;
     }
-
-    .brand {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-bottom: 2.25rem;
-    }
-    .brand-mark { margin-bottom: .9rem; }
+    .brand { text-align: center; margin-bottom: 2.25rem; }
     .brand-wordmark {
-      font-size: 1.5rem;
-      font-weight: 800;
-      letter-spacing: 6px;
-      text-transform: uppercase;
+      font-size: 1.6rem; font-weight: 800;
+      letter-spacing: 7px; text-transform: uppercase; line-height: 1;
     }
     .brand-sub {
-      font-size: .62rem;
-      font-weight: 600;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.25);
-      margin-top: .5rem;
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: rgba(255,255,255,.22); margin-top: .55rem;
     }
-
     .panel {
-      background: #fff;
-      border-radius: 4px;
-      padding: 2.25rem 2rem;
-      width: 100%;
-      max-width: 380px;
-      box-shadow: 0 16px 48px rgba(0,0,0,.5);
-      border-top: 2px solid #8B3A2A;
+      background: #fff; border-radius: 4px; padding: 2.25rem 2rem;
+      width: 100%; max-width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,.55);
+      border-top: 2px solid #BF9640;
     }
     .panel-title {
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      color: #999;
-      margin-bottom: 1.5rem;
+      font-size: .63rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: #999; margin-bottom: 1.5rem;
     }
     .alert {
-      font-size: .8rem;
-      padding: .7rem 1rem;
-      margin-bottom: 1.25rem;
-      border-radius: 3px;
-      font-weight: 600;
+      font-size: .8rem; padding: .7rem 1rem; margin-bottom: 1.25rem;
+      border-radius: 3px; font-weight: 600;
     }
-    .alert-err { background: #fdf0ee; border-left: 3px solid #8B3A2A; color: #8B3A2A; }
-    .alert-ok  { background: #e9f7ee; border-left: 3px solid #1a6b2a; color: #1a6b2a; }
-
+    .alert-err { background: #fdf5e8; border-left: 3px solid #BF9640; color: #7a5f20; }
+    .alert-ok  { background: #e8f5ec; border-left: 3px solid #1a6b2a; color: #155223; }
     label {
-      display: block;
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      color: #777;
-      margin-bottom: .3rem;
+      display: block; font-size: .63rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: uppercase; color: #777; margin-bottom: .3rem;
     }
     input {
-      width: 100%;
-      border: 1px solid #ddd;
-      border-radius: 3px;
-      padding: .75rem 1rem;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-size: .9rem;
-      color: #111;
-      outline: none;
-      margin-bottom: 1rem;
-      transition: border-color .15s;
-      background: #fff;
+      width: 100%; border: 1px solid #ddd; border-radius: 3px;
+      padding: .75rem 1rem; font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: .9rem; color: #111; outline: none; margin-bottom: 1rem;
+      transition: border-color .15s; background: #fff;
     }
-    input:focus { border-color: #8B3A2A; box-shadow: 0 0 0 3px rgba(139,58,42,.08); }
-
+    input:focus { border-color: #BF9640; box-shadow: 0 0 0 3px rgba(191,150,64,.1); }
     .btn-submit {
-      width: 100%;
-      background: #111;
-      border: none;
-      color: #fff;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: .78rem;
-      letter-spacing: 2.5px;
-      text-transform: uppercase;
-      padding: .85rem;
-      border-radius: 3px;
-      cursor: pointer;
-      transition: background .15s;
+      width: 100%; background: #111; border: none; color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: 700;
+      font-size: .75rem; letter-spacing: 3px; text-transform: uppercase;
+      padding: .9rem; border-radius: 3px; cursor: pointer; transition: background .15s;
     }
-    .btn-submit:hover { background: #8B3A2A; }
-
-    .panel-footer {
-      text-align: center;
-      margin-top: 1.25rem;
-    }
+    .btn-submit:hover { background: #BF9640; }
+    .panel-footer { text-align: center; margin-top: 1.25rem; }
     .panel-footer a {
-      font-size: .68rem;
-      color: #bbb;
-      text-decoration: none;
-      letter-spacing: .5px;
-      transition: color .15s;
+      font-size: .65rem; color: #bbb; text-decoration: none;
+      letter-spacing: .5px; transition: color .15s;
     }
-    .panel-footer a:hover { color: #8B3A2A; }
-
+    .panel-footer a:hover { color: #BF9640; }
     .powered {
-      margin-top: 2rem;
-      font-size: .65rem;
-      color: rgba(255,255,255,.15);
-      font-weight: 300;
-      letter-spacing: 1px;
-      display: flex;
-      align-items: center;
-      gap: .4rem;
+      margin-top: 2rem; font-size: .62rem; color: rgba(255,255,255,.15);
+      font-weight: 300; letter-spacing: 1px;
     }
   </style>
 </head>
 <body>
-
   <div class="brand">
-    <div class="brand-mark">
-      <svg width="36" height="36" viewBox="0 0 24 24" fill="none">
-        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
-        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
-        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
-      </svg>
+    <div class="brand-wordmark">
+      <span style="color:#BF9640">PAR</span><span style="color:#fff">CAR</span><span style="color:#BF9640">K</span>
     </div>
-    <div class="brand-wordmark"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></div>
     <div class="brand-sub">Owner Portal</div>
   </div>
 
-  <!-- Sign in panel -->
   <div class="panel" id="panel-signin">
     <div class="panel-title">Sign in to your account</div>
     {% if error %}<div class="alert alert-err">{{ error }}</div>{% endif %}
@@ -165,14 +95,10 @@
     </div>
   </div>
 
-  <!-- Change password panel -->
   <div class="panel" id="panel-pw" style="display:none;">
     <div class="panel-title">Change password</div>
-    {% if pw_ok %}
-    <div class="alert alert-ok">Password updated — please sign in.</div>
-    {% elif pw_error %}
-    <div class="alert alert-err">Incorrect email or password.</div>
-    {% endif %}
+    {% if pw_ok %}<div class="alert alert-ok">Password updated — please sign in.</div>{% endif %}
+    {% if pw_error %}<div class="alert alert-err">Incorrect email or current password.</div>{% endif %}
     <form method="post" action="/owner/reset-password">
       <label>Email</label>
       <input type="email" name="email" required autocomplete="email">
@@ -187,14 +113,7 @@
     </div>
   </div>
 
-  <p class="powered">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-      <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
-      <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
-      <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
-    </svg>
-    <span style="color:#8B3A2A">PAR</span><span>CAR</span><span style="color:#8B3A2A">K</span>
-  </p>
+  <p class="powered"><span style="color:#BF9640">PAR</span>CAR<span style="color:#BF9640">K</span></p>
 
   <script>
     function switchPanel(name) {
