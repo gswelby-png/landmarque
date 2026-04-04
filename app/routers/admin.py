@@ -342,6 +342,105 @@ def reset_owner_password(
     return RedirectResponse("/admin/dashboard", status_code=303)
 
 
+# ── Car Parks ────────────────────────────────────────────────────────────────
+
+@router.get("/car-parks/new", response_class=HTMLResponse)
+def new_car_park_page(request: Request, db: Session = Depends(get_db)):
+    current_admin(request, db)
+    owners = db.query(Owner).filter(Owner.is_active == True).order_by(Owner.name).all()
+    owner_list = [{"id": o.id, "name": o.name} for o in owners]
+    return templates.TemplateResponse("admin/car_park_form.html", {
+        "request": request, "owners": owner_list, "error": None
+    })
+
+
+@router.post("/car-parks/new")
+def create_car_park(
+    request: Request,
+    owner_id: int = Form(...),
+    name: str = Form(...),
+    slug: str = Form(...),
+    address: str = Form(""),
+    db: Session = Depends(get_db),
+):
+    current_admin(request, db)
+    slug = slug.lower().replace(" ", "-")
+    if db.query(CarPark).filter(CarPark.slug == slug).first():
+        owners = db.query(Owner).filter(Owner.is_active == True).order_by(Owner.name).all()
+        return templates.TemplateResponse("admin/car_park_form.html", {
+            "request": request,
+            "owners": [{"id": o.id, "name": o.name} for o in owners],
+            "error": f"Slug '{slug}' is already taken",
+        })
+    cp = CarPark(owner_id=owner_id, name=name, slug=slug, address=address)
+    db.add(cp)
+    db.commit()
+    return RedirectResponse("/admin/dashboard", status_code=303)
+
+
+@router.get("/car-parks/{cp_id}/branding", response_class=HTMLResponse)
+def branding_page(cp_id: int, request: Request, db: Session = Depends(get_db)):
+    current_admin(request, db)
+    cp = db.query(CarPark).filter(CarPark.id == cp_id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    owner = db.query(Owner).filter(Owner.id == cp.owner_id).first()
+    data = {
+        "id": cp.id,
+        "name": cp.name,
+        "owner_name": owner.name if owner else "",
+        "logo_url": cp.logo_url or "",
+        "welcome_text": cp.welcome_text or "",
+        "brand_primary": cp.brand_primary or "#1e3a1e",
+        "brand_accent": cp.brand_accent or "#c8a84b",
+        "brand_text": cp.brand_text or "#ffffff",
+        "tagline": cp.tagline or "",
+    }
+    return templates.TemplateResponse("admin/car_park_branding_form.html", {
+        "request": request, "cp": data, "saved": False
+    })
+
+
+@router.post("/car-parks/{cp_id}/branding")
+def update_branding(
+    cp_id: int,
+    request: Request,
+    logo_url: str = Form(""),
+    welcome_text: str = Form(""),
+    tagline: str = Form(""),
+    brand_primary: str = Form("#1e3a1e"),
+    brand_accent: str = Form("#c8a84b"),
+    brand_text: str = Form("#ffffff"),
+    db: Session = Depends(get_db),
+):
+    current_admin(request, db)
+    cp = db.query(CarPark).filter(CarPark.id == cp_id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    cp.logo_url = logo_url.strip() or None
+    cp.welcome_text = welcome_text.strip() or None
+    cp.tagline = tagline.strip() or None
+    cp.brand_primary = brand_primary or "#1e3a1e"
+    cp.brand_accent = brand_accent or "#c8a84b"
+    cp.brand_text = brand_text or "#ffffff"
+    db.commit()
+    owner = db.query(Owner).filter(Owner.id == cp.owner_id).first()
+    data = {
+        "id": cp.id,
+        "name": cp.name,
+        "owner_name": owner.name if owner else "",
+        "logo_url": cp.logo_url or "",
+        "welcome_text": cp.welcome_text or "",
+        "brand_primary": cp.brand_primary,
+        "brand_accent": cp.brand_accent,
+        "brand_text": cp.brand_text,
+        "tagline": cp.tagline or "",
+    }
+    return templates.TemplateResponse("admin/car_park_branding_form.html", {
+        "request": request, "cp": data, "saved": True
+    })
+
+
 # ── Export ────────────────────────────────────────────────────────────────────
 
 @router.get("/export-csv")

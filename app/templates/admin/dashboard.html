@@ -161,7 +161,10 @@
 <!-- Estates -->
 <div class="d-flex align-items-center justify-content-between mb-3">
   <p class="sec mb-0">Estates</p>
-  <a href="/admin/owners/new" class="act" style="text-decoration:none;">+ Add estate</a>
+  <div class="d-flex gap-2">
+    <a href="/admin/car-parks/new" class="act" style="text-decoration:none;">+ Add car park</a>
+    <a href="/admin/owners/new" class="act" style="text-decoration:none;">+ Add estate</a>
+  </div>
 </div>
 <div class="card mb-5">
   <div class="table-responsive">
@@ -208,7 +211,7 @@
 
         <!-- Car parks expand -->
         <tr class="exp-row" id="exp-{{ o.id }}">
-          <td colspan="8">
+          <td colspan="9">
             <div class="exp-inner">
               {% if o.car_parks %}
               <table class="cp-tbl">
@@ -221,6 +224,7 @@
                     <th>All-time</th>
                     <th>Transactions</th>
                     <th>Warden URL</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody>
@@ -241,6 +245,9 @@
                     <td>
                       <span style="font-family:monospace; font-size:.72rem; color:var(--muted);">/check/{{ cp.slug }}</span>
                     </td>
+                    <td>
+                      <a href="/admin/car-parks/{{ cp.id }}/branding" class="act" style="text-decoration:none;">Branding</a>
+                    </td>
                   </tr>
                   {% endfor %}
                 </tbody>
@@ -254,7 +261,7 @@
 
         <!-- Reset PW row -->
         <tr class="pw-row" id="pw-{{ o.id }}">
-          <td colspan="8">
+          <td colspan="9">
             <form method="post" action="/admin/owners/{{ o.id }}/reset-password" class="pw-form">
               <span style="font-size:.72rem; color:var(--muted);">New password for <b>{{ o.name }}</b></span>
               <input type="password" name="new_password" placeholder="New password" required minlength="6" autocomplete="new-password">
@@ -265,7 +272,7 @@
         </tr>
 
         {% else %}
-        <tr><td colspan="8" style="text-align:center; color:var(--muted); padding:2.5rem;">No estates yet.</td></tr>
+        <tr><td colspan="9" style="text-align:center; color:var(--muted); padding:2.5rem;">No estates yet.</td></tr>
         {% endfor %}
       </tbody>
     </table>

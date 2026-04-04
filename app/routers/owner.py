@@ -217,6 +217,7 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
                 {
                     "plate": t.number_plate,
                     "duration": "All day" if t.is_all_day else f"{t.duration_hours} hour{'s' if t.duration_hours > 1 else ''}",
+                    "amount": f"£{t.owner_amount_pence / 100:.2f}",
                     "expires": (
                         make_aware(t.parked_at).replace(hour=23, minute=59, second=0).strftime("%d %b %Y %H:%M")
                         if t.is_all_day and t.parked_at

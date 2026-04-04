@@ -16,6 +16,20 @@ from app.auth import hash_password
 models.Base.metadata.create_all(bind=engine)
 
 
+def migrate():
+    """Add new columns to existing tables without dropping data."""
+    from sqlalchemy import inspect, text
+    inspector = inspect(engine)
+    columns = [c["name"] for c in inspector.get_columns("car_parks")]
+    with engine.connect() as conn:
+        if "logo_url" not in columns:
+            conn.execute(text("ALTER TABLE car_parks ADD COLUMN logo_url VARCHAR"))
+            conn.commit()
+        if "welcome_text" not in columns:
+            conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
+            conn.commit()
+
+
 def seed():
     db = SessionLocal()
     try:
@@ -111,6 +125,7 @@ def seed():
         db.close()
 
 
+migrate()
 seed()
 
 app = FastAPI(title="ParCark")

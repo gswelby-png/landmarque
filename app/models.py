@@ -59,6 +59,8 @@ class CarPark(Base):
     brand_primary = Column(String, nullable=False, default="#1a3a2a")   # header bg
     brand_accent = Column(String, nullable=False, default="#c8a84b")    # buttons
     brand_text = Column(String, nullable=False, default="#ffffff")      # header text
+    logo_url = Column(String, nullable=True)
+    welcome_text = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 

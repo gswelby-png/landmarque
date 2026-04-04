@@ -42,6 +42,8 @@ def park_landing(slug: str, request: Request, db: Session = Depends(get_db)):
         "car_park_slug": car_park.slug,
         "car_park_tagline": car_park.tagline,
         "estate_name": car_park.owner.name,
+        "logo_url": car_park.logo_url or "",
+        "welcome_text": car_park.welcome_text or "",
         "brand": brand,
         "options": options,
     }
@@ -83,6 +85,8 @@ async def create_checkout(
         "number_plate": number_plate.upper().replace(" ", ""),
         "duration_label": duration_label,
         "amount": f"£{amount_pence / 100:.2f}",
+        "logo_url": car_park.logo_url or "",
+        "welcome_text": car_park.welcome_text or "",
         "brand": brand,
     }
     return templates.TemplateResponse("driver/payment_mockup.html", context)

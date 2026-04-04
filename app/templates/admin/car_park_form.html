@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}New Car Park — ParCark Admin{% endblock %}
+
+{% block navbar %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/admin/dashboard"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span> Admin</a>
+  </div>
+</nav>
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center mt-5 pt-3">
+  <div class="col-md-5">
+    <div class="d-flex align-items-center justify-content-between mb-4">
+      <h4 class="fw-bold mb-0">New car park</h4>
+      <a href="/admin/dashboard" style="font-size:.72rem; color:var(--muted); text-decoration:none;">&#8592; Dashboard</a>
+    </div>
+    <div class="card p-4">
+      {% if error %}
+      <div style="background:#fdf0ee; border-left:3px solid var(--accent); color:var(--accent); font-size:.82rem; padding:.75rem 1rem; border-radius:2px; margin-bottom:1.25rem;">{{ error }}</div>
+      {% endif %}
+      <form method="post" action="/admin/car-parks/new">
+        <div class="mb-3">
+          <label class="form-label">Estate owner</label>
+          <select name="owner_id" class="form-select" required>
+            <option value="" disabled selected>Select owner…</option>
+            {% for o in owners %}
+            <option value="{{ o.id }}">{{ o.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Car park name</label>
+          <input type="text" name="name" class="form-control" required placeholder="e.g. North Field Car Park"
+                 oninput="suggestSlug(this.value)">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">URL slug <span style="font-weight:400; color:var(--muted); font-size:.8rem;">(used in /park/… and /check/…)</span></label>
+          <input type="text" name="slug" id="slug-input" class="form-control" required
+                 placeholder="e.g. north-field"
+                 pattern="[a-z0-9\-]+"
+                 title="Lowercase letters, numbers and hyphens only">
+          <div class="form-text">Drivers visit <code>/park/&lt;slug&gt;</code></div>
+        </div>
+        <div class="mb-4">
+          <label class="form-label">Address <span style="font-weight:400; color:var(--muted); font-size:.8rem;">(optional)</span></label>
+          <input type="text" name="address" class="form-control" placeholder="e.g. Shere, Surrey, GU5">
+        </div>
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-dark">Create car park</button>
+          <a href="/admin/dashboard" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+    <p style="font-size:.75rem; color:var(--muted); margin-top:1rem;">
+      After creating, set pricing rules via the owner dashboard or ask the owner to log in and add them.
+    </p>
+  </div>
+</div>
+
+<script>
+function suggestSlug(name) {
+  const slug = name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  const inp = document.getElementById('slug-input');
+  if (!inp._edited) inp.value = slug;
+}
+document.getElementById('slug-input').addEventListener('input', () => {
+  document.getElementById('slug-input')._edited = true;
+});
+</script>
+{% endblock %}

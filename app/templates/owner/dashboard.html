@@ -7,6 +7,11 @@
     <a class="navbar-brand" href="/"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
     <div class="d-flex align-items-center gap-3">
       <span style="color:rgba(255,255,255,.6); font-size:.8rem; letter-spacing:.5px;">{{ owner_name }}</span>
+      <button onclick="togglePwPanel()" title="Change password" style="display:flex; align-items:center; opacity:.7; transition:opacity .15s; background:none; border:none; padding:0; cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
+        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+        </svg>
+      </button>
       <a href="/owner/logout" title="Sign out" style="display:flex; align-items:center; opacity:.7; transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
         <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
           <circle cx="12" cy="12" r="10"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19.5a6 6 0 0 1 11 0"/>
@@ -105,10 +110,33 @@
   .log-table th { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .5rem .75rem; border-bottom: 1px solid var(--border); text-align: left; }
   .log-table td { padding: .55rem .75rem; font-size: .85rem; border-bottom: 1px solid #f3f2f0; }
   .log-table tbody tr:last-child td { border-bottom: none; }
+
+  /* ── Change password panel ── */
+  .pw-panel { display: none; background: #1a1a1a; border-bottom: 1px solid #333; }
+  .pw-panel-inner { max-width: 1320px; margin: 0 auto; padding: .85rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
+  .pw-panel label { font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 0; }
+  .pw-panel input { background: #2a2a2a; border: 1px solid #444; border-radius: 3px; color: #fff; font-family: 'Raleway',sans-serif; font-size: .82rem; padding: .35rem .75rem; width: 160px; outline: none; }
+  .pw-panel input:focus { border-color: var(--accent); }
+  .pw-panel-msg { font-size: .75rem; margin-left: .5rem; }
 </style>
 {% endblock %}
 
 {% block content %}
+
+<!-- Change password slide-down panel -->
+<div class="pw-panel" id="pw-panel">
+  <div class="pw-panel-inner">
+    <form method="post" action="/owner/change-password" class="d-flex align-items-center gap-2 flex-wrap">
+      <label>Change password</label>
+      <input type="password" name="current_password" placeholder="Current password" required minlength="1" autocomplete="current-password">
+      <input type="password" name="new_password" placeholder="New password" required minlength="6" autocomplete="new-password">
+      <button type="submit" class="act" style="font-size:.68rem; font-weight:700; letter-spacing:.5px; padding:.3rem .75rem; border-radius:3px; border:1px solid var(--accent); color:var(--accent); background:none; cursor:pointer;">Set</button>
+      <button type="button" onclick="togglePwPanel()" style="font-size:.68rem; color:rgba(255,255,255,.4); background:none; border:none; cursor:pointer; padding:.3rem .5rem;">Cancel</button>
+      {% if pw_ok %}<span class="pw-panel-msg" style="color:#4caf50;">Password updated.</span>{% endif %}
+      {% if pw_error %}<span class="pw-panel-msg" style="color:#e57373;">Incorrect current password or password too short.</span>{% endif %}
+    </form>
+  </div>
+</div>
 
 <!-- Heading -->
 <div class="d-flex align-items-center justify-content-between mt-5 pt-3 mb-4">
@@ -184,19 +212,28 @@
       <div class="tab-pane active" id="tab-{{ cp.id }}-settings">
 
         {% if cp.rules %}
+        <div class="table-responsive">
         <table class="pricing-table">
           <thead>
-            <tr><th>Day type</th><th>Hourly</th><th>Max hrs</th><th>All day</th><th>From</th><th>To</th><th></th></tr>
+            <tr>
+              <th>Day type</th>
+              <th>Hourly</th>
+              <th class="d-none d-md-table-cell">Max hrs</th>
+              <th>All day</th>
+              <th class="d-none d-md-table-cell">From</th>
+              <th class="d-none d-md-table-cell">To</th>
+              <th></th>
+            </tr>
           </thead>
           <tbody>
             {% for r in cp.rules %}
             <tr>
               <td>{{ r.day_type }}</td>
               <td>{{ r.hourly }}</td>
-              <td>{{ r.max_hours }}</td>
+              <td class="d-none d-md-table-cell">{{ r.max_hours }}</td>
               <td>{{ r.all_day }}</td>
-              <td>{{ r.valid_from }}</td>
-              <td>{{ r.valid_to }}</td>
+              <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
+              <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
               <td style="width:2rem; text-align:center;">
                 <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')">
                   <button type="submit" class="btn-del">&#10005;</button>
@@ -206,6 +243,7 @@
             {% endfor %}
           </tbody>
         </table>
+        </div>
         {% else %}
         <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
         {% endif %}
@@ -249,25 +287,29 @@
       <!-- Parking log -->
       <div class="tab-pane" id="tab-{{ cp.id }}-log">
         {% if cp.transactions %}
+        <div class="table-responsive">
         <table class="log-table">
           <thead>
             <tr>
-              <th style="width:34%;">Plate</th>
-              <th style="width:33%;">Duration</th>
-              <th style="width:33%;">Expires</th>
+              <th style="width:25%;">Plate</th>
+              <th style="width:20%;">Duration</th>
+              <th style="width:15%;">Amount</th>
+              <th style="width:40%;">Expires</th>
             </tr>
           </thead>
           <tbody>
             {% for t in cp.transactions %}
-            {% set c = "#1a6b2a" if t.active else "#8B3A2A" %}
+            {% set c = "#1a6b2a" if t.active else "var(--text)" %}
             <tr>
               <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
               <td style="color:{{ c }};">{{ t.duration }}</td>
-              <td style="color:{{ c }};">{{ t.expires }}</td>
+              <td style="font-weight:700; color:{{ c }};">{{ t.amount }}</td>
+              <td style="color:{{ c }}; font-size:.78rem;">{{ t.expires }}</td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
+        </div>
         {% else %}
         <p style="padding:1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No parking recorded yet.</p>
         {% endif %}
@@ -291,6 +333,20 @@
 <script>
 // Auto-refresh every 3 minutes to keep live counts current
 setTimeout(() => location.reload(), 180000);
+
+function togglePwPanel() {
+  const p = document.getElementById('pw-panel');
+  const open = p.style.display === 'block';
+  p.style.display = open ? 'none' : 'block';
+  if (!open) p.querySelector('input').focus();
+}
+
+// Auto-open panel if there's a pw message
+{% if pw_ok or pw_error %}
+document.addEventListener('DOMContentLoaded', () => {
+  document.getElementById('pw-panel').style.display = 'block';
+});
+{% endif %}
 
 function toggleDetail(id, btn) {
   const body = document.getElementById('body-' + id);

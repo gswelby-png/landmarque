@@ -179,14 +179,13 @@
   <div style="max-width:520px; margin:0 auto; padding: 0 1rem;">
 
     <div class="estate-header">
-      <img src="https://sheremanorestate.co.uk/images/default/logo_sticky.svg"
-           alt="{{ estate_name }}" class="estate-logo">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
+      {% endif %}
       <h1 class="estate-name">{{ estate_name }}</h1>
       <p class="car-park-name">{{ car_park_name }}</p>
       <p class="estate-welcome">
-        Welcome! We would be very grateful if you could make secure payment for parking on this app.
-        Your contribution will go towards the upkeep of the public facilities that we provide
-        around Shere and Holmbury Hill.
+        {% if welcome_text %}{{ welcome_text }}{% else %}Thank you for paying to park here.{% endif %}
       </p>
     </div>
 
