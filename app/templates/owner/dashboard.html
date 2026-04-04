@@ -146,11 +146,11 @@
           </thead>
           <tbody>
             {% for t in cp.transactions %}
-            {% set row_colour = "#1a6b2a" if t.active else "#8B3A2A" %}
-            <tr style="color:{{ row_colour }};">
-              <td style="letter-spacing:1px; font-weight:700;">{{ t.plate }}</td>
-              <td>{{ t.duration }}</td>
-              <td>{{ t.expires }}</td>
+            {% set c = "#1a6b2a" if t.active else "#8B3A2A" %}
+            <tr>
+              <td style="color:{{ c }}; letter-spacing:1px; font-weight:700;">{{ t.plate }}</td>
+              <td style="color:{{ c }};">{{ t.duration }}</td>
+              <td style="color:{{ c }};">{{ t.expires }}</td>
             </tr>
             {% endfor %}
           </tbody>
