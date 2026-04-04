@@ -3,7 +3,7 @@
 
 {% block navbar %}
 <nav class="navbar navbar-dark bg-dark">
-  <div class="container-fluid px-4">
+  <div class="container">
     <a class="navbar-brand" href="/"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
     <div class="d-flex align-items-center gap-3">
       <span style="color:rgba(255,255,255,.35); font-size:.68rem; letter-spacing:3px; text-transform:uppercase;">Admin</span>
@@ -15,71 +15,58 @@
 
 {% block head %}
 <style>
-  .container-fluid { max-width: 1400px; }
-
-  /* ── Stats row ── */
+  /* ── Stats ── */
   .stat-tile { padding: 1.1rem 1.4rem; }
   .stat-tile .lbl { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
   .stat-tile .val { font-size: 1.75rem; font-weight: 700; color: var(--text); line-height: 1; }
   .stat-tile.live .val { color: #1a6b2a; }
 
-  /* ── Section heading ── */
-  .sec-head { font-size: .68rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: 1rem; padding-bottom: .5rem; border-bottom: 1px solid var(--border); }
+  /* ── Section label ── */
+  .sec { font-size: .65rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--muted); margin-bottom: .85rem; }
 
-  /* ── Activity feed ── */
-  .feed-row { display: flex; align-items: center; gap: .75rem; padding: .55rem 0; border-bottom: 1px solid #f3f2f0; font-size: .82rem; }
-  .feed-row:last-child { border-bottom: none; }
-  .feed-plate { font-weight: 700; letter-spacing: 1.5px; min-width: 5.5rem; }
-  .feed-cp { color: var(--muted); flex: 1; font-size: .78rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-  .feed-amt { font-weight: 700; color: var(--text); min-width: 3rem; text-align: right; }
-  .feed-time { font-size: .72rem; color: #bbb; min-width: 5.5rem; text-align: right; }
-  .live-pip { width: 6px; height: 6px; border-radius: 50%; background: #1a6b2a; flex-shrink: 0; }
-  .dead-pip { width: 6px; height: 6px; border-radius: 50%; background: #ddd; flex-shrink: 0; }
-
-  /* ── Intelligence tiles ── */
-  .intel-tile { padding: 1.1rem 1.4rem; }
-  .intel-tile .lbl { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
-  .intel-tile .val { font-size: 1.1rem; font-weight: 700; color: var(--text); }
-  .intel-tile .sub { font-size: .75rem; color: var(--muted); margin-top: .15rem; }
+  /* ── Intelligence ── */
+  .intel { padding: 1.1rem 1.4rem; }
+  .intel .lbl { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .3rem; }
+  .intel .val { font-size: 1.05rem; font-weight: 700; color: var(--text); }
+  .intel .sub { font-size: .72rem; color: var(--muted); margin-top: .1rem; }
 
   /* ── Tables ── */
-  .admin-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
-  .admin-table th { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .6rem .9rem; border-bottom: 2px solid var(--border); text-align: left; white-space: nowrap; background: #faf9f7; }
-  .admin-table td { padding: .75rem .9rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
-  .admin-table tbody tr:last-child td { border-bottom: none; }
-  .admin-table tbody tr:hover td { background: #faf9f7; }
+  .tbl { width: 100%; border-collapse: collapse; font-size: .82rem; }
+  .tbl th { font-size: .63rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .6rem .9rem; border-bottom: 2px solid var(--border); text-align: left; white-space: nowrap; background: #faf9f7; }
+  .tbl td { padding: .75rem .9rem; border-bottom: 1px solid var(--border); vertical-align: middle; }
+  .tbl tbody tr:last-child td { border-bottom: none; }
+  .tbl tbody tr:hover td { background: #faf9f7; }
 
-  .owner-name { font-weight: 700; font-size: .88rem; }
-  .owner-email { font-size: .75rem; color: var(--muted); }
-  .badge-on  { display:inline-block; background:#e9f7ee; color:#1a6b2a; font-size:.62rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px; }
-  .badge-off { display:inline-block; background:#f0f0f0; color:#999; font-size:.62rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px; }
+  .o-name  { font-weight: 700; font-size: .88rem; }
+  .o-email { font-size: .75rem; color: var(--muted); }
+  .badge-on  { display:inline-block; background:#e9f7ee; color:#1a6b2a; font-size:.6rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px; }
+  .badge-off { display:inline-block; background:#f0f0f0; color:#999; font-size:.6rem; font-weight:700; letter-spacing:1px; text-transform:uppercase; padding:.2rem .55rem; border-radius:2px; }
 
-  .btn-sm-action { font-size:.68rem; font-weight:700; letter-spacing:.5px; padding:.25rem .65rem; border-radius:3px; text-decoration:none; border:1px solid var(--border); color:var(--muted); background:none; cursor:pointer; transition:border-color .12s, color .12s; white-space:nowrap; }
-  .btn-sm-action:hover { border-color: var(--accent); color: var(--accent); }
+  .act { font-size:.68rem; font-weight:700; letter-spacing:.5px; padding:.25rem .65rem; border-radius:3px; text-decoration:none; border:1px solid var(--border); color:var(--muted); background:none; cursor:pointer; transition:border-color .12s, color .12s; white-space:nowrap; }
+  .act:hover { border-color:var(--accent); color:var(--accent); }
 
-  /* ── Reset PW inline ── */
+  /* ── Inline reset PW ── */
   .pw-row { display:none; background:#faf9f7; }
-  .pw-row td { padding: .6rem .9rem; }
-  .pw-inline { display:flex; gap:.5rem; align-items:center; }
-  .pw-inline input { border:1px solid var(--border); border-radius:3px; padding:.3rem .6rem; font-size:.78rem; font-family:'Raleway',sans-serif; outline:none; flex:1; max-width:200px; }
-  .pw-inline input:focus { border-color:var(--accent); }
+  .pw-row td { padding:.6rem .9rem; }
+  .pw-form { display:flex; gap:.5rem; align-items:center; flex-wrap:wrap; }
+  .pw-form input { border:1px solid var(--border); border-radius:3px; padding:.3rem .65rem; font-size:.78rem; font-family:'Raleway',sans-serif; outline:none; width:180px; }
+  .pw-form input:focus { border-color:var(--accent); }
 
-  /* ── Payout highlight ── */
-  .payout-val { font-weight:700; color:var(--text); }
-  .comm-val { font-weight:700; color:var(--accent); }
+  /* ── Values ── */
+  .v-bold { font-weight:700; }
+  .v-acc  { font-weight:700; color:var(--accent); }
+  .v-grn  { font-weight:700; color:#1a6b2a; }
 </style>
 {% endblock %}
 
 {% block content %}
-<div class="container-fluid px-0">
 
-<!-- ── Page header ───────────────────────────────────────────────────── -->
 <div class="d-flex align-items-center justify-content-between mt-5 pt-3 mb-4">
-  <h4 style="font-weight:700; letter-spacing:1px; margin:0;">Overview</h4>
-  <a href="/admin/export-csv" class="btn-sm-action" style="text-decoration:none;">&#8595; Export all transactions</a>
+  <h4 style="font-weight:700; letter-spacing:.5px; margin:0;">Overview</h4>
+  <a href="/admin/export-csv" class="act" style="text-decoration:none;">&#8595; Export CSV</a>
 </div>
 
-<!-- ── Stats row ─────────────────────────────────────────────────────── -->
+<!-- Stats -->
 <div class="row g-3 mb-4">
   <div class="col-6 col-md">
     <div class="card stat-tile">
@@ -95,7 +82,7 @@
   </div>
   <div class="col-6 col-md live">
     <div class="card stat-tile live">
-      <div class="lbl">Live cars</div>
+      <div class="lbl">Live cars now</div>
       <div class="val">{{ live_count }}</div>
     </div>
   </div>
@@ -113,167 +100,135 @@
   </div>
 </div>
 
-<!-- ── Chart + Activity ───────────────────────────────────────────────── -->
-<div class="row g-3 mb-4">
-
-  <div class="col-md-7">
-    <div class="card p-3 h-100">
-      <div class="sec-head">Commission — last 6 months</div>
-      <canvas id="commChart" height="110"></canvas>
-    </div>
-  </div>
-
-  <div class="col-md-5">
-    <div class="card p-3 h-100">
-      <div class="sec-head">Recent activity</div>
-      {% if recent %}
-        {% for t in recent %}
-        <div class="feed-row">
-          <div class="{% if t.live %}live-pip{% else %}dead-pip{% endif %}"></div>
-          <span class="feed-plate" style="color:{% if t.live %}#1a6b2a{% else %}var(--muted){% endif %};">{{ t.plate }}</span>
-          <span class="feed-cp">{{ t.car_park }}</span>
-          <span class="feed-amt">{{ t.amount }}</span>
-          <span class="feed-time">{{ t.time }}</span>
-        </div>
-        {% endfor %}
-      {% else %}
-        <p style="font-size:.82rem; color:var(--muted);">No transactions yet.</p>
-      {% endif %}
-    </div>
-  </div>
-
+<!-- Commission chart -->
+<div class="card p-3 mb-4">
+  <div class="sec">Commission — last 6 months</div>
+  <canvas id="chart" height="65"></canvas>
 </div>
 
-<!-- ── Intelligence ───────────────────────────────────────────────────── -->
-<div class="row g-3 mb-4">
+<!-- Intelligence -->
+<div class="row g-3 mb-5">
   <div class="col-md-4">
-    <div class="card intel-tile">
-      <div class="lbl">Best car park this month</div>
+    <div class="card intel">
+      <div class="lbl">Best park this month</div>
       {% if best_cp %}
       <div class="val">{{ best_cp.name }}</div>
-      <div class="sub">{{ best_cp.rev }} revenue</div>
+      <div class="sub">{{ best_cp.rev }} gross revenue</div>
       {% else %}
-      <div class="val" style="color:var(--muted);">—</div>
+      <div class="val" style="color:var(--muted);">No data yet</div>
       {% endif %}
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card intel-tile">
+    <div class="card intel">
       <div class="lbl">Busiest day of week</div>
       <div class="val">{{ busiest_day }}</div>
-      <div class="sub">by transaction volume</div>
+      <div class="sub">by transaction volume, all time</div>
     </div>
   </div>
   <div class="col-md-4">
-    <div class="card intel-tile">
-      <div class="lbl">Total transactions</div>
+    <div class="card intel">
+      <div class="lbl">Transactions all time</div>
       <div class="val">{{ total_txns }}</div>
-      <div class="sub">all time, paid</div>
+      <div class="sub">paid and completed</div>
     </div>
   </div>
 </div>
 
-<!-- ── Month payouts ──────────────────────────────────────────────────── -->
-<div class="sec-head mt-2">{{ current_month }} — payouts</div>
-<div class="card mb-4">
-  <div class="table-responsive">
-    <table class="admin-table">
-      <thead>
-        <tr>
-          <th>Owner</th>
-          <th>Month revenue</th>
-          <th>Owed to owner</th>
-          <th>ParCark cut</th>
-          <th>Commission rate</th>
-        </tr>
-      </thead>
-      <tbody>
-        {% for o in owner_stats %}
-        <tr>
-          <td>
-            <div class="owner-name">{{ o.name }}</div>
-            <div class="owner-email">{{ o.email }}</div>
-          </td>
-          <td>£{{ "%.2f"|format((o.month_rev + o.month_comm) / 100) }}</td>
-          <td class="payout-val">£{{ "%.2f"|format(o.month_rev / 100) }}</td>
-          <td class="comm-val">£{{ "%.2f"|format(o.month_comm / 100) }}</td>
-          <td>{{ o.commission_pct }}%</td>
-        </tr>
-        {% else %}
-        <tr><td colspan="5" style="text-align:center; color:var(--muted); padding:2rem;">No owners yet.</td></tr>
-        {% endfor %}
-      </tbody>
-    </table>
-  </div>
-</div>
-
-<!-- ── Estates ────────────────────────────────────────────────────────── -->
-<div class="d-flex align-items-center justify-content-between mb-3 mt-2">
-  <div class="sec-head mb-0">Estates</div>
-  <a href="/admin/owners/new" class="btn-sm-action" style="text-decoration:none;">+ Add estate</a>
+<!-- Estates -->
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <p class="sec mb-0">Estates</p>
+  <a href="/admin/owners/new" class="act" style="text-decoration:none;">+ Add estate</a>
 </div>
 <div class="card mb-5">
   <div class="table-responsive">
-    <table class="admin-table">
+    <table class="tbl">
       <thead>
         <tr>
           <th>Owner</th>
           <th>Parks</th>
           <th>Transactions</th>
           <th>All-time revenue</th>
-          <th>All-time commission</th>
+          <th>Commission</th>
+          <th>Rate</th>
           <th>Status</th>
           <th></th>
         </tr>
       </thead>
       <tbody>
         {% for o in owner_stats %}
-        <tr id="owner-row-{{ o.id }}">
+        <tr>
           <td>
-            <div class="owner-name">{{ o.name }}</div>
-            <div class="owner-email">{{ o.email }}</div>
+            <div class="o-name">{{ o.name }}</div>
+            <div class="o-email">{{ o.email }}</div>
           </td>
           <td>{{ o.car_park_count }}</td>
           <td>{{ o.txn_count }}</td>
-          <td>£{{ "%.2f"|format(o.total_revenue / 100) }}</td>
-          <td class="comm-val">£{{ "%.2f"|format(o.commission / 100) }}</td>
-          <td>
-            {% if o.is_active %}
-            <span class="badge-on">Active</span>
-            {% else %}
-            <span class="badge-off">Inactive</span>
-            {% endif %}
-          </td>
+          <td class="v-bold">£{{ "%.2f"|format(o.total_revenue / 100) }}</td>
+          <td class="v-acc">£{{ "%.2f"|format(o.commission / 100) }}</td>
+          <td>{{ o.commission_pct }}%</td>
+          <td>{% if o.is_active %}<span class="badge-on">Active</span>{% else %}<span class="badge-off">Inactive</span>{% endif %}</td>
           <td>
             <div class="d-flex gap-2">
-              <a href="/admin/owners/{{ o.id }}/edit" class="btn-sm-action">Edit</a>
-              <button class="btn-sm-action" onclick="togglePwRow({{ o.id }})">Reset PW</button>
+              <a href="/admin/owners/{{ o.id }}/edit" class="act">Edit</a>
+              <button class="act" onclick="togglePw({{ o.id }})">Reset PW</button>
             </div>
           </td>
         </tr>
-        <tr class="pw-row" id="pw-row-{{ o.id }}">
-          <td colspan="7">
-            <form method="post" action="/admin/owners/{{ o.id }}/reset-password" class="pw-inline">
-              <span style="font-size:.72rem; color:var(--muted); letter-spacing:1px; white-space:nowrap;">New password for {{ o.name }}</span>
-              <input type="password" name="new_password" placeholder="New password" required minlength="6">
-              <button type="submit" class="btn-sm-action" style="border-color:var(--accent); color:var(--accent);">Set</button>
-              <button type="button" class="btn-sm-action" onclick="togglePwRow({{ o.id }})">Cancel</button>
+        <tr class="pw-row" id="pw-{{ o.id }}">
+          <td colspan="8">
+            <form method="post" action="/admin/owners/{{ o.id }}/reset-password" class="pw-form">
+              <span style="font-size:.72rem; color:var(--muted);">New password for <b>{{ o.name }}</b></span>
+              <input type="password" name="new_password" placeholder="New password" required minlength="6" autocomplete="new-password">
+              <button type="submit" class="act" style="border-color:var(--accent);color:var(--accent);">Set</button>
+              <button type="button" class="act" onclick="togglePw({{ o.id }})">Cancel</button>
             </form>
           </td>
         </tr>
         {% else %}
-        <tr><td colspan="7" style="text-align:center; color:var(--muted); padding:2rem;">No estates yet.</td></tr>
+        <tr><td colspan="8" style="text-align:center; color:var(--muted); padding:2.5rem;">No estates yet.</td></tr>
         {% endfor %}
       </tbody>
     </table>
   </div>
 </div>
 
-</div><!-- /container-fluid -->
+<!-- Payouts -->
+<p class="sec">{{ current_month }} — payouts</p>
+<div class="card mb-5">
+  <div class="table-responsive">
+    <table class="tbl">
+      <thead>
+        <tr>
+          <th>Owner</th>
+          <th>Gross this month</th>
+          <th>Owed to owner</th>
+          <th>ParCark cut</th>
+          <th>Rate</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for o in owner_stats %}
+        <tr>
+          <td>
+            <div class="o-name">{{ o.name }}</div>
+          </td>
+          <td>£{{ "%.2f"|format((o.month_rev + o.month_comm) / 100) }}</td>
+          <td class="v-grn">£{{ "%.2f"|format(o.month_rev / 100) }}</td>
+          <td class="v-acc">£{{ "%.2f"|format(o.month_comm / 100) }}</td>
+          <td>{{ o.commission_pct }}%</td>
+        </tr>
+        {% else %}
+        <tr><td colspan="5" style="text-align:center; color:var(--muted); padding:2.5rem;">No data yet.</td></tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
-new Chart(document.getElementById('commChart').getContext('2d'), {
+new Chart(document.getElementById('chart').getContext('2d'), {
   type: 'bar',
   data: {
     labels: {{ chart_labels | tojson }},
@@ -291,21 +246,19 @@ new Chart(document.getElementById('commChart').getContext('2d'), {
     scales: {
       y: {
         beginAtZero: true,
-        ticks: { callback: v => '£' + v.toFixed(0), font: { family: 'Raleway', size: 11 }, color: '#aaa' },
-        grid: { color: 'rgba(0,0,0,.05)' },
-        border: { display: false },
+        ticks: { callback: v => '£' + v.toFixed(0), font: { family:'Raleway', size:11 }, color:'#bbb' },
+        grid: { color:'rgba(0,0,0,.05)' }, border: { display:false },
       },
       x: {
-        ticks: { font: { family: 'Raleway', size: 11 }, color: '#aaa' },
-        grid: { display: false },
-        border: { display: false },
+        ticks: { font: { family:'Raleway', size:11 }, color:'#bbb' },
+        grid: { display:false }, border: { display:false },
       }
     }
   }
 });
 
-function togglePwRow(id) {
-  const row = document.getElementById('pw-row-' + id);
+function togglePw(id) {
+  const row = document.getElementById('pw-' + id);
   const open = row.style.display === 'table-row';
   row.style.display = open ? 'none' : 'table-row';
   if (!open) row.querySelector('input').focus();
