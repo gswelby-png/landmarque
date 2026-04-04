@@ -128,12 +128,20 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
             exp = make_aware(t.expires_at)
             return exp is not None and exp > now_utc
 
+        def exp_ts(t):
+            """Return expiry as a unix timestamp. All-day = 23:59 that day."""
+            if t.is_all_day and t.parked_at:
+                pa = make_aware(t.parked_at)
+                return pa.replace(hour=23, minute=59, second=0, microsecond=0).timestamp()
+            exp = make_aware(t.expires_at)
+            return exp.timestamp() if exp else 0
+
         def sort_key(t):
             active = is_active(t)
-            exp = make_aware(t.expires_at) or datetime.max.replace(tzinfo=tz.utc)
-            # Active: sort ascending by expiry (soonest to expire first)
-            # Expired: sort descending by expiry (most recently expired first)
-            return (0 if active else 1, exp if active else -exp.timestamp())
+            ts = exp_ts(t)
+            # Active: soonest to expire first (ascending ts)
+            # Expired: most recently expired first (descending ts)
+            return (0 if active else 1, ts if active else -ts)
 
         txns_sorted = sorted(txns, key=sort_key)[:100]
 
