@@ -68,6 +68,8 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
     today = date.today()
     month_start = today.replace(day=1)
 
+    year_start = today.replace(month=1, day=1)
+
     today_revenue = (
         db.query(func.sum(Transaction.owner_amount_pence))
         .join(CarPark)
@@ -88,6 +90,16 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         )
         .scalar() or 0
     )
+    ytd_revenue = (
+        db.query(func.sum(Transaction.owner_amount_pence))
+        .join(CarPark)
+        .filter(
+            CarPark.owner_id == owner.id,
+            Transaction.status == TransactionStatus.paid,
+            Transaction.parked_at >= year_start,
+        )
+        .scalar() or 0
+    )
     car_parks = db.query(CarPark).filter(CarPark.owner_id == owner.id).all()
 
     return templates.TemplateResponse("owner/dashboard.html", {
@@ -95,6 +107,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         "owner": owner,
         "today_revenue": today_revenue,
         "month_revenue": month_revenue,
+        "ytd_revenue": ytd_revenue,
         "car_parks": car_parks,
     })
 
