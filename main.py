@@ -172,6 +172,16 @@ def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 
+@app.get("/payment")
+def payment_redirect():
+    return RedirectResponse("/payment/shere-manor", status_code=302)
+
+
+@app.get("/receipt")
+def receipt_redirect():
+    return RedirectResponse("/receipt/shere-manor", status_code=302)
+
+
 
 
 @app.get("/robots.txt", response_class=PlainTextResponse)
