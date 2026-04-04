@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Permit Check — {{ car_park.name }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #0a0a0a;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2.5rem 1rem 3rem;
+    }
+
+    /* geometric accent bar */
+    .accent-bar {
+      width: 48px;
+      height: 3px;
+      background: #8B3A2A;
+      margin: 0 auto 2rem;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+      width: 100%;
+      max-width: 480px;
+    }
+    .header-tag {
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #8B3A2A;
+      margin-bottom: .6rem;
+    }
+    .header h1 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 480px;
+      background: #fff;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+
+    .panel-inner {
+      padding: 2rem;
+    }
+
+    .field-label {
+      display: block;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #666;
+      margin-bottom: .5rem;
+    }
+
+    .plate-input {
+      width: 100%;
+      border: 2px solid #e0e0e0;
+      border-radius: 3px;
+      padding: .9rem 1rem;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #111;
+      outline: none;
+      transition: border-color .15s;
+      margin-bottom: 1rem;
+    }
+    .plate-input:focus { border-color: #8B3A2A; }
+
+    .btn-check {
+      width: 100%;
+      background: #8B3A2A;
+      border: none;
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: .82rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      padding: .9rem;
+      border-radius: 3px;
+      cursor: pointer;
+      transition: filter .15s;
+    }
+    .btn-check:hover { filter: brightness(88%); }
+
+    /* Result block */
+    .result {
+      border-top: 1px solid #f0f0f0;
+      padding: 1.75rem 2rem;
+    }
+
+    .result-valid {
+      border-left: 4px solid #1a6b2a;
+      background: #f2fdf4;
+      border-radius: 0 3px 3px 0;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    }
+    .result-invalid {
+      border-left: 4px solid #8B3A2A;
+      background: #fdf5f3;
+      border-radius: 0 3px 3px 0;
+      padding: 1.25rem 1.25rem 1.25rem 1.5rem;
+    }
+
+    .result-plate {
+      font-size: 1.6rem;
+      font-weight: 700;
+      letter-spacing: 6px;
+      margin-bottom: .4rem;
+    }
+    .result-status {
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      margin-bottom: .75rem;
+    }
+    .result-status.valid { color: #1a6b2a; }
+    .result-status.invalid { color: #8B3A2A; }
+    .result-plate.valid { color: #1a6b2a; }
+    .result-plate.invalid { color: #8B3A2A; }
+
+    .result-detail {
+      font-size: .82rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .result-detail span { font-weight: 600; color: #222; }
+
+    .powered {
+      margin-top: 2.5rem;
+      font-size: .7rem;
+      color: rgba(255,255,255,0.25);
+      font-weight: 300;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    <p class="header-tag">Warden Check</p>
+    <div class="accent-bar"></div>
+    <h1>{{ car_park.name }}</h1>
+  </div>
+
+  <div class="panel">
+    <div class="panel-inner">
+      <form method="post" action="/check/{{ car_park.slug }}">
+        <label class="field-label">Registration plate</label>
+        <input
+          type="text"
+          name="number_plate"
+          class="plate-input"
+          placeholder="AB12 CDE"
+          required
+          autocomplete="off"
+          autocorrect="off"
+          spellcheck="false"
+          value="{{ result.plate if result else '' }}"
+        >
+        <button type="submit" class="btn-check">Check permit</button>
+      </form>
+    </div>
+
+    {% if result %}
+    <div class="result">
+      {% if result.is_active %}
+      <div class="result-valid">
+        <p class="result-plate valid">{{ result.plate }}</p>
+        <p class="result-status valid">&#10003; Valid permit</p>
+        <div class="result-detail">
+          {% if result.duration %}<div>Duration &nbsp;<span>{{ result.duration }}</span></div>{% endif %}
+          {% if result.expires %}<div>Expires &nbsp;<span>{{ result.expires }}</span></div>{% endif %}
+        </div>
+      </div>
+      {% elif result.found %}
+      <div class="result-invalid">
+        <p class="result-plate invalid">{{ result.plate }}</p>
+        <p class="result-status invalid">&#10005; Permit expired</p>
+        <div class="result-detail">
+          {% if result.expires %}<div>Expired &nbsp;<span>{{ result.expires }}</span></div>{% endif %}
+        </div>
+      </div>
+      {% else %}
+      <div class="result-invalid">
+        <p class="result-plate invalid">{{ result.plate }}</p>
+        <p class="result-status invalid">&#10005; No permit found</p>
+        <div class="result-detail">No paid parking record for this plate today.</div>
+      </div>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <p class="powered">Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,0.3)">CAR</span><span style="color:#8B3A2A">K</span></p>
+
+</body>
+</html>

@@ -4,13 +4,11 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <a class="navbar-brand" href="/"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
-    <div class="navbar-nav ms-auto align-items-center">
-      <span class="nav-link text-light">{{ owner_name }}</span>
+    <div class="navbar-nav ms-auto align-items-center gap-2">
+      <span class="nav-link text-light" style="font-size:.85rem;">{{ owner_name }}</span>
       <a href="/owner/logout" class="nav-link" title="Sign out" style="display:flex;align-items:center;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/>
-          <circle cx="12" cy="9" r="3"/>
-          <path d="M6.5 19.5a6 6 0 0 1 11 0"/>
+        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.7)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19.5a6 6 0 0 1 11 0"/>
         </svg>
       </a>
     </div>
@@ -19,123 +17,216 @@
 {% endblock %}
 {% block head %}
 <style>
+  /* ── Tab system ── */
   .cp-detail { display: none; }
   .tab-btn {
     background: none;
     border: none;
     border-bottom: 2px solid transparent;
-    padding: .5rem 1rem;
+    padding: .5rem 1.1rem;
     font-family: 'Raleway', Helvetica, Arial, sans-serif;
-    font-size: .78rem;
+    font-size: .7rem;
     font-weight: 700;
-    letter-spacing: 1.5px;
+    letter-spacing: 2px;
     text-transform: uppercase;
-    color: #888;
+    color: var(--muted);
     cursor: pointer;
     transition: color .15s, border-color .15s;
   }
-  .tab-btn.active { color: #8B3A2A; border-bottom-color: #8B3A2A; }
+  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
   .tab-pane { display: none; padding-top: 1rem; }
   .tab-pane.active { display: block; }
-  .parking-log-table th { font-size: .72rem; letter-spacing: 1px; text-transform: uppercase; color: #888; font-weight: 600; }
+
+  /* ── Parking log ── */
+  .parking-log-table th { font-size: .68rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
   .parking-log-table td { font-size: .88rem; vertical-align: middle; }
-  .cp-rev-badge { font-size: .75rem; color: #888; }
-  .cp-rev-badge span { color: #8B3A2A; font-weight: 700; }
-  .btn-delete { background: none; border: none; color: #aaa; font-size: .8rem; padding: 2px 6px; cursor: pointer; }
-  .btn-delete:hover { color: #8B3A2A; }
+
+  /* ── Per-car-park revenue row ── */
+  .cp-rev {
+    font-size: .72rem;
+    color: var(--muted);
+    font-weight: 600;
+    letter-spacing: .5px;
+    margin-top: .2rem;
+  }
+  .cp-rev b { color: var(--text); font-weight: 700; }
+
+  /* ── Delete rule button ── */
+  .btn-rule-del {
+    background: none;
+    border: none;
+    color: #ccc;
+    font-size: .78rem;
+    padding: 2px 6px;
+    cursor: pointer;
+    line-height: 1;
+    border-radius: 2px;
+    transition: color .12s, background .12s;
+  }
+  .btn-rule-del:hover { color: #fff; background: var(--accent); }
+
+  /* ── Toggle badge variants ── */
+  .status-badge {
+    display: inline-block;
+    font-size: .68rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    padding: .3rem .75rem;
+    border-radius: 2px;
+    cursor: pointer;
+    border: none;
+    transition: filter .15s;
+  }
+  .status-badge.active  { background: #e9f7ee; color: #1a6b2a; }
+  .status-badge.inactive { background: #f0f0f0; color: #888; }
+  .status-badge:hover { filter: brightness(95%); }
+
+  /* ── Password change ── */
+  .pw-form-wrap { display: none; }
+  .pw-alert {
+    font-size: .8rem;
+    padding: .5rem 1rem;
+    border-radius: 3px;
+    margin-bottom: 1rem;
+    font-weight: 600;
+  }
+  .pw-alert.ok { background: #e9f7ee; color: #1a6b2a; }
+  .pw-alert.err { background: #fdf5f3; color: var(--accent); }
+
+  /* ── Warden URL display ── */
+  .warden-url {
+    font-size: .75rem;
+    color: var(--muted);
+    background: #f7f6f4;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: .35rem .75rem;
+    font-family: monospace;
+    word-break: break-all;
+  }
+
+  /* ── Chart card ── */
+  .chart-card {
+    border-top: 3px solid var(--accent);
+  }
 </style>
 {% endblock %}
 {% block content %}
-<h4 class="fw-bold mb-4 mt-5 pt-4">Dashboard</h4>
 
+<!-- Page header -->
+<div class="d-flex align-items-end justify-content-between mt-5 pt-4 mb-4">
+  <div>
+    <p class="section-tag mb-0">Owner portal</p>
+    <h4 class="fw-bold mb-0">Dashboard</h4>
+  </div>
+</div>
+
+<!-- Flash messages -->
+{% if pw_ok %}
+<div class="pw-alert ok mb-3">Password updated successfully.</div>
+{% elif pw_error %}
+<div class="pw-alert err mb-3">Password change failed — check your current password and try again.</div>
+{% endif %}
+
+<!-- Stats -->
 <div class="row g-3 mb-4">
-  <div class="col-md-3">
-    <div class="card p-3 text-center">
-      <div class="text-muted small mb-1">Cars parked now</div>
-      <div class="fs-3 fw-bold">{{ live_count }}</div>
+  <div class="col-6 col-md-3">
+    <div class="card stat-card" style="border-left-color: #1a6b2a;">
+      <div class="stat-label">Cars parked now</div>
+      <div class="stat-value">{{ live_count }}</div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card p-3 text-center">
-      <div class="text-muted small mb-1">Today's earnings</div>
-      <div class="fs-3 fw-bold">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+  <div class="col-6 col-md-3">
+    <div class="card stat-card">
+      <div class="stat-label">Today</div>
+      <div class="stat-value">£{{ "%.2f"|format(today_revenue / 100) }}</div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card p-3 text-center">
-      <div class="text-muted small mb-1">This month</div>
-      <div class="fs-3 fw-bold">£{{ "%.2f"|format(month_revenue / 100) }}</div>
+  <div class="col-6 col-md-3">
+    <div class="card stat-card">
+      <div class="stat-label">This month</div>
+      <div class="stat-value">£{{ "%.2f"|format(month_revenue / 100) }}</div>
     </div>
   </div>
-  <div class="col-md-3">
-    <div class="card p-3 text-center">
-      <div class="text-muted small mb-1">Year to date</div>
-      <div class="fs-3 fw-bold">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
+  <div class="col-6 col-md-3">
+    <div class="card stat-card">
+      <div class="stat-label">Year to date</div>
+      <div class="stat-value">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
     </div>
   </div>
 </div>
 
-<!-- Monthly revenue chart -->
-<div class="card p-3 mb-5">
-  <div class="text-muted small mb-2 fw-semibold" style="letter-spacing:1px;text-transform:uppercase;font-size:.72rem;">Revenue — last 6 months</div>
+<!-- Revenue chart -->
+<div class="card chart-card p-3 mb-5">
+  <p class="section-tag mb-2">Revenue — last 6 months</p>
   <canvas id="revenueChart" height="80"></canvas>
 </div>
 
-<div class="d-flex justify-content-between align-items-center mb-3">
-  <h5 class="mb-0">Your car parks</h5>
-  <a href="/owner/car-parks/new" class="btn btn-sm btn-success">+ Add car park</a>
+<!-- Car parks header -->
+<div class="d-flex align-items-center mb-3">
+  <div class="geo-rule" style="margin:0; flex:1; margin-right:1.5rem;">
+    <span>Your car parks</span>
+  </div>
+  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1.5px; text-transform:uppercase; flex-shrink:0;">+ Add car park</a>
 </div>
 
 {% if cp_data %}
 <div class="d-flex flex-column gap-3">
   {% for cp in cp_data %}
-  <div class="card p-3" id="card-{{ cp.id }}">
+  <div class="card" id="card-{{ cp.id }}">
 
-    <!-- Header row -->
-    <div class="d-flex justify-content-between align-items-center">
-      <div class="d-flex align-items-center gap-3">
-        <span class="btn btn-sm {% if cp.is_active %}btn-success{% else %}btn-secondary{% endif %}" style="pointer-events:none; min-width:70px;">
-          {% if cp.is_active %}Active{% else %}Inactive{% endif %}
-        </span>
+    <!-- Card header -->
+    <div class="d-flex justify-content-between align-items-start p-3">
+      <div class="d-flex align-items-start gap-3">
+        <!-- Active / Inactive toggle -->
+        <form method="post" action="/owner/car-parks/{{ cp.id }}/toggle" style="display:inline;">
+          <button type="submit" class="status-badge {% if cp.is_active %}active{% else %}inactive{% endif %}" title="Click to toggle">
+            {% if cp.is_active %}Active{% else %}Inactive{% endif %}
+          </button>
+        </form>
         <div>
-          <h6 class="fw-semibold mb-0">{{ cp.name }}</h6>
-          <p class="text-muted small mb-0">{{ cp.address }}</p>
-          <p class="cp-rev-badge mb-0">
-            Today <span>£{{ "%.2f"|format(cp.today_rev / 100) }}</span>
-            &nbsp;·&nbsp; Month <span>£{{ "%.2f"|format(cp.month_rev / 100) }}</span>
-            &nbsp;·&nbsp; YTD <span>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</span>
-          </p>
+          <div class="fw-bold" style="font-size:.95rem; letter-spacing:.5px;">{{ cp.name }}</div>
+          <div style="font-size:.8rem; color:var(--muted);">{{ cp.address }}</div>
+          <div class="cp-rev">
+            Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b>
+            &nbsp;·&nbsp; Month <b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b>
+            &nbsp;·&nbsp; YTD <b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b>
+          </div>
         </div>
       </div>
-      <button class="btn btn-sm btn-outline-secondary" onclick="toggleDetail({{ cp.id }}, this)">View details</button>
+      <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px; flex-shrink:0;" onclick="toggleDetail({{ cp.id }}, this)">View details</button>
     </div>
 
-    <!-- Expandable detail -->
-    <div class="cp-detail mt-3 pt-3 border-top" id="detail-{{ cp.id }}">
+    <!-- Expandable -->
+    <div class="cp-detail border-top" id="detail-{{ cp.id }}">
 
       <!-- Tabs -->
-      <div class="d-flex gap-0 border-bottom mb-0">
+      <div class="d-flex border-bottom px-3">
         <button class="tab-btn active" onclick="switchTab({{ cp.id }}, 'settings', this)">Settings</button>
-        <button class="tab-btn" onclick="switchTab({{ cp.id }}, 'log', this)">Parking Log</button>
+        <button class="tab-btn" onclick="switchTab({{ cp.id }}, 'log', this)">Parking log</button>
       </div>
 
-      <!-- Settings tab -->
-      <div class="tab-pane active" id="tab-{{ cp.id }}-settings">
+      <!-- ── Settings tab ── -->
+      <div class="tab-pane active p-3" id="tab-{{ cp.id }}-settings">
 
-        <!-- Edit car park details -->
-        <div class="mb-3 mt-2">
-          <button class="tab-btn" style="border:none;padding:.25rem .5rem;font-size:.72rem;" onclick="toggleEdit({{ cp.id }}, this)">Edit details</button>
+        <!-- Edit car park inline -->
+        <div class="mb-3">
+          <button class="tab-btn" style="padding:.2rem .5rem;font-size:.68rem;" onclick="toggleSection('edit-{{ cp.id }}', this)">&#9998; Edit details</button>
           <div id="edit-{{ cp.id }}" style="display:none;" class="mt-2">
             <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
-              <div class="row g-2">
+              <div class="row g-2 align-items-end">
                 <div class="col-md-4">
-                  <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" placeholder="Name" required>
+                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Name</label>
+                  <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
                 </div>
                 <div class="col-md-4">
-                  <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}" placeholder="Address">
+                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Address</label>
+                  <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
                 </div>
                 <div class="col-md-3">
-                  <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}" placeholder="Description">
+                  <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Description</label>
+                  <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
                 </div>
                 <div class="col-md-1">
                   <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
@@ -145,17 +236,12 @@
           </div>
         </div>
 
+        <!-- Pricing rules -->
         {% if cp.rules %}
         <table class="table table-sm mb-0">
           <thead>
             <tr>
-              <th>Day type</th>
-              <th>Hourly rate</th>
-              <th>Max hours</th>
-              <th>All-day rate</th>
-              <th>Valid from</th>
-              <th>Valid to</th>
-              <th></th>
+              <th>Day type</th><th>Hourly</th><th>Max hours</th><th>All day</th><th>From</th><th>To</th><th></th>
             </tr>
           </thead>
           <tbody>
@@ -169,7 +255,7 @@
               <td>{{ r.valid_to }}</td>
               <td>
                 <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" style="display:inline;" onsubmit="return confirm('Delete this pricing rule?')">
-                  <button type="submit" class="btn-delete" title="Delete rule">✕</button>
+                  <button type="submit" class="btn-rule-del" title="Delete">&#10005;</button>
                 </form>
               </td>
             </tr>
@@ -177,16 +263,23 @@
           </tbody>
         </table>
         {% else %}
-        <p class="text-muted small mt-2">No pricing rules set.</p>
+        <p class="text-muted" style="font-size:.82rem;">No pricing rules set.</p>
         {% endif %}
-        <div class="mt-3 d-flex gap-2">
-          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success">+ Add pricing rule</a>
-          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary">↓ Download QR code</a>
+
+        <!-- Actions row -->
+        <div class="mt-3 d-flex flex-wrap gap-2 align-items-center">
+          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">+ Pricing rule</a>
+          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;">&#8595; QR code</a>
+          <div class="ms-auto d-flex align-items-center gap-2">
+            <span style="font-size:.68rem; color:var(--muted); letter-spacing:1px; text-transform:uppercase;">Warden check</span>
+            <span class="warden-url">/check/{{ cp.slug }}</span>
+            <button class="btn btn-sm btn-outline-secondary" style="font-size:.68rem;" onclick="copyWardenUrl('{{ cp.slug }}', this)">Copy</button>
+          </div>
         </div>
       </div>
 
-      <!-- Parking Log tab -->
-      <div class="tab-pane" id="tab-{{ cp.id }}-log">
+      <!-- ── Parking log tab ── -->
+      <div class="tab-pane p-3" id="tab-{{ cp.id }}-log">
         {% if cp.transactions %}
         <table class="table table-sm parking-log-table mb-0" style="table-layout:fixed; width:100%;">
           <thead>
@@ -200,7 +293,7 @@
             {% for t in cp.transactions %}
             {% set c = "#1a6b2a" if t.active else "#8B3A2A" %}
             <tr>
-              <td style="color:{{ c }}; letter-spacing:1px; font-weight:700;">{{ t.plate }}</td>
+              <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
               <td style="color:{{ c }};">{{ t.duration }}</td>
               <td style="color:{{ c }};">{{ t.expires }}</td>
             </tr>
@@ -208,10 +301,10 @@
           </tbody>
         </table>
         {% else %}
-        <p class="text-muted small mt-2">No parking recorded yet.</p>
+        <p class="text-muted" style="font-size:.82rem;">No parking recorded yet.</p>
         {% endif %}
         <div class="mt-3">
-          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary">↓ Export CSV</a>
+          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;">&#8595; Export CSV</a>
         </div>
       </div>
 
@@ -220,50 +313,79 @@
   {% endfor %}
 </div>
 {% else %}
-<div class="card p-4 text-center text-muted">
-  No car parks yet. <a href="/owner/car-parks/new">Add your first one.</a>
+<div class="card p-5 text-center" style="color:var(--muted);">
+  <p class="mb-2" style="font-size:.88rem;">No car parks yet.</p>
+  <a href="/owner/car-parks/new" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">+ Add your first car park</a>
 </div>
 {% endif %}
+
+<!-- Password change -->
+<div class="geo-rule mt-5">
+  <span>Account</span>
+</div>
+
+<div class="card p-3 mb-5">
+  <div class="d-flex justify-content-between align-items-center">
+    <div>
+      <div style="font-size:.82rem; font-weight:700; letter-spacing:.5px;">Change password</div>
+      <div style="font-size:.75rem; color:var(--muted);">Update your owner portal login</div>
+    </div>
+    <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:1px;" onclick="toggleSection('pw-form', this)">Change</button>
+  </div>
+  <div id="pw-form" class="pw-form-wrap mt-3 pt-3 border-top">
+    <form method="post" action="/owner/change-password">
+      <div class="row g-2">
+        <div class="col-md-4">
+          <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">Current password</label>
+          <input type="password" name="current_password" class="form-control form-control-sm" required>
+        </div>
+        <div class="col-md-4">
+          <label class="form-label" style="font-size:.68rem;letter-spacing:1px;text-transform:uppercase;color:var(--muted);">New password</label>
+          <input type="password" name="new_password" class="form-control form-control-sm" required minlength="6">
+        </div>
+        <div class="col-md-auto d-flex align-items-end">
+          <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:1px;">Save password</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
 
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <script>
   // ── Revenue chart ──────────────────────────────────────────────────────────
-  const ctx = document.getElementById('revenueChart').getContext('2d');
-  new Chart(ctx, {
+  new Chart(document.getElementById('revenueChart').getContext('2d'), {
     type: 'bar',
     data: {
       labels: {{ chart_labels | tojson }},
       datasets: [{
-        label: 'Revenue (£)',
         data: {{ chart_data | tojson }},
-        backgroundColor: 'rgba(139,58,42,0.75)',
+        backgroundColor: 'rgba(139,58,42,0.18)',
         borderColor: '#8B3A2A',
-        borderWidth: 1,
-        borderRadius: 4,
+        borderWidth: 2,
+        borderRadius: 3,
+        hoverBackgroundColor: 'rgba(139,58,42,0.35)',
       }]
     },
     options: {
-      plugins: {
-        legend: { display: false },
-      },
+      plugins: { legend: { display: false } },
       scales: {
         y: {
           beginAtZero: true,
-          ticks: {
-            callback: v => '£' + v.toFixed(2),
-            font: { family: 'Raleway' },
-          },
+          ticks: { callback: v => '£' + v.toFixed(0), font: { family: 'Raleway', size: 11 } },
           grid: { color: 'rgba(0,0,0,.06)' },
+          border: { display: false },
         },
         x: {
-          ticks: { font: { family: 'Raleway' } },
+          ticks: { font: { family: 'Raleway', size: 11 } },
           grid: { display: false },
+          border: { display: false },
         }
       }
     }
   });
 
-  // ── Car park toggle ────────────────────────────────────────────────────────
+  // ── Car park detail toggle ─────────────────────────────────────────────────
   function toggleDetail(id, btn) {
     const detail = document.getElementById('detail-' + id);
     const open = detail.style.display === 'block';
@@ -278,11 +400,25 @@
     document.getElementById('tab-' + id + '-' + tab).classList.add('active');
   }
 
-  function toggleEdit(id, btn) {
-    const el = document.getElementById('edit-' + id);
+  function toggleSection(id, btn) {
+    const el = document.getElementById(id);
     const open = el.style.display === 'block';
     el.style.display = open ? 'none' : 'block';
-    btn.classList.toggle('active', !open);
   }
+
+  // ── Warden URL copy ────────────────────────────────────────────────────────
+  function copyWardenUrl(slug, btn) {
+    const url = window.location.origin + '/check/' + slug;
+    navigator.clipboard.writeText(url).then(() => {
+      const orig = btn.textContent;
+      btn.textContent = 'Copied!';
+      setTimeout(() => btn.textContent = orig, 1800);
+    });
+  }
+
+  // Auto-open password section if redirected with pw_ok or pw_error
+  {% if pw_ok or pw_error %}
+  document.getElementById('pw-form').style.display = 'block';
+  {% endif %}
 </script>
 {% endblock %}

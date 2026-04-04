@@ -66,18 +66,44 @@ def logout():
 @router.get("/dashboard", response_class=HTMLResponse)
 def dashboard(request: Request, db: Session = Depends(get_db)):
     current_admin(request, db)
-    owners = db.query(Owner).order_by(Owner.created_at.desc()).all()
+
     total_revenue = db.query(func.sum(Transaction.amount_pence)).filter(
         Transaction.status == TransactionStatus.paid
     ).scalar() or 0
     total_commission = db.query(func.sum(Transaction.commission_pence)).filter(
         Transaction.status == TransactionStatus.paid
     ).scalar() or 0
+
+    owners = db.query(Owner).order_by(Owner.created_at.desc()).all()
+    owner_stats = []
+    for o in owners:
+        rev = db.query(func.sum(Transaction.owner_amount_pence)).join(CarPark).filter(
+            CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid
+        ).scalar() or 0
+        comm = db.query(func.sum(Transaction.commission_pence)).join(CarPark).filter(
+            CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid
+        ).scalar() or 0
+        txn_count = db.query(func.count(Transaction.id)).join(CarPark).filter(
+            CarPark.owner_id == o.id, Transaction.status == TransactionStatus.paid
+        ).scalar() or 0
+        owner_stats.append({
+            "id": o.id,
+            "name": o.name,
+            "email": o.email,
+            "commission_pct": o.commission_pct,
+            "is_active": o.is_active,
+            "car_park_count": len(o.car_parks),
+            "total_revenue": rev,
+            "commission": comm,
+            "txn_count": txn_count,
+        })
+
     return templates.TemplateResponse("admin/dashboard.html", {
         "request": request,
-        "owners": owners,
+        "owner_stats": owner_stats,
         "total_revenue": total_revenue,
         "total_commission": total_commission,
+        "owner_count": len(owners),
     })
 
 

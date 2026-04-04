@@ -2,7 +2,7 @@ import csv
 import io
 import qrcode
 
-from fastapi import APIRouter, Depends, Request, Form, HTTPException
+from fastapi import APIRouter, Depends, Request, Form, HTTPException, Query
 from fastapi.responses import HTMLResponse, RedirectResponse, StreamingResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -81,7 +81,7 @@ def logout():
 # ── Dashboard ───────────────────────────────────────────────────────────────
 
 @router.get("/dashboard", response_class=HTMLResponse)
-def dashboard(request: Request, db: Session = Depends(get_db)):
+def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Query(False), pw_error: bool = Query(False)):
     owner = current_owner(request, db)
     today = date.today()
     month_start = today.replace(day=1)
@@ -255,6 +255,8 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         "chart_labels": chart_labels,
         "chart_data": chart_data,
         "cp_data": cp_data,
+        "pw_ok": pw_ok,
+        "pw_error": pw_error,
     })
 
 
@@ -403,6 +405,34 @@ def delete_pricing_rule(
         db.delete(rule)
         db.commit()
     return RedirectResponse("/owner/dashboard", status_code=303)
+
+
+@router.post("/car-parks/{cp_id}/toggle")
+def toggle_car_park(cp_id: int, request: Request, db: Session = Depends(get_db)):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.id == cp_id, CarPark.owner_id == owner.id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    cp.is_active = not cp.is_active
+    db.commit()
+    return RedirectResponse("/owner/dashboard", status_code=303)
+
+
+@router.post("/change-password")
+def change_password(
+    request: Request,
+    current_password: str = Form(...),
+    new_password: str = Form(...),
+    db: Session = Depends(get_db),
+):
+    owner = current_owner(request, db)
+    if not verify_password(current_password, owner.password_hash):
+        return RedirectResponse("/owner/dashboard?pw_error=1", status_code=303)
+    if len(new_password) < 6:
+        return RedirectResponse("/owner/dashboard?pw_error=1", status_code=303)
+    owner.password_hash = hash_password(new_password)
+    db.commit()
+    return RedirectResponse("/owner/dashboard?pw_ok=1", status_code=303)
 
 
 # ── Transactions ─────────────────────────────────────────────────────────────

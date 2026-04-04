@@ -155,3 +155,62 @@ def park_success(slug: str, txn: int, session_id: str, request: Request, db: Ses
         "car_park": car_park,
         "transaction": transaction,
     })
+
+
+@router.get("/check/{slug}", response_class=HTMLResponse)
+def warden_check_page(slug: str, request: Request, db: Session = Depends(get_db)):
+    car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        raise HTTPException(status_code=404)
+    cp = {"id": car_park.id, "name": car_park.name, "slug": car_park.slug}
+    return templates.TemplateResponse("driver/check.html", {"request": request, "car_park": cp, "result": None})
+
+
+@router.post("/check/{slug}", response_class=HTMLResponse)
+def warden_check(slug: str, request: Request, number_plate: str = Form(...), db: Session = Depends(get_db)):
+    car_park = db.query(CarPark).filter(CarPark.slug == slug).first()
+    if not car_park:
+        raise HTTPException(status_code=404)
+    plate = number_plate.upper().replace(" ", "")
+    now_utc = datetime.now(timezone.utc)
+
+    def make_aware(dt):
+        if dt is None:
+            return None
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
+
+    txn = (
+        db.query(Transaction)
+        .filter(
+            Transaction.car_park_id == car_park.id,
+            Transaction.number_plate == plate,
+            Transaction.status == TransactionStatus.paid,
+        )
+        .order_by(Transaction.parked_at.desc())
+        .first()
+    )
+
+    is_active = False
+    expires_str = None
+    duration_str = None
+    if txn:
+        if txn.is_all_day:
+            pa = make_aware(txn.parked_at)
+            is_active = pa is not None and (now_utc - pa).days == 0
+            expires_str = "End of day (23:59)"
+            duration_str = "All day"
+        else:
+            exp = make_aware(txn.expires_at)
+            is_active = exp is not None and exp > now_utc
+            expires_str = exp.strftime("%d %b %Y %H:%M") if exp else None
+            duration_str = f"{txn.duration_hours} hour{'s' if txn.duration_hours != 1 else ''}"
+
+    cp = {"id": car_park.id, "name": car_park.name, "slug": car_park.slug}
+    result = {
+        "plate": plate,
+        "is_active": is_active,
+        "found": txn is not None,
+        "expires": expires_str,
+        "duration": duration_str,
+    }
+    return templates.TemplateResponse("driver/check.html", {"request": request, "car_park": cp, "result": result})
