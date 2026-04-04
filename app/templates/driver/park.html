@@ -109,7 +109,7 @@
       <h1 class="estate-name">{{ estate_name }}</h1>
       <p style="color:#fff; font-family:'Raleway',Helvetica,Arial,sans-serif; font-weight:700; font-size:1rem; margin:0 0 1rem; letter-spacing:.5px;">{{ car_park_name }}</p>
       <p class="estate-welcome">
-        {% if welcome_text %}{{ welcome_text }}{% else %}Thank you for paying to park here.{% endif %}
+        {% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Thank you for paying to park here.{% endif %}
       </p>
     </div>
 
@@ -140,8 +140,8 @@
         <a href="/payment" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
     </div>
 
-    <p class="stripe-note" style="padding:1rem 0; color:rgba(255,255,255,.5); display:flex; align-items:center; justify-content:center; gap:.4rem;">
-      <span style="color:#8B3A2A">PAR</span><span>CAR</span><span style="color:#8B3A2A">K</span>
+    <p class="stripe-note" style="padding:1rem 0; color:rgba(255,255,255,.3);">
+      Powered by <span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.5)">CAR</span><span style="color:#8B3A2A">K</span>
     </p>
 
   </div>
