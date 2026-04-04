@@ -3,16 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="ParCark — white-labelled cashless parking for private estates and rural landowners. QR code parking, no apps, no barriers.">
+  <meta property="og:title" content="ParCark — Cashless Parking for Private Estates">
+  <meta property="og:description" content="White-labelled cashless parking for private estates across Surrey and beyond. QR code — driver pays in seconds.">
+  <meta property="og:type" content="website">
   <title>ParCark — Cashless Parking for Private Estates</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --red: #8B3A2A; }
 
     body {
-      background: #000;
+      background: #050505;
       color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
     }
 
     /* ── Nav ── */
@@ -20,90 +27,51 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1.5rem 2rem;
+      padding: 1.4rem 2.5rem;
       position: fixed;
       top: 0; left: 0; right: 0;
       z-index: 100;
-      background: rgba(0,0,0,0.85);
-      backdrop-filter: blur(6px);
+      background: rgba(5,5,5,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.04);
     }
 
     .nav-logo {
-      font-size: 1.4rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #fff;
-      text-decoration: none;
-    }
-
-    .hamburger {
       display: flex;
-      flex-direction: column;
-      gap: 5px;
-      cursor: pointer;
-      padding: 4px;
-      background: none;
-      border: none;
-    }
-    .hamburger span {
-      display: block;
-      width: 26px;
-      height: 2px;
-      background: #fff;
-      border-radius: 2px;
-      transition: all .3s;
-    }
-    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-    .hamburger.open span:nth-child(2) { opacity: 0; }
-    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
-
-    /* ── Drawer ── */
-    .drawer {
-      position: fixed;
-      top: 0; right: -280px;
-      width: 280px;
-      height: 100vh;
-      background: #111;
-      z-index: 99;
-      transition: right .3s ease;
-      padding: 6rem 2rem 2rem;
-      border-left: 1px solid #222;
-    }
-    .drawer.open { right: 0; }
-
-    .drawer a {
-      display: block;
-      color: rgba(255,255,255,0.85);
+      align-items: center;
+      gap: .55rem;
       text-decoration: none;
-      font-size: 1rem;
-      font-weight: 600;
-      letter-spacing: 1px;
+    }
+    .nav-wordmark {
+      font-weight: 800;
+      letter-spacing: 4px;
+      font-size: .92rem;
       text-transform: uppercase;
-      padding: 1rem 0;
-      border-bottom: 1px solid #222;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+    }
+    .nav-links a {
+      color: rgba(255,255,255,.55);
+      text-decoration: none;
+      font-size: .78rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
       transition: color .15s;
     }
-    .drawer a:hover { color: #fff; }
-    .drawer a.admin-link {
-      font-size: .75rem;
-      font-weight: 400;
-      color: rgba(255,255,255,0.35);
-      letter-spacing: .5px;
-      text-transform: none;
-      margin-top: 2rem;
-      border-bottom: none;
+    .nav-links a:hover { color: #fff; }
+    .nav-links .nav-cta {
+      background: var(--red);
+      color: #fff !important;
+      padding: .5rem 1.25rem;
+      border-radius: 3px;
+      transition: filter .15s !important;
     }
-    .drawer a.admin-link:hover { color: rgba(255,255,255,0.6); }
-
-    .overlay {
-      display: none;
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.5);
-      z-index: 98;
-    }
-    .overlay.open { display: block; }
+    .nav-links .nav-cta:hover { filter: brightness(115%); }
 
     /* ── Hero ── */
     .hero {
@@ -113,128 +81,236 @@
       justify-content: center;
       align-items: center;
       text-align: center;
-      padding: 6rem 2rem 4rem;
+      padding: 8rem 2rem 6rem;
+    }
+
+    .hero-mark {
+      margin-bottom: 2.5rem;
     }
 
     .hero-tag {
-      font-size: .75rem;
-      font-weight: 600;
-      letter-spacing: 4px;
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 5px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.4);
+      color: rgba(255,255,255,.3);
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-wordmark {
+      font-size: clamp(3rem, 10vw, 6rem);
+      font-weight: 800;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      line-height: 1;
       margin-bottom: 1.5rem;
     }
 
-    .hero h1 {
-      font-size: clamp(2.5rem, 8vw, 5rem);
-      font-weight: 700;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      line-height: 1.1;
-      margin-bottom: 2rem;
-    }
-
-    .hero h1 span { color: rgba(255,255,255,0.25); }
-
-    .divider {
-      width: 48px;
+    .hero-rule {
+      width: 40px;
       height: 2px;
-      background: #8B3A2A;
+      background: var(--red);
       margin: 0 auto 2rem;
     }
 
-    .hero-mission {
-      max-width: 640px;
+    .hero-sub {
+      max-width: 480px;
       font-size: 1.05rem;
       font-weight: 300;
-      line-height: 1.85;
-      color: rgba(255,255,255,0.72);
-      margin-bottom: 3rem;
+      line-height: 1.8;
+      color: rgba(255,255,255,.6);
+      margin-bottom: 2.75rem;
+      letter-spacing: .2px;
     }
 
-    .cta-btn {
-      display: inline-block;
-      background: #8B3A2A;
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .6rem;
+      background: var(--red);
       color: #fff;
       text-decoration: none;
       font-weight: 700;
-      font-size: .85rem;
-      letter-spacing: 2px;
+      font-size: .82rem;
+      letter-spacing: 2.5px;
       text-transform: uppercase;
       padding: 1rem 2.5rem;
       border-radius: 3px;
       transition: filter .2s;
     }
-    .cta-btn:hover { filter: brightness(115%); }
+    .hero-cta:hover { filter: brightness(115%); color: #fff; }
 
-    /* ── How it works ── */
-    .section {
-      padding: 5rem 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-      text-align: center;
+    /* ── Stats strip ── */
+    .stats-strip {
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 3rem 2rem;
+      display: flex;
+      justify-content: center;
+      gap: 5rem;
+      flex-wrap: wrap;
+    }
+    .stat-item { text-align: center; }
+    .stat-n {
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -1px;
+      line-height: 1;
+      margin-bottom: .35rem;
+    }
+    .stat-n span { color: var(--red); }
+    .stat-l {
+      font-size: .65rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.3);
     }
 
-    .section-tag {
-      font-size: .72rem;
-      font-weight: 600;
+    /* ── Section ── */
+    .section {
+      padding: 6rem 2rem;
+      max-width: 920px;
+      margin: 0 auto;
+    }
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-header .tag {
+      font-size: .68rem;
+      font-weight: 700;
       letter-spacing: 4px;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.35);
-      margin-bottom: 1rem;
+      color: var(--red);
+      margin-bottom: .75rem;
     }
-
-    .section h2 {
-      font-size: 1.8rem;
+    .section-header h2 {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
       font-weight: 700;
       letter-spacing: 2px;
       text-transform: uppercase;
-      margin-bottom: 3rem;
+      color: #fff;
     }
 
+    /* ── Steps ── */
     .steps {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 2rem;
-      text-align: left;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 2.5rem;
     }
-
     .step {
-      border-top: 2px solid #8B3A2A;
-      padding-top: 1.2rem;
+      border-top: 1px solid rgba(255,255,255,.08);
+      padding-top: 1.5rem;
+      position: relative;
     }
-
+    .step::before {
+      content: '';
+      position: absolute;
+      top: -1px; left: 0;
+      width: 32px; height: 2px;
+      background: var(--red);
+    }
     .step-num {
-      font-size: .7rem;
+      font-size: .65rem;
       font-weight: 700;
       letter-spacing: 3px;
-      color: #8B3A2A;
+      color: var(--red);
       text-transform: uppercase;
-      margin-bottom: .6rem;
+      margin-bottom: .75rem;
     }
-
     .step h3 {
-      font-size: 1rem;
+      font-size: .95rem;
       font-weight: 700;
-      margin-bottom: .5rem;
       letter-spacing: .5px;
+      margin-bottom: .6rem;
+      color: #fff;
+    }
+    .step p {
+      font-size: .85rem;
+      font-weight: 300;
+      color: rgba(255,255,255,.5);
+      line-height: 1.75;
     }
 
-    .step p {
+    /* ── For who ── */
+    .for-who {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.06);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .for-item {
+      background: #0c0c0c;
+      padding: 1.75rem 1.5rem;
+    }
+    .for-icon {
+      width: 32px;
+      height: 32px;
+      background: rgba(139,58,42,.15);
+      border-radius: 3px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1rem;
+    }
+    .for-item h4 {
       font-size: .88rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+      color: #fff;
+      margin-bottom: .35rem;
+    }
+    .for-item p {
+      font-size: .78rem;
       font-weight: 300;
-      color: rgba(255,255,255,0.6);
-      line-height: 1.7;
+      color: rgba(255,255,255,.4);
+      line-height: 1.6;
     }
 
     /* ── Footer ── */
     footer {
-      border-top: 1px solid #1a1a1a;
-      padding: 2rem;
-      text-align: center;
-      font-size: .75rem;
-      color: rgba(255,255,255,0.25);
+      border-top: 1px solid rgba(255,255,255,.06);
+      padding: 2.5rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    footer .foot-logo {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      text-decoration: none;
+    }
+    footer .foot-wordmark {
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+    }
+    .foot-links {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+    }
+    .foot-links a {
+      color: rgba(255,255,255,.25);
+      text-decoration: none;
+      font-size: .72rem;
       font-weight: 300;
+      letter-spacing: .5px;
+      transition: color .15s;
+    }
+    .foot-links a:hover { color: rgba(255,255,255,.6); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.25rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .stats-strip { gap: 2.5rem; }
+      footer { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
@@ -242,87 +318,148 @@
 
   <!-- Nav -->
   <nav>
-    <a href="/" class="nav-logo"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></a>
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="/" class="nav-logo">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
+        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
+        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
+      </svg>
+      <span class="nav-wordmark"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></span>
+    </a>
+    <div class="nav-links">
+      <a href="/owner/login">Owner login</a>
+      <a href="mailto:info@parcark.co.uk" class="nav-cta">Get in touch</a>
+    </div>
   </nav>
-
-  <!-- Drawer -->
-  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
-  <div class="drawer" id="drawer">
-    <a href="/owner/login">Owner Login</a>
-    <a href="mailto:info@parcark.co.uk">Contact Us</a>
-    <a href="/admin/login" class="admin-link">Admin</a>
-  </div>
 
   <!-- Hero -->
   <section class="hero">
+    <div class="hero-mark">
+      <svg width="52" height="52" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.2"/>
+        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
+        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
+      </svg>
+    </div>
     <p class="hero-tag">Cashless parking — simply done</p>
-    <h1><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></h1>
-    <div class="divider"></div>
-    <p class="hero-mission">
-      ParCark makes cashless parking simple for private estates, rural landowners, and countryside
-      venues across Surrey and beyond. We provide a white-labelled parking payment service that puts
-      your branding front and centre — no apps, no barriers, no multinational parking companies
-      taking the lion's share. Visitors scan a QR code, pay in seconds, and you receive your revenue
-      monthly, automatically.<br><br>
-      Whether you manage a country estate, a farm shop, a vineyard, or a village car park, ParCark
-      gives you a professional, frictionless parking solution built around your needs — not ours.
+    <h1 class="hero-wordmark">
+      <span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span>
+    </h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">
+      White-labelled parking payments for private estates and rural landowners. Your brand. Your revenue. No apps, no barriers, no engineers.
     </p>
-    <a href="mailto:info@parcark.co.uk" class="cta-btn">Get in touch</a>
+    <a href="mailto:info@parcark.co.uk" class="hero-cta">
+      Get in touch
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </section>
+
+  <!-- Stats -->
+  <div class="stats-strip">
+    <div class="stat-item">
+      <div class="stat-n">2<span>min</span></div>
+      <div class="stat-l">Setup to live</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">0<span>£</span></div>
+      <div class="stat-l">Upfront cost</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">100<span>%</span></div>
+      <div class="stat-l">Your branding</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-n">24<span>/7</span></div>
+      <div class="stat-l">Automated</div>
+    </div>
+  </div>
 
   <!-- How it works -->
   <section class="section">
-    <p class="section-tag">The process</p>
-    <h2>How it works</h2>
+    <div class="section-header">
+      <p class="tag">The process</p>
+      <h2>Up and running in days</h2>
+    </div>
     <div class="steps">
       <div class="step">
-        <p class="step-num">Step 01</p>
+        <p class="step-num">01</p>
         <h3>We set you up</h3>
-        <p>We create your branded parking page in days. Your colours, your name, your car park.</p>
+        <p>Your branded parking page is live in days. Your name, your colours, your car park.</p>
       </div>
       <div class="step">
-        <p class="step-num">Step 02</p>
+        <p class="step-num">02</p>
         <h3>QR code on site</h3>
-        <p>A weatherproof sign with your QR code goes up. No hardware, no barriers, no engineers.</p>
+        <p>A weatherproof sign with your QR code. No hardware, no barriers, no engineers.</p>
       </div>
       <div class="step">
-        <p class="step-num">Step 03</p>
-        <h3>Visitors pay</h3>
-        <p>Drivers scan, select their duration, and pay securely by card, Apple Pay or Google Pay.</p>
+        <p class="step-num">03</p>
+        <h3>Drivers pay</h3>
+        <p>Scan, choose duration, pay by card, Apple Pay or Google Pay. Under 30 seconds.</p>
       </div>
       <div class="step">
-        <p class="step-num">Step 04</p>
-        <h3>You get paid</h3>
-        <p>Your revenue lands in your account every month. Automatically. No invoices, no chasing.</p>
+        <p class="step-num">04</p>
+        <h3>Revenue lands</h3>
+        <p>Your share lands in your account automatically. No invoices, no chasing.</p>
       </div>
     </div>
   </section>
 
+  <!-- Who it's for -->
+  <section class="section" style="padding-top:0;">
+    <div class="section-header">
+      <p class="tag">Who it's for</p>
+      <h2>Built for private land</h2>
+    </div>
+    <div class="for-who">
+      <div class="for-item">
+        <div class="for-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <h4>Country estates</h4>
+        <p>Manage multiple car parks across your estate from one dashboard.</p>
+      </div>
+      <div class="for-item">
+        <div class="for-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h4>Nature reserves</h4>
+        <p>Capture parking revenue from walkers and day visitors without staff.</p>
+      </div>
+      <div class="for-item">
+        <div class="for-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+        </div>
+        <h4>Rural venues</h4>
+        <p>Farm shops, vineyards, heritage sites — any venue with a car park.</p>
+      </div>
+      <div class="for-item">
+        <div class="for-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#8B3A2A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
+        <h4>Parish councils</h4>
+        <p>Village car parks, community land — transparent revenue reporting.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
   <footer>
-    &copy; 2026 ParCark Ltd &nbsp;&middot;&nbsp; Surrey, UK &nbsp;&middot;&nbsp;
-    <a href="mailto:info@parcark.co.uk" style="color:inherit;">info@parcark.co.uk</a>
+    <a href="/" class="foot-logo">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="10" stroke="#8B3A2A" stroke-width="1.5"/>
+        <rect x="8.5" y="7.5" width="2" height="9" rx="0.5" fill="#8B3A2A"/>
+        <path d="M10.5 7.5h2.5a2.5 2.5 0 0 1 0 5H10.5z" fill="#8B3A2A"/>
+      </svg>
+      <span class="foot-wordmark"><span style="color:#8B3A2A">PAR</span><span style="color:rgba(255,255,255,.25)">CAR</span><span style="color:#8B3A2A">K</span></span>
+    </a>
+    <div class="foot-links">
+      <a href="mailto:info@parcark.co.uk">info@parcark.co.uk</a>
+      <a href="/owner/login">Owner login</a>
+      <a href="/admin/login">Admin</a>
+      <span style="color:rgba(255,255,255,.15); font-size:.7rem;">&copy; 2026 ParCark Ltd &middot; Surrey, UK</span>
+    </div>
   </footer>
-
-  <script>
-    const hamburger = document.getElementById('hamburger');
-    const drawer = document.getElementById('drawer');
-    const overlay = document.getElementById('overlay');
-
-    hamburger.addEventListener('click', () => {
-      const open = drawer.classList.toggle('open');
-      overlay.classList.toggle('open', open);
-      hamburger.classList.toggle('open', open);
-    });
-
-    function closeMenu() {
-      drawer.classList.remove('open');
-      overlay.classList.remove('open');
-      hamburger.classList.remove('open');
-    }
-  </script>
 
 </body>
 </html>

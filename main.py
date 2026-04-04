@@ -3,8 +3,9 @@ load_dotenv()
 
 from fastapi import FastAPI, Request
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import RedirectResponse
+from fastapi.responses import RedirectResponse, HTMLResponse, PlainTextResponse
 from fastapi.templating import Jinja2Templates
+from fastapi.exceptions import HTTPException
 from datetime import date, datetime, timedelta, timezone
 import random
 
@@ -141,3 +142,24 @@ app.include_router(admin.router)
 @app.get("/")
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
+
+@app.get("/robots.txt", response_class=PlainTextResponse)
+def robots():
+    return "User-agent: *\nDisallow: /admin/\nDisallow: /owner/\nDisallow: /check/\nAllow: /park/\nAllow: /\n"
+
+
+@app.exception_handler(404)
+async def not_found(request: Request, exc: HTTPException):
+    return HTMLResponse(
+        templates.get_template("errors/404.html").render({"request": request}),
+        status_code=404,
+    )
+
+
+@app.exception_handler(503)
+async def service_unavailable(request: Request, exc: HTTPException):
+    return HTMLResponse(
+        templates.get_template("errors/503.html").render({"request": request}),
+        status_code=503,
+    )
