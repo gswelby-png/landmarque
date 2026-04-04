@@ -35,11 +35,15 @@ def migrate():
                 conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
                 conn.commit()
                 log.info("migrate(): added welcome_text column")
-        # Backfill Shere Manor logo if not set
+        # Backfill Shere Manor logo and welcome text if not set
         with engine.connect() as conn:
             conn.execute(text(
                 "UPDATE car_parks SET logo_url = 'https://sheremanorestate.co.uk/images/default/logo_sticky.svg' "
                 "WHERE slug = 'shere-manor' AND (logo_url IS NULL OR logo_url = '')"
+            ))
+            conn.execute(text(
+                "UPDATE car_parks SET welcome_text = 'Welcome! We would be very grateful if you could make secure payment for parking on this app. Your contribution will go towards the upkeep of the public facilities that we provide around Shere and Holmbury Hill.' "
+                "WHERE slug = 'shere-manor' AND (welcome_text IS NULL OR welcome_text = '')"
             ))
             conn.commit()
     except Exception as e:
