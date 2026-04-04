@@ -22,7 +22,15 @@
       font-weight: 700; font-size: 1.9rem; color: #fff;
       letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1rem;
     }
-    .car-park-name { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: .5px; margin: 0; }
+    .car-park-name { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: .5px; margin: 0 0 1rem; }
+    .estate-welcome {
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
 
     /* Panel */
     .panel {
@@ -115,6 +123,7 @@
       {% endif %}
       <h1 class="estate-name">{{ estate_name }}</h1>
       <p class="car-park-name">{{ car_park_name }}</p>
+      <p class="estate-welcome">Please select your payment method. If, for any reason, you can't make payment now, please feel free to pay when you get home.</p>
     </div>
 
     <div class="panel">
