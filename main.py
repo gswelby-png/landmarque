@@ -58,7 +58,7 @@ def seed():
 
         # Admin
         db.add(models.AdminUser(
-            email="admin@parcark.co.uk",
+            email="admin@landmarque.co.uk",
             password_hash=hash_password("admin123"),
         ))
 
@@ -157,7 +157,7 @@ with engine.connect() as _conn:
     _conn.execute(_text("UPDATE car_parks SET welcome_text='Welcome! We would be very grateful if you could make secure payment for parking on this app. Your contribution will go towards the upkeep of the public facilities that we provide around Shere and Holmbury Hill.' WHERE slug='shere-manor'"))
     _conn.commit()
 
-app = FastAPI(title="ParCark")
+app = FastAPI(title="LandMarque")
 app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 templates = Jinja2Templates(directory="app/templates")

@@ -36,7 +36,7 @@ class Owner(Base):
     name = Column(String, nullable=False)
     email = Column(String, unique=True, nullable=False)
     password_hash = Column(String, nullable=False)
-    # Commission ParCark takes, e.g. 10 = 10%
+    # Commission LandMarque takes, e.g. 10 = 10%
     commission_pct = Column(Integer, nullable=False, default=10)
     stripe_account_id = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
@@ -51,7 +51,7 @@ class CarPark(Base):
     id = Column(Integer, primary_key=True)
     owner_id = Column(Integer, ForeignKey("owners.id"), nullable=False)
     name = Column(String, nullable=False)
-    # URL slug: name.parcark.co.uk or /park/{slug}
+    # URL slug: name.landmarque.co.uk or /park/{slug}
     slug = Column(String, unique=True, nullable=False)
     address = Column(String, nullable=True)
     description = Column(String, nullable=True)

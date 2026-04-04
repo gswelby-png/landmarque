@@ -14,12 +14,12 @@ models.Base.metadata.create_all(bind=engine)
 db = SessionLocal()
 
 # Admin
-if not db.query(models.AdminUser).filter_by(email="admin@parcark.co.uk").first():
+if not db.query(models.AdminUser).filter_by(email="admin@landmarque.co.uk").first():
     db.add(models.AdminUser(
-        email="admin@parcark.co.uk",
+        email="admin@landmarque.co.uk",
         password_hash=hash_password("admin123"),
     ))
-    print("Created admin: admin@parcark.co.uk / admin123")
+    print("Created admin: admin@landmarque.co.uk / admin123")
 
 # Demo owner
 owner = db.query(models.Owner).filter_by(email="demo@estate.co.uk").first()
