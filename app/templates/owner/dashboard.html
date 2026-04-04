@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — {{ owner.name }}{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand">ParCark</span>
+    <div class="navbar-nav ms-auto">
+      <span class="nav-link text-light">{{ owner.name }}</span>
+      <a class="nav-link" href="/owner/transactions">Transactions</a>
+      <a class="nav-link" href="/owner/logout">Sign out</a>
+    </div>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<h4 class="fw-bold mb-4">Dashboard</h4>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-4">
+    <div class="card p-3 text-center">
+      <div class="text-muted small mb-1">Today's earnings</div>
+      <div class="fs-3 fw-bold text-success">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3 text-center">
+      <div class="text-muted small mb-1">This month</div>
+      <div class="fs-3 fw-bold">£{{ "%.2f"|format(month_revenue / 100) }}</div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card p-3 text-center">
+      <div class="text-muted small mb-1">Commission rate</div>
+      <div class="fs-3 fw-bold">{{ owner.commission_pct }}%</div>
+    </div>
+  </div>
+</div>
+
+<div class="d-flex justify-content-between align-items-center mb-3">
+  <h5 class="mb-0">Your car parks</h5>
+  <a href="/owner/car-parks/new" class="btn btn-sm btn-success">+ Add car park</a>
+</div>
+
+{% if car_parks %}
+<div class="row g-3">
+  {% for cp in car_parks %}
+  <div class="col-md-6">
+    <div class="card p-3">
+      <div class="d-flex justify-content-between align-items-start">
+        <div>
+          <h6 class="fw-semibold mb-1">{{ cp.name }}</h6>
+          <p class="text-muted small mb-2">{{ cp.address or "No address" }}</p>
+          <code class="small">/park/{{ cp.slug }}</code>
+        </div>
+        <span class="badge {% if cp.is_active %}bg-success{% else %}bg-secondary{% endif %}">
+          {% if cp.is_active %}Active{% else %}Inactive{% endif %}
+        </span>
+      </div>
+      <div class="mt-2">
+        <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-outline-secondary">Manage pricing</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% else %}
+<div class="card p-4 text-center text-muted">
+  No car parks yet. <a href="/owner/car-parks/new">Add your first one.</a>
+</div>
+{% endif %}
+{% endblock %}

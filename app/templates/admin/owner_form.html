@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block title %}{% if owner %}Edit{% else %}New{% endif %} Owner — ParCark Admin{% endblock %}
+{% block navbar %}
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/admin/dashboard">ParCark Admin</a>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-5">
+    <h4 class="fw-bold mb-4">{% if owner %}Edit{% else %}New{% endif %} land owner</h4>
+    <div class="card p-4">
+      {% if error %}<div class="alert alert-danger">{{ error }}</div>{% endif %}
+      <form method="post">
+        <div class="mb-3">
+          <label class="form-label">Name</label>
+          <input type="text" name="name" class="form-control" required
+                 value="{{ owner.name if owner else '' }}">
+        </div>
+        <div class="mb-3">
+          <label class="form-label">Email</label>
+          <input type="email" name="email" class="form-control" required
+                 value="{{ owner.email if owner else '' }}">
+        </div>
+        {% if not owner %}
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input type="password" name="password" class="form-control" required minlength="8">
+        </div>
+        {% endif %}
+        <div class="mb-3">
+          <label class="form-label">Commission rate (%)</label>
+          <div class="input-group">
+            <input type="number" name="commission_pct" class="form-control" required
+                   min="0" max="100" value="{{ owner.commission_pct if owner else 10 }}">
+            <span class="input-group-text">%</span>
+          </div>
+          <div class="form-text">ParCark's cut. Owner receives the remainder.</div>
+        </div>
+        {% if owner %}
+        <div class="mb-3">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" name="is_active" value="true"
+                   {% if owner.is_active %}checked{% endif %}>
+            <label class="form-check-label">Active</label>
+          </div>
+        </div>
+        {% endif %}
+        <div class="d-flex gap-2">
+          <button type="submit" class="btn btn-dark">Save</button>
+          <a href="/admin/dashboard" class="btn btn-outline-secondary">Cancel</a>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

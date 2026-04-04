@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ estate_name }} — Parking</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #000;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding-bottom: 60px;
+    }
+    .estate-header {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+    .estate-logo {
+      max-width: 220px;
+      height: auto;
+      margin-bottom: 1.4rem;
+    }
+    .estate-name {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .estate-welcome {
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .payment-panel {
+      background: #fff;
+      border-radius: 8px;
+      padding: 2rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+    }
+    .form-control {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      border-radius: 4px;
+    }
+    .duration-option {
+      cursor: pointer;
+      border: 1px solid #ddd !important;
+      border-radius: 4px;
+      padding: .75rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: border-color .15s, background .15s;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+    }
+    .duration-option:hover { border-color: {{ brand.accent }} !important; }
+    .duration-option.selected {
+      border-color: {{ brand.accent }} !important;
+      background: #fdf9f2;
+    }
+    .duration-price {
+      font-weight: 700;
+      color: #222;
+    }
+    .btn-pay {
+      background: {{ brand.accent }};
+      border: none;
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: .85rem;
+      width: 100%;
+      margin-top: .5rem;
+      cursor: pointer;
+      transition: filter .15s;
+    }
+    .btn-pay:hover { filter: brightness(88%); }
+    .stripe-note {
+      color: #999;
+      font-size: .75rem;
+      text-align: center;
+      margin-top: .9rem;
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container" style="max-width:520px; padding-top:2rem;">
+
+    <div class="estate-header">
+      <img src="https://sheremanorestate.co.uk/images/default/logo_sticky.svg"
+           alt="Shere Manor Estate" class="estate-logo">
+      <h1 class="estate-name">{{ estate_name }}</h1>
+      <p style="color:#fff; font-family:'Raleway',Helvetica,Arial,sans-serif; font-weight:700; font-size:1rem; margin:0 0 1rem; letter-spacing:.5px;">{{ car_park_name }}</p>
+      <p class="estate-welcome">
+        Welcome! We would be very grateful if you could make secure payment for parking on this app.
+        Your contribution will go towards the upkeep of the public facilities that we provide
+        around Shere and Holmbury Hill.
+      </p>
+    </div>
+
+    <div class="payment-panel">
+      <form method="post" action="/park/{{ car_park_slug }}/checkout">
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold" style="font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:#555;">
+            Enter your registration
+          </label>
+          <input type="text" name="number_plate" class="form-control form-control-lg text-uppercase"
+                 required maxlength="10"
+                 style="letter-spacing:4px; font-weight:700; font-size:1.1rem;">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label fw-semibold" style="font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:#555;">
+            Duration
+          </label>
+          <div class="d-grid gap-2">
+            {% for opt in options %}
+            <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
+              <span>{{ opt.label }}</span>
+              <span class="duration-price">{{ opt.price_display }}</span>
+              <input type="radio" name="duration" value="{{ opt.value }}" class="d-none" required>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+
+        <button type="submit" class="btn-pay">Pay</button>
+      </form>
+    </div>
+
+    <p class="stripe-note" style="padding: 1rem 0 1rem; color: rgba(255,255,255,0.75);">Powered by ParCark</p>
+
+  </div>
+
+  <script>
+    const accent = "{{ brand.accent }}";
+    function selectDuration(el, val) {
+      document.querySelectorAll('.duration-option').forEach(e => {
+        e.classList.remove('selected');
+      });
+      el.classList.add('selected');
+      el.querySelector('input[type=radio]').checked = true;
+    }
+  </script>
+</body>
+</html>

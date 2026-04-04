@@ -1,0 +1,6 @@
+parcark.db
+__pycache__/
+*.pyc
+.env
+*.png
+cookies.txt
