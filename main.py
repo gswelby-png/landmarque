@@ -43,7 +43,7 @@ def migrate():
             ))
             conn.execute(text(
                 "UPDATE car_parks SET welcome_text = 'Welcome! We would be very grateful if you could make secure payment for parking on this app. Your contribution will go towards the upkeep of the public facilities that we provide around Shere and Holmbury Hill.' "
-                "WHERE slug = 'shere-manor' AND (welcome_text IS NULL OR welcome_text = '')"
+                "WHERE slug = 'shere-manor'"
             ))
             conn.commit()
     except Exception as e:
