@@ -131,9 +131,11 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         def sort_key(t):
             active = is_active(t)
             exp = make_aware(t.expires_at) or datetime.max.replace(tzinfo=tz.utc)
-            return (0 if active else 1, exp)
+            # Active: sort ascending by expiry (soonest to expire first)
+            # Expired: sort descending by expiry (most recently expired first)
+            return (0 if active else 1, exp if active else -exp.timestamp())
 
-        txns_sorted = sorted(txns, key=sort_key)
+        txns_sorted = sorted(txns, key=sort_key)[:100]
 
         cp_data.append({
             "id": cp.id,
