@@ -69,6 +69,21 @@ def seed():
             all_day_pence=1200,
             valid_from=date(2026, 1, 1),
         ))
+        # Second car park
+        cp2 = models.CarPark(
+            owner_id=owner_obj.id,
+            name="Holmbury Hill Car Park",
+            slug="holmbury-hill",
+            address="Holmbury St Mary, Surrey, RH5",
+            tagline="Holmbury Hill — Surrey Hills",
+            brand_primary="#1e3a1e",
+            brand_accent="#8B3A2A",
+            brand_text="#f5f0e8",
+        )
+        db.add(cp2)
+        db.flush()
+        db.add(models.PricingRule(car_park_id=cp2.id, day_type=models.DayType.weekday, hourly_rate_pence=300, max_hourly_hours=4, all_day_pence=1200, valid_from=date(2026, 1, 1)))
+        db.add(models.PricingRule(car_park_id=cp2.id, day_type=models.DayType.weekend, hourly_rate_pence=350, max_hourly_hours=4, all_day_pence=1400, valid_from=date(2026, 1, 1)))
         db.commit()
 
         # Dummy transactions
