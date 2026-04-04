@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParCark — Cashless Parking for Private Estates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 2rem;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+    }
+
+    .nav-logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .hamburger {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+      background: none;
+      border: none;
+    }
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 2px;
+      background: #fff;
+      border-radius: 2px;
+      transition: all .3s;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; }
+    .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+    /* ── Drawer ── */
+    .drawer {
+      position: fixed;
+      top: 0; right: -280px;
+      width: 280px;
+      height: 100vh;
+      background: #111;
+      z-index: 99;
+      transition: right .3s ease;
+      padding: 6rem 2rem 2rem;
+      border-left: 1px solid #222;
+    }
+    .drawer.open { right: 0; }
+
+    .drawer a {
+      display: block;
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 1rem 0;
+      border-bottom: 1px solid #222;
+      transition: color .15s;
+    }
+    .drawer a:hover { color: #fff; }
+    .drawer a.admin-link {
+      font-size: .75rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.35);
+      letter-spacing: .5px;
+      text-transform: none;
+      margin-top: 2rem;
+      border-bottom: none;
+    }
+    .drawer a.admin-link:hover { color: rgba(255,255,255,0.6); }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      z-index: 98;
+    }
+    .overlay.open { display: block; }
+
+    /* ── Hero ── */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 6rem 2rem 4rem;
+    }
+
+    .hero-tag {
+      font-size: .75rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.4);
+      margin-bottom: 1.5rem;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 8vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      line-height: 1.1;
+      margin-bottom: 2rem;
+    }
+
+    .hero h1 span { color: rgba(255,255,255,0.25); }
+
+    .divider {
+      width: 48px;
+      height: 2px;
+      background: #8B3A2A;
+      margin: 0 auto 2rem;
+    }
+
+    .hero-mission {
+      max-width: 640px;
+      font-size: 1.05rem;
+      font-weight: 300;
+      line-height: 1.85;
+      color: rgba(255,255,255,0.72);
+      margin-bottom: 3rem;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      background: #8B3A2A;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: .85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: 3px;
+      transition: filter .2s;
+    }
+    .cta-btn:hover { filter: brightness(115%); }
+
+    /* ── How it works ── */
+    .section {
+      padding: 5rem 2rem;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section-tag {
+      font-size: .72rem;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.35);
+      margin-bottom: 1rem;
+    }
+
+    .section h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 3rem;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+      text-align: left;
+    }
+
+    .step {
+      border-top: 2px solid #8B3A2A;
+      padding-top: 1.2rem;
+    }
+
+    .step-num {
+      font-size: .7rem;
+      font-weight: 700;
+      letter-spacing: 3px;
+      color: #8B3A2A;
+      text-transform: uppercase;
+      margin-bottom: .6rem;
+    }
+
+    .step h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: .5rem;
+      letter-spacing: .5px;
+    }
+
+    .step p {
+      font-size: .88rem;
+      font-weight: 300;
+      color: rgba(255,255,255,0.6);
+      line-height: 1.7;
+    }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid #1a1a1a;
+      padding: 2rem;
+      text-align: center;
+      font-size: .75rem;
+      color: rgba(255,255,255,0.25);
+      font-weight: 300;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <a href="/" class="nav-logo">ParCark</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Drawer -->
+  <div class="overlay" id="overlay" onclick="closeMenu()"></div>
+  <div class="drawer" id="drawer">
+    <a href="/owner/login">Owner Login</a>
+    <a href="mailto:info@parcark.co.uk">Contact Us</a>
+    <a href="/admin/login" class="admin-link">Admin</a>
+  </div>
+
+  <!-- Hero -->
+  <section class="hero">
+    <p class="hero-tag">Cashless parking — simply done</p>
+    <h1>Par<span>C</span>ark</h1>
+    <div class="divider"></div>
+    <p class="hero-mission">
+      ParCark makes cashless parking simple for private estates, rural landowners, and countryside
+      venues across Surrey and beyond. We provide a white-labelled parking payment service that puts
+      your branding front and centre — no apps, no barriers, no multinational parking companies
+      taking the lion's share. Visitors scan a QR code, pay in seconds, and you receive your revenue
+      monthly, automatically.<br><br>
+      Whether you manage a country estate, a farm shop, a vineyard, or a village car park, ParCark
+      gives you a professional, frictionless parking solution built around your needs — not ours.
+    </p>
+    <a href="mailto:info@parcark.co.uk" class="cta-btn">Get in touch</a>
+  </section>
+
+  <!-- How it works -->
+  <section class="section">
+    <p class="section-tag">The process</p>
+    <h2>How it works</h2>
+    <div class="steps">
+      <div class="step">
+        <p class="step-num">Step 01</p>
+        <h3>We set you up</h3>
+        <p>We create your branded parking page in days. Your colours, your name, your car park.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">Step 02</p>
+        <h3>QR code on site</h3>
+        <p>A weatherproof sign with your QR code goes up. No hardware, no barriers, no engineers.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">Step 03</p>
+        <h3>Visitors pay</h3>
+        <p>Drivers scan, select their duration, and pay securely by card, Apple Pay or Google Pay.</p>
+      </div>
+      <div class="step">
+        <p class="step-num">Step 04</p>
+        <h3>You get paid</h3>
+        <p>Your revenue lands in your account every month. Automatically. No invoices, no chasing.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2026 ParCark Ltd &nbsp;&middot;&nbsp; Surrey, UK &nbsp;&middot;&nbsp;
+    <a href="mailto:info@parcark.co.uk" style="color:inherit;">info@parcark.co.uk</a>
+  </footer>
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const drawer = document.getElementById('drawer');
+    const overlay = document.getElementById('overlay');
+
+    hamburger.addEventListener('click', () => {
+      const open = drawer.classList.toggle('open');
+      overlay.classList.toggle('open', open);
+      hamburger.classList.toggle('open', open);
+    });
+
+    function closeMenu() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      hamburger.classList.remove('open');
+    }
+  </script>
+
+</body>
+</html>
