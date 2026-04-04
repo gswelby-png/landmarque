@@ -4,10 +4,15 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <div class="container">
     <span class="navbar-brand"><span style="color:#8B3A2A">PAR</span><span style="color:#fff">CAR</span><span style="color:#8B3A2A">K</span></span>
-    <div class="navbar-nav ms-auto">
+    <div class="navbar-nav ms-auto align-items-center">
       <span class="nav-link text-light">{{ owner.name }}</span>
-      <a class="nav-link" href="/owner/transactions">Transactions</a>
-      <a class="nav-link" href="/owner/logout">Sign out</a>
+      <a href="/owner/logout" class="nav-link" title="Sign out" style="display:flex;align-items:center;">
+        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.8)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/>
+          <circle cx="12" cy="9" r="3"/>
+          <path d="M6.5 19.5a6 6 0 0 1 11 0"/>
+        </svg>
+      </a>
     </div>
   </div>
 </nav>
