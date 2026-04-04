@@ -349,8 +349,13 @@
           </tr>
         </thead>
         <tbody>
+          {% set ns = namespace(prev_active=true) %}
           {% for t in cp.transactions %}
           {% set c = "#1a6b2a" if t.active else "var(--text)" %}
+          {% if ns.prev_active and not t.active %}
+          <tr><td colspan="3" style="padding:0; border-bottom:2px solid var(--border);"></td></tr>
+          {% endif %}
+          {% set ns.prev_active = t.active %}
           <tr>
             <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
             <td style="color:{{ c }};">{{ t.duration }}</td>
