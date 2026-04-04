@@ -136,12 +136,12 @@
       <!-- Parking Log tab -->
       <div class="tab-pane" id="tab-{{ cp.id }}-log">
         {% if cp.transactions %}
-        <table class="table table-sm parking-log-table mb-0">
+        <table class="table table-sm parking-log-table mb-0" style="table-layout:fixed; width:100%;">
           <thead>
             <tr>
-              <th>Plate</th>
-              <th>Duration</th>
-              <th>Expires</th>
+              <th style="width:33%;">Plate</th>
+              <th style="width:33%;">Duration</th>
+              <th style="width:34%;">Expires</th>
             </tr>
           </thead>
           <tbody>
