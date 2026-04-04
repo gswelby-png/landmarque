@@ -57,29 +57,18 @@
   .status-pill.off { background: #f0f0f0; color: #999; }
   .status-pill:hover { filter: brightness(96%); }
 
-  .btn-details {
+  .sec-btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
+  .btn-sec {
     font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
     color: var(--muted); background: none; border: 1px solid var(--border);
     border-radius: 3px; padding: .3rem .75rem; cursor: pointer; white-space: nowrap;
-    transition: border-color .15s, color .15s;
+    transition: border-color .15s, color .15s, background .15s;
   }
-  .btn-details:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-sec:hover { border-color: var(--accent); color: var(--accent); }
+  .btn-sec.active { background: var(--accent); border-color: var(--accent); color: #fff; }
 
-  /* ── Expanded area ── */
-  .cp-body { display: none; border-top: 1px solid var(--border); }
-
-  .tab-bar { display: flex; border-bottom: 1px solid var(--border); padding: 0 1.5rem; }
-  .tab-btn {
-    background: none; border: none; border-bottom: 2px solid transparent;
-    padding: .65rem 1rem .65rem 0; margin-right: 1.5rem;
-    font-family: 'Raleway', sans-serif; font-size: .7rem; font-weight: 700;
-    letter-spacing: 2px; text-transform: uppercase; color: var(--muted);
-    cursor: pointer; transition: color .15s, border-color .15s;
-  }
-  .tab-btn.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-  .tab-pane { display: none; }
-  .tab-pane.active { display: block; }
+  /* ── Expanded sections ── */
+  .sec-body { display: none; border-top: 1px solid var(--border); }
 
   /* ── Pricing table ── */
   .pricing-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
@@ -100,10 +89,6 @@
   .warden-line code { font-size: .72rem; background: #f5f4f2; border: 1px solid var(--border); border-radius: 2px; padding: .15rem .4rem; color: #555; }
   .btn-copy { font-size: .68rem; color: var(--muted); background: none; border: 1px solid var(--border); border-radius: 2px; padding: .15rem .5rem; cursor: pointer; transition: border-color .12s, color .12s; }
   .btn-copy:hover { border-color: var(--accent); color: var(--accent); }
-
-  /* ── Edit form ── */
-  .edit-form-wrap { display: none; padding: 1rem 1.5rem; border-bottom: 1px solid var(--border); background: #faf9f7; }
-  .edit-form-wrap label { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); display: block; margin-bottom: .3rem; }
 
   /* ── Parking log ── */
   .log-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
@@ -197,128 +182,129 @@
             {% if cp.is_active %}Active{% else %}Inactive{% endif %}
           </button>
         </form>
-        <button class="btn-details" onclick="toggleDetail({{ cp.id }}, this)">Details</button>
+        <div class="sec-btn-row">
+          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'edit', this)">Edit</button>
+          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'prices', this)">Prices</button>
+          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'signage', this)">Signage</button>
+          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'log', this)">Parking Log</button>
+        </div>
       </div>
     </div>
 
-    <div class="cp-body" id="body-{{ cp.id }}">
-
-      <div class="tab-bar">
-        <button class="tab-btn active" onclick="switchTab({{ cp.id }}, 'settings', this)">Settings</button>
-        <button class="tab-btn" onclick="switchTab({{ cp.id }}, 'log', this)">Parking log</button>
-      </div>
-
-      <!-- Settings -->
-      <div class="tab-pane active" id="tab-{{ cp.id }}-settings">
-
-        {% if cp.rules %}
-        <div class="table-responsive">
-        <table class="pricing-table">
-          <thead>
-            <tr>
-              <th>Day type</th>
-              <th>Hourly</th>
-              <th class="d-none d-md-table-cell">Max hrs</th>
-              <th>All day</th>
-              <th class="d-none d-md-table-cell">From</th>
-              <th class="d-none d-md-table-cell">To</th>
-              <th></th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for r in cp.rules %}
-            <tr>
-              <td>{{ r.day_type }}</td>
-              <td>{{ r.hourly }}</td>
-              <td class="d-none d-md-table-cell">{{ r.max_hours }}</td>
-              <td>{{ r.all_day }}</td>
-              <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
-              <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
-              <td style="width:2rem; text-align:center;">
-                <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')">
-                  <button type="submit" class="btn-del">&#10005;</button>
-                </form>
-              </td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        </div>
-        {% else %}
-        <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
-        {% endif %}
-
-        <!-- Edit form (hidden) -->
-        <div class="edit-form-wrap" id="edit-{{ cp.id }}">
-          <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
-            <div class="row g-2 align-items-end">
-              <div class="col-md-4">
-                <label>Name</label>
-                <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
-              </div>
-              <div class="col-md-4">
-                <label>Address</label>
-                <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
-              </div>
-              <div class="col-md-3">
-                <label>Description</label>
-                <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
-              </div>
-              <div class="col-md-1">
-                <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
-              </div>
+    <!-- EDIT section -->
+    <div class="sec-body" id="sec-{{ cp.id }}-edit">
+      <div style="padding: 1.25rem 1.5rem; background: #faf9f7;">
+        <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
+          <div class="row g-2 align-items-end">
+            <div class="col-md-4">
+              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Name</label>
+              <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
             </div>
-          </form>
-        </div>
-
-        <div class="tab-footer">
-          <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;">+ Add rule</a>
-          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; QR</a>
-          <button class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;" onclick="toggleEdit('{{ cp.id }}')">Edit</button>
-          <div class="spacer"></div>
-          <div class="warden-line">
-            <span>Warden</span>
-            <code>/check/{{ cp.slug }}</code>
-            <button class="btn-copy" onclick="copyWarden('{{ cp.slug }}', this)">Copy</button>
+            <div class="col-md-4">
+              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Address</label>
+              <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
+            </div>
+            <div class="col-md-3">
+              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Description</label>
+              <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
+            </div>
+            <div class="col-md-1">
+              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
+            </div>
           </div>
-        </div>
+        </form>
       </div>
-
-      <!-- Parking log -->
-      <div class="tab-pane" id="tab-{{ cp.id }}-log">
-        {% if cp.transactions %}
-        <div class="table-responsive">
-        <table class="log-table">
-          <thead>
-            <tr>
-              <th style="width:25%;">Plate</th>
-              <th style="width:20%;">Duration</th>
-              <th style="width:15%;">Amount</th>
-              <th style="width:40%;">Expires</th>
-            </tr>
-          </thead>
-          <tbody>
-            {% for t in cp.transactions %}
-            {% set c = "#1a6b2a" if t.active else "var(--text)" %}
-            <tr>
-              <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
-              <td style="color:{{ c }};">{{ t.duration }}</td>
-              <td style="font-weight:700; color:{{ c }};">{{ t.amount }}</td>
-              <td style="color:{{ c }}; font-size:.78rem;">{{ t.expires }}</td>
-            </tr>
-            {% endfor %}
-          </tbody>
-        </table>
-        </div>
-        {% else %}
-        <p style="padding:1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No parking recorded yet.</p>
-        {% endif %}
-        <div class="tab-footer">
-          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; Export CSV</a>
-        </div>
-      </div>
-
     </div>
+
+    <!-- PRICES section -->
+    <div class="sec-body" id="sec-{{ cp.id }}-prices">
+      {% if cp.rules %}
+      <div class="table-responsive">
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Day type</th>
+            <th>Hourly</th>
+            <th class="d-none d-md-table-cell">Max hrs</th>
+            <th>All day</th>
+            <th class="d-none d-md-table-cell">From</th>
+            <th class="d-none d-md-table-cell">To</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for r in cp.rules %}
+          <tr>
+            <td>{{ r.day_type }}</td>
+            <td>{{ r.hourly }}</td>
+            <td class="d-none d-md-table-cell">{{ r.max_hours }}</td>
+            <td>{{ r.all_day }}</td>
+            <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
+            <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
+            <td style="width:2rem; text-align:center;">
+              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')">
+                <button type="submit" class="btn-del">&#10005;</button>
+              </form>
+            </td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+      {% else %}
+      <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
+      {% endif %}
+      <div class="tab-footer">
+        <a href="/owner/car-parks/{{ cp.id }}/pricing" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;">+ Add rule</a>
+        <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; QR</a>
+        <div class="spacer"></div>
+        <div class="warden-line">
+          <span>Warden</span>
+          <code>/check/{{ cp.slug }}</code>
+          <button class="btn-copy" onclick="copyWarden('{{ cp.slug }}', this)">Copy</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIGNAGE section -->
+    <div class="sec-body" id="sec-{{ cp.id }}-signage">
+      <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">Signage options coming soon.</p>
+    </div>
+
+    <!-- PARKING LOG section -->
+    <div class="sec-body" id="sec-{{ cp.id }}-log">
+      {% if cp.transactions %}
+      <div class="table-responsive">
+      <table class="log-table">
+        <thead>
+          <tr>
+            <th style="width:25%;">Plate</th>
+            <th style="width:20%;">Duration</th>
+            <th style="width:15%;">Amount</th>
+            <th style="width:40%;">Expires</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for t in cp.transactions %}
+          {% set c = "#1a6b2a" if t.active else "var(--text)" %}
+          <tr>
+            <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
+            <td style="color:{{ c }};">{{ t.duration }}</td>
+            <td style="font-weight:700; color:{{ c }};">{{ t.amount }}</td>
+            <td style="color:{{ c }}; font-size:.78rem;">{{ t.expires }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      </div>
+      {% else %}
+      <p style="padding:1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No parking recorded yet.</p>
+      {% endif %}
+      <div class="tab-footer">
+        <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; Export CSV</a>
+      </div>
+    </div>
+
   </div>
   {% endfor %}
 </div>
@@ -348,23 +334,18 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 {% endif %}
 
-function toggleDetail(id, btn) {
-  const body = document.getElementById('body-' + id);
-  const open = body.style.display === 'block';
-  body.style.display = open ? 'none' : 'block';
-  btn.textContent = open ? 'Details' : 'Close';
-}
-
-function switchTab(id, tab, btn) {
-  document.querySelectorAll('#card-' + id + ' .tab-btn').forEach(b => b.classList.remove('active'));
-  document.querySelectorAll('#card-' + id + ' .tab-pane').forEach(p => p.classList.remove('active'));
-  btn.classList.add('active');
-  document.getElementById('tab-' + id + '-' + tab).classList.add('active');
-}
-
-function toggleEdit(id) {
-  const el = document.getElementById('edit-' + id);
-  el.style.display = el.style.display === 'block' ? 'none' : 'block';
+function toggleSection(id, sec, btn) {
+  const card = document.getElementById('card-' + id);
+  const allSecs = card.querySelectorAll('.sec-body');
+  const allBtns = card.querySelectorAll('.btn-sec');
+  const target = document.getElementById('sec-' + id + '-' + sec);
+  const isOpen = target.style.display === 'block';
+  allSecs.forEach(s => s.style.display = 'none');
+  allBtns.forEach(b => b.classList.remove('active'));
+  if (!isOpen) {
+    target.style.display = 'block';
+    btn.classList.add('active');
+  }
 }
 
 function copyWarden(slug, btn) {
