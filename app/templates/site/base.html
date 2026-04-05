@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ page_title }} — LandMarque{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #8B3A2A; --dark: #0a0a0a; }
+
+    body {
+      background: var(--dark);
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Nav ── */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2.5rem;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 200;
+      background: rgba(0,0,0,.96);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .nav-brand {
+      font-size: .92rem; font-weight: 800;
+      letter-spacing: 5px; text-transform: uppercase; text-decoration: none;
+    }
+    .hamburger {
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px; padding: .3rem;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: rgba(255,255,255,.7); border-radius: 1px;
+      transition: transform .2s, opacity .2s;
+    }
+
+    /* ── Menu overlay ── */
+    .menu-overlay {
+      display: none;
+      position: fixed; inset: 0;
+      background: #0a0a0a;
+      z-index: 300;
+      overflow-y: auto;
+    }
+    .menu-overlay.open { display: flex; flex-direction: column; }
+
+    .menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.4rem 2.5rem;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      flex-shrink: 0;
+    }
+    .menu-close {
+      background: none; border: none; color: rgba(255,255,255,.5);
+      font-size: 1.4rem; cursor: pointer; line-height: 1;
+      transition: color .15s;
+    }
+    .menu-close:hover { color: #fff; }
+
+    .menu-body {
+      padding: 3rem 2.5rem 4rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem;
+      max-width: 900px;
+    }
+
+    .menu-group-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+    .menu-group a {
+      display: block;
+      font-size: .85rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: rgba(255,255,255,.6);
+      padding: .45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color .12s;
+    }
+    .menu-group a:last-child { border-bottom: none; }
+    .menu-group a:hover { color: #fff; }
+    .menu-group a.sub {
+      font-size: .75rem; letter-spacing: .5px;
+      color: rgba(255,255,255,.38); padding-left: .75rem;
+    }
+    .menu-group a.sub:hover { color: rgba(255,255,255,.8); }
+
+    /* ── Page ── */
+    .page-wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 9rem 2rem 5rem;
+    }
+    .page-eyebrow {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+    }
+    .page-title {
+      font-size: clamp(2rem, 7vw, 3.5rem);
+      font-weight: 800; letter-spacing: 3px;
+      text-transform: uppercase; line-height: 1.1;
+      margin-bottom: 1.5rem;
+    }
+    .page-rule {
+      width: 36px; height: 1px;
+      background: var(--accent); margin-bottom: 2.5rem;
+    }
+
+    /* ── Link cards ── */
+    .link-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: 4px;
+      overflow: hidden;
+      margin-bottom: 2rem;
+    }
+    .link-card {
+      background: #111;
+      padding: 1.75rem 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: background .15s;
+    }
+    .link-card:hover { background: #1a1a1a; }
+    .link-card-label {
+      font-size: .58rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .5rem;
+    }
+    .link-card h3 {
+      font-size: .92rem; font-weight: 700; letter-spacing: .5px;
+      text-transform: uppercase; color: #fff; margin-bottom: .4rem;
+    }
+    .link-card p {
+      font-size: .75rem; font-weight: 300;
+      color: rgba(255,255,255,.35); line-height: 1.6;
+    }
+    .link-card .arrow {
+      margin-top: 1rem; font-size: .7rem; color: rgba(255,255,255,.25);
+    }
+
+    /* ── Back link ── */
+    .back-link {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .68rem; font-weight: 700; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+      text-decoration: none; margin-top: 2rem;
+      transition: color .12s;
+    }
+    .back-link:hover { color: rgba(255,255,255,.7); }
+
+    /* ── Footer ── */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 2rem 2.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .foot-brand {
+      font-size: .78rem; font-weight: 800;
+      letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+    }
+    .foot-copy { font-size: .65rem; color: rgba(255,255,255,.15); font-weight: 300; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.25rem; }
+      .menu-header { padding: 1.2rem 1.25rem; }
+      .menu-body { padding: 2rem 1.25rem 3rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top nav -->
+  <nav>
+    <a href="/site/" class="nav-brand"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
+    <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- Full-screen menu overlay -->
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-header">
+      <a href="/site/" class="nav-brand" onclick="closeMenu()"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
+      <button class="menu-close" onclick="closeMenu()">&#10005;</button>
+    </div>
+    <div class="menu-body">
+
+      <div class="menu-group">
+        <div class="menu-group-label">Main</div>
+        <a href="/site/" onclick="closeMenu()">Home</a>
+        <a href="/site/about" onclick="closeMenu()">About Us</a>
+        <a href="/site/contact" onclick="closeMenu()">Contact Us</a>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-group-label">Landowners</div>
+        <a href="/site/landowners" onclick="closeMenu()">Overview</a>
+        <a href="/site/landowners/parking" class="sub" onclick="closeMenu()">Parking</a>
+        <a href="/site/landowners/legacies" class="sub" onclick="closeMenu()">Legacies</a>
+        <a href="/site/landowners/benches" class="sub" onclick="closeMenu()">Benches</a>
+        <a href="/site/landowners/trees" class="sub" onclick="closeMenu()">Trees</a>
+      </div>
+
+      <div class="menu-group">
+        <div class="menu-group-label">Visitors</div>
+        <a href="/site/visitors" onclick="closeMenu()">Overview</a>
+        <a href="/site/visitors/parking" class="sub" onclick="closeMenu()">Parking</a>
+        <a href="/site/visitors/legacies" class="sub" onclick="closeMenu()">Legacies</a>
+        <a href="/site/visitors/benches" class="sub" onclick="closeMenu()">Benches</a>
+        <a href="/site/visitors/trees" class="sub" onclick="closeMenu()">Trees</a>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Page content -->
+  <div class="page-wrap">
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer>
+    <a href="/site/" class="foot-brand"><span style="color:#8B3A2A">LAND</span><span style="color:rgba(255,255,255,.25)">MARQUE</span></a>
+    <span class="foot-copy">&copy; 2026 LandMarque Ltd</span>
+  </footer>
+
+  <script>
+    function openMenu() {
+      document.getElementById('menu-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      document.getElementById('menu-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+  </script>
+
+</body>
+</html>
