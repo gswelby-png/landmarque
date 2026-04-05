@@ -137,6 +137,70 @@
     }
     .hero-cta:hover { filter: brightness(110%); color: #fff; }
 
+    /* ── Audience panels ── */
+    .audience {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border-top: 1px solid rgba(255,255,255,.06);
+    }
+    .audience-panel {
+      padding: 5rem 4rem;
+      border-right: 1px solid rgba(255,255,255,.06);
+    }
+    .audience-panel:last-child { border-right: none; }
+    .audience-label {
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+    .audience-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 700;
+      letter-spacing: .5px;
+      color: #fff;
+      margin-bottom: 1.5rem;
+      line-height: 1.1;
+    }
+    .audience-rule {
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+      margin-bottom: 1.75rem;
+    }
+    .audience-body {
+      font-size: .9rem;
+      font-weight: 300;
+      line-height: 1.9;
+      color: rgba(255,255,255,.5);
+      margin-bottom: 2.5rem;
+    }
+    .audience-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: .55rem;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      padding: .8rem 1.75rem;
+      border-radius: 3px;
+      transition: filter .15s;
+    }
+    .audience-cta:hover { filter: brightness(110%); }
+
+    @media (max-width: 760px) {
+      .audience { grid-template-columns: 1fr; }
+      .audience-panel { padding: 3.5rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .audience-panel:last-child { border-bottom: none; }
+    }
+
     /* ── Value strip ── */
     .value-strip {
       border-top: 1px solid rgba(255,255,255,.05);
@@ -288,85 +352,29 @@
     </p>
   </section>
 
-  <!-- Value strip -->
-  <div class="value-strip">
-    <div class="val-item">
-      <div class="val-n">£0</div>
-      <div class="val-l">Upfront cost</div>
+  <!-- Audience panels -->
+  <div class="audience">
+    <div class="audience-panel">
+      <p class="audience-label">For</p>
+      <h2 class="audience-title">Landowners</h2>
+      <div class="audience-rule"></div>
+      <p class="audience-body">If you own or work on a private estate that provides access to the general public, then we are here to help. We specialise in creating revenue streams to assist you in covering the costs of these facilities.</p>
+      <a href="/site/landowners" class="audience-cta">
+        Learn more
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
-    <div class="val-item">
-      <div class="val-n">100%</div>
-      <div class="val-l">Your branding</div>
-    </div>
-    <div class="val-item">
-      <div class="val-n">Zero</div>
-      <div class="val-l">Hardware needed</div>
-    </div>
-    <div class="val-item">
-      <div class="val-n">Monthly</div>
-      <div class="val-l">Automated payouts</div>
+    <div class="audience-panel">
+      <p class="audience-label">For</p>
+      <h2 class="audience-title">Visitors</h2>
+      <div class="audience-rule"></div>
+      <p class="audience-body">If you love the countryside and benefit from the access provided to you by private estates, then we would like to invite you to consider making a donation — whether through paying for parking, sponsoring a bench or tree, or leaving an endowment in your will. We all want these gorgeous places to remain so forever, and you can help.</p>
+      <a href="/site/visitors" class="audience-cta">
+        Learn more
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
     </div>
   </div>
-
-  <!-- How it works -->
-  <section class="section">
-    <div class="section-header">
-      <p class="tag">The process</p>
-      <h2>Up and running in days</h2>
-    </div>
-    <div class="steps">
-      <div class="step">
-        <p class="step-num">01</p>
-        <h3>We set you up</h3>
-        <p>Your branded parking page is live within days. Your name, your colours, your car park.</p>
-      </div>
-      <div class="step">
-        <p class="step-num">02</p>
-        <h3>QR code on site</h3>
-        <p>A weatherproof sign with your QR code. No hardware, no barriers, no engineers.</p>
-      </div>
-      <div class="step">
-        <p class="step-num">03</p>
-        <h3>Drivers pay</h3>
-        <p>Scan, choose duration, pay by card, Apple Pay or Google Pay. Under 30 seconds.</p>
-      </div>
-      <div class="step">
-        <p class="step-num">04</p>
-        <h3>Revenue lands</h3>
-        <p>Your share arrives in your account automatically, every month. No invoices, no chasing.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Who it's for -->
-  <section class="section" style="padding-top:0;">
-    <div class="section-header">
-      <p class="tag">Who it's for</p>
-      <h2>Built for private land</h2>
-    </div>
-    <div class="for-grid">
-      <div class="for-item">
-        <p class="for-label">Estates</p>
-        <h4>Country estates</h4>
-        <p>Manage multiple car parks across your estate from one dashboard.</p>
-      </div>
-      <div class="for-item">
-        <p class="for-label">Countryside</p>
-        <h4>Nature reserves</h4>
-        <p>Capture revenue from walkers and day visitors without staff on site.</p>
-      </div>
-      <div class="for-item">
-        <p class="for-label">Venues</p>
-        <h4>Rural venues</h4>
-        <p>Farm shops, vineyards, heritage sites — any venue with a car park.</p>
-      </div>
-      <div class="for-item">
-        <p class="for-label">Community</p>
-        <h4>Parish councils</h4>
-        <p>Village car parks and community land with transparent revenue reporting.</p>
-      </div>
-    </div>
-  </section>
 
   <footer>
     <a href="/" class="foot-brand"><span style="color:#8B3A2A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
