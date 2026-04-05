@@ -1,9 +1,104 @@
-{% extends "location/base.html" %}
-{% block content %}
-<p class="page-eyebrow">Welcome</p>
-<h1 class="page-title">{{ estate.name }}</h1>
-<div class="page-rule"></div>
-<p class="page-body">{{ estate.tagline }}</p>
-<p class="page-body">Content coming soon.</p>
-<a href="/location/{{ slug }}/visitor/parking-start" class="back-link">Pay for parking →</a>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ estate.name }} — Welcome</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      background: #000;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      margin: 0;
+      padding-bottom: 60px;
+    }
+    .estate-header {
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+    .estate-logo {
+      max-width: 220px;
+      height: auto;
+      margin-bottom: 1.4rem;
+    }
+    .estate-name {
+      font-weight: 700;
+      font-size: 1.9rem;
+      color: #fff;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin: 0 0 1rem;
+    }
+    .estate-welcome {
+      color: rgba(255,255,255,0.75);
+      font-weight: 300;
+      font-size: 0.95rem;
+      line-height: 1.7;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    .menu-panel {
+      background: #fff;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      margin-bottom: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
+    }
+    .menu-btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      background: #B89A5A;
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: .88rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 4px;
+      padding: .9rem 1rem;
+      transition: filter .15s;
+    }
+    .menu-btn:hover { filter: brightness(88%); color: #fff; }
+    .foot-note {
+      text-align: center;
+      padding: 1rem 0;
+      color: rgba(255,255,255,.3);
+      font-size: .75rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="max-width:520px; margin:0 auto; padding: 2rem 1.25rem 0;">
+
+    <div class="estate-header">
+      {% if estate.logo_url is defined and estate.logo_url %}
+      <img src="{{ estate.logo_url }}" alt="{{ estate.name }}" class="estate-logo">
+      {% endif %}
+      <h1 class="estate-name">{{ estate.name }}</h1>
+      <p class="estate-welcome">{{ estate.tagline }}</p>
+    </div>
+
+    <div class="menu-panel">
+      <a href="/location/{{ slug }}/visitor/parking-start" class="menu-btn">Pay for Parking</a>
+      <a href="/location/{{ slug }}/walking-routes" class="menu-btn">Walking Routes</a>
+      <a href="/location/{{ slug }}/cycle-routes" class="menu-btn">Cycling Routes</a>
+      <a href="/location/{{ slug }}/places-of-interest" class="menu-btn">Places of Interest</a>
+      <a href="#" class="menu-btn">Places to Eat</a>
+      <a href="#" class="menu-btn">Merch Store</a>
+    </div>
+
+    <p class="foot-note">
+      Powered by <span style="color:#B89A5A">LAND</span><span style="color:rgba(255,255,255,.5)">MARQUE</span>
+    </p>
+
+  </div>
+
+</body>
+</html>
