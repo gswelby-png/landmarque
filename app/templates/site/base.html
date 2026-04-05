@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}{{ page_title }} — LandMarque{% endblock %}</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --accent: #8B3A2A; --dark: #0a0a0a; }
+    :root { --accent: #B89A5A; --accent-dark: #9a7e3e; --dark: #0a0a0a; }
 
     body {
       background: var(--dark);
@@ -31,9 +31,14 @@
       border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .nav-brand {
-      font-size: .92rem; font-weight: 800;
-      letter-spacing: 5px; text-transform: uppercase; text-decoration: none;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: none; text-decoration: none;
+      display: flex; align-items: center;
     }
+    .nav-logo-mark { width: 28px; height: 28px; margin-right: .6rem; vertical-align: middle; }
+    .nav-person-icon { display: flex; align-items: center; }
+    .nav-person-icon:hover { opacity: .75; }
     .hamburger {
       background: none; border: none; cursor: pointer;
       display: flex; flex-direction: column; gap: 5px; padding: .3rem;
@@ -110,9 +115,10 @@
       text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
     }
     .page-title {
-      font-size: clamp(2rem, 7vw, 3.5rem);
-      font-weight: 800; letter-spacing: 3px;
-      text-transform: uppercase; line-height: 1.1;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 7vw, 4rem);
+      font-weight: 700; letter-spacing: 1px;
+      text-transform: none; line-height: 1.05;
       margin-bottom: 1.5rem;
     }
     .page-rule {
@@ -176,8 +182,9 @@
       gap: 1rem;
     }
     .foot-brand {
-      font-size: .78rem; font-weight: 800;
-      letter-spacing: 4px; text-transform: uppercase; text-decoration: none;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: none; text-decoration: none;
     }
     .foot-copy { font-size: .65rem; color: rgba(255,255,255,.15); font-weight: 300; }
 
@@ -192,7 +199,7 @@
 
   <!-- Top nav -->
   <nav>
-    <a href="/site/" class="nav-brand"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
+    <a href="/site/" class="nav-brand"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
     <button class="hamburger" onclick="openMenu()" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -201,7 +208,7 @@
   <!-- Full-screen menu overlay -->
   <div class="menu-overlay" id="menu-overlay">
     <div class="menu-header">
-      <a href="/site/" class="nav-brand" onclick="closeMenu()"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
+      <a href="/site/" class="nav-brand" onclick="closeMenu()"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
       <button class="menu-close" onclick="closeMenu()">&#10005;</button>
     </div>
     <div class="menu-body">
@@ -240,7 +247,7 @@
   </div>
 
   <footer>
-    <a href="/site/" class="foot-brand"><span style="color:#8B3A2A">LAND</span><span style="color:rgba(255,255,255,.25)">MARQUE</span></a>
+    <a href="/site/" class="foot-brand"><span style="color:#B89A5A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
     <span class="foot-copy">&copy; 2026 LandMarque Ltd</span>
   </footer>
 

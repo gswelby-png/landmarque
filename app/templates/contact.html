@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>Get in Touch — LandMarque</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      --accent: #8B3A2A;
+      --accent: #B89A5A;
+      --accent-dark: #9a7e3e;
       --dark: #0a0a0a;
     }
     body {
@@ -34,9 +35,12 @@
       border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .nav-brand {
-      font-size: .92rem; font-weight: 800;
-      letter-spacing: 5px; text-transform: uppercase; text-decoration: none;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem; font-weight: 700;
+      letter-spacing: 1.5px; text-transform: none; text-decoration: none;
+      display: flex; align-items: center;
     }
+    .nav-logo-mark { width: 28px; height: 28px; margin-right: .6rem; vertical-align: middle; }
     .nav-links { display: flex; align-items: center; gap: 2rem; }
     .nav-links a {
       color: rgba(255,255,255,.5); text-decoration: none;
@@ -46,8 +50,11 @@
     .nav-links a:hover { color: #fff; }
     .nav-links .nav-cta {
       background: var(--accent); color: #fff !important;
-      padding: .5rem 1.4rem; border-radius: 3px;
+      padding: .9rem 2rem; border-radius: 3px;
+      font-size: .68rem; letter-spacing: 2.5px;
     }
+    .nav-person-icon { display: flex; align-items: center; }
+    .nav-person-icon:hover { opacity: .75; }
 
     /* Page */
     .page {
@@ -95,7 +102,7 @@
     input::placeholder, textarea::placeholder { color: rgba(255,255,255,.2); }
     input:focus, textarea:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(139,58,42,.15);
+      box-shadow: 0 0 0 3px rgba(184,154,90,.15);
     }
     textarea { resize: vertical; min-height: 130px; }
 
@@ -130,7 +137,7 @@
       flex-wrap: wrap;
       gap: 1rem;
     }
-    .foot-brand { font-size: .78rem; font-weight: 800; letter-spacing: 4px; text-transform: uppercase; text-decoration: none; }
+    .foot-brand { font-family: 'Cormorant Garamond', Georgia, serif; font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; text-transform: none; text-decoration: none; }
     .foot-links { display: flex; gap: 2rem; align-items: center; flex-wrap: wrap; }
     .foot-links a { color: rgba(255,255,255,.22); text-decoration: none; font-size: .68rem; font-weight: 300; transition: color .15s; }
     .foot-links a:hover { color: rgba(255,255,255,.55); }
@@ -146,9 +153,15 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-brand"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
+    <a href="/" class="nav-brand"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
     <div class="nav-links">
-      <a href="/owner/login">Owner login</a>
+      <a href="/owner/login" class="nav-person-icon" title="Owner login">
+        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="13.5" fill="none" stroke="#B89A5A" stroke-width="1.5"/>
+          <circle cx="15" cy="12.5" r="4" fill="#B89A5A"/>
+          <path d="M6.5 24 C6.5 18.5 23.5 18.5 23.5 24" fill="#B89A5A"/>
+        </svg>
+      </a>
       <a href="/contact" class="nav-cta">Get in touch</a>
     </div>
   </nav>
@@ -187,7 +200,7 @@
   </div>
 
   <footer>
-    <a href="/" class="foot-brand"><span style="color:#8B3A2A">LAND</span><span style="color:rgba(255,255,255,.25)">MARQUE</span></a>
+    <a href="/" class="foot-brand"><span style="color:#B89A5A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
     <div class="foot-links">
       <a href="mailto:info@landmarque.co.uk">info@landmarque.co.uk</a>
       <a href="/owner/login">Owner login</a>
