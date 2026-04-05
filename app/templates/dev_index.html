@@ -31,10 +31,19 @@
     .dev-title span:first-child { color: var(--accent); }
 
     .dev-body {
-      max-width: 900px; margin: 0 auto;
+      max-width: 960px; margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(6, 1fr);
       gap: 3rem;
+    }
+    .dev-group:nth-child(1),
+    .dev-group:nth-child(2) { grid-column: span 3; }
+    .dev-group:nth-child(3),
+    .dev-group:nth-child(4),
+    .dev-group:nth-child(5) { grid-column: span 2; }
+    @media (max-width: 700px) {
+      .dev-body { grid-template-columns: 1fr; }
+      .dev-group:nth-child(n) { grid-column: span 1; }
     }
 
     .dev-group-label {
