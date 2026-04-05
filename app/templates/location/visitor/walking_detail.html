@@ -166,7 +166,14 @@
 
       let activeIndex = -1;
       const waypointEls = Array.from(document.querySelectorAll('.waypoint'));
-      const triggerY = window.innerHeight * 0.70;
+      const mapEl = document.getElementById('map');
+
+      function getTriggerY() {
+        // Fire when waypoint title is 30% of the way down the content area below the map
+        const mapBottom = mapEl.getBoundingClientRect().bottom;
+        const contentHeight = window.innerHeight - mapBottom;
+        return mapBottom + contentHeight * 0.30;
+      }
 
       function setMarker(i, active) {
         const m = document.getElementById(`marker-${i}`);
@@ -195,7 +202,7 @@
       }
 
       function updateActive() {
-        // Find the last waypoint whose top has crossed the 50vh trigger line
+        const triggerY = getTriggerY();
         let newActive = -1;
         waypointEls.forEach((el, i) => {
           if (el.getBoundingClientRect().top <= triggerY) newActive = i;
