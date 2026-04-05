@@ -21,7 +21,7 @@ def migrate():
     """Add new columns to existing tables without dropping data."""
     import logging
     from sqlalchemy import inspect, text
-    log = logging.getLogger("parcark.migrate")
+    log = logging.getLogger("landmarque.migrate")
     try:
         inspector = inspect(engine)
         columns = [c["name"] for c in inspector.get_columns("car_parks")]
