@@ -59,7 +59,8 @@
     }
     .waypoint.active .waypoint-number { background: #fff; }
     .waypoint-title { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
-    .waypoint-desc { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.65; font-weight: 300; }
+    .waypoint-desc { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.65; font-weight: 300; margin-bottom: .6rem; }
+    .waypoint-desc:last-child { margin-bottom: 0; }
     .waypoint-image {
       width: 100%; border-radius: 6px; margin-top: .75rem;
       height: 140px; object-fit: cover; display: block;
@@ -108,7 +109,9 @@
         <div class="waypoint-number">{{ loop.index }}</div>
         <div style="flex:1;">
           <div class="waypoint-title">{{ wp.title }}</div>
-          <p class="waypoint-desc">{{ wp.description }}</p>
+          {% for para in wp.description %}
+          <p class="waypoint-desc">{{ para }}</p>
+          {% endfor %}
           {% if wp.image_url %}
           <img src="{{ wp.image_url }}" alt="{{ wp.title }}" class="waypoint-image">
           {% endif %}
