@@ -138,16 +138,17 @@
     .hero-cta:hover { filter: brightness(110%); color: #fff; }
 
     /* ── Audience panels ── */
-    .audience {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+    .audience-panel {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 8rem clamp(2rem, 12vw, 16rem);
       border-top: 1px solid rgba(255,255,255,.06);
     }
-    .audience-panel {
-      padding: 5rem 4rem;
-      border-right: 1px solid rgba(255,255,255,.06);
+    .audience-inner {
+      max-width: 580px;
     }
-    .audience-panel:last-child { border-right: none; }
     .audience-label {
       font-size: .6rem;
       font-weight: 700;
@@ -158,25 +159,26 @@
     }
     .audience-title {
       font-family: 'Cormorant Garamond', Georgia, serif;
-      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
       font-weight: 700;
       letter-spacing: .5px;
       color: #fff;
-      margin-bottom: 1.5rem;
-      line-height: 1.1;
+      margin-bottom: 1.75rem;
+      line-height: 1.05;
     }
     .audience-rule {
       width: 28px;
       height: 1px;
       background: var(--accent);
-      margin-bottom: 1.75rem;
+      margin-bottom: 2rem;
     }
     .audience-body {
-      font-size: .9rem;
+      font-size: 1rem;
       font-weight: 300;
       line-height: 1.9;
       color: rgba(255,255,255,.5);
-      margin-bottom: 2.5rem;
+      margin-bottom: 3rem;
+      max-width: 480px;
     }
     .audience-cta {
       display: inline-flex;
@@ -189,16 +191,14 @@
       font-weight: 700;
       letter-spacing: 2.5px;
       text-transform: uppercase;
-      padding: .8rem 1.75rem;
+      padding: .9rem 2rem;
       border-radius: 3px;
       transition: filter .15s;
     }
     .audience-cta:hover { filter: brightness(110%); }
 
-    @media (max-width: 760px) {
-      .audience { grid-template-columns: 1fr; }
-      .audience-panel { padding: 3.5rem 1.5rem; border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
-      .audience-panel:last-child { border-bottom: none; }
+    @media (max-width: 600px) {
+      .audience-panel { min-height: auto; padding: 5rem 1.5rem; }
     }
 
     /* ── Value strip ── */
@@ -353,8 +353,8 @@
   </section>
 
   <!-- Audience panels -->
-  <div class="audience">
-    <div class="audience-panel">
+  <div class="audience-panel">
+    <div class="audience-inner">
       <p class="audience-label">For</p>
       <h2 class="audience-title">Landowners</h2>
       <div class="audience-rule"></div>
@@ -364,7 +364,10 @@
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
       </a>
     </div>
-    <div class="audience-panel">
+  </div>
+
+  <div class="audience-panel">
+    <div class="audience-inner">
       <p class="audience-label">For</p>
       <h2 class="audience-title">Visitors</h2>
       <div class="audience-rule"></div>
