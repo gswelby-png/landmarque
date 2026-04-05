@@ -4,20 +4,18 @@
 
 {% block extra_css %}
     .payment-panel {
-      background: #d2d2d2; border-radius: 8px;
-      padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.4);
       margin-bottom: 2rem;
     }
     .duration-option {
-      cursor: pointer; border: 1px solid #bbb; border-radius: 4px;
+      cursor: pointer; border: 1px solid #555; border-radius: 4px;
       padding: .75rem 1rem; display: flex; justify-content: space-between;
       align-items: center; transition: border-color .15s, background .15s;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      background: transparent;
+      background: transparent; color: #fff;
     }
     .duration-option:hover { border-color: #B89A5A; }
     .duration-option.selected { border-color: #B89A5A; background: #f7f2e8; }
-    .duration-price { font-weight: 700; color: #222; }
+    .duration-price { font-weight: 700; color: #fff; }
     .btn-pay {
       background: #B89A5A; border: none; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
@@ -35,7 +33,7 @@
 {% block content %}
     <div class="payment-panel">
         <input type="text" maxlength="10" placeholder="Enter your registration"
-               style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #bbb; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase; background:#fff; margin-bottom:1.25rem; color:#111;">
+               style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #555; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase; background:#fff; margin-bottom:1.25rem; color:#111;">
 
         <div style="display:grid; gap:.5rem;">
           {% for opt in options %}
