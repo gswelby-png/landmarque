@@ -3,14 +3,20 @@
 {% block title %}{{ walk.title }} — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
+    body > div { padding-top: 0; }
     .walk-header-bar {
       display: flex; align-items: center; gap: .6rem;
-      padding: .45rem 0 .55rem;
+      padding: 1.25rem 0 .65rem;
+      min-height: 44px;
     }
-    .walk-header-logo { height: 26px; width: auto; display: block; }
+    .walk-header-logo {
+      height: 26px; width: auto;
+      display: block; flex-shrink: 0; align-self: center;
+    }
     .walk-header-name {
       font-weight: 700; font-size: .8rem; color: #fff;
-      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      line-height: 1; align-self: center;
     }
     .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
     .walk-info-panel { padding: .85rem 0; }
@@ -38,6 +44,7 @@
       color: #444 !important; font-size: 8px !important;
     }
     .leaflet-control-attribution a { color: #555 !important; }
+    .leaflet-control-attribution svg { display: none; }
     .waypoints { padding: 1.25rem 0 2rem; }
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
