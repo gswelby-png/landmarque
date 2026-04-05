@@ -90,15 +90,17 @@
       width: 90px;
       height: 90px;
       margin-bottom: 2.5rem;
-      opacity: .9;
+      filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.7);
+      mix-blend-mode: screen;
     }
 
     .nav-logo-mark {
       width: 28px;
       height: 28px;
       margin-right: .6rem;
-      opacity: .9;
       vertical-align: middle;
+      filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg) brightness(0.7);
+      mix-blend-mode: screen;
     }
 
     .hero-wordmark {
@@ -343,16 +345,7 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-brand">
-      <svg class="nav-logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <filter id="tf-nav"><feComponentTransfer><feFuncR type="linear" slope="-1" intercept="1"/><feFuncG type="linear" slope="-1" intercept="1"/><feFuncB type="linear" slope="-1" intercept="1"/></feComponentTransfer><feColorMatrix type="luminanceToAlpha"/></filter>
-          <mask id="tm-nav"><image href="/static/treering1.webp" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid meet" filter="url(#tf-nav)"/></mask>
-        </defs>
-        <rect x="0" y="0" width="100" height="100" fill="#B89A5A" mask="url(#tm-nav)"/>
-      </svg>
-      <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
-    </a>
+    <a href="/" class="nav-brand"><img src="/static/treering1.webp" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
     <div class="nav-links">
       <a href="/owner/login">Owner login</a>
       <a href="/contact" class="nav-cta">Get in touch</a>
@@ -361,13 +354,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <svg class="hero-logo-mark" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <filter id="tf-hero"><feComponentTransfer><feFuncR type="linear" slope="-1" intercept="1"/><feFuncG type="linear" slope="-1" intercept="1"/><feFuncB type="linear" slope="-1" intercept="1"/></feComponentTransfer><feColorMatrix type="luminanceToAlpha"/></filter>
-        <mask id="tm-hero"><image href="/static/treering1.webp" x="0" y="0" width="100" height="100" preserveAspectRatio="xMidYMid meet" filter="url(#tf-hero)"/></mask>
-      </defs>
-      <rect x="0" y="0" width="100" height="100" fill="#B89A5A" mask="url(#tm-hero)"/>
-    </svg>
+    <img src="/static/treering1.webp" class="hero-logo-mark" alt="LandMarque mark">
     <h1 class="hero-wordmark">
       <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
     </h1>
