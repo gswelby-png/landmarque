@@ -58,47 +58,7 @@
   }
   .lo-cta:hover { filter: brightness(110%); color: #fff; }
 
-  /* ── Service panels ── */
-  .service-panel {
-    min-height: 90vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 8rem 2rem;
-    border-top: 1px solid rgba(255,255,255,.06);
-    text-align: center;
-  }
-  .service-inner { max-width: 580px; width: 100%; }
-  .service-label {
-    font-size: .6rem; font-weight: 700; letter-spacing: 4px;
-    text-transform: uppercase; color: var(--accent);
-    margin-bottom: 1.25rem;
-  }
-  .service-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: clamp(2.8rem, 6vw, 4.5rem);
-    font-weight: 700; letter-spacing: .5px;
-    color: #fff; margin-bottom: 1.75rem; line-height: 1.05;
-  }
-  .service-rule {
-    width: 28px; height: 1px;
-    background: var(--accent); margin: 0 auto 2rem;
-  }
-  .service-body {
-    font-size: 1rem; font-weight: 300; line-height: 1.9;
-    color: rgba(255,255,255,.5); margin-bottom: 3rem;
-  }
-  .service-cta {
-    display: inline-flex; align-items: center; gap: .55rem;
-    background: var(--accent); color: #fff; text-decoration: none;
-    font-size: .68rem; font-weight: 700; letter-spacing: 2.5px;
-    text-transform: uppercase; padding: .9rem 2rem;
-    border-radius: 3px; transition: filter .15s;
-  }
-  .service-cta:hover { filter: brightness(110%); }
-
-  .audience-mark { width: 56px; height: 56px; margin-bottom: 1.75rem; }
+  /* service panels use shared .content-panel classes from base.html */
 
   @media (max-width: 600px) {
     .lo-intro { padding: 8rem 1.5rem 5rem; }
@@ -127,16 +87,16 @@
 </div>
 
 <!-- Parking -->
-<div class="service-panel">
-  <div class="service-inner">
-    <img src="/static/treering1_gold.png" class="audience-mark" alt="">
-    <h2 class="service-title">Parking</h2>
-    <div class="service-rule"></div>
-    <p class="service-body">Charging for parking is often a low-cost high-gain option for private estates, typically delivering a very substantial and immediate revenue stream, even for relatively quiet locations.</p>
-    <p class="service-body">We offer light-touch parking payment solutions that invite visitors to pay to park their vehicle by making a contribution to the maintenance and improvement of the facilities that you provide. Payments are made via a friendly and efficient phone app, customised to your branding. Signage is subtle and discreet.</p>
-    <p class="service-body">There are no enforcement measures, no fines or clamping — just a purely voluntary contribution process. For car parks that are already long established, there are no additional legal obligations or planning restrictions.</p>
-    <p class="service-body">Our simple on-boarding process can be completed in just a few minutes and, as soon as you receive the necessary signage, can see you up and running in under a week.</p>
-    <a href="/site/landowners/parking" class="service-cta">
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Parking</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Charging for parking is often a low-cost high-gain option for private estates, typically delivering a very substantial and immediate revenue stream, even for relatively quiet locations.</p>
+    <p class="panel-body">We offer light-touch parking payment solutions that invite visitors to pay to park their vehicle by making a contribution to the maintenance and improvement of the facilities that you provide. Payments are made via a friendly and efficient phone app, customised to your branding. Signage is subtle and discreet.</p>
+    <p class="panel-body">There are no enforcement measures, no fines or clamping — just a purely voluntary contribution process. For car parks that are already long established, there are no additional legal obligations or planning restrictions.</p>
+    <p class="panel-body">Our simple on-boarding process can be completed in just a few minutes and, as soon as you receive the necessary signage, can see you up and running in under a week.</p>
+    <a href="/site/landowners/parking" class="panel-cta">
       Parking
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -144,15 +104,15 @@
 </div>
 
 <!-- Endowments -->
-<div class="service-panel">
-  <div class="service-inner">
-    <img src="/static/treering1_gold.png" class="audience-mark" alt="">
-    <h2 class="service-title">Legacies</h2>
-    <div class="service-rule"></div>
-    <p class="service-body">For many estates, especially those with great landscape appeal and with deep ties with local communities, legacies can be a major source of revenue.</p>
-    <p class="service-body">For those of us who love the countryside, it comes as no surprise that so many lovely people choose to leave money in their wills towards the upkeep of the landscapes that they have enjoyed so much throughout their lives. We all want to think that these beautiful places will remain so forever.</p>
-    <p class="service-body">At LandMarque, we provide an easy and elegant way to encourage legacy giving, simply by making the public aware of the possibilities, explaining and enabling the process.</p>
-    <a href="/site/landowners/legacies" class="service-cta">
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Legacies</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">For many estates, especially those with great landscape appeal and with deep ties with local communities, legacies can be a major source of revenue.</p>
+    <p class="panel-body">For those of us who love the countryside, it comes as no surprise that so many lovely people choose to leave money in their wills towards the upkeep of the landscapes that they have enjoyed so much throughout their lives. We all want to think that these beautiful places will remain so forever.</p>
+    <p class="panel-body">At LandMarque, we provide an easy and elegant way to encourage legacy giving, simply by making the public aware of the possibilities, explaining and enabling the process.</p>
+    <a href="/site/landowners/legacies" class="panel-cta">
       Legacies
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -160,16 +120,16 @@
 </div>
 
 <!-- Benches -->
-<div class="service-panel">
-  <div class="service-inner">
-    <img src="/static/treering1_gold.png" class="audience-mark" alt="">
-    <h2 class="service-title">Benches</h2>
-    <div class="service-rule"></div>
-    <p class="service-body">Providing visitors with the opportunity to sponsor a bench in a special location is a well-established but much under-utilised approach.</p>
-    <p class="service-body">No one wants to see beautiful viewpoints covered with dozens of benches, but a reasonable number of thoughtfully situated seating areas can add enormously to the beauty and utility of an area.</p>
-    <p class="service-body">Our website provides people with the opportunity to choose bench locations across the country, to find somewhere that is really special to them, and select a price level that suits them. We will help you to identify the bench locations, upload them onto the maps on our website, adding photos and prices.</p>
-    <p class="service-body">We provide the guest with a seamless online booking process, before assisting you with bench selection, acquisition and installation, including all the necessary signage.</p>
-    <a href="/site/landowners/benches" class="service-cta">
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Benches</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Providing visitors with the opportunity to sponsor a bench in a special location is a well-established but much under-utilised approach.</p>
+    <p class="panel-body">No one wants to see beautiful viewpoints covered with dozens of benches, but a reasonable number of thoughtfully situated seating areas can add enormously to the beauty and utility of an area.</p>
+    <p class="panel-body">Our website provides people with the opportunity to choose bench locations across the country, to find somewhere that is really special to them, and select a price level that suits them. We will help you to identify the bench locations, upload them onto the maps on our website, adding photos and prices.</p>
+    <p class="panel-body">We provide the guest with a seamless online booking process, before assisting you with bench selection, acquisition and installation, including all the necessary signage.</p>
+    <a href="/site/landowners/benches" class="panel-cta">
       Benches
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>
@@ -177,13 +137,13 @@
 </div>
 
 <!-- Trees -->
-<div class="service-panel">
-  <div class="service-inner">
-    <img src="/static/treering1_gold.png" class="audience-mark" alt="">
-    <h2 class="service-title">Trees</h2>
-    <div class="service-rule"></div>
-    <p class="service-body">Content coming soon.</p>
-    <a href="/site/landowners/trees" class="service-cta">
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Trees</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Content coming soon.</p>
+    <a href="/site/landowners/trees" class="panel-cta">
       Trees
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
     </a>

@@ -1,35 +1,118 @@
 {% extends "site/base.html" %}
-{% block content %}
-<p class="page-eyebrow">For visitors</p>
-<h1 class="page-title">Visitors</h1>
-<div class="page-rule"></div>
+{% block extra_css %}
+<style>
+  .page-wrap { padding: 0; max-width: none; margin: 0; }
 
-<div class="link-grid">
-  <a href="/site/visitors/parking" class="link-card">
-    <div class="link-card-label">Information</div>
-    <h3>Parking</h3>
-    <p>How to pay for parking at our partner estates and countryside locations.</p>
-    <div class="arrow">→</div>
-  </a>
-  <a href="/site/visitors/legacies" class="link-card">
-    <div class="link-card-label">Information</div>
-    <h3>Legacies</h3>
-    <p>Learn about legacy dedications you can make on the land you love.</p>
-    <div class="arrow">→</div>
-  </a>
-  <a href="/site/visitors/benches" class="link-card">
-    <div class="link-card-label">Information</div>
-    <h3>Benches</h3>
-    <p>Dedicate a bench in a special place for someone special.</p>
-    <div class="arrow">→</div>
-  </a>
-  <a href="/site/visitors/trees" class="link-card">
-    <div class="link-card-label">Information</div>
-    <h3>Trees</h3>
-    <p>Plant a tree and leave your mark on the countryside for generations.</p>
-    <div class="arrow">→</div>
-  </a>
+  /* ── Intro hero ── */
+  .vi-intro {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 8rem 2rem 5rem;
+  }
+  .vi-intro-inner { max-width: 640px; width: 100%; }
+  .vi-hero-mark { width: 113px; height: 113px; margin-bottom: 2.5rem; }
+  .vi-title {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(4rem, 13vw, 8.5rem);
+    font-weight: 700;
+    letter-spacing: clamp(4px, 1.5vw, 10px);
+    line-height: 1;
+    margin-bottom: 1.75rem;
+    text-align: center;
+  }
+  .vi-rule { width: 36px; height: 1px; background: var(--accent); margin: 0 auto 2.5rem; }
+  .vi-body {
+    font-size: 1rem; font-weight: 300; line-height: 1.9;
+    color: rgba(255,255,255,.5); margin-bottom: 1.5rem;
+  }
+  .vi-lead {
+    font-size: 1rem; font-weight: 300; line-height: 1.9;
+    color: rgba(255,255,255,.5); margin-bottom: 3rem;
+  }
+  .vi-cta {
+    display: inline-flex; align-items: center; gap: .6rem;
+    background: var(--accent); color: #fff;
+    text-decoration: none; font-weight: 700;
+    font-size: .75rem; letter-spacing: 3px; text-transform: uppercase;
+    padding: 1rem 2.5rem; border-radius: 3px; transition: filter .2s;
+  }
+  .vi-cta:hover { filter: brightness(110%); color: #fff; }
+
+  @media (max-width: 600px) {
+    .vi-intro { padding: 8rem 1.5rem 5rem; }
+  }
+</style>
+{% endblock %}
+{% block content %}
+
+<!-- Intro -->
+<div class="vi-intro">
+  <div class="vi-intro-inner">
+    <img src="/static/treering1_gold.png" class="vi-hero-mark" alt="LandMarque mark">
+    <h1 class="vi-title"><span style="color:#B89A5A">Visit</span><span style="color:#fff">ors</span></h1>
+    <div class="vi-rule"></div>
+    <p class="vi-body">Content coming soon.</p>
+  </div>
 </div>
 
-<a href="/site/" class="back-link">← Home</a>
+<!-- Parking -->
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Parking</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Content coming soon.</p>
+    <a href="/site/visitors/parking" class="panel-cta">
+      Parking
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- Legacies -->
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Legacies</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Content coming soon.</p>
+    <a href="/site/visitors/legacies" class="panel-cta">
+      Legacies
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- Benches -->
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Benches</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Content coming soon.</p>
+    <a href="/site/visitors/benches" class="panel-cta">
+      Benches
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
+<!-- Trees -->
+<div class="content-panel">
+  <div class="content-panel-inner">
+    <img src="/static/treering1_gold.png" class="panel-mark" alt="">
+    <h2 class="panel-title">Trees</h2>
+    <div class="panel-rule"></div>
+    <p class="panel-body">Content coming soon.</p>
+    <a href="/site/visitors/trees" class="panel-cta">
+      Trees
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</div>
+
 {% endblock %}

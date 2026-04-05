@@ -161,6 +161,44 @@
       margin-top: 1rem; font-size: .7rem; color: rgba(255,255,255,.25);
     }
 
+    /* ── Content panels (shared section pattern) ── */
+    .content-panel {
+      min-height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 8rem 2rem;
+      border-top: 1px solid rgba(255,255,255,.06);
+      text-align: center;
+    }
+    .content-panel-inner { max-width: 580px; width: 100%; }
+    .panel-mark { width: 56px; height: 56px; margin-bottom: 1.75rem; }
+    .panel-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.8rem, 6vw, 4.5rem);
+      font-weight: 700; letter-spacing: .5px;
+      color: #fff; margin-bottom: 1.75rem; line-height: 1.05;
+      text-align: center;
+    }
+    .panel-rule { width: 28px; height: 1px; background: var(--accent); margin: 0 auto 2rem; }
+    .panel-body {
+      font-size: 1rem; font-weight: 300; line-height: 1.9;
+      color: rgba(255,255,255,.5); margin-bottom: 3rem;
+    }
+    .panel-cta {
+      display: inline-flex; align-items: center; gap: .55rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      font-size: .68rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; padding: .9rem 2rem;
+      border-radius: 3px; transition: filter .15s;
+    }
+    .panel-cta:hover { filter: brightness(110%); }
+
+    @media (max-width: 600px) {
+      .content-panel { min-height: auto; padding: 5rem 1.5rem; }
+    }
+
     /* ── Back link ── */
     .back-link {
       display: inline-flex; align-items: center; gap: .4rem;
