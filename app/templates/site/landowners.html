@@ -1,8 +1,7 @@
 {% extends "site/base.html" %}
-{% block content %}
+{% block extra_css %}
 <style>
-  /* Override page-wrap padding for full-width panels */
-  .page-wrap { padding: 0; max-width: none; }
+  .page-wrap { padding: 0; max-width: none; margin: 0; }
 
   /* ── Intro hero ── */
   .lo-intro {
@@ -102,7 +101,8 @@
     .service-panel { min-height: auto; padding: 5rem 1.5rem; }
   }
 </style>
-
+{% endblock %}
+{% block content %}
 <!-- Intro -->
 <div class="lo-intro">
   <div class="lo-intro-inner">
