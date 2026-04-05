@@ -1,0 +1,9 @@
+{% extends "location/base.html" %}
+{% block content %}
+<p class="page-eyebrow">Welcome</p>
+<h1 class="page-title">{{ estate.name }}</h1>
+<div class="page-rule"></div>
+<p class="page-body">{{ estate.tagline }}</p>
+<p class="page-body">Content coming soon.</p>
+<a href="/location/{{ slug }}/visitor/parking-start" class="back-link">Pay for parking →</a>
+{% endblock %}
