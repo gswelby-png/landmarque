@@ -199,6 +199,11 @@ def landmarque_trees(request: Request):
     return templates.TemplateResponse("site/landowners_trees.html", {"request": request})
 
 
+@app.get("/landmarque/register", response_class=HTMLResponse)
+def landmarque_register(request: Request):
+    return templates.TemplateResponse("site/landowners_register.html", {"request": request})
+
+
 @app.get("/landmarque/about", response_class=HTMLResponse)
 def landmarque_about(request: Request):
     return templates.TemplateResponse("site/about.html", {"request": request})
