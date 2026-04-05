@@ -1,25 +1,46 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
-  <!-- Bark outer edge -->
-  <circle cx="50" cy="50" r="47" stroke="#B89A5A" stroke-width="2.5"/>
-  <!-- Bark inner edge / cambium -->
-  <circle cx="50" cy="50" r="43.5" stroke="#B89A5A" stroke-width="0.6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <!-- Rough organic bark edge -->
+    <filter id="roughbark" x="-8%" y="-8%" width="116%" height="116%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.055" numOctaves="5" seed="7" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
 
-  <!-- Tree rings — spacing narrows toward centre, slight offsets for organic feel -->
-  <circle cx="50.3" cy="49.7" r="38"   stroke="#B89A5A" stroke-width="0.75"/>
-  <circle cx="50"   cy="50.2" r="32.5" stroke="#B89A5A" stroke-width="0.7"/>
-  <circle cx="49.7" cy="50"   r="27"   stroke="#B89A5A" stroke-width="0.75"/>
-  <circle cx="50.2" cy="49.8" r="22"   stroke="#B89A5A" stroke-width="0.7"/>
-  <circle cx="50"   cy="50.3" r="17.5" stroke="#B89A5A" stroke-width="0.7"/>
-  <circle cx="49.8" cy="50"   r="13"   stroke="#B89A5A" stroke-width="0.65"/>
-  <circle cx="50.2" cy="49.9" r="9"    stroke="#B89A5A" stroke-width="0.65"/>
-  <circle cx="50"   cy="50"   r="5.5"  stroke="#B89A5A" stroke-width="0.6"/>
+    <!-- Mask: white = show gold, black = transparent gap -->
+    <mask id="ringmask">
+      <!-- Bark outer shape (white = show) -->
+      <circle cx="50" cy="50" r="46" fill="white" filter="url(#roughbark)"/>
+      <!-- Gap 1 -->
+      <ellipse cx="50.5" cy="49.5" rx="42"   ry="41.5" fill="black"/>
+      <!-- Ring 1 -->
+      <ellipse cx="50.2" cy="50.5" rx="38.5" ry="38"   fill="white"/>
+      <!-- Gap 2 -->
+      <ellipse cx="49.8" cy="50.3" rx="35"   ry="34.5" fill="black"/>
+      <!-- Ring 2 -->
+      <ellipse cx="50.5" cy="49.8" rx="31.5" ry="31"   fill="white"/>
+      <!-- Gap 3 -->
+      <ellipse cx="50"   cy="50.4" rx="28"   ry="27.5" fill="black"/>
+      <!-- Ring 3 -->
+      <ellipse cx="49.6" cy="50"   rx="24.5" ry="24"   fill="white"/>
+      <!-- Gap 4 -->
+      <ellipse cx="50.4" cy="49.6" rx="21"   ry="20.5" fill="black"/>
+      <!-- Ring 4 -->
+      <ellipse cx="50"   cy="50.3" rx="17.5" ry="17"   fill="white"/>
+      <!-- Gap 5 -->
+      <ellipse cx="49.7" cy="50"   rx="14"   ry="13.5" fill="black"/>
+      <!-- Ring 5 -->
+      <ellipse cx="50.3" cy="49.7" rx="11"   ry="10.5" fill="white"/>
+      <!-- Gap 6 -->
+      <ellipse cx="50"   cy="50.3" rx="8"    ry="7.5"  fill="black"/>
+      <!-- Ring 6 -->
+      <ellipse cx="49.8" cy="50"   rx="5.5"  ry="5"    fill="white"/>
+      <!-- Gap 7 -->
+      <ellipse cx="50.2" cy="49.9" rx="3.5"  ry="3"    fill="black"/>
+      <!-- Pith -->
+      <ellipse cx="50"   cy="50"   rx="2"    ry="1.8"  fill="white"/>
+    </mask>
+  </defs>
 
-  <!-- Medullary rays — radiate from centre to bark -->
-  <line x1="50" y1="3"  x2="50" y2="97" stroke="#B89A5A" stroke-width="0.35" opacity="0.35"/>
-  <line x1="3"  y1="50" x2="97" y2="50" stroke="#B89A5A" stroke-width="0.35" opacity="0.35"/>
-  <line x1="15" y1="15" x2="85" y2="85" stroke="#B89A5A" stroke-width="0.35" opacity="0.25"/>
-  <line x1="85" y1="15" x2="15" y2="85" stroke="#B89A5A" stroke-width="0.35" opacity="0.25"/>
-
-  <!-- Pith — heartwood centre -->
-  <circle cx="50" cy="50" r="2.5" fill="#B89A5A"/>
+  <!-- Single gold rectangle, shaped by the mask -->
+  <rect x="0" y="0" width="100" height="100" fill="#B89A5A" mask="url(#ringmask)"/>
 </svg>
