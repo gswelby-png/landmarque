@@ -41,21 +41,21 @@
     }
     .leaflet-control-attribution a { color: #555 !important; }
     .leaflet-attribution-flag { display: none !important; }
-    .waypoints { padding: 1.25rem 0 2rem; }
+    .waypoints { padding: 1.25rem 0 0; }
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
       padding-bottom: 1.25rem; border-bottom: 1px solid #1a1a1a;
-      transition: opacity .3s;
+      transition: opacity .4s;
     }
     .waypoint:last-child { border-bottom: none; margin-bottom: 0; }
-    .waypoint.inactive { opacity: .4; }
+    .waypoint.inactive { opacity: .35; }
     .waypoint-number {
       width: 26px; height: 26px; border-radius: 50%;
       background: #B89A5A; color: #000;
       font-size: .72rem; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; margin-top: .1rem;
-      transition: background .3s, color .3s;
+      transition: background .4s;
     }
     .waypoint.active .waypoint-number { background: #fff; }
     .waypoint-title { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
@@ -102,6 +102,9 @@
     </div>
     <div class="w-divider"></div>
 
+    <!-- Sentinel: entering centre of viewport resets map to overview -->
+    <div id="overviewSentinel" data-index="-1" style="height:1px;"></div>
+
     <div class="waypoints">
       {% for wp in walk.waypoints %}
       <div class="waypoint" data-index="{{ loop.index0 }}">
@@ -117,11 +120,15 @@
       {% endfor %}
     </div>
 
+    <!-- Spacer so the last waypoint can scroll to the viewport midpoint -->
+    <div style="height: 50vh;"></div>
+
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
       const waypointCoords = {{ walk.waypoint_coords | tojson }};
-      const waypointZoom   = {{ walk.zoom }};
+      const waypointZoom   = {{ walk.waypoint_zoom }};
+      const routeCoords    = {{ walk.route | tojson }};
 
       const map = L.map('map', {
         zoomControl: false,
@@ -131,60 +138,71 @@
         doubleClickZoom: false,
         boxZoom: false,
         keyboard: false
-      }).setView({{ walk.center | tojson }}, waypointZoom);
+      });
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com">CARTO</a>',
         maxZoom: 19
       }).addTo(map);
 
-      L.polyline({{ walk.route | tojson }}, {
+      L.polyline(routeCoords, {
         color: '#B89A5A', weight: 3, opacity: 0.85
       }).addTo(map);
 
-      // Markers — store references so we can highlight the active one
-      const markers = waypointCoords.map((coord, i) => {
-        const el = L.divIcon({
-          html: `<div class="wp-marker" id="marker-${i}" style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s;">${i+1}</div>`,
-          iconSize: [22, 22], iconAnchor: [11, 11], className: ''
-        });
-        return L.marker(coord, { icon: el }).addTo(map);
+      const routeBounds = L.latLngBounds(routeCoords);
+
+      // Initial view: full route
+      map.fitBounds(routeBounds, { padding: [24, 24] });
+
+      // Markers
+      waypointCoords.forEach((coord, i) => {
+        L.marker(coord, {
+          icon: L.divIcon({
+            html: `<div id="marker-${i}" style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .4s;">${i+1}</div>`,
+            iconSize: [22, 22], iconAnchor: [11, 11], className: ''
+          })
+        }).addTo(map);
       });
 
       let activeIndex = -1;
 
-      function activateWaypoint(i) {
-        if (i === activeIndex) return;
-        activeIndex = i;
+      function setMarker(i, active) {
+        const m = document.getElementById(`marker-${i}`);
+        if (m) m.style.background = active ? '#fff' : '#B89A5A';
+      }
 
-        // Fly map to waypoint
-        map.flyTo(waypointCoords[i], waypointZoom, { duration: 1.2, easeLinearity: 0.4 });
-
-        // Update waypoint row styles
+      function resetOverview() {
+        if (activeIndex === -1) return;
+        activeIndex = -1;
+        map.flyToBounds(routeBounds, { padding: [24, 24], duration: 1.2, easeLinearity: 0.4 });
         document.querySelectorAll('.waypoint').forEach((el, j) => {
-          el.classList.toggle('active', j === i);
-          el.classList.toggle('inactive', j !== i);
-        });
-
-        // Update marker colours
-        waypointCoords.forEach((_, j) => {
-          const m = document.getElementById(`marker-${j}`);
-          if (m) {
-            m.style.background = j === i ? '#fff' : '#B89A5A';
-            m.style.color      = j === i ? '#000' : '#000';
-          }
+          el.classList.remove('active', 'inactive');
+          setMarker(j, false);
         });
       }
 
-      // IntersectionObserver — fire when a waypoint crosses 40% into the viewport
+      function activateWaypoint(i) {
+        if (i === activeIndex) return;
+        activeIndex = i;
+        map.flyTo(waypointCoords[i], waypointZoom, { duration: 1.2, easeLinearity: 0.4 });
+        document.querySelectorAll('.waypoint').forEach((el, j) => {
+          el.classList.toggle('active', j === i);
+          el.classList.toggle('inactive', j !== i);
+          setMarker(j, j === i);
+        });
+      }
+
+      // Trigger zone: ±5% around the viewport midpoint
       const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            activateWaypoint(parseInt(entry.target.dataset.index));
-          }
+          if (!entry.isIntersecting) return;
+          const i = parseInt(entry.target.dataset.index);
+          if (i === -1) resetOverview();
+          else activateWaypoint(i);
         });
-      }, { threshold: 0.4 });
+      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
 
+      observer.observe(document.getElementById('overviewSentinel'));
       document.querySelectorAll('.waypoint').forEach(el => observer.observe(el));
     </script>
 {% endblock %}
