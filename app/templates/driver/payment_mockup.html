@@ -43,11 +43,12 @@
     .summary-bar .s-label { font-size: .72rem; font-weight: 600; color: #888; text-transform: uppercase; letter-spacing: .5px; }
     .summary-bar .s-amount { font-size: 1.3rem; font-weight: 700; color: #111; }
     .btn-pay {
-      display: block; width: 100%; background: #B89A5A; color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      width: 100%; background: #B89A5A; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700; font-size: .85rem; letter-spacing: 3px;
-      text-transform: uppercase; padding: 1rem; border-radius: 4px;
-      text-decoration: none; text-align: center; transition: filter .15s;
+      text-transform: uppercase; padding: 0.95rem; border-radius: 4px;
+      text-decoration: none; min-height: 3rem; transition: filter .15s;
     }
     .btn-pay:hover { filter: brightness(110%); color: #fff; }
     .lock-note {

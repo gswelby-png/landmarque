@@ -4,12 +4,14 @@
 
 {% block extra_css %}
     .btn-menu {
-      display: block; text-align: center; text-decoration: none;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
       background: #B89A5A; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700; font-size: 1rem; letter-spacing: 1px;
       text-transform: uppercase; border-radius: 4px;
-      padding: 1.1rem 1rem .75rem; width: 100%; transition: filter .15s;
+      padding: 0.95rem 1rem; width: 100%; transition: filter .15s;
+      min-height: 3rem;
     }
     .btn-menu:hover { filter: brightness(88%); color: #fff; }
     .btn-menu + .btn-menu { margin-top: .65rem; }
