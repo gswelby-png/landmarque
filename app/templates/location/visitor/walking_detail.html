@@ -9,13 +9,10 @@
       display: flex; align-items: center; gap: .65rem;
       padding-top: 1.25rem; box-sizing: content-box;
     }
-    .walk-header-logo {
-      height: 26px; width: auto; flex-shrink: 0;
-    }
+    .walk-header-logo { height: 26px; width: auto; flex-shrink: 0; }
     .walk-header-name {
       font-weight: 700; font-size: .8rem; color: #fff;
-      letter-spacing: 1.5px; text-transform: uppercase;
-      line-height: 26px;
+      letter-spacing: 1.5px; text-transform: uppercase; line-height: 26px;
     }
     .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
     .walk-info-panel { padding: 1.7rem 0; }
@@ -48,28 +45,24 @@
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
       padding-bottom: 1.25rem; border-bottom: 1px solid #1a1a1a;
+      transition: opacity .3s;
     }
     .waypoint:last-child { border-bottom: none; margin-bottom: 0; }
+    .waypoint.inactive { opacity: .4; }
     .waypoint-number {
       width: 26px; height: 26px; border-radius: 50%;
       background: #B89A5A; color: #000;
       font-size: .72rem; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; margin-top: .1rem;
+      transition: background .3s, color .3s;
     }
+    .waypoint.active .waypoint-number { background: #fff; }
     .waypoint-title { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
     .waypoint-desc { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.65; font-weight: 300; }
     .waypoint-image {
       width: 100%; border-radius: 6px; margin-top: .75rem;
       height: 140px; object-fit: cover; display: block;
-    }
-    .map-warn {
-      position: absolute; inset: 0; z-index: 2000;
-      background: rgba(0,0,0,0.58);
-      display: flex; align-items: center; justify-content: center;
-      color: rgba(255,255,255,.9); font-size: .82rem; font-weight: 600;
-      letter-spacing: .5px; text-align: center; padding: 1rem;
-      pointer-events: none; opacity: 0; transition: opacity .25s;
     }
 {% endblock %}
 
@@ -105,16 +98,13 @@
 
 {% block content %}
     <div class="map-sticky">
-      <div style="position:relative;">
-        <div id="map"></div>
-        <div class="map-warn" id="mapWarn">Use two fingers to move the map</div>
-      </div>
+      <div id="map"></div>
     </div>
     <div class="w-divider"></div>
 
     <div class="waypoints">
       {% for wp in walk.waypoints %}
-      <div class="waypoint">
+      <div class="waypoint" data-index="{{ loop.index0 }}">
         <div class="waypoint-number">{{ loop.index }}</div>
         <div style="flex:1;">
           <div class="waypoint-title">{{ wp.title }}</div>
@@ -130,12 +120,18 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script>
+      const waypointCoords = {{ walk.waypoint_coords | tojson }};
+      const waypointZoom   = {{ walk.zoom }};
+
       const map = L.map('map', {
         zoomControl: false,
         dragging: false,
         scrollWheelZoom: false,
-        touchZoom: true
-      }).setView({{ walk.center | tojson }}, {{ walk.zoom }});
+        touchZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false
+      }).setView({{ walk.center | tojson }}, waypointZoom);
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com">CARTO</a>',
@@ -146,43 +142,49 @@
         color: '#B89A5A', weight: 3, opacity: 0.85
       }).addTo(map);
 
-      {{ walk.waypoint_coords | tojson }}.forEach((coord, i) => {
-        L.marker(coord, {
-          icon: L.divIcon({
-            html: `<div style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">${i+1}</div>`,
-            iconSize: [22, 22], iconAnchor: [11, 11], className: ''
-          })
-        }).addTo(map);
+      // Markers — store references so we can highlight the active one
+      const markers = waypointCoords.map((coord, i) => {
+        const el = L.divIcon({
+          html: `<div class="wp-marker" id="marker-${i}" style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .3s,color .3s;">${i+1}</div>`,
+          iconSize: [22, 22], iconAnchor: [11, 11], className: ''
+        });
+        return L.marker(coord, { icon: el }).addTo(map);
       });
 
-      // Two-finger drag with 200ms delay on warning
-      const mapEl = document.getElementById('map');
-      const warnEl = document.getElementById('mapWarn');
-      let warnTimer = null;
-      let hideTimer = null;
+      let activeIndex = -1;
 
-      function showWarn() {
-        warnEl.style.opacity = '1';
-        clearTimeout(hideTimer);
-        hideTimer = setTimeout(() => { warnEl.style.opacity = '0'; }, 1500);
+      function activateWaypoint(i) {
+        if (i === activeIndex) return;
+        activeIndex = i;
+
+        // Fly map to waypoint
+        map.flyTo(waypointCoords[i], waypointZoom, { duration: 1.2, easeLinearity: 0.4 });
+
+        // Update waypoint row styles
+        document.querySelectorAll('.waypoint').forEach((el, j) => {
+          el.classList.toggle('active', j === i);
+          el.classList.toggle('inactive', j !== i);
+        });
+
+        // Update marker colours
+        waypointCoords.forEach((_, j) => {
+          const m = document.getElementById(`marker-${j}`);
+          if (m) {
+            m.style.background = j === i ? '#fff' : '#B89A5A';
+            m.style.color      = j === i ? '#000' : '#000';
+          }
+        });
       }
 
-      mapEl.addEventListener('touchstart', function(e) {
-        clearTimeout(warnTimer);
-        if (e.touches.length >= 2) {
-          warnEl.style.opacity = '0';
-          map.dragging.enable();
-        } else {
-          map.dragging.disable();
-          warnTimer = setTimeout(showWarn, 200);
-        }
-      }, { passive: true });
+      // IntersectionObserver — fire when a waypoint crosses 40% into the viewport
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            activateWaypoint(parseInt(entry.target.dataset.index));
+          }
+        });
+      }, { threshold: 0.4 });
 
-      mapEl.addEventListener('touchend', function(e) {
-        clearTimeout(warnTimer);
-        if (e.touches.length < 2) {
-          map.dragging.disable();
-        }
-      }, { passive: true });
+      document.querySelectorAll('.waypoint').forEach(el => observer.observe(el));
     </script>
 {% endblock %}
