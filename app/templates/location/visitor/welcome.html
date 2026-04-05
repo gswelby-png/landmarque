@@ -58,6 +58,7 @@
     }
     .btn-menu:hover { filter: brightness(88%); color: #fff; }
     .btn-menu + .btn-menu { margin-top: .65rem; }
+    .btn-menu-secondary { background: #2a2a2a; }
     .stripe-note {
       color: rgba(255,255,255,.3);
       font-size: .75rem;
@@ -84,11 +85,11 @@
 
     <div style="padding: 0 0 2rem;">
       <a href="/location/{{ slug }}/visitor/parking-start" class="btn-menu">Pay for Parking</a>
-      <a href="/location/{{ slug }}/walking-routes" class="btn-menu">Walking Routes</a>
-      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu">Cycling Routes</a>
-      <a href="#" class="btn-menu">Places to Eat</a>
-      <a href="/location/{{ slug }}/places-of-interest" class="btn-menu">Places of Interest</a>
-      <a href="#" class="btn-menu">Merch Store</a>
+      <a href="/location/{{ slug }}/walking-routes" class="btn-menu btn-menu-secondary">Walking Routes</a>
+      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu btn-menu-secondary">Cycling Routes</a>
+      <a href="#" class="btn-menu btn-menu-secondary">Places to Eat</a>
+      <a href="/location/{{ slug }}/places-of-interest" class="btn-menu btn-menu-secondary">Places of Interest</a>
+      <a href="#" class="btn-menu btn-menu-secondary">Merch Store</a>
     </div>
 
   </div>
