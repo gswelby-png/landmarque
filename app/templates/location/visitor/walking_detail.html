@@ -2,27 +2,34 @@
 
 {% block title %}{{ walk.title }} — {{ estate_name }}{% endblock %}
 
-{% block welcome_text %}{{ walk.distance }} · {{ walk.duration }}{% endblock %}
+{% block welcome_text %}{% endblock %}
 
 {% block extra_css %}
+    .map-sticky {
+      position: sticky;
+      top: 0;
+      z-index: 500;
+      margin: 0 -1.25rem;
+    }
     #map {
-      width: 100%; height: 42vh; border-radius: 8px;
-      margin-bottom: 1rem; overflow: hidden;
+      width: 100%; height: 42vh; display: block;
     }
     .stats-bar {
-      display: flex; margin-bottom: 1.5rem;
-      background: #111; border-radius: 6px; overflow: hidden;
+      display: flex;
+      background: rgba(10,10,10,0.92);
+      backdrop-filter: blur(4px);
     }
     .stat {
-      flex: 1; padding: .75rem .5rem; text-align: center;
-      border-right: 1px solid #1e1e1e;
+      flex: 1; padding: .65rem .5rem; text-align: center;
+      border-right: 1px solid #222;
     }
     .stat:last-child { border-right: none; }
-    .stat-value { font-size: 1rem; font-weight: 700; color: #B89A5A; }
+    .stat-value { font-size: .95rem; font-weight: 700; color: #B89A5A; }
     .stat-label {
-      font-size: .6rem; font-weight: 600; letter-spacing: 1.5px;
+      font-size: .58rem; font-weight: 600; letter-spacing: 1.5px;
       text-transform: uppercase; color: #555; margin-top: .2rem;
     }
+    .waypoints { padding: 1.25rem 0 2rem; }
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
       padding-bottom: 1.25rem; border-bottom: 1px solid #1a1a1a;
@@ -44,24 +51,25 @@
 {% endblock %}
 
 {% block content %}
-    <div id="map"></div>
-
-    <div class="stats-bar">
-      <div class="stat">
-        <div class="stat-value">{{ walk.distance }}</div>
-        <div class="stat-label">Distance</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">{{ walk.duration }}</div>
-        <div class="stat-label">Est. time</div>
-      </div>
-      <div class="stat">
-        <div class="stat-value">{{ walk.difficulty }}</div>
-        <div class="stat-label">Difficulty</div>
+    <div class="map-sticky">
+      <div id="map"></div>
+      <div class="stats-bar">
+        <div class="stat">
+          <div class="stat-value">{{ walk.distance }}</div>
+          <div class="stat-label">Distance</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{{ walk.duration }}</div>
+          <div class="stat-label">Est. time</div>
+        </div>
+        <div class="stat">
+          <div class="stat-value">{{ walk.difficulty }}</div>
+          <div class="stat-label">Difficulty</div>
+        </div>
       </div>
     </div>
 
-    <div style="padding-bottom: 2rem;">
+    <div class="waypoints">
       {% for wp in walk.waypoints %}
       <div class="waypoint">
         <div class="waypoint-number">{{ loop.index }}</div>
