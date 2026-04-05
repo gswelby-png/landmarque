@@ -164,7 +164,7 @@ def visitor_parking_start(request: Request, slug: str, db: Session = Depends(get
         "welcome_text": getattr(car_park, "welcome_text", None) or "",
         "brand": brand,
         "options": options,
-        # Override form action to post back to the new URL
+        "slug": slug,
         "checkout_url": f"/location/{slug}/visitor/parking-start/checkout",
     })
 

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{ estate_name }} — Parking</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -100,7 +99,7 @@
 </head>
 <body>
 
-  <div class="container" style="max-width:520px; padding-top:2rem;">
+  <div style="max-width:520px; margin:0 auto; padding:2rem 1.25rem 0;">
 
     <div class="estate-header">
       {% if logo_url %}
@@ -114,20 +113,19 @@
     </div>
 
     <div class="payment-panel">
-        <div class="mb-3">
-          <label class="form-label fw-semibold" style="font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:#555;">
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:.85rem; font-weight:600; letter-spacing:.5px; text-transform:uppercase; color:#555; margin-bottom:.5rem;">
             Enter your registration
           </label>
-          <input type="text" class="form-control form-control-lg text-uppercase"
-                 maxlength="10"
-                 style="letter-spacing:4px; font-weight:700; font-size:1.1rem;">
+          <input type="text" maxlength="10"
+                 style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #ddd; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase;">
         </div>
 
-        <div class="mb-3">
-          <label class="form-label fw-semibold" style="font-size:.85rem; letter-spacing:.5px; text-transform:uppercase; color:#555;">
+        <div style="margin-bottom:1.25rem;">
+          <label style="display:block; font-size:.85rem; font-weight:600; letter-spacing:.5px; text-transform:uppercase; color:#555; margin-bottom:.5rem;">
             Duration
           </label>
-          <div class="d-grid gap-2">
+          <div style="display:grid; gap:.5rem;">
             {% for opt in options %}
             <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
               <span>{{ opt.label }}</span>
@@ -137,7 +135,7 @@
           </div>
         </div>
 
-        <a href="/payment/{{ car_park_slug }}" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
+        <a href="/location/{{ slug }}/visitor/parking-start/checkout" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
     </div>
 
   </div>
