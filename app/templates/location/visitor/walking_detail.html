@@ -102,9 +102,6 @@
     </div>
     <div class="w-divider"></div>
 
-    <!-- Sentinel: entering centre of viewport resets map to overview -->
-    <div id="overviewSentinel" data-index="-1" style="height:1px;"></div>
-
     <div class="waypoints">
       {% for wp in walk.waypoints %}
       <div class="waypoint" data-index="{{ loop.index0 }}">
@@ -165,6 +162,8 @@
       });
 
       let activeIndex = -1;
+      const waypointEls = Array.from(document.querySelectorAll('.waypoint'));
+      const triggerY = window.innerHeight * 0.5;
 
       function setMarker(i, active) {
         const m = document.getElementById(`marker-${i}`);
@@ -175,7 +174,7 @@
         if (activeIndex === -1) return;
         activeIndex = -1;
         map.flyToBounds(routeBounds, { padding: [24, 24], duration: 1.2, easeLinearity: 0.4 });
-        document.querySelectorAll('.waypoint').forEach((el, j) => {
+        waypointEls.forEach((el, j) => {
           el.classList.remove('active', 'inactive');
           setMarker(j, false);
         });
@@ -185,24 +184,25 @@
         if (i === activeIndex) return;
         activeIndex = i;
         map.flyTo(waypointCoords[i], waypointZoom, { duration: 1.2, easeLinearity: 0.4 });
-        document.querySelectorAll('.waypoint').forEach((el, j) => {
+        waypointEls.forEach((el, j) => {
           el.classList.toggle('active', j === i);
           el.classList.toggle('inactive', j !== i);
           setMarker(j, j === i);
         });
       }
 
-      // Trigger zone: ±5% around the viewport midpoint
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (!entry.isIntersecting) return;
-          const i = parseInt(entry.target.dataset.index);
-          if (i === -1) resetOverview();
-          else activateWaypoint(i);
+      function updateActive() {
+        // Find the last waypoint whose top has crossed the 50vh trigger line
+        let newActive = -1;
+        waypointEls.forEach((el, i) => {
+          if (el.getBoundingClientRect().top <= triggerY) newActive = i;
         });
-      }, { rootMargin: '-45% 0px -45% 0px', threshold: 0 });
 
-      observer.observe(document.getElementById('overviewSentinel'));
-      document.querySelectorAll('.waypoint').forEach(el => observer.observe(el));
+        if (newActive === -1) resetOverview();
+        else activateWaypoint(newActive);
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      updateActive(); // set initial state
     </script>
 {% endblock %}
