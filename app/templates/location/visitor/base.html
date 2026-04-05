@@ -41,6 +41,7 @@
 
   <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
 
+    {% block header %}
     <div class="estate-header">
       {% if logo_url %}
       <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
@@ -51,6 +52,7 @@
         {% block welcome_text %}{% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Welcome.{% endif %}{% endblock %}
       </p>
     </div>
+    {% endblock %}
 
     {% block content %}{% endblock %}
 
