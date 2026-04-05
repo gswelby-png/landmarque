@@ -3,23 +3,22 @@
 {% block title %}{{ walk.title }} — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
-    body > div { padding-top: 0; }
+    body > div { padding-top: 0 !important; }
     .walk-header-bar {
-      display: flex; align-items: center; gap: .6rem;
-      padding: 1.25rem 0 .65rem;
-      min-height: 44px;
+      height: 44px;
+      display: flex; align-items: center; gap: .65rem;
+      padding-top: 1.25rem; box-sizing: content-box;
     }
     .walk-header-logo {
-      height: 26px; width: auto;
-      display: block; flex-shrink: 0; align-self: center;
+      height: 26px; width: auto; flex-shrink: 0;
     }
     .walk-header-name {
       font-weight: 700; font-size: .8rem; color: #fff;
       letter-spacing: 1.5px; text-transform: uppercase;
-      line-height: 1; align-self: center;
+      line-height: 26px;
     }
     .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
-    .walk-info-panel { padding: .85rem 0; }
+    .walk-info-panel { padding: 1.7rem 0; }
     .walk-info-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
     .walk-info-summary { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; font-weight: 300; }
     .walk-stats-row { display: flex; }
@@ -44,7 +43,7 @@
       color: #444 !important; font-size: 8px !important;
     }
     .leaflet-control-attribution a { color: #555 !important; }
-    .leaflet-control-attribution svg { display: none; }
+    .leaflet-attribution-flag { display: none !important; }
     .waypoints { padding: 1.25rem 0 2rem; }
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
@@ -63,6 +62,14 @@
     .waypoint-image {
       width: 100%; border-radius: 6px; margin-top: .75rem;
       height: 140px; object-fit: cover; display: block;
+    }
+    .map-warn {
+      position: absolute; inset: 0; z-index: 2000;
+      background: rgba(0,0,0,0.58);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,.9); font-size: .82rem; font-weight: 600;
+      letter-spacing: .5px; text-align: center; padding: 1rem;
+      pointer-events: none; opacity: 0; transition: opacity .25s;
     }
 {% endblock %}
 
@@ -98,7 +105,10 @@
 
 {% block content %}
     <div class="map-sticky">
-      <div id="map"></div>
+      <div style="position:relative;">
+        <div id="map"></div>
+        <div class="map-warn" id="mapWarn">Use two fingers to move the map</div>
+      </div>
     </div>
     <div class="w-divider"></div>
 
@@ -118,13 +128,13 @@
     </div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-    <script src="https://unpkg.com/leaflet-gesture-handling/dist/leaflet-gesture-handling.min.js"></script>
     <script>
       const map = L.map('map', {
         zoomControl: false,
-        gestureHandling: true
+        dragging: false,
+        scrollWheelZoom: false,
+        touchZoom: true
       }).setView({{ walk.center | tojson }}, {{ walk.zoom }});
 
       L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
@@ -144,5 +154,35 @@
           })
         }).addTo(map);
       });
+
+      // Two-finger drag with 200ms delay on warning
+      const mapEl = document.getElementById('map');
+      const warnEl = document.getElementById('mapWarn');
+      let warnTimer = null;
+      let hideTimer = null;
+
+      function showWarn() {
+        warnEl.style.opacity = '1';
+        clearTimeout(hideTimer);
+        hideTimer = setTimeout(() => { warnEl.style.opacity = '0'; }, 1500);
+      }
+
+      mapEl.addEventListener('touchstart', function(e) {
+        clearTimeout(warnTimer);
+        if (e.touches.length >= 2) {
+          warnEl.style.opacity = '0';
+          map.dragging.enable();
+        } else {
+          map.dragging.disable();
+          warnTimer = setTimeout(showWarn, 200);
+        }
+      }, { passive: true });
+
+      mapEl.addEventListener('touchend', function(e) {
+        clearTimeout(warnTimer);
+        if (e.touches.length < 2) {
+          map.dragging.disable();
+        }
+      }, { passive: true });
     </script>
 {% endblock %}
