@@ -173,6 +173,11 @@ def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
 
 
+@app.get("/dev", response_class=HTMLResponse)
+def dev_index(request: Request):
+    return templates.TemplateResponse("dev_index.html", {"request": request})
+
+
 @app.get("/contact", response_class=HTMLResponse)
 def contact_get(request: Request, sent: bool = False):
     return templates.TemplateResponse("contact.html", {"request": request, "sent": sent})

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev Index — LandMarque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #B89A5A; --accent-dark: #9a7e3e; --dark: #0a0a0a; }
+    body {
+      background: var(--dark); color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      min-height: 100vh; -webkit-font-smoothing: antialiased;
+      padding: 6rem 2.5rem 5rem;
+    }
+
+    .dev-header {
+      max-width: 900px; margin: 0 auto 4rem;
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding-bottom: 2.5rem;
+    }
+    .dev-eyebrow {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .75rem;
+    }
+    .dev-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 2.5rem; font-weight: 700; letter-spacing: 2px;
+    }
+    .dev-title span:first-child { color: var(--accent); }
+
+    .dev-body {
+      max-width: 900px; margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 3rem;
+    }
+
+    .dev-group-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 1.1rem;
+    }
+    .dev-group-desc {
+      font-size: .72rem; font-weight: 300; color: rgba(255,255,255,.28);
+      line-height: 1.6; margin-bottom: 1.5rem;
+    }
+    .dev-group a {
+      display: block;
+      font-size: .82rem; font-weight: 600; letter-spacing: .5px;
+      text-decoration: none; color: rgba(255,255,255,.6);
+      padding: .45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05);
+      transition: color .12s;
+    }
+    .dev-group a:last-child { border-bottom: none; }
+    .dev-group a:hover { color: #fff; }
+    .dev-group a.sub {
+      font-size: .75rem; letter-spacing: .5px;
+      color: rgba(255,255,255,.35); padding-left: .75rem;
+    }
+    .dev-group a.sub:hover { color: rgba(255,255,255,.75); }
+  </style>
+</head>
+<body>
+
+  <div class="dev-header">
+    <p class="dev-eyebrow">Development</p>
+    <h1 class="dev-title"><span>Land</span><span style="color:#fff">Marque</span> — Page Index</h1>
+  </div>
+
+  <div class="dev-body">
+
+    <!-- Site 1: LandMarque.co.uk -->
+    <div class="dev-group">
+      <div class="dev-group-label">1 — LandMarque.co.uk</div>
+      <p class="dev-group-desc">Public marketing site for LandMarque. Single instance.</p>
+      <a href="/">Home</a>
+      <a href="/contact">Contact</a>
+      <a href="/site/landowners">LandOwners</a>
+      <a href="/site/landowners/parking" class="sub">Parking</a>
+      <a href="/site/landowners/legacies" class="sub">Legacies</a>
+      <a href="/site/landowners/benches" class="sub">Benches</a>
+      <a href="/site/landowners/trees" class="sub">Trees</a>
+      <a href="/site/visitors">Visitors</a>
+      <a href="/site/visitors/parking" class="sub">Parking</a>
+      <a href="/site/visitors/legacies" class="sub">Legacies</a>
+      <a href="/site/visitors/benches" class="sub">Benches</a>
+      <a href="/site/visitors/trees" class="sub">Trees</a>
+      <a href="/site/about">About</a>
+    </div>
+
+    <!-- Site 2: Shere Manor Estate portal -->
+    <div class="dev-group">
+      <div class="dev-group-label">2 — Shere Manor: Estate Portal</div>
+      <p class="dev-group-desc">Per-estate site for advance visitor information and the estate online store. Multi-instance template.</p>
+      <a href="/park/shere-manor">Parking — Shere Manor</a>
+      <a href="/park/shere-manor/success" class="sub">Payment success</a>
+      <a href="/check/shere-manor" class="sub">Check payment</a>
+      <a href="/mockup" class="sub">Driver mockup</a>
+    </div>
+
+    <!-- Site 3: On-site visitor experience -->
+    <div class="dev-group">
+      <div class="dev-group-label">3 — Shere Manor: On-site (QR)</div>
+      <p class="dev-group-desc">Visitor-facing, QR code triggered. Optimised for mobile in the field. Multi-instance template.</p>
+      <a href="/payment/shere-manor">Payment page</a>
+      <a href="/receipt/shere-manor">Receipt</a>
+    </div>
+
+    <!-- Owner back-end -->
+    <div class="dev-group">
+      <div class="dev-group-label">Owner Back-end</div>
+      <p class="dev-group-desc">Estate owner login, dashboard, car park management and accounts.</p>
+      <a href="/owner/login">Login</a>
+      <a href="/owner/dashboard">Dashboard</a>
+      <a href="/owner/car-parks/new">New car park</a>
+      <a href="/owner/transactions">Transactions</a>
+    </div>
+
+    <!-- Admin back-end -->
+    <div class="dev-group">
+      <div class="dev-group-label">Admin Back-end</div>
+      <p class="dev-group-desc">LandMarque internal admin — owner management, car parks, reporting.</p>
+      <a href="/admin/login">Login</a>
+      <a href="/admin/dashboard">Dashboard</a>
+      <a href="/admin/owners/new">New owner</a>
+      <a href="/admin/car-parks/new">New car park</a>
+      <a href="/admin/export-csv">Export CSV</a>
+    </div>
+
+  </div>
+
+</body>
+</html>
