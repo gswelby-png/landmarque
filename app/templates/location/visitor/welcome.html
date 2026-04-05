@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ estate.name }} — Welcome</title>
+  <title>{{ estate_name }} — Welcome</title>
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; }
@@ -24,6 +24,7 @@
       margin-bottom: 1.4rem;
     }
     .estate-name {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700;
       font-size: 1.9rem;
       color: #fff;
@@ -39,62 +40,58 @@
       max-width: 480px;
       margin: 0 auto;
     }
-    .menu-panel {
-      background: #fff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
-      margin-bottom: 2rem;
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-    }
-    .menu-btn {
+    .btn-menu {
       display: block;
       text-align: center;
       text-decoration: none;
-      background: #B89A5A;
+      background: {{ brand.accent }};
       color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700;
-      font-size: .88rem;
-      letter-spacing: 2px;
+      font-size: 1rem;
+      letter-spacing: 1px;
       text-transform: uppercase;
       border-radius: 4px;
-      padding: .9rem 1rem;
+      padding: .85rem;
+      width: 100%;
       transition: filter .15s;
     }
-    .menu-btn:hover { filter: brightness(88%); color: #fff; }
-    .foot-note {
-      text-align: center;
-      padding: 1rem 0;
+    .btn-menu:hover { filter: brightness(88%); color: #fff; }
+    .btn-menu + .btn-menu { margin-top: .65rem; }
+    .stripe-note {
       color: rgba(255,255,255,.3);
       font-size: .75rem;
+      text-align: center;
+      margin-top: 1.5rem;
+      font-weight: 300;
     }
   </style>
 </head>
 <body>
 
-  <div style="max-width:520px; margin:0 auto; padding: 2rem 1.25rem 0;">
+  <div class="container" style="max-width:520px; padding-top:2rem;">
 
     <div class="estate-header">
-      {% if estate.logo_url is defined and estate.logo_url %}
-      <img src="{{ estate.logo_url }}" alt="{{ estate.name }}" class="estate-logo">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
       {% endif %}
-      <h1 class="estate-name">{{ estate.name }}</h1>
-      <p class="estate-welcome">{{ estate.tagline }}</p>
+      <h1 class="estate-name">{{ estate_name }}</h1>
+      <p style="color:#fff; font-family:'Raleway',Helvetica,Arial,sans-serif; font-weight:700; font-size:1rem; margin:0 0 1rem; letter-spacing:.5px;">{{ car_park_name }}</p>
+      <p class="estate-welcome">
+        {% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Welcome. Please select an option below.{% endif %}
+      </p>
     </div>
 
-    <div class="menu-panel">
-      <a href="/location/{{ slug }}/visitor/parking-start" class="menu-btn">Pay for Parking</a>
-      <a href="/location/{{ slug }}/walking-routes" class="menu-btn">Walking Routes</a>
-      <a href="/location/{{ slug }}/cycle-routes" class="menu-btn">Cycling Routes</a>
-      <a href="/location/{{ slug }}/places-of-interest" class="menu-btn">Places of Interest</a>
-      <a href="#" class="menu-btn">Places to Eat</a>
-      <a href="#" class="menu-btn">Merch Store</a>
+    <div style="padding: 0 0 2rem;">
+      <a href="/location/{{ slug }}/visitor/parking-start" class="btn-menu">Pay for Parking</a>
+      <a href="/location/{{ slug }}/walking-routes" class="btn-menu">Walking Routes</a>
+      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu">Cycling Routes</a>
+      <a href="#" class="btn-menu">Places to Eat</a>
+      <a href="/location/{{ slug }}/places-of-interest" class="btn-menu">Places of Interest</a>
+      <a href="#" class="btn-menu">Merch Store</a>
     </div>
 
-    <p class="foot-note">
+    <p class="stripe-note">
       Powered by <span style="color:#B89A5A">LAND</span><span style="color:rgba(255,255,255,.5)">MARQUE</span>
     </p>
 
