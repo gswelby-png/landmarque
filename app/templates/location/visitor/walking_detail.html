@@ -5,37 +5,34 @@
 {% block extra_css %}
     .walk-header-bar {
       display: flex; align-items: center; gap: .6rem;
-      padding: .45rem 0 .6rem;
+      padding: .45rem 0 .55rem;
     }
-    .walk-header-logo { height: 26px; width: auto; }
+    .walk-header-logo { height: 26px; width: auto; display: block; }
     .walk-header-name {
       font-weight: 700; font-size: .8rem; color: #fff;
-      letter-spacing: 1.5px; text-transform: uppercase;
+      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
+    }
+    .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
+    .walk-info-panel { padding: .85rem 0; }
+    .walk-info-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
+    .walk-info-summary { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; font-weight: 300; }
+    .walk-stats-row { display: flex; }
+    .walk-stat {
+      flex: 1; padding: .6rem .5rem; text-align: center;
+      border-right: 1px solid #222;
+    }
+    .walk-stat:last-child { border-right: none; }
+    .walk-stat-value { font-size: .9rem; font-weight: 700; color: #B89A5A; }
+    .walk-stat-label {
+      font-size: .56rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: .15rem;
     }
     .map-sticky {
       position: sticky; top: 0; z-index: 500;
       margin: 0 -1.25rem;
     }
-    .map-wrap { position: relative; }
     #map { width: 100%; height: 42vh; display: block; }
     .leaflet-container { background: #000 !important; }
-    .stats-bar {
-      position: absolute; top: 0; left: 0; right: 0; z-index: 1000;
-      display: flex;
-      background: rgba(0,0,0,0.62);
-      backdrop-filter: blur(6px);
-      pointer-events: none;
-    }
-    .stat {
-      flex: 1; padding: .55rem .5rem; text-align: center;
-      border-right: 1px solid rgba(255,255,255,.08);
-    }
-    .stat:last-child { border-right: none; }
-    .stat-value { font-size: .9rem; font-weight: 700; color: #B89A5A; }
-    .stat-label {
-      font-size: .56rem; font-weight: 600; letter-spacing: 1.5px;
-      text-transform: uppercase; color: rgba(255,255,255,.4); margin-top: .15rem;
-    }
     .leaflet-control-attribution {
       background: rgba(0,0,0,0.55) !important;
       color: #444 !important; font-size: 8px !important;
@@ -69,28 +66,34 @@
       {% endif %}
       <span class="walk-header-name">{{ estate_name }}</span>
     </div>
+    <div class="w-divider"></div>
+    <div class="walk-info-panel">
+      <div class="walk-info-title">{{ walk.title }}</div>
+      <p class="walk-info-summary">{{ walk.summary }}</p>
+    </div>
+    <div class="w-divider"></div>
+    <div class="walk-stats-row">
+      <div class="walk-stat">
+        <div class="walk-stat-value">{{ walk.distance }}</div>
+        <div class="walk-stat-label">Distance</div>
+      </div>
+      <div class="walk-stat">
+        <div class="walk-stat-value">{{ walk.duration }}</div>
+        <div class="walk-stat-label">Est. time</div>
+      </div>
+      <div class="walk-stat">
+        <div class="walk-stat-value">{{ walk.difficulty }}</div>
+        <div class="walk-stat-label">Difficulty</div>
+      </div>
+    </div>
+    <div class="w-divider"></div>
 {% endblock %}
 
 {% block content %}
     <div class="map-sticky">
-      <div class="map-wrap">
-        <div class="stats-bar">
-          <div class="stat">
-            <div class="stat-value">{{ walk.distance }}</div>
-            <div class="stat-label">Distance</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">{{ walk.duration }}</div>
-            <div class="stat-label">Est. time</div>
-          </div>
-          <div class="stat">
-            <div class="stat-value">{{ walk.difficulty }}</div>
-            <div class="stat-label">Difficulty</div>
-          </div>
-        </div>
-        <div id="map"></div>
-      </div>
+      <div id="map"></div>
     </div>
+    <div class="w-divider"></div>
 
     <div class="waypoints">
       {% for wp in walk.waypoints %}
