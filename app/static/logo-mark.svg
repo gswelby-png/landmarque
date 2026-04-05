@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <!-- Bark outer edge -->
+  <circle cx="50" cy="50" r="47" stroke="#B89A5A" stroke-width="2.5"/>
+  <!-- Bark inner edge / cambium -->
+  <circle cx="50" cy="50" r="43.5" stroke="#B89A5A" stroke-width="0.6"/>
+
+  <!-- Tree rings — spacing narrows toward centre, slight offsets for organic feel -->
+  <circle cx="50.3" cy="49.7" r="38"   stroke="#B89A5A" stroke-width="0.75"/>
+  <circle cx="50"   cy="50.2" r="32.5" stroke="#B89A5A" stroke-width="0.7"/>
+  <circle cx="49.7" cy="50"   r="27"   stroke="#B89A5A" stroke-width="0.75"/>
+  <circle cx="50.2" cy="49.8" r="22"   stroke="#B89A5A" stroke-width="0.7"/>
+  <circle cx="50"   cy="50.3" r="17.5" stroke="#B89A5A" stroke-width="0.7"/>
+  <circle cx="49.8" cy="50"   r="13"   stroke="#B89A5A" stroke-width="0.65"/>
+  <circle cx="50.2" cy="49.9" r="9"    stroke="#B89A5A" stroke-width="0.65"/>
+  <circle cx="50"   cy="50"   r="5.5"  stroke="#B89A5A" stroke-width="0.6"/>
+
+  <!-- Medullary rays — radiate from centre to bark -->
+  <line x1="50" y1="3"  x2="50" y2="97" stroke="#B89A5A" stroke-width="0.35" opacity="0.35"/>
+  <line x1="3"  y1="50" x2="97" y2="50" stroke="#B89A5A" stroke-width="0.35" opacity="0.35"/>
+  <line x1="15" y1="15" x2="85" y2="85" stroke="#B89A5A" stroke-width="0.35" opacity="0.25"/>
+  <line x1="85" y1="15" x2="15" y2="85" stroke="#B89A5A" stroke-width="0.35" opacity="0.25"/>
+
+  <!-- Pith — heartwood centre -->
+  <circle cx="50" cy="50" r="2.5" fill="#B89A5A"/>
+</svg>

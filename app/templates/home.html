@@ -47,6 +47,8 @@
       letter-spacing: 1.5px;
       text-transform: none;
       text-decoration: none;
+      display: flex;
+      align-items: center;
     }
 
     .nav-links {
@@ -84,13 +86,19 @@
       padding: 8rem 2rem 5rem;
     }
 
-    .hero-eyebrow {
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-      color: rgba(255,255,255,.28);
-      margin-bottom: 2rem;
+    .hero-logo-mark {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 2.5rem;
+      opacity: .9;
+    }
+
+    .nav-logo-mark {
+      width: 28px;
+      height: 28px;
+      margin-right: .6rem;
+      opacity: .9;
+      vertical-align: middle;
     }
 
     .hero-wordmark {
@@ -335,7 +343,7 @@
 <body>
 
   <nav>
-    <a href="/" class="nav-brand"><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
+    <a href="/" class="nav-brand"><img src="/static/logo-mark.svg" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
     <div class="nav-links">
       <a href="/owner/login">Owner login</a>
       <a href="/contact" class="nav-cta">Get in touch</a>
@@ -344,7 +352,7 @@
 
   <!-- Hero -->
   <section class="hero">
-    <p class="hero-eyebrow">Our shared heritage</p>
+    <img src="/static/logo-mark.svg" class="hero-logo-mark" alt="LandMarque mark">
     <h1 class="hero-wordmark">
       <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
     </h1>
