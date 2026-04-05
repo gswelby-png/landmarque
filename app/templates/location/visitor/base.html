@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}{{ estate_name }}{% endblock %}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #000;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      overflow-y: scroll;
+    }
+    .estate-header {
+      text-align: center;
+      padding: 3.75rem 1rem 2rem;
+    }
+    .estate-logo { max-width: 220px; height: auto; margin-bottom: 1.4rem; }
+    .estate-name {
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700; font-size: 1.9rem; color: #fff;
+      letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1rem;
+    }
+    .car-park-name {
+      color: #fff; font-weight: 700; font-size: 1rem;
+      letter-spacing: .5px; margin: 0 0 1.5rem;
+    }
+    .estate-welcome {
+      color: rgba(255,255,255,0.75);
+      font-weight: 300; font-size: 0.95rem;
+      line-height: 1.7; max-width: 480px; margin: 0 auto;
+    }
+    {% block extra_css %}{% endblock %}
+  </style>
+</head>
+<body>
+
+  <div style="max-width:520px; margin:0 auto; padding:2rem 1.25rem 0;">
+
+    <div class="estate-header">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
+      {% endif %}
+      <h1 class="estate-name">{{ estate_name }}</h1>
+      <p class="car-park-name">{{ car_park_name }}</p>
+      <p class="estate-welcome">
+        {% block welcome_text %}{% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Welcome.{% endif %}{% endblock %}
+      </p>
+    </div>
+
+    {% block content %}{% endblock %}
+
+  </div>
+
+</body>
+</html>

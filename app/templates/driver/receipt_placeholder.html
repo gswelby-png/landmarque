@@ -1,136 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Payment Confirmed — LandMarque</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    body {
-      background: #000;
-      min-height: 100vh;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      padding-bottom: 0;
-      overflow-y: scroll;
-    }
-    .estate-header {
-      text-align: center;
-      padding: 3.75rem 1rem 2rem;
-    }
-    .estate-logo {
-      max-width: 220px;
-      height: auto;
-      margin-bottom: 1.4rem;
-    }
-    .estate-name {
-      font-weight: 700;
-      font-size: 1.9rem;
-      color: #fff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .car-park-name {
-      color: #fff;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: .5px;
-      margin: 0 0 1.5rem;
-    }
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Payment Confirmed — {{ estate_name }}{% endblock %}
+
+{% block welcome_text %}Many thanks for your contribution, it is much appreciated. Please screenshot this page as proof of payment. We hope you will have a lovely time in Shere!{% endblock %}
+
+{% block extra_css %}
     .panel {
-      background: #fff;
-      border-radius: 8px;
-      overflow: hidden;
-      margin-bottom: 1rem;
+      background: #fff; border-radius: 8px;
+      overflow: hidden; margin-bottom: 1rem;
     }
     .panel-top {
-      background: #1a6b2a;
-      padding: 2rem 2rem 1.75rem;
-      text-align: center;
+      background: #1a6b2a; padding: 2rem 2rem 1.75rem; text-align: center;
     }
     .tick-circle {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
+      width: 56px; height: 56px; border-radius: 50%;
       background: rgba(255,255,255,.2);
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       margin: 0 auto 1rem;
     }
     .confirm-title {
-      font-size: 1.1rem;
-      font-weight: 800;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: #fff;
+      font-size: 1.1rem; font-weight: 800;
+      letter-spacing: 3px; text-transform: uppercase; color: #fff;
     }
-    .panel-body {
-      padding: 1.5rem 2rem;
-    }
+    .panel-body { padding: 1.5rem 2rem; }
     .detail-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: .85rem 0;
-      border-bottom: 1px solid #f0ede8;
+      display: flex; justify-content: space-between; align-items: baseline;
+      padding: .85rem 0; border-bottom: 1px solid #f0ede8;
     }
     .detail-row:last-child { border-bottom: none; }
     .detail-label {
-      font-size: .65rem;
-      font-weight: 700;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: #999;
+      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #999;
     }
-    .detail-value {
-      font-size: .9rem;
-      font-weight: 700;
-      color: #111;
-      text-align: right;
-    }
-    .detail-value.plate {
-      font-size: 1.3rem;
-      letter-spacing: 5px;
-      font-weight: 800;
-    }
-    .detail-value.ref {
-      color: #8B3A2A;
-      letter-spacing: 2px;
-    }
-    .screenshot-note {
-      text-align: center;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.75);
-      font-weight: 300;
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto;
-      padding: .5rem 0 1rem;
-    }
-    .stripe-note {
-      font-size: .75rem;
-      text-align: center;
-      font-weight: 300;
-      color: rgba(255,255,255,.3);
-      padding: .5rem 0 1rem;
-    }
-  </style>
-</head>
-<body>
+    .detail-value { font-size: .9rem; font-weight: 700; color: #111; text-align: right; }
+    .detail-value.plate { font-size: 1.3rem; letter-spacing: 5px; font-weight: 800; }
+    .detail-value.ref { color: #B89A5A; letter-spacing: 2px; }
+{% endblock %}
 
-  <div style="max-width:520px; margin:0 auto; padding: 2rem 1rem 0;">
-
-    <div class="estate-header">
-      {% if logo_url %}
-      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
-      {% endif %}
-      <h1 class="estate-name">{{ estate_name }}</h1>
-      <p class="car-park-name">{{ car_park_name }}</p>
-      <p class="screenshot-note" style="margin-top:1rem;">Many thanks for your contribution, it is much appreciated. Please screenshot this page as proof of payment. We hope you will have a lovely time in Shere!</p>
-    </div>
-
+{% block content %}
     <div class="panel">
       <div class="panel-top">
         <div class="tick-circle">
@@ -159,8 +66,4 @@
         </div>
       </div>
     </div>
-
-  </div>
-
-</body>
-</html>
+{% endblock %}

@@ -1,125 +1,43 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ estate_name }} — Parking</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      background: #000;
-      min-height: 100vh;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      margin: 0;
-      padding-bottom: 0;
-      overflow-y: scroll;
-    }
-    .estate-header {
-      text-align: center;
-      padding: 3.75rem 1rem 2rem;
-    }
-    .estate-logo {
-      max-width: 220px;
-      height: auto;
-      margin-bottom: 1.4rem;
-    }
-    .estate-name {
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1.9rem;
-      color: #fff;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      margin: 0 0 1rem;
-    }
-    .estate-welcome {
-      color: rgba(255,255,255,0.75);
-      font-weight: 300;
-      font-size: 0.95rem;
-      line-height: 1.7;
-      max-width: 480px;
-      margin: 0 auto;
-    }
+{% extends "location/visitor/base.html" %}
+
+{% block title %}{{ estate_name }} — Parking{% endblock %}
+
+{% block extra_css %}
     .payment-panel {
-      background: #d2d2d2;
-      border-radius: 8px;
-      padding: 2rem;
-      box-shadow: 0 4px 24px rgba(0,0,0,0.4);
+      background: #d2d2d2; border-radius: 8px;
+      padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.4);
       margin-bottom: 2rem;
     }
-    .form-control {
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      border-radius: 4px;
-    }
     .duration-option {
-      cursor: pointer;
-      border: 1px solid #ddd !important;
-      border-radius: 4px;
-      padding: .75rem 1rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: border-color .15s, background .15s;
+      cursor: pointer; border: 1px solid #bbb; border-radius: 4px;
+      padding: .75rem 1rem; display: flex; justify-content: space-between;
+      align-items: center; transition: border-color .15s, background .15s;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      background: #fff;
     }
-    .duration-option:hover { border-color: #B89A5A !important; }
-    .duration-option.selected {
-      border-color: #B89A5A !important;
-      background: #f7f2e8;
-    }
-    .duration-price {
-      font-weight: 700;
-      color: #222;
-    }
+    .duration-option:hover { border-color: #B89A5A; }
+    .duration-option.selected { border-color: #B89A5A; background: #f7f2e8; }
+    .duration-price { font-weight: 700; color: #222; }
     .btn-pay {
-      background: #B89A5A;
-      border: none;
-      color: #fff;
+      background: #B89A5A; border: none; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700;
-      font-size: 1rem;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      border-radius: 4px;
-      padding: 1rem .85rem .7rem;
-      width: 100%;
-      margin-top: .5rem;
-      cursor: pointer;
-      transition: filter .15s;
+      font-weight: 700; font-size: 1rem; letter-spacing: 1px;
+      text-transform: uppercase; border-radius: 4px;
+      padding: 1rem .85rem .7rem; width: 100%;
+      margin-top: .5rem; cursor: pointer; transition: filter .15s;
+      display: block; text-align: center; text-decoration: none;
     }
-    .btn-pay:hover { filter: brightness(88%); }
-    .stripe-note {
-      color: #999;
-      font-size: .75rem;
-      text-align: center;
-      margin-top: .9rem;
-      font-weight: 300;
-    }
-  </style>
-</head>
-<body>
+    .btn-pay:hover { filter: brightness(88%); color: #fff; }
+{% endblock %}
 
-  <div style="max-width:520px; margin:0 auto; padding:2rem 1.25rem 0;">
-
-    <div class="estate-header">
-      {% if logo_url %}
-      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
-      {% endif %}
-      <h1 class="estate-name">{{ estate_name }}</h1>
-      <p style="color:#fff; font-family:'Raleway',Helvetica,Arial,sans-serif; font-weight:700; font-size:1rem; margin:0 0 1.5rem; letter-spacing:.5px;">{{ car_park_name }}</p>
-      <p class="estate-welcome">
-        {% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Thank you for paying to park here.{% endif %}
-      </p>
-    </div>
-
+{% block content %}
     <div class="payment-panel">
         <div style="margin-bottom:1.25rem;">
           <label style="display:block; font-size:.85rem; font-weight:600; letter-spacing:.5px; text-transform:uppercase; color:#555; margin-bottom:.5rem;">
             Enter your registration
           </label>
           <input type="text" maxlength="10"
-                 style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #ddd; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase;">
+                 style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #bbb; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase; background:#fff;">
         </div>
 
         <div style="margin-bottom:1.25rem;">
@@ -136,20 +54,13 @@
           </div>
         </div>
 
-        <a href="/location/{{ slug }}/visitor/parking-start/checkout" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
+        <a href="{{ checkout_url }}" class="btn-pay">Pay</a>
     </div>
 
-  </div>
-
   <script>
-    const accent = "{{ brand.accent }}";
     function selectDuration(el, val) {
-      document.querySelectorAll('.duration-option').forEach(e => {
-        e.classList.remove('selected');
-      });
+      document.querySelectorAll('.duration-option').forEach(e => e.classList.remove('selected'));
       el.classList.add('selected');
-      el.querySelector('input[type=radio]').checked = true;
     }
   </script>
-</body>
-</html>
+{% endblock %}
