@@ -1,0 +1,52 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Walking Routes — {{ estate_name }}{% endblock %}
+
+{% block welcome_text %}Explore the beautiful walks around Shere. Each route is waymarked and suitable for most abilities.{% endblock %}
+
+{% block extra_css %}
+    .walk-card {
+      background: #111; border-radius: 8px;
+      overflow: hidden; margin-bottom: 1rem;
+      text-decoration: none; display: block;
+      border: 1px solid #222; transition: border-color .15s;
+    }
+    .walk-card:hover { border-color: #B89A5A; }
+    .walk-image {
+      width: 100%; height: 160px; object-fit: cover; display: block;
+    }
+    .walk-image-placeholder {
+      width: 100%; height: 160px; background: #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+      color: #333; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .walk-body { padding: 1rem 1.25rem 1.25rem; }
+    .walk-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: .5rem;
+    }
+    .walk-title { font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; }
+    .walk-distance { font-size: .8rem; font-weight: 600; color: #fff; letter-spacing: 1px; }
+    .walk-summary { font-size: .85rem; color: rgba(255,255,255,.6); line-height: 1.6; font-weight: 300; }
+{% endblock %}
+
+{% block content %}
+    <div style="padding-bottom: 2rem;">
+      {% for walk in walks %}
+      <a href="/location/{{ slug }}/visitor/walking/{{ walk.slug }}" class="walk-card">
+        {% if walk.image_url %}
+        <img src="{{ walk.image_url }}" alt="{{ walk.title }}" class="walk-image">
+        {% else %}
+        <div class="walk-image-placeholder">Image coming soon</div>
+        {% endif %}
+        <div class="walk-body">
+          <div class="walk-header">
+            <span class="walk-title">{{ walk.title }}</span>
+            <span class="walk-distance">{{ walk.distance }}</span>
+          </div>
+          <p class="walk-summary">{{ walk.summary }}</p>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+{% endblock %}
