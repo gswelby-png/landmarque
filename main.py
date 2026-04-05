@@ -11,7 +11,7 @@ import random
 
 from app.database import engine, SessionLocal
 from app import models
-from app.routers import driver, owner, admin, site
+from app.routers import driver, owner, admin, site, location
 from app.auth import hash_password
 
 models.Base.metadata.create_all(bind=engine)
@@ -166,6 +166,7 @@ app.include_router(driver.router)
 app.include_router(owner.router)
 app.include_router(admin.router)
 app.include_router(site.router, prefix="/site")
+app.include_router(location.router, prefix="/location")
 
 
 @app.get("/")
