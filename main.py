@@ -154,7 +154,7 @@ seed()
 from sqlalchemy import text as _text
 with engine.connect() as _conn:
     _conn.execute(_text("UPDATE car_parks SET logo_url='https://sheremanorestate.co.uk/images/default/logo_sticky.svg' WHERE slug='shere-manor' AND (logo_url IS NULL OR logo_url='')"))
-    _conn.execute(_text("UPDATE car_parks SET welcome_text='We would be most grateful if you could make secure payment for parking on this app. The money goes directly to the charity that maintains the public facilities in and around our village.' WHERE slug='shere-manor'"))
+    _conn.execute(_text("UPDATE car_parks SET welcome_text='Please pay for parking on this secure app. The money goes directly to the charity that maintains public facilities around our village.' WHERE slug='shere-manor'"))
     _conn.execute(_text("UPDATE car_parks SET name='Farm Field Car Park' WHERE slug='shere-manor'"))
     _conn.commit()
 
