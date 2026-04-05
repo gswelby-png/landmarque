@@ -143,11 +143,14 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      padding: 8rem clamp(2rem, 12vw, 16rem);
+      align-items: center;
+      padding: 8rem 2rem;
       border-top: 1px solid rgba(255,255,255,.06);
+      text-align: center;
     }
     .audience-inner {
       max-width: 580px;
+      width: 100%;
     }
     .audience-label {
       font-size: .6rem;
@@ -170,7 +173,7 @@
       width: 28px;
       height: 1px;
       background: var(--accent);
-      margin-bottom: 2rem;
+      margin: 0 auto 2rem;
     }
     .audience-body {
       font-size: 1rem;
@@ -178,7 +181,6 @@
       line-height: 1.9;
       color: rgba(255,255,255,.5);
       margin-bottom: 3rem;
-      max-width: 480px;
     }
     .audience-cta {
       display: inline-flex;
