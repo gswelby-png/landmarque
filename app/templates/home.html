@@ -69,11 +69,16 @@
     .nav-links .nav-cta {
       background: var(--accent);
       color: #fff !important;
-      padding: .5rem 1.4rem;
+      padding: .9rem 2rem;
       border-radius: 3px;
+      font-size: .68rem;
+      letter-spacing: 2.5px;
       transition: filter .15s !important;
     }
     .nav-links .nav-cta:hover { filter: brightness(110%); }
+    .nav-person-icon { display: flex; align-items: center; }
+    .nav-person-icon svg { display: block; }
+    .nav-person-icon:hover { opacity: .75; }
 
     /* ── Hero ── */
     .hero {
@@ -343,7 +348,13 @@
   <nav>
     <a href="/" class="nav-brand"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
     <div class="nav-links">
-      <a href="/owner/login">Owner login</a>
+      <a href="/owner/login" class="nav-person-icon" title="Owner login">
+        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="13.5" fill="none" stroke="#B89A5A" stroke-width="1.5"/>
+          <circle cx="15" cy="12.5" r="4" fill="#B89A5A"/>
+          <path d="M6.5 24 C6.5 18.5 23.5 18.5 23.5 24" fill="#B89A5A"/>
+        </svg>
+      </a>
       <a href="/contact" class="nav-cta">Get in touch</a>
     </div>
   </nav>
