@@ -13,7 +13,7 @@
       min-height: 100vh;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       margin: 0;
-      padding-bottom: 60px;
+      padding-bottom: 0;
     }
     .estate-header {
       text-align: center;
@@ -140,11 +140,8 @@
         <a href="/payment/{{ car_park_slug }}" class="btn-pay" style="display:block; text-align:center; text-decoration:none;">Pay</a>
     </div>
 
-    <p class="stripe-note" style="padding:1rem 0; color:rgba(255,255,255,.3);">
-      Powered by <span style="color:#8B3A2A">LAND</span><span style="color:rgba(255,255,255,.5)">MARQUE</span>
-    </p>
-
   </div>
+  <div style="height:100vh;"></div>
 
   <script>
     const accent = "{{ brand.accent }}";
