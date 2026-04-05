@@ -203,6 +203,32 @@ def landmarque_about(request: Request):
     return templates.TemplateResponse("site/about.html", {"request": request})
 
 
+@app.get("/landmarque/contact", response_class=HTMLResponse)
+def landmarque_contact_get(request: Request, sent: bool = False):
+    return templates.TemplateResponse("contact.html", {"request": request, "sent": sent})
+
+
+@app.post("/landmarque/contact")
+async def landmarque_contact_post(request: Request,
+    name: str = Form(...), email: str = Form(...), message: str = Form(...)):
+    return RedirectResponse(url="/landmarque/contact?sent=true", status_code=303)
+
+
+@app.get("/landmarque/walking-routes", response_class=HTMLResponse)
+def landmarque_walking(request: Request):
+    return templates.TemplateResponse("site/landowners_walking.html", {"request": request})
+
+
+@app.get("/landmarque/cycle-routes", response_class=HTMLResponse)
+def landmarque_cycling(request: Request):
+    return templates.TemplateResponse("site/landowners_cycling.html", {"request": request})
+
+
+@app.get("/landmarque/places-of-interest", response_class=HTMLResponse)
+def landmarque_places(request: Request):
+    return templates.TemplateResponse("site/landowners_places.html", {"request": request})
+
+
 @app.get("/dev", response_class=HTMLResponse)
 def dev_index(request: Request):
     return templates.TemplateResponse("dev_index.html", {"request": request})
