@@ -169,8 +169,38 @@ app.include_router(site.router, prefix="/site")
 
 
 @app.get("/")
+def root(request: Request):
+    return RedirectResponse(url="/landmarque", status_code=301)
+
+
+@app.get("/landmarque", response_class=HTMLResponse)
 def home(request: Request):
     return templates.TemplateResponse("home.html", {"request": request})
+
+
+@app.get("/landmarque/parking", response_class=HTMLResponse)
+def landmarque_parking(request: Request):
+    return templates.TemplateResponse("site/landowners_parking.html", {"request": request})
+
+
+@app.get("/landmarque/legacies", response_class=HTMLResponse)
+def landmarque_legacies(request: Request):
+    return templates.TemplateResponse("site/landowners_legacies.html", {"request": request})
+
+
+@app.get("/landmarque/benches", response_class=HTMLResponse)
+def landmarque_benches(request: Request):
+    return templates.TemplateResponse("site/landowners_benches.html", {"request": request})
+
+
+@app.get("/landmarque/trees", response_class=HTMLResponse)
+def landmarque_trees(request: Request):
+    return templates.TemplateResponse("site/landowners_trees.html", {"request": request})
+
+
+@app.get("/landmarque/about", response_class=HTMLResponse)
+def landmarque_about(request: Request):
+    return templates.TemplateResponse("site/about.html", {"request": request})
 
 
 @app.get("/dev", response_class=HTMLResponse)
