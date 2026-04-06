@@ -280,7 +280,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21655, -0.44470],
             "summary": "The main thoroughfare of Shere and one of the most photographed streets in England. The combination of timber-framed buildings — many dating from the 15th and 16th centuries — hanging baskets and the sound of the Tillingbourne running alongside makes it particularly picturesque. The overall streetscape has changed remarkably little since the 18th century and has been used repeatedly by film and television productions as a stand-in for various periods of English history.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/07/19/26/7192622_35b32c68.jpg",
         },
     ]
 }
