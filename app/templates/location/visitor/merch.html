@@ -1,0 +1,129 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Merch Store — {{ estate_name }}{% endblock %}
+
+{% block welcome_text %}Take a piece of Shere home with you — locally made gifts, village prints, and the finest produce from the Surrey Hills.{% endblock %}
+
+{% block extra_css %}
+    .merch-grid { padding-top: 0; }
+    .merch-card {
+      background: #111; border-radius: 8px;
+      overflow: hidden; margin-bottom: 2.5rem;
+      border: 1px solid #222;
+    }
+    .merch-image-wrap {
+      position: relative; width: 100%; height: 200px;
+    }
+    .merch-image {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .merch-image-bw {
+      transition: opacity .8s ease;
+      opacity: 1;
+    }
+    .merch-card.colour .merch-image-bw { opacity: 0; }
+    .merch-image-placeholder {
+      width: 100%; height: 200px; background: #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+      color: #333; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .merch-body { padding: 1.25rem 1.25rem 1.4rem; }
+    .merch-header-row {
+      display: flex; align-items: flex-start; justify-content: space-between;
+      gap: .75rem; margin-bottom: .3rem;
+    }
+    .merch-name {
+      font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px;
+    }
+    .merch-price {
+      font-size: 1rem; font-weight: 700; color: #fff;
+      flex-shrink: 0; letter-spacing: .5px;
+    }
+    .merch-category {
+      font-size: .6rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: rgba(255,255,255,.35);
+      margin-bottom: .75rem;
+    }
+    .merch-desc {
+      font-size: .83rem; color: rgba(255,255,255,.6);
+      line-height: 1.65; font-weight: 300; margin-bottom: 1.15rem;
+    }
+    .btn-buy {
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; background: #111; color: #B89A5A;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700; font-size: .8rem; letter-spacing: 1px;
+      text-transform: uppercase; border-radius: 4px;
+      padding: .6rem 1.2rem; border: 1px solid #B89A5A;
+      transition: background .15s, color .15s; cursor: pointer;
+    }
+    .btn-buy:hover { background: #B89A5A; color: #000; }
+    .coming-soon-note {
+      font-size: .72rem; color: rgba(255,255,255,.25);
+      letter-spacing: .5px; margin-top: .6rem; font-weight: 300;
+    }
+{% endblock %}
+
+{% block content %}
+    <div class="merch-grid">
+      {% for item in products %}
+      <div class="merch-card">
+        {% if item.image_url %}
+        <div class="merch-image-wrap">
+          <img src="{{ item.image_url | replace('?grayscale', '') }}" alt="{{ item.name }}" class="merch-image">
+          <img src="{{ item.image_url }}" alt="" class="merch-image merch-image-bw" aria-hidden="true">
+        </div>
+        {% else %}
+        <div class="merch-image-placeholder">Image coming soon</div>
+        {% endif %}
+        <div class="merch-body">
+          <div class="merch-header-row">
+            <span class="merch-name">{{ item.name }}</span>
+            <span class="merch-price">{{ item.price }}</span>
+          </div>
+          <div class="merch-category">{{ item.category }}</div>
+          <p class="merch-desc">{{ item.description }}</p>
+          <a href="#" class="btn-buy">Add to Basket</a>
+          <p class="coming-soon-note">Online ordering coming soon — available in the village</p>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <script>
+      const cardEls = Array.from(document.querySelectorAll('.merch-card'));
+      let activeIndex = -1;
+
+      function setColour(i, on) {
+        cardEls[i].classList.toggle('colour', on);
+      }
+
+      function updateActive() {
+        const vh = window.innerHeight;
+        let bestIndex = -1;
+
+        if (window.scrollY >= vh * 0.02) {
+          let bestOverlap = 0;
+          cardEls.forEach((el, i) => {
+            const r = el.getBoundingClientRect();
+            const visTop    = Math.max(r.top, 0);
+            const visBottom = Math.min(r.bottom, vh);
+            const overlap   = Math.max(0, visBottom - visTop);
+            if (overlap > bestOverlap) {
+              bestOverlap = overlap;
+              bestIndex   = i;
+            }
+          });
+        }
+
+        if (bestIndex !== activeIndex) {
+          if (activeIndex >= 0) setColour(activeIndex, false);
+          if (bestIndex  >= 0) setColour(bestIndex,  true);
+          activeIndex = bestIndex;
+        }
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+    </script>
+{% endblock %}

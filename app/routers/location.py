@@ -286,6 +286,55 @@ PLACES_OF_INTEREST = {
 }
 
 
+# Merch products — keyed by estate slug
+MERCH_PRODUCTS = {
+    "shere-manor-estate": [
+        {
+            "name": "Shere Village Cap",
+            "category": "Clothing",
+            "price": "£22",
+            "description": "A classic six-panel cap in washed navy with an embroidered Shere village crest. Adjustable strap. One size fits most.",
+            "image_url": "https://picsum.photos/seed/sherecap/600/400?grayscale",
+        },
+        {
+            "name": "Shere Village T-Shirt",
+            "category": "Clothing",
+            "price": "£28",
+            "description": "100% organic cotton tee in off-white, screen-printed with a vintage-style map of Shere and the Tillingbourne valley. Available in S, M, L, XL.",
+            "image_url": "https://picsum.photos/seed/sheretshirt/600/400?grayscale",
+        },
+        {
+            "name": "Shere Tea Towel",
+            "category": "Home",
+            "price": "£12",
+            "description": "Pure linen tea towel printed with an illustrated map of Shere village, showing the church, the ford, the stream and the surrounding hills. A timeless souvenir.",
+            "image_url": "https://picsum.photos/seed/shere-teatowel/600/400?grayscale",
+        },
+        {
+            "name": "Shere Village Mug",
+            "category": "Home",
+            "price": "£14",
+            "description": "Sturdy bone china mug with a hand-illustrated Shere village scene wrapping the full circumference. Dishwasher safe. Made in Staffordshire.",
+            "image_url": "https://picsum.photos/seed/sheremug/600/400?grayscale",
+        },
+        {
+            "name": "Tanhurst Estate Rosé 2023",
+            "category": "Local Produce",
+            "price": "£18",
+            "description": "An elegant English rosé from Tanhurst Estate, just two miles from Shere in the Surrey Hills. Pale salmon in colour with notes of strawberry, white peach and a crisp mineral finish. Single bottle, 75cl.",
+            "image_url": "https://picsum.photos/seed/tanhurstrose/600/400?grayscale",
+        },
+        {
+            "name": "Silent Pool Gin",
+            "category": "Local Produce",
+            "price": "£38",
+            "description": "The celebrated Surrey Hills gin, distilled at Silent Pool just outside Albury — a short walk from Shere. Floral and complex, with 24 botanicals including local elderflower and honey. 70cl, 43% ABV.",
+            "image_url": "https://picsum.photos/seed/silentpoolgin/600/400?grayscale",
+        },
+    ]
+}
+
+
 # Known estate slugs — extend as new estates are onboarded
 ESTATES = {
     "shere-manor-estate": {
@@ -710,6 +759,24 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
         "car_park_name": "Places to Eat",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "places": places,
+    })
+
+
+@router.get("/{slug}/visitor/merch", response_class=HTMLResponse)
+def visitor_merch(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    products = MERCH_PRODUCTS.get(slug, [])
+    return templates.TemplateResponse("location/visitor/merch.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Merch Store",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "products": products,
     })
 
 
