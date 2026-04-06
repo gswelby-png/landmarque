@@ -124,21 +124,21 @@
 
       function updateActive() {
         const vh = window.innerHeight;
-        // Pick the card that overlaps the most with the middle band of the screen
         let bestIndex = -1;
-        let bestOverlap = 0;
 
-        cardEls.forEach((el, i) => {
-          const r = el.getBoundingClientRect();
-          // Visible portion of this card on screen
-          const visTop    = Math.max(r.top, 0);
-          const visBottom = Math.min(r.bottom, vh);
-          const overlap   = Math.max(0, visBottom - visTop);
-          if (overlap > bestOverlap) {
-            bestOverlap = overlap;
-            bestIndex   = i;
-          }
-        });
+        if (window.scrollY >= vh * 0.02) {
+          let bestOverlap = 0;
+          cardEls.forEach((el, i) => {
+            const r = el.getBoundingClientRect();
+            const visTop    = Math.max(r.top, 0);
+            const visBottom = Math.min(r.bottom, vh);
+            const overlap   = Math.max(0, visBottom - visTop);
+            if (overlap > bestOverlap) {
+              bestOverlap = overlap;
+              bestIndex   = i;
+            }
+          });
+        }
 
         if (bestIndex !== activeIndex) {
           if (activeIndex >= 0) setColour(activeIndex, false);
@@ -148,6 +148,6 @@
       }
 
       window.addEventListener('scroll', updateActive, { passive: true });
-      updateActive();
+      // do not call updateActive() on load — page starts fully B&W
     </script>
 {% endblock %}
