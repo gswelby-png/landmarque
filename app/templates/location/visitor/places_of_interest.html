@@ -5,34 +5,46 @@
 {% block welcome_text %}We have a number of historic buildings and landscape features for you to explore.{% endblock %}
 
 {% block extra_css %}
+    /* Nav bar */
+    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
+    #scroll-nav img { height: 28px; }
+    #scroll-nav .nav-home span { font-size: .94rem; }
+    #hamburger-btn { gap: 6px; }
+    #hamburger-btn span { width: 28px; }
+    /* Footer */
+    footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
+    div[style*="height:20vh"] { display: none !important; }
+    /* Page intro */
+    .page-intro-title { font-size: 2rem !important; }
+    .page-intro-body { font-size: 1rem !important; color: rgba(255,255,255,.65) !important; }
+    /* Cards */
     .eat-cards { padding-top: 0; }
     .eat-card {
-      background: #111; border-radius: 8px;
-      overflow: hidden; margin-bottom: 3rem;
+      background: #111; border-radius: 10px;
+      overflow: hidden; margin-bottom: 3.5rem;
       border: 1px solid #222;
     }
-    .eat-meta {
-      padding: 1.3rem 1.25rem .9rem;
-    }
+    .eat-meta { padding: 1.5rem 1.4rem 1rem; }
     .eat-header-row {
       display: flex; align-items: center; justify-content: space-between;
-      gap: .75rem; margin-bottom: .3rem;
+      gap: .75rem; margin-bottom: .4rem;
     }
-    .eat-name { font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; }
+    .eat-name { font-size: 1.25rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; }
     .type-badge {
-      flex-shrink: 0; padding: .2rem .6rem;
+      flex-shrink: 0; padding: .3rem .75rem;
       border: 1px solid #333; border-radius: 20px;
-      font-size: .6rem; font-weight: 700;
+      font-size: .7rem; font-weight: 700;
       letter-spacing: 1px; text-transform: uppercase;
       color: rgba(255,255,255,.4);
     }
     .eat-distance {
-      font-size: .72rem; color: rgba(255,255,255,.3);
+      font-size: .85rem; color: rgba(255,255,255,.35);
       font-weight: 600; letter-spacing: .5px;
       margin-bottom: .3rem;
     }
     .eat-image-wrap {
-      position: relative; width: 100%; height: 160px; display: block;
+      position: relative; width: 100%; height: 210px; display: block;
     }
     .eat-image {
       position: absolute; inset: 0;
@@ -44,17 +56,17 @@
     }
     .eat-card.colour .eat-image-bw { opacity: 0; }
     .eat-image-placeholder {
-      width: 100%; height: 160px; background: #1a1a1a;
+      width: 100%; height: 210px; background: #1a1a1a;
       display: flex; align-items: center; justify-content: center;
-      color: #333; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
+      color: #333; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
     }
-    .eat-body { padding: 1.3rem 1.25rem 1.55rem; }
+    .eat-body { padding: 1.5rem 1.4rem 1.75rem; }
     .eat-summary {
-      font-size: .83rem; color: rgba(255,255,255,.6);
-      line-height: 1.65; font-weight: 300; margin-bottom: 1.15rem;
+      font-size: 1rem; color: rgba(255,255,255,.65);
+      line-height: 1.75; font-weight: 300; margin-bottom: 1.3rem;
     }
     .directions-link {
-      font-size: .75rem; font-weight: 700; color: #B89A5A;
+      font-size: .9rem; font-weight: 700; color: #B89A5A;
       text-decoration: none; letter-spacing: .5px;
     }
     .directions-link:hover { text-decoration: underline; }
