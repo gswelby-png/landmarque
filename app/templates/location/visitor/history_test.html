@@ -3,54 +3,35 @@
 {% block title %}Our History — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
-    .page-hero {
-      position: relative;
-      width: calc(100% + 2.5rem);
-      margin: -1.25rem -1.25rem 0;
-      height: 35vh; overflow: hidden;
-    }
-    .page-hero-img {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover; display: block;
-    }
-    .page-hero-overlay {
-      position: absolute; inset: 0;
-      background: rgba(0,0,0,0.35);
-    }
-    .page-hero-content {
-      position: absolute; inset: 0;
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      padding: 3.5rem 1.75rem 2rem; text-align: center;
-    }
-    .page-hero-title {
-      font-size: 1.6rem; font-weight: 700; color: #fff;
-      letter-spacing: .5px; margin-bottom: 1.1rem;
-    }
-    .page-hero-body {
-      font-size: .87rem; color: rgba(255,255,255,.55);
-      font-weight: 300; line-height: 1.7; max-width: 340px;
-    }
     /* Nav bar — 25% larger */
     #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
     #scroll-nav img { height: 28px; }
     #scroll-nav .nav-home span { font-size: .94rem; }
     #hamburger-btn { gap: 6px; }
     #hamburger-btn span { width: 28px; }
-    /* Footer — larger text */
+    /* Footer — larger text, remove dark spacer */
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
-    /* White content area — pull out to full bleed */
+    div[style*="height:20vh"] { display: none !important; }
+    /* White content area */
     .history-wrap {
       background: #fff;
       width: calc(100% + 2.5rem);
       margin: 0 -1.25rem;
-      padding: 2rem 1.25rem 50vh;
+      padding: 0 1.25rem 4rem;
+    }
+    .history-page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 1.5rem 0 1.25rem;
+    }
+    .hero-image {
+      width: 100%; border-radius: 6px; display: block;
+      margin-bottom: 1.5rem;
     }
     .chapter { margin-bottom: 3rem; }
     .chapter-title {
-      font-size: 1.2rem; font-weight: 700; color: #1c4a1c;
-      letter-spacing: .5px; margin-bottom: 1.1rem;
+      font-size: 1.2rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding-top: 2.25rem; margin-bottom: 1.1rem;
     }
     .chapter p {
       font-size: 1rem; color: #222;
@@ -68,24 +49,19 @@
     }
     .divider {
       border: none; border-top: 1px solid #e0e0e0;
-      margin: 2.5rem 0;
+      margin: 0;
     }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
-
-{% block header %}
-<div class="page-hero">
-  <img src="https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg" alt="Middle Street, Shere" class="page-hero-img">
-  <div class="page-hero-overlay"></div>
-  <div class="page-hero-content">
-    <div class="page-hero-title">Our History</div>
-  </div>
-</div>
-{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
 <div class="history-wrap">
+
+  <div class="history-page-title">Our History</div>
+
+  <img src="https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg" alt="Middle Street, Shere" class="hero-image">
 
   <div class="chapter">
     <div class="chapter-title">Origins</div>
