@@ -2,11 +2,9 @@
 
 {% block title %}{{ estate_name }} — Village Hall Car Park{% endblock %}
 
+{% block welcome_text %}This car park is not operated by the Shere Manor Estate. You should already have paid for parking according to the instructions provided at the car park.<br><br>If you would separately like to make a donation to Shere Manor Estate charity, to support the public services that we provide around the village, including the provision of this visitor guide, it would be very much appreciated.{% endblock %}
+
 {% block extra_css %}
-    .info-text {
-      font-size: .87rem; color: rgba(255,255,255,.65);
-      line-height: 1.8; font-weight: 300; margin-bottom: 1.25rem;
-    }
     .btn-donate {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
@@ -23,8 +21,6 @@
 
 {% block content %}
     <div style="padding: 0 0 2rem;">
-      <p class="info-text">This car park is not operated by the Shere Manor Estate. You should already have paid for parking according to the instructions provided at the car park.</p>
-      <p class="info-text">If you would separately like to make a donation to Shere Manor Estate charity, to support the public services that we provide around the village, including the provision of this visitor guide, it would be very much appreciated.</p>
       <a href="#" class="btn-donate">Make a Donation</a>
     </div>
 {% endblock %}
