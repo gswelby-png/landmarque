@@ -46,7 +46,7 @@
       align-items: center; justify-content: center;
       padding: 2rem 1.5rem; text-align: center;
     }
-    .hero-logo { max-width: 240px; height: auto; margin-bottom: 1.2rem; }
+    .hero-logo { max-width: 360px; height: auto; margin-bottom: 1.2rem; }
     .hero-title {
       font-family: 'Raleway', sans-serif;
       font-weight: 700; color: #fff; letter-spacing: 3px; text-transform: uppercase;
@@ -58,9 +58,16 @@
       font-size: .85rem; font-weight: 700; color: #B89A5A;
       letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;
     }
-    .hero-body {
-      font-size: .87rem; color: rgba(255,255,255,.75);
-      font-weight: 300; line-height: 1.7; max-width: 320px;
+    .welcome-intro {
+      text-align: center; padding: 2rem 0 1.75rem;
+    }
+    .welcome-intro-title {
+      font-size: 1.05rem; font-weight: 700; color: #B89A5A;
+      letter-spacing: .5px; margin-bottom: .65rem;
+    }
+    .welcome-intro-body {
+      font-size: .87rem; color: rgba(255,255,255,.6);
+      font-weight: 300; line-height: 1.7;
     }
     .sections { padding-bottom: 3rem; }
     .w-divider { border-top: 1px solid #1a1a1a; margin: 0 -1.25rem; }
@@ -102,7 +109,6 @@
       <span class="hero-title-main">{{ estate_name.split(' ')[0] }}</span>
       <span class="hero-title-sub">{{ estate_name.split(' ', 1)[1] }}</span>
     </h1>
-<p class="hero-body">Welcome to Shere. We very much hope that you will enjoy your visit to our village.</p>
   </div>
 </div>
 {% endblock %}
@@ -110,6 +116,11 @@
 {% block page_intro %}{% endblock %}
 
 {% block content %}
+<div class="welcome-intro">
+  <p class="welcome-intro-title">Welcome</p>
+  <p class="welcome-intro-body">We very much hope that you will enjoy your visit to our village.</p>
+</div>
+<div class="w-divider"></div>
 <div class="sections">
 
   <div class="w-divider"></div>
