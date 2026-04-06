@@ -117,39 +117,33 @@
     <script>
       const cardEls = Array.from(document.querySelectorAll('.eat-card'));
       let activeIndex = -1;
-      let lastScrollY = window.scrollY;
 
       function setColour(i, on) {
         cardEls[i].classList.toggle('colour', on);
       }
 
       function updateActive() {
-        const vh    = window.innerHeight;
-        const scrollY = window.scrollY;
-        const goingDown = scrollY >= lastScrollY;
-        lastScrollY = scrollY;
+        const vh = window.innerHeight;
+        // Pick the card that overlaps the most with the middle band of the screen
+        let bestIndex = -1;
+        let bestOverlap = 0;
 
-        let newActive = -1;
-
-        if (goingDown) {
-          // activate last card whose top has crossed 30% from top
-          cardEls.forEach((el, i) => {
-            if (el.getBoundingClientRect().top <= vh * 0.30) newActive = i;
-          });
-        } else {
-          // scrolling up: activate first card whose bottom is at or above 70% from top
-          for (let i = 0; i < cardEls.length; i++) {
-            if (cardEls[i].getBoundingClientRect().bottom >= vh * 0.70) {
-              newActive = i;
-              break;
-            }
+        cardEls.forEach((el, i) => {
+          const r = el.getBoundingClientRect();
+          // Visible portion of this card on screen
+          const visTop    = Math.max(r.top, 0);
+          const visBottom = Math.min(r.bottom, vh);
+          const overlap   = Math.max(0, visBottom - visTop);
+          if (overlap > bestOverlap) {
+            bestOverlap = overlap;
+            bestIndex   = i;
           }
-        }
+        });
 
-        if (newActive !== activeIndex) {
+        if (bestIndex !== activeIndex) {
           if (activeIndex >= 0) setColour(activeIndex, false);
-          if (newActive  >= 0) setColour(newActive,  true);
-          activeIndex = newActive;
+          if (bestIndex  >= 0) setColour(bestIndex,  true);
+          activeIndex = bestIndex;
         }
       }
 
