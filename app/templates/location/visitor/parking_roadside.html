@@ -1,0 +1,30 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}{{ estate_name }} — Roadside Parking{% endblock %}
+
+{% block extra_css %}
+    .info-text {
+      font-size: .87rem; color: rgba(255,255,255,.65);
+      line-height: 1.8; font-weight: 300; margin-bottom: 1.25rem;
+    }
+    .btn-donate {
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+      background: #111; color: #B89A5A;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 400; font-size: 1.05rem; letter-spacing: .5px;
+      border-radius: 4px;
+      padding: 0.95rem 1rem; width: 100%;
+      border: 1px solid #B89A5A; transition: filter .15s;
+      min-height: 3rem;
+    }
+    .btn-donate:hover { filter: brightness(115%); }
+{% endblock %}
+
+{% block content %}
+    <div style="padding: 0 0 2rem;">
+      <p class="info-text">Roadside parking in and around the village is free of charge and not managed by the Shere Manor Estate.</p>
+      <p class="info-text">If you would like to make a donation to Shere Manor Estate charity, to support the public services that we provide around the village, including the provision of this visitor guide, it would be very much appreciated.</p>
+      <a href="#" class="btn-donate">Make a Donation</a>
+    </div>
+{% endblock %}

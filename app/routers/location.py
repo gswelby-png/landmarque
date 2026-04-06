@@ -480,7 +480,18 @@ def visitor_parking_village_hall(request: Request, slug: str, db: Session = Depe
 
 @router.get("/{slug}/visitor/roadside-parking", response_class=HTMLResponse)
 def visitor_parking_roadside(request: Request, slug: str, db: Session = Depends(get_db)):
-    return _parking_response(request, slug, "Roadside Parking", db)
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    return templates.TemplateResponse("location/visitor/parking_roadside.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Roadside Parking",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+    })
 
 
 @router.get("/{slug}/visitor/parking-start", response_class=HTMLResponse)
