@@ -14,7 +14,10 @@
       letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
     }
     .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
-    .map-static { margin: 0 -1.25rem; }
+    .map-sticky {
+      position: sticky; top: 0; z-index: 500;
+      margin: 0 -1.25rem;
+    }
     #map { width: 100%; height: 35vh; display: block; }
     .leaflet-container { background: #000 !important; }
     .leaflet-control-attribution {
@@ -30,28 +33,23 @@
       border-radius: 4px; box-shadow: none;
     }
     .leaflet-tooltip-top::before { border-top-color: #333; }
-    .filter-tabs {
-      display: flex; gap: .5rem;
-      padding: .9rem 0 .75rem; overflow-x: auto;
-      scrollbar-width: none;
+    @keyframes throb {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(220,50,50,0.7); }
+      60%       { box-shadow: 0 0 0 8px rgba(220,50,50,0); }
     }
-    .filter-tabs::-webkit-scrollbar { display: none; }
-    .filter-tab {
-      flex-shrink: 0; padding: .35rem .9rem;
-      border: 1px solid #333; border-radius: 20px;
-      font-family: 'Raleway', sans-serif;
-      font-size: .68rem; font-weight: 700;
-      letter-spacing: 1.2px; text-transform: uppercase;
-      color: rgba(255,255,255,.35); background: none; cursor: pointer;
-      transition: border-color .15s, color .15s;
+    .user-dot {
+      width: 14px; height: 14px; border-radius: 50%;
+      background: #e03030; border: 2px solid #fff;
+      animation: throb 1.8s ease-out infinite;
     }
-    .filter-tab.active { border-color: #B89A5A; color: #B89A5A; }
+    .eat-cards { padding-top: 1rem; }
     .eat-card {
       background: #111; border-radius: 8px;
       overflow: hidden; margin-bottom: 1rem;
-      border: 1px solid #222; transition: border-color .15s;
+      border: 1px solid #222;
+      transition: opacity .4s;
     }
-    .eat-card.hidden { display: none; }
+    .eat-card.inactive { opacity: .35; }
     .eat-image {
       width: 100%; height: 160px; object-fit: cover; display: block;
     }
@@ -99,21 +97,14 @@
 {% endblock %}
 
 {% block content %}
-    <div class="map-static">
+    <div class="map-sticky">
       <div id="map"></div>
     </div>
     <div class="w-divider"></div>
 
-    <div class="filter-tabs">
-      <button class="filter-tab active" data-filter="all">All</button>
-      <button class="filter-tab" data-filter="pub">Pub</button>
-      <button class="filter-tab" data-filter="café">Café</button>
-      <button class="filter-tab" data-filter="restaurant">Restaurant</button>
-    </div>
-
-    <div id="cards">
+    <div class="eat-cards">
       {% for place in places %}
-      <div class="eat-card" data-type="{{ place.type }}" data-index="{{ loop.index0 }}">
+      <div class="eat-card" data-index="{{ loop.index0 }}">
         {% if place.image_url %}
         <img src="{{ place.image_url }}" alt="{{ place.name }}" class="eat-image">
         {% else %}
@@ -133,7 +124,8 @@
       {% endfor %}
     </div>
 
-    <div style="height: 2rem;"></div>
+    <!-- Spacer so the last card can scroll to its trigger point -->
+    <div style="height: 60vh;"></div>
 
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
@@ -155,34 +147,88 @@
         maxZoom: 19
       }).addTo(map);
 
+      // Place markers (numbered, gold)
+      const markerEls = [];
       const markers = places.map((p, i) => {
+        const el = document.createElement('div');
+        el.style.cssText = 'width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .4s;';
+        el.textContent = i + 1;
+        markerEls.push(el);
         const m = L.marker(p.coords, {
-          icon: L.divIcon({
-            html: `<div style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">${i+1}</div>`,
-            iconSize: [22, 22], iconAnchor: [11, 11], className: ''
-          })
+          icon: L.divIcon({ html: el, iconSize: [22,22], iconAnchor: [11,11], className: '' })
         }).addTo(map);
         m.bindTooltip(p.name, { direction: 'top', offset: [0, -8] });
         return m;
       });
 
-      map.fitBounds(L.latLngBounds(places.map(p => p.coords)), { padding: [28, 28] });
+      // Dummy user location (Shere car park)
+      L.marker([51.2169, -0.4449], {
+        icon: L.divIcon({
+          html: '<div class="user-dot"></div>',
+          iconSize: [14, 14], iconAnchor: [7, 7], className: ''
+        })
+      }).addTo(map);
 
-      // Filter tabs
-      const tabs = document.querySelectorAll('.filter-tab');
-      const cards = document.querySelectorAll('.eat-card');
+      const allCoords = places.map(p => p.coords);
+      const overviewBounds = L.latLngBounds(allCoords).pad(0.08);
+      map.fitBounds(overviewBounds);
 
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          tab.classList.add('active');
-          const filter = tab.dataset.filter;
-          cards.forEach((card, i) => {
-            const show = filter === 'all' || card.dataset.type === filter;
-            card.classList.toggle('hidden', !show);
-            markers[i].setOpacity(show ? 1 : 0.15);
-          });
+      // Scroll-driven activation
+      const mapEl   = document.getElementById('map');
+      const headerEl = document.querySelector('.eat-header-bar');
+      const cardEls  = Array.from(document.querySelectorAll('.eat-card'));
+
+      // First trigger: half the header bar height (including its margins)
+      // Measure the full header block height as the map's initial offsetTop
+      const firstTriggerScrollY = mapEl.getBoundingClientRect().top / 2;
+
+      // Subsequent triggers: card top <= mapBottom + ~57px (≈15mm)
+      const SUBSEQUENT_OFFSET = 57;
+
+      let activeIndex = -2; // -2 = uninitialised, -1 = overview
+
+      function setMarker(i, active) {
+        markerEls[i].style.background = active ? '#fff' : '#B89A5A';
+      }
+
+      function resetOverview() {
+        if (activeIndex === -1) return;
+        activeIndex = -1;
+        map.flyToBounds(overviewBounds, { duration: 1.0, easeLinearity: 0.4 });
+        cardEls.forEach((el, j) => {
+          el.classList.remove('active', 'inactive');
+          setMarker(j, false);
+          markers[j].setOpacity(1);
         });
-      });
+      }
+
+      function activatePlace(i) {
+        if (i === activeIndex) return;
+        activeIndex = i;
+        map.flyTo(places[i].coords, 16, { duration: 1.0, easeLinearity: 0.4 });
+        cardEls.forEach((el, j) => {
+          el.classList.toggle('active', j === i);
+          el.classList.toggle('inactive', j !== i);
+          setMarker(j, j === i);
+          markers[j].setOpacity(j === i ? 1 : 0.35);
+        });
+      }
+
+      function updateActive() {
+        if (window.scrollY < firstTriggerScrollY) {
+          resetOverview();
+          return;
+        }
+        const mapBottom = mapEl.getBoundingClientRect().bottom;
+        const trigger   = mapBottom + SUBSEQUENT_OFFSET;
+        let newActive   = 0; // at minimum the first card is active once past firstTrigger
+        cardEls.slice(1).forEach((el, i) => {
+          if (el.getBoundingClientRect().top <= trigger) newActive = i + 1;
+        });
+        activatePlace(newActive);
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      updateActive();
     </script>
 {% endblock %}
