@@ -24,7 +24,7 @@
       position: relative;
       width: calc(100% + 2.5rem);
       margin: -1.25rem -1.25rem 0;
-      height: 75vh;
+      height: 85vh;
       overflow: hidden;
     }
     .hero-img {
@@ -39,6 +39,23 @@
     .hero-overlay {
       position: absolute; inset: 0;
       background: rgba(0,0,0,0.52);
+    }
+    .hero-scroll-arrow {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      animation: arrowBounce 1.8s ease-in-out infinite;
+    }
+    .hero-scroll-arrow::before,
+    .hero-scroll-arrow::after {
+      content: ''; display: block;
+      width: 12px; height: 12px;
+      border-right: 1.5px solid rgba(255,255,255,.7);
+      border-bottom: 1.5px solid rgba(255,255,255,.7);
+      transform: rotate(45deg);
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: .7; }
+      50%       { transform: translateX(-50%) translateY(5px); opacity: 1; }
     }
     .hero-content {
       position: absolute; inset: 0;
@@ -101,6 +118,7 @@
       <span></span><span></span><span></span>
     </button>
   </div>
+  <div class="hero-scroll-arrow"></div>
   <div class="hero-content">
     {% if logo_url %}
     <img src="{{ logo_url }}" alt="{{ estate_name }}" class="hero-logo">
