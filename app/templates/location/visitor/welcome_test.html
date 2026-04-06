@@ -112,7 +112,7 @@
       min-height: 110px; transition: border-color .15s;
     }
     .nav-card:hover { border-color: #B89A5A; }
-    .nav-card.dim { pointer-events: none; }
+    .nav-card.dim { cursor: default; }
     .nav-icon { color: #fff; display: block; width: 28px; height: 28px; }
     .nav-title {
       font-size: .78rem; font-weight: 700; color: #B89A5A;
@@ -214,7 +214,7 @@
       </svg>
       <div class="nav-title">Places of Interest</div>
     </a>
-    <a href="#" class="nav-card dim">
+    <a href="#" class="nav-card dim" onclick="return false">
       <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/>
       </svg>
