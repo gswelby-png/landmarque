@@ -8,7 +8,8 @@
       text-decoration: none;
       background: #111; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700; font-size: 1.05rem; letter-spacing: .5px;
+      font-weight: 400; font-size: 1.05rem; letter-spacing: .5px;
+      text-transform: uppercase;
       border-radius: 4px;
       padding: 0.95rem 1rem; width: 100%;
       border: 1px solid #222; transition: border-color .15s;
@@ -24,10 +25,12 @@
 {% block content %}
     <div style="padding: 0 0 2rem;">
       <a href="/location/{{ slug }}/visitor/parking-start" class="btn-menu btn-menu-primary">Pay for Parking</a>
-      <a href="/location/{{ slug }}/visitor/walking" class="btn-menu">Walking Routes</a>
-      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu">Cycling Routes</a>
+      <a href="#" class="btn-menu">Our History</a>
+      <a href="#" class="btn-menu">Movie Connections</a>
       <a href="/location/{{ slug }}/visitor/places-to-eat" class="btn-menu">Places to Eat</a>
       <a href="/location/{{ slug }}/places-of-interest" class="btn-menu">Places of Interest</a>
+      <a href="/location/{{ slug }}/visitor/walking" class="btn-menu">Walking Routes</a>
+      <a href="#" class="btn-menu">Fun for Kids</a>
       <a href="#" class="btn-menu">Merch Store</a>
     </div>
 {% endblock %}
