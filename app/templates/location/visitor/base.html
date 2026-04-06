@@ -93,10 +93,8 @@
         const y = window.scrollY;
         if (y < 80) {
           nav.classList.remove('visible');
-        } else if (y < lastY) {
-          nav.classList.add('visible');
         } else {
-          nav.classList.remove('visible');
+          nav.classList.add('visible');
         }
         lastY = y;
       }, { passive: true });
