@@ -69,10 +69,61 @@
     <div class="merch-grid">
       {% for item in products %}
       <div class="merch-card">
-        {% if item.image_url %}
+        {% if item.mockup_type %}
         <div class="merch-image-wrap">
-          <img src="{{ item.image_url | replace('?grayscale', '') }}" alt="{{ item.name }}" class="merch-image">
-          <img src="{{ item.image_url }}" alt="" class="merch-image merch-image-bw" aria-hidden="true">
+          {% if item.mockup_type == 'cap' %}
+          <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#1a1a1a"/>
+            <path d="M60 158 C55 90 95 48 200 44 C305 40 348 90 345 158Z" fill="#1c4a1c"/>
+            <path d="M95 80 C120 55 165 45 200 44 C175 50 128 72 108 100Z" fill="#234f23" opacity="0.5"/>
+            <line x1="202" y1="44" x2="202" y2="158" stroke="#143214" stroke-width="1.5" opacity="0.7"/>
+            <path d="M60 158 Q105 178 175 178 Q100 190 22 165Z" fill="#143214"/>
+            <ellipse cx="118" cy="172" rx="80" ry="7" fill="#0e280e" opacity="0.4"/>
+            {% if logo_url %}<image href="{{ logo_url }}" x="164" y="78" width="76" height="61" preserveAspectRatio="xMidYMid meet"/>{% endif %}
+            <rect x="315" y="150" width="50" height="14" rx="3" fill="#143214"/>
+            <rect x="327" y="153" width="8" height="8" rx="1" fill="#0a1e0a"/>
+          </svg>
+          {% elif item.mockup_type == 'tshirt' %}
+          <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#1a1a1a"/>
+            <path d="M80 46 L25 30 L0 75 L48 83 L48 190 L352 190 L352 83 L400 75 L375 30 L320 46 Q290 27 200 27 Q110 27 80 46Z" fill="#f0ebe0"/>
+            <path d="M152 28 Q200 49 248 28" fill="#f0ebe0" stroke="#ddd" stroke-width="1.5"/>
+            <line x1="48" y1="83" x2="80" y2="46" stroke="#d8d4c8" stroke-width="1"/>
+            <line x1="352" y1="83" x2="320" y2="46" stroke="#d8d4c8" stroke-width="1"/>
+            {% if logo_url %}<image href="{{ logo_url }}" x="162" y="72" width="76" height="61" preserveAspectRatio="xMidYMid meet"/>{% endif %}
+            <text x="200" y="148" text-anchor="middle" font-family="Raleway,sans-serif" font-size="11" font-weight="700" letter-spacing="3" fill="#1c4a1c">SHERE MANOR ESTATE</text>
+          </svg>
+          {% elif item.mockup_type == 'teatowel' %}
+          <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#1a1a1a"/>
+            <rect x="15" y="10" width="370" height="180" fill="#f8f4ee"/>
+            <rect x="15" y="10" width="370" height="14" fill="#1c4a1c"/>
+            <rect x="15" y="176" width="370" height="14" fill="#1c4a1c"/>
+            <rect x="15" y="10" width="14" height="180" fill="#1c4a1c"/>
+            <rect x="371" y="10" width="14" height="180" fill="#1c4a1c"/>
+            <rect x="33" y="28" width="334" height="3" fill="#1c4a1c" opacity="0.2"/>
+            <rect x="33" y="169" width="334" height="3" fill="#1c4a1c" opacity="0.2"/>
+            <rect x="33" y="28" width="3" height="144" fill="#1c4a1c" opacity="0.2"/>
+            <rect x="364" y="28" width="3" height="144" fill="#1c4a1c" opacity="0.2"/>
+            {% if logo_url %}<image href="{{ logo_url }}" x="303" y="118" width="58" height="46" preserveAspectRatio="xMidYMid meet"/>{% endif %}
+          </svg>
+          {% elif item.mockup_type == 'mug' %}
+          <svg width="100%" height="100%" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+            <rect width="400" height="200" fill="#1a1a1a"/>
+            <ellipse cx="175" cy="188" rx="120" ry="7" fill="#111"/>
+            <rect x="50" y="30" width="250" height="155" rx="10" fill="white" stroke="#e8e8e8" stroke-width="1.5"/>
+            <ellipse cx="175" cy="30" rx="125" ry="10" fill="#f2f2f2" stroke="#e0e0e0" stroke-width="1"/>
+            <ellipse cx="175" cy="30" rx="108" ry="6" fill="#e4e4e4"/>
+            <path d="M300 65 Q360 80 360 115 Q360 155 300 155" fill="none" stroke="#e0e0e0" stroke-width="20" stroke-linecap="round"/>
+            <path d="M300 65 Q350 80 350 115 Q350 150 300 155" fill="none" stroke="white" stroke-width="11" stroke-linecap="round"/>
+            {% if logo_url %}<image href="{{ logo_url }}" x="115" y="52" width="120" height="96" preserveAspectRatio="xMidYMid meet"/>{% endif %}
+            <text x="175" y="172" text-anchor="middle" font-family="Raleway,sans-serif" font-size="9" font-weight="700" letter-spacing="2" fill="#1c4a1c">SHERE MANOR ESTATE</text>
+          </svg>
+          {% endif %}
+        </div>
+        {% elif item.image_url %}
+        <div class="merch-image-wrap">
+          <img src="{{ item.image_url }}" alt="{{ item.name }}" class="merch-image" style="object-fit:contain; background:#fff; padding:.5rem;">
         </div>
         {% else %}
         <div class="merch-image-placeholder">Image coming soon</div>
