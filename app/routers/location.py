@@ -401,7 +401,7 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
         "slug": slug,
         "estate": estate,
         "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": car_park.name if car_park else "",
+        "car_park_name": "Welcome",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
         "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
