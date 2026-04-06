@@ -5,6 +5,7 @@
 {% block welcome_text %}We are blessed with a great range of places to eat and drink in and around the village.{% endblock %}
 
 {% block extra_css %}
+    .page-intro { padding-top: 10.5rem; padding-bottom: 3rem; }
     .eat-cards { padding-top: 0; }
     .eat-card {
       background: #111; border-radius: 8px;
@@ -114,8 +115,6 @@
       </div>
       {% endfor %}
     </div>
-
-    <div style="height: 50vh;"></div>
 
     <script>
       const cardEls = Array.from(document.querySelectorAll('.eat-card'));
