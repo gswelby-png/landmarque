@@ -234,6 +234,58 @@ PLACES_TO_EAT = {
 }
 
 
+# Places of interest — keyed by estate slug
+PLACES_OF_INTEREST = {
+    "shere-manor-estate": [
+        {
+            "slug": "st-james-church",
+            "name": "St James' Church",
+            "type": "Church",
+            "distance": "2 min walk",
+            "coords": [51.21668, -0.44418],
+            "summary": "One of the finest Norman churches in Surrey, with origins dating to around 1190. The square flint tower is a local landmark and the interior contains a 13th-century font, remarkable medieval stained glass, and the anchorite's cell of Christine Carpenter — a woman who in 1329 had herself voluntarily enclosed within a small chamber in the north wall to live a life of prayer, able to see the altar only through a tiny window. Her story has fascinated visitors for centuries.",
+            "image_url": "https://picsum.photos/seed/stjamesshere/600/320?grayscale",
+        },
+        {
+            "slug": "the-holiday-barn",
+            "name": "The Holiday Barn",
+            "type": "Film Location",
+            "distance": "5 min walk",
+            "coords": [51.21580, -0.44560],
+            "summary": "The barn now occupied by Steam Dreams was the location used for the interior scenes of the lead character's cottage in the 2006 film The Holiday, starring Cameron Diaz, Kate Winslet, Jude Law and Jack Black. The production team constructed the cottage set within the barn, and much of the film's English scenes were shot in and around Shere village. The exterior of the cottage used in the film can still be identified by locals, and the village remains a popular destination for fans of the film.",
+            "image_url": "https://picsum.photos/seed/holidaybarn/600/320?grayscale",
+        },
+        {
+            "slug": "tillingbourne-ford",
+            "name": "The Tillingbourne Ford",
+            "type": "Natural Feature",
+            "distance": "3 min walk",
+            "coords": [51.21640, -0.44460],
+            "summary": "The shallow ford and stepping stones at the centre of the village are one of Shere's most iconic features and enormously popular with families in summer. The Tillingbourne is a chalk stream — one of only around 200 in the world, almost all of them in southern England — and the water running over the ford is gin-clear and cold year-round. Brown trout are visible on most days, and in fine weather the ford becomes an informal gathering point for the village.",
+            "image_url": "https://picsum.photos/seed/tillingbourneford/600/320?grayscale",
+        },
+        {
+            "slug": "shere-museum",
+            "name": "Shere Museum",
+            "type": "Museum",
+            "distance": "4 min walk",
+            "coords": [51.21650, -0.44500],
+            "summary": "A small but well-curated local museum telling the story of Shere and the surrounding villages from prehistoric times to the present day. Exhibits cover the industrial history of the Tillingbourne valley — which once powered gunpowder mills, iron foundries, and paper works — as well as the agricultural and domestic life of the community. Open on weekend afternoons and most Bank Holidays; admission is free.",
+            "image_url": "https://picsum.photos/seed/sheremuseum/600/320?grayscale",
+        },
+        {
+            "slug": "middle-street",
+            "name": "Middle Street",
+            "type": "Historic Street",
+            "distance": "2 min walk",
+            "coords": [51.21655, -0.44470],
+            "summary": "The main thoroughfare of Shere and one of the most photographed streets in England. The combination of timber-framed buildings — many dating from the 15th and 16th centuries — hanging baskets and the sound of the Tillingbourne running alongside makes it particularly picturesque. The overall streetscape has changed remarkably little since the 18th century and has been used repeatedly by film and television productions as a stand-in for various periods of English history.",
+            "image_url": "https://picsum.photos/seed/middlestreetshere/600/320?grayscale",
+        },
+    ]
+}
+
+
 # Known estate slugs — extend as new estates are onboarded
 ESTATES = {
     "shere-manor-estate": {
@@ -533,6 +585,24 @@ def visitor_walking_detail(request: Request, slug: str, walk_slug: str, db: Sess
         "car_park_name": car_park.name if car_park else "",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "walk": walk,
+    })
+
+
+@router.get("/{slug}/visitor/places-of-interest", response_class=HTMLResponse)
+def visitor_places_of_interest(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    places = PLACES_OF_INTEREST.get(slug, [])
+    return templates.TemplateResponse("location/visitor/places_of_interest.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Places of Interest",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "places": places,
     })
 
 
