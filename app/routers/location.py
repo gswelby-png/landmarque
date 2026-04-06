@@ -244,7 +244,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21668, -0.44418],
             "summary": "One of the finest Norman churches in Surrey, with origins dating to around 1190. The square flint tower is a local landmark and the interior contains a 13th-century font, remarkable medieval stained glass, and the anchorite's cell of Christine Carpenter — a woman who in 1329 had herself voluntarily enclosed within a small chamber in the north wall to live a life of prayer, able to see the altar only through a tiny window. Her story has fascinated visitors for centuries.",
-            "image_url": "https://picsum.photos/seed/stjamesshere/600/320?grayscale",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Church_of_St_James_-_geograph.org.uk_-_3283097.jpg",
         },
         {
             "slug": "the-holiday-barn",
@@ -262,7 +262,7 @@ PLACES_OF_INTEREST = {
             "distance": "3 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The shallow ford and stepping stones at the centre of the village are one of Shere's most iconic features and enormously popular with families in summer. The Tillingbourne is a chalk stream — one of only around 200 in the world, almost all of them in southern England — and the water running over the ford is gin-clear and cold year-round. Brown trout are visible on most days, and in fine weather the ford becomes an informal gathering point for the village.",
-            "image_url": "https://picsum.photos/seed/tillingbourneford/600/320?grayscale",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ford_at_Rectory_Lane%2C_Shere_%28March_2014%29_%281%29.jpg",
         },
         {
             "slug": "shere-museum",
@@ -280,7 +280,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21655, -0.44470],
             "summary": "The main thoroughfare of Shere and one of the most photographed streets in England. The combination of timber-framed buildings — many dating from the 15th and 16th centuries — hanging baskets and the sound of the Tillingbourne running alongside makes it particularly picturesque. The overall streetscape has changed remarkably little since the 18th century and has been used repeatedly by film and television productions as a stand-in for various periods of English history.",
-            "image_url": "https://picsum.photos/seed/middlestreetshere/600/320?grayscale",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
         },
     ]
 }
@@ -329,7 +329,7 @@ MERCH_PRODUCTS = {
             "category": "Local Produce",
             "price": "£38",
             "description": "The celebrated Surrey Hills gin, distilled at Silent Pool just outside Albury — a short walk from Shere. Floral and complex, with 24 botanicals including local elderflower and honey. 70cl, 43% ABV.",
-            "image_url": "https://picsum.photos/seed/silentpoolgin/600/400?grayscale",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Silent_Pool_near_Shere_-_geograph.org.uk_-_2775026.jpg",
         },
     ]
 }

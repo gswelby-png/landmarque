@@ -33,7 +33,7 @@
     }
     .hero-img-bw {
       transition: opacity 1.2s ease;
-      opacity: 1;
+      opacity: 1; filter: grayscale(1);
     }
     .hero-img-bw.fade { opacity: 0; }
     .hero-overlay {
@@ -127,8 +127,8 @@
 
 {% block header %}
 <div class="hero">
-  <img src="https://picsum.photos/seed/sheresurrey/800/1200" alt="{{ estate_name }}" class="hero-img">
-  <img src="https://picsum.photos/seed/sheresurrey/800/1200?grayscale" alt="" class="hero-img hero-img-bw" id="hero-bw" aria-hidden="true">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Approaching_Shere_in_the_mist_-_geograph.org.uk_-_5223512.jpg" alt="{{ estate_name }}" class="hero-img">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/d/da/Approaching_Shere_in_the_mist_-_geograph.org.uk_-_5223512.jpg" alt="" class="hero-img hero-img-bw" id="hero-bw" aria-hidden="true">
   <div class="hero-overlay"></div>
   <div class="hero-top" id="hero-top">
     {% if logo_url %}
