@@ -1,0 +1,65 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Movie Connections — {{ estate_name }}{% endblock %}
+
+{% block welcome_text %}Shere has been a favourite location for film and television productions for decades. Here are some of the most notable.{% endblock %}
+
+{% block extra_css %}
+    .history { padding-top: 2rem; padding-bottom: 50vh; }
+    .chapter { margin-bottom: 3rem; }
+    .chapter-title {
+      font-size: 1.05rem; font-weight: 700; color: #B89A5A;
+      letter-spacing: .5px; margin-bottom: 1rem;
+    }
+    .chapter p {
+      font-size: .87rem; color: rgba(255,255,255,.65);
+      line-height: 1.8; font-weight: 300; margin-bottom: 1rem;
+    }
+    .chapter p:last-child { margin-bottom: 0; }
+    .chapter-image {
+      width: 100%; border-radius: 6px; display: block;
+      margin: 1.5rem 0;
+    }
+    .chapter-image-caption {
+      font-size: .68rem; color: rgba(255,255,255,.3);
+      font-weight: 400; letter-spacing: .5px;
+      margin-top: -.75rem; margin-bottom: 1.5rem;
+      text-align: center;
+    }
+    .divider {
+      border: none; border-top: 1px solid #1a1a1a;
+      margin: 2.5rem 0;
+    }
+{% endblock %}
+
+{% block content %}
+<div class="history">
+
+  <div class="chapter">
+    <div class="chapter-title">The Holiday (2006)</div>
+    <p>The most celebrated of Shere's film connections is Nancy Meyers' romantic comedy <em>The Holiday</em>, released in 2006 and starring Cameron Diaz, Kate Winslet, Jude Law, and Jack Black. The film follows two women who swap homes over Christmas — one in Los Angeles, one in the English countryside — and Shere provided the English half of that bargain.</p>
+    <p>The village appears extensively throughout the film. The interior scenes of Iris Simpkins' cottage — Kate Winslet's character — were filmed in a barn on the estate, where the production team constructed the set. The exterior of the cottage, the village pub, Middle Street, and the surrounding lanes all feature prominently. The film's warm portrayal of English village life transformed Shere into an international visitor destination, and fans continue to make pilgrimages here from around the world.</p>
+    <img src="https://picsum.photos/seed/theholiday/600/400?grayscale" alt="The Holiday film location" class="chapter-image">
+    <p class="chapter-image-caption">Middle Street and the village centre featured prominently in the 2006 film.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="chapter">
+    <div class="chapter-title">Bridget Jones's Diary (2001)</div>
+    <p>Several scenes from the original <em>Bridget Jones's Diary</em>, based on Helen Fielding's novel and starring Renée Zellweger, Hugh Grant, and Colin Firth, were filmed in and around Shere. The village's unspoiled streetscape and proximity to London — just over an hour by road — make it a practical as well as visually attractive choice for productions requiring an authentic English country setting.</p>
+    <p>The film was a major international success and remains one of the most fondly remembered British comedies of its era. Its use of the Surrey Hills countryside helped establish the area in the popular imagination as the quintessential English rural idyll.</p>
+  </div>
+
+  <hr class="divider">
+
+  <div class="chapter">
+    <div class="chapter-title">Period Drama and Television</div>
+    <p>Beyond its feature film appearances, Shere has been used repeatedly for period television dramas and commercial productions. The village's lack of modern signage, overhead wiring, and chain retail makes it one of a diminishing number of English villages that can convincingly double for earlier centuries with minimal dressing.</p>
+    <p>The combination of St James' Church, the timber-framed buildings of Middle Street, and the ford over the Tillingbourne has appeared in numerous productions across several decades. The village is regularly approached by location scouts, and it is not unusual to find a film crew in residence on a weekday morning.</p>
+    <img src="https://picsum.photos/seed/sheretv/600/400?grayscale" alt="Shere village street" class="chapter-image">
+    <p class="chapter-image-caption">The village's period streetscape requires minimal dressing for historical productions.</p>
+  </div>
+
+</div>
+{% endblock %}

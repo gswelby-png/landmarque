@@ -645,6 +645,22 @@ def visitor_walking_detail(request: Request, slug: str, walk_slug: str, db: Sess
     })
 
 
+@router.get("/{slug}/visitor/movies", response_class=HTMLResponse)
+def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    return templates.TemplateResponse("location/visitor/movies.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Movie Connections",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+    })
+
+
 @router.get("/{slug}/visitor/history", response_class=HTMLResponse)
 def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
