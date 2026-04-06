@@ -415,30 +415,13 @@ def visitor_parking_select(request: Request, slug: str, db: Session = Depends(ge
     if not estate:
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.is_active == True).first()
-    if not car_park:
-        raise HTTPException(status_code=503, detail="Car park not available")
-    rule = get_active_rule(db, car_park.id, date.today())
-    if not rule:
-        raise HTTPException(status_code=503, detail="No pricing available for today")
-    options = build_duration_options(rule)
-    brand = {
-        "primary": car_park.brand_primary or "#1e3a1e",
-        "accent": car_park.brand_accent or "#b8963e",
-        "text": car_park.brand_text or "#ffffff",
-    }
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
     return templates.TemplateResponse("location/visitor/parking_select.html", {
         "request": request,
-        "car_park_name": car_park.name,
-        "car_park_slug": cp_slug,
-        "car_park_tagline": car_park.tagline,
-        "estate_name": car_park.owner.name,
-        "logo_url": getattr(car_park, "logo_url", None) or "",
-        "welcome_text": getattr(car_park, "welcome_text", None) or "",
-        "brand": brand,
-        "options": options,
         "slug": slug,
-        "checkout_url": f"/location/{slug}/visitor/parking-start/checkout",
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Parking Locations",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
     })
 
 
