@@ -5,6 +5,37 @@
 {% block welcome_text %}Shere has been a favourite location for film and television productions for decades. Here are some of the most notable.{% endblock %}
 
 {% block extra_css %}
+    .page-hero {
+      position: relative;
+      width: calc(100% + 2.5rem);
+      margin: -1.25rem -1.25rem 0;
+      height: 52vh; overflow: hidden;
+    }
+    .page-hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .page-hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.55);
+    }
+    .page-hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem 1.75rem; text-align: center;
+    }
+    .page-hero-title {
+      font-family: 'Raleway', sans-serif;
+      font-size: clamp(1.6rem, 7vw, 2.4rem);
+      font-weight: 700; color: #fff;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: .75rem; line-height: 1.15;
+    }
+    .page-hero-body {
+      font-size: .85rem; color: rgba(255,255,255,.7);
+      font-weight: 300; line-height: 1.7; max-width: 340px;
+    }
     .history { padding-top: 2rem; padding-bottom: 50vh; }
     .chapter { margin-bottom: 3rem; }
     .chapter-title {
@@ -30,6 +61,19 @@
       border: none; border-top: 1px solid #1a1a1a;
       margin: 2.5rem 0;
     }
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
+
+{% block header %}
+<div class="page-hero">
+  <img src="https://picsum.photos/seed/sheremoviesheero/800/600" alt="Movie Connections" class="page-hero-img">
+  <div class="page-hero-overlay"></div>
+  <div class="page-hero-content">
+    <div class="page-hero-title">Movie Connections</div>
+    <p class="page-hero-body">Shere has been a favourite location for film and television productions for decades.</p>
+  </div>
+</div>
 {% endblock %}
 
 {% block content %}
