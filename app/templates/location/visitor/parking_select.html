@@ -3,6 +3,7 @@
 {% block title %}{{ estate_name }} — Parking{% endblock %}
 
 {% block extra_css %}
+    #scroll-nav { transform: translateY(0) !important; }
     .btn-menu {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
@@ -18,10 +19,11 @@
     .btn-menu + .btn-menu { margin-top: .65rem; }
 {% endblock %}
 
-{% block welcome_text %}Select the place where you have already parked.{% endblock %}
+{% block header %}{% endblock %}
 
 {% block content %}
-    <div style="padding: 0 0 2rem;">
+    <div style="padding: 3.5rem 0 2rem;">
+      <p style="font-size:.87rem; color:rgba(255,255,255,.55); font-weight:300; line-height:1.7; margin-bottom:1.5rem; text-align:center;">Select the place where you have already parked.</p>
       <a href="/location/{{ slug }}/visitor/parking-farm-field-car-park" class="btn-menu">Farm Field Car Park</a>
       <a href="/location/{{ slug }}/visitor/village-hall-car-park" class="btn-menu">Village Hall Car Park</a>
       <a href="/location/{{ slug }}/visitor/roadside-parking" class="btn-menu">Roadside Parking</a>
