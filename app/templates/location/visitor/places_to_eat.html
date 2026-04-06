@@ -85,8 +85,8 @@
         </div>
         {% if place.image_url %}
         <div class="eat-image-wrap">
-          <img src="{{ place.image_url }}" alt="{{ place.name }}" class="eat-image">
-          <img src="{{ place.image_url }}?grayscale" alt="" class="eat-image eat-image-bw" aria-hidden="true">
+          <img src="{{ place.image_url | replace('?grayscale', '') }}" alt="{{ place.name }}" class="eat-image">
+          <img src="{{ place.image_url }}" alt="" class="eat-image eat-image-bw" aria-hidden="true">
         </div>
         {% else %}
         <div class="eat-image-placeholder">Image coming soon</div>
