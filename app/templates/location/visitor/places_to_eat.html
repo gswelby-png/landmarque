@@ -38,6 +38,19 @@
       display: flex; align-items: center; justify-content: center;
       color: #333; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
     }
+    .eat-stats {
+      display: flex; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;
+    }
+    .eat-stat {
+      flex: 1; padding: .6rem .5rem; text-align: center;
+      border-right: 1px solid #1a1a1a;
+    }
+    .eat-stat:last-child { border-right: none; }
+    .eat-stat-value { font-size: .9rem; font-weight: 700; color: #B89A5A; }
+    .eat-stat-label {
+      font-size: .56rem; font-weight: 600; letter-spacing: 1.5px;
+      text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: .15rem;
+    }
     .eat-body { padding: 1rem 1.25rem 1.25rem; }
     .eat-summary {
       font-size: .83rem; color: rgba(255,255,255,.6);
@@ -66,6 +79,20 @@
         {% else %}
         <div class="eat-image-placeholder">Image coming soon</div>
         {% endif %}
+        <div class="eat-stats">
+          <div class="eat-stat">
+            <div class="eat-stat-value">{{ place.rating }}</div>
+            <div class="eat-stat-label">Rating</div>
+          </div>
+          <div class="eat-stat">
+            <div class="eat-stat-value">{{ place.guide_price }}</div>
+            <div class="eat-stat-label">Guide Price</div>
+          </div>
+          <div class="eat-stat">
+            <div class="eat-stat-value">{{ place.open_today }}</div>
+            <div class="eat-stat-label">Open Today</div>
+          </div>
+        </div>
         <div class="eat-body">
           <p class="eat-summary">{{ place.summary }}</p>
           <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
