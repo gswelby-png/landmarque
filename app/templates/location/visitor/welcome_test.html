@@ -1,0 +1,229 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}{{ estate_name }} — Welcome{% endblock %}
+
+{% block extra_css %}
+    #scroll-nav { transform: translateY(-100%); transition: transform .3s ease; }
+    #scroll-nav.visible { transform: translateY(0); }
+    .hero-top {
+      position: absolute; top: .85rem; left: 1.25rem; right: 1.25rem;
+      display: flex; align-items: center; justify-content: space-between;
+      z-index: 10; transition: opacity .3s ease;
+    }
+    .hero-top.hidden { opacity: 0; pointer-events: none; }
+    .hero-top-logo { height: 22px; width: auto; display: block; }
+    #hero-burger {
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px; padding: .25rem;
+    }
+    #hero-burger span {
+      display: block; width: 22px; height: 2px;
+      background: #fff; border-radius: 2px;
+    }
+    .hero {
+      position: relative;
+      width: calc(100% + 2.5rem);
+      margin: -1.25rem -1.25rem 0;
+      height: 80vh;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-img-bw {
+      transition: opacity 1.2s ease;
+      opacity: 1;
+    }
+    .hero-img-bw.fade { opacity: 0; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.52);
+    }
+    .hero-scroll-arrow {
+      position: absolute; bottom: 1.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: 4px;
+      animation: arrowBounce 1.8s ease-in-out infinite;
+    }
+    .hero-scroll-arrow::before,
+    .hero-scroll-arrow::after {
+      content: ''; display: block;
+      width: 12px; height: 12px;
+      border-right: 1.5px solid rgba(255,255,255,.7);
+      border-bottom: 1.5px solid rgba(255,255,255,.7);
+      transform: rotate(45deg);
+    }
+    @keyframes arrowBounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: .7; }
+      50%       { transform: translateX(-50%) translateY(5px); opacity: 1; }
+    }
+    .hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem 1.5rem; text-align: center;
+    }
+    .hero-logo { width: 22.5%; max-width: 115px; height: auto; margin-bottom: 1.2rem; }
+    .hero-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700; color: #fff; text-transform: uppercase;
+      margin-bottom: .6rem; text-align: center; line-height: 1.15;
+    }
+    .hero-title-main { font-size: clamp(2rem, 10vw, 3.2rem); display: block; letter-spacing: 3px; }
+    .hero-title-sub  {
+      font-size: clamp(0.83rem, 4.5vw, 1.33rem); display: block; opacity: .8;
+      letter-spacing: 6.75px; margin-top: .42rem;
+    }
+    .hero-subtitle {
+      font-size: .85rem; font-weight: 700; color: #B89A5A;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .welcome-intro {
+      text-align: center; padding: 4rem 0 3.5rem;
+    }
+    .welcome-intro-title {
+      font-size: 1.6rem; font-weight: 700; color: #fff;
+      letter-spacing: .5px; margin-bottom: 1.3rem;
+    }
+    .welcome-intro-body {
+      font-size: 1rem; color: #fff;
+      font-weight: 300; line-height: 1.7;
+    }
+    .sections { padding-bottom: 3rem; }
+    .w-divider { border-top: 1px solid #1a1a1a; margin: 0 -1.25rem; }
+    .section { padding: 1.75rem 0; }
+    .section-title { font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; margin-bottom: .45rem; }
+    .section-desc { font-size: .83rem; color: rgba(255,255,255,.55); line-height: 1.65; font-weight: 300; margin-bottom: 1.1rem; }
+    .btn-section {
+      display: inline-flex; align-items: center; justify-content: center;
+      text-decoration: none; background: #111; color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 400; font-size: .85rem; letter-spacing: .5px;
+      border-radius: 4px; padding: .6rem 1.1rem;
+      border: 1px solid #333; transition: border-color .15s;
+    }
+    .btn-section:hover { border-color: #B89A5A; color: #fff; }
+    .btn-section-primary { border-color: #B89A5A; color: #B89A5A; }
+{% endblock %}
+
+{% block header %}
+<div class="hero">
+  <img src="https://picsum.photos/seed/sheresurrey/800/1200" alt="{{ estate_name }}" class="hero-img">
+  <img src="https://picsum.photos/seed/sheresurrey/800/1200?grayscale" alt="" class="hero-img hero-img-bw" id="hero-bw" aria-hidden="true">
+  <div class="hero-overlay"></div>
+  <div class="hero-top" id="hero-top">
+    {% if logo_url %}
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="hero-top-logo">
+    {% else %}
+    <span></span>
+    {% endif %}
+    <button id="hero-burger" aria-label="Menu" onclick="document.getElementById('hamburger-menu').classList.add('open')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="hero-scroll-arrow"></div>
+  <div class="hero-content">
+    {% if logo_url %}
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="hero-logo">
+    {% endif %}
+    <h1 class="hero-title">
+      <span class="hero-title-main">{{ estate_name.split(' ')[0] }}</span>
+      <span class="hero-title-sub">{{ estate_name.split(' ', 1)[1] }}</span>
+    </h1>
+  </div>
+</div>
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
+
+{% block content %}
+<div class="welcome-intro">
+  <p class="welcome-intro-title">Welcome</p>
+  <p class="welcome-intro-body">We very much hope that you will enjoy your visit to our village.</p>
+</div>
+<div class="w-divider"></div>
+<div class="sections">
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Parking</div>
+    <p class="section-desc">Pay for your parking or let us know where you have left your car.</p>
+    <a href="/location/{{ slug }}/visitor/parking-select" class="btn-section btn-section-primary">Pay for Parking</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Our History</div>
+    <p class="section-desc">From the Norman church to the industrial Tillingbourne — a thousand years of life in the Surrey Hills.</p>
+    <a href="/location/{{ slug }}/visitor/history" class="btn-section">Read More</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Movie Connections</div>
+    <p class="section-desc">Shere has starred in The Holiday, Bridget Jones's Diary, and many more. Find the locations.</p>
+    <a href="/location/{{ slug }}/visitor/movies" class="btn-section">Read More</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Places to Eat</div>
+    <p class="section-desc">From the finest restaurant in the Surrey Hills to a cream tea by the stream — something for every appetite.</p>
+    <a href="/location/{{ slug }}/visitor/places-to-eat" class="btn-section">View Guide</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Walking Routes</div>
+    <p class="section-desc">Two waymarked routes — a short village loop and a longer walk to the William IV pub at Albury.</p>
+    <a href="/location/{{ slug }}/visitor/walking" class="btn-section">View Routes</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Places of Interest</div>
+    <p class="section-desc">The Norman church, the ford, the film barn — historic and natural features within easy reach.</p>
+    <a href="/location/{{ slug }}/visitor/places-of-interest" class="btn-section">Explore</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Fun for Kids</div>
+    <p class="section-desc">Paddling in the Tillingbourne, the stepping stones, and plenty more to keep young visitors happy.</p>
+    <a href="#" class="btn-section">Coming Soon</a>
+  </div>
+
+  <div class="w-divider"></div>
+  <div class="section">
+    <div class="section-title">Merch Store</div>
+    <p class="section-desc">Take a piece of Shere home with you — prints, maps, and locally made gifts.</p>
+    <a href="/location/{{ slug }}/visitor/merch" class="btn-section">Browse Store</a>
+  </div>
+
+  <div class="w-divider"></div>
+
+</div>
+
+<script>
+  // Fade hero from B&W to colour after 1.5s
+  setTimeout(function () {
+    document.getElementById('hero-bw').classList.add('fade');
+  }, 1500);
+
+  // Nav bar / hero burger swap on scroll
+  (function () {
+    const nav     = document.getElementById('scroll-nav');
+    const heroTop = document.getElementById('hero-top');
+    const threshold = 80;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > threshold) {
+        nav.classList.add('visible');
+        heroTop.classList.add('hidden');
+      } else {
+        nav.classList.remove('visible');
+        heroTop.classList.remove('hidden');
+      }
+    }, { passive: true });
+  })();
+</script>
+{% endblock %}

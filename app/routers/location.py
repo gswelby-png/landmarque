@@ -433,6 +433,31 @@ def location_contact(request: Request, slug: str, sent: bool = False):
 
 # ── Visitor / on-site pages ───────────────────────────────────────────────────
 
+@router.get("/{slug}/visitor/welcome-test", response_class=HTMLResponse)
+def visitor_welcome_test(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    brand = {
+        "primary": (car_park.brand_primary or "#1e3a1e") if car_park else "#1e3a1e",
+        "accent": (car_park.brand_accent or "#B89A5A") if car_park else "#B89A5A",
+        "text": (car_park.brand_text or "#ffffff") if car_park else "#ffffff",
+    }
+    return templates.TemplateResponse("location/visitor/welcome_test.html", {
+        "request": request,
+        "slug": slug,
+        "estate": estate,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Welcome",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
+        "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
+        "brand": brand,
+    })
+
+
 @router.get("/{slug}/visitor/welcome", response_class=HTMLResponse)
 def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
