@@ -131,6 +131,58 @@ WALKS = {
 }
 
 
+# Places to eat — keyed by estate slug
+PLACES_TO_EAT = {
+    "shere-manor-estate": [
+        {
+            "slug": "white-horse",
+            "name": "The White Horse",
+            "type": "pub",
+            "distance": "2 min walk",
+            "coords": [51.21680, -0.44402],
+            "summary": "A 14th-century village pub at the heart of Shere, with a sun-trap garden, open fires, and a menu rooted in Surrey produce. One of the oldest buildings in the village and a perennial favourite with walkers.",
+            "image_url": "",
+        },
+        {
+            "slug": "william-bray",
+            "name": "William Bray Tea Rooms",
+            "type": "café",
+            "distance": "3 min walk",
+            "coords": [51.21650, -0.44470],
+            "summary": "A much-loved tearoom on Middle Street, famous for homemade scones, cakes, and proper loose-leaf teas served in a cosy, beamed interior. Particularly popular on weekend afternoons.",
+            "image_url": "",
+        },
+        {
+            "slug": "lucky-duck",
+            "name": "The Lucky Duck",
+            "type": "café",
+            "distance": "4 min walk",
+            "coords": [51.21620, -0.44510],
+            "summary": "A relaxed café beside the Tillingbourne, popular for brunch, light lunches, and excellent coffee. Dog-friendly with outdoor seating overlooking the chalk stream.",
+            "image_url": "",
+        },
+        {
+            "slug": "william-iv",
+            "name": "The William IV",
+            "type": "pub",
+            "distance": "45 min walk",
+            "coords": [51.21554, -0.46509],
+            "summary": "A destination pub in Albury Heath with a serious reputation for seasonal, locally sourced food. Book ahead — it fills quickly at weekends. See the William IV walking route for directions on foot.",
+            "image_url": "",
+        },
+        {
+            "slug": "gomshall-mill",
+            "name": "Gomshall Mill",
+            "type": "restaurant",
+            "distance": "20 min walk",
+            "coords": [51.21130, -0.42630],
+            "summary": "A converted watermill with riverside terrace, serving a broad menu in a relaxed setting. The outdoor seating beside the millrace is especially good in summer. Well suited to families.",
+            "image_url": "",
+        },
+    ]
+}
+
+
 # Known estate slugs — extend as new estates are onboarded
 ESTATES = {
     "shere-manor-estate": {
@@ -430,6 +482,24 @@ def visitor_walking_detail(request: Request, slug: str, walk_slug: str, db: Sess
         "car_park_name": car_park.name if car_park else "",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "walk": walk,
+    })
+
+
+@router.get("/{slug}/visitor/places-to-eat", response_class=HTMLResponse)
+def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    places = PLACES_TO_EAT.get(slug, [])
+    return templates.TemplateResponse("location/visitor/places_to_eat.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": car_park.name if car_park else "",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "places": places,
     })
 
 

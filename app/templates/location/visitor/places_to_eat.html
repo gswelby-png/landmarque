@@ -1,0 +1,188 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Places to Eat — {{ estate_name }}{% endblock %}
+
+{% block extra_css %}
+    body > div { padding-top: 0 !important; }
+    .eat-header-bar {
+      display: flex; align-items: center; gap: .65rem;
+      margin: 1rem 0 .75rem;
+    }
+    .eat-header-logo { height: 26px; width: auto; flex-shrink: 0; display: block; }
+    .eat-header-name {
+      font-weight: 700; font-size: .8rem; color: #fff;
+      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
+    }
+    .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
+    .map-static { margin: 0 -1.25rem; }
+    #map { width: 100%; height: 35vh; display: block; }
+    .leaflet-container { background: #000 !important; }
+    .leaflet-control-attribution {
+      background: rgba(0,0,0,0.55) !important;
+      color: #444 !important; font-size: 8px !important;
+    }
+    .leaflet-control-attribution a { color: #555 !important; }
+    .leaflet-attribution-flag { display: none !important; }
+    .leaflet-tooltip {
+      background: #111; border: 1px solid #333; color: #fff;
+      font-family: 'Raleway', sans-serif; font-size: .75rem;
+      font-weight: 600; letter-spacing: .5px; padding: .3rem .6rem;
+      border-radius: 4px; box-shadow: none;
+    }
+    .leaflet-tooltip-top::before { border-top-color: #333; }
+    .filter-tabs {
+      display: flex; gap: .5rem;
+      padding: .9rem 0 .75rem; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .filter-tabs::-webkit-scrollbar { display: none; }
+    .filter-tab {
+      flex-shrink: 0; padding: .35rem .9rem;
+      border: 1px solid #333; border-radius: 20px;
+      font-family: 'Raleway', sans-serif;
+      font-size: .68rem; font-weight: 700;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      color: rgba(255,255,255,.35); background: none; cursor: pointer;
+      transition: border-color .15s, color .15s;
+    }
+    .filter-tab.active { border-color: #B89A5A; color: #B89A5A; }
+    .eat-card {
+      background: #111; border-radius: 8px;
+      overflow: hidden; margin-bottom: 1rem;
+      border: 1px solid #222; transition: border-color .15s;
+    }
+    .eat-card.hidden { display: none; }
+    .eat-image {
+      width: 100%; height: 160px; object-fit: cover; display: block;
+    }
+    .eat-image-placeholder {
+      width: 100%; height: 160px; background: #1a1a1a;
+      display: flex; align-items: center; justify-content: center;
+      color: #333; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .eat-body { padding: 1.1rem 1.25rem 1.25rem; }
+    .eat-header-row {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: .75rem; margin-bottom: .25rem;
+    }
+    .eat-name { font-size: 1rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; }
+    .type-badge {
+      flex-shrink: 0; padding: .2rem .6rem;
+      border: 1px solid #333; border-radius: 20px;
+      font-size: .6rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: rgba(255,255,255,.4);
+    }
+    .eat-distance {
+      font-size: .72rem; color: rgba(255,255,255,.3);
+      font-weight: 600; letter-spacing: .5px; margin-bottom: .65rem;
+    }
+    .eat-summary {
+      font-size: .83rem; color: rgba(255,255,255,.6);
+      line-height: 1.65; font-weight: 300; margin-bottom: .85rem;
+    }
+    .directions-link {
+      font-size: .75rem; font-weight: 700; color: #B89A5A;
+      text-decoration: none; letter-spacing: .5px;
+    }
+    .directions-link:hover { text-decoration: underline; }
+{% endblock %}
+
+{% block header %}
+    <div class="eat-header-bar">
+      {% if logo_url %}
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="eat-header-logo">
+      {% endif %}
+      <span class="eat-header-name">{{ estate_name }}</span>
+    </div>
+    <div class="w-divider"></div>
+{% endblock %}
+
+{% block content %}
+    <div class="map-static">
+      <div id="map"></div>
+    </div>
+    <div class="w-divider"></div>
+
+    <div class="filter-tabs">
+      <button class="filter-tab active" data-filter="all">All</button>
+      <button class="filter-tab" data-filter="pub">Pub</button>
+      <button class="filter-tab" data-filter="café">Café</button>
+      <button class="filter-tab" data-filter="restaurant">Restaurant</button>
+    </div>
+
+    <div id="cards">
+      {% for place in places %}
+      <div class="eat-card" data-type="{{ place.type }}" data-index="{{ loop.index0 }}">
+        {% if place.image_url %}
+        <img src="{{ place.image_url }}" alt="{{ place.name }}" class="eat-image">
+        {% else %}
+        <div class="eat-image-placeholder">Image coming soon</div>
+        {% endif %}
+        <div class="eat-body">
+          <div class="eat-header-row">
+            <span class="eat-name">{{ place.name }}</span>
+            <span class="type-badge">{{ place.type }}</span>
+          </div>
+          <div class="eat-distance">{{ place.distance }}</div>
+          <p class="eat-summary">{{ place.summary }}</p>
+          <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
+             target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+    <div style="height: 2rem;"></div>
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+      const places = {{ places | tojson }};
+
+      const map = L.map('map', {
+        zoomControl: false,
+        dragging: false,
+        scrollWheelZoom: false,
+        touchZoom: false,
+        doubleClickZoom: false,
+        boxZoom: false,
+        keyboard: false
+      });
+
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+        attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com">CARTO</a>',
+        maxZoom: 19
+      }).addTo(map);
+
+      const markers = places.map((p, i) => {
+        const m = L.marker(p.coords, {
+          icon: L.divIcon({
+            html: `<div style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;">${i+1}</div>`,
+            iconSize: [22, 22], iconAnchor: [11, 11], className: ''
+          })
+        }).addTo(map);
+        m.bindTooltip(p.name, { direction: 'top', offset: [0, -8] });
+        return m;
+      });
+
+      map.fitBounds(L.latLngBounds(places.map(p => p.coords)), { padding: [28, 28] });
+
+      // Filter tabs
+      const tabs = document.querySelectorAll('.filter-tab');
+      const cards = document.querySelectorAll('.eat-card');
+
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => t.classList.remove('active'));
+          tab.classList.add('active');
+          const filter = tab.dataset.filter;
+          cards.forEach((card, i) => {
+            const show = filter === 'all' || card.dataset.type === filter;
+            card.classList.toggle('hidden', !show);
+            markers[i].setOpacity(show ? 1 : 0.15);
+          });
+        });
+      });
+    </script>
+{% endblock %}
