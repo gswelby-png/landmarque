@@ -144,7 +144,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21645, -0.44438],
             "summary": "Widely regarded as the finest restaurant in the Surrey Hills, Kinghams occupies a 17th-century cottage on Gomshall Lane. The cooking is modern British with classical technique — expect beautifully sourced local game, fish from the south coast, and a wine list that has clearly been assembled with care. Booking essential, particularly at weekends.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/kinghams/600/320?grayscale",
         },
         {
             "slug": "william-iv",
@@ -156,7 +156,7 @@ PLACES_TO_EAT = {
             "distance": "45 min walk",
             "coords": [51.21554, -0.46509],
             "summary": "A destination pub tucked away in the hamlet of Little London near Albury Heath, with a serious reputation for seasonal, locally sourced food. The game dishes in autumn and winter are outstanding, and the low-ceilinged, beamed interior with open fire makes it especially rewarding after a long walk. Book well ahead for weekends.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/williamiv/600/320?grayscale",
         },
         {
             "slug": "white-horse",
@@ -168,7 +168,7 @@ PLACES_TO_EAT = {
             "distance": "2 min walk",
             "coords": [51.21680, -0.44402],
             "summary": "A 14th-century village pub at the heart of Shere, with a sun-trap garden overlooking the Tillingbourne, open fires in winter, and a menu that draws on Surrey producers. One of the oldest buildings in the village and a perennial favourite with walkers coming in off the hills.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/whitehorse/600/320?grayscale",
         },
         {
             "slug": "hillys",
@@ -180,7 +180,7 @@ PLACES_TO_EAT = {
             "distance": "5 min walk",
             "coords": [51.21600, -0.44550],
             "summary": "A bright, friendly café a short stroll from the village centre, popular for brunch, homemade soups, and excellent flat whites. The outdoor terrace catches the afternoon sun well and is reliably busy on fine weekends. Good options for vegetarians.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/hillys/600/320?grayscale",
         },
         {
             "slug": "dabbling-duck",
@@ -192,7 +192,7 @@ PLACES_TO_EAT = {
             "distance": "12 min walk",
             "coords": [51.21420, -0.44820],
             "summary": "A relaxed country pub on the southern edge of the village, popular with families and walkers. The garden is large and well kept, the food is straightforward and generously portioned, and the atmosphere is reliably convivial. Good selection of ales from Surrey and Sussex breweries.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/dabblingduck/600/320?grayscale",
         },
         {
             "slug": "william-bray",
@@ -204,7 +204,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21650, -0.44470],
             "summary": "A much-loved tearoom on Middle Street, famous for homemade scones, cakes, and proper loose-leaf teas served in a cosy, beamed interior. The cream tea is exactly as it should be. Particularly popular on weekend afternoons — arrive early or expect to queue.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/williambray/600/320?grayscale",
         },
         {
             "slug": "gomshall-mill",
@@ -216,7 +216,7 @@ PLACES_TO_EAT = {
             "distance": "20 min walk",
             "coords": [51.21130, -0.42630],
             "summary": "A converted watermill with a riverside terrace, serving a broad, crowd-pleasing menu in a relaxed setting. The outdoor seating beside the millrace is especially good in summer. Well suited to families and larger groups.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/gomshallmill/600/320?grayscale",
         },
         {
             "slug": "lucky-duck",
@@ -228,7 +228,7 @@ PLACES_TO_EAT = {
             "distance": "4 min walk",
             "coords": [51.21620, -0.44510],
             "summary": "A laid-back café beside the Tillingbourne stream, popular for brunch and light lunches. Dog-friendly with outdoor seating, and a short menu that changes regularly. Good coffee and a decent selection of sandwiches and wraps.",
-            "image_url": "",
+            "image_url": "https://picsum.photos/seed/luckyduck/600/320?grayscale",
         },
     ]
 }
