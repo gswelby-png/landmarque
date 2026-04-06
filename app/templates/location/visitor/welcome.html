@@ -6,27 +6,28 @@
     .btn-menu {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
-      background: #B89A5A; color: #fff;
+      background: #111; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700; font-size: 1rem; letter-spacing: 1px;
       text-transform: uppercase; border-radius: 4px;
-      padding: 0.95rem 1rem; width: 100%; transition: filter .15s;
+      padding: 0.95rem 1rem; width: 100%;
+      border: 1px solid #222; transition: border-color .15s;
       min-height: 3rem;
     }
-    .btn-menu:hover { filter: brightness(88%); color: #fff; }
+    .btn-menu:hover { border-color: #B89A5A; color: #fff; }
     .btn-menu + .btn-menu { margin-top: .65rem; }
-    .btn-menu-secondary { background: #7a6535; color: rgba(255,255,255,.75); }
+    .btn-menu-primary { border-color: #B89A5A; color: #B89A5A; }
 {% endblock %}
 
 {% block welcome_text %}Welcome to Shere, We hope that you will enjoy your visit. Please could you start by paying for parking.{% endblock %}
 
 {% block content %}
     <div style="padding: 0 0 2rem;">
-      <a href="/location/{{ slug }}/visitor/parking-start" class="btn-menu">Pay for Parking</a>
-      <a href="/location/{{ slug }}/visitor/walking" class="btn-menu btn-menu-secondary">Walking Routes</a>
-      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu btn-menu-secondary">Cycling Routes</a>
-      <a href="#" class="btn-menu btn-menu-secondary">Places to Eat</a>
-      <a href="/location/{{ slug }}/places-of-interest" class="btn-menu btn-menu-secondary">Places of Interest</a>
-      <a href="#" class="btn-menu btn-menu-secondary">Merch Store</a>
+      <a href="/location/{{ slug }}/visitor/parking-start" class="btn-menu btn-menu-primary">Pay for Parking</a>
+      <a href="/location/{{ slug }}/visitor/walking" class="btn-menu">Walking Routes</a>
+      <a href="/location/{{ slug }}/cycle-routes" class="btn-menu">Cycling Routes</a>
+      <a href="#" class="btn-menu">Places to Eat</a>
+      <a href="/location/{{ slug }}/places-of-interest" class="btn-menu">Places of Interest</a>
+      <a href="#" class="btn-menu">Merch Store</a>
     </div>
 {% endblock %}
