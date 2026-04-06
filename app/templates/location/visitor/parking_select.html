@@ -1,0 +1,57 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}{{ estate_name }} — Parking{% endblock %}
+
+{% block extra_css %}
+    .payment-panel {
+      margin-bottom: 2rem;
+    }
+    .duration-option {
+      cursor: pointer; border: 1px solid #555; border-radius: 4px;
+      padding: .75rem 1rem; display: flex; justify-content: space-between;
+      align-items: center; transition: border-color .15s, background .15s;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      background: transparent; color: #fff;
+    }
+    .duration-option:hover { border-color: #B89A5A; }
+    .duration-option.selected { border-color: #B89A5A; color: #B89A5A; }
+    .duration-option.selected .duration-price { color: #B89A5A; }
+    .duration-price { font-weight: 700; color: #fff; }
+    .btn-pay {
+      background: #B89A5A; border: none; color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700; font-size: 1rem; letter-spacing: 1px;
+      text-transform: uppercase; border-radius: 4px;
+      padding: 0.95rem; width: 100%; min-height: 3rem;
+      margin-top: .5rem; cursor: pointer; transition: filter .15s;
+      display: flex; align-items: center; justify-content: center;
+      text-decoration: none;
+    }
+    .btn-pay:hover { filter: brightness(88%); color: #fff; }
+    input::placeholder { color: #B89A5A; font-weight: 700; font-size: .75rem; letter-spacing: 1px; }
+{% endblock %}
+
+{% block content %}
+    <div class="payment-panel">
+        <input type="text" maxlength="10" placeholder="Enter your registration"
+               style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #555; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase; background:#000; margin-bottom:1.25rem; color:#B89A5A;">
+
+        <div style="display:grid; gap:.5rem;">
+          {% for opt in options %}
+          <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
+            <span>{{ opt.label }}</span>
+            <span class="duration-price">{{ opt.price_display }}</span>
+          </label>
+          {% endfor %}
+        </div>
+
+        <a href="/location/{{ slug }}/visitor/parking-payment" class="btn-pay" style="margin-top:1rem;">Pay</a>
+    </div>
+
+  <script>
+    function selectDuration(el, val) {
+      document.querySelectorAll('.duration-option').forEach(e => e.classList.remove('selected'));
+      el.classList.add('selected');
+    }
+  </script>
+{% endblock %}
