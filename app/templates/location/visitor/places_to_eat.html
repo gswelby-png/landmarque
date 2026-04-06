@@ -2,21 +2,9 @@
 
 {% block title %}Places to Eat — {{ estate_name }}{% endblock %}
 
+{% block welcome_text %}We are blessed with a great range of places to eat and drink in and around the village.{% endblock %}
+
 {% block extra_css %}
-    body > div { padding-top: 0 !important; }
-    .eat-header-bar {
-      position: sticky; top: 0; z-index: 500;
-      display: flex; align-items: center; gap: .65rem;
-      background: #000;
-      margin: 0 -1.25rem;
-      padding: 1rem 1.25rem .75rem;
-      border-bottom: 1px solid #222;
-    }
-    .eat-header-logo { height: 26px; width: auto; flex-shrink: 0; display: block; }
-    .eat-header-name {
-      font-weight: 700; font-size: .8rem; color: #fff;
-      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
-    }
     .eat-cards { padding-top: 3rem; }
     .eat-card {
       background: #111; border-radius: 8px;
@@ -60,15 +48,6 @@
       text-decoration: none; letter-spacing: .5px;
     }
     .directions-link:hover { text-decoration: underline; }
-{% endblock %}
-
-{% block header %}
-    <div class="eat-header-bar">
-      {% if logo_url %}
-      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="eat-header-logo">
-      {% endif %}
-      <span class="eat-header-name">{{ estate_name }}</span>
-    </div>
 {% endblock %}
 
 {% block content %}

@@ -532,7 +532,7 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
         "request": request,
         "slug": slug,
         "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": car_park.name if car_park else "",
+        "car_park_name": "Places to Eat",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "places": places,
     })
