@@ -21,17 +21,66 @@
       transition: transform .25s ease;
     }
     #scroll-nav.visible { transform: translateY(0); }
-    #scroll-nav a {
-      display: flex; align-items: center; gap: .65rem;
+    #scroll-nav .nav-inner {
+      display: flex; align-items: center; justify-content: space-between;
       max-width: 520px; margin: 0 auto;
       padding: .85rem 1.25rem;
-      text-decoration: none;
+    }
+    #scroll-nav .nav-home {
+      display: flex; align-items: center; gap: .65rem;
+      text-decoration: none; flex: 1;
     }
     #scroll-nav img { height: 22px; width: auto; flex-shrink: 0; display: block; }
-    #scroll-nav span {
+    #scroll-nav .nav-home span {
       font-weight: 700; font-size: .75rem; color: #fff;
       letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
     }
+    #hamburger-btn {
+      background: none; border: none; cursor: pointer;
+      padding: .25rem; display: flex; flex-direction: column;
+      gap: 5px; flex-shrink: 0;
+    }
+    #hamburger-btn span {
+      display: block; width: 22px; height: 2px;
+      background: #fff; border-radius: 2px;
+      transition: background .15s;
+    }
+    #hamburger-btn:hover span { background: #B89A5A; }
+    #hamburger-menu {
+      display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 700; background: #000;
+      flex-direction: column;
+    }
+    #hamburger-menu.open { display: flex; }
+    #hamburger-menu .menu-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .85rem 1.25rem; border-bottom: 1px solid #222;
+      max-width: 520px; width: 100%; margin: 0 auto;
+    }
+    #hamburger-menu .menu-title {
+      font-weight: 700; font-size: .75rem; color: #fff;
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    #close-btn {
+      background: none; border: none; cursor: pointer;
+      font-size: 1.4rem; color: #fff; line-height: 1; padding: .1rem;
+    }
+    #close-btn:hover { color: #B89A5A; }
+    #hamburger-menu nav {
+      max-width: 520px; width: 100%; margin: 0 auto;
+      padding: 1.25rem;
+      display: flex; flex-direction: column; gap: .65rem;
+      overflow-y: auto;
+    }
+    #hamburger-menu nav a {
+      display: block; text-decoration: none;
+      color: rgba(255,255,255,.75); font-weight: 400; font-size: 1.05rem;
+      letter-spacing: .5px; padding: .75rem 0;
+      border-bottom: 1px solid #1a1a1a;
+      transition: color .15s;
+    }
+    #hamburger-menu nav a:last-child { border-bottom: none; }
+    #hamburger-menu nav a:hover { color: #B89A5A; }
     .estate-header {
       text-align: center;
       padding: 0.586rem 1rem 2rem;
@@ -58,11 +107,34 @@
 <body>
 
   <nav id="scroll-nav">
-    <a href="/location/{{ slug }}/visitor/welcome">
-      {% if logo_url %}<img src="{{ logo_url }}" alt="{{ estate_name }}">{% endif %}
-      <span>{{ estate_name }}</span>
-    </a>
+    <div class="nav-inner">
+      <a href="/location/{{ slug }}/visitor/welcome" class="nav-home">
+        {% if logo_url %}<img src="{{ logo_url }}" alt="{{ estate_name }}">{% endif %}
+        <span>{{ estate_name }}</span>
+      </a>
+      <button id="hamburger-btn" aria-label="Menu" onclick="document.getElementById('hamburger-menu').classList.add('open')">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
   </nav>
+
+  <div id="hamburger-menu">
+    <div class="menu-header">
+      <span class="menu-title">{{ estate_name }}</span>
+      <button id="close-btn" aria-label="Close" onclick="document.getElementById('hamburger-menu').classList.remove('open')">&times;</button>
+    </div>
+    <nav>
+      <a href="/location/{{ slug }}/visitor/welcome">Welcome</a>
+      <a href="/location/{{ slug }}/visitor/parking-select">Parking</a>
+      <a href="/location/{{ slug }}/visitor/history">Our History</a>
+      <a href="/location/{{ slug }}/visitor/movies">Movie Connections</a>
+      <a href="/location/{{ slug }}/visitor/places-to-eat">Places to Eat</a>
+      <a href="/location/{{ slug }}/visitor/places-of-interest">Places of Interest</a>
+      <a href="/location/{{ slug }}/visitor/walking">Walking Routes</a>
+      <a href="#">Fun for Kids</a>
+      <a href="#">Merch Store</a>
+    </nav>
+  </div>
 
   <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
 
@@ -84,6 +156,21 @@
     {% block content %}{% endblock %}
 
   </div>
+
+  <footer style="max-width:520px; margin:0 auto; padding:2.5rem 1.25rem 3rem; border-top:1px solid #1a1a1a;">
+    <p style="font-size:.6rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.25); margin-bottom:1.25rem;">Navigate</p>
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:.1rem 1rem;">
+      <a href="/location/{{ slug }}/visitor/welcome" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Welcome</a>
+      <a href="/location/{{ slug }}/visitor/parking-select" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Parking</a>
+      <a href="/location/{{ slug }}/visitor/history" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Our History</a>
+      <a href="/location/{{ slug }}/visitor/movies" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Movie Connections</a>
+      <a href="/location/{{ slug }}/visitor/places-to-eat" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places to Eat</a>
+      <a href="/location/{{ slug }}/visitor/places-of-interest" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places of Interest</a>
+      <a href="/location/{{ slug }}/visitor/walking" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Walking Routes</a>
+      <a href="#" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111;">Fun for Kids</a>
+      <a href="#" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111;">Merch Store</a>
+    </div>
+  </footer>
 
   <script>
     (function () {
