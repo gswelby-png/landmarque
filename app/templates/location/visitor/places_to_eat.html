@@ -32,7 +32,10 @@
     }
     .eat-image {
       width: 100%; height: 160px; object-fit: cover; display: block;
+      filter: grayscale(100%);
+      transition: filter .7s ease;
     }
+    .eat-card.colour .eat-image { filter: grayscale(0%); }
     .eat-image-placeholder {
       width: 100%; height: 160px; background: #1a1a1a;
       display: flex; align-items: center; justify-content: center;
@@ -101,4 +104,47 @@
       </div>
       {% endfor %}
     </div>
+
+    <script>
+      const cardEls = Array.from(document.querySelectorAll('.eat-card'));
+      let activeIndex = -1;
+      let lastScrollY = window.scrollY;
+
+      function setColour(i, on) {
+        cardEls[i].classList.toggle('colour', on);
+      }
+
+      function updateActive() {
+        const vh    = window.innerHeight;
+        const scrollY = window.scrollY;
+        const goingDown = scrollY >= lastScrollY;
+        lastScrollY = scrollY;
+
+        let newActive = -1;
+
+        if (goingDown) {
+          // activate last card whose top has crossed 30% from top
+          cardEls.forEach((el, i) => {
+            if (el.getBoundingClientRect().top <= vh * 0.30) newActive = i;
+          });
+        } else {
+          // scrolling up: activate first card whose bottom is at or above 70% from top
+          for (let i = 0; i < cardEls.length; i++) {
+            if (cardEls[i].getBoundingClientRect().bottom >= vh * 0.70) {
+              newActive = i;
+              break;
+            }
+          }
+        }
+
+        if (newActive !== activeIndex) {
+          if (activeIndex >= 0) setColour(activeIndex, false);
+          if (newActive  >= 0) setColour(newActive,  true);
+          activeIndex = newActive;
+        }
+      }
+
+      window.addEventListener('scroll', updateActive, { passive: true });
+      updateActive();
+    </script>
 {% endblock %}
