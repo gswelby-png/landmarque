@@ -89,21 +89,40 @@
       font-size: 1rem; color: #fff;
       font-weight: 300; line-height: 1.7;
     }
-    .sections { padding-bottom: 3rem; }
-    .w-divider { border-top: 1px solid #1a1a1a; margin: 0 -1.25rem; }
-    .section { padding: 1.75rem 0; }
-    .section-title { font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; margin-bottom: .45rem; }
-    .section-desc { font-size: .83rem; color: rgba(255,255,255,.55); line-height: 1.65; font-weight: 300; margin-bottom: 1.1rem; }
-    .btn-section {
-      display: inline-flex; align-items: center; justify-content: center;
-      text-decoration: none; background: #111; color: #fff;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 400; font-size: .85rem; letter-spacing: .5px;
-      border-radius: 4px; padding: .6rem 1.1rem;
-      border: 1px solid #333; transition: border-color .15s;
+    .nav-grid { padding: 0 0 2.04rem; }
+    div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
+    .nav-card-full {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-decoration: none; background: #111;
+      border-radius: 8px; border: 1px solid #222;
+      padding: 1.4rem 1.25rem; margin-bottom: .75rem;
+      gap: .6rem; transition: border-color .15s;
     }
-    .btn-section:hover { border-color: #B89A5A; color: #fff; }
-    .btn-section-primary { border-color: #B89A5A; color: #B89A5A; }
+    .nav-card-full:hover { border-color: #B89A5A; }
+    .nav-2col {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: .75rem;
+    }
+    .nav-card {
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-decoration: none; background: #111;
+      border-radius: 8px; border: 1px solid #222;
+      padding: 1.4rem .75rem; gap: .6rem;
+      min-height: 110px; transition: border-color .15s;
+    }
+    .nav-card:hover { border-color: #B89A5A; }
+    .nav-card.dim { cursor: default; }
+    .nav-icon { color: #fff; display: block; width: 28px; height: 28px; }
+    .nav-title {
+      font-size: .78rem; font-weight: 700; color: #B89A5A;
+      letter-spacing: .5px; text-align: center; line-height: 1.3;
+    }
+    .nav-desc {
+      font-size: .72rem; color: rgba(255,255,255,.4);
+      font-weight: 300; text-align: center; line-height: 1.5;
+    }
 {% endblock %}
 
 {% block header %}
@@ -141,66 +160,78 @@
   <p class="welcome-intro-title">Welcome</p>
   <p class="welcome-intro-body">We very much hope that you will enjoy your visit to our village.</p>
 </div>
-<div class="w-divider"></div>
-<div class="sections">
+<div class="nav-grid">
 
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Parking</div>
-    <p class="section-desc">Pay for your parking or let us know where you have left your car.</p>
-    <a href="/location/{{ slug }}/visitor/parking-select" class="btn-section btn-section-primary">Pay for Parking</a>
+  <!-- Parking — full-width primary card -->
+  <a href="/location/{{ slug }}/visitor/parking-select" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/>
+      <circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/>
+    </svg>
+    <div class="nav-title">Parking</div>
+  </a>
+
+  <!-- 2×2 grid — row 1 -->
+  <div class="nav-2col">
+    <a href="/location/{{ slug }}/visitor/history" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/>
+      </svg>
+      <div class="nav-title">Our History</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/movies" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="10" width="20" height="14" rx="2"/>
+        <path d="M22 14l8-4v12l-8-4V14z"/>
+        <circle cx="9" cy="17" r="2.5"/>
+      </svg>
+      <div class="nav-title">Movie Connections</div>
+    </a>
   </div>
 
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Our History</div>
-    <p class="section-desc">From the Norman church to the industrial Tillingbourne — a thousand years of life in the Surrey Hills.</p>
-    <a href="/location/{{ slug }}/visitor/history" class="btn-section">Read More</a>
+  <!-- 2×2 grid — row 2 -->
+  <div class="nav-2col">
+    <a href="/location/{{ slug }}/visitor/places-to-eat" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/>
+        <path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/>
+      </svg>
+      <div class="nav-title">Places to Eat</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/walking" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="19" cy="5" r="2.5"/>
+        <path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/>
+      </svg>
+      <div class="nav-title">Walking Routes</div>
+    </a>
   </div>
 
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Movie Connections</div>
-    <p class="section-desc">Shere has starred in The Holiday, Bridget Jones's Diary, and many more. Find the locations.</p>
-    <a href="/location/{{ slug }}/visitor/movies" class="btn-section">Read More</a>
+  <!-- 2×2 grid — row 3 -->
+  <div class="nav-2col">
+    <a href="/location/{{ slug }}/visitor/places-of-interest" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/>
+        <circle cx="16" cy="12" r="3.5"/>
+      </svg>
+      <div class="nav-title">Places of Interest</div>
+    </a>
+    <a href="#" class="nav-card dim" onclick="return false">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/>
+      </svg>
+      <div class="nav-title">Fun for Kids</div>
+    </a>
   </div>
 
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Places to Eat</div>
-    <p class="section-desc">From the finest restaurant in the Surrey Hills to a cream tea by the stream — something for every appetite.</p>
-    <a href="/location/{{ slug }}/visitor/places-to-eat" class="btn-section">View Guide</a>
-  </div>
-
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Walking Routes</div>
-    <p class="section-desc">Two waymarked routes — a short village loop and a longer walk to the William IV pub at Albury.</p>
-    <a href="/location/{{ slug }}/visitor/walking" class="btn-section">View Routes</a>
-  </div>
-
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Places of Interest</div>
-    <p class="section-desc">The Norman church, the ford, the film barn — historic and natural features within easy reach.</p>
-    <a href="/location/{{ slug }}/visitor/places-of-interest" class="btn-section">Explore</a>
-  </div>
-
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Fun for Kids</div>
-    <p class="section-desc">Paddling in the Tillingbourne, the stepping stones, and plenty more to keep young visitors happy.</p>
-    <a href="#" class="btn-section">Coming Soon</a>
-  </div>
-
-  <div class="w-divider"></div>
-  <div class="section">
-    <div class="section-title">Merch Store</div>
-    <p class="section-desc">Take a piece of Shere home with you — prints, maps, and locally made gifts.</p>
-    <a href="/location/{{ slug }}/visitor/merch" class="btn-section">Browse Store</a>
-  </div>
-
-  <div class="w-divider"></div>
+  <!-- Merch — full-width bottom card -->
+  <a href="/location/{{ slug }}/visitor/merch" class="nav-card-full" style="margin-bottom:0;">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M6 10h20l-2.5 18h-15L6 10z"/>
+      <path d="M12 10V8a4 4 0 018 0v2"/>
+    </svg>
+    <div class="nav-title">Merch Store</div>
+  </a>
 
 </div>
 
