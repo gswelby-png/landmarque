@@ -14,6 +14,24 @@
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       overflow-y: scroll;
     }
+    #scroll-nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 600;
+      background: #000; border-bottom: 1px solid #222;
+      transform: translateY(-100%);
+      transition: transform .25s ease;
+    }
+    #scroll-nav.visible { transform: translateY(0); }
+    #scroll-nav a {
+      display: flex; align-items: center; gap: .65rem;
+      max-width: 520px; margin: 0 auto;
+      padding: .85rem 1.25rem;
+      text-decoration: none;
+    }
+    #scroll-nav img { height: 22px; width: auto; flex-shrink: 0; display: block; }
+    #scroll-nav span {
+      font-weight: 700; font-size: .75rem; color: #fff;
+      letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
+    }
     .estate-header {
       text-align: center;
       padding: 0.586rem 1rem 2rem;
@@ -39,6 +57,13 @@
 </head>
 <body>
 
+  <nav id="scroll-nav">
+    <a href="/location/{{ slug }}/visitor/welcome">
+      {% if logo_url %}<img src="{{ logo_url }}" alt="{{ estate_name }}">{% endif %}
+      <span>{{ estate_name }}</span>
+    </a>
+  </nav>
+
   <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
 
     {% block header %}
@@ -58,5 +83,22 @@
 
   </div>
 
+  <script>
+    (function () {
+      const nav = document.getElementById('scroll-nav');
+      let lastY = window.scrollY;
+      window.addEventListener('scroll', function () {
+        const y = window.scrollY;
+        if (y < 80) {
+          nav.classList.remove('visible');
+        } else if (y < lastY) {
+          nav.classList.add('visible');
+        } else {
+          nav.classList.remove('visible');
+        }
+        lastY = y;
+      }, { passive: true });
+    })();
+  </script>
 </body>
 </html>
