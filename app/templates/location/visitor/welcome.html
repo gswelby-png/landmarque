@@ -3,6 +3,19 @@
 {% block title %}{{ estate_name }} — Welcome{% endblock %}
 
 {% block extra_css %}
+    #scroll-nav { transform: translateY(-100%); transition: transform .3s ease; }
+    #scroll-nav.visible { transform: translateY(0); }
+    #hero-burger {
+      position: fixed; top: .85rem; right: 1.25rem; z-index: 600;
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px; padding: .25rem;
+      transition: opacity .3s ease;
+    }
+    #hero-burger span {
+      display: block; width: 22px; height: 2px;
+      background: #fff; border-radius: 2px;
+    }
+    #hero-burger.hidden { opacity: 0; pointer-events: none; }
     .hero {
       position: relative;
       width: calc(100% + 2.5rem);
@@ -62,6 +75,9 @@
 {% endblock %}
 
 {% block header %}
+<button id="hero-burger" aria-label="Menu" onclick="document.getElementById('hamburger-menu').classList.add('open')">
+  <span></span><span></span><span></span>
+</button>
 <div class="hero">
   <img src="https://picsum.photos/seed/sheresurrey/800/1200" alt="{{ estate_name }}" class="hero-img">
   <img src="https://picsum.photos/seed/sheresurrey/800/1200?grayscale" alt="" class="hero-img hero-img-bw" id="hero-bw" aria-hidden="true">
@@ -146,5 +162,21 @@
   setTimeout(function () {
     document.getElementById('hero-bw').classList.add('fade');
   }, 1500);
+
+  // Nav bar / hero burger swap on scroll
+  (function () {
+    const nav    = document.getElementById('scroll-nav');
+    const burger = document.getElementById('hero-burger');
+    const threshold = 80;
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > threshold) {
+        nav.classList.add('visible');
+        burger.classList.add('hidden');
+      } else {
+        nav.classList.remove('visible');
+        burger.classList.remove('hidden');
+      }
+    }, { passive: true });
+  })();
 </script>
 {% endblock %}
