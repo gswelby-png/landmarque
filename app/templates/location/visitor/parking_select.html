@@ -3,7 +3,6 @@
 {% block title %}{{ estate_name }} — Parking{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav { transform: translateY(0) !important; }
     .btn-menu {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
@@ -19,6 +18,7 @@
     .btn-menu + .btn-menu { margin-top: .65rem; }
 {% endblock %}
 
+{% block page_intro %}{% endblock %}
 {% block header %}{% endblock %}
 
 {% block content %}

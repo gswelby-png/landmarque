@@ -17,10 +17,7 @@
     #scroll-nav {
       position: fixed; top: 0; left: 0; right: 0; z-index: 600;
       background: #000; border-bottom: 1px solid #222;
-      transform: translateY(-100%);
-      transition: transform .25s ease;
     }
-    #scroll-nav.visible { transform: translateY(0); }
     #scroll-nav .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       max-width: 520px; margin: 0 auto;
@@ -81,10 +78,8 @@
     }
     #hamburger-menu nav a:last-child { border-bottom: none; }
     #hamburger-menu nav a:hover { color: #B89A5A; }
-    .estate-header {
-      text-align: center;
-      padding: 0.586rem 1rem 2rem;
-    }
+    /* Estate header — used by welcome only */
+    .estate-header { text-align: center; padding: 0.586rem 1rem 2rem; }
     .estate-logo { max-width: 220px; height: auto; margin-bottom: 1.4rem; }
     .estate-name {
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
@@ -92,15 +87,12 @@
       letter-spacing: 2px; text-transform: uppercase; margin: 0 0 1rem;
       white-space: nowrap;
     }
-    .car-park-name {
-      color: #fff; font-weight: 700; font-size: 1rem;
-      letter-spacing: .5px; margin: 0 0 1.5rem;
-    }
-    .estate-welcome {
-      color: rgba(255,255,255,0.75);
-      font-weight: 300; font-size: 0.95rem;
-      line-height: 1.7; max-width: 480px; margin: 0 auto;
-    }
+    .car-park-name { color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: .5px; margin: 0 0 1.5rem; }
+    .estate-welcome { color: rgba(255,255,255,0.75); font-weight: 300; font-size: 0.95rem; line-height: 1.7; max-width: 480px; margin: 0 auto; }
+    /* Page intro — used by content pages */
+    .page-intro { padding: 3.5rem 0 2rem; text-align: center; }
+    .page-intro-title { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: 1.1rem; }
+    .page-intro-body { font-size: .87rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.7; }
     {% block extra_css %}{% endblock %}
   </style>
 </head>
@@ -138,18 +130,12 @@
 
   <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
 
-    {% block header %}
-    <div class="estate-header">
-      <a href="/location/{{ slug }}/visitor/welcome" style="text-decoration:none;">
-      {% if logo_url %}
-      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
-      {% endif %}
-      <h1 class="estate-name">{{ estate_name }}</h1>
-      </a>
-      <p class="car-park-name">{{ car_park_name }}</p>
-      <p class="estate-welcome">
-        {% block welcome_text %}{% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% else %}Welcome.{% endif %}{% endblock %}
-      </p>
+    {% block header %}{% endblock %}
+
+    {% block page_intro %}
+    <div class="page-intro">
+      <p class="page-intro-title">{{ car_park_name }}</p>
+      <p class="page-intro-body">{% block welcome_text %}{% if welcome_text %}{{ welcome_text }}{% elif car_park_tagline %}{{ car_park_tagline }}{% endif %}{% endblock %}</p>
     </div>
     {% endblock %}
 
@@ -173,20 +159,5 @@
     </div>
   </footer>
 
-  <script>
-    (function () {
-      const nav = document.getElementById('scroll-nav');
-      let lastY = window.scrollY;
-      window.addEventListener('scroll', function () {
-        const y = window.scrollY;
-        if (y < 80) {
-          nav.classList.remove('visible');
-        } else {
-          nav.classList.add('visible');
-        }
-        lastY = y;
-      }, { passive: true });
-    })();
-  </script>
 </body>
 </html>

@@ -2,35 +2,40 @@
 
 {% block title %}{{ estate_name }} — Welcome{% endblock %}
 
-{% block welcome_text %}Welcome to Shere. We very much hope that you will enjoy your visit to our village.{% endblock %}
-
 {% block extra_css %}
+    #scroll-nav { transform: translateY(-100%); transition: transform .25s ease; }
+    #scroll-nav.visible { transform: translateY(0); }
     .sections { padding-bottom: 3rem; }
     .w-divider { border-top: 1px solid #1a1a1a; margin: 0 -1.25rem; }
-    .section {
-      padding: 1.75rem 0;
-    }
-    .section-title {
-      font-size: 1.05rem; font-weight: 700; color: #B89A5A;
-      letter-spacing: .5px; margin-bottom: .45rem;
-    }
-    .section-desc {
-      font-size: .83rem; color: rgba(255,255,255,.55);
-      line-height: 1.65; font-weight: 300; margin-bottom: 1.1rem;
-    }
+    .section { padding: 1.75rem 0; }
+    .section-title { font-size: 1.05rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; margin-bottom: .45rem; }
+    .section-desc { font-size: .83rem; color: rgba(255,255,255,.55); line-height: 1.65; font-weight: 300; margin-bottom: 1.1rem; }
     .btn-section {
       display: inline-flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      background: #111; color: #fff;
+      text-decoration: none; background: #111; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 400; font-size: .85rem; letter-spacing: .5px;
-      border-radius: 4px;
-      padding: .6rem 1.1rem;
+      border-radius: 4px; padding: .6rem 1.1rem;
       border: 1px solid #333; transition: border-color .15s;
     }
     .btn-section:hover { border-color: #B89A5A; color: #fff; }
     .btn-section-primary { border-color: #B89A5A; color: #B89A5A; }
 {% endblock %}
+
+{% block header %}
+<div class="estate-header">
+  <a href="/location/{{ slug }}/visitor/welcome" style="text-decoration:none;">
+    {% if logo_url %}
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
+    {% endif %}
+    <h1 class="estate-name">{{ estate_name }}</h1>
+  </a>
+  <p class="car-park-name">Welcome</p>
+  <p class="estate-welcome">Welcome to Shere. We very much hope that you will enjoy your visit to our village.</p>
+</div>
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
 
 {% block content %}
 <div class="sections">
@@ -94,4 +99,14 @@
   <div class="w-divider"></div>
 
 </div>
+
+<script>
+  (function () {
+    const nav = document.getElementById('scroll-nav');
+    window.addEventListener('scroll', function () {
+      if (window.scrollY > 80) nav.classList.add('visible');
+      else nav.classList.remove('visible');
+    }, { passive: true });
+  })();
+</script>
 {% endblock %}
