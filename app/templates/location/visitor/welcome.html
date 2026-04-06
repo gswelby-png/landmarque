@@ -3,8 +3,47 @@
 {% block title %}{{ estate_name }} — Welcome{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav { transform: translateY(-100%); transition: transform .25s ease; }
-    #scroll-nav.visible { transform: translateY(0); }
+    .hero {
+      position: relative;
+      width: calc(100% + 2.5rem);
+      margin: -1.25rem -1.25rem 0;
+      height: 100vh;
+      overflow: hidden;
+    }
+    .hero-img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%; object-fit: cover; display: block;
+    }
+    .hero-img-bw {
+      transition: opacity 1.2s ease;
+      opacity: 1;
+    }
+    .hero-img-bw.fade { opacity: 0; }
+    .hero-overlay {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.52);
+    }
+    .hero-content {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      padding: 2rem 1.5rem; text-align: center;
+    }
+    .hero-logo { max-width: 160px; height: auto; margin-bottom: 1.2rem; }
+    .hero-title {
+      font-family: 'Raleway', sans-serif;
+      font-weight: 700; font-size: clamp(1.3rem, 7vw, 2.2rem);
+      color: #fff; letter-spacing: 3px; text-transform: uppercase;
+      margin-bottom: .6rem; white-space: nowrap;
+    }
+    .hero-subtitle {
+      font-size: .85rem; font-weight: 700; color: #B89A5A;
+      letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 1rem;
+    }
+    .hero-body {
+      font-size: .87rem; color: rgba(255,255,255,.75);
+      font-weight: 300; line-height: 1.7; max-width: 320px;
+    }
     .sections { padding-bottom: 3rem; }
     .w-divider { border-top: 1px solid #1a1a1a; margin: 0 -1.25rem; }
     .section { padding: 1.75rem 0; }
@@ -23,15 +62,18 @@
 {% endblock %}
 
 {% block header %}
-<div class="estate-header">
-  <a href="/location/{{ slug }}/visitor/welcome" style="text-decoration:none;">
+<div class="hero">
+  <img src="https://picsum.photos/seed/sheresurrey/800/1200" alt="{{ estate_name }}" class="hero-img">
+  <img src="https://picsum.photos/seed/sheresurrey/800/1200?grayscale" alt="" class="hero-img hero-img-bw" id="hero-bw" aria-hidden="true">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
     {% if logo_url %}
-    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="estate-logo">
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="hero-logo">
     {% endif %}
-    <h1 class="estate-name">{{ estate_name }}</h1>
-  </a>
-  <p class="car-park-name">Welcome</p>
-  <p class="estate-welcome">Welcome to Shere. We very much hope that you will enjoy your visit to our village.</p>
+    <h1 class="hero-title">{{ estate_name }}</h1>
+    <p class="hero-subtitle">Welcome</p>
+    <p class="hero-body">Welcome to Shere. We very much hope that you will enjoy your visit to our village.</p>
+  </div>
 </div>
 {% endblock %}
 
@@ -101,12 +143,9 @@
 </div>
 
 <script>
-  (function () {
-    const nav = document.getElementById('scroll-nav');
-    window.addEventListener('scroll', function () {
-      if (window.scrollY > 80) nav.classList.add('visible');
-      else nav.classList.remove('visible');
-    }, { passive: true });
-  })();
+  // Fade hero from B&W to colour after 1.5s
+  setTimeout(function () {
+    document.getElementById('hero-bw').classList.add('fade');
+  }, 1500);
 </script>
 {% endblock %}
