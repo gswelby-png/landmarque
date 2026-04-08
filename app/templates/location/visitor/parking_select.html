@@ -11,30 +11,46 @@
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
-    .btn-menu {
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      background: #111; color: #fff;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 400; font-size: 1.05rem; letter-spacing: .5px;
-      border-radius: 4px;
-      padding: 0.95rem 1rem; width: 100%;
-      border: 1px solid #B89A5A; transition: border-color .15s;
-      min-height: 3rem;
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
     }
-    .btn-menu:hover { border-color: #B89A5A; color: #fff; }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1rem;
+    }
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 2.5rem;
+    }
+    .btn-menu {
+      display: flex; align-items: center;
+      text-decoration: none;
+      background: #fff; color: #000;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 600; font-size: 1rem; letter-spacing: .5px;
+      border-radius: 6px;
+      padding: 1rem 1.25rem; width: 100%;
+      border: 1px solid #e0e0e0; transition: border-color .15s;
+    }
+    .btn-menu:hover { border-color: #B89A5A; color: #000; }
     .btn-menu + .btn-menu { margin-top: .65rem; }
+    .btn-arrow {
+      margin-left: auto; color: #B89A5A; font-size: 1.1rem;
+    }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
 {% block header %}{% endblock %}
 
 {% block content %}
-    <div style="padding: 5rem 0 2rem;">
-      <p style="font-size:1.6rem; font-weight:700; color:#fff; letter-spacing:.5px; text-align:center; margin-bottom:1.1rem;">Parking</p>
-      <p style="font-size:.87rem; color:rgba(255,255,255,.55); font-weight:300; line-height:1.7; margin-bottom:3rem; text-align:center;">Please let us know where you have parked in order that we can best assist you.</p>
-      <a href="/location/{{ slug }}/visitor/parking-farm-field-car-park" class="btn-menu">Farm Field Car Park</a>
-      <a href="/location/{{ slug }}/visitor/village-hall-car-park" class="btn-menu">Village Hall Car Park</a>
-      <a href="/location/{{ slug }}/visitor/roadside-parking" class="btn-menu">Roadside Parking</a>
-    </div>
+<div class="page-wrap">
+  <div class="page-title">Parking</div>
+  <p class="page-subtitle">Please let us know where you have parked so we can best assist you.</p>
+  <a href="/location/{{ slug }}/visitor/parking-farm-field-car-park" class="btn-menu">Farm Field Car Park <span class="btn-arrow">→</span></a>
+  <a href="/location/{{ slug }}/visitor/village-hall-car-park" class="btn-menu">Village Hall Car Park <span class="btn-arrow">→</span></a>
+  <a href="/location/{{ slug }}/visitor/roadside-parking" class="btn-menu">Roadside Parking <span class="btn-arrow">→</span></a>
+</div>
 {% endblock %}

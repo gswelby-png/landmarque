@@ -2,8 +2,6 @@
 
 {% block title %}{{ estate_name }} — Roadside Parking{% endblock %}
 
-{% block welcome_text %}Roadside parking in and around the village is free of charge and not managed by the Shere Manor Estate.<br><br>If you would like to make a donation to Shere Manor Estate charity, to support the public services that we provide around the village, including the provision of this visitor guide, it would be very much appreciated.{% endblock %}
-
 {% block extra_css %}
     #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
     #scroll-nav img { height: 28px; }
@@ -13,22 +11,40 @@
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
+    }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1rem;
+    }
+    .page-body {
+      font-size: .95rem; color: #555;
+      font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem;
+    }
     .btn-donate {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
-      background: #111; color: #B89A5A;
+      background: #000; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 400; font-size: 1.05rem; letter-spacing: .5px;
-      border-radius: 4px;
-      padding: 0.95rem 1rem; width: 100%;
-      border: 1px solid #B89A5A; transition: filter .15s;
-      min-height: 3rem;
+      font-weight: 700; font-size: 1rem; letter-spacing: .5px;
+      border-radius: 6px;
+      padding: 1.1rem 1.25rem; width: 100%;
+      border: none; transition: background .15s;
     }
-    .btn-donate:hover { filter: brightness(115%); }
+    .btn-donate:hover { background: #B89A5A; }
 {% endblock %}
 
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
 {% block content %}
-    <div style="padding: 0 0 2rem;">
-      <a href="#" class="btn-donate">Make a Donation</a>
-    </div>
+<div class="page-wrap">
+  <div class="page-title">Roadside Parking</div>
+  <p class="page-body">Roadside parking in and around the village is free of charge and is not managed by the Shere Manor Estate.<br><br>If you would like to make a donation to Shere Manor Estate charity — to support the public services we provide around the village, including this visitor guide — it would be very much appreciated.</p>
+  <a href="#" class="btn-donate">Make a Donation</a>
+</div>
 {% endblock %}
