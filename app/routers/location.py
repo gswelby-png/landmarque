@@ -144,7 +144,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21645, -0.44438],
             "summary": "Widely regarded as the finest restaurant in the Surrey Hills, Kinghams occupies a 17th-century cottage on Gomshall Lane. The cooking is modern British with classical technique — expect beautifully sourced local game, fish from the south coast, and a wine list that has clearly been assembled with care. Booking essential, particularly at weekends.",
-            "image_url": "https://picsum.photos/seed/kinghams/600/320",
+            "image_url": "https://s0.geograph.org.uk/geophotos/07/19/25/7192599_c38a509f.jpg",
         },
         {
             "slug": "william-iv",
@@ -156,7 +156,7 @@ PLACES_TO_EAT = {
             "distance": "45 min walk",
             "coords": [51.21554, -0.46509],
             "summary": "A destination pub tucked away in the hamlet of Little London near Albury Heath, with a serious reputation for seasonal, locally sourced food. The game dishes in autumn and winter are outstanding, and the low-ceilinged, beamed interior with open fire makes it especially rewarding after a long walk. Book well ahead for weekends.",
-            "image_url": "https://picsum.photos/seed/williamiv/600/320",
+            "image_url": "https://s0.geograph.org.uk/geophotos/02/52/87/2528744_6672c306.jpg",
         },
         {
             "slug": "white-horse",
@@ -216,7 +216,7 @@ PLACES_TO_EAT = {
             "distance": "20 min walk",
             "coords": [51.21130, -0.42630],
             "summary": "A converted watermill with a riverside terrace, serving a broad, crowd-pleasing menu in a relaxed setting. The outdoor seating beside the millrace is especially good in summer. Well suited to families and larger groups.",
-            "image_url": "https://picsum.photos/seed/gomshallmill/600/320",
+            "image_url": "https://s0.geograph.org.uk/geophotos/01/43/48/1434817_fc8bf353.jpg",
         },
         {
             "slug": "lucky-duck",
@@ -228,7 +228,7 @@ PLACES_TO_EAT = {
             "distance": "4 min walk",
             "coords": [51.21620, -0.44510],
             "summary": "A laid-back café beside the Tillingbourne stream, popular for brunch and light lunches. Dog-friendly with outdoor seating, and a short menu that changes regularly. Good coffee and a decent selection of sandwiches and wraps.",
-            "image_url": "https://picsum.photos/seed/luckyduck/600/320",
+            "image_url": "/static/images/village-ford.jpg",
         },
     ]
 }
@@ -253,7 +253,7 @@ PLACES_OF_INTEREST = {
             "distance": "5 min walk",
             "coords": [51.21580, -0.44560],
             "summary": "The barn now occupied by Steam Dreams was the location used for the interior scenes of the lead character's cottage in the 2006 film The Holiday, starring Cameron Diaz, Kate Winslet, Jude Law and Jack Black. The production team constructed the cottage set within the barn, and much of the film's English scenes were shot in and around Shere village. The exterior of the cottage used in the film can still be identified by locals, and the village remains a popular destination for fans of the film.",
-            "image_url": "https://picsum.photos/seed/holidaybarn/600/320",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
         },
         {
             "slug": "tillingbourne-ford",
@@ -271,7 +271,7 @@ PLACES_OF_INTEREST = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small but well-curated local museum telling the story of Shere and the surrounding villages from prehistoric times to the present day. Exhibits cover the industrial history of the Tillingbourne valley — which once powered gunpowder mills, iron foundries, and paper works — as well as the agricultural and domestic life of the community. Open on weekend afternoons and most Bank Holidays; admission is free.",
-            "image_url": "https://picsum.photos/seed/sheremuseum/600/320",
+            "image_url": "https://s0.geograph.org.uk/photos/53/52/535233_3166a1a7.jpg",
         },
         {
             "slug": "middle-street",
@@ -323,7 +323,7 @@ FUN_FOR_KIDS = {
             "distance": "3 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The stepping stones across the Tillingbourne ford are one of the most fun features of the village for younger children. The ford is shallow and the stones are broad and stable, though they can be slippery — wellies or water shoes recommended. On busy summer weekends a small informal queue forms, and there is a good-natured atmosphere as families help each other across. The water is gin-clear and you can often spot brown trout hovering in the current.",
-            "image_url": "https://picsum.photos/seed/steppingstones/600/320",
+            "image_url": "/static/images/village-ford.jpg",
         },
         {
             "slug": "shere-lido",
@@ -332,7 +332,7 @@ FUN_FOR_KIDS = {
             "distance": "8 min walk",
             "coords": [51.21580, -0.44200],
             "summary": "Shere Lido is a beautiful private open-air pool set in a woodland clearing — one of the last surviving rural lidos in Surrey. Unfortunately the lido is not accessible to day visitors; it is available exclusively to members and residents of the estate. If you are staying locally it is worth enquiring about guest access. For visitors, the river paddling in the park nearby is a lovely alternative on a warm day.",
-            "image_url": "https://picsum.photos/seed/sherelido/600/320",
+            "image_url": "/static/images/village-ford.jpg",
         },
         {
             "slug": "village-cricket",
@@ -341,7 +341,7 @@ FUN_FOR_KIDS = {
             "distance": "10 min walk",
             "coords": [51.21500, -0.44300],
             "summary": "On summer Saturdays and Sundays, Shere Cricket Club plays on one of the most scenic grounds in the county. The pavilion is open to spectators and there is usually a tea tent. Watching village cricket on a sunny afternoon — with the church tower visible above the treeline and the sound of leather on willow — is one of those quintessentially English experiences that is hard to beat. Check the club noticeboard at the ground for the fixture list.",
-            "image_url": "https://picsum.photos/seed/sherecricket/600/320",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
         },
         {
             "slug": "shere-museum",
@@ -350,7 +350,7 @@ FUN_FOR_KIDS = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small, free museum telling the story of Shere from prehistoric times to the present. Children enjoy the exhibits on the old water mills that once lined the Tillingbourne, the Roman road that ran through the valley, and the various film productions that have used the village as a location. Open on weekend afternoons and most Bank Holidays. Admission is free.",
-            "image_url": "https://picsum.photos/seed/sheremuseum2/600/320",
+            "image_url": "https://s0.geograph.org.uk/photos/53/52/535233_3166a1a7.jpg",
         },
     ]
 }
@@ -465,7 +465,7 @@ SHOPPING = {
             "hours": "Thu–Sun 10–17",
             "website": "",
             "description": "A charming antiques and curio shop tucked away near the church, selling vintage homewares, jewellery, prints, and decorative objects. The stock changes constantly and there are always surprises — the kind of place where you come in for a look and leave with something you did not know you needed.",
-            "image_url": "/static/images/middle-street.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg",
             "products": [
                 {"name": "Vintage Prints", "price": "from £15", "description": "Antique maps and botanical illustrations"},
                 {"name": "Silverware", "price": "from £25", "description": "Curated vintage silver pieces"},
