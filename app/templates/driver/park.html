@@ -3,6 +3,7 @@
 {% block title %}{{ estate_name }} — Parking{% endblock %}
 
 {% block extra_css %}
+    body { background: #fff !important; }
     #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
     #scroll-nav img { height: 28px; }
     #scroll-nav .nav-home span { font-size: .94rem; }
@@ -11,50 +12,72 @@
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
-    .payment-panel {
-      margin-bottom: 2rem;
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
     }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1rem;
+    }
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 1.75rem;
+    }
+    .reg-input {
+      width: 100%; font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      border: 1px solid #e0e0e0; border-radius: 6px;
+      padding: .75rem 1rem; letter-spacing: 4px;
+      font-weight: 700; font-size: 1.2rem; text-transform: uppercase;
+      background: #fff; color: #000; margin-bottom: 1.25rem;
+      transition: border-color .15s;
+    }
+    .reg-input:focus { outline: none; border-color: #B89A5A; }
+    .reg-input::placeholder { color: #bbb; font-size: .78rem; letter-spacing: 1px; font-weight: 400; }
     .duration-option {
-      cursor: pointer; border: 1px solid #555; border-radius: 4px;
-      padding: .75rem 1rem; display: flex; justify-content: space-between;
+      cursor: pointer; border: 1px solid #e0e0e0; border-radius: 6px;
+      padding: .85rem 1rem; display: flex; justify-content: space-between;
       align-items: center; transition: border-color .15s, background .15s;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      background: transparent; color: #fff;
+      background: #fff; color: #000; width: 100%;
     }
     .duration-option:hover { border-color: #B89A5A; }
-    .duration-option.selected { border-color: #B89A5A; color: #B89A5A; }
+    .duration-option.selected { border-color: #B89A5A; background: #f9f6ef; }
     .duration-option.selected .duration-price { color: #B89A5A; }
-    .duration-price { font-weight: 700; color: #fff; }
+    .duration-price { font-weight: 700; color: #000; }
     .btn-pay {
-      background: #B89A5A; border: none; color: #fff;
+      background: #000; border: none; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
       font-weight: 700; font-size: 1rem; letter-spacing: 1px;
-      text-transform: uppercase; border-radius: 4px;
-      padding: 0.95rem; width: 100%; min-height: 3rem;
-      margin-top: .5rem; cursor: pointer; transition: filter .15s;
+      text-transform: uppercase; border-radius: 6px;
+      padding: 1rem; width: 100%; min-height: 3rem;
+      margin-top: .75rem; cursor: pointer; transition: background .15s;
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
     }
-    .btn-pay:hover { filter: brightness(88%); color: #fff; }
-    input::placeholder { color: #B89A5A; font-weight: 700; font-size: .75rem; letter-spacing: 1px; }
+    .btn-pay:hover { background: #B89A5A; color: #fff; }
 {% endblock %}
 
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
 {% block content %}
-    <div class="payment-panel">
-        <input type="text" maxlength="10" placeholder="Enter your registration"
-               style="width:100%; font-family:'Raleway',Helvetica,Arial,sans-serif; border:1px solid #555; border-radius:4px; padding:.65rem .75rem; letter-spacing:4px; font-weight:700; font-size:1.1rem; text-transform:uppercase; background:#000; margin-bottom:1.25rem; color:#B89A5A;">
-
-        <div style="display:grid; gap:.5rem;">
-          {% for opt in options %}
-          <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
-            <span>{{ opt.label }}</span>
-            <span class="duration-price">{{ opt.price_display }}</span>
-          </label>
-          {% endfor %}
-        </div>
-
-        <a href="/location/{{ slug }}/visitor/parking-payment" class="btn-pay" style="margin-top:1rem;">Pay</a>
-    </div>
+<div class="page-wrap">
+  <div class="page-title">{{ car_park_name }}</div>
+  {% if car_park_tagline %}<p class="page-subtitle">{{ car_park_tagline }}</p>{% elif welcome_text %}<p class="page-subtitle">{{ welcome_text }}</p>{% endif %}
+  <input type="text" maxlength="10" placeholder="Enter your registration" class="reg-input">
+  <div style="display:grid; gap:.5rem; margin-bottom:.5rem;">
+    {% for opt in options %}
+    <label class="duration-option" onclick="selectDuration(this, '{{ opt.value }}')">
+      <span>{{ opt.label }}</span>
+      <span class="duration-price">{{ opt.price_display }}</span>
+    </label>
+    {% endfor %}
+  </div>
+  <a href="/location/{{ slug }}/visitor/parking-payment" class="btn-pay">Pay</a>
+</div>
 
   <script>
     function selectDuration(el, val) {
