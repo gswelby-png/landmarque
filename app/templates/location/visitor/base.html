@@ -148,6 +148,7 @@
 
   <div style="height:20vh; min-height:120px;"></div>
   <footer style="max-width:520px; margin:0 auto; padding:2.5rem 1.25rem 3rem; border-top:1px solid #1a1a1a;">
+    {% block footer_nav %}
     <p style="font-size:.6rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.25); margin-bottom:1.25rem;">Navigate</p>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:.1rem 1rem;">
       <a href="/location/{{ slug }}/visitor/welcome" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Welcome</a>
@@ -163,6 +164,7 @@
       <a href="/location/{{ slug }}/visitor/sponsor-a-bench" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Sponsor a Bench</a>
       <a href="/location/{{ slug }}/visitor/legacy" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Legacy</a>
     </div>
+    {% endblock footer_nav %}
     <div style="padding-top: 2rem;">
       <a href="/" style="font-size:.9rem; font-weight:700; color:#B89A5A; text-decoration:none; letter-spacing:.5px;">LandMarque</a>
     </div>

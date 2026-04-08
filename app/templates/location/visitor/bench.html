@@ -25,55 +25,78 @@
       font-size: .95rem; color: #666;
       font-weight: 300; line-height: 1.7; margin-bottom: 2rem;
     }
-    .hero-image {
-      display: block; width: calc(100% + 2.5rem);
-      margin: 0 -1.25rem 2rem;
-      height: 260px; object-fit: cover; object-position: center;
-    }
-    .tier { padding: 2rem 0; }
-    .tier-price {
-      font-size: 1.5rem; font-weight: 700; color: #B89A5A;
-      margin-bottom: .25rem;
-    }
-    .tier-name {
-      font-size: 1.15rem; font-weight: 700; color: #000;
-      margin-bottom: 1rem;
-    }
-    .tier-description {
-      font-size: 1rem; color: #333;
-      line-height: 1.9; font-weight: 400; margin-bottom: 1.25rem;
-    }
-    .tier-includes-label {
+    .section-label {
       font-size: .65rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: #999; margin-bottom: .6rem;
+      text-transform: uppercase; color: #999; margin-bottom: 1rem;
     }
-    .tier-includes { list-style: none; margin: 0 0 1.5rem; padding: 0; }
-    .tier-includes li {
-      font-size: .9rem; color: #444; line-height: 1.7;
-      padding: .3rem 0; border-bottom: 1px solid #f0f0f0;
-      display: flex; align-items: flex-start; gap: .6rem;
+    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+
+    /* Location cards */
+    .locations-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: .5rem;
     }
-    .tier-includes li::before {
-      content: "✓"; color: #B89A5A; font-weight: 700;
-      flex-shrink: 0; margin-top: .05rem;
+    .location-card {
+      border: 2px solid #e0e0e0; border-radius: 8px;
+      overflow: hidden; cursor: pointer;
+      transition: border-color .15s;
+      background: #fff;
     }
-    .tier-includes li:last-child { border-bottom: none; }
-    .enquire-btn {
-      display: block; width: 100%;
-      background: #000; color: #fff;
-      border: none; border-radius: 6px;
-      padding: 1rem; font-size: 1rem; font-weight: 700;
-      letter-spacing: .5px; text-align: center;
-      text-decoration: none; cursor: pointer;
-      font-family: inherit;
-      transition: background .15s;
+    .location-card:hover { border-color: #B89A5A; }
+    .location-card.selected { border-color: #B89A5A; background: #f9f6ef; }
+    .location-card img {
+      width: 100%; height: 110px;
+      object-fit: cover; object-position: center;
+      display: block;
     }
-    .enquire-btn:hover { background: #B89A5A; }
-    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
+    .location-card-body { padding: .6rem .7rem .7rem; }
+    .location-card-name {
+      font-size: .8rem; font-weight: 700; color: #000;
+      line-height: 1.3; margin-bottom: .2rem;
+    }
+    .location-card-status {
+      display: inline-block;
+      font-size: .6rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; border-radius: 3px;
+      padding: .15rem .4rem; margin-bottom: .35rem;
+    }
+    .status-new { background: #e8f5e9; color: #2e7d32; }
+    .status-sponsor { background: #fff3e0; color: #e65100; }
+    .location-card-desc {
+      font-size: .72rem; color: #666; line-height: 1.5;
+    }
+
+    /* Bench type cards */
+    .bench-types-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: .5rem;
+    }
+    .bench-type-card {
+      border: 2px solid #e0e0e0; border-radius: 8px;
+      overflow: hidden; cursor: pointer;
+      transition: border-color .15s;
+      background: #fff;
+    }
+    .bench-type-card:hover { border-color: #B89A5A; }
+    .bench-type-card.selected { border-color: #B89A5A; background: #f9f6ef; }
+    .bench-type-card img {
+      width: 100%; height: 110px;
+      object-fit: cover; object-position: center;
+      display: block;
+    }
+    .bench-type-card-body { padding: .6rem .7rem .7rem; }
+    .bench-type-card-name {
+      font-size: .8rem; font-weight: 700; color: #000;
+      line-height: 1.3; margin-bottom: .3rem;
+    }
+    .bench-type-card-desc {
+      font-size: .72rem; color: #666; line-height: 1.5;
+    }
+
     /* Enquiry form */
     .form-wrap {
       background: #f9f6ef; border-radius: 8px;
-      padding: 1.5rem; margin-top: 3rem;
+      padding: 1.5rem; margin-top: 2.5rem;
     }
     .form-title {
       font-size: 1.1rem; font-weight: 700; color: #000;
@@ -126,30 +149,47 @@
 <div class="page-wrap">
 
   <div class="page-title">Sponsor a Bench</div>
-  <p class="page-subtitle">A bench on the estate is more than a place to sit — it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that has given you so much, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
+  <p class="page-subtitle">A bench on this estate is more than a place to sit — it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that means a great deal to you, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
 
-  <img src="/static/images/village-ford.jpg" alt="Shere Estate" class="hero-image">
+  <hr class="divider">
 
-  {% for tier in tiers %}
-  {% if not loop.first %}<hr class="divider">{% endif %}
-  <div class="tier">
-    <div class="tier-price">{{ tier.price }}</div>
-    <div class="tier-name">{{ tier.name }}</div>
-    <p class="tier-description">{{ tier.description }}</p>
-    <div class="tier-includes-label">What's included</div>
-    <ul class="tier-includes">
-      {% for item in tier.includes %}
-      <li>{{ item }}</li>
-      {% endfor %}
-    </ul>
-    <a href="#enquire" class="enquire-btn" onclick="document.getElementById('tier-select').value='{{ tier.name }}'; document.getElementById('enquire').scrollIntoView({behavior:'smooth'}); return false;">Enquire about this option</a>
+  <div class="section-label">Choose a location</div>
+  <div class="locations-grid">
+    {% for loc in bench_locations %}
+    <div class="location-card" onclick="selectLocation(this, '{{ loc.slug }}', '{{ loc.name }}')" data-slug="{{ loc.slug }}">
+      <img src="{{ loc.image_url }}" alt="{{ loc.name }}" onerror="this.style.display='none'">
+      <div class="location-card-body">
+        <div class="location-card-name">{{ loc.name }}</div>
+        <span class="location-card-status {% if loc.status == 'new' %}status-new{% else %}status-sponsor{% endif %}">
+          {% if loc.status == 'new' %}New site{% else %}Re-dedicate{% endif %}
+        </span>
+        <div class="location-card-desc">{{ loc.description }}</div>
+      </div>
+    </div>
+    {% endfor %}
   </div>
-  {% endfor %}
+
+  <hr class="divider">
+
+  <div class="section-label">Choose a bench style</div>
+  <div class="bench-types-grid">
+    {% for bt in bench_types %}
+    <div class="bench-type-card" onclick="selectBenchType(this, '{{ bt.slug }}', '{{ bt.name }}')" data-slug="{{ bt.slug }}">
+      <img src="{{ bt.image_url }}" alt="{{ bt.name }}" onerror="this.style.display='none'">
+      <div class="bench-type-card-body">
+        <div class="bench-type-card-name">{{ bt.name }}</div>
+        <div class="bench-type-card-desc">{{ bt.description }}</div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <hr class="divider">
 
   <!-- Enquiry form -->
   <div class="form-wrap" id="enquire">
     <div class="form-title">Make an Enquiry</div>
-    <p class="form-subtitle">Fill in your details below and the estate team will be in touch within two working days to discuss your bench.</p>
+    <p class="form-subtitle">Fill in your details and the estate team will be in touch within two working days to discuss your bench.</p>
     <form id="bench-form" onsubmit="submitBenchForm(event)">
       <div class="form-group">
         <label>Your name</label>
@@ -160,10 +200,20 @@
         <input type="email" name="email" required placeholder="your@email.com">
       </div>
       <div class="form-group">
-        <label>Option</label>
-        <select name="tier" id="tier-select">
-          {% for tier in tiers %}
-          <option value="{{ tier.name }}">{{ tier.name }} — {{ tier.price }}</option>
+        <label>Preferred location</label>
+        <select name="location" id="location-select">
+          <option value="">— select a location —</option>
+          {% for loc in bench_locations %}
+          <option value="{{ loc.slug }}">{{ loc.name }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Bench style</label>
+        <select name="bench_type" id="bench-type-select">
+          <option value="">— select a bench style —</option>
+          {% for bt in bench_types %}
+          <option value="{{ bt.slug }}">{{ bt.name }}</option>
           {% endfor %}
         </select>
       </div>
@@ -173,7 +223,7 @@
       </div>
       <div class="form-group">
         <label>Any other notes</label>
-        <textarea name="notes" placeholder="Preferred location, occasion, or anything else you'd like us to know..."></textarea>
+        <textarea name="notes" placeholder="Occasion, preferred timing, or anything else you'd like us to know..."></textarea>
       </div>
       <button type="submit" class="form-submit">Send Enquiry</button>
     </form>
@@ -185,9 +235,22 @@
 </div>
 
 <script>
+  function selectLocation(card, slug, name) {
+    document.querySelectorAll('.location-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    const sel = document.getElementById('location-select');
+    if (sel) sel.value = slug;
+  }
+
+  function selectBenchType(card, slug, name) {
+    document.querySelectorAll('.bench-type-card').forEach(c => c.classList.remove('selected'));
+    card.classList.add('selected');
+    const sel = document.getElementById('bench-type-select');
+    if (sel) sel.value = slug;
+  }
+
   function submitBenchForm(e) {
     e.preventDefault();
-    // TODO: wire to backend endpoint
     document.getElementById('bench-form').style.display = 'none';
     document.getElementById('form-success').style.display = 'block';
   }

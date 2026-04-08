@@ -144,7 +144,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21645, -0.44438],
             "summary": "Widely regarded as the finest restaurant in the Surrey Hills, Kinghams occupies a 17th-century cottage on Gomshall Lane. The cooking is modern British with classical technique — expect beautifully sourced local game, fish from the south coast, and a wine list that has clearly been assembled with care. Booking essential, particularly at weekends.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/07/19/25/7192599_c38a509f.jpg",
+            "image_url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_563,q_65,w_1920/v1/clients/surrey/Kinghams_Shere_copyright_GBC_Image_captured_by_Chris_Lacey_December_24_e4c4238c-9c4d-4472-bad4-b1d790121b63.jpg",
         },
         {
             "slug": "william-iv",
@@ -305,7 +305,7 @@ FUN_FOR_KIDS = {
             "distance": "2 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The ducks on the Tillingbourne at the High Street bridge are a Shere institution and completely unafraid of people. Children can feed them from the bridge or from the bank alongside. Bread is not recommended — the village store sells proper duck food. Keep an eye out for moorhens nesting in the reeds, and if you are lucky you may spot a grey heron standing very still further downstream.",
-            "image_url": "/static/images/dabbling-duck.jpg",
+            "image_url": "https://s0.geograph.org.uk/photos/08/65/086595_f5aab469.jpg",
         },
         {
             "slug": "river-paddling",
@@ -323,7 +323,7 @@ FUN_FOR_KIDS = {
             "distance": "3 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The stepping stones across the Tillingbourne ford are one of the most fun features of the village for younger children. The ford is shallow and the stones are broad and stable, though they can be slippery — wellies or water shoes recommended. On busy summer weekends a small informal queue forms, and there is a good-natured atmosphere as families help each other across. The water is gin-clear and you can often spot brown trout hovering in the current.",
-            "image_url": "/static/images/village-ford.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/03/28/63/3286364_eda822d0.jpg",
         },
         {
             "slug": "shere-lido",
@@ -332,7 +332,7 @@ FUN_FOR_KIDS = {
             "distance": "8 min walk",
             "coords": [51.21580, -0.44200],
             "summary": "Shere Lido is a beautiful private open-air pool set in a woodland clearing — one of the last surviving rural lidos in Surrey. Unfortunately the lido is not accessible to day visitors; it is available exclusively to members and residents of the estate. If you are staying locally it is worth enquiring about guest access. For visitors, the river paddling in the park nearby is a lovely alternative on a warm day.",
-            "image_url": "/static/images/village-ford.jpg",
+            "image_url": "https://www.bathsandwashhouses.co.uk/wp-content/uploads/2020/05/Shere-Swimming-Pool-Twitter-21-May-2020-1024x618.jpg",
         },
         {
             "slug": "village-cricket",
@@ -341,7 +341,7 @@ FUN_FOR_KIDS = {
             "distance": "10 min walk",
             "coords": [51.21500, -0.44300],
             "summary": "On summer Saturdays and Sundays, Shere Cricket Club plays on one of the most scenic grounds in the county. The pavilion is open to spectators and there is usually a tea tent. Watching village cricket on a sunny afternoon — with the church tower visible above the treeline and the sound of leather on willow — is one of those quintessentially English experiences that is hard to beat. Check the club noticeboard at the ground for the fixture list.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/03/18/72/3187296_9fd9fce6.jpg",
         },
         {
             "slug": "shere-museum",
@@ -350,7 +350,7 @@ FUN_FOR_KIDS = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small, free museum telling the story of Shere from prehistoric times to the present. Children enjoy the exhibits on the old water mills that once lined the Tillingbourne, the Roman road that ran through the valley, and the various film productions that have used the village as a location. Open on weekend afternoons and most Bank Holidays. Admission is free.",
-            "image_url": "https://s0.geograph.org.uk/photos/53/52/535233_3166a1a7.jpg",
+            "image_url": "/static/images/middle-street.jpg",
         },
     ]
 }
@@ -471,6 +471,75 @@ SHOPPING = {
                 {"name": "Silverware", "price": "from £25", "description": "Curated vintage silver pieces"},
                 {"name": "Decorative Objects", "price": "from £10", "description": "Rotating selection of curios and collectibles"},
             ],
+        },
+    ]
+}
+
+# Bench types available for new bench orders
+BENCH_TYPES = [
+    {
+        "slug": "natural-oak",
+        "name": "Natural Oak",
+        "description": "A classic FSC-certified oak bench in a natural finish, constructed using traditional mortice and tenon joinery. Will weather to a silver-grey over time and last for decades with minimal maintenance.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bench_in_a_garden.jpg/640px-Bench_in_a_garden.jpg",
+    },
+    {
+        "slug": "painted-hardwood",
+        "name": "Painted Hardwood",
+        "description": "Solid iroko hardwood bench finished in your choice of estate green, charcoal, or white. Robust and low-maintenance, well suited to exposed locations.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bench_in_a_garden.jpg/640px-Bench_in_a_garden.jpg",
+    },
+    {
+        "slug": "edwardian-cast-iron",
+        "name": "Edwardian Cast Iron & Hardwood",
+        "description": "A heritage-style bench with ornate cast iron ends and slatted hardwood seating, based on classic late Victorian and Edwardian public park designs. Elegant and distinctive — a real feature in any location.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Cast_iron_bench%2C_Victoria_Embankment.jpg/640px-Cast_iron_bench%2C_Victoria_Embankment.jpg",
+    },
+    {
+        "slug": "memorial-stone",
+        "name": "Memorial Stone Seat",
+        "description": "A hand-cut local sandstone bench, unique to the estate. Heavy, permanent, and utterly in keeping with the Surrey Hills landscape. Each one is individually finished and takes approximately twelve weeks to complete.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Bench_in_a_garden.jpg/640px-Bench_in_a_garden.jpg",
+    },
+]
+
+# Bench locations — existing benches to sponsor + sites for new ones
+BENCH_LOCATIONS = {
+    "shere-manor-estate": [
+        {
+            "slug": "tillingbourne-bank",
+            "name": "Tillingbourne Bank",
+            "status": "new",
+            "description": "A south-facing position on the bank of the Tillingbourne, looking across the water meadows. Afternoon sun, sheltered by an ancient oak. One of the finest spots on the estate.",
+            "image_url": "https://s0.geograph.org.uk/geophotos/03/18/72/3187296_9fd9fce6.jpg",
+        },
+        {
+            "slug": "church-gate",
+            "name": "St James' Church Gate",
+            "status": "sponsor",
+            "description": "A weathered oak bench set into the flint wall beside the churchyard gate. Well-used by walkers and visitors to the church. The existing dedication plaque has expired and the bench is available for re-dedication.",
+            "image_url": "/static/images/church.jpg",
+        },
+        {
+            "slug": "orchard-corner",
+            "name": "The Orchard Corner",
+            "status": "new",
+            "description": "A peaceful spot at the eastern end of the estate orchard, where the footpath curves through old apple and pear trees. Beautiful in blossom season and tranquil year-round.",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
+        },
+        {
+            "slug": "north-downs-view",
+            "name": "North Downs Viewpoint",
+            "status": "new",
+            "description": "The highest bench position on the estate, on the ridge path with a clear view south across the Tillingbourne valley to the wooded hills beyond. Exposed but spectacular, especially at dawn and dusk.",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg",
+        },
+        {
+            "slug": "cricket-boundary",
+            "name": "Cricket Ground Boundary",
+            "status": "sponsor",
+            "description": "A painted hardwood bench on the boundary of the cricket ground. Currently in need of restoration. The sponsorship includes full refurbishment, new slats, and a fresh plaque.",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
         },
     ]
 }
@@ -1033,6 +1102,8 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
         "car_park_name": "Sponsor a Bench",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "tiers": BENCH_TIERS,
+        "bench_types": BENCH_TYPES,
+        "bench_locations": BENCH_LOCATIONS.get(slug, []),
     })
 
 
