@@ -3,6 +3,7 @@
 {% block title %}{{ walk.title }} — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
+    body { background: #fff !important; }
     body > div { padding-top: 0 !important; }
     .walk-header-bar {
       display: flex; align-items: center; gap: .65rem;
@@ -10,55 +11,55 @@
     }
     .walk-header-logo { height: 26px; width: auto; flex-shrink: 0; display: block; }
     .walk-header-name {
-      font-weight: 700; font-size: .8rem; color: #fff;
+      font-weight: 700; font-size: .8rem; color: #000;
       letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
     }
-    .w-divider { border-top: 1px solid #222; margin: 0 -1.25rem; }
+    .w-divider { border-top: 1px solid #e0e0e0; margin: 0 -1.25rem; }
     .walk-info-panel { padding: 1.7rem 0; }
-    .walk-info-title { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
-    .walk-info-summary { font-size: .82rem; color: rgba(255,255,255,.55); line-height: 1.6; font-weight: 300; }
+    .walk-info-title { font-size: 1rem; font-weight: 700; color: #000; margin-bottom: .3rem; }
+    .walk-info-summary { font-size: .82rem; color: #666; line-height: 1.6; font-weight: 300; }
     .walk-stats-row { display: flex; }
     .walk-stat {
       flex: 1; padding: .6rem .5rem; text-align: center;
-      border-right: 1px solid #222;
+      border-right: 1px solid #e0e0e0;
     }
     .walk-stat:last-child { border-right: none; }
     .walk-stat-value { font-size: .9rem; font-weight: 700; color: #B89A5A; }
     .walk-stat-label {
       font-size: .56rem; font-weight: 600; letter-spacing: 1.5px;
-      text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: .15rem;
+      text-transform: uppercase; color: #aaa; margin-top: .15rem;
     }
     .map-sticky {
       position: sticky; top: 0; z-index: 500;
       margin: 0 -1.25rem;
     }
     #map { width: 100%; height: 42vh; display: block; }
-    .leaflet-container { background: #000 !important; }
+    .leaflet-container { background: #e8e8e8 !important; }
     .leaflet-control-attribution {
-      background: rgba(0,0,0,0.55) !important;
-      color: #444 !important; font-size: 8px !important;
+      background: rgba(255,255,255,0.7) !important;
+      color: #888 !important; font-size: 8px !important;
     }
-    .leaflet-control-attribution a { color: #555 !important; }
+    .leaflet-control-attribution a { color: #666 !important; }
     .leaflet-attribution-flag { display: none !important; }
     .waypoints { padding: 1.25rem 0 0; }
     .waypoint {
       display: flex; gap: 1rem; margin-bottom: 1.25rem;
-      padding-bottom: 1.25rem; border-bottom: 1px solid #1a1a1a;
+      padding-bottom: 1.25rem; border-bottom: 1px solid #ebebeb;
       transition: opacity .4s;
     }
     .waypoint:last-child { border-bottom: none; margin-bottom: 0; }
-    .waypoint.inactive { opacity: .35; }
+    .waypoint.inactive { opacity: .3; }
     .waypoint-number {
       width: 26px; height: 26px; border-radius: 50%;
-      background: #B89A5A; color: #000;
+      background: #B89A5A; color: #fff;
       font-size: .72rem; font-weight: 800;
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0; margin-top: .1rem;
       transition: background .4s;
     }
-    .waypoint.active .waypoint-number { background: #fff; }
-    .waypoint-title { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
-    .waypoint-desc { font-size: .82rem; color: rgba(255,255,255,.6); line-height: 1.65; font-weight: 300; margin-bottom: .6rem; }
+    .waypoint.active .waypoint-number { background: #000; }
+    .waypoint-title { font-size: .95rem; font-weight: 700; color: #000; margin-bottom: .3rem; }
+    .waypoint-desc { font-size: .82rem; color: #444; line-height: 1.65; font-weight: 400; margin-bottom: .6rem; }
     .waypoint-desc:last-child { margin-bottom: 0; }
     .waypoint-image {
       width: 100%; border-radius: 6px; margin-top: .75rem;
@@ -141,7 +142,7 @@
         keyboard: false
       });
 
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
         attribution: '&copy; <a href="https://openstreetmap.org">OSM</a> &copy; <a href="https://carto.com">CARTO</a>',
         maxZoom: 19
       }).addTo(map);
@@ -159,7 +160,7 @@
       waypointCoords.forEach((coord, i) => {
         L.marker(coord, {
           icon: L.divIcon({
-            html: `<div id="marker-${i}" style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#000;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .4s;">${i+1}</div>`,
+            html: `<div id="marker-${i}" style="width:22px;height:22px;border-radius:50%;background:#B89A5A;color:#fff;font-size:10px;font-weight:800;display:flex;align-items:center;justify-content:center;transition:background .4s;">${i+1}</div>`,
             iconSize: [22, 22], iconAnchor: [11, 11], className: ''
           })
         }).addTo(map);
@@ -178,7 +179,7 @@
 
       function setMarker(i, active) {
         const m = document.getElementById(`marker-${i}`);
-        if (m) m.style.background = active ? '#fff' : '#B89A5A';
+        if (m) m.style.background = active ? '#000' : '#B89A5A';
       }
 
       function resetOverview() {
