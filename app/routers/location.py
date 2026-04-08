@@ -409,68 +409,92 @@ MERCH_PRODUCTS = {
 SHOPPING = {
     "shere-manor-estate": [
         {
-            "slug": "steam-dreams",
-            "name": "Steam Dreams",
-            "type": "Gifts & Collectibles",
-            "distance": "2 min walk",
-            "coords": [51.21655, -0.44490],
-            "hours": "Tue–Sun 10–17",
-            "website": "https://steamdreams.co.uk",
-            "description": "A wonderful independent shop on Middle Street specialising in model railways, gifts, and curiosities. Steam Dreams is a local institution — the kind of shop that rewards a slow browse. The window display alone is worth stopping for.",
-            "image_url": "/static/images/middle-street.jpg",
-            "products": [
-                {"name": "Model Locomotive", "price": "from £45", "description": "OO gauge scale models of classic steam engines"},
-                {"name": "Shere Village Print", "price": "£18", "description": "Limited edition pen-and-ink print of Middle Street"},
-                {"name": "Surrey Hills Map", "price": "£12", "description": "Detailed OS-style illustrated map of the local area"},
-            ],
-        },
-        {
-            "slug": "shere-pottery",
-            "name": "Shere Pottery",
-            "type": "Craft & Ceramics",
-            "distance": "3 min walk",
-            "coords": [51.21648, -0.44480],
-            "hours": "Wed–Sun 10–16",
-            "website": "",
-            "description": "A working pottery studio and gallery showing handmade ceramics inspired by the Surrey landscape. Visitors can watch pieces being made on the wheel and browse a wide range of functional and decorative work — bowls, mugs, tiles, and one-off sculptural pieces. Everything is made on the premises.",
-            "image_url": "/static/images/middle-street.jpg",
-            "products": [
-                {"name": "Handmade Mug", "price": "£22", "description": "Wheel-thrown stoneware in earthy Surrey tones"},
-                {"name": "Ceramic Bowl", "price": "£35", "description": "Glazed serving bowl, each one unique"},
-                {"name": "Village Tile", "price": "£28", "description": "Hand-decorated tile depicting a Shere landmark"},
-            ],
-        },
-        {
-            "slug": "shere-village-store",
-            "name": "Shere Village Store & Post Office",
-            "type": "General Store",
+            "slug": "welcome-shere",
+            "name": "Welcome Shere",
+            "type": "Convenience Store",
             "distance": "1 min walk",
             "coords": [51.21660, -0.44440],
             "hours": "Mon–Sat 7–18, Sun 8–13",
             "website": "",
-            "description": "The heart of the village — a well-stocked independent store and post office serving the community for generations. Excellent range of local produce, freshly baked goods, newspapers, and the usual essentials. The noticeboard inside is the best way to find out what is happening in the village.",
-            "image_url": "/static/images/middle-street.jpg",
-            "products": [
-                {"name": "Local Honey", "price": "£7", "description": "Raw Surrey Hills honey from local hives"},
-                {"name": "Homemade Jam", "price": "£5", "description": "Seasonal fruit jams made locally"},
-                {"name": "Fresh Bread", "price": "£3.50", "description": "Baked daily, delivered each morning"},
-            ],
+            "description": "The village's everyday essentials — a well-stocked convenience store and post office right in the heart of Shere. Stocks a wide range of groceries, fresh bread, local produce, newspapers, snacks and drinks. The noticeboard inside is the best way to find out what is happening in the village.",
+            "image_url": "",
         },
         {
             "slug": "shere-pottage",
             "name": "Shere Pottage",
-            "type": "Antiques & Gifts",
-            "distance": "4 min walk",
-            "coords": [51.21640, -0.44500],
-            "hours": "Thu–Sun 10–17",
+            "type": "Garden & Home Wares",
+            "distance": "3 min walk",
+            "coords": [51.21648, -0.44470],
+            "hours": "Daily 10:30–17:30",
+            "website": "https://sherepottage.co.uk",
+            "description": "A thoughtfully curated independent shop at The Forge on Middle Street, selling garden and homewares, sustainable cleaning products, and ethically sourced gifts. Everything is chosen with care — natural ingredients, minimal packaging, and a genuine commitment to responsible sourcing. A lovely place to browse and find something a little different.",
+            "image_url": "",
+        },
+        {
+            "slug": "split-figs",
+            "name": "Split Figs",
+            "type": "Interiors & Lifestyle",
+            "distance": "2 min walk",
+            "coords": [51.21655, -0.44490],
+            "hours": "",
+            "website": "https://splitfigs.com",
+            "description": "An eclectic and beautifully styled interiors boutique on The Square, stocking vintage furniture, timeless homewares, and unique accessories curated from local artists and makers. The range covers everything from mirrors and lighting to cashmere, candles and decorative art — and the stock is constantly refreshed. Split Figs also runs creative workshops and events throughout the year.",
+            "image_url": "",
+        },
+        {
+            "slug": "shere-antiques",
+            "name": "Shere Antiques Centre",
+            "type": "Antiques",
+            "distance": "3 min walk",
+            "coords": [51.21648, -0.44480],
+            "hours": "Mon–Sat 10–17, Sun 11–17",
             "website": "",
-            "description": "A charming antiques and curio shop tucked away near the church, selling vintage homewares, jewellery, prints, and decorative objects. The stock changes constantly and there are always surprises — the kind of place where you come in for a look and leave with something you did not know you needed.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg",
-            "products": [
-                {"name": "Vintage Prints", "price": "from £15", "description": "Antique maps and botanical illustrations"},
-                {"name": "Silverware", "price": "from £25", "description": "Curated vintage silver pieces"},
-                {"name": "Decorative Objects", "price": "from £10", "description": "Rotating selection of curios and collectibles"},
-            ],
+            "description": "A long-established antiques centre on Middle Street with multiple dealers under one roof. Sells small furniture, decorative arts, silverware, ceramics, jewellery, and collectibles spanning several centuries. The kind of place where patience is rewarded — something different turns up every visit.",
+            "image_url": "",
+        },
+        {
+            "slug": "lavender-goose",
+            "name": "Lavender Goose",
+            "type": "Lifestyle Store & Café",
+            "distance": "5 min drive · Gomshall",
+            "coords": [51.2110, -0.4390],
+            "hours": "",
+            "website": "http://www.lavendergoose.co.uk",
+            "description": "Set in the handsome former Black Horse pub in Gomshall — just minutes from Shere — Lavender Goose is one of the area's best lifestyle stores. Stocks jewellery, handbags, scarves, cashmere, candles, mirrors, throws, lighting and decorative accessories from around the world. There is also a café serving breakfast sandwiches, cakes and coffee. Highly recommended if you have a spare half-hour.",
+            "image_url": "",
+        },
+        {
+            "slug": "shere-museum-shop",
+            "name": "Shere Museum",
+            "type": "Museum & Gift Shop",
+            "distance": "2 min walk",
+            "coords": [51.21640, -0.44460],
+            "hours": "",
+            "website": "https://www.sheremuseum.co.uk",
+            "description": "Shere's small but absorbing local museum on Gomshall Lane tells the story of the village from its earliest history to the present day. The gift shop sells books, prints, and locally produced items, with all proceeds going directly back to the museum. Well worth a visit — and completely free to enter.",
+            "image_url": "",
+        },
+    ]
+}
+
+# Local produce available to buy in the area — shown on the combined shopping page
+LOCAL_PRODUCE = {
+    "shere-manor-estate": [
+        {
+            "name": "Silent Pool Gin",
+            "producer": "Silent Pool Distillers · Albury (10 min drive)",
+            "price": "from £38",
+            "description": "Handcrafted at Silent Pool just outside Albury, this celebrated Surrey Hills gin is made with 24 botanicals including local elderflower and honey. Floral, complex and distinctly of this landscape. Buy direct from the distillery shop — tastings and tours also available. 70cl, 43% ABV.",
+            "image_url": "https://silentpooldistillers.com/cdn/shop/files/1x1_Packshot_white.jpg?crop=center&height=500&v=1743162805&width=500",
+            "buy_url": "https://silentpooldistillers.com",
+        },
+        {
+            "name": "Tanhurst Estate Rosé",
+            "producer": "Tanhurst Estate Vineyard · Leith Hill (15 min drive)",
+            "price": "from £18",
+            "description": "An elegant English rosé from Tanhurst Estate on the lower slopes of Leith Hill, part of the Vineyards of the Surrey Hills wine route. Made from Chardonnay, Pinot Meunier, and Pinot Noir Précoce — pale salmon in colour with notes of strawberry and white peach. Visit the vineyard café at weekends. 75cl.",
+            "image_url": "https://tanhurstestate.co.uk/wp-content/uploads/2025/03/6-bottles-Rosiers-Rose.jpg",
+            "buy_url": "https://tanhurstestate.co.uk",
         },
     ]
 }
@@ -1053,21 +1077,8 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
 
 
 @router.get("/{slug}/visitor/merch", response_class=HTMLResponse)
-def visitor_merch(request: Request, slug: str, db: Session = Depends(get_db)):
-    estate = _get_estate(slug)
-    if not estate:
-        return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
-    products = MERCH_PRODUCTS.get(slug, [])
-    return templates.TemplateResponse("location/visitor/merch.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Store",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "products": products,
-    })
+def visitor_merch(request: Request, slug: str):
+    return RedirectResponse(url=f"/location/{slug}/visitor/shopping", status_code=301)
 
 
 @router.get("/{slug}/visitor/shopping", response_class=HTMLResponse)
@@ -1077,14 +1088,14 @@ def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db))
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate["car_park_slug"]
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
-    shops = SHOPPING.get(slug, [])
     return templates.TemplateResponse("location/visitor/shopping.html", {
         "request": request,
         "slug": slug,
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Shopping",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "shops": shops,
+        "shops": SHOPPING.get(slug, []),
+        "local_produce": LOCAL_PRODUCE.get(slug, []),
     })
 
 

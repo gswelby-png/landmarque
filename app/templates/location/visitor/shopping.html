@@ -44,40 +44,15 @@
     }
     .shop-image-placeholder {
       width: calc(100% + 2.5rem); margin: .75rem -1.25rem 1.25rem;
-      height: 200px; background: #f5f5f5;
+      height: 180px; background: #f0f0f0;
       display: flex; align-items: center; justify-content: center;
-      color: #bbb; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+      color: #bbb; font-size: .75rem; letter-spacing: 2px; text-transform: uppercase;
     }
     .shop-description {
       font-size: 1rem; color: #222;
       line-height: 1.9; font-weight: 400; margin-bottom: 1.25rem;
     }
-    /* Products */
-    .products-label {
-      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: #999; margin-bottom: .75rem;
-    }
-    .products-grid {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: .75rem; margin-bottom: 1.25rem;
-    }
-    .product-card {
-      border: 1px solid #eee; border-radius: 6px;
-      padding: .9rem .85rem; background: #fafafa;
-    }
-    .product-name { font-size: .9rem; font-weight: 700; color: #000; margin-bottom: .2rem; }
-    .product-price { font-size: .85rem; font-weight: 700; color: #B89A5A; margin-bottom: .3rem; }
-    .product-desc { font-size: .78rem; color: #666; line-height: 1.5; font-weight: 400; }
-    /* Online ordering notice */
-    .online-notice {
-      background: #f9f6ef; border-left: 3px solid #B89A5A;
-      padding: .85rem 1rem; border-radius: 0 6px 6px 0;
-      margin-bottom: 1.25rem;
-    }
-    .online-notice p {
-      font-size: .85rem; color: #555; line-height: 1.6; margin: 0;
-    }
-    .shop-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .shop-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
     .directions-link {
       font-size: .9rem; font-weight: 700; color: #B89A5A;
       text-decoration: none; letter-spacing: .5px;
@@ -89,6 +64,42 @@
     }
     .website-link:hover { color: #000; }
     .divider { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
+    /* Local produce section */
+    .section-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #999;
+      padding-top: 2.5rem; margin-bottom: 1.25rem;
+    }
+    .produce-card {
+      border: 1px solid #e0e0e0; border-radius: 8px;
+      overflow: hidden; margin-bottom: 1rem;
+    }
+    .produce-image {
+      display: block; width: 100%; height: 200px;
+      object-fit: contain; background: #fafafa; padding: 1rem;
+    }
+    .produce-body { padding: 1rem 1.1rem 1.25rem; }
+    .produce-name {
+      font-size: 1.05rem; font-weight: 700; color: #000;
+      margin-bottom: .2rem;
+    }
+    .produce-producer {
+      font-size: .78rem; color: #B89A5A; font-weight: 600;
+      letter-spacing: .3px; margin-bottom: .75rem;
+    }
+    .produce-price {
+      font-size: .9rem; font-weight: 700; color: #000;
+      margin-bottom: .6rem;
+    }
+    .produce-desc {
+      font-size: .9rem; color: #444;
+      line-height: 1.7; font-weight: 300; margin-bottom: 1rem;
+    }
+    .produce-link {
+      font-size: .88rem; font-weight: 700; color: #B89A5A;
+      text-decoration: none; letter-spacing: .5px;
+    }
+    .produce-link:hover { text-decoration: underline; }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
@@ -98,39 +109,22 @@
 <div class="page-wrap">
 
   <div class="page-title">Shopping</div>
-  <p class="page-subtitle">Shere has a wonderful collection of independent shops — the kind you simply do not find in towns anymore. Browse local crafts, gifts, antiques, and produce, and take a piece of the village home with you.</p>
+  <p class="page-subtitle">Shere and the surrounding villages have a wonderful collection of independent shops — the kind you rarely find in towns anymore. Browse homewares, lifestyle gifts, antiques, and local produce, and take a piece of the Surrey Hills home with you.</p>
 
   {% for shop in shops %}
   {% if not loop.first %}<hr class="divider">{% endif %}
 
   <div class="shop-name">{{ shop.name }}</div>
-  <div class="shop-meta">{{ shop.type }} · {{ shop.distance }}</div>
-  <div class="shop-hours">{{ shop.hours }}</div>
+  <div class="shop-meta">{{ shop.type }}{% if shop.distance %} · {{ shop.distance }}{% endif %}</div>
+  {% if shop.hours %}<div class="shop-hours">{{ shop.hours }}</div>{% endif %}
 
   {% if shop.image_url %}
   <img src="{{ shop.image_url }}" alt="{{ shop.name }}" class="shop-image">
   {% else %}
-  <div class="shop-image-placeholder">Image coming soon</div>
+  <div class="shop-image-placeholder">Photo coming soon</div>
   {% endif %}
 
   <p class="shop-description">{{ shop.description }}</p>
-
-  {% if shop.products %}
-  <div class="products-label">Products available</div>
-  <div class="products-grid">
-    {% for product in shop.products %}
-    <div class="product-card">
-      <div class="product-name">{{ product.name }}</div>
-      <div class="product-price">{{ product.price }}</div>
-      <div class="product-desc">{{ product.description }}</div>
-    </div>
-    {% endfor %}
-  </div>
-  {% endif %}
-
-  <div class="online-notice">
-    <p>Want to order online? Ask the estate — we are working with local shops to make home delivery available directly through this app.</p>
-  </div>
 
   <div class="shop-links">
     <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
@@ -141,6 +135,28 @@
   </div>
 
   {% endfor %}
+
+  {% if local_produce %}
+  <hr class="divider">
+  <div class="section-label">Local produce worth taking home</div>
+
+  {% for item in local_produce %}
+  <div class="produce-card">
+    {% if item.image_url %}
+    <img src="{{ item.image_url }}" alt="{{ item.name }}" class="produce-image">
+    {% endif %}
+    <div class="produce-body">
+      <div class="produce-name">{{ item.name }}</div>
+      <div class="produce-producer">{{ item.producer }}</div>
+      <div class="produce-price">{{ item.price }}</div>
+      <p class="produce-desc">{{ item.description }}</p>
+      {% if item.buy_url %}
+      <a href="{{ item.buy_url }}" target="_blank" rel="noopener" class="produce-link">Buy direct ↗</a>
+      {% endif %}
+    </div>
+  </div>
+  {% endfor %}
+  {% endif %}
 
 </div>
 {% endblock %}
