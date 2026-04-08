@@ -924,7 +924,7 @@ def visitor_parking_payment(request: Request, slug: str, db: Session = Depends(g
     accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/payment_mockup.html", {
         "request": request,
-        "slug": cp_slug,
+        "slug": slug,
         "estate_name": car_park.owner.name if car_park else "",
         "car_park_name": car_park.name if car_park else "",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
@@ -1141,7 +1141,7 @@ def visitor_parking_receipt(request: Request, slug: str, db: Session = Depends(g
     accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/receipt_placeholder.html", {
         "request": request,
-        "slug": cp_slug,
+        "slug": slug,
         "estate_name": car_park.owner.name if car_park else "",
         "car_park_name": car_park.name if car_park else "",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
