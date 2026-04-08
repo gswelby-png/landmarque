@@ -2,8 +2,6 @@
 
 {% block title %}Places to Eat — {{ estate_name }}{% endblock %}
 
-{% block welcome_text %}We are blessed with a great range of places to eat and drink in and around the village.{% endblock %}
-
 {% block extra_css %}
     /* Nav bar */
     #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
@@ -15,153 +13,103 @@
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
-    /* Page intro */
-    .page-intro { padding-top: 5rem; padding-bottom: 3rem; }
-    .page-intro-title { font-size: 2rem !important; }
-    .page-intro-body { font-size: 1rem !important; color: rgba(255,255,255,.65) !important; }
-    /* Cards */
-    .eat-cards { padding-top: 0; }
-    .eat-card {
-      background: #111; border-radius: 10px;
-      overflow: hidden; margin-bottom: 3.5rem;
-      border: 1px solid #222;
+    /* White content area */
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
     }
-    .eat-meta { padding: 1.5rem 1.4rem 1rem; }
-    .eat-header-row {
-      display: flex; align-items: center; justify-content: space-between;
-      gap: .75rem; margin-bottom: .4rem;
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1.25rem;
     }
-    .eat-name { font-size: 1.25rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; }
-    .type-badge {
-      flex-shrink: 0; padding: .3rem .75rem;
-      border: 1px solid #333; border-radius: 20px;
-      font-size: .7rem; font-weight: 700;
-      letter-spacing: 1px; text-transform: uppercase;
-      color: rgba(255,255,255,.4);
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem;
     }
-    .eat-distance {
-      font-size: .85rem; color: rgba(255,255,255,.35);
-      font-weight: 600; letter-spacing: .5px;
-      margin-bottom: .3rem;
+    .entry-name {
+      font-size: 1.2rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding-top: 2.25rem; margin-bottom: .3rem;
     }
-    .eat-image-wrap {
-      position: relative; width: 100%; height: 210px; display: block;
+    .entry-meta {
+      font-size: .85rem; color: #888; font-weight: 600;
+      letter-spacing: .5px; margin-bottom: 1rem; text-transform: capitalize;
     }
-    .eat-image {
-      position: absolute; inset: 0;
-      width: 100%; height: 100%; object-fit: cover; display: block;
+    .entry-image {
+      width: 100%; border-radius: 6px; display: block;
+      margin: .75rem 0 1.25rem; aspect-ratio: 4/3; object-fit: cover;
     }
-    .eat-image-bw {
-      transition: opacity .8s ease;
-      opacity: 1; filter: grayscale(1);
-    }
-    .eat-card.colour .eat-image-bw { opacity: 0; }
-    .eat-image-placeholder {
-      width: 100%; height: 210px; background: #1a1a1a;
+    .entry-image-placeholder {
+      width: 100%; height: 200px; background: #f5f5f5; border-radius: 6px;
       display: flex; align-items: center; justify-content: center;
-      color: #333; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+      color: #bbb; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+      margin: .75rem 0 1.25rem;
     }
-    .eat-stats {
-      display: flex; border-top: 1px solid #1a1a1a; border-bottom: 1px solid #1a1a1a;
+    .entry-stats {
+      display: flex; border: 1px solid #eee; border-radius: 6px;
+      margin-bottom: 1.25rem; overflow: hidden;
     }
-    .eat-stat {
-      flex: 1; padding: 1.1rem .5rem; text-align: center;
-      border-right: 1px solid #1a1a1a;
-    }
-    .eat-stat:last-child { border-right: none; }
-    .eat-stat-value { font-size: 1.1rem; font-weight: 700; color: #B89A5A; }
-    .eat-stat-label {
+    .entry-stat { flex: 1; padding: .9rem .5rem; text-align: center; border-right: 1px solid #eee; }
+    .entry-stat:last-child { border-right: none; }
+    .entry-stat-value { font-size: 1rem; font-weight: 700; color: #B89A5A; }
+    .entry-stat-label {
       font-size: .65rem; font-weight: 600; letter-spacing: 1.5px;
-      text-transform: uppercase; color: rgba(255,255,255,.35); margin-top: .5rem;
+      text-transform: uppercase; color: #999; margin-top: .4rem;
     }
-    .eat-body { padding: 1.5rem 1.4rem 1.75rem; }
-    .eat-summary {
-      font-size: 1rem; color: rgba(255,255,255,.65);
-      line-height: 1.75; font-weight: 300; margin-bottom: 1.3rem;
+    .entry-summary {
+      font-size: 1rem; color: #222;
+      line-height: 1.9; font-weight: 400; margin-bottom: 1rem;
     }
     .directions-link {
       font-size: .9rem; font-weight: 700; color: #B89A5A;
       text-decoration: none; letter-spacing: .5px;
     }
     .directions-link:hover { text-decoration: underline; }
+    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
 {% endblock %}
 
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
 {% block content %}
-    <div class="eat-cards">
-      {% for place in places %}
-      <div class="eat-card">
-        <div class="eat-meta">
-          <div class="eat-header-row">
-            <span class="eat-name">{{ place.name }}</span>
-            <span class="type-badge">{{ place.type }}</span>
-          </div>
-          <div class="eat-distance">{{ place.distance }}</div>
-        </div>
-        {% if place.image_url %}
-        <div class="eat-image-wrap">
-          <img src="{{ place.image_url | replace('?grayscale', '') }}" alt="{{ place.name }}" class="eat-image">
-          <img src="{{ place.image_url }}" alt="" class="eat-image eat-image-bw" aria-hidden="true">
-        </div>
-        {% else %}
-        <div class="eat-image-placeholder">Image coming soon</div>
-        {% endif %}
-        <div class="eat-stats">
-          <div class="eat-stat">
-            <div class="eat-stat-value">{{ place.rating }}</div>
-            <div class="eat-stat-label">Rating</div>
-          </div>
-          <div class="eat-stat">
-            <div class="eat-stat-value">{{ place.guide_price }}</div>
-            <div class="eat-stat-label">Guide Price</div>
-          </div>
-          <div class="eat-stat">
-            <div class="eat-stat-value">{{ place.open_today }}</div>
-            <div class="eat-stat-label">Open Today</div>
-          </div>
-        </div>
-        <div class="eat-body">
-          <p class="eat-summary">{{ place.summary }}</p>
-          <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
-             target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
-        </div>
-      </div>
-      {% endfor %}
+<div class="page-wrap">
+
+  <div class="page-title">Places to Eat</div>
+  <p class="page-subtitle">We are blessed with a great range of places to eat and drink in and around the village.</p>
+
+  {% for place in places %}
+  {% if not loop.first %}<hr class="divider">{% endif %}
+
+  <div class="entry-name">{{ place.name }}</div>
+  <div class="entry-meta">{{ place.type | title }} · {{ place.distance }}</div>
+
+  {% if place.image_url %}
+  <img src="{{ place.image_url }}" alt="{{ place.name }}" class="entry-image">
+  {% else %}
+  <div class="entry-image-placeholder">Image coming soon</div>
+  {% endif %}
+
+  <div class="entry-stats">
+    <div class="entry-stat">
+      <div class="entry-stat-value">{{ place.rating }}</div>
+      <div class="entry-stat-label">Rating</div>
     </div>
+    <div class="entry-stat">
+      <div class="entry-stat-value">{{ place.guide_price }}</div>
+      <div class="entry-stat-label">Guide Price</div>
+    </div>
+    <div class="entry-stat">
+      <div class="entry-stat-value">{{ place.open_today }}</div>
+      <div class="entry-stat-label">Open Today</div>
+    </div>
+  </div>
 
-    <script>
-      const cardEls = Array.from(document.querySelectorAll('.eat-card'));
-      let activeIndex = -1;
+  <p class="entry-summary">{{ place.summary }}</p>
+  <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
+     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
 
-      function setColour(i, on) {
-        cardEls[i].classList.toggle('colour', on);
-      }
+  {% endfor %}
 
-      function updateActive() {
-        const vh = window.innerHeight;
-        let bestIndex = -1;
-
-        if (window.scrollY >= vh * 0.02) {
-          let bestOverlap = 0;
-          cardEls.forEach((el, i) => {
-            const r = el.getBoundingClientRect();
-            const visTop    = Math.max(r.top, 0);
-            const visBottom = Math.min(r.bottom, vh);
-            const overlap   = Math.max(0, visBottom - visTop);
-            if (overlap > bestOverlap) {
-              bestOverlap = overlap;
-              bestIndex   = i;
-            }
-          });
-        }
-
-        if (bestIndex !== activeIndex) {
-          if (activeIndex >= 0) setColour(activeIndex, false);
-          if (bestIndex  >= 0) setColour(bestIndex,  true);
-          activeIndex = bestIndex;
-        }
-      }
-
-      window.addEventListener('scroll', updateActive, { passive: true });
-      // do not call updateActive() on load — page starts fully B&W
-    </script>
+</div>
 {% endblock %}

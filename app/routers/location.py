@@ -23,7 +23,7 @@ WALKS = {
             "duration": "15 min",
             "difficulty": "Easy",
             "summary": "A short walk around the village, taking in various interesting buildings, the church, stores, restaurants.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/30/The_Ford%2C_Shere_-_geograph.org.uk_-_62107.jpg",
+            "image_url": "/static/images/village-ford.jpg",
             "center": [51.2164, -0.4444],
             "zoom": 16,
             "waypoint_zoom": 17,
@@ -168,7 +168,7 @@ PLACES_TO_EAT = {
             "distance": "2 min walk",
             "coords": [51.21680, -0.44402],
             "summary": "A 14th-century village pub at the heart of Shere, with a sun-trap garden overlooking the Tillingbourne, open fires in winter, and a menu that draws on Surrey producers. One of the oldest buildings in the village and a perennial favourite with walkers coming in off the hills.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/9a/The_White_Horse_-_geograph.org.uk_-_3187303.jpg",
+            "image_url": "/static/images/white-horse.jpg",
         },
         {
             "slug": "hillys",
@@ -180,7 +180,7 @@ PLACES_TO_EAT = {
             "distance": "5 min walk",
             "coords": [51.21600, -0.44550],
             "summary": "A bright, friendly café a short stroll from the village centre, popular for brunch, homemade soups, and excellent flat whites. The outdoor terrace catches the afternoon sun well and is reliably busy on fine weekends. Good options for vegetarians.",
-            "image_url": "https://picsum.photos/seed/hillys/600/320",
+            "image_url": "/static/images/hillys.jpg",
         },
         {
             "slug": "dabbling-duck",
@@ -192,7 +192,7 @@ PLACES_TO_EAT = {
             "distance": "12 min walk",
             "coords": [51.21420, -0.44820],
             "summary": "A relaxed country pub on the southern edge of the village, popular with families and walkers. The garden is large and well kept, the food is straightforward and generously portioned, and the atmosphere is reliably convivial. Good selection of ales from Surrey and Sussex breweries.",
-            "image_url": "https://picsum.photos/seed/dabblingduck/600/320",
+            "image_url": "/static/images/dabbling-duck.jpg",
         },
         {
             "slug": "william-bray",
@@ -204,7 +204,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21650, -0.44470],
             "summary": "A much-loved tearoom on Middle Street, famous for homemade scones, cakes, and proper loose-leaf teas served in a cosy, beamed interior. The cream tea is exactly as it should be. Particularly popular on weekend afternoons — arrive early or expect to queue.",
-            "image_url": "https://picsum.photos/seed/williambray/600/320",
+            "image_url": "/static/images/william-bray.jpg",
         },
         {
             "slug": "gomshall-mill",
@@ -262,7 +262,7 @@ PLACES_OF_INTEREST = {
             "distance": "3 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The shallow ford and stepping stones at the centre of the village are one of Shere's most iconic features and enormously popular with families in summer. The Tillingbourne is a chalk stream — one of only around 200 in the world, almost all of them in southern England — and the water running over the ford is gin-clear and cold year-round. Brown trout are visible on most days, and in fine weather the ford becomes an informal gathering point for the village.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ford_at_Rectory_Lane%2C_Shere_%28March_2014%29_%281%29.jpg",
+            "image_url": "/static/images/village-ford.jpg",
         },
         {
             "slug": "shere-museum",
@@ -280,7 +280,77 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21655, -0.44470],
             "summary": "The main thoroughfare of Shere and one of the most photographed streets in England. The combination of timber-framed buildings — many dating from the 15th and 16th centuries — hanging baskets and the sound of the Tillingbourne running alongside makes it particularly picturesque. The overall streetscape has changed remarkably little since the 18th century and has been used repeatedly by film and television productions as a stand-in for various periods of English history.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/07/19/26/7192622_35b32c68.jpg",
+            "image_url": "/static/images/middle-street.jpg",
+        },
+    ]
+}
+
+
+# Fun for kids — keyed by estate slug
+FUN_FOR_KIDS = {
+    "shere-manor-estate": [
+        {
+            "slug": "shere-delights",
+            "name": "Shere Delights Ice Cream",
+            "type": "Food & Drink",
+            "distance": "2 min walk",
+            "coords": [51.21655, -0.44470],
+            "summary": "Widely regarded as the best ice cream in Surrey, Shere Delights serves up extraordinary homemade flavours in the heart of the village. Expect proper thick scoops in classic flavours alongside rotating specials — salted caramel, honeycomb, and seasonal fruit options. On a warm day the queue stretches down the street, but it moves quickly and it is always worth the wait.",
+            "image_url": "/static/images/shere-delights.jpg",
+        },
+        {
+            "slug": "feed-the-ducks",
+            "name": "Feed the Ducks",
+            "type": "Wildlife",
+            "distance": "2 min walk",
+            "coords": [51.21640, -0.44460],
+            "summary": "The ducks on the Tillingbourne at the High Street bridge are a Shere institution and completely unafraid of people. Children can feed them from the bridge or from the bank alongside. Bread is not recommended — the village store sells proper duck food. Keep an eye out for moorhens nesting in the reeds, and if you are lucky you may spot a grey heron standing very still further downstream.",
+            "image_url": "/static/images/shere-village.jpg",
+        },
+        {
+            "slug": "river-paddling",
+            "name": "River Paddling & Crayfish",
+            "type": "Outdoor Activity",
+            "distance": "5 min walk",
+            "coords": [51.21620, -0.44380],
+            "summary": "The park between the churchyard and the lido is the best spot in the village for paddling in the Tillingbourne. The water is crystal clear, cold and shallow — perfect for children to wade and explore. If you have a small hand net and patience, you stand a good chance of catching American signal crayfish under the stones. They are an invasive species, so there is no limit and no licence required. Just put them back when you are done.",
+            "image_url": "/static/images/village-ford.jpg",
+        },
+        {
+            "slug": "stepping-stones",
+            "name": "The Stepping Stones",
+            "type": "Outdoor Activity",
+            "distance": "3 min walk",
+            "coords": [51.21640, -0.44460],
+            "summary": "The stepping stones across the Tillingbourne ford are one of the most fun features of the village for younger children. The ford is shallow and the stones are broad and stable, though they can be slippery — wellies or water shoes recommended. On busy summer weekends a small informal queue forms, and there is a good-natured atmosphere as families help each other across. The water is gin-clear and you can often spot brown trout hovering in the current.",
+            "image_url": "https://picsum.photos/seed/steppingstones/600/320",
+        },
+        {
+            "slug": "shere-lido",
+            "name": "Shere Lido",
+            "type": "Swimming",
+            "distance": "8 min walk",
+            "coords": [51.21580, -0.44200],
+            "summary": "Shere Lido is a beautiful private open-air pool set in a woodland clearing — one of the last surviving rural lidos in Surrey. Unfortunately the lido is not accessible to day visitors; it is available exclusively to members and residents of the estate. If you are staying locally it is worth enquiring about guest access. For visitors, the river paddling in the park nearby is a lovely alternative on a warm day.",
+            "image_url": "https://picsum.photos/seed/sherelido/600/320",
+        },
+        {
+            "slug": "village-cricket",
+            "name": "Shere Cricket Ground",
+            "type": "Sport",
+            "distance": "10 min walk",
+            "coords": [51.21500, -0.44300],
+            "summary": "On summer Saturdays and Sundays, Shere Cricket Club plays on one of the most scenic grounds in the county. The pavilion is open to spectators and there is usually a tea tent. Watching village cricket on a sunny afternoon — with the church tower visible above the treeline and the sound of leather on willow — is one of those quintessentially English experiences that is hard to beat. Check the club noticeboard at the ground for the fixture list.",
+            "image_url": "https://picsum.photos/seed/sherecricket/600/320",
+        },
+        {
+            "slug": "shere-museum",
+            "name": "Shere Museum",
+            "type": "Museum",
+            "distance": "4 min walk",
+            "coords": [51.21650, -0.44500],
+            "summary": "A small, free museum telling the story of Shere from prehistoric times to the present. Children enjoy the exhibits on the old water mills that once lined the Tillingbourne, the Roman road that ran through the valley, and the various film productions that have used the village as a location. Open on weekend afternoons and most Bank Holidays. Admission is free.",
+            "image_url": "https://picsum.photos/seed/sheremuseum2/600/320",
         },
     ]
 }
@@ -785,6 +855,24 @@ def visitor_places_of_interest(request: Request, slug: str, db: Session = Depend
     })
 
 
+@router.get("/{slug}/visitor/fun-for-kids", response_class=HTMLResponse)
+def visitor_fun_for_kids(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    places = FUN_FOR_KIDS.get(slug, [])
+    return templates.TemplateResponse("location/visitor/fun_for_kids.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Fun for Kids",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "places": places,
+    })
+
+
 @router.get("/{slug}/visitor/places-to-eat", response_class=HTMLResponse)
 def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
@@ -815,7 +903,7 @@ def visitor_merch(request: Request, slug: str, db: Session = Depends(get_db)):
         "request": request,
         "slug": slug,
         "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Merch Store",
+        "car_park_name": "Store",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "products": products,
     })

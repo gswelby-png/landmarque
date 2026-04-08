@@ -1,6 +1,6 @@
 {% extends "location/visitor/base.html" %}
 
-{% block title %}Places of Interest — {{ estate_name }}{% endblock %}
+{% block title %}Fun for Kids — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
     /* Nav bar */
@@ -64,8 +64,8 @@
 {% block content %}
 <div class="page-wrap">
 
-  <div class="page-title">Places of Interest</div>
-  <p class="page-subtitle">We have a number of historic buildings and landscape features for you to explore.</p>
+  <div class="page-title">Fun for Kids</div>
+  <p class="page-subtitle">Shere is a brilliant place for children — streams to paddle in, creatures to spot, ice cream to eat, and countryside to explore.</p>
 
   {% for place in places %}
   {% if not loop.first %}<hr class="divider">{% endif %}
