@@ -1,0 +1,195 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Sponsor a Bench — {{ estate_name }}{% endblock %}
+
+{% block extra_css %}
+    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
+    #scroll-nav img { height: 28px; }
+    #scroll-nav .nav-home span { font-size: .94rem; }
+    #hamburger-btn { gap: 6px; }
+    #hamburger-btn span { width: 28px; }
+    footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
+    div[style*="height:20vh"] { display: none !important; }
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
+    }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1.25rem;
+    }
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 2rem;
+    }
+    .hero-image {
+      display: block; width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem 2rem;
+      height: 260px; object-fit: cover; object-position: center;
+    }
+    .tier { padding: 2rem 0; }
+    .tier-price {
+      font-size: 1.5rem; font-weight: 700; color: #B89A5A;
+      margin-bottom: .25rem;
+    }
+    .tier-name {
+      font-size: 1.15rem; font-weight: 700; color: #000;
+      margin-bottom: 1rem;
+    }
+    .tier-description {
+      font-size: 1rem; color: #333;
+      line-height: 1.9; font-weight: 400; margin-bottom: 1.25rem;
+    }
+    .tier-includes-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #999; margin-bottom: .6rem;
+    }
+    .tier-includes { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+    .tier-includes li {
+      font-size: .9rem; color: #444; line-height: 1.7;
+      padding: .3rem 0; border-bottom: 1px solid #f0f0f0;
+      display: flex; align-items: flex-start; gap: .6rem;
+    }
+    .tier-includes li::before {
+      content: "✓"; color: #B89A5A; font-weight: 700;
+      flex-shrink: 0; margin-top: .05rem;
+    }
+    .tier-includes li:last-child { border-bottom: none; }
+    .enquire-btn {
+      display: block; width: 100%;
+      background: #000; color: #fff;
+      border: none; border-radius: 6px;
+      padding: 1rem; font-size: 1rem; font-weight: 700;
+      letter-spacing: .5px; text-align: center;
+      text-decoration: none; cursor: pointer;
+      font-family: inherit;
+      transition: background .15s;
+    }
+    .enquire-btn:hover { background: #B89A5A; }
+    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
+    /* Enquiry form */
+    .form-wrap {
+      background: #f9f6ef; border-radius: 8px;
+      padding: 1.5rem; margin-top: 3rem;
+    }
+    .form-title {
+      font-size: 1.1rem; font-weight: 700; color: #000;
+      margin-bottom: .5rem;
+    }
+    .form-subtitle {
+      font-size: .88rem; color: #666; line-height: 1.6;
+      margin-bottom: 1.25rem;
+    }
+    .form-group { margin-bottom: 1rem; }
+    .form-group label {
+      display: block; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #888; margin-bottom: .4rem;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%; border: 1px solid #ddd; border-radius: 6px;
+      padding: .75rem .9rem; font-size: .95rem;
+      font-family: inherit; background: #fff; color: #000;
+      appearance: none;
+    }
+    .form-group textarea { height: 100px; resize: vertical; }
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none; border-color: #B89A5A;
+    }
+    .form-submit {
+      width: 100%; background: #000; color: #fff;
+      border: none; border-radius: 6px;
+      padding: 1rem; font-size: 1rem; font-weight: 700;
+      letter-spacing: .5px; cursor: pointer; font-family: inherit;
+      transition: background .15s;
+    }
+    .form-submit:hover { background: #B89A5A; }
+    .form-success {
+      display: none; background: #eaf7ea; border-radius: 6px;
+      padding: 1.25rem; text-align: center;
+      font-size: .95rem; color: #2a7a2a; font-weight: 600;
+      margin-top: 1rem;
+    }
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <div class="page-title">Sponsor a Bench</div>
+  <p class="page-subtitle">A bench on the estate is more than a place to sit — it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that has given you so much, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
+
+  <img src="/static/images/village-ford.jpg" alt="Shere Estate" class="hero-image">
+
+  {% for tier in tiers %}
+  {% if not loop.first %}<hr class="divider">{% endif %}
+  <div class="tier">
+    <div class="tier-price">{{ tier.price }}</div>
+    <div class="tier-name">{{ tier.name }}</div>
+    <p class="tier-description">{{ tier.description }}</p>
+    <div class="tier-includes-label">What's included</div>
+    <ul class="tier-includes">
+      {% for item in tier.includes %}
+      <li>{{ item }}</li>
+      {% endfor %}
+    </ul>
+    <a href="#enquire" class="enquire-btn" onclick="document.getElementById('tier-select').value='{{ tier.name }}'; document.getElementById('enquire').scrollIntoView({behavior:'smooth'}); return false;">Enquire about this option</a>
+  </div>
+  {% endfor %}
+
+  <!-- Enquiry form -->
+  <div class="form-wrap" id="enquire">
+    <div class="form-title">Make an Enquiry</div>
+    <p class="form-subtitle">Fill in your details below and the estate team will be in touch within two working days to discuss your bench.</p>
+    <form id="bench-form" onsubmit="submitBenchForm(event)">
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" name="name" required placeholder="Full name">
+      </div>
+      <div class="form-group">
+        <label>Email address</label>
+        <input type="email" name="email" required placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Option</label>
+        <select name="tier" id="tier-select">
+          {% for tier in tiers %}
+          <option value="{{ tier.name }}">{{ tier.name }} — {{ tier.price }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Proposed inscription (optional)</label>
+        <input type="text" name="inscription" placeholder="Up to 40 characters" maxlength="40">
+      </div>
+      <div class="form-group">
+        <label>Any other notes</label>
+        <textarea name="notes" placeholder="Preferred location, occasion, or anything else you'd like us to know..."></textarea>
+      </div>
+      <button type="submit" class="form-submit">Send Enquiry</button>
+    </form>
+    <div class="form-success" id="form-success">
+      Thank you — we will be in touch within two working days.
+    </div>
+  </div>
+
+</div>
+
+<script>
+  function submitBenchForm(e) {
+    e.preventDefault();
+    // TODO: wire to backend endpoint
+    document.getElementById('bench-form').style.display = 'none';
+    document.getElementById('form-success').style.display = 'block';
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,146 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Shopping — {{ estate_name }}{% endblock %}
+
+{% block extra_css %}
+    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
+    #scroll-nav img { height: 28px; }
+    #scroll-nav .nav-home span { font-size: .94rem; }
+    #hamburger-btn { gap: 6px; }
+    #hamburger-btn span { width: 28px; }
+    footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
+    div[style*="height:20vh"] { display: none !important; }
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
+    }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1.25rem;
+    }
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .shop-name {
+      font-size: 1.2rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding-top: 2.25rem; margin-bottom: .3rem;
+    }
+    .shop-meta {
+      font-size: .85rem; color: #888; font-weight: 600;
+      letter-spacing: .5px; margin-bottom: .4rem;
+    }
+    .shop-hours {
+      font-size: .82rem; color: #B89A5A; font-weight: 600;
+      margin-bottom: 1rem;
+    }
+    .shop-image {
+      display: block; width: calc(100% + 2.5rem);
+      margin: .75rem -1.25rem 1.25rem;
+      height: 260px; object-fit: cover; object-position: center;
+    }
+    .shop-image-placeholder {
+      width: calc(100% + 2.5rem); margin: .75rem -1.25rem 1.25rem;
+      height: 200px; background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+      color: #bbb; font-size: .8rem; letter-spacing: 2px; text-transform: uppercase;
+    }
+    .shop-description {
+      font-size: 1rem; color: #222;
+      line-height: 1.9; font-weight: 400; margin-bottom: 1.25rem;
+    }
+    /* Products */
+    .products-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #999; margin-bottom: .75rem;
+    }
+    .products-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: 1.25rem;
+    }
+    .product-card {
+      border: 1px solid #eee; border-radius: 6px;
+      padding: .9rem .85rem; background: #fafafa;
+    }
+    .product-name { font-size: .9rem; font-weight: 700; color: #000; margin-bottom: .2rem; }
+    .product-price { font-size: .85rem; font-weight: 700; color: #B89A5A; margin-bottom: .3rem; }
+    .product-desc { font-size: .78rem; color: #666; line-height: 1.5; font-weight: 400; }
+    /* Online ordering notice */
+    .online-notice {
+      background: #f9f6ef; border-left: 3px solid #B89A5A;
+      padding: .85rem 1rem; border-radius: 0 6px 6px 0;
+      margin-bottom: 1.25rem;
+    }
+    .online-notice p {
+      font-size: .85rem; color: #555; line-height: 1.6; margin: 0;
+    }
+    .shop-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .directions-link {
+      font-size: .9rem; font-weight: 700; color: #B89A5A;
+      text-decoration: none; letter-spacing: .5px;
+    }
+    .directions-link:hover { text-decoration: underline; }
+    .website-link {
+      font-size: .9rem; font-weight: 700; color: #555;
+      text-decoration: none; letter-spacing: .5px;
+    }
+    .website-link:hover { color: #000; }
+    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 0; }
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <div class="page-title">Shopping</div>
+  <p class="page-subtitle">Shere has a wonderful collection of independent shops — the kind you simply do not find in towns anymore. Browse local crafts, gifts, antiques, and produce, and take a piece of the village home with you.</p>
+
+  {% for shop in shops %}
+  {% if not loop.first %}<hr class="divider">{% endif %}
+
+  <div class="shop-name">{{ shop.name }}</div>
+  <div class="shop-meta">{{ shop.type }} · {{ shop.distance }}</div>
+  <div class="shop-hours">{{ shop.hours }}</div>
+
+  {% if shop.image_url %}
+  <img src="{{ shop.image_url }}" alt="{{ shop.name }}" class="shop-image">
+  {% else %}
+  <div class="shop-image-placeholder">Image coming soon</div>
+  {% endif %}
+
+  <p class="shop-description">{{ shop.description }}</p>
+
+  {% if shop.products %}
+  <div class="products-label">Products available</div>
+  <div class="products-grid">
+    {% for product in shop.products %}
+    <div class="product-card">
+      <div class="product-name">{{ product.name }}</div>
+      <div class="product-price">{{ product.price }}</div>
+      <div class="product-desc">{{ product.description }}</div>
+    </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="online-notice">
+    <p>Want to order online? Ask the estate — we are working with local shops to make home delivery available directly through this app.</p>
+  </div>
+
+  <div class="shop-links">
+    <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
+       target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+    {% if shop.website %}
+    <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website ↗</a>
+    {% endif %}
+  </div>
+
+  {% endfor %}
+
+</div>
+{% endblock %}

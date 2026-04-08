@@ -1,0 +1,212 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Legacy — {{ estate_name }}{% endblock %}
+
+{% block extra_css %}
+    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
+    #scroll-nav img { height: 28px; }
+    #scroll-nav .nav-home span { font-size: .94rem; }
+    #hamburger-btn { gap: 6px; }
+    #hamburger-btn span { width: 28px; }
+    footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
+    div[style*="height:20vh"] { display: none !important; }
+    .page-wrap {
+      background: #fff;
+      width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem;
+      padding: 0 1.25rem 4rem;
+    }
+    .page-title {
+      font-size: 1.6rem; font-weight: 700; color: #000;
+      letter-spacing: .5px; padding: 6rem 0 1.25rem;
+    }
+    .page-subtitle {
+      font-size: .95rem; color: #666;
+      font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem;
+    }
+    .hero-image {
+      display: block; width: calc(100% + 2.5rem);
+      margin: 0 -1.25rem 2rem;
+      height: 260px; object-fit: cover; object-position: center;
+    }
+    .section-body {
+      font-size: 1rem; color: #222;
+      line-height: 1.9; font-weight: 400; margin-bottom: 1.5rem;
+    }
+    /* Donation amounts */
+    .amounts-label {
+      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #999; margin-bottom: .85rem;
+    }
+    .amounts-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: .75rem; margin-bottom: 1.5rem;
+    }
+    .amount-btn {
+      border: 2px solid #e0e0e0; border-radius: 8px;
+      background: #fff; padding: 1rem .75rem; text-align: center;
+      cursor: pointer; transition: border-color .15s, background .15s;
+      font-family: inherit;
+    }
+    .amount-btn:hover,
+    .amount-btn.selected { border-color: #B89A5A; background: #f9f6ef; }
+    .amount-value { font-size: 1.25rem; font-weight: 700; color: #000; }
+    .amount-label { font-size: .75rem; color: #888; margin-top: .25rem; font-weight: 400; }
+    .custom-amount-wrap { margin-bottom: 1.5rem; }
+    .custom-amount-wrap label {
+      display: block; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #888; margin-bottom: .4rem;
+    }
+    .custom-amount-input-row {
+      display: flex; align-items: center;
+      border: 1px solid #ddd; border-radius: 6px; overflow: hidden;
+      background: #fff;
+    }
+    .custom-amount-input-row span {
+      padding: .75rem .9rem; font-size: 1rem;
+      font-weight: 700; color: #999; background: #f5f5f5;
+      border-right: 1px solid #ddd;
+    }
+    .custom-amount-input-row input {
+      flex: 1; border: none; padding: .75rem .9rem;
+      font-size: 1rem; font-family: inherit; color: #000;
+      background: transparent;
+    }
+    .custom-amount-input-row input:focus { outline: none; }
+    /* Message */
+    .donation-message-wrap { margin-bottom: 1.5rem; }
+    .donation-message-wrap label {
+      display: block; font-size: .78rem; font-weight: 700;
+      letter-spacing: 1px; text-transform: uppercase;
+      color: #888; margin-bottom: .4rem;
+    }
+    .donation-message-wrap textarea {
+      width: 100%; border: 1px solid #ddd; border-radius: 6px;
+      padding: .75rem .9rem; font-size: .95rem;
+      font-family: inherit; background: #fff; color: #000;
+      height: 90px; resize: vertical;
+    }
+    .donation-message-wrap textarea:focus {
+      outline: none; border-color: #B89A5A;
+    }
+    /* Donate button */
+    .donate-btn {
+      display: block; width: 100%;
+      background: #000; color: #fff;
+      border: none; border-radius: 6px;
+      padding: 1.1rem; font-size: 1.05rem; font-weight: 700;
+      letter-spacing: .5px; text-align: center;
+      cursor: pointer; font-family: inherit;
+      transition: background .15s; margin-bottom: .85rem;
+    }
+    .donate-btn:hover { background: #B89A5A; }
+    .donate-note {
+      font-size: .78rem; color: #aaa; text-align: center;
+      line-height: 1.5;
+    }
+    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 2rem 0; }
+    /* What your donation supports */
+    .impact-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+    .impact-list li {
+      font-size: .95rem; color: #333; line-height: 1.7;
+      padding: .65rem 0; border-bottom: 1px solid #f0f0f0;
+      display: flex; gap: .75rem; align-items: flex-start;
+    }
+    .impact-list li:last-child { border-bottom: none; }
+    .impact-icon { font-size: 1.1rem; flex-shrink: 0; margin-top: .05rem; }
+{% endblock %}
+
+{% block page_intro %}{% endblock %}
+{% block header %}{% endblock %}
+
+{% block content %}
+<div class="page-wrap">
+
+  <div class="page-title">Legacy</div>
+  <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future — however modestly — your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
+
+  <img src="/static/images/church.jpg" alt="Shere village" class="hero-image">
+
+  <p class="section-body">Every donation, large or small, is used directly on the estate. There are no administrative overheads and no third parties — your contribution goes straight to the ground beneath your feet.</p>
+
+  <hr class="divider">
+
+  <div class="amounts-label">Choose an amount</div>
+  <div class="amounts-grid">
+    <button class="amount-btn" onclick="selectAmount(this, 10)">
+      <div class="amount-value">£10</div>
+      <div class="amount-label">Plants a tree</div>
+    </button>
+    <button class="amount-btn" onclick="selectAmount(this, 25)">
+      <div class="amount-value">£25</div>
+      <div class="amount-label">Restores a gate post</div>
+    </button>
+    <button class="amount-btn" onclick="selectAmount(this, 50)">
+      <div class="amount-value">£50</div>
+      <div class="amount-label">Repairs a dry-stone wall</div>
+    </button>
+    <button class="amount-btn" onclick="selectAmount(this, 100)">
+      <div class="amount-value">£100</div>
+      <div class="amount-label">Restores a stretch of path</div>
+    </button>
+  </div>
+
+  <div class="custom-amount-wrap">
+    <label>Or enter your own amount</label>
+    <div class="custom-amount-input-row">
+      <span>£</span>
+      <input type="number" id="custom-amount" min="1" placeholder="Your amount" oninput="clearSelected()">
+    </div>
+  </div>
+
+  <div class="donation-message-wrap">
+    <label>Leave a message (optional)</label>
+    <textarea id="donation-message" placeholder="A note for the estate team, or a dedication if you wish..."></textarea>
+  </div>
+
+  <button class="donate-btn" onclick="handleDonate()">Donate Now</button>
+  <p class="donate-note">Payments are processed securely. You will receive a confirmation email. The estate is registered as a private charitable trust.</p>
+
+  <hr class="divider">
+
+  <p class="section-body" style="font-weight:600; color:#000; margin-bottom:1rem;">Where your donation goes</p>
+  <ul class="impact-list">
+    <li><span class="impact-icon">🌳</span>Woodland and hedgerow planting along the valley</li>
+    <li><span class="impact-icon">🦋</span>Wildflower meadow restoration and pollinator corridors</li>
+    <li><span class="impact-icon">🏚</span>Repair and maintenance of historic estate buildings</li>
+    <li><span class="impact-icon">🚶</span>Footpath and bridleway improvement across the estate</li>
+    <li><span class="impact-icon">💧</span>Tillingbourne chalk stream restoration and water quality</li>
+    <li><span class="impact-icon">🎓</span>Educational programmes for local schools and communities</li>
+  </ul>
+
+</div>
+
+<script>
+  let selectedAmount = null;
+
+  function selectAmount(btn, amount) {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+    btn.classList.add('selected');
+    selectedAmount = amount;
+    document.getElementById('custom-amount').value = '';
+  }
+
+  function clearSelected() {
+    document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+    selectedAmount = null;
+  }
+
+  function handleDonate() {
+    const custom = parseFloat(document.getElementById('custom-amount').value);
+    const amount = custom || selectedAmount;
+    if (!amount || amount < 1) {
+      alert('Please select or enter a donation amount.');
+      return;
+    }
+    // TODO: integrate with Stripe Checkout or payment provider
+    alert('Thank you for your generosity. Payment processing will be integrated here.');
+  }
+</script>
+{% endblock %}

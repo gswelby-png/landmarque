@@ -244,7 +244,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21668, -0.44418],
             "summary": "One of the finest Norman churches in Surrey, with origins dating to around 1190. The square flint tower is a local landmark and the interior contains a 13th-century font, remarkable medieval stained glass, and the anchorite's cell of Christine Carpenter — a woman who in 1329 had herself voluntarily enclosed within a small chamber in the north wall to live a life of prayer, able to see the altar only through a tiny window. Her story has fascinated visitors for centuries.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3a/Church_of_St_James_-_geograph.org.uk_-_3283097.jpg",
+            "image_url": "/static/images/church.jpg",
         },
         {
             "slug": "the-holiday-barn",
@@ -305,7 +305,7 @@ FUN_FOR_KIDS = {
             "distance": "2 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The ducks on the Tillingbourne at the High Street bridge are a Shere institution and completely unafraid of people. Children can feed them from the bridge or from the bank alongside. Bread is not recommended — the village store sells proper duck food. Keep an eye out for moorhens nesting in the reeds, and if you are lucky you may spot a grey heron standing very still further downstream.",
-            "image_url": "/static/images/shere-village.jpg",
+            "image_url": "/static/images/dabbling-duck.jpg",
         },
         {
             "slug": "river-paddling",
@@ -404,6 +404,98 @@ MERCH_PRODUCTS = {
     ]
 }
 
+
+# Shopping — keyed by estate slug
+SHOPPING = {
+    "shere-manor-estate": [
+        {
+            "slug": "steam-dreams",
+            "name": "Steam Dreams",
+            "type": "Gifts & Collectibles",
+            "distance": "2 min walk",
+            "coords": [51.21655, -0.44490],
+            "hours": "Tue–Sun 10–17",
+            "website": "https://steamdreams.co.uk",
+            "description": "A wonderful independent shop on Middle Street specialising in model railways, gifts, and curiosities. Steam Dreams is a local institution — the kind of shop that rewards a slow browse. The window display alone is worth stopping for.",
+            "image_url": "/static/images/middle-street.jpg",
+            "products": [
+                {"name": "Model Locomotive", "price": "from £45", "description": "OO gauge scale models of classic steam engines"},
+                {"name": "Shere Village Print", "price": "£18", "description": "Limited edition pen-and-ink print of Middle Street"},
+                {"name": "Surrey Hills Map", "price": "£12", "description": "Detailed OS-style illustrated map of the local area"},
+            ],
+        },
+        {
+            "slug": "shere-pottery",
+            "name": "Shere Pottery",
+            "type": "Craft & Ceramics",
+            "distance": "3 min walk",
+            "coords": [51.21648, -0.44480],
+            "hours": "Wed–Sun 10–16",
+            "website": "",
+            "description": "A working pottery studio and gallery showing handmade ceramics inspired by the Surrey landscape. Visitors can watch pieces being made on the wheel and browse a wide range of functional and decorative work — bowls, mugs, tiles, and one-off sculptural pieces. Everything is made on the premises.",
+            "image_url": "/static/images/middle-street.jpg",
+            "products": [
+                {"name": "Handmade Mug", "price": "£22", "description": "Wheel-thrown stoneware in earthy Surrey tones"},
+                {"name": "Ceramic Bowl", "price": "£35", "description": "Glazed serving bowl, each one unique"},
+                {"name": "Village Tile", "price": "£28", "description": "Hand-decorated tile depicting a Shere landmark"},
+            ],
+        },
+        {
+            "slug": "shere-village-store",
+            "name": "Shere Village Store & Post Office",
+            "type": "General Store",
+            "distance": "1 min walk",
+            "coords": [51.21660, -0.44440],
+            "hours": "Mon–Sat 7–18, Sun 8–13",
+            "website": "",
+            "description": "The heart of the village — a well-stocked independent store and post office serving the community for generations. Excellent range of local produce, freshly baked goods, newspapers, and the usual essentials. The noticeboard inside is the best way to find out what is happening in the village.",
+            "image_url": "/static/images/middle-street.jpg",
+            "products": [
+                {"name": "Local Honey", "price": "£7", "description": "Raw Surrey Hills honey from local hives"},
+                {"name": "Homemade Jam", "price": "£5", "description": "Seasonal fruit jams made locally"},
+                {"name": "Fresh Bread", "price": "£3.50", "description": "Baked daily, delivered each morning"},
+            ],
+        },
+        {
+            "slug": "shere-pottage",
+            "name": "Shere Pottage",
+            "type": "Antiques & Gifts",
+            "distance": "4 min walk",
+            "coords": [51.21640, -0.44500],
+            "hours": "Thu–Sun 10–17",
+            "website": "",
+            "description": "A charming antiques and curio shop tucked away near the church, selling vintage homewares, jewellery, prints, and decorative objects. The stock changes constantly and there are always surprises — the kind of place where you come in for a look and leave with something you did not know you needed.",
+            "image_url": "/static/images/middle-street.jpg",
+            "products": [
+                {"name": "Vintage Prints", "price": "from £15", "description": "Antique maps and botanical illustrations"},
+                {"name": "Silverware", "price": "from £25", "description": "Curated vintage silver pieces"},
+                {"name": "Decorative Objects", "price": "from £10", "description": "Rotating selection of curios and collectibles"},
+            ],
+        },
+    ]
+}
+
+# Bench sponsorship tiers
+BENCH_TIERS = [
+    {
+        "name": "New Bench",
+        "price": "£1,200",
+        "description": "Commission a brand new hardwood bench installed at a location of your choosing on the estate. Includes a brass commemorative plaque engraved with your chosen inscription (up to 40 characters). Benches are built to last a lifetime and maintained by the estate.",
+        "includes": ["Hardwood bench (FSC certified oak)", "Brass engraved plaque", "Choice of location", "Estate maintenance in perpetuity", "Personalised certificate of dedication"],
+    },
+    {
+        "name": "Sponsor an Existing Bench",
+        "price": "£450",
+        "description": "Dedicate one of the estate's existing benches to a loved one, a special occasion, or a cherished memory. A new brass plaque is fitted with your chosen inscription. The bench is cleaned and restored as part of the sponsorship.",
+        "includes": ["Brass engraved plaque (up to 40 characters)", "Bench restoration", "5-year sponsorship term", "Personalised certificate of dedication"],
+    },
+    {
+        "name": "Gift a Bench Experience",
+        "price": "£85",
+        "description": "Give someone special a framed print of a named bench on the estate, along with a handwritten dedication card and a year's access pass to the estate grounds. A thoughtful and lasting gift for a birthday, anniversary, or in memory of someone.",
+        "includes": ["Framed bench photograph (A4)", "Handwritten dedication card", "One year estate access pass", "Gift box presentation"],
+    },
+]
 
 # Known estate slugs — extend as new estates are onboarded
 ESTATES = {
@@ -906,6 +998,57 @@ def visitor_merch(request: Request, slug: str, db: Session = Depends(get_db)):
         "car_park_name": "Store",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "products": products,
+    })
+
+
+@router.get("/{slug}/visitor/shopping", response_class=HTMLResponse)
+def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    shops = SHOPPING.get(slug, [])
+    return templates.TemplateResponse("location/visitor/shopping.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Shopping",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "shops": shops,
+    })
+
+
+@router.get("/{slug}/visitor/sponsor-a-bench", response_class=HTMLResponse)
+def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    return templates.TemplateResponse("location/visitor/bench.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Sponsor a Bench",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "tiers": BENCH_TIERS,
+    })
+
+
+@router.get("/{slug}/visitor/legacy", response_class=HTMLResponse)
+def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate["car_park_slug"]
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    return templates.TemplateResponse("location/visitor/legacy.html", {
+        "request": request,
+        "slug": slug,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": "Legacy",
+        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
     })
 
 
