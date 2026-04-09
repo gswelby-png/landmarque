@@ -23,7 +23,7 @@ WALKS = {
             "duration": "15 min",
             "difficulty": "Easy",
             "summary": "A short walk around the village, taking in various interesting buildings, the church, stores, restaurants.",
-            "image_url": "/static/images/village-ford.jpg",
+            "image_url": "/static/images/memorial.jpg",
             "center": [51.2164, -0.4444],
             "zoom": 16,
             "waypoint_zoom": 17,
@@ -78,7 +78,7 @@ WALKS = {
             "duration": "1 hr",
             "difficulty": "Moderate",
             "summary": "A lovely walk along the river and through parkland to the quaint and rather upmarket William IV pub.",
-            "image_url": "https://s0.geograph.org.uk/photos/08/65/086595_f5aab469.jpg",
+            "image_url": "/static/images/village-overview.jpg",
             "center": [51.2165, -0.4530],
             "zoom": 14,
             "waypoint_zoom": 16,
@@ -144,7 +144,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21645, -0.44438],
             "summary": "Widely regarded as the finest restaurant in the Surrey Hills, Kinghams occupies a 17th-century cottage on Gomshall Lane. The cooking is modern British with classical technique — expect beautifully sourced local game, fish from the south coast, and a wine list that has clearly been assembled with care. Booking essential, particularly at weekends.",
-            "image_url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_563,q_65,w_1920/v1/clients/surrey/Kinghams_Shere_copyright_GBC_Image_captured_by_Chris_Lacey_December_24_e4c4238c-9c4d-4472-bad4-b1d790121b63.jpg",
+            "image_url": "/static/images/kinghams.jpg",
         },
         {
             "slug": "william-iv",
@@ -156,7 +156,7 @@ PLACES_TO_EAT = {
             "distance": "45 min walk",
             "coords": [51.21554, -0.46509],
             "summary": "A destination pub tucked away in the hamlet of Little London near Albury Heath, with a serious reputation for seasonal, locally sourced food. The game dishes in autumn and winter are outstanding, and the low-ceilinged, beamed interior with open fire makes it especially rewarding after a long walk. Book well ahead for weekends.",
-            "image_url": "https://londontheinside.com/wp-content/uploads/2025/04/william-iv-1200x675.jpg",
+            "image_url": "https://www.london-unattached.com/wp-content/uploads/2025/02/William-IV-Exterior.jpg",
         },
         {
             "slug": "white-horse",
@@ -216,7 +216,7 @@ PLACES_TO_EAT = {
             "distance": "20 min walk",
             "coords": [51.21130, -0.42630],
             "summary": "A character-filled pub and dining venue in a converted watermill on the A25 in Gomshall, with a river terrace and mill-race views. Serves a broad, hearty menu in a relaxed setting — well suited to families and larger groups. The outdoor riverside seating is especially good in summer.",
-            "image_url": "https://gomshallmill.co.uk/wp-content/uploads/2023/01/Mill-View-1.jpg",
+            "image_url": "https://www.beautifulenglandphotos.uk/wp-content/uploads/2015/09/background-gomshall-mill-gomshall-4.jpg",
         },
     ]
 }
@@ -241,7 +241,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21640, -0.44490],
             "summary": "Shere village was the principal English location for the 2006 romantic comedy The Holiday, starring Cameron Diaz, Kate Winslet, Jude Law and Jack Black. The production built a purpose-designed cottage set in the village, and many scenes were filmed on and around Middle Street. The village is instantly recognisable to fans of the film, and it remains one of the most popular reasons people visit Shere for the first time.",
-            "image_url": "",
+            "image_url": "https://thisisglamorous.com/wp-content/uploads/2020/11/3.jpg",
         },
         {
             "slug": "shere-village-hall",
@@ -250,7 +250,7 @@ PLACES_OF_INTEREST = {
             "distance": "4 min walk",
             "coords": [51.21580, -0.44480],
             "summary": "The village hall is the beating heart of community life in Shere, hosting everything from farmers' markets and craft fairs to theatrical productions and fitness classes. Built in the 1930s, the building retains much of its original character. The programme of events is posted on the noticeboard outside — if there is something on during your visit, it is usually well worth attending.",
-            "image_url": "",
+            "image_url": "/static/images/shere-hall.jpg",
         },
         {
             "slug": "tillingbourne-ford",
@@ -268,7 +268,7 @@ PLACES_OF_INTEREST = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small but well-curated local museum telling the story of Shere and the surrounding villages from prehistoric times to the present day. Exhibits cover the industrial history of the Tillingbourne valley — which once powered gunpowder mills, iron foundries, and paper works — as well as the agricultural and domestic life of the community. Open on weekend afternoons and most Bank Holidays; admission is free.",
-            "image_url": "https://s0.geograph.org.uk/photos/53/52/535233_3166a1a7.jpg",
+            "image_url": "https://sheremuseum.com/wp-content/uploads/2020/09/c3525073-museum-outside-a-cropped-e1677859145520-1013x1030.jpg",
         },
         {
             "slug": "middle-street",
@@ -302,7 +302,7 @@ FUN_FOR_KIDS = {
             "distance": "2 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The ducks on the Tillingbourne at the High Street bridge are a Shere institution and completely unafraid of people. Children can feed them from the bridge or from the bank alongside. Bread is not recommended — the village store sells proper duck food. Keep an eye out for moorhens nesting in the reeds, and if you are lucky you may spot a grey heron standing very still further downstream.",
-            "image_url": "https://s0.geograph.org.uk/photos/08/65/086595_f5aab469.jpg",
+            "image_url": "/static/images/feed-ducks.jpg",
         },
         {
             "slug": "river-paddling",
@@ -311,7 +311,7 @@ FUN_FOR_KIDS = {
             "distance": "5 min walk",
             "coords": [51.21620, -0.44380],
             "summary": "The park between the churchyard and the lido is the best spot in the village for paddling in the Tillingbourne. The water is crystal clear, cold and shallow — perfect for children to wade and explore. If you have a small hand net and patience, you stand a good chance of catching American signal crayfish under the stones. They are an invasive species, so there is no limit and no licence required. Just put them back when you are done.",
-            "image_url": "/static/images/village-ford.jpg",
+            "image_url": "/static/images/tillingbourne-bridge.jpg",
         },
         {
             "slug": "stepping-stones",
@@ -338,7 +338,7 @@ FUN_FOR_KIDS = {
             "distance": "10 min walk",
             "coords": [51.21500, -0.44300],
             "summary": "On summer Saturdays and Sundays, Shere Cricket Club plays on one of the most scenic grounds in the county. The pavilion is open to spectators and there is usually a tea tent. Watching village cricket on a sunny afternoon — with the church tower visible above the treeline and the sound of leather on willow — is one of those quintessentially English experiences that is hard to beat. Check the club noticeboard at the ground for the fixture list.",
-            "image_url": "",
+            "image_url": "https://shererec.org/wp-content/uploads/2024/10/shere-rec-pavilion-e1729580779341.jpg",
         },
         {
             "slug": "shere-museum",
@@ -347,7 +347,7 @@ FUN_FOR_KIDS = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small, free museum telling the story of Shere from prehistoric times to the present. Children enjoy the exhibits on the old water mills that once lined the Tillingbourne, the Roman road that ran through the valley, and the various film productions that have used the village as a location. Open on weekend afternoons and most Bank Holidays. Admission is free.",
-            "image_url": "/static/images/middle-street.jpg",
+            "image_url": "https://sheremuseum.com/wp-content/uploads/2020/09/c3525073-museum-outside-a-cropped-e1677859145520-1013x1030.jpg",
         },
     ]
 }
@@ -447,7 +447,7 @@ SHOPPING = {
             "hours": "Mon–Sat 10–17, Sun 11–17",
             "website": "",
             "description": "A long-established antiques centre on Middle Street with multiple dealers under one roof. Sells small furniture, decorative arts, silverware, ceramics, jewellery, and collectibles spanning several centuries. The kind of place where patience is rewarded — something different turns up every visit.",
-            "image_url": "",
+            "image_url": "/static/images/shere-antiques.jpg",
         },
         {
             "slug": "lavender-goose",
@@ -539,28 +539,28 @@ BENCH_LOCATIONS = {
             "name": "St James' Church Gate",
             "status": "sponsor",
             "description": "A weathered oak bench set into the flint wall beside the churchyard gate. Well-used by walkers and visitors to the church. The existing dedication plaque has expired and the bench is available for re-dedication.",
-            "image_url": "/static/images/church.jpg",
+            "image_url": "/static/images/lychgate.jpg",
         },
         {
             "slug": "orchard-corner",
             "name": "The Orchard Corner",
             "status": "new",
             "description": "A peaceful spot at the eastern end of the estate orchard, where the footpath curves through old apple and pear trees. Beautiful in blossom season and tranquil year-round.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
+            "image_url": "https://s0.geograph.org.uk/photos/00/38/003846_441a3fd5.jpg",
         },
         {
             "slug": "north-downs-view",
             "name": "North Downs Viewpoint",
             "status": "new",
             "description": "The highest bench position on the estate, on the ridge path with a clear view south across the Tillingbourne valley to the wooded hills beyond. Exposed but spectacular, especially at dawn and dusk.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg",
+            "image_url": "https://s0.geograph.org.uk/photos/28/37/283739_29d19de1.jpg",
         },
         {
             "slug": "cricket-boundary",
             "name": "Cricket Ground Boundary",
             "status": "sponsor",
             "description": "A painted hardwood bench on the boundary of the cricket ground. Currently in need of restoration. The sponsorship includes full refurbishment, new slats, and a fresh plaque.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/42/8234276_17cf7dcb.jpg",
+            "image_url": "https://shererec.org/wp-content/uploads/2024/10/shere-rec-pavilion-e1729580779341.jpg",
         },
     ]
 }
