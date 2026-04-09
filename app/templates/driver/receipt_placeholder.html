@@ -58,6 +58,17 @@
     .detail-value { font-size: .9rem; font-weight: 700; color: #111; text-align: right; }
     .detail-value.plate { font-size: 1.3rem; letter-spacing: 5px; font-weight: 800; }
     .detail-value.ref { color: #B89A5A; letter-spacing: 2px; }
+    .btn-browse {
+      display: block; width: 100%;
+      background: #000; color: #fff;
+      border: none; border-radius: 6px;
+      padding: 1.1rem; font-size: 1rem; font-weight: 700;
+      letter-spacing: .5px; text-align: center;
+      text-decoration: none; margin-top: 1.25rem;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      transition: background .15s;
+    }
+    .btn-browse:hover { background: #B89A5A; color: #fff; }
 {% endblock %}
 
 {% block content %}
@@ -92,5 +103,6 @@
         </div>
       </div>
     </div>
+  <a href="/location/{{ slug }}/visitor/welcome" class="btn-browse">Continue Browsing →</a>
 </div>
 {% endblock %}
