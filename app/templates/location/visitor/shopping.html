@@ -40,7 +40,7 @@
     .shop-image {
       display: block; width: calc(100% + 2.5rem);
       margin: .75rem -1.25rem 1.25rem;
-      height: 260px; object-fit: cover; object-position: center;
+      aspect-ratio: 16/9; object-fit: cover;
     }
     .shop-image-placeholder {
       width: calc(100% + 2.5rem); margin: .75rem -1.25rem 1.25rem;
@@ -52,17 +52,17 @@
       font-size: 1rem; color: #222;
       line-height: 1.9; font-weight: 400; margin-bottom: 1.25rem;
     }
-    .shop-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
     .directions-link {
-      font-size: .9rem; font-weight: 700; color: #B89A5A;
+      display: block; font-size: .9rem; font-weight: 700; color: #B89A5A;
       text-decoration: none; letter-spacing: .5px;
     }
     .directions-link:hover { text-decoration: underline; }
     .website-link {
-      font-size: .9rem; font-weight: 700; color: #555;
+      display: block; margin-top: .65rem;
+      font-size: .9rem; font-weight: 700; color: #B89A5A;
       text-decoration: none; letter-spacing: .5px;
     }
-    .website-link:hover { color: #000; }
+    .website-link:hover { text-decoration: underline; }
     .divider { border: none; border-top: 1px solid #e0e0e0; margin: 2.25rem 0 0; }
     /* Local produce section */
     .section-label {
@@ -111,6 +111,8 @@
   <div class="page-title">Shopping</div>
   <p class="page-subtitle">Shere and the surrounding villages have a wonderful collection of independent shops — the kind you rarely find in towns anymore. Browse homewares, lifestyle gifts, antiques, and local produce, and take a piece of the Surrey Hills home with you.</p>
 
+  <hr class="divider">
+
   {% for shop in shops %}
   {% if not loop.first %}<hr class="divider">{% endif %}
 
@@ -126,13 +128,11 @@
 
   <p class="shop-description">{{ shop.description }}</p>
 
-  <div class="shop-links">
-    <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
-       target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
-    {% if shop.website %}
-    <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website ↗</a>
-    {% endif %}
-  </div>
+  <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
+     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+  {% if shop.website %}
+  <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website →</a>
+  {% endif %}
 
   {% endfor %}
 
