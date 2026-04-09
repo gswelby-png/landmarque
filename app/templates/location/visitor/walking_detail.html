@@ -3,7 +3,12 @@
 {% block title %}{{ walk.title }} — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
+    body { background: #fff; }
     body > div { padding-top: 0 !important; }
+    footer p { font-size: .85rem !important; color: rgba(0,0,0,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; color: #555 !important; }
+    footer { border-top-color: #e0e0e0 !important; }
+    div[style*="height:20vh"] { display: none !important; }
     .walk-header-bar {
       display: flex; align-items: center; gap: .65rem;
       margin: 1rem 0 .75rem;
