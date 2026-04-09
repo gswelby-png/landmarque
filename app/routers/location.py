@@ -78,7 +78,7 @@ WALKS = {
             "duration": "1 hr",
             "difficulty": "Moderate",
             "summary": "A lovely walk along the river and through parkland to the quaint and rather upmarket William IV pub.",
-            "image_url": "/static/images/village-overview.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/01/43/38/1433808_cc025f77.jpg",
             "center": [51.2165, -0.4530],
             "zoom": 14,
             "waypoint_zoom": 16,
@@ -232,7 +232,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21668, -0.44418],
             "summary": "One of the finest Norman churches in Surrey, with origins dating to around 1190. The square flint tower is a local landmark and the interior contains a 13th-century font, remarkable medieval stained glass, and the anchorite's cell of Christine Carpenter — a woman who in 1329 had herself voluntarily enclosed within a small chamber in the north wall to live a life of prayer, able to see the altar only through a tiny window. Her story has fascinated visitors for centuries.",
-            "image_url": "/static/images/church.jpg",
+            "image_url": "/static/images/lychgate.jpg",
         },
         {
             "slug": "the-holiday-film",
@@ -241,7 +241,7 @@ PLACES_OF_INTEREST = {
             "distance": "2 min walk",
             "coords": [51.21640, -0.44490],
             "summary": "Shere village was the principal English location for the 2006 romantic comedy The Holiday, starring Cameron Diaz, Kate Winslet, Jude Law and Jack Black. The production built a purpose-designed cottage set in the village, and many scenes were filmed on and around Middle Street. The village is instantly recognisable to fans of the film, and it remains one of the most popular reasons people visit Shere for the first time.",
-            "image_url": "https://thisisglamorous.com/wp-content/uploads/2020/11/3.jpg",
+            "image_url": "/static/images/village-overview.jpg",
         },
         {
             "slug": "shere-village-hall",
@@ -268,7 +268,7 @@ PLACES_OF_INTEREST = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small but well-curated local museum telling the story of Shere and the surrounding villages from prehistoric times to the present day. Exhibits cover the industrial history of the Tillingbourne valley — which once powered gunpowder mills, iron foundries, and paper works — as well as the agricultural and domestic life of the community. Open on weekend afternoons and most Bank Holidays; admission is free.",
-            "image_url": "https://sheremuseum.com/wp-content/uploads/2020/09/c3525073-museum-outside-a-cropped-e1677859145520-1013x1030.jpg",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-p/14/c4/88/b6/the-exterior.jpg",
         },
         {
             "slug": "middle-street",
@@ -320,7 +320,7 @@ FUN_FOR_KIDS = {
             "distance": "3 min walk",
             "coords": [51.21640, -0.44460],
             "summary": "The stepping stones across the Tillingbourne ford are one of the most fun features of the village for younger children. The ford is shallow and the stones are broad and stable, though they can be slippery — wellies or water shoes recommended. On busy summer weekends a small informal queue forms, and there is a good-natured atmosphere as families help each other across. The water is gin-clear and you can often spot brown trout hovering in the current.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/03/28/63/3286364_eda822d0.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Ford_at_Rectory_Lane%2C_Shere_%28March_2014%29_%281%29.jpg",
         },
         {
             "slug": "shere-lido",
@@ -347,7 +347,7 @@ FUN_FOR_KIDS = {
             "distance": "4 min walk",
             "coords": [51.21650, -0.44500],
             "summary": "A small, free museum telling the story of Shere from prehistoric times to the present. Children enjoy the exhibits on the old water mills that once lined the Tillingbourne, the Roman road that ran through the valley, and the various film productions that have used the village as a location. Open on weekend afternoons and most Bank Holidays. Admission is free.",
-            "image_url": "https://sheremuseum.com/wp-content/uploads/2020/09/c3525073-museum-outside-a-cropped-e1677859145520-1013x1030.jpg",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-p/14/c4/88/b6/the-exterior.jpg",
         },
     ]
 }
@@ -414,7 +414,7 @@ SHOPPING = {
             "hours": "Mon–Sat 7–18, Sun 8–13",
             "website": "",
             "description": "The village's everyday essentials — a well-stocked convenience store and post office right in the heart of Shere. Stocks a wide range of groceries, fresh bread, local produce, newspapers, snacks and drinks. The noticeboard inside is the best way to find out what is happening in the village.",
-            "image_url": "",
+            "image_url": "https://s0.geograph.org.uk/geophotos/01/60/79/1607980_bfb3397e.jpg",
         },
         {
             "slug": "shere-pottage",
@@ -425,7 +425,7 @@ SHOPPING = {
             "hours": "Daily 10:30–17:30",
             "website": "https://sherepottage.co.uk",
             "description": "A thoughtfully curated independent shop at The Forge on Middle Street, selling garden and homewares, sustainable cleaning products, and ethically sourced gifts. Everything is chosen with care — natural ingredients, minimal packaging, and a genuine commitment to responsible sourcing. A lovely place to browse and find something a little different.",
-            "image_url": "/static/images/shere-pottage.jpg",
+            "image_url": "https://s0.geograph.org.uk/geophotos/08/23/41/8234185_8802425b.jpg",
         },
         {
             "slug": "split-figs",
@@ -447,17 +447,6 @@ SHOPPING = {
             "hours": "Mon–Sat 10–17, Sun 11–17",
             "website": "",
             "description": "A long-established antiques centre on Middle Street with multiple dealers under one roof. Sells small furniture, decorative arts, silverware, ceramics, jewellery, and collectibles spanning several centuries. The kind of place where patience is rewarded — something different turns up every visit.",
-            "image_url": "/static/images/shere-antiques.jpg",
-        },
-        {
-            "slug": "lavender-goose",
-            "name": "Lavender Goose",
-            "type": "Lifestyle Store & Café",
-            "distance": "5 min drive · Gomshall",
-            "coords": [51.2110, -0.4390],
-            "hours": "",
-            "website": "http://www.lavendergoose.co.uk",
-            "description": "Set in the handsome former Black Horse pub in Gomshall — just minutes from Shere — Lavender Goose is one of the area's best lifestyle stores. Stocks jewellery, handbags, scarves, cashmere, candles, mirrors, throws, lighting and decorative accessories from around the world. There is also a café serving breakfast sandwiches, cakes and coffee. Highly recommended if you have a spare half-hour.",
             "image_url": "",
         },
         {
@@ -469,7 +458,7 @@ SHOPPING = {
             "hours": "",
             "website": "https://www.sheremuseum.co.uk",
             "description": "Shere's small but absorbing local museum on Gomshall Lane tells the story of the village from its earliest history to the present day. The gift shop sells books, prints, and locally produced items, with all proceeds going directly back to the museum. Well worth a visit — and completely free to enter.",
-            "image_url": "",
+            "image_url": "https://media-cdn.tripadvisor.com/media/photo-p/14/c4/88/b6/the-exterior.jpg",
         },
     ]
 }
