@@ -414,7 +414,7 @@ SHOPPING = {
             "hours": "Mon–Sat 7–18, Sun 8–13",
             "website": "",
             "description": "The village's everyday essentials — a well-stocked convenience store and post office right in the heart of Shere. Stocks a wide range of groceries, fresh bread, local produce, newspapers, snacks and drinks. The noticeboard inside is the best way to find out what is happening in the village.",
-            "image_url": "https://s0.geograph.org.uk/geophotos/01/60/79/1607980_bfb3397e.jpg",
+            "image_url": "",
         },
         {
             "slug": "shere-pottage",
