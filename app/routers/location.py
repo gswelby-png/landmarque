@@ -436,7 +436,7 @@ SHOPPING = {
             "hours": "",
             "website": "https://splitfigs.com",
             "description": "An eclectic and beautifully styled interiors boutique on The Square, stocking vintage furniture, timeless homewares, and unique accessories curated from local artists and makers. The range covers everything from mirrors and lighting to cashmere, candles and decorative art — and the stock is constantly refreshed. Split Figs also runs creative workshops and events throughout the year.",
-            "image_url": "",
+            "image_url": "/static/images/split-figs.jpg",
         },
         {
             "slug": "shere-antiques",
