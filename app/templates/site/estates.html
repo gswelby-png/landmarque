@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estates — LandMarque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --accent: #B89A5A;
+      --accent-dark: #9a7e3e;
+      --dark: #0a0a0a;
+      --nav-bg: #111111;
+    }
+    body {
+      background: var(--dark);
+      color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Nav */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 2.5rem;
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(0,0,0,.96); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .nav-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.35rem; font-weight: 700; letter-spacing: 1.5px;
+      text-decoration: none; display: flex; align-items: center;
+    }
+    .nav-logo-mark { width: 28px; height: 28px; margin-right: .6rem; vertical-align: middle; }
+    .nav-right { display: flex; align-items: center; gap: 1.25rem; }
+    .hamburger {
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px; padding: .3rem;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #B89A5A; border-radius: 1px;
+    }
+
+    /* Menu overlay */
+    .menu-overlay {
+      display: none; position: fixed; inset: 0;
+      background: #0a0a0a; z-index: 300; overflow-y: auto;
+    }
+    .menu-overlay.open { display: flex; flex-direction: column; }
+    .menu-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,.05); flex-shrink: 0;
+    }
+    .menu-close {
+      background: none; border: none; color: rgba(255,255,255,.5);
+      font-size: 1.4rem; cursor: pointer; line-height: 1;
+    }
+    .menu-close:hover { color: #fff; }
+    .menu-body {
+      padding: 3rem 2.5rem 4rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem; max-width: 900px;
+    }
+    .menu-group-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.1rem;
+    }
+    .menu-group a {
+      display: block; font-size: .85rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none;
+      color: rgba(255,255,255,.6); padding: .45rem 0;
+      border-bottom: 1px solid rgba(255,255,255,.05); transition: color .12s;
+    }
+    .menu-group a:last-child { border-bottom: none; }
+    .menu-group a:hover { color: #fff; }
+
+    /* Page */
+    .page-header {
+      padding: 10rem 2.5rem 4rem; text-align: center;
+    }
+    .page-tag {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1rem;
+    }
+    .page-title {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      font-weight: 700; letter-spacing: 1px; color: #fff;
+      margin-bottom: 1.5rem; line-height: 1;
+    }
+    .page-rule { width: 28px; height: 1px; background: var(--accent); margin: 0 auto 1.5rem; }
+    .page-sub {
+      font-size: .95rem; font-weight: 300; line-height: 1.85;
+      color: rgba(255,255,255,.45); max-width: 520px; margin: 0 auto;
+    }
+
+    /* Map */
+    #map {
+      height: 480px;
+      width: 100%;
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+    }
+
+    /* Estate list */
+    .estates-section {
+      max-width: 900px; margin: 0 auto; padding: 4rem 2.5rem 6rem;
+    }
+    .estates-section-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent);
+      margin-bottom: 2rem;
+    }
+    .estates-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1px;
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.05);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .estate-card {
+      background: #111;
+      padding: 1.5rem;
+      text-decoration: none;
+      display: block;
+      transition: background .15s;
+    }
+    .estate-card:hover { background: #161616; }
+    .estate-card-county {
+      font-size: .58rem; font-weight: 700; letter-spacing: 2.5px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .5rem;
+    }
+    .estate-card-name {
+      font-size: .9rem; font-weight: 700; color: #fff;
+      letter-spacing: .5px; margin-bottom: .4rem;
+    }
+    .estate-card-tagline {
+      font-size: .75rem; font-weight: 300; color: rgba(255,255,255,.35);
+      line-height: 1.5;
+    }
+    .estate-card-features {
+      margin-top: .75rem;
+      display: flex; flex-wrap: wrap; gap: .3rem;
+    }
+    .feature-tag {
+      font-size: .55rem; font-weight: 700; letter-spacing: 1px;
+      text-transform: uppercase; color: rgba(255,255,255,.3);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 2px; padding: .2rem .4rem;
+    }
+
+    /* Footer */
+    footer {
+      border-top: 1px solid rgba(255,255,255,.05);
+      padding: 2.25rem 2.5rem;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .foot-brand {
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.15rem; font-weight: 700; letter-spacing: 1px; text-decoration: none;
+    }
+    .foot-copy { font-size: .65rem; color: rgba(255,255,255,.15); font-weight: 300; }
+
+    @media (max-width: 600px) {
+      nav { padding: 1.2rem 1.25rem; }
+      .page-header { padding: 8rem 1.5rem 3rem; }
+      .estates-section { padding: 3rem 1.25rem 4rem; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <a href="/" class="nav-brand">
+      <img src="/static/treering1_gold.png" class="nav-logo-mark" alt="">
+      <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+    </a>
+    <div class="nav-right">
+      <button class="hamburger" onclick="openMenu()" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <div class="menu-overlay" id="menu-overlay">
+    <div class="menu-header">
+      <a href="/" class="nav-brand" onclick="closeMenu()">
+        <img src="/static/treering1_gold.png" class="nav-logo-mark" alt="">
+        <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+      </a>
+      <button class="menu-close" onclick="closeMenu()">&#10005;</button>
+    </div>
+    <div class="menu-body">
+      <div class="menu-group">
+        <div class="menu-group-label">LandMarque</div>
+        <a href="/landmarque" onclick="closeMenu()">Home</a>
+        <a href="/landmarque/estates" onclick="closeMenu()">Estates</a>
+        <a href="/landmarque/parking" onclick="closeMenu()">Parking</a>
+        <a href="/landmarque/legacies" onclick="closeMenu()">Legacies</a>
+        <a href="/landmarque/benches" onclick="closeMenu()">Benches</a>
+        <a href="/landmarque/trees" onclick="closeMenu()">Trees</a>
+        <a href="/landmarque/register" onclick="closeMenu()">Register Your Estate</a>
+        <a href="/landmarque/contact" onclick="closeMenu()">Get in touch</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="page-header">
+    <p class="page-tag">Our Network</p>
+    <h1 class="page-title">Estates</h1>
+    <div class="page-rule"></div>
+    <p class="page-sub">Explore the estates, parks and villages in our network. Select an estate to visit its page — or use the map to find estates near you.</p>
+  </div>
+
+  <div id="map"></div>
+
+  <div class="estates-section">
+    <p class="estates-section-label">{{ estates|length }} estate{% if estates|length != 1 %}s{% endif %} in our network</p>
+    <div class="estates-grid">
+      {% for estate in estates %}
+      <a href="/location/{{ estate.slug }}/visitor/welcome" class="estate-card">
+        <div class="estate-card-county">{{ estate.county }}</div>
+        <div class="estate-card-name">{{ estate.name }}</div>
+        <div class="estate-card-tagline">{{ estate.tagline }}</div>
+        {% if estate.features %}
+        <div class="estate-card-features">
+          {% for f in estate.features[:4] %}
+          <span class="feature-tag">{{ f|replace('-', ' ') }}</span>
+          {% endfor %}
+          {% if estate.features|length > 4 %}
+          <span class="feature-tag">+{{ estate.features|length - 4 }} more</span>
+          {% endif %}
+        </div>
+        {% endif %}
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+
+  <footer>
+    <a href="/" class="foot-brand"><span style="color:#B89A5A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
+    <span class="foot-copy">&copy; 2026 LandMarque Ltd &middot; Surrey, UK</span>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    function openMenu() {
+      document.getElementById('menu-overlay').classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+      document.getElementById('menu-overlay').classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMenu(); });
+
+    // Estates data from server
+    const estates = {{ estates | tojson }};
+
+    // Init map centred on England
+    const map = L.map('map', {
+      center: [52.5, -1.5],
+      zoom: 6,
+      zoomControl: true,
+      scrollWheelZoom: false,
+    });
+
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      subdomains: 'abcd',
+      maxZoom: 19
+    }).addTo(map);
+
+    // Custom gold marker
+    const goldIcon = L.divIcon({
+      className: '',
+      html: '<div style="width:12px;height:12px;background:#B89A5A;border-radius:50%;border:2px solid #fff;box-shadow:0 0 6px rgba(184,154,90,.6);"></div>',
+      iconSize: [12, 12],
+      iconAnchor: [6, 6],
+    });
+
+    // Try to locate user
+    map.locate({ setView: false, maxZoom: 10 });
+    map.on('locationfound', function(e) {
+      L.circle(e.latlng, { radius: e.accuracy / 2, color: '#B89A5A', fillOpacity: 0.1, weight: 1 }).addTo(map);
+    });
+
+    // Plot estates
+    estates.forEach(function(estate) {
+      if (estate.lat && estate.lng) {
+        const marker = L.marker([estate.lat, estate.lng], { icon: goldIcon }).addTo(map);
+        marker.bindPopup(
+          '<div style="font-family:Raleway,sans-serif;min-width:160px;">' +
+          '<div style="font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;margin-bottom:.3rem;">' + (estate.county || '') + '</div>' +
+          '<div style="font-size:.85rem;font-weight:700;color:#111;margin-bottom:.5rem;">' + estate.name + '</div>' +
+          '<a href="/location/' + estate.slug + '/visitor/welcome" style="font-size:.75rem;font-weight:700;color:#B89A5A;text-decoration:none;">Visit estate &rarr;</a>' +
+          '</div>'
+        );
+      }
+    });
+  </script>
+
+</body>
+</html>

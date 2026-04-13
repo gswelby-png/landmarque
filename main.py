@@ -12,6 +12,7 @@ import random
 from app.database import engine, SessionLocal
 from app import models
 from app.routers import driver, owner, admin, site, location
+from app.routers.location import ESTATES
 from app.auth import hash_password
 
 models.Base.metadata.create_all(bind=engine)
@@ -203,6 +204,12 @@ def landmarque_trees(request: Request):
 @app.get("/landmarque/register", response_class=HTMLResponse)
 def landmarque_register(request: Request):
     return templates.TemplateResponse("site/landowners_register.html", {"request": request})
+
+
+@app.get("/landmarque/estates", response_class=HTMLResponse)
+def landmarque_estates(request: Request):
+    estates_list = [{"slug": slug, **data} for slug, data in ESTATES.items()]
+    return templates.TemplateResponse("site/estates.html", {"request": request, "estates": estates_list})
 
 
 @app.get("/landmarque/about", response_class=HTMLResponse)

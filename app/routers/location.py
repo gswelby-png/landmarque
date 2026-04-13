@@ -577,11 +577,17 @@ BENCH_TIERS = [
 ]
 
 # Known estate slugs — extend as new estates are onboarded
+# features controls which blocks appear on the visitor welcome page
 ESTATES = {
     "shere-manor-estate": {
         "name": "Shere Manor Estate",
-        "tagline": "A private estate in the heart of the Surrey Hills.",
+        "tagline": "A historic estate at the heart of one of England's most beautiful villages.",
+        "description": "Shere Manor Estate manages public facilities around the picturesque village of Shere in the Surrey Hills AONB. Visitors enjoy walking, history, and filming locations used in major Hollywood productions.",
         "car_park_slug": "shere-manor",
+        "lat": 51.2164,
+        "lng": -0.4444,
+        "county": "Surrey",
+        "features": ["parking", "history", "movies", "places-to-eat", "walking", "places-of-interest", "fun-for-kids", "shopping", "benches", "legacy"],
     },
 }
 
@@ -721,6 +727,7 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
         "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
         "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
         "brand": brand,
+        "features": estate.get("features", []),
     })
 
 
