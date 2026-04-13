@@ -1479,4 +1479,494 @@ ESTATES = {
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
 
+    # ── Hampshire (priority recruits — strong visitor numbers) ───────────────────
+
+    "highclere-castle": {
+        "name": "Highclere Castle",
+        "tagline": "The real Downton Abbey — a Victorian Gothic mansion in Hampshire parkland.",
+        "description": "Highclere Castle is the ancestral home of the Earl of Carnarvon and the filming location for all series of Downton Abbey. The Gothic Revival mansion was designed by Charles Barry and sits in 1,000 acres of Capability Brown parkland. The castle attracts over 200,000 visitors a year and the estate runs a thriving events programme.",
+        "county": "Hampshire",
+        "lat": 51.3247, "lng": -1.3635,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "movies", "fun-for-kids"],
+    },
+    "mottisfont-estate": {
+        "name": "Mottisfont Estate",
+        "tagline": "A National Trust garden estate on the River Test, famous for its rose garden.",
+        "description": "Mottisfont is a National Trust estate near Romsey, with a walled garden containing the National Collection of old-fashioned roses. The twelfth-century priory converted to a house stands in parkland beside the clear chalk stream of the River Test, one of England's finest trout rivers.",
+        "county": "Hampshire",
+        "lat": 51.0530, "lng": -1.5430,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat", "events"],
+    },
+    "the-vyne": {
+        "name": "The Vyne",
+        "tagline": "A Tudor mansion with the first classical portico added to an English house.",
+        "description": "The Vyne is a National Trust Tudor country house near Basingstoke, built in the early sixteenth century for Lord Sandys, Lord Chamberlain to Henry VIII. The estate has a lake, woodland, and walled garden, and is associated with Jane Austen who attended dances here.",
+        "county": "Hampshire",
+        "lat": 51.3290, "lng": -1.1050,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat"],
+    },
+    "hinton-ampner": {
+        "name": "Hinton Ampner",
+        "tagline": "A twentieth-century masterwork of garden design in the South Downs.",
+        "description": "Hinton Ampner is a National Trust estate in the South Downs National Park, created by Ralph Dutton in the mid-twentieth century as an exercise in perfected country house living. The garden combines formality and informality with long vistas across the Hampshire countryside.",
+        "county": "Hampshire",
+        "lat": 51.0490, "lng": -1.1640,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat"],
+    },
+    "stratfield-saye-estate": {
+        "name": "Stratfield Saye Estate",
+        "tagline": "The Duke of Wellington's Hampshire estate — given to the Iron Duke by a grateful nation.",
+        "description": "Stratfield Saye is the ancestral home of the Duke of Wellington, given to the first Duke by the nation following his victory at Waterloo. The house retains its Regency character and the estate includes the grave of Copenhagen, Wellington's famous horse. The estate runs a regular events and open day programme.",
+        "county": "Hampshire",
+        "lat": 51.3432, "lng": -1.0778,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "avington-park": {
+        "name": "Avington Park",
+        "tagline": "A privately owned Georgian mansion above the Itchen valley — once a royal retreat.",
+        "description": "Avington Park is a privately owned Georgian house near Winchester, set in parkland above the chalk stream of the River Itchen. The house was visited by Charles II and is one of a relatively small number of privately owned houses that open to the public on a regular basis.",
+        "county": "Hampshire",
+        "lat": 51.0720, "lng": -1.2700,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── East Sussex (expanded) ────────────────────────────────────────────────────
+
+    "firle-place": {
+        "name": "Firle Place",
+        "tagline": "A flint-faced Tudor and Georgian house in the South Downs — home to the Gage family for 500 years.",
+        "description": "Firle Place is a privately owned country house in East Sussex, home to the Gage family since the fifteenth century. The house contains an outstanding collection of Old Master paintings including works by Velázquez and Fra Bartolommeo, and is set in the South Downs National Park below the chalk escarpment of the Firle Beacon.",
+        "county": "East Sussex",
+        "lat": 50.8470, "lng": 0.0830,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "glynde-place": {
+        "name": "Glynde Place",
+        "tagline": "A sixteenth-century flint manor house near Glyndebourne, still in private occupation.",
+        "description": "Glynde Place is a privately owned sixteenth-century house near Lewes, built from knapped flint and overlooking the South Downs. The house has been home to the Trevor and Brand families and retains an intimate, lived-in character. It is near Glyndebourne opera house and the estate is a prime walking and cycling destination.",
+        "county": "East Sussex",
+        "lat": 50.8660, "lng": 0.0520,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "batemans": {
+        "name": "Bateman's",
+        "tagline": "Rudyard Kipling's home for 34 years — an ironmaster's house in the High Weald.",
+        "description": "Bateman's is a National Trust Jacobean ironmaster's house near Burwash in East Sussex, bought by Rudyard Kipling in 1902 and his home until his death in 1936. The house is presented as it was during Kipling's occupancy and the estate includes a watermill and rose garden.",
+        "county": "East Sussex",
+        "lat": 51.0178, "lng": 0.3900,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "wakehurst": {
+        "name": "Wakehurst",
+        "tagline": "Kew's wild botanic garden in Sussex — home to the Millennium Seed Bank.",
+        "description": "Wakehurst is the country estate of the Royal Botanic Gardens, Kew, in the High Weald of Sussex. The estate is home to the Millennium Seed Bank, the world's largest ex situ plant conservation project, alongside rock gardens, a walled garden, and woodland walks.",
+        "county": "West Sussex",
+        "lat": 51.0587, "lng": -0.0753,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "leonardslee-gardens": {
+        "name": "Leonardslee Gardens",
+        "tagline": "A valley woodland garden of rare beauty — one of the largest private gardens in England.",
+        "description": "Leonardslee Gardens near Horsham is a privately owned woodland garden in a steep valley, created by Sir Edmund Loder from 1889. Famous for its bluebells, rhododendrons, and wallabies, the garden reopened after restoration in 2019 and includes a luxury hotel and restaurant.",
+        "county": "West Sussex",
+        "lat": 51.0280, "lng": -0.2710,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "parham-house": {
+        "name": "Parham House",
+        "tagline": "A great Elizabethan house in a deer park below the South Downs.",
+        "description": "Parham House is a privately owned Elizabethan house near Pulborough, set in a deer park below the South Downs. The house contains a collection of fine art, needlework, and furniture, and the four-acre walled garden is among the finest in Sussex. Parham is one of the most authentic Elizabethan houses in England still in private use.",
+        "county": "West Sussex",
+        "lat": 50.9330, "lng": -0.4420,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "west-dean-estate": {
+        "name": "West Dean Estate",
+        "tagline": "A flint house, a wild garden, and the South Downs — home to the Edward James Foundation.",
+        "description": "West Dean Estate near Chichester is the home of the Edward James Foundation, an arts and education charity. The 6,000-acre estate includes a flint house, 35-acre walled garden, arboretum, and parkland walks in the South Downs National Park. The estate also hosts regular events and courses.",
+        "county": "West Sussex",
+        "lat": 50.9130, "lng": -0.7780,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "cowdray-park": {
+        "name": "Cowdray Estate",
+        "tagline": "A 16,500-acre West Sussex estate — home to the world's greatest polo and haunted Tudor ruins.",
+        "description": "Cowdray Estate near Midhurst is a 16,500-acre sporting estate and one of Britain's leading polo venues. The estate contains the dramatic ruins of Cowdray House, destroyed by fire in 1793, and a working farm. The annual Cowdray Park Polo Gold Cup is one of the most prestigious in the world.",
+        "county": "West Sussex",
+        "lat": 50.9900, "lng": -0.7400,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── Kent (additional) ─────────────────────────────────────────────────────────
+
+    "lullingstone-castle": {
+        "name": "Lullingstone Castle",
+        "tagline": "A Tudor gatehouse and a World Garden — five centuries of one family in the Darent valley.",
+        "description": "Lullingstone Castle is a privately owned Tudor and Georgian house in the Darent valley, home to the Hart Dyke family. The estate is home to the World Garden of Plants, created by Tom Hart Dyke after his capture in the Darien Gap, containing plants from every country in the world.",
+        "county": "Kent",
+        "lat": 51.3810, "lng": 0.1610,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "fun-for-kids"],
+    },
+    "emmetts-garden": {
+        "name": "Emmetts Garden",
+        "tagline": "A hillside woodland garden with the highest point in Kent and far views over the Weald.",
+        "description": "Emmetts Garden is a National Trust woodland garden on a hill above Ide Hill in the High Weald of Kent, with rose garden, rock garden, and views extending to the Greensand Ridge. The informal layout of the garden was influenced by William Robinson.",
+        "county": "Kent",
+        "lat": 51.2540, "lng": 0.1220,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "godinton-house": {
+        "name": "Godinton House",
+        "tagline": "A Jacobean manor in a remarkable topiary garden near Ashford.",
+        "description": "Godinton House is a privately owned Jacobean house near Ashford with one of the finest collections of topiary in England and an interesting interior with carved panelling and period furniture. The garden includes a walled garden, iris garden, and wild garden.",
+        "county": "Kent",
+        "lat": 51.1530, "lng": 0.8450,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "groombridge-place": {
+        "name": "Groombridge Place",
+        "tagline": "A seventeenth-century moated manor with enchanted forest and formal walled gardens.",
+        "description": "Groombridge Place is a privately owned seventeenth-century moated manor on the Kent-Sussex border, with formal walled gardens designed by John Evelyn and an enchanted forest attraction. The manor was used as the location for the 1993 film of The Secret Garden.",
+        "county": "Kent",
+        "lat": 51.1120, "lng": 0.1740,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "movies", "fun-for-kids", "events"],
+    },
+
+    # ── Oxfordshire (additional) ──────────────────────────────────────────────────
+
+    "stonor-park": {
+        "name": "Stonor Park",
+        "tagline": "A Chilterns manor house owned by the Stonor family for over 800 years.",
+        "description": "Stonor Park is a privately owned house in the Chiltern Hills that has been home to the Stonor family for over 800 years. The house and chapel, set in a deer park, shelter a remarkable history of Catholic recusancy, including a connection to the Jesuit martyr Edmund Campion.",
+        "county": "Oxfordshire",
+        "lat": 51.5630, "lng": -0.9880,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "greys-court": {
+        "name": "Greys Court",
+        "tagline": "A medieval tower, a walled garden, and a donkey wheel — a quietly extraordinary estate.",
+        "description": "Greys Court is a National Trust property near Henley-on-Thames containing the ruins of a fourteenth-century fortified house, a donkey-wheel well house, and an archbishop's maze in the garden. The walled garden and kitchen garden are maintained to a high standard.",
+        "county": "Oxfordshire",
+        "lat": 51.5330, "lng": -0.9590,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "kingston-bagpuize-house": {
+        "name": "Kingston Bagpuize House",
+        "tagline": "A William and Mary manor house with a panelled interior and a famous snowdrop garden.",
+        "description": "Kingston Bagpuize House is a privately owned William and Mary house near Abingdon with an elegant panelled interior. The garden is widely known for its spectacular snowdrop display in February, alongside yew hedges, a walled garden, and a fine collection of trees.",
+        "county": "Oxfordshire",
+        "lat": 51.6530, "lng": -1.4350,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── Berkshire (additional) ─────────────────────────────────────────────────────
+
+    "englefield-estate": {
+        "name": "Englefield Estate",
+        "tagline": "A 12,000-acre private estate on the Thames and Kennet with a renowned garden.",
+        "description": "Englefield Estate near Theale is one of the largest private estates in Berkshire, owned by the Benyon family. The house dates from the sixteenth century and the garden includes a walled kitchen garden and extensive woodland. The estate is actively managed and hosts regular community events.",
+        "county": "Berkshire",
+        "lat": 51.4270, "lng": -1.1110,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "welford-park": {
+        "name": "Welford Park",
+        "tagline": "A Queen Anne house in the Lambourn valley with one of England's greatest snowdrop displays.",
+        "description": "Welford Park is a privately owned Queen Anne house in the Lambourn valley near Newbury, with grounds that attract thousands of visitors each February for what is considered one of England's finest snowdrop gardens. The estate also opens for tea and events.",
+        "county": "Berkshire",
+        "lat": 51.4290, "lng": -1.4100,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+
+    # ── Wiltshire (additional) ────────────────────────────────────────────────────
+
+    "wilton-house": {
+        "name": "Wilton House",
+        "tagline": "The ancestral home of the Earl of Pembroke — one of England's finest Palladian interiors.",
+        "description": "Wilton House has been home to the Herbert family, Earls of Pembroke, for almost 500 years. The house contains the Double Cube Room, considered one of the finest rooms in England, and an art collection including works by Rembrandt and Van Dyck. The estate includes woodland and riverside walks.",
+        "county": "Wiltshire",
+        "lat": 51.0787, "lng": -1.8628,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "movies"],
+    },
+    "corsham-court": {
+        "name": "Corsham Court",
+        "tagline": "A sixteenth-century manor with a Capability Brown park and an extraordinary art collection.",
+        "description": "Corsham Court is a privately owned Elizabethan house near Chippenham, home to Lord Methuen. The house contains one of the most important private collections of Old Master paintings in England, and the grounds were laid out by Capability Brown and Humphry Repton.",
+        "county": "Wiltshire",
+        "lat": 51.4325, "lng": -2.1904,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── Gloucestershire (additional) ──────────────────────────────────────────────
+
+    "barnsley-house": {
+        "name": "Barnsley House",
+        "tagline": "Rosemary Verey's legendary garden — one of the most admired of the late twentieth century.",
+        "description": "Barnsley House near Cirencester was the home of garden designer Rosemary Verey, one of the most influential figures in late-twentieth-century gardening. The garden she created in the Cotswolds — with its laburnum walk, knot garden, and potager — is now managed as part of a boutique hotel.",
+        "county": "Gloucestershire",
+        "lat": 51.7432, "lng": -1.8624,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat"],
+    },
+    "kiftsgate-court": {
+        "name": "Kiftsgate Court Gardens",
+        "tagline": "Three generations of women gardeners and the world's largest rose.",
+        "description": "Kiftsgate Court is a privately owned garden near Chipping Campden, created by three successive generations of the same family and home to the celebrated Rosa filipes 'Kiftsgate', the largest rose in England. The garden commands dramatic views over the Vale of Evesham.",
+        "county": "Gloucestershire",
+        "lat": 52.1082, "lng": -1.7620,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "painswick-rococo-garden": {
+        "name": "Painswick Rococo Garden",
+        "tagline": "The only complete surviving example of a Rococo garden in England.",
+        "description": "Painswick Rococo Garden in the Cotswolds near Stroud is the only complete surviving Rococo garden in England, restored from a 1748 painting by Thomas Robins. The garden is famous for its snowdrop season and houses the National Collection of hardy ferns.",
+        "county": "Gloucestershire",
+        "lat": 51.7989, "lng": -2.1858,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "westbury-court-garden": {
+        "name": "Westbury Court Garden",
+        "tagline": "The only restored Dutch water garden in England — canals, yew hedges, and a gazebo.",
+        "description": "Westbury Court Garden is a National Trust property near Newnham-on-Severn, containing the only surviving late seventeenth-century Dutch water garden in England. The formal garden with its long canal, tall yew hedges, and walled kitchen garden is a rare and important survival.",
+        "county": "Gloucestershire",
+        "lat": 51.7870, "lng": -2.3720,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+
+    # ── Dorset (additional) ────────────────────────────────────────────────────────
+
+    "athelhampton-house": {
+        "name": "Athelhampton House",
+        "tagline": "One of England's finest medieval manor houses, with topiary pyramids and a River Piddle water garden.",
+        "description": "Athelhampton House is a privately owned medieval manor house near Dorchester, largely built in the fifteenth century. The garden features enormous topiary pyramids, a circular walled garden, and a canal garden beside the River Piddle. The estate runs events and garden days throughout the season.",
+        "county": "Dorset",
+        "lat": 50.7493, "lng": -2.3605,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "lulworth-estate": {
+        "name": "Lulworth Estate",
+        "tagline": "The private estate around Lulworth Cove — one of the most visited landscapes in England.",
+        "description": "The Lulworth Estate is a 12,000-acre private estate on the Jurassic Coast of Dorset, managed by the Weld family since the seventeenth century. The estate encompasses Lulworth Cove, Durdle Door, Stair Hole, and a heritage centre. With over a million visitors a year to the cove, it is one of the highest-footfall private estates in England.",
+        "county": "Dorset",
+        "lat": 50.6200, "lng": -2.2450,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "forde-abbey": {
+        "name": "Forde Abbey",
+        "tagline": "A Cistercian monastery converted to a house — 30 acres of garden on the Somerset-Dorset border.",
+        "description": "Forde Abbey is a privately owned house created from a twelfth-century Cistercian monastery on the Somerset-Dorset border, home to the Roper family. The 30 acres of garden include a bog garden, kitchen garden, and herbaceous borders alongside ponds fed by the River Axe.",
+        "county": "Dorset",
+        "lat": 50.8670, "lng": -2.8660,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "minterne-estate": {
+        "name": "Minterne Estate",
+        "tagline": "A Dorset valley garden famous for its rhododendrons, azaleas, and spring woodland.",
+        "description": "Minterne is a privately owned Edwardian house in a steep Dorset valley, home to Lord Digby. The garden follows the valley stream through magnolias, rhododendrons, and cherries, and was one of the first in England to grow Himalayan plants introduced by collectors in the early twentieth century.",
+        "county": "Dorset",
+        "lat": 50.8950, "lng": -2.5380,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+
+    # ── Somerset (additional) ──────────────────────────────────────────────────────
+
+    "tyntesfield-estate": {
+        "name": "Tyntesfield Estate",
+        "tagline": "A Victorian Gothic Revival masterpiece near Bristol — the most complete Victorian estate in England.",
+        "description": "Tyntesfield is a National Trust Gothic Revival house near Bristol, described as the most complete Victorian country estate in England. The house, chapel, kitchen gardens, and home farm are all substantially intact, offering an extraordinary picture of Victorian estate life.",
+        "county": "Somerset",
+        "lat": 51.4150, "lng": -2.7960,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "clevedon-court": {
+        "name": "Clevedon Court",
+        "tagline": "A fourteenth-century manor house with a terrace garden above the Bristol Channel.",
+        "description": "Clevedon Court is a National Trust fourteenth-century manor house on the slopes of Dial Hill above Clevedon, with terraced gardens and views across the Bristol Channel. The house has been the home of the Elton family for three centuries.",
+        "county": "Somerset",
+        "lat": 51.4373, "lng": -2.8462,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "brympton-devercy": {
+        "name": "Brympton d'Evercy",
+        "tagline": "One of the most perfect houses in England — a golden Ham stone manor in south Somerset.",
+        "description": "Brympton d'Evercy near Yeovil is described by architectural historians as one of the most perfect houses in England, a Ham stone manor with a rare south front largely unchanged since the seventeenth century. The house has been in the same family for generations and opens occasionally for private events.",
+        "county": "Somerset",
+        "lat": 50.9460, "lng": -2.6930,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── Devon (additional) ────────────────────────────────────────────────────────
+
+    "ugbrooke-house": {
+        "name": "Ugbrooke House",
+        "tagline": "A Robert Adam castle in a Capability Brown park — the seat of Lord Clifford of Chudleigh.",
+        "description": "Ugbrooke House near Chudleigh is a privately owned house designed by Robert Adam for the Clifford family, set in a park laid out by Capability Brown. The house contains state rooms with original Adam decoration and the chapel is one of the most important examples of Adam's ecclesiastical work.",
+        "county": "Devon",
+        "lat": 50.5840, "lng": -3.5970,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "sharpham-estate": {
+        "name": "Sharpham Estate",
+        "tagline": "A Palladian house above the Dart estuary with a vineyard and cheese dairy.",
+        "description": "Sharpham Estate is a privately owned estate on a promontory above the River Dart near Totnes, with a Palladian house, vineyard, and cheese dairy. The estate produces award-winning English wines and artisan cheeses and the vineyard tours and walks are popular with visitors to the South Hams.",
+        "county": "Devon",
+        "lat": 50.3620, "lng": -3.6490,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "shopping"],
+    },
+    "dartington-hall-estate": {
+        "name": "Dartington Hall Estate",
+        "tagline": "A medieval great hall revived as a centre for arts, learning, and social enterprise.",
+        "description": "Dartington Hall is a medieval estate near Totnes revived in the 1920s by Dorothy and Leonard Elmhirst as a progressive arts and social experiment. The estate includes a fourteenth-century great hall, a tilting yard garden, and a thriving programme of arts, music, and events.",
+        "county": "Devon",
+        "lat": 50.4430, "lng": -3.7010,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+    },
+    "greenway-estate": {
+        "name": "Greenway Estate",
+        "tagline": "Agatha Christie's holiday home — a Regency house above the Dart in a woodland garden.",
+        "description": "Greenway is a National Trust property near Brixham, the holiday home of Agatha Christie who described it as 'the most beautiful place in the world'. The Regency house is set in a woodland garden above the River Dart with views across the estuary.",
+        "county": "Devon",
+        "lat": 50.3900, "lng": -3.5810,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat"],
+    },
+
+    # ── Cornwall (additional) ──────────────────────────────────────────────────────
+
+    "st-michaels-mount": {
+        "name": "St Michael's Mount",
+        "tagline": "A tidal island castle off the Cornish coast — one of England's most iconic landmarks.",
+        "description": "St Michael's Mount is a tidal island off Marazion in Mount's Bay, reached on foot across a causeway at low tide. The castle has been home to the St Aubyn family for three centuries and the National Trust now manages the house and gardens. The island receives over 300,000 visitors a year.",
+        "county": "Cornwall",
+        "lat": 50.1181, "lng": -5.4775,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat", "fun-for-kids"],
+    },
+    "trebah-garden": {
+        "name": "Trebah Garden",
+        "tagline": "A sub-tropical ravine garden running down to a private beach on the Helford River.",
+        "description": "Trebah Garden is a charitable trust garden near Helford, a sub-tropical ravine running steeply down to a private beach on the Helford River. The garden contains giant tree ferns, rhododendrons, and a water garden, and the beach was used as an embarkation point for D-Day troops.",
+        "county": "Cornwall",
+        "lat": 50.1003, "lng": -5.1067,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "glendurgan-garden": {
+        "name": "Glendurgan Garden",
+        "tagline": "A valley garden with a famous maze above the village of Durgan on the Helford River.",
+        "description": "Glendurgan Garden is a National Trust valley garden created by Alfred Fox in the 1820s, leading down to the Helford River through giant laurels, magnolias, and sub-tropical plantings. The Victorian maze is one of the oldest in England and the small fishing village of Durgan lies at the garden's foot.",
+        "county": "Cornwall",
+        "lat": 50.0930, "lng": -5.0890,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "fun-for-kids"],
+    },
+    "pencarrow-house": {
+        "name": "Pencarrow House",
+        "tagline": "A Georgian house in a private woodland garden — still home to the Molesworth-St Aubyn family.",
+        "description": "Pencarrow House near Bodmin is a privately owned Georgian house still occupied by the Molesworth-St Aubyn family. The 50-acre garden includes an Ice Age granite rock formation, a lake, Italian garden, and over 700 varieties of rhododendron. The house regularly opens for tours.",
+        "county": "Cornwall",
+        "lat": 50.4830, "lng": -4.7760,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "antony-house": {
+        "name": "Antony House",
+        "tagline": "The finest Queen Anne house in Cornwall, with a garden designed by Humphry Repton.",
+        "description": "Antony House is a National Trust Queen Anne house near Torpoint, considered the finest early eighteenth-century house in Cornwall. The garden was designed by Humphry Repton and contains a topiary garden, wood garden, and kitchen garden. Tim Burton's film Alice in Wonderland was filmed here.",
+        "county": "Cornwall",
+        "lat": 50.3800, "lng": -4.2350,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "movies"],
+    },
+
+    # ── Essex (additional) ────────────────────────────────────────────────────────
+
+    "audley-end-estate": {
+        "name": "Audley End Estate",
+        "tagline": "A Jacobean palace set in a Capability Brown park — the finest country house in Essex.",
+        "description": "Audley End is an English Heritage Jacobean country house near Saffron Walden, the largest house in England at the time of its completion. The park was landscaped by Capability Brown, and the walled kitchen garden has been restored to its Victorian productivity.",
+        "county": "Essex",
+        "lat": 52.0673, "lng": 0.2057,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "layer-marney-tower": {
+        "name": "Layer Marney Tower",
+        "tagline": "The tallest Tudor gatehouse in Britain — a private estate open to visitors in Essex.",
+        "description": "Layer Marney Tower near Colchester is a privately owned estate containing the tallest Tudor gatehouse in Britain, built by Henry, 1st Lord Marney in the 1520s. The estate includes a church, farm, and gardens and is one of Essex's most unusual visitor attractions.",
+        "county": "Essex",
+        "lat": 51.8040, "lng": 0.7960,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "ingatestone-hall": {
+        "name": "Ingatestone Hall",
+        "tagline": "A Tudor manor built for Queen Mary's Secretary of State — still in the same family.",
+        "description": "Ingatestone Hall is a privately owned Tudor manor house in Essex built in the 1540s for Sir William Petre, Principal Secretary to three Tudor monarchs. The house has remained with the Petre family ever since and opens to visitors to share its long history.",
+        "county": "Essex",
+        "lat": 51.6760, "lng": 0.3870,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "hylands-estate": {
+        "name": "Hylands Estate",
+        "tagline": "A Regency villa and parkland at the heart of Essex — host to the V Festival and major events.",
+        "description": "Hylands Estate is a Chelmsford City Council managed estate with a restored Regency villa, 574 acres of parkland, and a nationally important avenue of trees. The estate is the host venue for major music festivals and events and is one of the most visited open spaces in Essex.",
+        "county": "Essex",
+        "lat": 51.6920, "lng": 0.4320,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "cycling"],
+    },
+
+    # ── Hertfordshire (additional) ────────────────────────────────────────────────
+
+    "hatfield-house": {
+        "name": "Hatfield House",
+        "tagline": "A Jacobean palace where Elizabeth I spent her childhood — still home to the Cecil family.",
+        "description": "Hatfield House is one of the great Jacobean houses of England, home to the Cecil family since the early seventeenth century. The estate includes formal gardens, a park, and the surviving wing of the Old Palace where Elizabeth I grew up. The estate runs a major events programme attracting tens of thousands of visitors.",
+        "county": "Hertfordshire",
+        "lat": 51.7634, "lng": -0.2174,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "knebworth-house": {
+        "name": "Knebworth House",
+        "tagline": "A Gothic Victorian fantasy — the home of the Lytton family and venue of legendary rock concerts.",
+        "description": "Knebworth House is a privately owned Victorian Gothic house near Stevenage, home to the Lytton family for over 500 years. The estate is internationally known as the venue of legendary rock concerts including Led Zeppelin and Robbie Williams, and the grounds include adventure playgrounds and deer park walks.",
+        "county": "Hertfordshire",
+        "lat": 51.8610, "lng": -0.2120,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "fun-for-kids"],
+    },
+    "gorhambury-estate": {
+        "name": "Gorhambury Estate",
+        "tagline": "A Palladian house in parkland — the seat of the Earl of Verulam near St Albans.",
+        "description": "Gorhambury House is a privately owned Palladian house near St Albans, home to the Earl of Verulam and built beside the ruins of the Elizabethan house associated with Sir Francis Bacon. The estate opens occasionally and the ruins of the Old Gorhambury House are in the care of English Heritage.",
+        "county": "Hertfordshire",
+        "lat": 51.7520, "lng": -0.3990,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+
+    # ── Bedfordshire / Cambridgeshire (additional) ─────────────────────────────────
+
+    "woburn-abbey-estate": {
+        "name": "Woburn Abbey Estate",
+        "tagline": "A Cistercian abbey transformed into one of England's great Palladian mansions and safari parks.",
+        "description": "Woburn Abbey is the ancestral home of the Duke of Bedford, a Palladian mansion set in a 3,000-acre deer park landscaped by Humphry Repton. The estate includes one of the finest private art collections in England and the famous Woburn Safari Park.",
+        "county": "Bedfordshire",
+        "lat": 51.9880, "lng": -0.6140,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+    },
+    "wrest-park": {
+        "name": "Wrest Park",
+        "tagline": "A French-style château with the most extensive surviving formal garden in England.",
+        "description": "Wrest Park is an English Heritage estate near Silsoe with a French-style neo-classical house and the most extensive surviving formal garden in England, developed from the 1680s with contributions from several generations of the de Grey family.",
+        "county": "Bedfordshire",
+        "lat": 52.0120, "lng": -0.4280,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+    },
+    "wimpole-estate": {
+        "name": "Wimpole Estate",
+        "tagline": "The largest house in Cambridgeshire, with a park, farm, and folly ruins.",
+        "description": "Wimpole Estate is a National Trust property near Royston, comprising the largest house in Cambridgeshire set in a Capability Brown parkland. The working farm, with rare breeds, and the Gothic folly ruins make Wimpole one of the most complete historic estates in the east of England.",
+        "county": "Cambridgeshire",
+        "lat": 52.1280, "lng": -0.0640,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "cycling", "fun-for-kids"],
+    },
+    "anglesey-abbey": {
+        "name": "Anglesey Abbey",
+        "tagline": "A winter garden of extraordinary scale — snowdrops, dahlias, and a working watermill.",
+        "description": "Anglesey Abbey is a National Trust property near Cambridge, containing a house built on the ruins of a medieval priory and a garden created by Lord Fairhaven in the early twentieth century. The winter garden with thousands of snowdrops and the dahlia garden are among the most visited National Trust gardens.",
+        "county": "Cambridgeshire",
+        "lat": 52.2630, "lng": 0.2100,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "places-to-eat"],
+    },
+
 }
