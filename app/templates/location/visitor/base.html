@@ -67,7 +67,7 @@
       max-width: 520px; width: 100%; margin: 0 auto;
       padding: 1.25rem;
       display: flex; flex-direction: column; gap: .65rem;
-      overflow-y: auto;
+      overflow-y: auto; flex: 1;
     }
     #hamburger-menu nav a {
       display: block; text-decoration: none;
@@ -78,6 +78,37 @@
     }
     #hamburger-menu nav a:last-child { border-bottom: none; }
     #hamburger-menu nav a:hover { color: #B89A5A; }
+    .all-estates-box {
+      max-width: 520px; width: 100%; margin: 0 auto;
+      padding: .75rem 1.25rem 1.75rem;
+      flex-shrink: 0;
+    }
+    .all-estates-link {
+      display: flex; align-items: center; gap: 1rem;
+      text-decoration: none;
+      background: #0e120e;
+      border: 1px solid rgba(184,154,90,.3);
+      border-radius: 8px;
+      padding: 1.25rem 1.25rem 1.25rem 1rem;
+      transition: border-color .2s, background .2s;
+    }
+    .all-estates-link:hover { border-color: #B89A5A; background: #121812; }
+    .all-estates-logo { width: 36px; height: 36px; flex-shrink: 0; opacity: .9; }
+    .all-estates-copy { flex: 1; }
+    .all-estates-brand {
+      display: block; font-size: .62rem; font-weight: 700;
+      letter-spacing: 3px; text-transform: uppercase;
+      color: #B89A5A; margin-bottom: .3rem;
+    }
+    .all-estates-label {
+      display: block; font-size: 1rem; font-weight: 700;
+      color: #fff; letter-spacing: .5px; margin-bottom: .2rem;
+    }
+    .all-estates-sub {
+      display: block; font-size: .75rem; font-weight: 300;
+      color: rgba(255,255,255,.38); letter-spacing: .3px;
+    }
+    .all-estates-arrow { color: #B89A5A; flex-shrink: 0; }
     /* Estate header — used by welcome only */
     .estate-header { text-align: center; padding: 0.586rem 1rem 2rem; }
     .estate-logo { max-width: 220px; height: auto; margin-bottom: 1.4rem; }
@@ -128,6 +159,17 @@
       <a href="/location/{{ slug }}/visitor/sponsor-a-bench">Sponsor a Bench</a>
       <a href="/location/{{ slug }}/visitor/legacy">Legacy</a>
     </nav>
+    <div class="all-estates-box">
+      <a href="/explore/estates" class="all-estates-link">
+        <img src="/static/treering1_gold.png" class="all-estates-logo" alt="LandMarque">
+        <div class="all-estates-copy">
+          <span class="all-estates-brand">LandMarque</span>
+          <span class="all-estates-label">Explore All Estates</span>
+          <span class="all-estates-sub">Discover remarkable places across Britain</span>
+        </div>
+        <svg class="all-estates-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
   </div>
 
   <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
