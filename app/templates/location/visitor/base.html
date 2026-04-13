@@ -67,7 +67,7 @@
       max-width: 520px; width: 100%; margin: 0 auto;
       padding: 1.25rem;
       display: flex; flex-direction: column; gap: .65rem;
-      overflow-y: auto; flex: 1;
+      overflow-y: auto;
     }
     #hamburger-menu nav a {
       display: block; text-decoration: none;
@@ -81,7 +81,8 @@
     .all-estates-box {
       max-width: 520px; width: 100%; margin: 0 auto;
       padding: .75rem 1.25rem 1.75rem;
-      flex-shrink: 0;
+      flex: 1; display: flex; flex-direction: column;
+      min-height: 140px;
     }
     .all-estates-link {
       display: flex; align-items: center; gap: 1rem;
@@ -89,24 +90,25 @@
       background: #0e120e;
       border: 1px solid rgba(184,154,90,.3);
       border-radius: 8px;
-      padding: 1.25rem 1.25rem 1.25rem 1rem;
+      padding: 1.5rem 1.25rem 1.5rem 1.25rem;
+      flex: 1;
       transition: border-color .2s, background .2s;
     }
     .all-estates-link:hover { border-color: #B89A5A; background: #121812; }
-    .all-estates-logo { width: 36px; height: 36px; flex-shrink: 0; opacity: .9; }
+    .all-estates-logo { width: 44px; height: 44px; flex-shrink: 0; opacity: .9; }
     .all-estates-copy { flex: 1; }
     .all-estates-brand {
-      display: block; font-size: .62rem; font-weight: 700;
+      display: block; font-size: .6rem; font-weight: 700;
       letter-spacing: 3px; text-transform: uppercase;
-      color: #B89A5A; margin-bottom: .3rem;
+      color: #B89A5A; margin-bottom: .4rem;
     }
     .all-estates-label {
-      display: block; font-size: 1rem; font-weight: 700;
-      color: #fff; letter-spacing: .5px; margin-bottom: .2rem;
+      display: block; font-size: 1.15rem; font-weight: 700;
+      color: #fff; letter-spacing: .5px; margin-bottom: .35rem;
     }
     .all-estates-sub {
-      display: block; font-size: .75rem; font-weight: 300;
-      color: rgba(255,255,255,.38); letter-spacing: .3px;
+      display: block; font-size: .82rem; font-weight: 300;
+      color: rgba(255,255,255,.42); letter-spacing: .3px; line-height: 1.5;
     }
     .all-estates-arrow { color: #B89A5A; flex-shrink: 0; }
     /* Estate header — used by welcome only */

@@ -11,8 +11,7 @@ import random
 
 from app.database import engine, SessionLocal
 from app import models
-from app.routers import driver, owner, admin, site, location
-from app.data.estates import ESTATES
+from app.routers import owner, admin, site
 from app.auth import hash_password
 
 models.Base.metadata.create_all(bind=engine)
@@ -164,14 +163,12 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 
 templates = Jinja2Templates(directory="app/templates")
 
-app.include_router(driver.router)
 app.include_router(owner.router)
 app.include_router(admin.router)
 app.include_router(site.router, prefix="/site")
-app.include_router(location.router, prefix="/location")
 
 
-@app.get("/")
+@app.get("/", response_class=HTMLResponse)
 def root(request: Request):
     return RedirectResponse(url="/landmarque", status_code=301)
 
@@ -208,32 +205,8 @@ def landmarque_register(request: Request):
 
 @app.get("/landmarque/estates", response_class=HTMLResponse)
 def landmarque_estates(request: Request):
+    # Redirect to visitor app — /explore/estates lives on the separate visitor service
     return RedirectResponse(url="/explore/estates", status_code=301)
-
-
-# ── Tier 2: Consumer discovery portal ────────────────────────────────────────
-
-@app.get("/explore", response_class=HTMLResponse)
-def explore_home(request: Request):
-    # Pull a handful of featured estates for the landing page
-    featured_slugs = ["shere-manor-estate", "chatsworth-estate", "blenheim-palace",
-                      "holkham-estate", "castle-howard", "culzean-castle"]
-    featured = [{"slug": s, **ESTATES[s]} for s in featured_slugs if s in ESTATES]
-    return templates.TemplateResponse("explore/home.html", {"request": request, "featured": featured})
-
-
-@app.get("/explore/estates", response_class=HTMLResponse)
-def explore_estates(request: Request):
-    estates_list = [{"slug": slug, **data} for slug, data in ESTATES.items()]
-    return templates.TemplateResponse("explore/estates.html", {"request": request, "estates": estates_list})
-
-
-@app.get("/explore/{slug}", response_class=HTMLResponse)
-def explore_estate(request: Request, slug: str):
-    estate = ESTATES.get(slug)
-    if not estate:
-        return RedirectResponse(url="/explore/estates", status_code=302)
-    return templates.TemplateResponse("explore/estate.html", {"request": request, "slug": slug, "estate": estate})
 
 
 @app.get("/landmarque/about", response_class=HTMLResponse)
@@ -288,16 +261,6 @@ async def contact_post(
     # Log enquiry — email sending to be wired in later
     print(f"ENQUIRY | {name} | {email} | {organisation} | {message}")
     return RedirectResponse("/contact?sent=1", status_code=303)
-
-
-@app.get("/payment")
-def payment_redirect():
-    return RedirectResponse("/payment/shere-manor", status_code=302)
-
-
-@app.get("/receipt")
-def receipt_redirect():
-    return RedirectResponse("/receipt/shere-manor", status_code=302)
 
 
 
