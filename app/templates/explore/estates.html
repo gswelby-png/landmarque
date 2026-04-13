@@ -4,145 +4,301 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Estates — LandMarque</title>
+  <meta name="description" content="Discover 228 remarkable estates across Britain. Filter by features, sort by distance.">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-    :root { --accent: #B89A5A; --dark: #0a0a0a; }
-    body { background: var(--dark); color: #fff; font-family: 'Raleway', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+    :root { --gold: #B89A5A; --dark: #0a0a0a; }
+    body { background: var(--dark); color: #fff; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; }
 
-    nav {
+    /* ── HEADER ── */
+    header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 300;
       display: flex; justify-content: space-between; align-items: center;
-      padding: 1.2rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-      background: rgba(10,10,10,.95); backdrop-filter: blur(8px);
-      border-bottom: 1px solid rgba(255,255,255,.05);
+      padding: 1rem 1.5rem;
+      background: rgba(10,10,10,.96); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.06);
     }
-    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
-    .nav-logo { width: 24px; height: 24px; }
-    .nav-links { display: flex; gap: 2rem; align-items: center; }
-    .nav-links a { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.5); transition: color .15s; }
-    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+    .h-brand { display: flex; align-items: center; gap: .5rem; text-decoration: none; }
+    .h-logo { width: 26px; height: 26px; }
+    .h-wordmark { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; }
+    .hamburger { background: none; border: none; cursor: pointer; padding: .3rem; display: flex; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 1px; }
 
-    .page-header { padding: 8rem 2rem 3rem; text-align: center; }
-    .page-tag { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
-    .page-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.5rem, 7vw, 5rem); font-weight: 700; color: #fff; margin-bottom: 1rem; line-height: 1; }
-    .page-rule { width: 28px; height: 1px; background: var(--accent); margin: 0 auto 1.5rem; }
-    .page-sub { font-size: .9rem; font-weight: 300; color: rgba(255,255,255,.38); max-width: 480px; margin: 0 auto; line-height: 1.8; }
+    /* ── MAP ── */
+    #map {
+      position: fixed; top: 56px; left: 0; right: 0;
+      height: 44vh; min-height: 240px; max-height: 380px;
+      z-index: 1;
+    }
 
-    /* Filter bar */
+    /* ── FILTER BAR ── */
     .filter-bar {
-      max-width: 1100px; margin: 0 auto;
-      padding: 1.5rem 2rem;
-      display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;
-      border-bottom: 1px solid rgba(255,255,255,.05);
+      position: fixed; z-index: 100;
+      left: 0; right: 0;
+      top: calc(56px + 44vh);
+      background: rgba(10,10,10,.98); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      padding: .75rem 1.25rem;
+      display: flex; align-items: center; gap: .75rem;
     }
-    .filter-bar input {
-      flex: 1; min-width: 200px;
-      background: #111; border: 1px solid rgba(255,255,255,.1); border-radius: 3px;
-      color: #fff; font-family: 'Raleway', sans-serif; font-size: .8rem;
-      padding: .65rem 1rem; outline: none; transition: border-color .15s;
+    .filter-search {
+      flex: 1; background: #111; border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px; color: #fff; font-family: 'Raleway', sans-serif;
+      font-size: .8rem; padding: .55rem .9rem; outline: none;
+      transition: border-color .15s;
     }
-    .filter-bar input::placeholder { color: rgba(255,255,255,.25); }
-    .filter-bar input:focus { border-color: var(--accent); }
-    .filter-count { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); white-space: nowrap; }
+    .filter-search::placeholder { color: rgba(255,255,255,.25); }
+    .filter-search:focus { border-color: var(--gold); }
+    .filter-btn {
+      display: flex; align-items: center; gap: .45rem;
+      background: #111; border: 1px solid rgba(255,255,255,.12);
+      color: rgba(255,255,255,.6); font-family: 'Raleway', sans-serif;
+      font-size: .68rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      padding: .55rem .9rem; border-radius: 4px; cursor: pointer;
+      transition: border-color .15s, color .15s; white-space: nowrap; flex-shrink: 0;
+    }
+    .filter-btn:hover, .filter-btn.active { border-color: var(--gold); color: var(--gold); }
+    .filter-btn .dot {
+      width: 6px; height: 6px; border-radius: 50%; background: var(--gold);
+      display: none;
+    }
+    .filter-btn.active .dot { display: block; }
 
-    /* Map */
-    #map { height: 420px; width: 100%; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
-
-    /* Grid */
-    .estates-section { max-width: 1100px; margin: 0 auto; padding: 3rem 2rem 6rem; }
-    .estates-grid {
-      display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 1px; background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.05); border-radius: 4px; overflow: hidden;
+    /* ── FILTER PANEL ── */
+    .filter-panel {
+      display: none; position: fixed; z-index: 400;
+      bottom: 0; left: 0; right: 0;
+      background: #111; border-top: 1px solid rgba(255,255,255,.1);
+      border-radius: 16px 16px 0 0;
+      padding: 1.5rem 1.5rem 2rem;
+      max-height: 75vh; overflow-y: auto;
     }
-    .estate-card { background: #111; padding: 1.5rem; text-decoration: none; display: block; transition: background .15s; }
-    .estate-card:hover { background: #161616; }
+    .filter-panel.open { display: block; }
+    .panel-handle { width: 36px; height: 3px; background: rgba(255,255,255,.2); border-radius: 2px; margin: 0 auto 1.5rem; }
+    .panel-section { margin-bottom: 1.75rem; }
+    .panel-label { font-size: .6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: .9rem; }
+    .sort-options { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .sort-btn {
+      font-size: .72rem; font-weight: 700; letter-spacing: .5px; padding: .5rem 1rem;
+      border-radius: 4px; border: 1px solid rgba(255,255,255,.15);
+      background: none; color: rgba(255,255,255,.5); cursor: pointer; transition: .15s;
+    }
+    .sort-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+    .feature-filters { display: flex; flex-wrap: wrap; gap: .5rem; }
+    .feat-filter {
+      display: flex; align-items: center; gap: .4rem; cursor: pointer;
+      font-size: .7rem; font-weight: 700; letter-spacing: .5px; text-transform: uppercase;
+      padding: .45rem .85rem; border-radius: 4px;
+      border: 1px solid rgba(255,255,255,.12); color: rgba(255,255,255,.45);
+      background: none; transition: .15s; user-select: none;
+    }
+    .feat-filter.active { border-color: var(--gold); color: var(--gold); background: rgba(184,154,90,.08); }
+    .panel-close {
+      display: block; width: 100%; margin-top: .5rem;
+      background: #1a1a1a; border: 1px solid rgba(255,255,255,.08);
+      color: rgba(255,255,255,.5); font-family: 'Raleway', sans-serif;
+      font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      padding: .85rem; border-radius: 4px; cursor: pointer; transition: .15s;
+    }
+    .panel-close:hover { color: #fff; border-color: rgba(255,255,255,.2); }
+    .panel-overlay { display: none; position: fixed; inset: 0; z-index: 399; background: rgba(0,0,0,.6); }
+    .panel-overlay.open { display: block; }
+
+    /* ── ESTATE LIST ── */
+    .estates-wrap {
+      margin-top: calc(56px + 44vh + 52px);
+      min-height: 60vh; padding-bottom: 4rem;
+    }
+    .list-header {
+      padding: 1.25rem 1.25rem .75rem;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .list-count { font-size: .6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.3); }
+    .near-label { font-size: .6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+
+    .estate-card {
+      display: flex; align-items: flex-start; gap: 1rem;
+      padding: 1.1rem 1.25rem; border-bottom: 1px solid rgba(255,255,255,.05);
+      text-decoration: none; color: inherit; transition: background .12s;
+    }
+    .estate-card:hover { background: rgba(255,255,255,.03); }
     .estate-card.hidden { display: none; }
-    .card-county { font-size: .58rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .4rem; }
-    .card-name { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
-    .card-tagline { font-size: .74rem; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.55; margin-bottom: .75rem; }
-    .card-features { display: flex; flex-wrap: wrap; gap: .25rem; }
-    .feat { font-size: .53rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.28); border: 1px solid rgba(255,255,255,.08); border-radius: 2px; padding: .18rem .38rem; }
+    .card-body { flex: 1; min-width: 0; }
+    .card-meta { display: flex; align-items: center; gap: .6rem; margin-bottom: .3rem; }
+    .card-county { font-size: .58rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); }
+    .card-dist { font-size: .6rem; font-weight: 700; color: rgba(255,255,255,.3); letter-spacing: 1px; }
+    .card-name { font-size: .95rem; font-weight: 700; color: #fff; margin-bottom: .3rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .card-tagline { font-size: .75rem; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.5; margin-bottom: .6rem; }
+    .card-feats { display: flex; flex-wrap: wrap; gap: .25rem; }
+    .feat-chip { font-size: .52rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase; color: rgba(255,255,255,.28); border: 1px solid rgba(255,255,255,.08); border-radius: 2px; padding: .15rem .35rem; }
+    .card-arrow { color: rgba(255,255,255,.2); flex-shrink: 0; margin-top: .2rem; }
 
-    .no-results { padding: 3rem; text-align: center; font-size: .85rem; color: rgba(255,255,255,.25); display: none; }
+    .no-results { padding: 4rem 2rem; text-align: center; font-size: .85rem; color: rgba(255,255,255,.2); display: none; }
 
-    footer { border-top: 1px solid rgba(255,255,255,.05); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
-    .foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
-    footer span { font-size: .65rem; color: rgba(255,255,255,.15); }
+    /* ── BURGER MENU ── */
+    .menu-overlay { display: none; position: fixed; inset: 0; background: #0a0a0a; z-index: 500; flex-direction: column; }
+    .menu-overlay.open { display: flex; }
+    .menu-head { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .menu-close { background: none; border: none; font-size: 1.4rem; color: rgba(255,255,255,.5); cursor: pointer; }
+    .menu-close:hover { color: #fff; }
+    .menu-body { flex: 1; padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: .5rem; overflow-y: auto; }
+    .menu-link { display: block; text-decoration: none; color: rgba(255,255,255,.7); font-size: 1.2rem; font-weight: 600; padding: .85rem 0; border-bottom: 1px solid rgba(255,255,255,.05); transition: color .15s; }
+    .menu-link:hover { color: var(--gold); }
+    .menu-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 1rem 0; }
+    .menu-login { display: block; text-decoration: none; color: rgba(255,255,255,.3); font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: .65rem 0; transition: color .15s; }
+    .menu-login:hover { color: var(--gold); }
 
-    @media (max-width: 600px) {
-      nav { padding: 1rem 1.25rem; }
-      .nav-links { display: none; }
-      .page-header { padding: 7rem 1.25rem 2rem; }
-      .filter-bar, .estates-section { padding: 1.25rem; }
+    /* Desktop layout */
+    @media (min-width: 800px) {
+      #map { max-height: 460px; height: 46vh; }
+      .filter-bar { top: calc(56px + 46vh); padding: .85rem 2rem; }
+      .estates-wrap { margin-top: calc(56px + 46vh + 56px); max-width: 900px; margin-left: auto; margin-right: auto; }
+      .estate-card { padding: 1.1rem 2rem; }
+      .filter-panel {
+        border-radius: 0; left: auto; right: 0; top: 56px; bottom: 0;
+        width: 320px; border-top: none; border-left: 1px solid rgba(255,255,255,.08);
+        max-height: none;
+      }
+      .panel-handle { display: none; }
     }
   </style>
 </head>
 <body>
 
-<nav>
-  <a href="/explore" class="nav-brand">
-    <img src="/static/treering1_gold.png" class="nav-logo" alt="">
-    <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+<header>
+  <a href="/" class="h-brand">
+    <img src="/static/treering1_gold.png" class="h-logo" alt="">
+    <span class="h-wordmark"><span style="color:var(--gold)">Land</span><span style="color:#fff">Marque</span></span>
   </a>
-  <div class="nav-links">
-    <a href="/explore">Explore</a>
-    <a href="/explore/estates" class="active">All Estates</a>
-    <a href="/landmarque">For Landowners</a>
-    <a href="/owner/login">Owner Login</a>
-  </div>
-</nav>
-
-<div class="page-header">
-  <p class="page-tag">Our Network</p>
-  <h1 class="page-title">All Estates</h1>
-  <div class="page-rule"></div>
-  <p class="page-sub">Remarkable places to visit across Britain. Click an estate to find out more, or use the map to find what's near you.</p>
-</div>
-
-<div class="filter-bar">
-  <input type="text" id="search" placeholder="Search by name or county…" oninput="filterEstates()">
-  <span class="filter-count" id="count"></span>
-</div>
+  <button class="hamburger" onclick="document.getElementById('menu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</header>
 
 <div id="map"></div>
 
-<div class="estates-section">
-  <div class="estates-grid" id="grid">
+<div class="filter-bar">
+  <input class="filter-search" id="search" type="text" placeholder="Search estates or counties…" oninput="applyFilters()">
+  <button class="filter-btn" id="filter-toggle-btn" onclick="togglePanel()">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="10" y1="18" x2="14" y2="18"/></svg>
+    Filter
+    <span class="dot"></span>
+  </button>
+</div>
+
+<div class="estates-wrap">
+  <div class="list-header">
+    <span class="list-count" id="count"></span>
+    <span class="near-label" id="near-label"></span>
+  </div>
+  <div id="estate-list">
     {% for estate in estates %}
-    <a href="/explore/{{ estate.slug }}" class="estate-card" data-name="{{ estate.name|lower }}" data-county="{{ estate.county|lower }}">
-      <div class="card-county">{{ estate.county }}</div>
-      <div class="card-name">{{ estate.name }}</div>
-      <div class="card-tagline">{{ estate.tagline }}</div>
-      <div class="card-features">
-        {% for f in estate.features[:4] %}
-        <span class="feat">{{ f|replace('-', ' ') }}</span>
-        {% endfor %}
-        {% if estate.features|length > 4 %}
-        <span class="feat">+{{ estate.features|length - 4 }}</span>
-        {% endif %}
+    <a href="/explore/{{ estate.slug }}" class="estate-card"
+       data-name="{{ estate.name|lower }}"
+       data-county="{{ estate.county|lower }}"
+       data-slug="{{ estate.slug }}"
+       data-lat="{{ estate.lat or '' }}"
+       data-lng="{{ estate.lng or '' }}"
+       data-features="{{ estate.features | join(',') }}">
+      <div class="card-body">
+        <div class="card-meta">
+          <span class="card-county">{{ estate.county }}</span>
+          <span class="card-dist" data-dist-slug="{{ estate.slug }}"></span>
+        </div>
+        <div class="card-name">{{ estate.name }}</div>
+        <div class="card-tagline">{{ estate.tagline }}</div>
+        <div class="card-feats">
+          {% for f in estate.features[:5] %}
+          <span class="feat-chip">{{ f|replace('-', ' ') }}</span>
+          {% endfor %}
+          {% if estate.features|length > 5 %}
+          <span class="feat-chip">+{{ estate.features|length - 5 }}</span>
+          {% endif %}
+        </div>
       </div>
+      <svg class="card-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18l6-6-6-6"/></svg>
     </a>
     {% endfor %}
   </div>
   <p class="no-results" id="no-results">No estates match your search.</p>
 </div>
 
-<footer>
-  <a href="/explore" class="foot-brand"><span style="color:#B89A5A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
-  <span>&copy; 2026 LandMarque Ltd</span>
-  <a href="/landmarque" style="font-size:.65rem;color:rgba(255,255,255,.25);text-decoration:none;">Are you a landowner? &rarr;</a>
-</footer>
+<!-- Filter panel -->
+<div class="panel-overlay" id="panel-overlay" onclick="closePanel()"></div>
+<div class="filter-panel" id="filter-panel">
+  <div class="panel-handle"></div>
+  <div class="panel-section">
+    <div class="panel-label">Sort by</div>
+    <div class="sort-options">
+      <button class="sort-btn active" data-sort="distance" onclick="setSort(this)">Nearest first</button>
+      <button class="sort-btn" data-sort="name" onclick="setSort(this)">A – Z</button>
+      <button class="sort-btn" data-sort="county" onclick="setSort(this)">County</button>
+    </div>
+  </div>
+  <div class="panel-section">
+    <div class="panel-label">Features</div>
+    <div class="feature-filters" id="feat-filters">
+      <span class="feat-filter active" data-feat="">All</span>
+      <span class="feat-filter" data-feat="parking">Parking</span>
+      <span class="feat-filter" data-feat="walking">Walking</span>
+      <span class="feat-filter" data-feat="cycling">Cycling</span>
+      <span class="feat-filter" data-feat="history">History</span>
+      <span class="feat-filter" data-feat="events">Events</span>
+      <span class="feat-filter" data-feat="places-to-eat">Places to eat</span>
+      <span class="feat-filter" data-feat="places-of-interest">Points of interest</span>
+      <span class="feat-filter" data-feat="fun-for-kids">Family friendly</span>
+      <span class="feat-filter" data-feat="shopping">Shopping</span>
+      <span class="feat-filter" data-feat="benches">Sponsor a bench</span>
+      <span class="feat-filter" data-feat="legacy">Leave a legacy</span>
+      <span class="feat-filter" data-feat="movies">Film locations</span>
+    </div>
+  </div>
+  <button class="panel-close" onclick="closePanel()">Done</button>
+</div>
+
+<!-- Burger menu -->
+<div class="menu-overlay" id="menu">
+  <div class="menu-head">
+    <a href="/" class="h-brand" onclick="document.getElementById('menu').classList.remove('open')">
+      <img src="/static/treering1_gold.png" style="width:22px;height:22px;" alt="">
+      <span class="h-wordmark"><span style="color:var(--gold)">Land</span><span style="color:#fff">Marque</span></span>
+    </a>
+    <button class="menu-close" onclick="document.getElementById('menu').classList.remove('open')">&times;</button>
+  </div>
+  <div class="menu-body">
+    <a href="/" class="menu-link">Home</a>
+    <a href="/explore/estates" class="menu-link" style="color:var(--gold)">All Estates</a>
+    <a href="/landmarque" class="menu-link">For Landowners</a>
+    <hr class="menu-divider">
+    <a href="/owner/login" class="menu-login">Owner Login &rarr;</a>
+  </div>
+</div>
 
 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 <script>
-  const estates = {{ estates | tojson }};
-  const total = estates.length;
-  document.getElementById('count').textContent = total + ' estates';
+  const ALL_ESTATES = {{ estates | tojson }};
+  let userLat = null, userLng = null;
+  let currentSort = 'distance';
+  let activeFeats = new Set();
+  let markers = {};
 
-  // Map
-  const map = L.map('map', { scrollWheelZoom: false });
+  // ── Haversine distance (km) ──────────────────────────────────────────────
+  function haversine(lat1, lon1, lat2, lon2) {
+    const R = 6371, r = Math.PI / 180;
+    const dLat = (lat2 - lat1) * r, dLon = (lon2 - lon1) * r;
+    const a = Math.sin(dLat/2)**2 + Math.cos(lat1*r) * Math.cos(lat2*r) * Math.sin(dLon/2)**2;
+    return R * 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  }
+  function fmtDist(km) {
+    if (km < 1) return Math.round(km * 1000) + 'm';
+    if (km < 10) return km.toFixed(1) + ' km';
+    return Math.round(km) + ' km';
+  }
+
+  // ── Map ──────────────────────────────────────────────────────────────────
+  const map = L.map('map', { scrollWheelZoom: false, zoomControl: true });
   L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
     attribution: '&copy; OpenStreetMap &copy; CARTO', subdomains: 'abcd', maxZoom: 19
   }).addTo(map);
@@ -151,47 +307,153 @@
   const goldIcon = L.divIcon({
     className: '',
     html: '<div style="width:10px;height:10px;background:#B89A5A;border-radius:50%;border:2px solid rgba(255,255,255,.7);box-shadow:0 0 5px rgba(184,154,90,.5);"></div>',
-    iconSize: [10, 10], iconAnchor: [5, 5],
+    iconSize: [10,10], iconAnchor: [5,5]
+  });
+  const dimIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:8px;height:8px;background:#444;border-radius:50%;border:1px solid #555;"></div>',
+    iconSize: [8,8], iconAnchor: [4,4]
   });
   const youIcon = L.divIcon({
     className: '',
     html: '<div style="width:14px;height:14px;background:#fff;border-radius:50%;border:3px solid #B89A5A;box-shadow:0 0 8px rgba(184,154,90,.8);"></div>',
-    iconSize: [14, 14], iconAnchor: [7, 7],
+    iconSize: [14,14], iconAnchor: [7,7]
   });
 
-  estates.forEach(e => {
+  ALL_ESTATES.forEach(e => {
     if (!e.lat || !e.lng) return;
     const m = L.marker([e.lat, e.lng], { icon: goldIcon }).addTo(map);
     m.bindPopup(
-      '<div style="font-family:Raleway,sans-serif;min-width:150px;">' +
-      '<div style="font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;margin-bottom:.3rem;">' + (e.county||'') + '</div>' +
-      '<div style="font-size:.85rem;font-weight:700;color:#111;margin-bottom:.5rem;">' + e.name + '</div>' +
-      '<a href="/explore/' + e.slug + '" style="font-size:.75rem;font-weight:700;color:#B89A5A;text-decoration:none;">View estate &rarr;</a>' +
-      '</div>'
+      '<div style="font-family:Raleway,sans-serif;min-width:140px;">' +
+      '<div style="font-size:.55rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;margin-bottom:.25rem;">' + (e.county||'') + '</div>' +
+      '<div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:.4rem;">' + e.name + '</div>' +
+      '<a href="/explore/' + e.slug + '" style="font-size:.72rem;font-weight:700;color:#B89A5A;text-decoration:none;">View &rarr;</a></div>'
     );
+    markers[e.slug] = m;
   });
 
-  // User location
-  map.locate({ setView: false });
-  map.on('locationfound', e => {
-    L.marker(e.latlng, { icon: youIcon }).addTo(map).bindPopup('You are here');
-    L.circle(e.latlng, { radius: e.accuracy / 2, color: '#B89A5A', fillOpacity: .08, weight: 1 }).addTo(map);
-  });
-
-  // Search filter
-  function filterEstates() {
-    const q = document.getElementById('search').value.toLowerCase().trim();
-    const cards = document.querySelectorAll('.estate-card');
-    let visible = 0;
-    cards.forEach(c => {
-      const match = !q || c.dataset.name.includes(q) || c.dataset.county.includes(q);
-      c.classList.toggle('hidden', !match);
-      if (match) visible++;
+  // ── Geolocation ──────────────────────────────────────────────────────────
+  const nearLabel = document.getElementById('near-label');
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos => {
+      userLat = pos.coords.latitude;
+      userLng = pos.coords.longitude;
+      L.marker([userLat, userLng], { icon: youIcon }).addTo(map).bindPopup('You are here');
+      map.setView([userLat, userLng], 9);
+      nearLabel.textContent = 'Sorted by distance';
+      // Add distance to each card
+      document.querySelectorAll('.estate-card').forEach(card => {
+        const lat = parseFloat(card.dataset.lat);
+        const lng = parseFloat(card.dataset.lng);
+        if (!isNaN(lat) && !isNaN(lng)) {
+          const d = haversine(userLat, userLng, lat, lng);
+          card.dataset.dist = d;
+          const el = card.querySelector('[data-dist-slug="' + card.dataset.slug + '"]');
+          if (el) el.textContent = fmtDist(d);
+        }
+      });
+      applyFilters();
+    }, () => {
+      nearLabel.textContent = '';
+      applyFilters();
     });
-    document.getElementById('count').textContent = visible + ' estate' + (visible !== 1 ? 's' : '');
-    document.getElementById('no-results').style.display = visible === 0 ? 'block' : 'none';
+  } else {
+    applyFilters();
   }
-  filterEstates();
+
+  // ── Filter & sort ────────────────────────────────────────────────────────
+  function applyFilters() {
+    const q = document.getElementById('search').value.toLowerCase().trim();
+    const cards = Array.from(document.querySelectorAll('.estate-card'));
+    let visible = [];
+
+    cards.forEach(card => {
+      const name = card.dataset.name || '';
+      const county = card.dataset.county || '';
+      const feats = card.dataset.features ? card.dataset.features.split(',') : [];
+      const matchQ = !q || name.includes(q) || county.includes(q);
+      const matchF = activeFeats.size === 0 || [...activeFeats].every(f => feats.includes(f));
+      if (matchQ && matchF) {
+        card.classList.remove('hidden');
+        visible.push(card);
+        // Highlight map marker
+        if (markers[card.dataset.slug]) markers[card.dataset.slug].setIcon(goldIcon);
+      } else {
+        card.classList.add('hidden');
+        if (markers[card.dataset.slug]) markers[card.dataset.slug].setIcon(dimIcon);
+      }
+    });
+
+    // Sort
+    const list = document.getElementById('estate-list');
+    visible.sort((a, b) => {
+      if (currentSort === 'distance' && userLat !== null) {
+        return (parseFloat(a.dataset.dist) || 9999) - (parseFloat(b.dataset.dist) || 9999);
+      }
+      if (currentSort === 'name') return (a.dataset.name||'').localeCompare(b.dataset.name||'');
+      if (currentSort === 'county') return (a.dataset.county||'').localeCompare(b.dataset.county||'');
+      return 0;
+    });
+    visible.forEach(c => list.appendChild(c));
+
+    const count = visible.length;
+    document.getElementById('count').textContent = count + ' estate' + (count !== 1 ? 's' : '');
+    document.getElementById('no-results').style.display = count === 0 ? 'block' : 'none';
+
+    // Update filter button state
+    const btn = document.getElementById('filter-toggle-btn');
+    btn.classList.toggle('active', activeFeats.size > 0);
+  }
+
+  // ── Sort ─────────────────────────────────────────────────────────────────
+  function setSort(btn) {
+    document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    currentSort = btn.dataset.sort;
+    applyFilters();
+  }
+
+  // ── Feature filter chips ─────────────────────────────────────────────────
+  document.querySelectorAll('.feat-filter').forEach(chip => {
+    chip.addEventListener('click', () => {
+      const feat = chip.dataset.feat;
+      if (feat === '') {
+        // "All" — clear filters
+        activeFeats.clear();
+        document.querySelectorAll('.feat-filter').forEach(c => c.classList.remove('active'));
+        chip.classList.add('active');
+      } else {
+        document.querySelector('.feat-filter[data-feat=""]').classList.remove('active');
+        if (activeFeats.has(feat)) {
+          activeFeats.delete(feat);
+          chip.classList.remove('active');
+        } else {
+          activeFeats.add(feat);
+          chip.classList.add('active');
+        }
+        if (activeFeats.size === 0) {
+          document.querySelector('.feat-filter[data-feat=""]').classList.add('active');
+        }
+      }
+      applyFilters();
+    });
+  });
+
+  // ── Panel ────────────────────────────────────────────────────────────────
+  function togglePanel() {
+    const p = document.getElementById('filter-panel');
+    const o = document.getElementById('panel-overlay');
+    const open = p.classList.contains('open');
+    p.classList.toggle('open', !open);
+    o.classList.toggle('open', !open);
+  }
+  function closePanel() {
+    document.getElementById('filter-panel').classList.remove('open');
+    document.getElementById('panel-overlay').classList.remove('open');
+  }
+
+  // Initial render
+  applyFilters();
 </script>
 </body>
 </html>

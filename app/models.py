@@ -61,6 +61,10 @@ class CarPark(Base):
     brand_text = Column(String, nullable=False, default="#ffffff")      # header text
     logo_url = Column(String, nullable=True)
     welcome_text = Column(String, nullable=True)
+    # Owner-editable estate page content (overrides ESTATES dict when set)
+    custom_tagline = Column(String, nullable=True)
+    custom_description = Column(String, nullable=True)
+    custom_features = Column(String, nullable=True)   # JSON list of feature strings
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 

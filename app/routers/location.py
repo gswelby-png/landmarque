@@ -582,6 +582,17 @@ def _get_estate(slug: str):
     return ESTATES.get(slug)
 
 
+def _resolve_features(car_park, estate: dict) -> list:
+    """Return features list: use car_park.custom_features if set, else ESTATES dict."""
+    import json as _json
+    if car_park and getattr(car_park, "custom_features", None):
+        try:
+            return _json.loads(car_park.custom_features)
+        except Exception:
+            pass
+    return estate.get("features", [])
+
+
 # ── Estate information pages ──────────────────────────────────────────────────
 
 @router.get("/{slug}", response_class=HTMLResponse)
@@ -713,7 +724,7 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
         "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
         "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
         "brand": brand,
-        "features": estate.get("features", []),
+        "features": _resolve_features(car_park, estate),
     })
 
 

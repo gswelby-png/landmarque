@@ -36,6 +36,15 @@ def migrate():
                 conn.execute(text("ALTER TABLE car_parks ADD COLUMN welcome_text VARCHAR"))
                 conn.commit()
                 log.info("migrate(): added welcome_text column")
+            if "custom_tagline" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN custom_tagline VARCHAR"))
+                conn.commit()
+            if "custom_description" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN custom_description TEXT"))
+                conn.commit()
+            if "custom_features" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN custom_features VARCHAR"))
+                conn.commit()
         # Backfill Shere Manor logo and welcome text if not set
         with engine.connect() as conn:
             conn.execute(text(
@@ -173,7 +182,7 @@ app.include_router(location.router, prefix="/location")
 
 @app.get("/", response_class=HTMLResponse)
 def root(request: Request):
-    return RedirectResponse(url="/landmarque", status_code=301)
+    return templates.TemplateResponse("landing.html", {"request": request})
 
 
 @app.get("/landmarque", response_class=HTMLResponse)

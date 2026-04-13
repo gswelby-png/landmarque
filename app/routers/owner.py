@@ -1,5 +1,6 @@
 import csv
 import io
+import json
 import qrcode
 
 from fastapi import APIRouter, Depends, Request, Form, HTTPException, Query
@@ -522,3 +523,77 @@ def export_csv(cp_id: int, request: Request, db: Session = Depends(get_db)):
         media_type="text/csv",
         headers={"Content-Disposition": f'attachment; filename="{filename}"'},
     )
+
+
+# ── Estate page editor ───────────────────────────────────────────────────────
+
+def _estate_slug_for_cp(cp_slug: str) -> str | None:
+    """Find the estate slug in ESTATES that has car_park_slug == cp_slug."""
+    from ..data.estates import ESTATES
+    for estate_slug, data in ESTATES.items():
+        if data.get("car_park_slug") == cp_slug:
+            return estate_slug
+    return None
+
+
+@router.get("/estate/edit/{cp_slug}", response_class=HTMLResponse)
+def edit_estate_page(request: Request, cp_slug: str, db: Session = Depends(get_db)):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    if not cp:
+        return RedirectResponse("/owner/dashboard", status_code=302)
+
+    from ..data.estates import ESTATES
+    estate_slug = _estate_slug_for_cp(cp_slug)
+    estate = ESTATES.get(estate_slug, {}) if estate_slug else {}
+
+    # Determine currently active features: custom_features overrides ESTATES dict
+    if cp.custom_features:
+        try:
+            active_features = set(json.loads(cp.custom_features))
+        except Exception:
+            active_features = set(estate.get("features", []))
+    else:
+        active_features = set(estate.get("features", []))
+
+    return templates.TemplateResponse("owner/edit_estate.html", {
+        "request": request,
+        "cp": cp,
+        "estate_slug": estate_slug,
+        "active_features": active_features,
+    })
+
+
+@router.post("/estate/edit/{cp_slug}")
+async def save_estate_page(
+    request: Request,
+    cp_slug: str,
+    db: Session = Depends(get_db),
+    logo_url: str = Form(""),
+    brand_primary: str = Form("#1a3a2a"),
+    brand_accent: str = Form("#c8a84b"),
+    brand_text: str = Form("#ffffff"),
+    welcome_text: str = Form(""),
+    custom_tagline: str = Form(""),
+    custom_description: str = Form(""),
+):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    if not cp:
+        return RedirectResponse("/owner/dashboard", status_code=302)
+
+    # Collect checkbox features from raw form data
+    form_data = await request.form()
+    features = list(form_data.getlist("features"))
+
+    cp.logo_url = logo_url or cp.logo_url
+    cp.brand_primary = brand_primary
+    cp.brand_accent = brand_accent
+    cp.brand_text = brand_text
+    cp.welcome_text = welcome_text
+    cp.custom_tagline = custom_tagline or None
+    cp.custom_description = custom_description or None
+    cp.custom_features = json.dumps(features) if features else None
+    db.commit()
+
+    return RedirectResponse(f"/owner/estate/edit/{cp_slug}?saved=1", status_code=303)

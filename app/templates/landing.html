@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LandMarque — Britain's Estate Network</title>
+  <meta name="description" content="Discover Britain's finest private estates as a visitor, or generate sustainable revenue from your land as a landowner.">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: #B89A5A; --dark: #0a0a0a; }
+    html { scroll-behavior: smooth; }
+    body { background: var(--dark); color: #fff; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem;
+      background: rgba(10,10,10,.92); backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .nav-brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; }
+    .nav-logo { width: 26px; height: 26px; }
+    .nav-wordmark { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 700; letter-spacing: 1px; }
+    .hamburger { background: none; border: none; cursor: pointer; padding: .3rem; display: flex; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--gold); border-radius: 1px; transition: .2s; }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 7rem 2rem 5rem; position: relative;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 60%, rgba(184,154,90,.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-mark { width: 64px; height: 64px; opacity: .9; margin-bottom: 2rem; }
+    .hero-tag { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2.8rem, 9vw, 6rem); font-weight: 700;
+      line-height: 1.05; letter-spacing: .5px; margin-bottom: 1.5rem;
+    }
+    .hero-rule { width: 28px; height: 1px; background: var(--gold); margin: 0 auto 1.75rem; }
+    .hero-sub { font-size: clamp(.9rem, 2.5vw, 1.05rem); font-weight: 300; color: rgba(255,255,255,.5); line-height: 1.85; max-width: 520px; margin-bottom: 3rem; }
+    .hero-ctas { display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--gold); color: #fff; text-decoration: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 1rem 1.75rem .85rem; border-radius: 3px; transition: filter .2s;
+    }
+    .btn-primary:hover { filter: brightness(115%); color: #fff; }
+    .btn-outline {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: transparent; color: rgba(255,255,255,.7); text-decoration: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 1rem 1.75rem .85rem; border-radius: 3px;
+      border: 1px solid rgba(255,255,255,.2); transition: border-color .2s, color .2s;
+    }
+    .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+
+    /* ── SCROLL PROMPT ── */
+    .scroll-prompt {
+      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      display: flex; flex-direction: column; align-items: center; gap: .5rem;
+      font-size: .55rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      color: rgba(255,255,255,.2); animation: bob 2.5s ease-in-out infinite;
+    }
+    @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
+
+    /* ── STAT STRIP ── */
+    .stat-strip {
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      text-align: center;
+    }
+    .stat-item { padding: 2rem 1rem; border-right: 1px solid rgba(255,255,255,.06); }
+    .stat-item:last-child { border-right: none; }
+    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .4rem; }
+    .stat-label { font-size: .6rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.3); }
+
+    /* ── SECTIONS ── */
+    .section { padding: 7rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-tag { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; max-width: 640px; }
+    .section-rule { width: 28px; height: 1px; background: var(--gold); margin-bottom: 2rem; }
+    .section-body { font-size: .95rem; font-weight: 300; color: rgba(255,255,255,.5); line-height: 1.9; max-width: 560px; margin-bottom: 2.5rem; }
+    .section-divider { border: none; border-top: 1px solid rgba(255,255,255,.06); max-width: 1100px; margin: 0 auto; }
+
+    /* ── VISITOR SECTION ── */
+    .visitor-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); border-radius: 4px; overflow: hidden; margin-bottom: 3rem; }
+    .feature-card { background: #111; padding: 2rem 1.75rem; }
+    .feature-icon { color: var(--gold); margin-bottom: 1rem; }
+    .feature-title { font-size: .85rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+    .feature-desc { font-size: .78rem; font-weight: 300; color: rgba(255,255,255,.38); line-height: 1.7; }
+
+    /* ── OWNER SECTION ── */
+    .owner-section { background: #0d0d0d; border-top: 1px solid rgba(255,255,255,.06); border-bottom: 1px solid rgba(255,255,255,.06); }
+    .revenue-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.06); border-radius: 4px; overflow: hidden; margin-bottom: 3rem; }
+    .revenue-card { background: #0d0d0d; padding: 2rem 1.5rem; }
+    .revenue-num { font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 700; color: var(--gold); margin-bottom: .4rem; }
+    .revenue-title { font-size: .75rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: .3rem; }
+    .revenue-desc { font-size: .72rem; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.6; }
+
+    /* ── HOW IT WORKS ── */
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-top: 3rem; }
+    .step { padding-top: 1.5rem; border-top: 1px solid rgba(184,154,90,.3); }
+    .step-num { font-size: .6rem; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: .75rem; }
+    .step h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+    .step p { font-size: .8rem; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.8; }
+
+    /* ── FOOTER ── */
+    footer { border-top: 1px solid rgba(255,255,255,.05); padding: 2.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    footer span { font-size: .62rem; color: rgba(255,255,255,.2); }
+    .foot-links { display: flex; gap: 1.5rem; }
+    .foot-links a { font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.25); text-decoration: none; transition: color .15s; }
+    .foot-links a:hover { color: var(--gold); }
+
+    /* ── BURGER MENU ── */
+    .menu-overlay { display: none; position: fixed; inset: 0; background: #0a0a0a; z-index: 500; flex-direction: column; overflow-y: auto; }
+    .menu-overlay.open { display: flex; }
+    .menu-head { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .menu-brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; }
+    .menu-close { background: none; border: none; font-size: 1.4rem; color: rgba(255,255,255,.5); cursor: pointer; padding: .2rem; line-height: 1; }
+    .menu-close:hover { color: #fff; }
+    .menu-body { flex: 1; padding: 2rem; display: flex; flex-direction: column; gap: .5rem; max-width: 520px; width: 100%; margin: 0 auto; }
+    .menu-link { display: block; text-decoration: none; color: rgba(255,255,255,.75); font-size: 1.2rem; font-weight: 600; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.06); letter-spacing: .5px; transition: color .15s; }
+    .menu-link:last-of-type { border-bottom: none; }
+    .menu-link:hover { color: var(--gold); }
+    .menu-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 1rem 0; }
+    .menu-login { display: block; text-decoration: none; color: rgba(255,255,255,.3); font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: .75rem 0; transition: color .15s; }
+    .menu-login:hover { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      nav { padding: 1rem 1.25rem; }
+      .hero { padding: 6rem 1.5rem 4rem; }
+      .visitor-grid { grid-template-columns: 1fr; }
+      .section { padding: 5rem 1.25rem; }
+      .hero-ctas { flex-direction: column; align-items: center; }
+      .stat-strip { grid-template-columns: 1fr; }
+      .stat-item { border-right: none; border-bottom: 1px solid rgba(255,255,255,.06); }
+      .stat-item:last-child { border-bottom: none; }
+      footer { flex-direction: column; align-items: flex-start; }
+    }
+    @media (min-width: 900px) {
+      .section-split { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <img src="/static/treering1_gold.png" class="nav-logo" alt="">
+    <span class="nav-wordmark"><span style="color:var(--gold)">Land</span><span style="color:#fff">Marque</span></span>
+  </a>
+  <button class="hamburger" onclick="document.getElementById('menu').classList.add('open')" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <img src="/static/treering1_gold.png" class="hero-mark" alt="">
+  <p class="hero-tag">Britain's Estate Network</p>
+  <h1 class="hero-title">Remarkable places.<br>Sustainable revenue.</h1>
+  <div class="hero-rule"></div>
+  <p class="hero-sub">LandMarque connects Britain's finest private estates with the people who love to visit them — and helps those estates generate meaningful, recurring income from every visit.</p>
+  <div class="hero-ctas">
+    <a href="/explore/estates" class="btn-primary">
+      Explore estates
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+    <a href="/landmarque" class="btn-outline">For landowners</a>
+  </div>
+  <div class="scroll-prompt">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+    Scroll
+  </div>
+</section>
+
+<!-- Stats -->
+<div class="stat-strip">
+  <div class="stat-item">
+    <div class="stat-num">228</div>
+    <div class="stat-label">Estates</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">40+</div>
+    <div class="stat-label">Counties</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-num">£0</div>
+    <div class="stat-label">Setup cost</div>
+  </div>
+</div>
+
+<!-- Visitor section -->
+<div class="section">
+  <div class="section-split">
+    <div>
+      <p class="section-tag">For visitors</p>
+      <h2 class="section-title">Find somewhere remarkable near you</h2>
+      <div class="section-rule"></div>
+      <p class="section-body">From Surrey Hills to the Scottish Highlands — browse 228 estates, parks, and historic landscapes. Filter by walking routes, parking, history, places to eat, and more. Pay for parking from your phone. No app, no barriers.</p>
+      <a href="/explore/estates" class="btn-primary" style="margin-bottom:1rem;">
+        Browse all estates
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="visitor-grid">
+      <div class="feature-card">
+        <svg class="feature-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/><circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/></svg>
+        <div class="feature-title">Easy parking</div>
+        <div class="feature-desc">Scan the QR code at arrival. Pay from your phone in seconds. No apps, no barriers, no fumbling for change.</div>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg>
+        <div class="feature-title">Walking routes</div>
+        <div class="feature-desc">Curated walks from each estate. Turn-by-turn directions, distance, and difficulty — all on your phone.</div>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg>
+        <div class="feature-title">History & stories</div>
+        <div class="feature-desc">Each estate's history, film connections, and points of interest — curated by the owners themselves.</div>
+      </div>
+      <div class="feature-card">
+        <svg class="feature-icon" width="28" height="28" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg>
+        <div class="feature-title">Places to eat</div>
+        <div class="feature-desc">Pubs, cafés, and restaurants near each estate — rated and described by the people who know them best.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- How it works -->
+<div class="section">
+  <p class="section-tag">How it works</p>
+  <h2 class="section-title">Simple for visitors, seamless for estates</h2>
+  <div class="steps-grid">
+    <div class="step">
+      <p class="step-num">01</p>
+      <h3>Find an estate</h3>
+      <p>Browse the map or list to find a remarkable place near you. Filter by features, sort by distance.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">02</p>
+      <h3>Scan on arrival</h3>
+      <p>A QR code at the car park entrance takes you directly to the estate's own page. No app needed.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">03</p>
+      <h3>Pay & explore</h3>
+      <p>Pay for parking in seconds. Then explore walking routes, history, events, and local recommendations.</p>
+    </div>
+    <div class="step">
+      <p class="step-num">04</p>
+      <h3>Support the estate</h3>
+      <p>Every payment goes directly to the estate maintaining these beautiful places for everyone to enjoy.</p>
+    </div>
+  </div>
+</div>
+
+<hr class="section-divider">
+
+<!-- Landowner section -->
+<div class="owner-section">
+  <div class="section">
+    <div class="section-split">
+      <div>
+        <p class="section-tag">For estate owners</p>
+        <h2 class="section-title">Your land deserves to work harder</h2>
+        <div class="section-rule"></div>
+        <p class="section-body">Thousands of people visit your land every year. LandMarque helps you capture a fair return from those visits — through parking, bench sponsorship, legacies, events, and more. Your brand throughout. No upfront cost.</p>
+        <div style="display:flex;gap:1rem;flex-wrap:wrap;">
+          <a href="/landmarque" class="btn-primary">
+            Learn more
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </a>
+          <a href="/landmarque/register" class="btn-outline">Register your estate</a>
+        </div>
+      </div>
+      <div class="revenue-grid">
+        <div class="revenue-card">
+          <div class="revenue-num">£</div>
+          <div class="revenue-title">Parking</div>
+          <div class="revenue-desc">Cashless parking payments direct to your account. No barriers, no cash handling.</div>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-num">♦</div>
+          <div class="revenue-title">Benches</div>
+          <div class="revenue-desc">Sponsored memorial and commemorative benches with recurring annual renewal income.</div>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-num">∞</div>
+          <div class="revenue-title">Legacies</div>
+          <div class="revenue-desc">A dignified way for visitors to leave a lasting gift to the estate in their will.</div>
+        </div>
+        <div class="revenue-card">
+          <div class="revenue-num">★</div>
+          <div class="revenue-title">Events</div>
+          <div class="revenue-desc">Promote estate events directly to your visitor base and the wider LandMarque network.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="/" class="foot-brand"><span style="color:var(--gold)">Land</span><span style="color:rgba(255,255,255,.3)">Marque</span></a>
+  <div class="foot-links">
+    <a href="/explore/estates">Estates</a>
+    <a href="/landmarque">Landowners</a>
+    <a href="/landmarque/about">About</a>
+    <a href="/landmarque/contact">Contact</a>
+  </div>
+  <span>&copy; 2026 LandMarque Ltd</span>
+</footer>
+
+<!-- Burger menu -->
+<div class="menu-overlay" id="menu">
+  <div class="menu-head">
+    <a href="/" class="menu-brand" onclick="document.getElementById('menu').classList.remove('open')">
+      <img src="/static/treering1_gold.png" style="width:22px;height:22px;" alt="">
+      <span class="nav-wordmark"><span style="color:var(--gold)">Land</span><span style="color:#fff">Marque</span></span>
+    </a>
+    <button class="menu-close" onclick="document.getElementById('menu').classList.remove('open')">&times;</button>
+  </div>
+  <div class="menu-body">
+    <a href="/explore/estates" class="menu-link" onclick="document.getElementById('menu').classList.remove('open')">Explore Estates</a>
+    <a href="/landmarque" class="menu-link" onclick="document.getElementById('menu').classList.remove('open')">For Landowners</a>
+    <a href="/landmarque/about" class="menu-link" onclick="document.getElementById('menu').classList.remove('open')">About</a>
+    <a href="/landmarque/contact" class="menu-link" onclick="document.getElementById('menu').classList.remove('open')">Contact</a>
+    <hr class="menu-divider">
+    <a href="/owner/login" class="menu-login" onclick="document.getElementById('menu').classList.remove('open')">Owner Login &rarr;</a>
+  </div>
+</div>
+
+</body>
+</html>

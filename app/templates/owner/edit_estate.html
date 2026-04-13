@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Estate — {{ cp.name }}</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --gold: #B89A5A; --dark: #0a0a0a; --accent: var(--gold); }
+    body { background: #0d0d0d; color: #fff; font-family: 'Raleway', sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh; }
+
+    /* ── HEADER ── */
+    .top-bar {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(10,10,10,.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.07);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.5rem; gap: 1rem;
+    }
+    .top-back { display: flex; align-items: center; gap: .5rem; text-decoration: none; color: rgba(255,255,255,.45); font-size: .7rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; transition: color .15s; }
+    .top-back:hover { color: var(--gold); }
+    .top-title { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; color: #fff; flex: 1; text-align: center; }
+    .save-btn {
+      background: var(--gold); color: #fff; border: none; cursor: pointer;
+      font-family: 'Raleway', sans-serif; font-size: .68rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; padding: .65rem 1.25rem;
+      border-radius: 3px; transition: filter .2s; white-space: nowrap;
+    }
+    .save-btn:hover { filter: brightness(115%); }
+
+    /* ── LAYOUT ── */
+    .editor-wrap { max-width: 760px; margin: 0 auto; padding: 2rem 1.25rem 5rem; }
+
+    /* ── SECTION HEADERS ── */
+    .section-head { font-size: .6rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,.3); padding: 0 0 .75rem; border-bottom: 1px solid rgba(255,255,255,.07); margin-bottom: 1.5rem; margin-top: 2.5rem; }
+    .section-head:first-of-type { margin-top: 0; }
+
+    /* ── FORM FIELDS ── */
+    .field { margin-bottom: 1.25rem; }
+    .field label { display: block; font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.4); margin-bottom: .55rem; }
+    .field input[type=text], .field input[type=url], .field textarea {
+      width: 100%; background: #111; border: 1px solid rgba(255,255,255,.1);
+      border-radius: 4px; color: #fff; font-family: 'Raleway', sans-serif;
+      font-size: .85rem; font-weight: 300; padding: .75rem 1rem;
+      outline: none; transition: border-color .15s; resize: vertical;
+    }
+    .field input:focus, .field textarea:focus { border-color: var(--gold); }
+    .field textarea { min-height: 90px; line-height: 1.7; }
+    .field-hint { font-size: .65rem; color: rgba(255,255,255,.25); margin-top: .4rem; }
+
+    /* ── COLOR ROW ── */
+    .color-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .color-field label { display: block; font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .5rem; }
+    .color-swatch-wrap { display: flex; align-items: center; gap: .65rem; }
+    .color-swatch-wrap input[type=color] { width: 36px; height: 36px; border: none; background: none; cursor: pointer; border-radius: 3px; padding: 0; }
+    .color-hex { flex: 1; background: #111; border: 1px solid rgba(255,255,255,.1); border-radius: 4px; color: #fff; font-family: 'Raleway', sans-serif; font-size: .8rem; padding: .5rem .7rem; outline: none; transition: border-color .15s; }
+    .color-hex:focus { border-color: var(--gold); }
+
+    /* ── FEATURE BLOCKS ── */
+    .blocks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; }
+    .block-card {
+      background: #111; border: 1px solid rgba(255,255,255,.07);
+      border-radius: 6px; padding: 1rem 1rem .9rem;
+      display: flex; align-items: flex-start; gap: .75rem;
+      transition: border-color .15s; cursor: pointer;
+    }
+    .block-card.on { border-color: rgba(184,154,90,.35); background: #13120d; }
+    .block-card-body { flex: 1; }
+    .block-name { font-size: .78rem; font-weight: 700; color: rgba(255,255,255,.7); letter-spacing: .3px; margin-bottom: .2rem; }
+    .block-card.on .block-name { color: var(--gold); }
+    .block-desc { font-size: .68rem; font-weight: 300; color: rgba(255,255,255,.28); line-height: 1.5; }
+    /* Toggle switch */
+    .toggle { position: relative; width: 34px; height: 19px; flex-shrink: 0; margin-top: .1rem; }
+    .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track {
+      position: absolute; inset: 0; border-radius: 10px;
+      background: #222; border: 1px solid rgba(255,255,255,.1);
+      transition: background .2s;
+    }
+    .toggle input:checked + .toggle-track { background: var(--gold); border-color: var(--gold); }
+    .toggle-knob {
+      position: absolute; top: 2px; left: 2px; width: 13px; height: 13px;
+      border-radius: 50%; background: rgba(255,255,255,.4);
+      transition: transform .2s, background .2s;
+    }
+    .toggle input:checked ~ .toggle-knob { transform: translateX(15px); background: #fff; }
+
+    /* ── PREVIEW LINK ── */
+    .preview-link {
+      display: inline-flex; align-items: center; gap: .5rem;
+      text-decoration: none; color: var(--gold); font-size: .7rem;
+      font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      padding: .65rem 1.25rem; border: 1px solid rgba(184,154,90,.3);
+      border-radius: 3px; transition: border-color .15s;
+    }
+    .preview-link:hover { border-color: var(--gold); }
+
+    /* ── LOGO PREVIEW ── */
+    .logo-preview { margin-top: .75rem; max-height: 60px; opacity: .8; display: none; }
+
+    /* ── SAVE TOAST ── */
+    .toast {
+      display: none; position: fixed; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      background: var(--gold); color: #fff; font-size: .72rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase; padding: .75rem 1.5rem;
+      border-radius: 3px; z-index: 999;
+    }
+    .toast.show { display: block; animation: fadeInOut 2.5s forwards; }
+    @keyframes fadeInOut { 0%{opacity:0} 10%{opacity:1} 80%{opacity:1} 100%{opacity:0} }
+
+    @media (max-width: 540px) {
+      .blocks-grid { grid-template-columns: 1fr; }
+      .color-row { grid-template-columns: 1fr; }
+      .top-title { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <a href="/owner/dashboard" class="top-back">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Dashboard
+  </a>
+  <span class="top-title">{{ cp.name }}</span>
+  <button class="save-btn" onclick="submitForm()">Save changes</button>
+</div>
+
+<div class="editor-wrap">
+
+  <form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp.slug }}">
+
+    <!-- Preview link -->
+    {% if estate_slug %}
+    <div style="margin-bottom:2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem;">
+      <div>
+        <div style="font-size:.7rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.3);margin-bottom:.4rem;">Estate visitor page</div>
+        <div style="font-size:.8rem;color:rgba(255,255,255,.5);">/location/{{ estate_slug }}/visitor/welcome</div>
+      </div>
+      <a href="/location/{{ estate_slug }}/visitor/welcome" target="_blank" class="preview-link">
+        Preview page
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6M15 3h6v6M10 14L21 3"/></svg>
+      </a>
+    </div>
+    {% endif %}
+
+    <!-- Branding -->
+    <p class="section-head">Branding</p>
+
+    <div class="field">
+      <label>Logo URL</label>
+      <input type="url" name="logo_url" value="{{ cp.logo_url or '' }}" placeholder="https://yourestate.co.uk/logo.png" oninput="previewLogo(this.value)">
+      <div class="field-hint">Link to your estate logo. PNG or SVG recommended.</div>
+      <img class="logo-preview" id="logo-preview" src="{{ cp.logo_url or '' }}" alt="">
+    </div>
+
+    <div class="field">
+      <label>Brand colours</label>
+      <div class="color-row">
+        <div class="color-field">
+          <label>Header background</label>
+          <div class="color-swatch-wrap">
+            <input type="color" id="c-primary" value="{{ cp.brand_primary }}" oninput="syncHex('primary', this.value)">
+            <input class="color-hex" id="h-primary" name="brand_primary" value="{{ cp.brand_primary }}" oninput="syncColor('primary', this.value)" maxlength="7">
+          </div>
+        </div>
+        <div class="color-field">
+          <label>Accent / buttons</label>
+          <div class="color-swatch-wrap">
+            <input type="color" id="c-accent" value="{{ cp.brand_accent }}" oninput="syncHex('accent', this.value)">
+            <input class="color-hex" id="h-accent" name="brand_accent" value="{{ cp.brand_accent }}" oninput="syncColor('accent', this.value)" maxlength="7">
+          </div>
+        </div>
+        <div class="color-field">
+          <label>Header text</label>
+          <div class="color-swatch-wrap">
+            <input type="color" id="c-text" value="{{ cp.brand_text }}" oninput="syncHex('text', this.value)">
+            <input class="color-hex" id="h-text" name="brand_text" value="{{ cp.brand_text }}" oninput="syncColor('text', this.value)" maxlength="7">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <p class="section-head">Content</p>
+
+    <div class="field">
+      <label>Welcome message</label>
+      <textarea name="welcome_text" placeholder="A warm welcome message shown at the top of your visitor page…">{{ cp.welcome_text or '' }}</textarea>
+    </div>
+
+    <div class="field">
+      <label>Estate tagline</label>
+      <input type="text" name="custom_tagline" value="{{ cp.custom_tagline or '' }}" placeholder="A short, memorable line about your estate">
+    </div>
+
+    <div class="field">
+      <label>Estate description</label>
+      <textarea name="custom_description" placeholder="A longer description of your estate for the public discovery page…" style="min-height:120px;">{{ cp.custom_description or '' }}</textarea>
+    </div>
+
+    <!-- Page blocks -->
+    <p class="section-head">Page blocks</p>
+    <p style="font-size:.78rem;font-weight:300;color:rgba(255,255,255,.35);line-height:1.7;margin-bottom:1.5rem;">Choose which sections appear on your visitor page. Only enable blocks you have content for.</p>
+
+    <div class="blocks-grid">
+      {% set all_features = [
+        ('parking',           'Parking',            'QR code cashless parking payment'),
+        ('history',           'Our History',        'The story of your estate'),
+        ('movies',            'Film locations',     'Movie & TV filming connections'),
+        ('events',            'Events',             'Upcoming events on the estate'),
+        ('walking',           'Walking routes',     'Guided walks from the estate'),
+        ('cycling',           'Cycling routes',     'Bike routes through the estate'),
+        ('places-to-eat',     'Places to eat',      'Recommended pubs, cafés & restaurants'),
+        ('places-of-interest','Points of interest', 'Notable spots and landmarks'),
+        ('fun-for-kids',      'Family friendly',    'Activities and features for children'),
+        ('shopping',          'Shopping',           'Estate shop or local retailers'),
+        ('benches',           'Sponsor a bench',    'Memorial and commemorative benches'),
+        ('legacy',            'Leave a legacy',     'Gifts in wills to the estate'),
+      ] %}
+      {% for feat_id, feat_name, feat_desc in all_features %}
+      {% set is_on = feat_id in active_features %}
+      <div class="block-card {{ 'on' if is_on }}" onclick="toggleBlock(this)">
+        <label class="toggle" onclick="event.stopPropagation()">
+          <input type="checkbox" name="features" value="{{ feat_id }}" {{ 'checked' if is_on }} onchange="this.closest('.block-card').classList.toggle('on', this.checked)">
+          <span class="toggle-track"></span>
+          <span class="toggle-knob"></span>
+        </label>
+        <div class="block-card-body">
+          <div class="block-name">{{ feat_name }}</div>
+          <div class="block-desc">{{ feat_desc }}</div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+
+  </form>
+</div>
+
+<div class="toast" id="toast">Saved</div>
+
+<script>
+  function submitForm() {
+    document.getElementById('edit-form').submit();
+  }
+
+  function previewLogo(url) {
+    const img = document.getElementById('logo-preview');
+    if (url) { img.src = url; img.style.display = 'block'; }
+    else { img.style.display = 'none'; }
+  }
+
+  function syncHex(key, val) {
+    document.getElementById('h-' + key).value = val;
+  }
+  function syncColor(key, val) {
+    if (/^#[0-9a-fA-F]{6}$/.test(val)) {
+      document.getElementById('c-' + key).value = val;
+    }
+  }
+
+  function toggleBlock(card) {
+    const cb = card.querySelector('input[type=checkbox]');
+    cb.checked = !cb.checked;
+    card.classList.toggle('on', cb.checked);
+  }
+
+  // Show logo preview on load if URL exists
+  const logoUrl = document.querySelector('input[name=logo_url]').value;
+  if (logoUrl) previewLogo(logoUrl);
+
+  // Show toast if redirected with ?saved=1
+  if (location.search.includes('saved=1')) {
+    const t = document.getElementById('toast');
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2600);
+  }
+</script>
+</body>
+</html>
