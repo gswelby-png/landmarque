@@ -114,6 +114,32 @@
     .step h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
     .step p { font-size: .8rem; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.8; }
 
+    /* ── EXPLORE BANNER ── */
+    .explore-banner {
+      position: relative; overflow: hidden;
+      background: #0d0d0d;
+      border-top: 1px solid rgba(184,154,90,.2);
+      border-bottom: 1px solid rgba(184,154,90,.2);
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+    .explore-banner::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 50%, rgba(184,154,90,.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .explore-banner-tag { font-size: .58rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.25rem; }
+    .explore-banner-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.5rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.1; }
+    .explore-banner-sub { font-size: .9rem; font-weight: 300; color: rgba(255,255,255,.4); margin-bottom: 2.5rem; max-width: 440px; margin-left: auto; margin-right: auto; line-height: 1.8; }
+    .btn-explore {
+      display: inline-flex; align-items: center; gap: .75rem;
+      background: var(--gold); color: #fff; text-decoration: none;
+      font-size: .72rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase;
+      padding: 1.1rem 2.25rem 1rem; border-radius: 3px; transition: filter .2s;
+    }
+    .btn-explore:hover { filter: brightness(115%); color: #fff; }
+    .explore-count { margin-top: 1.5rem; font-size: .6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.18); }
+
     /* ── FOOTER ── */
     footer { border-top: 1px solid rgba(255,255,255,.05); padding: 2.5rem 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
     .foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
@@ -313,6 +339,18 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Explore banner -->
+<div class="explore-banner">
+  <p class="explore-banner-tag">Discover Britain's estates</p>
+  <h2 class="explore-banner-title">228 remarkable places.<br>Find yours on the map.</h2>
+  <p class="explore-banner-sub">Browse every estate, park, and historic landscape on one map. Sort by distance, filter by what you love.</p>
+  <a href="/explore/estates" class="btn-explore">
+    Open the map
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  <p class="explore-count">228 estates &nbsp;·&nbsp; 40+ counties &nbsp;·&nbsp; Updated weekly</p>
 </div>
 
 <footer>
