@@ -222,10 +222,7 @@ def landmarque_estates(request: Request):
 
 @app.get("/explore", response_class=HTMLResponse)
 def explore_home(request: Request):
-    featured_slugs = ["shere-manor-estate", "chatsworth-estate", "blenheim-palace",
-                      "holkham-estate", "castle-howard", "culzean-castle"]
-    featured = [{"slug": s, **ESTATES[s]} for s in featured_slugs if s in ESTATES]
-    return templates.TemplateResponse("explore/home.html", {"request": request, "featured": featured})
+    return RedirectResponse(url="/explore/estates", status_code=301)
 
 
 @app.get("/explore/estates", response_class=HTMLResponse)
