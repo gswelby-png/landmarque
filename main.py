@@ -12,7 +12,7 @@ import random
 from app.database import engine, SessionLocal
 from app import models
 from app.routers import driver, owner, admin, site, location
-from app.routers.location import ESTATES
+from app.data.estates import ESTATES
 from app.auth import hash_password
 
 models.Base.metadata.create_all(bind=engine)

@@ -9,6 +9,7 @@ import os
 from ..database import get_db
 from ..models import CarPark, Transaction, TransactionStatus
 from ..pricing import get_active_rule, calculate_price, build_duration_options
+from ..data.estates import ESTATES
 
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
@@ -576,21 +577,6 @@ BENCH_TIERS = [
     },
 ]
 
-# Known estate slugs — extend as new estates are onboarded
-# features controls which blocks appear on the visitor welcome page
-ESTATES = {
-    "shere-manor-estate": {
-        "name": "Shere Manor Estate",
-        "tagline": "A historic estate at the heart of one of England's most beautiful villages.",
-        "description": "Shere Manor Estate manages public facilities around the picturesque village of Shere in the Surrey Hills AONB. Visitors enjoy walking, history, and filming locations used in major Hollywood productions.",
-        "car_park_slug": "shere-manor",
-        "lat": 51.2164,
-        "lng": -0.4444,
-        "county": "Surrey",
-        "features": ["parking", "history", "movies", "places-to-eat", "walking", "places-of-interest", "fun-for-kids", "shopping", "benches", "legacy"],
-    },
-}
-
 
 def _get_estate(slug: str):
     return ESTATES.get(slug)
@@ -685,8 +671,8 @@ def visitor_welcome_test(request: Request, slug: str, db: Session = Depends(get_
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     brand = {
         "primary": (car_park.brand_primary or "#1e3a1e") if car_park else "#1e3a1e",
         "accent": (car_park.brand_accent or "#B89A5A") if car_park else "#B89A5A",
@@ -710,8 +696,8 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     brand = {
         "primary": (car_park.brand_primary or "#1e3a1e") if car_park else "#1e3a1e",
         "accent": (car_park.brand_accent or "#B89A5A") if car_park else "#B89A5A",
@@ -736,8 +722,8 @@ def visitor_parking_select(request: Request, slug: str, db: Session = Depends(ge
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/parking_select.html", {
         "request": request,
         "slug": slug,
@@ -789,8 +775,8 @@ def visitor_parking_village_hall(request: Request, slug: str, db: Session = Depe
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/parking_village_hall.html", {
         "request": request,
         "slug": slug,
@@ -805,8 +791,8 @@ def visitor_parking_roadside(request: Request, slug: str, db: Session = Depends(
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/parking_roadside.html", {
         "request": request,
         "slug": slug,
@@ -915,8 +901,8 @@ def visitor_parking_payment(request: Request, slug: str, db: Session = Depends(g
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/payment_mockup.html", {
         "request": request,
@@ -933,8 +919,8 @@ def visitor_walking_list(request: Request, slug: str, db: Session = Depends(get_
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     walks = WALKS.get(slug, [])
     return templates.TemplateResponse("location/visitor/walking_list.html", {
         "request": request,
@@ -951,8 +937,8 @@ def visitor_walking_detail(request: Request, slug: str, walk_slug: str, db: Sess
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     walks = WALKS.get(slug, [])
     walk = next((w for w in walks if w["slug"] == walk_slug), None)
     if not walk:
@@ -972,8 +958,8 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/movies.html", {
         "request": request,
         "slug": slug,
@@ -988,8 +974,8 @@ def visitor_history_test(request: Request, slug: str, db: Session = Depends(get_
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/history_test.html", {
         "request": request,
         "slug": slug,
@@ -1004,8 +990,8 @@ def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/history.html", {
         "request": request,
         "slug": slug,
@@ -1020,8 +1006,8 @@ def visitor_places_of_interest(request: Request, slug: str, db: Session = Depend
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = PLACES_OF_INTEREST.get(slug, [])
     return templates.TemplateResponse("location/visitor/places_of_interest.html", {
         "request": request,
@@ -1038,8 +1024,8 @@ def visitor_fun_for_kids(request: Request, slug: str, db: Session = Depends(get_
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = FUN_FOR_KIDS.get(slug, [])
     return templates.TemplateResponse("location/visitor/fun_for_kids.html", {
         "request": request,
@@ -1056,8 +1042,8 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = PLACES_TO_EAT.get(slug, [])
     return templates.TemplateResponse("location/visitor/places_to_eat.html", {
         "request": request,
@@ -1079,8 +1065,8 @@ def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db))
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/shopping.html", {
         "request": request,
         "slug": slug,
@@ -1097,8 +1083,8 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/bench.html", {
         "request": request,
         "slug": slug,
@@ -1116,8 +1102,8 @@ def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     return templates.TemplateResponse("location/visitor/legacy.html", {
         "request": request,
         "slug": slug,
@@ -1132,8 +1118,8 @@ def visitor_parking_receipt(request: Request, slug: str, db: Session = Depends(g
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
-    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first()
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
     return templates.TemplateResponse("driver/receipt_placeholder.html", {
         "request": request,
