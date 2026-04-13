@@ -4,7 +4,7 @@
 
 ESTATES = {
 
-    # ── Surrey ──────────────────────────────────────────────────────────────────
+    # ── Surrey Hills & surrounds — closest / easiest to recruit first ────────────
 
     "shere-manor-estate": {
         "name": "Shere Manor Estate",
@@ -15,6 +15,95 @@ ESTATES = {
         "car_park_slug": "shere-manor",
         "features": ["parking", "history", "movies", "places-to-eat", "walking", "places-of-interest", "fun-for-kids", "shopping", "benches", "legacy"],
     },
+    "hurtwood-estate": {
+        "name": "Hurtwood Estate",
+        "tagline": "The largest private open space in the Surrey Hills — over 1,500 acres of moorland and woodland.",
+        "description": "The Hurtwood Estate is one of the most significant private landholdings in the Surrey Hills AONB, covering moorland, ancient woodland, and heathland around Peaslake, Holmbury Hill, and Ewhurst. The estate generously allows public access to the majority of its land and manages several car parks serving the Surrey Hills walking and cycling community.",
+        "county": "Surrey",
+        "lat": 51.1834, "lng": -0.3883,
+        "features": ["parking", "walking", "cycling", "places-of-interest", "benches", "legacy"],
+    },
+    "albury-estate": {
+        "name": "Albury Estate",
+        "tagline": "A private Capability Brown landscape in the Tillingbourne valley — neighbour to Shere.",
+        "description": "Albury Park is a private estate in the Tillingbourne valley immediately east of Shere, landscaped by John Evelyn in the seventeenth century. The estate includes a remarkable series of terraced gardens, a Pugin chapel, and the former parish church of St Peter and St Paul — one of Surrey's finest Saxon buildings.",
+        "county": "Surrey",
+        "lat": 51.2133, "lng": -0.4233,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "wotton-estate": {
+        "name": "Wotton Estate",
+        "tagline": "John Evelyn's ancestral home — a historic landscape garden at the foot of Leith Hill.",
+        "description": "Wotton House near Dorking is the ancestral home of the Evelyn family, most famous for the diarist John Evelyn who created the gardens here before lending his expertise to Albury Park. The estate grounds, with their temples, terraces, and ponds, were designed by Evelyn himself and restored in the late twentieth century.",
+        "county": "Surrey",
+        "lat": 51.2048, "lng": -0.4069,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "denbies-wine-estate": {
+        "name": "Denbies Wine Estate",
+        "tagline": "England's largest single-estate winery — 265 acres of vines on the North Downs above Dorking.",
+        "description": "Denbies Wine Estate near Dorking is England's largest single-estate winery, with 265 acres of vines on the chalk slopes of the North Downs. The estate offers vineyard tours, a winery, gallery, restaurant, and accommodation, and is one of Surrey's most popular visitor attractions.",
+        "county": "Surrey",
+        "lat": 51.2337, "lng": -0.3357,
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
+    },
+    "box-hill-estate": {
+        "name": "Box Hill",
+        "tagline": "Surrey's most celebrated viewpoint — chalk downland above the Mole valley used in the London 2012 Olympics.",
+        "description": "Box Hill is a National Trust chalk downland above the Mole valley near Dorking, one of the most visited open spaces in England. The hill was used as the cycling road race venue in the 2012 London Olympics and the summit offers panoramic views across the Surrey Hills and Weald.",
+        "county": "Surrey",
+        "lat": 51.2494, "lng": -0.3092,
+        "features": ["walking", "cycling", "places-of-interest", "places-to-eat", "benches", "legacy", "fun-for-kids"],
+    },
+    "leith-hill-estate": {
+        "name": "Leith Hill",
+        "tagline": "The highest point in south-east England, with views on a clear day to the English Channel.",
+        "description": "Leith Hill is the highest point in south-east England at 294 metres, managed by the National Trust with extensive woodland, heathland, and a Georgian tower on the summit. The hill is a focal point for walking and cycling in the Surrey Hills and popular with families and cyclists year-round.",
+        "county": "Surrey",
+        "lat": 51.1788, "lng": -0.3783,
+        "features": ["walking", "cycling", "places-of-interest", "places-to-eat", "benches", "legacy", "fun-for-kids"],
+    },
+    "norbury-park": {
+        "name": "Norbury Park",
+        "tagline": "A Capability Brown estate on the chalk escarpment — a hidden gem of the Mole valley.",
+        "description": "Norbury Park is a Surrey County Council managed estate on the chalk escarpment above Leatherhead, with woodland walks, a yew wood, and views across the Mole valley. The Druids Grove — one of the finest stands of veteran yew trees in England — is within the estate.",
+        "county": "Surrey",
+        "lat": 51.2700, "lng": -0.3300,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+    "ranmore-common": {
+        "name": "Ranmore Common",
+        "tagline": "An open common on the crest of the North Downs with sweeping views across the Weald.",
+        "description": "Ranmore Common is a National Trust open space on the ridge of the North Downs above Dorking, with mixed woodland, chalk downland, and one of the finest ridge walks in Surrey. The common connects to the North Downs Way and is within the Surrey Hills AONB.",
+        "county": "Surrey",
+        "lat": 51.2300, "lng": -0.3700,
+        "features": ["walking", "cycling", "places-of-interest", "benches", "legacy"],
+    },
+    "abinger-estate": {
+        "name": "Abinger Estate",
+        "tagline": "A historic village estate in the Surrey Hills, centred on one of England's oldest villages.",
+        "description": "The Abinger Estate encompasses the villages of Abinger Common and Abinger Hammer in the Surrey Hills, with ancient woodland, the Friday Street hammer pond, and walking routes onto Leith Hill. The estate has strong associations with E.M. Forster, who spent much of his life in the area.",
+        "county": "Surrey",
+        "lat": 51.2070, "lng": -0.3980,
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy"],
+    },
+    "watts-gallery-estate": {
+        "name": "Watts Gallery",
+        "tagline": "A Victorian artist's village — the home and studios of G.F. Watts in the Surrey Hills.",
+        "description": "Watts Gallery in Compton near Guildford is a Victorian artists' village created by the painter G.F. Watts and his wife Mary. The gallery houses the largest collection of Watts's work, alongside a tea shop, pottery, and the extraordinary Watts Memorial Chapel.",
+        "county": "Surrey",
+        "lat": 51.2000, "lng": -0.5700,
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "shopping", "benches", "legacy"],
+    },
+    "clandon-park": {
+        "name": "Clandon Park",
+        "tagline": "A Palladian mansion whose grounds remain open following the devastating fire of 2015.",
+        "description": "Clandon Park is a National Trust Palladian mansion near Guildford, badly damaged by fire in 2015 but with grounds, walled garden, and parkland remaining open. The restoration of the house is underway and the estate is home to the Queen's Royal Surrey Regiment Museum.",
+        "county": "Surrey",
+        "lat": 51.2569, "lng": -0.4619,
+        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+    },
+
     "polesden-lacey": {
         "name": "Polesden Lacey",
         "tagline": "An Edwardian estate on the North Downs with panoramic Surrey Hills views.",

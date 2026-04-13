@@ -208,8 +208,32 @@ def landmarque_register(request: Request):
 
 @app.get("/landmarque/estates", response_class=HTMLResponse)
 def landmarque_estates(request: Request):
+    return RedirectResponse(url="/explore/estates", status_code=301)
+
+
+# ── Tier 2: Consumer discovery portal ────────────────────────────────────────
+
+@app.get("/explore", response_class=HTMLResponse)
+def explore_home(request: Request):
+    # Pull a handful of featured estates for the landing page
+    featured_slugs = ["shere-manor-estate", "chatsworth-estate", "blenheim-palace",
+                      "holkham-estate", "castle-howard", "culzean-castle"]
+    featured = [{"slug": s, **ESTATES[s]} for s in featured_slugs if s in ESTATES]
+    return templates.TemplateResponse("explore/home.html", {"request": request, "featured": featured})
+
+
+@app.get("/explore/estates", response_class=HTMLResponse)
+def explore_estates(request: Request):
     estates_list = [{"slug": slug, **data} for slug, data in ESTATES.items()]
-    return templates.TemplateResponse("site/estates.html", {"request": request, "estates": estates_list})
+    return templates.TemplateResponse("explore/estates.html", {"request": request, "estates": estates_list})
+
+
+@app.get("/explore/{slug}", response_class=HTMLResponse)
+def explore_estate(request: Request, slug: str):
+    estate = ESTATES.get(slug)
+    if not estate:
+        return RedirectResponse(url="/explore/estates", status_code=302)
+    return templates.TemplateResponse("explore/estate.html", {"request": request, "slug": slug, "estate": estate})
 
 
 @app.get("/landmarque/about", response_class=HTMLResponse)

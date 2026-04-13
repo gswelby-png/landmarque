@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore — LandMarque</title>
+  <meta name="description" content="Discover remarkable estates, parks and villages near you. Parking, walking, history, and more.">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #B89A5A; --dark: #0a0a0a; }
+    body { background: var(--dark); color: #fff; font-family: 'Raleway', Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+
+    /* Nav */
+    nav {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.2rem 2rem; position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      background: rgba(10,10,10,.95); backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(255,255,255,.05);
+    }
+    .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+    .nav-logo { width: 24px; height: 24px; }
+    .nav-links { display: flex; gap: 2rem; align-items: center; }
+    .nav-links a { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.5); transition: color .15s; }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center;
+      padding: 8rem 2rem 6rem; position: relative; overflow: hidden;
+    }
+    #hero-map { position: absolute; inset: 0; z-index: 0; opacity: .3; }
+    .hero-content { position: relative; z-index: 1; max-width: 640px; }
+    .hero-tag { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 10vw, 6.5rem); font-weight: 700;
+      line-height: 1; letter-spacing: 1px; margin-bottom: 1.5rem; color: #fff;
+    }
+    .hero-rule { width: 28px; height: 1px; background: var(--accent); margin: 0 auto 1.5rem; }
+    .hero-sub { font-size: 1rem; font-weight: 300; line-height: 1.85; color: rgba(255,255,255,.5); margin-bottom: 2.5rem; }
+    .hero-cta {
+      display: inline-flex; align-items: center; gap: .6rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase;
+      padding: 1rem 2rem .8rem; border-radius: 3px; transition: filter .2s;
+    }
+    .hero-cta:hover { filter: brightness(110%); color: #fff; }
+
+    /* Near you strip */
+    .near-strip {
+      border-top: 1px solid rgba(255,255,255,.06);
+      border-bottom: 1px solid rgba(255,255,255,.06);
+      padding: 1rem 2rem; text-align: center;
+      font-size: .65rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,.25);
+    }
+    #near-status { color: var(--accent); }
+
+    /* Featured estates */
+    .featured { padding: 6rem 2rem; max-width: 1100px; margin: 0 auto; }
+    .section-label { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--accent); margin-bottom: 2.5rem; }
+    .estate-grid {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1px; background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.05); border-radius: 4px; overflow: hidden;
+    }
+    .estate-card { background: #111; padding: 1.75rem; text-decoration: none; display: block; transition: background .15s; }
+    .estate-card:hover { background: #161616; }
+    .card-county { font-size: .58rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+    .card-name { font-size: 1rem; font-weight: 700; color: #fff; margin-bottom: .4rem; }
+    .card-tagline { font-size: .78rem; font-weight: 300; color: rgba(255,255,255,.38); line-height: 1.6; margin-bottom: .9rem; }
+    .card-features { display: flex; flex-wrap: wrap; gap: .3rem; }
+    .feat { font-size: .55rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: rgba(255,255,255,.3); border: 1px solid rgba(255,255,255,.1); border-radius: 2px; padding: .2rem .4rem; }
+    .browse-btn {
+      display: block; text-align: center; margin: 3rem auto 0;
+      max-width: 240px; text-decoration: none; color: rgba(255,255,255,.5);
+      font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      border: 1px solid rgba(255,255,255,.15); padding: .9rem 1.5rem;
+      border-radius: 3px; transition: border-color .15s, color .15s;
+    }
+    .browse-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* How it works */
+    .how { padding: 6rem 2rem; border-top: 1px solid rgba(255,255,255,.06); max-width: 860px; margin: 0 auto; }
+    .how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-top: 3rem; }
+    .how-step { position: relative; padding-top: 1.5rem; }
+    .how-step::before { content: ''; position: absolute; top: 0; left: 0; width: 28px; height: 1px; background: var(--accent); }
+    .how-num { font-size: .6rem; font-weight: 700; letter-spacing: 3px; color: var(--accent); text-transform: uppercase; margin-bottom: .75rem; }
+    .how-step h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
+    .how-step p { font-size: .82rem; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.8; }
+
+    /* Footer */
+    footer { border-top: 1px solid rgba(255,255,255,.05); padding: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; }
+    .foot-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 700; text-decoration: none; }
+    footer span { font-size: .65rem; color: rgba(255,255,255,.15); }
+
+    @media (max-width: 600px) {
+      nav { padding: 1rem 1.25rem; }
+      .nav-links { display: none; }
+      .hero { padding: 7rem 1.5rem 4rem; }
+      .featured, .how { padding: 4rem 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/explore" class="nav-brand">
+    <img src="/static/treering1_gold.png" class="nav-logo" alt="">
+    <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+  </a>
+  <div class="nav-links">
+    <a href="/explore" class="active">Explore</a>
+    <a href="/explore/estates">All Estates</a>
+    <a href="/landmarque">For Landowners</a>
+    <a href="/owner/login">Owner Login</a>
+  </div>
+</nav>
+
+<!-- Hero with background map -->
+<section class="hero">
+  <div id="hero-map"></div>
+  <div class="hero-content">
+    <p class="hero-tag">Discover remarkable places</p>
+    <h1 class="hero-title">Explore</h1>
+    <div class="hero-rule"></div>
+    <p class="hero-sub">Remarkable estates, parks, and historic landscapes across Britain. Parking, walking routes, history, and more — all in one place.</p>
+    <a href="/explore/estates" class="hero-cta">
+      Find an estate near you
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
+  </div>
+</section>
+
+<div class="near-strip">
+  <span id="near-status">Finding estates near you&hellip;</span>
+</div>
+
+<!-- Featured estates -->
+<section class="featured">
+  <p class="section-label">Featured estates</p>
+  <div class="estate-grid">
+    {% for estate in featured %}
+    <a href="/explore/{{ estate.slug }}" class="estate-card">
+      <div class="card-county">{{ estate.county }}</div>
+      <div class="card-name">{{ estate.name }}</div>
+      <div class="card-tagline">{{ estate.tagline }}</div>
+      <div class="card-features">
+        {% for f in estate.features[:4] %}
+        <span class="feat">{{ f|replace('-', ' ') }}</span>
+        {% endfor %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  <a href="/explore/estates" class="browse-btn">Browse all estates &rarr;</a>
+</section>
+
+<!-- How it works -->
+<section class="how">
+  <p class="section-label">How it works</p>
+  <div class="how-grid">
+    <div class="how-step">
+      <p class="how-num">01</p>
+      <h3>Find an estate</h3>
+      <p>Browse the map or list to find a remarkable place near you — or plan a day out somewhere new.</p>
+    </div>
+    <div class="how-step">
+      <p class="how-num">02</p>
+      <h3>Visit the estate page</h3>
+      <p>Each estate has its own page with parking, walking routes, history, places to eat, and more.</p>
+    </div>
+    <div class="how-step">
+      <p class="how-num">03</p>
+      <h3>Pay & explore</h3>
+      <p>Scan the QR code at the car park to pay for parking from your phone. No app, no barriers, no fuss.</p>
+    </div>
+    <div class="how-step">
+      <p class="how-num">04</p>
+      <h3>Support the estate</h3>
+      <p>Your parking contribution goes directly to the charity or estate maintaining these beautiful places for everyone.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a href="/explore" class="foot-brand"><span style="color:#B89A5A">Land</span><span style="color:rgba(255,255,255,.25)">Marque</span></a>
+  <span>&copy; 2026 LandMarque Ltd</span>
+  <a href="/landmarque" style="font-size:.65rem;color:rgba(255,255,255,.25);text-decoration:none;">Are you a landowner? &rarr;</a>
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  const estates = {{ featured | tojson }};
+
+  // Background hero map
+  const heroMap = L.map('hero-map', { zoomControl: false, scrollWheelZoom: false, dragging: false, touchZoom: false, doubleClickZoom: false, keyboard: false });
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', { subdomains: 'abcd', maxZoom: 19 }).addTo(heroMap);
+  heroMap.setView([53.5, -2.5], 6);
+
+  const goldIcon = L.divIcon({
+    className: '',
+    html: '<div style="width:10px;height:10px;background:#B89A5A;border-radius:50%;border:2px solid rgba(255,255,255,.6);"></div>',
+    iconSize: [10, 10], iconAnchor: [5, 5],
+  });
+  estates.forEach(e => { if (e.lat && e.lng) L.marker([e.lat, e.lng], { icon: goldIcon }).addTo(heroMap); });
+
+  // Near-me detection
+  const nearEl = document.getElementById('near-status');
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(pos => {
+      const { latitude: lat, longitude: lng } = pos.coords;
+      fetch('/explore/estates').then(() => {
+        // Just update text — full logic is on the estates page
+        nearEl.textContent = 'Estates near your location are highlighted on the map below';
+      });
+    }, () => {
+      nearEl.textContent = 'Browse all estates below';
+    });
+  } else {
+    nearEl.textContent = 'Browse all estates below';
+  }
+</script>
+</body>
+</html>
