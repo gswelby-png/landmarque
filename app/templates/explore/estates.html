@@ -162,6 +162,14 @@
     .menu-sep { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 1.25rem 0 1rem; }
     .menu-owner { display: block; text-decoration: none; color: rgba(255,255,255,.28); font-size: .68rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; padding: .6rem 0; transition: color .15s; }
     .menu-owner:hover { color: var(--gold); }
+    .menu-home-btn {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      margin-top: 2rem; padding: 1rem 1.5rem;
+      background: var(--gold); color: #fff; text-decoration: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 3px; transition: filter .2s;
+    }
+    .menu-home-btn:hover { filter: brightness(115%); color: #fff; }
 
     /* ── DESKTOP ── */
     @media (min-width: 800px) {
@@ -286,10 +294,13 @@
     <button class="menu-close-btn" onclick="document.getElementById('menu').classList.remove('open')">&times;</button>
   </div>
   <div class="menu-body">
-    <a href="/" class="menu-link">Home</a>
     <a href="/explore/estates" class="menu-link current">All Estates</a>
     <a href="/landmarque/about" class="menu-link">About</a>
     <a href="/contact" class="menu-link">Contact</a>
+    <a href="/" class="menu-home-btn">
+      LandMarque Home
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+    </a>
   </div>
 </div>
 
