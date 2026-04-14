@@ -74,7 +74,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Places to Eat</div>
   <p class="page-subtitle">We are blessed with a great range of places to eat and drink in and around the village.</p>
@@ -115,4 +116,5 @@
   {% endfor %}
 
 </div>
+{% endif %}
 {% endblock %}

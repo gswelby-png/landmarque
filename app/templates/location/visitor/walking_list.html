@@ -62,7 +62,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Walking Routes</div>
   <p class="page-subtitle">Explore the beautiful walks around Shere. Each route is waymarked and suitable for most abilities.</p>
@@ -85,4 +86,5 @@
   {% endfor %}
 
 </div>
+{% endif %}
 {% endblock %}

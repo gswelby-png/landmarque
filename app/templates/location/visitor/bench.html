@@ -146,7 +146,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Sponsor a Bench</div>
   <p class="page-subtitle">A bench on this estate is more than a place to sit — it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that means a great deal to you, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
@@ -255,4 +256,5 @@
     document.getElementById('form-success').style.display = 'block';
   }
 </script>
+{% endif %}
 {% endblock %}

@@ -63,7 +63,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Fun for Kids</div>
   <p class="page-subtitle">Shere is a brilliant place for children — streams to paddle in, creatures to spot, ice cream to eat, and countryside to explore.</p>
@@ -89,4 +90,5 @@
   {% endfor %}
 
 </div>
+{% endif %}
 {% endblock %}

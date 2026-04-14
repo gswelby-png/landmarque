@@ -63,7 +63,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Places of Interest</div>
   <p class="page-subtitle">We have a number of historic buildings and landscape features for you to explore.</p>
@@ -89,4 +90,5 @@
   {% endfor %}
 
 </div>
+{% endif %}
 {% endblock %}
