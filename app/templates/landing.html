@@ -72,18 +72,6 @@
     }
     @keyframes bob { 0%,100% { transform: translateX(-50%) translateY(0); } 50% { transform: translateX(-50%) translateY(6px); } }
 
-    /* ── STAT STRIP ── */
-    .stat-strip {
-      border-top: 1px solid rgba(255,255,255,.06);
-      border-bottom: 1px solid rgba(255,255,255,.06);
-      display: grid; grid-template-columns: repeat(3, 1fr);
-      text-align: center;
-    }
-    .stat-item { padding: 2rem 1rem; border-right: 1px solid rgba(255,255,255,.06); }
-    .stat-item:last-child { border-right: none; }
-    .stat-num { font-family: 'Cormorant Garamond', serif; font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; color: var(--gold); line-height: 1; margin-bottom: .4rem; }
-    .stat-label { font-size: .6rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.3); }
-
     /* ── SECTIONS ── */
     .section { padding: 7rem 2rem; max-width: 1100px; margin: 0 auto; }
     .section-tag { font-size: .6rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: var(--gold); margin-bottom: 1.5rem; }
@@ -105,13 +93,6 @@
     .revenue-card { background: #0d0d0d; padding: 2rem 1.5rem; }
 .revenue-title { font-size: .75rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: .3rem; }
     .revenue-desc { font-size: .72rem; font-weight: 300; color: rgba(255,255,255,.35); line-height: 1.6; }
-
-    /* ── HOW IT WORKS ── */
-    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 3rem; margin-top: 3rem; }
-    .step { padding-top: 1.5rem; border-top: 1px solid rgba(184,154,90,.3); }
-    .step-num { font-size: .6rem; font-weight: 700; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; margin-bottom: .75rem; }
-    .step h3 { font-size: .9rem; font-weight: 700; color: #fff; margin-bottom: .5rem; }
-    .step p { font-size: .8rem; font-weight: 300; color: rgba(255,255,255,.4); line-height: 1.8; }
 
     /* ── EXPLORE BANNER ── */
     .explore-banner {
@@ -211,22 +192,6 @@
   </div>
 </section>
 
-<!-- Stats -->
-<div class="stat-strip">
-  <div class="stat-item">
-    <div class="stat-num">228</div>
-    <div class="stat-label">Estates</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">40+</div>
-    <div class="stat-label">Counties</div>
-  </div>
-  <div class="stat-item">
-    <div class="stat-num">£0</div>
-    <div class="stat-label">Setup cost</div>
-  </div>
-</div>
-
 <!-- Visitor section -->
 <div class="section">
   <div class="section-split">
@@ -234,7 +199,7 @@
       <p class="section-tag">For visitors</p>
       <h2 class="section-title">Find somewhere remarkable near you</h2>
       <div class="section-rule"></div>
-      <p class="section-body">From Surrey Hills to the Scottish Highlands — browse 228 estates, parks, and historic landscapes. Filter by walking routes, parking, history, places to eat, and more. Pay for parking from your phone. No app, no barriers.</p>
+      <p class="section-body">Browse private estates, parks, and historic landscapes. Filter by walking routes, parking, history, places to eat, and more. Pay for parking from your phone. No app, no barriers.</p>
       <a href="/explore/estates" class="btn-primary" style="margin-bottom:1rem;">
         Browse all estates
         <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -261,36 +226,6 @@
         <div class="feature-title">Places to eat</div>
         <div class="feature-desc">Pubs, cafés, and restaurants near each estate — rated and described by the people who know them best.</div>
       </div>
-    </div>
-  </div>
-</div>
-
-<hr class="section-divider">
-
-<!-- How it works -->
-<div class="section">
-  <p class="section-tag">How it works</p>
-  <h2 class="section-title">Simple for visitors, seamless for estates</h2>
-  <div class="steps-grid">
-    <div class="step">
-      <p class="step-num">01</p>
-      <h3>Find an estate</h3>
-      <p>Browse the map or list to find a remarkable place near you. Filter by features, sort by distance.</p>
-    </div>
-    <div class="step">
-      <p class="step-num">02</p>
-      <h3>Scan on arrival</h3>
-      <p>A QR code at the car park entrance takes you directly to the estate's own page. No app needed.</p>
-    </div>
-    <div class="step">
-      <p class="step-num">03</p>
-      <h3>Pay & explore</h3>
-      <p>Pay for parking in seconds. Then explore walking routes, history, events, and local recommendations.</p>
-    </div>
-    <div class="step">
-      <p class="step-num">04</p>
-      <h3>Support the estate</h3>
-      <p>Every payment goes directly to the estate maintaining these beautiful places for everyone to enjoy.</p>
     </div>
   </div>
 </div>
@@ -343,13 +278,12 @@
 <!-- Explore banner -->
 <div class="explore-banner">
   <p class="explore-banner-tag">Discover Britain's estates</p>
-  <h2 class="explore-banner-title">228 remarkable places.<br>Find yours on the map.</h2>
-  <p class="explore-banner-sub">Browse every estate, park, and historic landscape on one map. Sort by distance, filter by what you love.</p>
+  <h2 class="explore-banner-title">Remarkable places.<br>Find yours on the map.</h2>
+  <p class="explore-banner-sub">Browse private estates, parks, and historic landscapes on one map. Sort by distance, filter by what you love.</p>
   <a href="/explore/estates" class="btn-explore">
     Open the map
     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
-  <p class="explore-count">228 estates &nbsp;·&nbsp; 40+ counties &nbsp;·&nbsp; Updated weekly</p>
 </div>
 
 <footer>
