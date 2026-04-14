@@ -624,8 +624,8 @@ async def save_estate_page(
 
 @router.get("/estate/preview/{cp_slug}", response_class=HTMLResponse)
 def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)):
-    owner = current_owner(request, db)
-    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    owner_obj = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner_obj.id).first()
     if not cp:
         return RedirectResponse("/owner/dashboard", status_code=302)
 
@@ -633,28 +633,35 @@ def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)
     estate_slug = _estate_slug_for_cp(cp_slug)
     estate = _ESTATES.get(estate_slug, {}) if estate_slug else {}
 
+    # Use same feature resolution as the real visitor page
     if cp.custom_features:
         try:
-            features = set(json.loads(cp.custom_features))
+            features = json.loads(cp.custom_features)
         except Exception:
-            features = set(estate.get("features", []))
+            features = estate.get("features", [])
     else:
-        features = set(estate.get("features", []))
+        features = estate.get("features", [])
 
-    return templates.TemplateResponse("owner/estate_preview.html", {
+    brand_primary = cp.brand_primary or "#1e3a1e"
+    brand_accent  = cp.brand_accent  or "#B89A5A"
+    brand_text    = cp.brand_text    or "#ffffff"
+
+    # Render the real welcome template so the preview is pixel-perfect
+    return templates.TemplateResponse("location/visitor/welcome.html", {
         "request": request,
-        "slug": cp_slug,
-        "estate_slug": estate_slug or cp_slug,
-        "estate_name": cp.name,
-        "car_park_name": cp.name,
-        "car_park_tagline": cp.custom_tagline or estate.get("tagline", ""),
+        "slug": estate_slug or cp_slug,          # estate slug for correct nav links
+        "estate": estate,
+        "estate_name": owner_obj.name,            # same as real visitor page
+        "car_park_name": "Welcome",
         "logo_url": cp.logo_url or "",
         "welcome_text": cp.welcome_text or "",
-        "custom_tagline": cp.custom_tagline or "",
-        "custom_description": cp.custom_description or "",
-        "brand_primary": cp.brand_primary or "#1a3a2a",
-        "brand_accent": cp.brand_accent or "#c8a84b",
-        "brand_text": cp.brand_text or "#ffffff",
+        "car_park_tagline": cp.custom_tagline or estate.get("tagline", ""),
+        "brand": {"primary": brand_primary, "accent": brand_accent, "text": brand_text},
         "features": features,
+        # Edit mode extras
+        "edit_mode": True,
         "cp_slug": cp_slug,
+        "brand_primary": brand_primary,
+        "brand_accent": brand_accent,
+        "brand_text": brand_text,
     })

@@ -70,12 +70,68 @@
       font-size: .72rem; color: rgba(255,255,255,.4);
       font-weight: 300; text-align: center; line-height: 1.5;
     }
+    {% if edit_mode %}
+    /* ── Edit mode ── */
+    body { padding-top: 52px; }
+    #scroll-nav { top: 52px; }
+    #edit-toolbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: #0a0a0a; border-bottom: 1px solid rgba(184,154,90,.3);
+      display: flex; align-items: center; height: 52px;
+      padding: 0 1rem; overflow-x: auto; scrollbar-width: none;
+    }
+    #edit-toolbar::-webkit-scrollbar { display: none; }
+    .tb-close {
+      display: flex; align-items: center; gap: .4rem;
+      font-size: .6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: rgba(255,255,255,.4); cursor: pointer; background: none; border: none;
+      padding: 0 1rem 0 0; border-right: 1px solid rgba(255,255,255,.07); margin-right: 1rem;
+      height: 100%; white-space: nowrap; transition: color .15s; font-family: 'Raleway', sans-serif;
+    }
+    .tb-close:hover { color: #fff; }
+    .tb-group { display: flex; align-items: center; gap: .65rem; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,.07); height: 100%; }
+    .tb-label { font-size: .55rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); white-space: nowrap; }
+    .tb-logo-input {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 3px; color: #fff; font-family: 'Raleway', sans-serif;
+      font-size: .75rem; padding: .35rem .65rem; outline: none; width: 200px;
+      transition: border-color .15s;
+    }
+    .tb-logo-input:focus { border-color: rgba(184,154,90,.5); }
+    .tb-swatch-wrap { display: flex; align-items: center; gap: .4rem; }
+    .tb-swatch-label { font-size: .5rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.22); }
+    .tb-swatch-wrap input[type=color] { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.15); border-radius: 3px; cursor: pointer; background: none; padding: 1px; }
+    .tb-save {
+      margin-left: auto; flex-shrink: 0;
+      background: #B89A5A; color: #fff; border: none;
+      font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .55rem 1.25rem; border-radius: 3px; cursor: pointer; transition: filter .15s; white-space: nowrap;
+    }
+    .tb-save:hover { filter: brightness(110%); }
+    .tb-saved { display: none; font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #4caf79; margin-left: auto; white-space: nowrap; }
+    [data-editable] { cursor: text; border-radius: 3px; outline: 2px dashed transparent; transition: outline .1s; }
+    [data-editable]:hover { outline-color: rgba(184,154,90,.45); }
+    [data-editable]:focus { outline-color: #B89A5A; outline-style: solid; }
+    .logo-edit-wrap { position: relative; display: inline-block; cursor: pointer; }
+    .logo-edit-wrap:hover img { outline: 2px dashed rgba(184,154,90,.5); border-radius: 3px; }
+    {% endif %}
 {% endblock %}
 
 {% block header %}
 <div class="welcome-header">
   {% if logo_url %}
-  <img src="{{ logo_url }}" alt="{{ estate_name }}" class="welcome-logo">
+    {% if edit_mode %}
+    <div class="logo-edit-wrap" onclick="focusLogoInput()" title="Click to change logo">
+      <img src="{{ logo_url }}" alt="{{ estate_name }}" class="welcome-logo" id="logo-preview-main">
+    </div>
+    {% else %}
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="welcome-logo">
+    {% endif %}
+  {% elif edit_mode %}
+  <div class="logo-edit-wrap" onclick="focusLogoInput()" title="Click to add logo" style="display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border:2px dashed rgba(184,154,90,.3);border-radius:6px;margin-bottom:1.2rem;cursor:pointer;">
+    <span style="font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(184,154,90,.5);">+ Logo</span>
+  </div>
   {% endif %}
   <h1 class="welcome-title">
     <span class="welcome-title-main">{{ estate_name.split(' ')[0] }}</span>
@@ -90,7 +146,7 @@
 {% block content %}
 <div class="welcome-intro">
   <p class="welcome-intro-title">Welcome</p>
-  <p class="welcome-intro-body">We very much hope that you will enjoy your visit to our village.</p>
+  <p class="welcome-intro-body"{% if edit_mode %} data-editable data-field="welcome_text" contenteditable="true" spellcheck="false" title="Click to edit"{% endif %}>{{ welcome_text or 'We very much hope that you will enjoy your visit to our village.' }}</p>
 </div>
 <div class="nav-grid">
 
@@ -289,4 +345,98 @@
   {% endif %}
 
 </div>
+
+{% if edit_mode %}
+<div id="edit-toolbar">
+  <button class="tb-close" onclick="closeEditor()">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </button>
+  <div class="tb-group">
+    <span class="tb-label">Logo URL</span>
+    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
+  </div>
+  <div class="tb-group">
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Header</span>
+      <input type="color" id="tb-primary" value="{{ brand_primary or '#1e3a1e' }}" oninput="applyColor('primary', this.value)" title="Nav background">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Accent</span>
+      <input type="color" id="tb-accent" value="{{ brand_accent or '#B89A5A' }}" oninput="applyColor('accent', this.value)" title="Accent colour">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Text</span>
+      <input type="color" id="tb-text" value="{{ brand_text or '#ffffff' }}" oninput="applyColor('text', this.value)" title="Header text">
+    </div>
+  </div>
+  <span class="tb-saved" id="tb-saved">✓ Saved</span>
+  <button class="tb-save" onclick="saveChanges()">Save changes</button>
+</div>
+
+<form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
+  <input type="hidden" name="logo_url"           id="f-logo_url"           value="{{ logo_url or '' }}">
+  <input type="hidden" name="brand_primary"       id="f-brand_primary"      value="{{ brand_primary or '#1e3a1e' }}">
+  <input type="hidden" name="brand_accent"        id="f-brand_accent"       value="{{ brand_accent or '#B89A5A' }}">
+  <input type="hidden" name="brand_text"          id="f-brand_text"         value="{{ brand_text or '#ffffff' }}">
+  <input type="hidden" name="welcome_text"        id="f-welcome_text"       value="{{ welcome_text or '' }}">
+  <input type="hidden" name="custom_tagline"      id="f-custom_tagline"     value="{{ car_park_tagline or '' }}">
+  <input type="hidden" name="custom_description"  id="f-custom_description" value="">
+  {% for feat in features %}
+  <input type="hidden" name="features" value="{{ feat }}">
+  {% endfor %}
+</form>
+
+<script>
+  function focusLogoInput() {
+    const inp = document.getElementById('tb-logo');
+    inp.focus(); inp.select();
+  }
+  function updateLogo(url) {
+    document.querySelectorAll('.welcome-logo, #logo-preview-main, #scroll-nav img').forEach(img => {
+      if (url) img.src = url;
+    });
+    document.getElementById('f-logo_url').value = url;
+  }
+  function applyColor(key, val) {
+    if (key === 'primary') {
+      document.getElementById('scroll-nav').style.background = val;
+      document.getElementById('f-brand_primary').value = val;
+    } else if (key === 'accent') {
+      document.querySelectorAll('.nav-title, .welcome-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_accent').value = val;
+    } else if (key === 'text') {
+      document.querySelectorAll('#scroll-nav .nav-home span, .menu-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_text').value = val;
+    }
+  }
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.addEventListener('input', () => {
+      const hidden = document.getElementById('f-' + el.dataset.field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); }
+    });
+  });
+  function saveChanges() {
+    document.querySelectorAll('[data-editable]').forEach(el => {
+      const hidden = document.getElementById('f-' + el.dataset.field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    document.getElementById('edit-form').submit();
+  }
+  function closeEditor() {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ action: 'closeEditor' }, '*');
+    } else {
+      window.location.href = '/owner/dashboard';
+    }
+  }
+  // Apply brand colours on load
+  applyColor('primary', '{{ brand_primary or "#1e3a1e" }}');
+  applyColor('accent',  '{{ brand_accent  or "#B89A5A" }}');
+  applyColor('text',    '{{ brand_text    or "#ffffff" }}');
+</script>
+{% endif %}
 {% endblock %}
