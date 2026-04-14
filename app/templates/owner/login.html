@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="robots" content="noindex">
   <title>Owner Portal — LandMarque</title>
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body {
@@ -17,77 +17,127 @@
       padding: 2rem 1rem;
       -webkit-font-smoothing: antialiased;
     }
-    .brand { text-align: center; margin-bottom: 2.25rem; }
+
+    /* Brand */
+    .brand { text-align: center; margin-bottom: 2.5rem; }
+    .brand-mark {
+      width: 36px; height: 36px; margin: 0 auto .75rem;
+      opacity: .9;
+    }
     .brand-wordmark {
-      font-size: 1.6rem; font-weight: 800;
-      letter-spacing: 7px; text-transform: uppercase; line-height: 1;
+      font-family: 'Cormorant Garamond', Georgia, serif;
+      font-size: 1.7rem; font-weight: 700;
+      letter-spacing: 1.5px; line-height: 1;
     }
     .brand-sub {
-      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: rgba(255,255,255,.22); margin-top: .55rem;
+      font-size: .58rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: rgba(255,255,255,.2); margin-top: .6rem;
     }
+
+    /* Panel */
     .panel {
-      background: #fff; border-radius: 4px; padding: 2.25rem 2rem;
+      background: #111;
+      border: 1px solid rgba(255,255,255,.07);
+      border-top: 2px solid #B89A5A;
+      border-radius: 4px;
+      padding: 2.25rem 2rem;
       width: 100%; max-width: 380px;
-      box-shadow: 0 20px 60px rgba(0,0,0,.55);
-      border-top: 2px solid #8B3A2A;
+      box-shadow: 0 24px 64px rgba(0,0,0,.6);
     }
     .panel-title {
-      font-size: .63rem; font-weight: 700; letter-spacing: 2.5px;
-      text-transform: uppercase; color: #999; margin-bottom: 1.5rem;
+      font-size: .58rem; font-weight: 700; letter-spacing: 3px;
+      text-transform: uppercase; color: rgba(255,255,255,.25); margin-bottom: 1.75rem;
     }
+
+    /* Alerts */
     .alert {
-      font-size: .8rem; padding: .7rem 1rem; margin-bottom: 1.25rem;
-      border-radius: 3px; font-weight: 600;
+      font-size: .8rem; padding: .75rem 1rem; margin-bottom: 1.25rem;
+      border-radius: 3px; font-weight: 600; line-height: 1.5;
     }
-    .alert-err { background: #fdf0ee; border-left: 3px solid #8B3A2A; color: #7a5f20; }
-    .alert-ok  { background: #e8f5ec; border-left: 3px solid #1a6b2a; color: #155223; }
+    .alert-err {
+      background: rgba(180,40,40,.1);
+      border-left: 3px solid rgba(180,40,40,.6);
+      color: rgba(255,180,180,.8);
+    }
+    .alert-ok {
+      background: rgba(40,160,80,.08);
+      border-left: 3px solid rgba(40,160,80,.5);
+      color: rgba(150,255,180,.75);
+    }
+
+    /* Form */
     label {
-      display: block; font-size: .63rem; font-weight: 700;
-      letter-spacing: 1.5px; text-transform: uppercase; color: #777; margin-bottom: .3rem;
+      display: block; font-size: .58rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      color: #B89A5A; margin-bottom: .4rem;
     }
     input {
-      width: 100%; border: 1px solid #ddd; border-radius: 3px;
-      padding: .75rem 1rem; font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-size: .9rem; color: #111; outline: none; margin-bottom: 1rem;
-      transition: border-color .15s; background: #fff;
+      width: 100%;
+      background: rgba(255,255,255,.04);
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 3px;
+      padding: .78rem 1rem;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-size: .9rem; font-weight: 300;
+      color: #fff; outline: none;
+      margin-bottom: 1.1rem;
+      transition: border-color .15s, background .15s;
     }
-    input:focus { border-color: #8B3A2A; box-shadow: 0 0 0 3px rgba(139,58,42,.1); }
+    input::placeholder { color: rgba(255,255,255,.2); }
+    input:focus {
+      border-color: rgba(184,154,90,.6);
+      background: rgba(184,154,90,.04);
+      box-shadow: 0 0 0 3px rgba(184,154,90,.08);
+    }
+
     .btn-submit {
-      width: 100%; background: #111; border: none; color: #fff;
-      font-family: 'Raleway', Helvetica, Arial, sans-serif; font-weight: 700;
-      font-size: .75rem; letter-spacing: 3px; text-transform: uppercase;
-      padding: .9rem; border-radius: 3px; cursor: pointer; transition: background .15s;
+      width: 100%;
+      background: #B89A5A; border: none; color: #fff;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      font-weight: 700; font-size: .72rem;
+      letter-spacing: 3px; text-transform: uppercase;
+      padding: .95rem; border-radius: 3px;
+      cursor: pointer; transition: filter .15s;
     }
-    .btn-submit:hover { background: #8B3A2A; }
-    .panel-footer { text-align: center; margin-top: 1.25rem; }
+    .btn-submit:hover { filter: brightness(110%); }
+
+    .panel-footer { text-align: center; margin-top: 1.5rem; }
     .panel-footer a {
-      font-size: .65rem; color: #bbb; text-decoration: none;
-      letter-spacing: .5px; transition: color .15s;
+      font-size: .65rem; color: rgba(255,255,255,.25);
+      text-decoration: none; letter-spacing: .5px;
+      transition: color .15s;
     }
-    .panel-footer a:hover { color: #8B3A2A; }
-    .powered {
-      margin-top: 2rem; font-size: .62rem; color: rgba(255,255,255,.15);
-      font-weight: 300; letter-spacing: 1px;
+    .panel-footer a:hover { color: #B89A5A; }
+
+    /* Back link */
+    .back-home {
+      margin-top: 2rem;
+      font-size: .62rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: rgba(255,255,255,.15);
+      text-decoration: none; transition: color .15s;
     }
+    .back-home:hover { color: rgba(255,255,255,.4); }
   </style>
 </head>
 <body>
+
   <div class="brand">
+    <img src="/static/treering1_gold.png" class="brand-mark" alt="">
     <div class="brand-wordmark">
-      <span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span>
+      <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
     </div>
     <div class="brand-sub">Owner Portal</div>
   </div>
 
+  <!-- Sign-in panel -->
   <div class="panel" id="panel-signin">
     <div class="panel-title">Sign in to your account</div>
     {% if error %}<div class="alert alert-err">{{ error }}</div>{% endif %}
     <form method="post" action="/owner/login">
       <label>Email</label>
-      <input type="email" name="email" required autofocus autocomplete="email">
+      <input type="email" name="email" required autofocus autocomplete="email" placeholder="you@estate.co.uk">
       <label>Password</label>
-      <input type="password" name="password" required autocomplete="current-password">
+      <input type="password" name="password" required autocomplete="current-password" placeholder="••••••••">
       <button type="submit" class="btn-submit">Sign in</button>
     </form>
     <div class="panel-footer">
@@ -95,17 +145,18 @@
     </div>
   </div>
 
+  <!-- Change password panel -->
   <div class="panel" id="panel-pw" style="display:none;">
     <div class="panel-title">Change password</div>
     {% if pw_ok %}<div class="alert alert-ok">Password updated — please sign in.</div>{% endif %}
     {% if pw_error %}<div class="alert alert-err">Incorrect email or current password.</div>{% endif %}
     <form method="post" action="/owner/reset-password">
       <label>Email</label>
-      <input type="email" name="email" required autocomplete="email">
+      <input type="email" name="email" required autocomplete="email" placeholder="you@estate.co.uk">
       <label>Current password</label>
-      <input type="password" name="current_password" required autocomplete="current-password">
+      <input type="password" name="current_password" required autocomplete="current-password" placeholder="••••••••">
       <label>New password</label>
-      <input type="password" name="new_password" required minlength="6" autocomplete="new-password">
+      <input type="password" name="new_password" required minlength="6" autocomplete="new-password" placeholder="Min. 6 characters">
       <button type="submit" class="btn-submit">Update password</button>
     </form>
     <div class="panel-footer">
@@ -113,7 +164,7 @@
     </div>
   </div>
 
-  <p class="powered"><span style="color:#8B3A2A">PAR</span>CAR<span style="color:#8B3A2A">K</span></p>
+  <a href="/" class="back-home">← LandMarque</a>
 
   <script>
     function switchPanel(name) {

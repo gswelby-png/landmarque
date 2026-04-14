@@ -215,6 +215,29 @@ def landmarque_register(request: Request):
     return templates.TemplateResponse("site/landowners_register.html", {"request": request})
 
 
+@app.post("/landmarque/register", response_class=HTMLResponse)
+def landmarque_register_post(
+    request: Request,
+    estate_name: str = Form(""),
+    county: str = Form(""),
+    estate_size: str = Form(""),
+    contact_name: str = Form(""),
+    role: str = Form(""),
+    email: str = Form(""),
+    phone: str = Form(""),
+    interest: str = Form(""),
+    message: str = Form(""),
+):
+    # Log enquiry to stdout (visible in Railway logs) until email/DB is wired
+    print(f"[REGISTER] {estate_name} | {county} | {contact_name} | {email} | {phone} | {interest}")
+    if message:
+        print(f"[REGISTER] message: {message}")
+    return templates.TemplateResponse("site/landowners_register.html", {
+        "request": request,
+        "success": True,
+    })
+
+
 @app.get("/landmarque/estates", response_class=HTMLResponse)
 def landmarque_estates(request: Request):
     return RedirectResponse(url="/explore/estates", status_code=301)
