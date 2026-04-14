@@ -41,20 +41,44 @@
       display: flex; align-items: center;
     }
     .nav-logo-mark { width: 28px; height: 28px; margin-right: .6rem; vertical-align: middle; }
-    .nav-links { display: flex; align-items: center; gap: 2rem; }
-    .nav-links a {
-      color: rgba(255,255,255,.5); text-decoration: none;
-      font-size: .72rem; font-weight: 600; letter-spacing: 2px;
-      text-transform: uppercase; transition: color .15s;
+    .hamburger {
+      background: none; border: none; cursor: pointer;
+      display: flex; flex-direction: column; gap: 5px; padding: .3rem;
     }
-    .nav-links a:hover { color: #fff; }
-    .nav-links .nav-cta {
-      background: var(--accent); color: #fff !important;
-      padding: .9rem 2rem; border-radius: 3px;
-      font-size: .68rem; letter-spacing: 2.5px;
+    .hamburger span {
+      display: block; width: 22px; height: 2px;
+      background: #B89A5A; border-radius: 1px;
     }
-    .nav-person-icon { display: flex; align-items: center; }
-    .nav-person-icon:hover { opacity: .75; }
+    .menu-overlay {
+      display: none; position: fixed; inset: 0;
+      background: #0a0a0a; z-index: 300; overflow-y: auto;
+    }
+    .menu-overlay.open { display: flex; flex-direction: column; }
+    .menu-header {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 1.4rem 2.5rem; border-bottom: 1px solid rgba(255,255,255,.05); flex-shrink: 0;
+    }
+    .menu-close {
+      background: none; border: none; color: rgba(255,255,255,.5);
+      font-size: 1.4rem; cursor: pointer; line-height: 1; transition: color .15s;
+    }
+    .menu-close:hover { color: #fff; }
+    .menu-body {
+      padding: 3rem 2.5rem 4rem;
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 3rem; max-width: 900px;
+    }
+    .menu-group-label {
+      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 1.1rem;
+    }
+    .menu-group a {
+      display: block; font-size: .85rem; font-weight: 600; letter-spacing: 1px;
+      text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.6);
+      padding: .45rem 0; border-bottom: 1px solid rgba(255,255,255,.05); transition: color .12s;
+    }
+    .menu-group a:last-child { border-bottom: none; }
+    .menu-group a:hover { color: #fff; }
 
     /* Page */
     .page {
@@ -154,24 +178,43 @@
 
   <nav>
     <a href="/" class="nav-brand"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
-    <div class="nav-links">
-      <a href="/owner/login" class="nav-person-icon" title="Owner login">
-        <svg width="30" height="30" viewBox="0 0 30 30" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="15" cy="15" r="13.5" fill="none" stroke="#B89A5A" stroke-width="1.5"/>
-          <circle cx="15" cy="12.5" r="4" fill="#B89A5A"/>
-          <path d="M6.5 24 C6.5 18.5 23.5 18.5 23.5 24" fill="#B89A5A"/>
-        </svg>
-      </a>
-      <a href="/contact" class="nav-cta">Get in touch</a>
-    </div>
+    <button class="hamburger" onclick="document.getElementById('menu').classList.add('open')" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
+
+  <div class="menu-overlay" id="menu">
+    <div class="menu-header">
+      <a href="/" class="nav-brand" onclick="document.getElementById('menu').classList.remove('open')"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
+      <button class="menu-close" onclick="document.getElementById('menu').classList.remove('open')">&#10005;</button>
+    </div>
+    <div class="menu-body">
+      <div class="menu-group">
+        <div class="menu-group-label">Visitors</div>
+        <a href="/explore/estates" onclick="document.getElementById('menu').classList.remove('open')" style="color:#B89A5A;">Explore All Estates</a>
+        <a href="/contact" onclick="document.getElementById('menu').classList.remove('open')">Get in Touch</a>
+      </div>
+      <div class="menu-group">
+        <div class="menu-group-label">Estate Owners</div>
+        <a href="/landmarque/register" onclick="document.getElementById('menu').classList.remove('open')">Register Your Estate</a>
+        <a href="/owner/login" onclick="document.getElementById('menu').classList.remove('open')">Owner Login</a>
+      </div>
+      <div class="menu-group">
+        <div class="menu-group-label">LandMarque</div>
+        <a href="/landmarque" onclick="document.getElementById('menu').classList.remove('open')">Home</a>
+        <a href="/landmarque/parking" onclick="document.getElementById('menu').classList.remove('open')">Parking</a>
+        <a href="/landmarque/legacies" onclick="document.getElementById('menu').classList.remove('open')">Legacies</a>
+        <a href="/landmarque/benches" onclick="document.getElementById('menu').classList.remove('open')">Benches</a>
+      </div>
+    </div>
+  </div>
 
   <div class="page">
 
     <p class="page-tag">Contact</p>
     <h1 class="page-title">Get in touch</h1>
     <div class="page-rule"></div>
-    <p class="page-sub">Interested in cashless parking for your estate, nature reserve or rural venue? Leave your details and we'll get back to you within one working day.</p>
+    <p class="page-sub">Have a question about visiting an estate, using our parking service, or anything else? Leave us a message and we'll get back to you within one working day.</p>
 
     {% if sent %}
     <div class="alert-ok">Thanks — we've received your message and will be in touch shortly.</div>
@@ -187,12 +230,8 @@
         <input type="email" name="email" required placeholder="jane@yourestate.co.uk">
       </div>
       <div class="form-group">
-        <label>Estate or organisation</label>
-        <input type="text" name="organisation" placeholder="Shere Manor Estate">
-      </div>
-      <div class="form-group">
         <label>Message</label>
-        <textarea name="message" placeholder="Tell us a bit about your car park and what you're looking for…"></textarea>
+        <textarea name="message" placeholder="Tell us about your query or question…"></textarea>
       </div>
       <button type="submit" class="btn-submit">Send message</button>
     </form>
@@ -209,5 +248,8 @@
     <span class="foot-copy">&copy; 2026 LandMarque Ltd &middot; Surrey, UK</span>
   </footer>
 
+  <script>
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') document.getElementById('menu').classList.remove('open'); });
+  </script>
 </body>
 </html>
