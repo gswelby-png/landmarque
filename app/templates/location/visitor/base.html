@@ -224,9 +224,10 @@
 (function () {
   if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
 
-  var cpSlug = sessionStorage.getItem('lm_editor_cp') || '';
-  var page   = window.location.pathname.split('/').filter(Boolean).pop();
-  var F = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
+  var cpSlug  = sessionStorage.getItem('lm_editor_cp') || '';
+  var page    = window.location.pathname.split('/').filter(Boolean).pop();
+  var F       = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
+  var INP_CSS = 'width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:3px;color:#fff;font-size:.82rem;padding:.5rem .75rem;outline:none;font-family:inherit;box-sizing:border-box;';
 
   /* ── Top bar ── */
   var bar = document.createElement('div');
@@ -261,36 +262,50 @@
 
   /* ── Find editable content body ── */
   var body = document.querySelector('[data-lm-editable-body]');
-  if (!body) return; // page not wired for editing yet
+  if (!body) return;
 
-  /* ── Make text elements contenteditable ── */
+  /* ── Text selector ── */
   var TEXT_SEL = [
-    'p', 'h1', 'h2', 'h3', 'h4',
-    '.chapter-title', '.history-page-title', '.history-page-subtitle',
-    '.page-title', '.page-subtitle', '.section-body',
-    '.chapter-image-caption', '.walk-title', '.walk-summary',
-    '.place-name', '.place-summary', '.shop-name', '.shop-desc',
+    'p','h1','h2','h3','h4',
+    '.chapter-title','.history-page-title','.history-page-subtitle',
+    '.page-title','.page-subtitle','.section-body',
+    '.chapter-image-caption','.walk-title','.walk-summary',
+    '.entry-name','.entry-summary','.entry-meta',
+    '.shop-name','.shop-description','.shop-meta','.shop-hours',
+    '.place-name','.place-summary','.shop-desc',
   ].join(',');
 
-  body.querySelectorAll(TEXT_SEL).forEach(function(el) {
-    /* Skip elements inside form controls */
-    if (el.closest('form, button, label, .amount-btn')) return;
-    el.contentEditable = 'true';
-    el.spellcheck = false;
-    el.style.outline = '2px dashed transparent';
-    el.style.borderRadius = '2px';
-    el.style.cursor = 'text';
-    el.style.transition = 'outline .1s';
-    el.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
-    el.addEventListener('blur',  function(){ this.style.outline='2px dashed transparent'; });
-    el.addEventListener('keydown', function(e){
-      if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); this.blur(); }
+  /* ── Wire body: text + images (safe to call repeatedly) ── */
+  function wireBody() {
+    body.querySelectorAll(TEXT_SEL).forEach(function(el) {
+      if (el.contentEditable === 'true') return;
+      if (el.closest('form,button,label,.amount-btn')) return;
+      el.contentEditable = 'true';
+      el.spellcheck = false;
+      el.style.outline = '2px dashed transparent';
+      el.style.borderRadius = '2px';
+      el.style.cursor = 'text';
+      el.style.transition = 'outline .1s';
+      el.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
+      el.addEventListener('blur',  function(){ this.style.outline='2px dashed transparent'; });
+      el.addEventListener('keydown', function(e){
+        if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); this.blur(); }
+      });
     });
-  });
+    body.querySelectorAll('img').forEach(function(img){
+      if (img.dataset.lmWired) return;
+      img.dataset.lmWired = '1';
+      img.style.cursor = 'pointer';
+      img.title = 'Click to edit this image';
+      img.addEventListener('mouseenter', function(){ if (!document.getElementById('lm-img-popup')) this.style.outline='3px solid #B89A5A'; });
+      img.addEventListener('mouseleave', function(){ this.style.outline=''; });
+      img.addEventListener('click', function(e){ e.preventDefault(); showImgPopup(this); });
+    });
+  }
+
+  wireBody();
 
   /* ── Image editing ── */
-  var currentImg = null;
-
   function closeImgPopup() {
     var p = document.getElementById('lm-img-popup');
     if (p) p.remove();
@@ -298,12 +313,10 @@
 
   function showImgPopup(img) {
     closeImgPopup();
-    currentImg = img;
     var popup = document.createElement('div');
     popup.id = 'lm-img-popup';
     popup.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:10001;background:#111;border-top:2px solid #B89A5A;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.75rem;' + F;
 
-    /* Header */
     var hdr = document.createElement('div');
     hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;';
     var hTitle = document.createElement('span');
@@ -315,7 +328,6 @@
     hClose.onclick = closeImgPopup;
     hdr.appendChild(hTitle); hdr.appendChild(hClose);
 
-    /* URL row */
     var urlRow = document.createElement('div');
     urlRow.style.cssText = 'display:flex;gap:.5rem;';
     var urlInput = document.createElement('input');
@@ -329,7 +341,6 @@
     applyBtn.onclick = function(){ img.src = urlInput.value; img.style.display=''; closeImgPopup(); };
     urlRow.appendChild(urlInput); urlRow.appendChild(applyBtn);
 
-    /* Upload + remove row */
     var actRow = document.createElement('div');
     actRow.style.cssText = 'display:flex;gap:.5rem;flex-wrap:wrap;';
 
@@ -358,24 +369,223 @@
     removeBtn.onclick = function(){ img.style.display='none'; closeImgPopup(); };
 
     actRow.appendChild(fileInput); actRow.appendChild(uploadBtn); actRow.appendChild(removeBtn);
-
     popup.appendChild(hdr); popup.appendChild(urlRow); popup.appendChild(actRow);
     document.body.appendChild(popup);
     urlInput.focus(); urlInput.select();
   }
 
-  body.querySelectorAll('img').forEach(function(img){
-    img.style.cursor = 'pointer';
-    img.title = 'Click to edit this image';
-    img.addEventListener('mouseenter', function(){ if (!document.getElementById('lm-img-popup')) this.style.outline='3px solid #B89A5A'; });
-    img.addEventListener('mouseleave', function(){ this.style.outline=''; });
-    img.addEventListener('click', function(e){ e.preventDefault(); showImgPopup(this); });
-  });
+  /* ── Add Item configs (per page type) ── */
+  var ADD_CONFIGS = {
+    'places-to-eat': {
+      title: 'Add Place to Eat',
+      fields: [
+        {n:'name',     l:'Name',         t:'text',     p:'e.g. The White Horse'},
+        {n:'type',     l:'Type',         t:'text',     p:'e.g. Pub · Restaurant · Café'},
+        {n:'distance', l:'Distance',     t:'text',     p:'e.g. 0.2 miles'},
+        {n:'rating',   l:'Rating',       t:'text',     p:'e.g. 4.5★'},
+        {n:'price',    l:'Guide Price',  t:'text',     p:'e.g. £12–20'},
+        {n:'open',     l:'Open Today',   t:'text',     p:'e.g. Yes'},
+        {n:'summary',  l:'Description',  t:'textarea', p:'A short description of the place…'},
+        {n:'image',    l:'Photo URL',    t:'url',      p:'https://… (optional)'},
+      ],
+      build: function(v) {
+        var img = v.image
+          ? '<img src="'+esc(v.image)+'" alt="'+esc(v.name)+'" class="entry-image" style="cursor:pointer;" title="Click to edit this image">'
+          : '<div class="entry-image-placeholder">Image coming soon</div>';
+        return '<hr class="divider">'
+          +'<div class="entry-name">'+esc(v.name)+'</div>'
+          +'<div class="entry-meta">'+esc(v.type)+' · '+esc(v.distance)+'</div>'
+          +img
+          +'<div class="entry-stats">'
+          +'<div class="entry-stat"><div class="entry-stat-value">'+esc(v.rating)+'</div><div class="entry-stat-label">Rating</div></div>'
+          +'<div class="entry-stat"><div class="entry-stat-value">'+esc(v.price)+'</div><div class="entry-stat-label">Guide Price</div></div>'
+          +'<div class="entry-stat"><div class="entry-stat-value">'+esc(v.open)+'</div><div class="entry-stat-label">Open Today</div></div>'
+          +'</div>'
+          +'<p class="entry-summary">'+esc(v.summary)+'</p>'
+          +'<a href="#" class="directions-link">Get Directions →</a>';
+      }
+    },
+    'walking': {
+      title: 'Add Walking Route',
+      fields: [
+        {n:'title',    l:'Route Name',   t:'text',     p:'e.g. North Downs Loop'},
+        {n:'distance', l:'Distance',     t:'text',     p:'e.g. 3.5 miles'},
+        {n:'summary',  l:'Description',  t:'textarea', p:'Brief description of the route…'},
+        {n:'image',    l:'Photo URL',    t:'url',      p:'https://… (optional)'},
+      ],
+      build: function(v) {
+        var img = v.image
+          ? '<img src="'+esc(v.image)+'" alt="'+esc(v.title)+'" class="walk-image" style="cursor:pointer;" title="Click to edit this image">'
+          : '<div class="walk-image-placeholder">Image coming soon</div>';
+        return '<a href="#" class="walk-card">'
+          +img
+          +'<div class="walk-body">'
+          +'<div class="walk-header">'
+          +'<span class="walk-title">'+esc(v.title)+'</span>'
+          +'<span class="walk-distance">'+esc(v.distance)+'</span>'
+          +'</div>'
+          +'<p class="walk-summary">'+esc(v.summary)+'</p>'
+          +'</div></a>';
+      }
+    },
+    'fun-for-kids': {
+      title: 'Add Activity',
+      fields: [
+        {n:'name',     l:'Name',         t:'text',     p:'e.g. Duck feeding at the ford'},
+        {n:'type',     l:'Type',         t:'text',     p:'e.g. Outdoor · Indoor'},
+        {n:'distance', l:'Distance',     t:'text',     p:'e.g. 0.1 miles'},
+        {n:'summary',  l:'Description',  t:'textarea', p:'Brief description…'},
+        {n:'image',    l:'Photo URL',    t:'url',      p:'https://… (optional)'},
+      ],
+      build: function(v) {
+        var img = v.image
+          ? '<img src="'+esc(v.image)+'" alt="'+esc(v.name)+'" class="entry-image" style="cursor:pointer;" title="Click to edit this image">'
+          : '<div class="entry-image-placeholder">Image coming soon</div>';
+        return '<hr class="divider">'
+          +'<div class="entry-name">'+esc(v.name)+'</div>'
+          +'<div class="entry-meta">'+esc(v.type)+' · '+esc(v.distance)+'</div>'
+          +img
+          +'<p class="entry-summary">'+esc(v.summary)+'</p>'
+          +'<a href="#" class="directions-link">Get Directions →</a>';
+      }
+    },
+    'places-of-interest': {
+      title: 'Add Place of Interest',
+      fields: [
+        {n:'name',     l:'Name',         t:'text',     p:'e.g. St James Church'},
+        {n:'type',     l:'Type',         t:'text',     p:'e.g. Historic building'},
+        {n:'distance', l:'Distance',     t:'text',     p:'e.g. 0.3 miles'},
+        {n:'summary',  l:'Description',  t:'textarea', p:'Brief description…'},
+        {n:'image',    l:'Photo URL',    t:'url',      p:'https://… (optional)'},
+      ],
+      build: function(v) {
+        var img = v.image
+          ? '<img src="'+esc(v.image)+'" alt="'+esc(v.name)+'" class="entry-image" style="cursor:pointer;" title="Click to edit this image">'
+          : '<div class="entry-image-placeholder">Image coming soon</div>';
+        return '<hr class="divider">'
+          +'<div class="entry-name">'+esc(v.name)+'</div>'
+          +'<div class="entry-meta">'+esc(v.type)+' · '+esc(v.distance)+'</div>'
+          +img
+          +'<p class="entry-summary">'+esc(v.summary)+'</p>'
+          +'<a href="#" class="directions-link">Get Directions →</a>';
+      }
+    },
+    'shopping': {
+      title: 'Add Shop',
+      fields: [
+        {n:'name',     l:'Shop Name',        t:'text',     p:'e.g. Village Pottery'},
+        {n:'type',     l:'Type',             t:'text',     p:'e.g. Gifts · Antiques'},
+        {n:'distance', l:'Distance',         t:'text',     p:'e.g. 0.1 miles (optional)'},
+        {n:'hours',    l:'Opening Hours',    t:'text',     p:'e.g. Mon–Sat 9am–5pm (optional)'},
+        {n:'summary',  l:'Description',      t:'textarea', p:'Brief description…'},
+        {n:'image',    l:'Photo URL',        t:'url',      p:'https://… (optional)'},
+        {n:'website',  l:'Website URL',      t:'url',      p:'https://… (optional)'},
+      ],
+      build: function(v) {
+        var img = v.image
+          ? '<img src="'+esc(v.image)+'" alt="'+esc(v.name)+'" class="shop-image" style="cursor:pointer;" title="Click to edit this image">'
+          : '<div class="shop-image-placeholder">Photo coming soon</div>';
+        var hours   = v.hours   ? '<div class="shop-hours">'+esc(v.hours)+'</div>' : '';
+        var dist    = v.distance ? ' · '+esc(v.distance) : '';
+        var website = v.website ? '<a href="'+esc(v.website)+'" target="_blank" rel="noopener" class="website-link">Visit Website →</a>' : '';
+        return '<hr class="divider">'
+          +'<div class="shop-name">'+esc(v.name)+'</div>'
+          +'<div class="shop-meta">'+esc(v.type)+dist+'</div>'
+          +hours+img
+          +'<p class="shop-description">'+esc(v.summary)+'</p>'
+          +'<a href="#" class="directions-link">Get Directions →</a>'
+          +website;
+      }
+    },
+  };
+
+  /* HTML-escape helper */
+  function esc(s) {
+    return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+  }
+
+  /* ── Add Item panel ── */
+  var cfg = ADD_CONFIGS[page];
+  if (cfg) {
+    var addBtn = document.createElement('button');
+    addBtn.style.cssText = 'flex-shrink:0;background:rgba(184,154,90,.12);color:#B89A5A;border:1px solid rgba(184,154,90,.3);border-radius:3px;cursor:pointer;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.45rem .9rem;' + F;
+    addBtn.textContent = '+ Add';
+    addBtn.onclick = showAddPanel;
+    bar.insertBefore(addBtn, saveBtn);
+
+    function closeAddPanel() {
+      var p = document.getElementById('lm-add-panel');
+      if (p) p.remove();
+    }
+
+    function showAddPanel() {
+      closeAddPanel();
+      closeImgPopup();
+      var panel = document.createElement('div');
+      panel.id = 'lm-add-panel';
+      panel.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:10001;background:#111;border-top:2px solid #B89A5A;padding:1rem 1.25rem 1.5rem;display:flex;flex-direction:column;gap:.65rem;max-height:78vh;overflow-y:auto;' + F;
+
+      var hdr = document.createElement('div');
+      hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;padding-bottom:.25rem;';
+      var hTitle = document.createElement('span');
+      hTitle.textContent = cfg.title;
+      hTitle.style.cssText = 'font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;' + F;
+      var hClose = document.createElement('button');
+      hClose.innerHTML = '&times;';
+      hClose.style.cssText = 'background:none;border:none;color:rgba(255,255,255,.4);font-size:1.4rem;cursor:pointer;line-height:1;padding:0;' + F;
+      hClose.onclick = closeAddPanel;
+      hdr.appendChild(hTitle); hdr.appendChild(hClose);
+      panel.appendChild(hdr);
+
+      var inputs = {};
+      cfg.fields.forEach(function(f) {
+        var wrap = document.createElement('div');
+        var lbl2 = document.createElement('label');
+        lbl2.textContent = f.l;
+        lbl2.style.cssText = 'display:block;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.38);margin-bottom:.28rem;' + F;
+        var inp;
+        if (f.t === 'textarea') {
+          inp = document.createElement('textarea');
+          inp.rows = 3;
+          inp.style.cssText = INP_CSS + 'resize:vertical;';
+        } else {
+          inp = document.createElement('input');
+          inp.type = f.t;
+          inp.style.cssText = INP_CSS;
+        }
+        inp.placeholder = f.p;
+        inputs[f.n] = inp;
+        wrap.appendChild(lbl2); wrap.appendChild(inp);
+        panel.appendChild(wrap);
+      });
+
+      var submitBtn = document.createElement('button');
+      submitBtn.textContent = 'Add to page';
+      submitBtn.style.cssText = 'width:100%;background:#B89A5A;color:#fff;border:none;border-radius:3px;padding:.7rem;font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;cursor:pointer;margin-top:.35rem;' + F;
+      submitBtn.onclick = function() {
+        var vals = {};
+        cfg.fields.forEach(function(f){ vals[f.n] = (inputs[f.n].value || '').trim(); });
+        /* Require at minimum the first field (name or title) */
+        var firstKey = cfg.fields[0].n;
+        if (!vals[firstKey]) { inputs[firstKey].style.borderColor='#B89A5A'; inputs[firstKey].focus(); return; }
+        var html = cfg.build(vals);
+        var tmp = document.createElement('div');
+        tmp.innerHTML = html;
+        while (tmp.firstChild) { body.appendChild(tmp.firstChild); }
+        wireBody();
+        closeAddPanel();
+        /* Scroll new item into view */
+        body.lastElementChild && body.lastElementChild.scrollIntoView({behavior:'smooth', block:'nearest'});
+      };
+      panel.appendChild(submitBtn);
+      document.body.appendChild(panel);
+      if (cfg.fields.length) inputs[cfg.fields[0].n].focus();
+    }
+  }
 
   /* ── Save page ── */
   saveBtn.onclick = function(){
     var clone = body.cloneNode(true);
-    /* Strip editor-only attributes */
     clone.querySelectorAll('[contenteditable]').forEach(function(el){
       el.removeAttribute('contenteditable');
       el.style.outline = '';
@@ -385,8 +595,9 @@
     });
     clone.querySelectorAll('img').forEach(function(img){
       img.style.cursor = '';
-      img.title = '';
+      img.removeAttribute('title');
       img.style.outline = '';
+      img.removeAttribute('data-lm-wired');
     });
     var html = clone.outerHTML;
     saveBtn.textContent = 'Saving…'; saveBtn.disabled = true;
