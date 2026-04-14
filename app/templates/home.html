@@ -70,68 +70,18 @@
     }
 
     /* ── Menu overlay ── */
-    .menu-overlay {
-      display: none;
-      position: fixed; inset: 0;
-      background: #0a0a0a;
-      z-index: 300;
-      overflow-y: auto;
-    }
-    .menu-overlay.open { display: flex; flex-direction: column; }
-    .menu-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.4rem 2.5rem;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      flex-shrink: 0;
-    }
-    .menu-close {
-      background: none; border: none; color: rgba(255,255,255,.5);
-      font-size: 1.4rem; cursor: pointer; line-height: 1;
-      transition: color .15s;
-    }
+    .menu-overlay { display: none; position: fixed; inset: 0; background: #0a0a0a; z-index: 500; flex-direction: column; overflow-y: auto; }
+    .menu-overlay.open { display: flex; }
+    .menu-head { display: flex; justify-content: space-between; align-items: center; padding: 1.2rem 2rem; border-bottom: 1px solid rgba(255,255,255,.06); }
+    .menu-brand { display: flex; align-items: center; gap: .55rem; text-decoration: none; }
+    .menu-close { background: none; border: none; font-size: 1.4rem; color: rgba(255,255,255,.5); cursor: pointer; padding: .2rem; line-height: 1; }
     .menu-close:hover { color: #fff; }
-    .menu-body {
-      padding: 0 2.5rem 4rem;
-      display: flex;
-      flex-direction: column;
-      max-width: 900px;
-    }
-    .menu-groups {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 3rem;
-    }
-    .menu-group-label {
-      font-size: .6rem; font-weight: 700; letter-spacing: 4px;
-      text-transform: uppercase; color: var(--accent);
-      margin-bottom: 1.1rem;
-    }
-    .menu-group a {
-      display: block;
-      font-size: .85rem; font-weight: 600; letter-spacing: 1px;
-      text-transform: uppercase; text-decoration: none;
-      color: rgba(255,255,255,.6);
-      padding: .45rem 0;
-      border-bottom: 1px solid rgba(255,255,255,.05);
-      transition: color .12s;
-    }
-    .menu-group a:last-child { border-bottom: none; }
-    .menu-group a:hover { color: #fff; }
-    .menu-group a.sub {
-      font-size: .75rem; letter-spacing: .5px;
-      color: rgba(255,255,255,.38); padding-left: .75rem;
-    }
-    .menu-group a.sub:hover { color: rgba(255,255,255,.8); }
-    .menu-explore-btn {
-      display: flex; align-items: center; justify-content: center; gap: .6rem;
-      margin: 2.5rem 0 2rem; padding: 1.1rem 1.5rem;
-      background: var(--accent); color: #fff; text-decoration: none;
-      font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      border-radius: 3px; transition: filter .2s; flex-shrink: 0;
-    }
-    .menu-explore-btn:hover { filter: brightness(110%); }
+    .menu-body { flex: 1; padding: 2rem; display: flex; flex-direction: column; gap: .5rem; max-width: 520px; width: 100%; margin: 0 auto; }
+    .menu-link { display: block; text-decoration: none; color: rgba(255,255,255,.75); font-size: 1.2rem; font-weight: 600; padding: .9rem 0; border-bottom: 1px solid rgba(255,255,255,.06); letter-spacing: .5px; transition: color .15s; }
+    .menu-link:hover { color: var(--accent); }
+    .menu-divider { border: none; border-top: 1px solid rgba(255,255,255,.08); margin: 1rem 0; }
+    .menu-login { display: block; text-decoration: none; color: rgba(255,255,255,.3); font-size: .72rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: .75rem 0; transition: color .15s; }
+    .menu-login:hover { color: var(--accent); }
 
     /* ── Hero ── */
     .hero {
@@ -417,38 +367,20 @@
 
   <!-- Full-screen menu overlay -->
   <div class="menu-overlay" id="menu-overlay">
-    <div class="menu-header">
-      <a href="/" class="nav-brand" onclick="closeMenu()"><img src="/static/treering1_gold.png" class="nav-logo-mark" alt=""><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></a>
-      <button class="menu-close" onclick="closeMenu()">&#10005;</button>
+    <div class="menu-head">
+      <a href="/" class="menu-brand" onclick="closeMenu()">
+        <img src="/static/treering1_gold.png" class="nav-logo-mark" alt="">
+        <span style="font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:700;"><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></span>
+      </a>
+      <button class="menu-close" onclick="closeMenu()">&times;</button>
     </div>
     <div class="menu-body">
-
-      <a href="/explore/estates" class="menu-explore-btn" onclick="closeMenu()">
-        Explore all estates
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-      </a>
-
-      <div class="menu-groups">
-        <div class="menu-group">
-          <div class="menu-group-label">LandMarque</div>
-          <a href="/" onclick="closeMenu()">Home</a>
-          <a href="/landmarque/parking" onclick="closeMenu()">Parking</a>
-          <a href="/landmarque/legacies" onclick="closeMenu()">Legacies</a>
-          <a href="/landmarque/benches" onclick="closeMenu()">Benches</a>
-          <a href="/landmarque/trees" onclick="closeMenu()">Trees</a>
-          <a href="/landmarque/walking-routes" onclick="closeMenu()">Walking Routes</a>
-          <a href="/landmarque/cycle-routes" onclick="closeMenu()">Cycle Routes</a>
-          <a href="/landmarque/places-of-interest" onclick="closeMenu()">Places of Interest</a>
-          <a href="/landmarque/contact" onclick="closeMenu()">Get in Touch</a>
-        </div>
-
-        <div class="menu-group">
-          <div class="menu-group-label">Estate Owners</div>
-          <a href="/landmarque/register" onclick="closeMenu()">Register Your Estate</a>
-          <a href="/owner/login" onclick="closeMenu()">Owner Login</a>
-        </div>
-      </div>
-
+      <a href="/explore/estates" class="menu-link" onclick="closeMenu()">Explore Estates</a>
+      <a href="/landmarque" class="menu-link" onclick="closeMenu()">For Estate Owners</a>
+      <a href="/landmarque/register" class="menu-link" onclick="closeMenu()">Register Your Estate</a>
+      <a href="/landmarque/contact" class="menu-link" onclick="closeMenu()">Contact</a>
+      <hr class="menu-divider">
+      <a href="/owner/login" class="menu-login" onclick="closeMenu()">Owner Login &rarr;</a>
     </div>
   </div>
 
