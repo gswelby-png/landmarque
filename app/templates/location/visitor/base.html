@@ -128,6 +128,13 @@
     .page-intro-body { font-size: .87rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.7; }
     {% block extra_css %}{% endblock %}
   </style>
+  {% if brand %}
+  <style>
+    /* Estate brand colours — applied when brand dict is passed by the route */
+    #scroll-nav { background: {{ brand.primary }} !important; border-bottom-color: rgba(255,255,255,.08) !important; }
+    #hamburger-menu, #hamburger-menu .menu-header { background: {{ brand.primary }} !important; }
+  </style>
+  {% endif %}
 </head>
 <body>
 
@@ -213,25 +220,38 @@
   </footer>
 
 <script>
-  /* Show "Back to editor" when navigated into from the WYSIWYG editor */
+  /* Sub-page editor toolbar — shown when navigated to from the WYSIWYG welcome editor */
   (function () {
-    if (window.parent !== window && sessionStorage.getItem('lm_editor_back')) {
-      var btn = document.createElement('button');
-      btn.style.cssText = [
-        'position:fixed','top:8px','left:8px','z-index:9999',
-        'background:#0a0a0a','border:1px solid rgba(184,154,90,.45)',
-        'color:rgba(255,255,255,.75)','font-family:Raleway,Helvetica,sans-serif',
-        'font-size:.58rem','font-weight:700','letter-spacing:2px','text-transform:uppercase',
-        'padding:.5rem 1rem','border-radius:3px','cursor:pointer',
-        'display:flex','align-items:center','gap:.4rem','white-space:nowrap',
-        'transition:border-color .15s,color .15s',
-      ].join(';');
-      btn.innerHTML = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to editor';
-      btn.onmouseenter = function(){ btn.style.borderColor='#B89A5A'; btn.style.color='#fff'; };
-      btn.onmouseleave = function(){ btn.style.borderColor='rgba(184,154,90,.45)'; btn.style.color='rgba(255,255,255,.75)'; };
-      btn.onclick = function(){ history.back(); };
-      document.body.appendChild(btn);
-    }
+    if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
+
+    var S = 'font-family:Raleway,Helvetica,sans-serif;';
+    var bar = document.createElement('div');
+    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:48px;background:#0a0a0a;border-bottom:1px solid rgba(184,154,90,.25);display:flex;align-items:center;padding:0 1.25rem;z-index:9999;gap:1rem;' + S;
+
+    var back = document.createElement('button');
+    back.style.cssText = 'display:flex;align-items:center;gap:.45rem;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);cursor:pointer;background:none;border:none;padding:0 1.1rem 0 0;border-right:1px solid rgba(255,255,255,.07);height:100%;white-space:nowrap;transition:color .15s;' + S;
+    back.innerHTML = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Welcome page';
+    back.onmouseenter = function(){ this.style.color='#fff'; };
+    back.onmouseleave = function(){ this.style.color='rgba(255,255,255,.45)'; };
+    back.onclick = function(){ history.back(); };
+
+    var lbl = document.createElement('span');
+    lbl.style.cssText = 'font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);' + S;
+    lbl.textContent = 'Previewing — ' + (document.title.split('—')[1] || document.title).trim();
+
+    var hint = document.createElement('span');
+    hint.style.cssText = 'margin-left:auto;font-size:.6rem;color:rgba(255,255,255,.18);letter-spacing:.5px;' + S;
+    hint.textContent = 'Read only — return to welcome page to save changes';
+
+    bar.appendChild(back);
+    bar.appendChild(lbl);
+    bar.appendChild(hint);
+    document.body.insertBefore(bar, document.body.firstChild);
+
+    /* Push scroll-nav below the bar */
+    var nav = document.getElementById('scroll-nav');
+    if (nav) nav.style.top = '48px';
+    document.body.style.paddingTop = '48px';
   })();
 </script>
 </body>

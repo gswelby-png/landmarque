@@ -166,6 +166,8 @@ with engine.connect() as _conn:
     _conn.execute(_text("UPDATE car_parks SET logo_url='https://sheremanorestate.co.uk/images/default/logo_sticky.svg' WHERE slug='shere-manor' AND (logo_url IS NULL OR logo_url='')"))
     _conn.execute(_text("UPDATE car_parks SET welcome_text='Please pay for parking on this secure app. The money goes directly to the charity that maintains public facilities around our village.' WHERE slug='shere-manor'"))
     _conn.execute(_text("UPDATE car_parks SET name='Farm Field Car Park' WHERE slug='shere-manor'"))
+    # Correct brand colours: visitor pages are black (#000) nav with gold accent
+    _conn.execute(_text("UPDATE car_parks SET brand_primary='#000000', brand_accent='#B89A5A', brand_text='#ffffff' WHERE slug='shere-manor'"))
     _conn.commit()
 
 app = FastAPI(title="LandMarque")
