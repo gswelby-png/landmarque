@@ -1,0 +1,340 @@
+{% extends "location/visitor/base.html" %}
+
+{% block title %}Editing — {{ estate_name }}{% endblock %}
+
+{% block extra_css %}
+    /* ── Welcome page base styles (same as welcome.html) ── */
+    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
+    #scroll-nav img { height: 28px; }
+    #scroll-nav .nav-home span { font-size: .94rem; }
+    #hamburger-btn { gap: 6px; }
+    #hamburger-btn span { width: 28px; }
+    footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
+    footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
+    div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
+    .welcome-header { text-align: center; padding: 6rem 1rem 1.25rem; }
+    .welcome-logo { width: 22.5%; max-width: 115px; height: auto; margin-bottom: 1.2rem; }
+    .welcome-title { font-family: 'Raleway', sans-serif; font-weight: 700; color: #B89A5A; text-transform: uppercase; text-align: center; line-height: 1.15; margin-bottom: .6rem; }
+    .welcome-title-main { font-size: clamp(2rem, 10vw, 3.2rem); display: block; letter-spacing: 3px; }
+    .welcome-title-sub { font-size: clamp(0.83rem, 4.5vw, 1.33rem); display: block; opacity: .8; letter-spacing: 6.75px; margin-top: .42rem; }
+    .welcome-intro { text-align: center; padding: 2rem 0 3.5rem; }
+    .welcome-intro-title { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: 1.3rem; }
+    .welcome-intro-body { font-size: 1rem; color: #fff; font-weight: 300; line-height: 1.7; }
+    .nav-grid { padding: 0 0 2.04rem; }
+    .nav-card-full { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222; padding: 1.4rem 1.25rem; margin-bottom: .75rem; gap: .6rem; transition: border-color .15s; }
+    .nav-card-full:hover { border-color: #B89A5A; }
+    .nav-2col { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .75rem; }
+    .nav-card { display: flex; flex-direction: column; align-items: center; justify-content: center; text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222; padding: 1.4rem .75rem; gap: .6rem; min-height: 110px; transition: border-color .15s; }
+    .nav-card:hover { border-color: #B89A5A; }
+    .nav-icon { color: #fff; display: block; width: 28px; height: 28px; }
+    .nav-title { font-size: .78rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; text-align: center; line-height: 1.3; }
+    .nav-desc { font-size: .72rem; color: rgba(255,255,255,.4); font-weight: 300; text-align: center; line-height: 1.5; }
+
+    /* ── EDIT MODE styles ── */
+    body { padding-top: 52px; } /* push content below edit toolbar */
+    #scroll-nav { top: 52px; }  /* push fixed nav below edit toolbar */
+
+    /* Edit toolbar */
+    #edit-toolbar {
+        position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+        background: #0a0a0a; border-bottom: 1px solid rgba(184,154,90,.3);
+        display: flex; align-items: center; gap: 0;
+        height: 52px; padding: 0 1rem; overflow-x: auto;
+        scrollbar-width: none;
+    }
+    #edit-toolbar::-webkit-scrollbar { display: none; }
+    .tb-close {
+        display: flex; align-items: center; gap: .4rem;
+        font-size: .6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+        color: rgba(255,255,255,.4); cursor: pointer; background: none; border: none;
+        padding: 0 1rem 0 0; border-right: 1px solid rgba(255,255,255,.07); margin-right: 1rem;
+        height: 100%; white-space: nowrap; transition: color .15s;
+        font-family: 'Raleway', sans-serif;
+    }
+    .tb-close:hover { color: #fff; }
+    .tb-group { display: flex; align-items: center; gap: .65rem; padding: 0 1rem; border-right: 1px solid rgba(255,255,255,.07); height: 100%; }
+    .tb-label { font-size: .55rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.25); white-space: nowrap; }
+    .tb-logo-input {
+        background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
+        border-radius: 3px; color: #fff; font-family: 'Raleway', sans-serif;
+        font-size: .75rem; padding: .35rem .65rem; outline: none; width: 200px;
+        transition: border-color .15s;
+    }
+    .tb-logo-input:focus { border-color: rgba(184,154,90,.5); }
+    .tb-swatch-wrap { display: flex; align-items: center; gap: .4rem; }
+    .tb-swatch-label { font-size: .5rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.22); }
+    .tb-swatch-wrap input[type=color] { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.15); border-radius: 3px; cursor: pointer; background: none; padding: 1px; }
+    .tb-save {
+        margin-left: auto; flex-shrink: 0;
+        background: #B89A5A; color: #fff; border: none;
+        font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
+        letter-spacing: 2px; text-transform: uppercase;
+        padding: .55rem 1.25rem; border-radius: 3px; cursor: pointer;
+        transition: filter .15s; white-space: nowrap;
+    }
+    .tb-save:hover { filter: brightness(110%); }
+    .tb-saved { display: none; font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #4caf79; margin-left: auto; white-space: nowrap; }
+
+    /* Editable text elements */
+    [data-editable] {
+        cursor: text;
+        border-radius: 3px;
+        transition: outline .1s;
+        outline: 2px dashed transparent;
+    }
+    [data-editable]:hover { outline-color: rgba(184,154,90,.45); }
+    [data-editable]:focus { outline-color: #B89A5A; outline-style: solid; }
+
+    /* Logo click affordance */
+    .logo-edit-wrap { position: relative; display: inline-block; cursor: pointer; }
+    .logo-edit-wrap::after {
+        content: '✎ Logo';
+        position: absolute; bottom: -1.5rem; left: 50%; transform: translateX(-50%);
+        font-size: .55rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+        color: rgba(184,154,90,.6); white-space: nowrap; pointer-events: none;
+        opacity: 0; transition: opacity .15s;
+    }
+    .logo-edit-wrap:hover::after { opacity: 1; }
+    .logo-edit-wrap:hover img { outline: 2px dashed rgba(184,154,90,.5); border-radius: 3px; }
+{% endblock %}
+
+{% block header %}
+<div class="welcome-header">
+  {% if logo_url %}
+  <div class="logo-edit-wrap" onclick="focusLogoInput()" title="Click to change logo">
+    <img src="{{ logo_url }}" alt="{{ estate_name }}" class="welcome-logo" id="logo-preview-main">
+  </div>
+  {% else %}
+  <div class="logo-edit-wrap" onclick="focusLogoInput()" title="Click to add logo" style="display:inline-flex;align-items:center;justify-content:center;width:80px;height:80px;border:2px dashed rgba(184,154,90,.3);border-radius:6px;margin-bottom:1.2rem;cursor:pointer;">
+    <span style="font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(184,154,90,.5);">+ Logo</span>
+  </div>
+  {% endif %}
+  <h1 class="welcome-title">
+    <span class="welcome-title-main">{{ estate_name.split(' ')[0] }}</span>
+    <span class="welcome-title-sub">{{ estate_name.split(' ', 1)[1] }}</span>
+  </h1>
+</div>
+{% endblock %}
+
+{% block footer_nav %}{% endblock %}
+{% block page_intro %}{% endblock %}
+
+{% block content %}
+<div class="welcome-intro">
+  <p class="welcome-intro-title">Welcome</p>
+  <p class="welcome-intro-body"
+     data-editable
+     data-field="welcome_text"
+     contenteditable="true"
+     spellcheck="false"
+     title="Click to edit welcome message">{{ welcome_text or 'We very much hope that you will enjoy your visit to our village.' }}</p>
+</div>
+<div class="nav-grid">
+
+  {% if 'parking' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/>
+      <circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/>
+    </svg>
+    <div class="nav-title">Parking</div>
+  </a>
+  {% endif %}
+
+  {% set row1 = [] %}
+  {% if 'history' in features %}{% set _ = row1.append('history') %}{% endif %}
+  {% if 'movies' in features %}{% set _ = row1.append('movies') %}{% endif %}
+  {% if 'events' in features %}{% set _ = row1.append('events') %}{% endif %}
+  {% if 'cycling' in features %}{% set _ = row1.append('cycling') %}{% endif %}
+
+  {% if row1|length >= 2 %}
+  <div class="nav-2col">
+    {% if 'history' in features %}
+    <a href="#" onclick="return false;" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg>
+      <div class="nav-title">Our History</div>
+    </a>
+    {% endif %}
+    {% if 'movies' in features %}
+    <a href="#" onclick="return false;" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="14" rx="2"/><path d="M22 14l8-4v12l-8-4V14z"/><circle cx="9" cy="17" r="2.5"/></svg>
+      <div class="nav-title">Movie Connections</div>
+    </a>
+    {% endif %}
+  </div>
+  {% elif row1|length == 1 %}
+  {% if 'history' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg>
+    <div class="nav-title">Our History</div>
+  </a>
+  {% endif %}
+  {% endif %}
+
+  {% set row2 = [] %}
+  {% if 'places-to-eat' in features %}{% set _ = row2.append('places-to-eat') %}{% endif %}
+  {% if 'walking' in features %}{% set _ = row2.append('walking') %}{% endif %}
+  {% if row2|length == 2 %}
+  <div class="nav-2col">
+    <a href="#" onclick="return false;" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg>
+      <div class="nav-title">Places to Eat</div>
+    </a>
+    <a href="#" onclick="return false;" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg>
+      <div class="nav-title">Walking Routes</div>
+    </a>
+  </div>
+  {% elif 'places-to-eat' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg><div class="nav-title">Places to Eat</div></a>
+  {% elif 'walking' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg><div class="nav-title">Walking Routes</div></a>
+  {% endif %}
+
+  {% set row3 = [] %}
+  {% if 'places-of-interest' in features %}{% set _ = row3.append('places-of-interest') %}{% endif %}
+  {% if 'fun-for-kids' in features %}{% set _ = row3.append('fun-for-kids') %}{% endif %}
+  {% if row3|length == 2 %}
+  <div class="nav-2col">
+    <a href="#" onclick="return false;" class="nav-card"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/><circle cx="16" cy="12" r="3.5"/></svg><div class="nav-title">Places of Interest</div></a>
+    <a href="#" onclick="return false;" class="nav-card"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/></svg><div class="nav-title">Fun for Kids</div></a>
+  </div>
+  {% elif 'places-of-interest' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/><circle cx="16" cy="12" r="3.5"/></svg><div class="nav-title">Places of Interest</div></a>
+  {% elif 'fun-for-kids' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/></svg><div class="nav-title">Fun for Kids</div></a>
+  {% endif %}
+
+  {% set row4 = [] %}
+  {% if 'shopping' in features %}{% set _ = row4.append('shopping') %}{% endif %}
+  {% if 'benches' in features %}{% set _ = row4.append('benches') %}{% endif %}
+  {% if row4|length == 2 %}
+  <div class="nav-2col">
+    <a href="#" onclick="return false;" class="nav-card"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24l-3 14H7L4 8z"/><circle cx="11" cy="27" r="2"/><circle cx="22" cy="27" r="2"/><path d="M2 4h3l1 4"/></svg><div class="nav-title">Shopping</div></a>
+    <a href="#" onclick="return false;" class="nav-card"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6"/><path d="M11 14v-4M21 14v-4"/></svg><div class="nav-title">Sponsor a Bench</div></a>
+  </div>
+  {% elif 'shopping' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24l-3 14H7L4 8z"/><circle cx="11" cy="27" r="2"/><circle cx="22" cy="27" r="2"/><path d="M2 4h3l1 4"/></svg><div class="nav-title">Shopping</div></a>
+  {% elif 'benches' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6"/><path d="M11 14v-4M21 14v-4"/></svg><div class="nav-title">Sponsor a Bench</div></a>
+  {% endif %}
+
+  {% if 'legacy' in features %}
+  <a href="#" onclick="return false;" class="nav-card-full" style="margin-bottom:0;">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4C9 4 4 9 4 16s5 12 12 12 12-5 12-12S23 4 16 4z"/><path d="M16 10v6l4 4"/><path d="M10 16h2M20 16h2M16 10v-2M16 26v-2"/></svg>
+    <div class="nav-title">Legacy</div>
+  </a>
+  {% endif %}
+
+</div>
+
+<!-- ── Edit toolbar (injected above everything) ── -->
+<div id="edit-toolbar">
+  <button class="tb-close" onclick="closeEditor()">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </button>
+
+  <div class="tb-group">
+    <span class="tb-label">Logo URL</span>
+    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
+  </div>
+
+  <div class="tb-group">
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Header</span>
+      <input type="color" id="tb-primary" value="{{ brand_primary or '#1a3a2a' }}" oninput="applyColor('primary', this.value)" title="Header background">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Accent</span>
+      <input type="color" id="tb-accent" value="{{ brand_accent or '#c8a84b' }}" oninput="applyColor('accent', this.value)" title="Accent colour">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Text</span>
+      <input type="color" id="tb-text" value="{{ brand_text or '#ffffff' }}" oninput="applyColor('text', this.value)" title="Header text colour">
+    </div>
+  </div>
+
+  <span class="tb-saved" id="tb-saved">✓ Saved</span>
+  <button class="tb-save" id="tb-save-btn" onclick="saveChanges()">Save changes</button>
+</div>
+
+<!-- Hidden form — values filled by JS before submit -->
+<form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
+  <input type="hidden" name="logo_url" id="f-logo_url" value="{{ logo_url or '' }}">
+  <input type="hidden" name="brand_primary" id="f-brand_primary" value="{{ brand_primary or '#1a3a2a' }}">
+  <input type="hidden" name="brand_accent" id="f-brand_accent" value="{{ brand_accent or '#c8a84b' }}">
+  <input type="hidden" name="brand_text" id="f-brand_text" value="{{ brand_text or '#ffffff' }}">
+  <input type="hidden" name="welcome_text" id="f-welcome_text" value="{{ welcome_text or '' }}">
+  <input type="hidden" name="custom_tagline" id="f-custom_tagline" value="{{ custom_tagline or '' }}">
+  <input type="hidden" name="custom_description" id="f-custom_description" value="{{ custom_description or '' }}">
+  {% for feat in features %}
+  <input type="hidden" name="features" value="{{ feat }}">
+  {% endfor %}
+</form>
+
+<script>
+  // ── Logo ──
+  function focusLogoInput() {
+    document.getElementById('tb-logo').focus();
+    document.getElementById('tb-logo').select();
+  }
+  function updateLogo(url) {
+    const imgs = document.querySelectorAll('#logo-preview-main, #scroll-nav img');
+    imgs.forEach(img => { if (url) { img.src = url; img.style.display = ''; } });
+    document.getElementById('f-logo_url').value = url;
+  }
+
+  // ── Colors ──
+  function applyColor(key, val) {
+    if (key === 'primary') {
+      document.getElementById('scroll-nav').style.background = val;
+      document.getElementById('f-brand_primary').value = val;
+    } else if (key === 'accent') {
+      document.querySelectorAll('.nav-title').forEach(el => el.style.color = val);
+      document.querySelectorAll('.welcome-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_accent').value = val;
+    } else if (key === 'text') {
+      document.querySelectorAll('#scroll-nav .nav-home span, #scroll-nav .menu-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_text').value = val;
+    }
+  }
+
+  // ── Editable text ──
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.addEventListener('input', () => {
+      const field = el.dataset.field;
+      const hidden = document.getElementById('f-' + field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); }
+    });
+  });
+
+  // ── Save ──
+  function saveChanges() {
+    // Sync any last edits
+    document.querySelectorAll('[data-editable]').forEach(el => {
+      const hidden = document.getElementById('f-' + el.dataset.field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    document.getElementById('edit-form').submit();
+  }
+
+  // ── Close — postMessage to parent dashboard ──
+  function closeEditor() {
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ action: 'closeEditor' }, '*');
+    } else {
+      window.location.href = '/owner/dashboard';
+    }
+  }
+
+  // Apply current brand colors on load
+  applyColor('primary', '{{ brand_primary or "#1a3a2a" }}');
+  applyColor('accent',  '{{ brand_accent  or "#c8a84b" }}');
+  applyColor('text',    '{{ brand_text    or "#ffffff" }}');
+  if ('{{ logo_url }}') updateLogo('{{ logo_url }}');
+</script>
+{% endblock %}

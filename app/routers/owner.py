@@ -620,3 +620,41 @@ async def save_estate_page(
     db.commit()
 
     return RedirectResponse("/owner/dashboard?website_saved=1", status_code=303)
+
+
+@router.get("/estate/preview/{cp_slug}", response_class=HTMLResponse)
+def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    if not cp:
+        return RedirectResponse("/owner/dashboard", status_code=302)
+
+    from ..data.estates import ESTATES as _ESTATES
+    estate_slug = _estate_slug_for_cp(cp_slug)
+    estate = _ESTATES.get(estate_slug, {}) if estate_slug else {}
+
+    if cp.custom_features:
+        try:
+            features = set(json.loads(cp.custom_features))
+        except Exception:
+            features = set(estate.get("features", []))
+    else:
+        features = set(estate.get("features", []))
+
+    return templates.TemplateResponse("owner/estate_preview.html", {
+        "request": request,
+        "slug": cp_slug,
+        "estate_slug": estate_slug or cp_slug,
+        "estate_name": cp.name,
+        "car_park_name": cp.name,
+        "car_park_tagline": cp.custom_tagline or estate.get("tagline", ""),
+        "logo_url": cp.logo_url or "",
+        "welcome_text": cp.welcome_text or "",
+        "custom_tagline": cp.custom_tagline or "",
+        "custom_description": cp.custom_description or "",
+        "brand_primary": cp.brand_primary or "#1a3a2a",
+        "brand_accent": cp.brand_accent or "#c8a84b",
+        "brand_text": cp.brand_text or "#ffffff",
+        "features": features,
+        "cp_slug": cp_slug,
+    })

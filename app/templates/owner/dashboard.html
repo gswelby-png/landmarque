@@ -533,129 +533,23 @@
     <div class="alert alert-ok" style="margin-bottom:1.5rem;">Changes saved — your estate page has been updated.</div>
     {% endif %}
 
+    <!-- Editor iframe (hidden until launched) -->
+    <div id="editor-shell" style="display:none;position:fixed;inset:100px 0 0 0;z-index:300;background:#0a0a0a;">
+      <iframe id="editor-iframe" src="" style="width:100%;height:100%;border:none;" allow="same-origin"></iframe>
+    </div>
+
     {% for cp in cp_data %}
     {% if cp.estate_slug %}
-    <div class="editor-layout">
-
-      <!-- Live preview -->
-      <div class="editor-preview">
-        <div class="preview-bar">
-          <div class="preview-bar-dots"><span></span><span></span><span></span></div>
-          <div class="preview-url">landmarque.co.uk / location / {{ cp.estate_slug }} / visitor / welcome</div>
-          <a href="/location/{{ cp.estate_slug }}/visitor/welcome" target="_blank" style="font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color=''">Open ↗</a>
+    <div class="card" id="website-card-{{ cp.id }}">
+      <div style="padding:2rem 2rem 1.75rem;display:flex;flex-direction:column;align-items:center;text-align:center;gap:1.25rem;">
+        <div>
+          <p style="font-size:.58rem;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:.5rem;">Your estate page</p>
+          <p style="font-size:.88rem;font-weight:300;color:var(--muted);line-height:1.7;max-width:400px;">Click to open the live editor. Change your logo, colours, and welcome message directly on the page.</p>
         </div>
-        <div class="preview-iframe-wrap">
-          <iframe class="preview-iframe" id="preview-iframe-{{ cp.id }}" src="/location/{{ cp.estate_slug }}/visitor/welcome" title="Estate preview"></iframe>
-        </div>
-      </div>
-
-      <!-- Edit form -->
-      <div class="editor-form card">
-        <form id="estate-form-{{ cp.id }}" method="POST" action="/owner/estate/edit/{{ cp.slug }}">
-
-          <!-- Branding -->
-          <div class="editor-section open" id="esec-brand-{{ cp.id }}">
-            <div class="editor-section-head" onclick="toggleEditorSec('brand-{{ cp.id }}')">
-              <span class="editor-section-title">Logo &amp; Branding</span>
-              <span class="editor-section-arrow">›</span>
-            </div>
-            <div class="editor-section-body">
-              <div style="margin-bottom:1rem;">
-                <label class="form-label">Logo URL</label>
-                <input class="form-input" type="url" name="logo_url" value="{{ cp.logo_url }}" placeholder="https://yourestate.co.uk/logo.png" oninput="previewLogo(this.value,'{{ cp.id }}')">
-                <div class="form-hint">Link to your estate logo — PNG or SVG recommended.</div>
-                <img class="logo-preview" id="logo-prev-{{ cp.id }}" src="{{ cp.logo_url }}" alt="">
-              </div>
-              <div>
-                <label class="form-label" style="margin-bottom:.65rem;">Brand colours</label>
-                <div class="color-row">
-                  <div>
-                    <div class="color-label">Header bg</div>
-                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-primary" value="{{ cp.brand_primary }}" oninput="syncHex('{{ cp.id }}','primary',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-primary" name="brand_primary" value="{{ cp.brand_primary }}" oninput="syncColor('{{ cp.id }}','primary',this.value)" maxlength="7"></div>
-                  </div>
-                  <div>
-                    <div class="color-label">Accent</div>
-                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-accent" value="{{ cp.brand_accent }}" oninput="syncHex('{{ cp.id }}','accent',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-accent" name="brand_accent" value="{{ cp.brand_accent }}" oninput="syncColor('{{ cp.id }}','accent',this.value)" maxlength="7"></div>
-                  </div>
-                  <div>
-                    <div class="color-label">Header text</div>
-                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-text" value="{{ cp.brand_text }}" oninput="syncHex('{{ cp.id }}','text',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-text" name="brand_text" value="{{ cp.brand_text }}" oninput="syncColor('{{ cp.id }}','text',this.value)" maxlength="7"></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Content -->
-          <div class="editor-section" id="esec-content-{{ cp.id }}">
-            <div class="editor-section-head" onclick="toggleEditorSec('content-{{ cp.id }}')">
-              <span class="editor-section-title">Text &amp; Content</span>
-              <span class="editor-section-arrow">›</span>
-            </div>
-            <div class="editor-section-body">
-              <div style="margin-bottom:1rem;">
-                <label class="form-label">Welcome message</label>
-                <textarea class="form-textarea" name="welcome_text" style="min-height:80px;" placeholder="A warm welcome message shown at the top of your visitor page…">{{ cp.welcome_text }}</textarea>
-              </div>
-              <div style="margin-bottom:1rem;">
-                <label class="form-label">Estate tagline</label>
-                <input class="form-input" type="text" name="custom_tagline" value="{{ cp.custom_tagline }}" placeholder="A short, memorable line about your estate">
-              </div>
-              <div>
-                <label class="form-label">Estate description</label>
-                <textarea class="form-textarea" name="custom_description" style="min-height:90px;" placeholder="A longer description for the public discovery page…">{{ cp.custom_description }}</textarea>
-              </div>
-            </div>
-          </div>
-
-          <!-- Page blocks -->
-          <div class="editor-section" id="esec-blocks-{{ cp.id }}">
-            <div class="editor-section-head" onclick="toggleEditorSec('blocks-{{ cp.id }}')">
-              <span class="editor-section-title">Page sections</span>
-              <span class="editor-section-arrow">›</span>
-            </div>
-            <div class="editor-section-body">
-              <p style="font-size:.72rem;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:.75rem;">Choose which sections appear on your visitor page. Only enable what you have content for.</p>
-              <div class="blocks-grid">
-                {% set all_features = [
-                  ('parking',           'Parking',            'QR code cashless parking'),
-                  ('history',           'Our History',        'Story of your estate'),
-                  ('movies',            'Film locations',     'Movie & TV connections'),
-                  ('events',            'Events',             'Upcoming estate events'),
-                  ('walking',           'Walking routes',     'Guided walks from the estate'),
-                  ('cycling',           'Cycling routes',     'Bike routes through the estate'),
-                  ('places-to-eat',     'Places to eat',      'Pubs, cafés & restaurants'),
-                  ('places-of-interest','Points of interest', 'Notable spots & landmarks'),
-                  ('fun-for-kids',      'Family friendly',    'Activities for children'),
-                  ('shopping',          'Shopping',           'Estate shop or local retail'),
-                  ('benches',           'Sponsor a bench',    'Memorial benches'),
-                  ('legacy',            'Leave a legacy',     'Gifts in wills'),
-                ] %}
-                {% for feat_id, feat_name, feat_desc in all_features %}
-                {% set is_on = feat_id in cp.active_features %}
-                <div class="block-card {{ 'on' if is_on }}" onclick="toggleBlock(this)">
-                  <label class="toggle" onclick="event.stopPropagation()">
-                    <input type="checkbox" name="features" value="{{ feat_id }}" {{ 'checked' if is_on }} onchange="this.closest('.block-card').classList.toggle('on',this.checked)">
-                    <span class="toggle-track"></span>
-                    <span class="toggle-knob"></span>
-                  </label>
-                  <div>
-                    <div class="block-name">{{ feat_name }}</div>
-                    <div class="block-desc">{{ feat_desc }}</div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-
-          <!-- Save bar -->
-          <div class="editor-save-bar">
-            <p>Changes take effect immediately on your live page.</p>
-            <button type="submit" class="btn-gold">Save changes</button>
-          </div>
-
-        </form>
+        <button class="btn-gold" onclick="openEditor('/owner/estate/preview/{{ cp.slug }}')">
+          Open page editor
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+        </button>
       </div>
     </div>
     {% endif %}
@@ -806,9 +700,30 @@ function syncColor(cpId, key, val) {
   if (/^#[0-9a-fA-F]{6}$/.test(val)) document.getElementById('cp-' + cpId + '-c-' + key).value = val;
 }
 
-// Show logo on load if URL exists
-document.querySelectorAll('input[name=logo_url]').forEach(inp => {
-  if (inp.value) { const id = inp.closest('form').id.replace('estate-form-',''); previewLogo(inp.value, id); }
+// ── Website editor iframe ──
+function openEditor(src) {
+  const shell = document.getElementById('editor-shell');
+  const iframe = document.getElementById('editor-iframe');
+  iframe.src = src;
+  shell.style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeEditorShell() {
+  const shell = document.getElementById('editor-shell');
+  const iframe = document.getElementById('editor-iframe');
+  shell.style.display = 'none';
+  iframe.src = '';
+  document.body.style.overflow = '';
+}
+window.addEventListener('message', e => {
+  if (e.data && e.data.action === 'closeEditor') {
+    closeEditorShell();
+  }
+  if (e.data && e.data.action === 'savedEditor') {
+    closeEditorShell();
+    // reload the website tab to show saved confirmation
+    setTimeout(() => location.href = '/owner/dashboard?website_saved=1', 100);
+  }
 });
 </script>
 </body>
