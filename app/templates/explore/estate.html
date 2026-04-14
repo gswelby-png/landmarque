@@ -158,8 +158,7 @@
     html: '<div style="width:14px;height:14px;background:#B89A5A;border-radius:50%;border:3px solid #fff;box-shadow:0 0 8px rgba(184,154,90,.7);"></div>',
     iconSize: [14, 14], iconAnchor: [7, 7],
   });
-  L.marker([{{ estate.lat }}, {{ estate.lng }}], { icon: goldIcon }).addTo(map)
-    .bindPopup('<b style="font-family:Raleway,sans-serif;font-size:.85rem;">{{ estate.name }}</b>').openPopup();
+  L.marker([{{ estate.lat }}, {{ estate.lng }}], { icon: goldIcon }).addTo(map);
   {% else %}
   document.getElementById('map').style.display = 'none';
   {% endif %}
