@@ -212,5 +212,27 @@
     </div>
   </footer>
 
+<script>
+  /* Show "Back to editor" when navigated into from the WYSIWYG editor */
+  (function () {
+    if (window.parent !== window && sessionStorage.getItem('lm_editor_back')) {
+      var btn = document.createElement('button');
+      btn.style.cssText = [
+        'position:fixed','top:8px','left:8px','z-index:9999',
+        'background:#0a0a0a','border:1px solid rgba(184,154,90,.45)',
+        'color:rgba(255,255,255,.75)','font-family:Raleway,Helvetica,sans-serif',
+        'font-size:.58rem','font-weight:700','letter-spacing:2px','text-transform:uppercase',
+        'padding:.5rem 1rem','border-radius:3px','cursor:pointer',
+        'display:flex','align-items:center','gap:.4rem','white-space:nowrap',
+        'transition:border-color .15s,color .15s',
+      ].join(';');
+      btn.innerHTML = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Back to editor';
+      btn.onmouseenter = function(){ btn.style.borderColor='#B89A5A'; btn.style.color='#fff'; };
+      btn.onmouseleave = function(){ btn.style.borderColor='rgba(184,154,90,.45)'; btn.style.color='rgba(255,255,255,.75)'; };
+      btn.onclick = function(){ history.back(); };
+      document.body.appendChild(btn);
+    }
+  })();
+</script>
 </body>
 </html>

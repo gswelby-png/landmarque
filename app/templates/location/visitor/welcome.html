@@ -11,69 +11,43 @@
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
-    .welcome-header {
-      text-align: center;
-      padding: 6rem 1rem 1.25rem;
-    }
+    .welcome-header { text-align: center; padding: 6rem 1rem 1.25rem; }
     .welcome-logo { width: 22.5%; max-width: 115px; height: auto; margin-bottom: 1.2rem; }
     .welcome-title {
-      font-family: 'Raleway', sans-serif;
-      font-weight: 700; color: #B89A5A; text-transform: uppercase;
-      text-align: center; line-height: 1.15; margin-bottom: .6rem;
+      font-family: 'Raleway', sans-serif; font-weight: 700; color: #B89A5A;
+      text-transform: uppercase; text-align: center; line-height: 1.15; margin-bottom: .6rem;
     }
     .welcome-title-main { font-size: clamp(2rem, 10vw, 3.2rem); display: block; letter-spacing: 3px; }
-    .welcome-title-sub {
-      font-size: clamp(0.83rem, 4.5vw, 1.33rem); display: block; opacity: .8;
-      letter-spacing: 6.75px; margin-top: .42rem;
-    }
-    .welcome-intro {
-      text-align: center; padding: 2rem 0 3.5rem;
-    }
-    .welcome-intro-title {
-      font-size: 1.6rem; font-weight: 700; color: #fff;
-      letter-spacing: .5px; margin-bottom: 1.3rem;
-    }
-    .welcome-intro-body {
-      font-size: 1rem; color: #fff;
-      font-weight: 300; line-height: 1.7;
-    }
+    .welcome-title-sub { font-size: clamp(0.83rem, 4.5vw, 1.33rem); display: block; opacity: .8; letter-spacing: 6.75px; margin-top: .42rem; }
+    .welcome-intro { text-align: center; padding: 2rem 0 3.5rem; }
+    .welcome-intro-title { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: 1.3rem; }
+    .welcome-intro-body { font-size: 1rem; color: #fff; font-weight: 300; line-height: 1.7; }
     .nav-grid { padding: 0 0 2.04rem; }
     div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
     .nav-card-full {
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-decoration: none; background: #111;
-      border-radius: 8px; border: 1px solid #222;
-      padding: 1.4rem 1.25rem; margin-bottom: .75rem;
-      gap: .6rem; transition: border-color .15s;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222;
+      padding: 1.4rem 1.25rem; margin-bottom: .75rem; gap: .6rem; transition: border-color .15s;
     }
     .nav-card-full:hover { border-color: #B89A5A; }
-    .nav-2col {
-      display: grid; grid-template-columns: 1fr 1fr;
-      gap: .75rem; margin-bottom: .75rem;
-    }
+    .nav-2col { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .75rem; }
+    .nav-2col.solo { grid-template-columns: 1fr; }
     .nav-card {
-      display: flex; flex-direction: column;
-      align-items: center; justify-content: center;
-      text-decoration: none; background: #111;
-      border-radius: 8px; border: 1px solid #222;
-      padding: 1.4rem .75rem; gap: .6rem;
-      min-height: 110px; transition: border-color .15s;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222;
+      padding: 1.4rem .75rem; gap: .6rem; min-height: 110px; transition: border-color .15s;
     }
     .nav-card:hover { border-color: #B89A5A; }
     .nav-icon { color: #fff; display: block; width: 28px; height: 28px; }
-    .nav-title {
-      font-size: .78rem; font-weight: 700; color: #B89A5A;
-      letter-spacing: .5px; text-align: center; line-height: 1.3;
-    }
-    .nav-desc {
-      font-size: .72rem; color: rgba(255,255,255,.4);
-      font-weight: 300; text-align: center; line-height: 1.5;
-    }
+    .nav-title { font-size: .78rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; text-align: center; line-height: 1.3; }
+    .nav-desc { font-size: .72rem; color: rgba(255,255,255,.4); font-weight: 300; text-align: center; line-height: 1.5; }
+
     {% if edit_mode %}
     /* ── Edit mode ── */
     body { padding-top: 52px; }
     #scroll-nav { top: 52px; }
+
+    /* Toolbar */
     #edit-toolbar {
       position: fixed; top: 0; left: 0; right: 0; z-index: 900;
       background: #0a0a0a; border-bottom: 1px solid rgba(184,154,90,.3);
@@ -94,27 +68,70 @@
     .tb-logo-input {
       background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12);
       border-radius: 3px; color: #fff; font-family: 'Raleway', sans-serif;
-      font-size: .75rem; padding: .35rem .65rem; outline: none; width: 200px;
-      transition: border-color .15s;
+      font-size: .75rem; padding: .35rem .65rem; outline: none; width: 200px; transition: border-color .15s;
     }
     .tb-logo-input:focus { border-color: rgba(184,154,90,.5); }
     .tb-swatch-wrap { display: flex; align-items: center; gap: .4rem; }
     .tb-swatch-label { font-size: .5rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.22); }
     .tb-swatch-wrap input[type=color] { width: 30px; height: 30px; border: 1px solid rgba(255,255,255,.15); border-radius: 3px; cursor: pointer; background: none; padding: 1px; }
     .tb-save {
-      margin-left: auto; flex-shrink: 0;
-      background: #B89A5A; color: #fff; border: none;
+      margin-left: auto; flex-shrink: 0; background: #B89A5A; color: #fff; border: none;
       font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
-      letter-spacing: 2px; text-transform: uppercase;
-      padding: .55rem 1.25rem; border-radius: 3px; cursor: pointer; transition: filter .15s; white-space: nowrap;
+      letter-spacing: 2px; text-transform: uppercase; padding: .55rem 1.25rem; border-radius: 3px;
+      cursor: pointer; transition: filter .15s; white-space: nowrap;
     }
     .tb-save:hover { filter: brightness(110%); }
     .tb-saved { display: none; font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #4caf79; margin-left: auto; white-space: nowrap; }
+
+    /* Editable text */
     [data-editable] { cursor: text; border-radius: 3px; outline: 2px dashed transparent; transition: outline .1s; }
     [data-editable]:hover { outline-color: rgba(184,154,90,.45); }
     [data-editable]:focus { outline-color: #B89A5A; outline-style: solid; }
+
+    /* Logo click affordance */
     .logo-edit-wrap { position: relative; display: inline-block; cursor: pointer; }
     .logo-edit-wrap:hover img { outline: 2px dashed rgba(184,154,90,.5); border-radius: 3px; }
+
+    /* Sidebar */
+    #edit-sidebar {
+      position: fixed; right: 0; top: 52px; bottom: 0; width: 280px; z-index: 800;
+      background: #0d0d0d; border-left: 1px solid rgba(255,255,255,.07);
+      overflow-y: auto; scrollbar-width: thin; scrollbar-color: rgba(255,255,255,.1) transparent;
+      display: flex; flex-direction: column;
+    }
+    #edit-sidebar::-webkit-scrollbar { width: 4px; }
+    #edit-sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,.1); border-radius: 2px; }
+    .sb-head {
+      padding: 1rem 1.25rem .75rem; border-bottom: 1px solid rgba(255,255,255,.06);
+      flex-shrink: 0;
+    }
+    .sb-head-title { font-size: .65rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.5); }
+    .sb-section { padding: .75rem 1.25rem; flex: 1; }
+    .sb-section-label { font-size: .52rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.22); margin-bottom: .6rem; display: block; }
+    .sb-feature {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: .55rem 0; border-bottom: 1px solid rgba(255,255,255,.04);
+    }
+    .sb-feature:last-child { border-bottom: none; }
+    .sb-feature-name { font-size: .74rem; font-weight: 600; color: rgba(255,255,255,.72); line-height: 1.2; }
+    .sb-feature-sub { font-size: .62rem; font-weight: 400; color: rgba(255,255,255,.28); margin-top: .15rem; }
+    /* Toggle switch */
+    .sb-toggle { position: relative; display: inline-block; width: 34px; height: 18px; flex-shrink: 0; margin-left: .75rem; }
+    .sb-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .sb-track {
+      position: absolute; inset: 0; background: rgba(255,255,255,.1);
+      border-radius: 9px; cursor: pointer; transition: background .2s;
+    }
+    .sb-toggle input:checked + .sb-track { background: #B89A5A; }
+    .sb-track::before {
+      content: ''; position: absolute; width: 12px; height: 12px;
+      left: 3px; top: 3px; background: #fff; border-radius: 50%; transition: transform .2s;
+    }
+    .sb-toggle input:checked + .sb-track::before { transform: translateX(16px); }
+    .sb-hint {
+      padding: .9rem 1.25rem 1.25rem; font-size: .68rem; color: rgba(255,255,255,.22);
+      line-height: 1.6; border-top: 1px solid rgba(255,255,255,.05); flex-shrink: 0;
+    }
     {% endif %}
 {% endblock %}
 
@@ -148,6 +165,266 @@
   <p class="welcome-intro-title">Welcome</p>
   <p class="welcome-intro-body"{% if edit_mode %} data-editable data-field="welcome_text" contenteditable="true" spellcheck="false" title="Click to edit"{% endif %}>{{ welcome_text or 'We very much hope that you will enjoy your visit to our village.' }}</p>
 </div>
+
+{% if edit_mode %}
+{# ── EDIT MODE: all cards pre-rendered, JS toggles visibility ── #}
+<div class="nav-grid" id="em-grid">
+
+  <a href="/location/{{ slug }}/visitor/parking-select" class="nav-card-full" data-feature="parking"{% if 'parking' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/><circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/></svg>
+    <div class="nav-title">Parking</div>
+  </a>
+
+  <div class="nav-2col" id="em-row1">
+    <a href="/location/{{ slug }}/visitor/history" class="nav-card" data-feature="history"{% if 'history' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg>
+      <div class="nav-title">Our History</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/movies" class="nav-card" data-feature="movies"{% if 'movies' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="14" rx="2"/><path d="M22 14l8-4v12l-8-4V14z"/><circle cx="9" cy="17" r="2.5"/></svg>
+      <div class="nav-title">Movie Connections</div>
+    </a>
+  </div>
+
+  <div class="nav-2col" id="em-row2">
+    <a href="/location/{{ slug }}/visitor/places-to-eat" class="nav-card" data-feature="places-to-eat"{% if 'places-to-eat' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg>
+      <div class="nav-title">Places to Eat</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/walking" class="nav-card" data-feature="walking"{% if 'walking' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg>
+      <div class="nav-title">Walking Routes</div>
+    </a>
+  </div>
+
+  <div class="nav-2col" id="em-row3">
+    <a href="/location/{{ slug }}/visitor/places-of-interest" class="nav-card" data-feature="places-of-interest"{% if 'places-of-interest' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/><circle cx="16" cy="12" r="3.5"/></svg>
+      <div class="nav-title">Places of Interest</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/fun-for-kids" class="nav-card" data-feature="fun-for-kids"{% if 'fun-for-kids' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/></svg>
+      <div class="nav-title">Fun for Kids</div>
+    </a>
+  </div>
+
+  <div class="nav-2col" id="em-row4">
+    <a href="/location/{{ slug }}/visitor/shopping" class="nav-card" data-feature="shopping"{% if 'shopping' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24l-3 14H7L4 8z"/><circle cx="11" cy="27" r="2"/><circle cx="22" cy="27" r="2"/><path d="M2 4h3l1 4"/></svg>
+      <div class="nav-title">Shopping</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/sponsor-a-bench" class="nav-card" data-feature="benches"{% if 'benches' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6"/><path d="M11 14v-4M21 14v-4"/></svg>
+      <div class="nav-title">Sponsor a Bench</div>
+    </a>
+  </div>
+
+  <a href="/location/{{ slug }}/visitor/legacy" class="nav-card-full" data-feature="legacy"{% if 'legacy' not in features %} style="display:none"{% endif %} onclick="setEditorBack()" style="margin-bottom:0">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4C9 4 4 9 4 16s5 12 12 12 12-5 12-12S23 4 16 4z"/><path d="M16 10v6l4 4"/><path d="M10 16h2M20 16h2M16 10v-2M16 26v-2"/></svg>
+    <div class="nav-title">Legacy</div>
+  </a>
+
+</div>
+
+{# ── Sidebar ── #}
+<div id="edit-sidebar">
+  <div class="sb-head">
+    <span class="sb-head-title">Page Elements</span>
+  </div>
+  <div class="sb-section">
+    <span class="sb-section-label">Navigation Cards</span>
+
+    {% set sb_items = [
+      ('parking',           'Parking',             'Pay-and-display car parks'),
+      ('history',           'Our History',          'Estate heritage & stories'),
+      ('movies',            'Movie Connections',    'Film & TV locations'),
+      ('places-to-eat',     'Places to Eat',        'Restaurants & cafes'),
+      ('walking',           'Walking Routes',       'Trails & footpaths'),
+      ('cycling',           'Cycling Routes',       'Bike-friendly routes'),
+      ('places-of-interest','Places of Interest',   'Local landmarks'),
+      ('fun-for-kids',      'Fun for Kids',         'Family activities'),
+      ('shopping',          'Shopping',             'Local shops & markets'),
+      ('benches',           'Sponsor a Bench',      'Memorial seating'),
+      ('legacy',            'Legacy',               'Charitable giving'),
+      ('events',            'Events',               'Estate events calendar'),
+    ] %}
+
+    {% for feat_id, feat_name, feat_desc in sb_items %}
+    <div class="sb-feature">
+      <div>
+        <div class="sb-feature-name">{{ feat_name }}</div>
+        <div class="sb-feature-sub">{{ feat_desc }}</div>
+      </div>
+      <label class="sb-toggle" title="Toggle {{ feat_name }}">
+        <input type="checkbox" data-feat="{{ feat_id }}"
+          {% if feat_id in features %}checked{% endif %}
+          onchange="toggleFeature('{{ feat_id }}', this.checked)">
+        <span class="sb-track"></span>
+      </label>
+    </div>
+    {% endfor %}
+
+  </div>
+  <div class="sb-hint">Click any card on the page to preview that section. Toggle cards on and off with the switches above.</div>
+</div>
+
+{# ── Edit toolbar ── #}
+<div id="edit-toolbar">
+  <button class="tb-close" onclick="closeEditor()">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Back
+  </button>
+  <div class="tb-group">
+    <span class="tb-label">Logo URL</span>
+    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
+  </div>
+  <div class="tb-group">
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Header</span>
+      <input type="color" id="tb-primary" value="{{ brand_primary or '#1e3a1e' }}" oninput="applyColor('primary', this.value)" title="Nav background">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Accent</span>
+      <input type="color" id="tb-accent" value="{{ brand_accent or '#B89A5A' }}" oninput="applyColor('accent', this.value)" title="Accent colour">
+    </div>
+    <div class="tb-swatch-wrap">
+      <span class="tb-swatch-label">Text</span>
+      <input type="color" id="tb-text" value="{{ brand_text or '#ffffff' }}" oninput="applyColor('text', this.value)" title="Header text">
+    </div>
+  </div>
+  <span class="tb-saved" id="tb-saved">Saved</span>
+  <button class="tb-save" onclick="saveChanges()">Save changes</button>
+</div>
+
+{# ── Hidden form ── #}
+<form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
+  <input type="hidden" name="logo_url"           id="f-logo_url"           value="{{ logo_url or '' }}">
+  <input type="hidden" name="brand_primary"       id="f-brand_primary"      value="{{ brand_primary or '#1e3a1e' }}">
+  <input type="hidden" name="brand_accent"        id="f-brand_accent"       value="{{ brand_accent or '#B89A5A' }}">
+  <input type="hidden" name="brand_text"          id="f-brand_text"         value="{{ brand_text or '#ffffff' }}">
+  <input type="hidden" name="welcome_text"        id="f-welcome_text"       value="{{ welcome_text or '' }}">
+  <input type="hidden" name="custom_tagline"      id="f-custom_tagline"     value="{{ car_park_tagline or '' }}">
+  <input type="hidden" name="custom_description"  id="f-custom_description" value="">
+  <div id="feature-inputs">
+    {% for feat in features %}
+    <input type="hidden" name="features" value="{{ feat }}">
+    {% endfor %}
+  </div>
+</form>
+
+<script>
+  // ── Logo ──
+  function focusLogoInput() {
+    const inp = document.getElementById('tb-logo');
+    inp.focus(); inp.select();
+  }
+  function updateLogo(url) {
+    document.querySelectorAll('.welcome-logo, #logo-preview-main, #scroll-nav img').forEach(img => {
+      if (url) img.src = url;
+    });
+    document.getElementById('f-logo_url').value = url;
+  }
+
+  // ── Colours ──
+  function applyColor(key, val) {
+    if (key === 'primary') {
+      document.getElementById('scroll-nav').style.background = val;
+      document.getElementById('f-brand_primary').value = val;
+    } else if (key === 'accent') {
+      document.querySelectorAll('.nav-title, .welcome-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_accent').value = val;
+    } else if (key === 'text') {
+      document.querySelectorAll('#scroll-nav .nav-home span, .menu-title').forEach(el => el.style.color = val);
+      document.getElementById('f-brand_text').value = val;
+    }
+  }
+
+  // ── Editable text ──
+  document.querySelectorAll('[data-editable]').forEach(el => {
+    el.addEventListener('input', () => {
+      const hidden = document.getElementById('f-' + el.dataset.field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    el.addEventListener('keydown', e => {
+      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); }
+    });
+  });
+
+  // ── Feature sidebar toggles ──
+  // Paired rows: if one card in a 2-col row is hidden, the other goes full-width
+  const ROWS = ['em-row1', 'em-row2', 'em-row3', 'em-row4'];
+
+  function recalcRow(rowId) {
+    const row = document.getElementById(rowId);
+    if (!row) return;
+    const cards = [...row.querySelectorAll('[data-feature]')];
+    const visible = cards.filter(c => c.style.display !== 'none');
+    if (visible.length === 0) {
+      row.style.display = 'none';
+    } else {
+      row.style.display = '';
+      row.classList.toggle('solo', visible.length === 1);
+    }
+  }
+
+  function toggleFeature(feat, enabled) {
+    // Show/hide the card
+    const card = document.querySelector('[data-feature="' + feat + '"]');
+    if (card) {
+      card.style.display = enabled ? '' : 'none';
+      // Recalc the row it lives in (if any)
+      ROWS.forEach(rowId => {
+        const row = document.getElementById(rowId);
+        if (row && row.contains(card)) recalcRow(rowId);
+      });
+    }
+    // Sync hidden form inputs
+    const container = document.getElementById('feature-inputs');
+    container.innerHTML = '';
+    document.querySelectorAll('[data-feat]').forEach(cb => {
+      if (cb.checked) {
+        const inp = document.createElement('input');
+        inp.type = 'hidden'; inp.name = 'features'; inp.value = cb.dataset.feat;
+        container.appendChild(inp);
+      }
+    });
+  }
+
+  // Initialise row layouts on load
+  ROWS.forEach(recalcRow);
+
+  // ── Nav card click — set sessionStorage so sub-pages show "back" button ──
+  function setEditorBack() {
+    sessionStorage.setItem('lm_editor_back', '1');
+  }
+
+  // ── Save ──
+  function saveChanges() {
+    document.querySelectorAll('[data-editable]').forEach(el => {
+      const hidden = document.getElementById('f-' + el.dataset.field);
+      if (hidden) hidden.value = el.innerText.trim();
+    });
+    document.getElementById('edit-form').submit();
+  }
+
+  // ── Close — postMessage to parent dashboard ──
+  function closeEditor() {
+    sessionStorage.removeItem('lm_editor_back');
+    if (window.parent && window.parent !== window) {
+      window.parent.postMessage({ action: 'closeEditor' }, '*');
+    } else {
+      window.location.href = '/owner/dashboard';
+    }
+  }
+
+  // Apply brand colours on load
+  applyColor('primary', '{{ brand_primary or "#1e3a1e" }}');
+  applyColor('accent',  '{{ brand_accent  or "#B89A5A" }}');
+  applyColor('text',    '{{ brand_text    or "#ffffff" }}');
+</script>
+
+{% else %}
+{# ── Normal visitor nav grid ── #}
 <div class="nav-grid">
 
   {% if 'parking' in features %}
@@ -198,8 +475,7 @@
     <a href="/location/{{ slug }}/visitor/cycling" class="nav-card">
       <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/>
-        <path d="M8 22l5-10h6l3 5M16 12l3 5"/>
-        <circle cx="20" cy="8" r="2"/>
+        <path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/>
       </svg>
       <div class="nav-title">Cycling</div>
     </a>
@@ -345,98 +621,5 @@
   {% endif %}
 
 </div>
-
-{% if edit_mode %}
-<div id="edit-toolbar">
-  <button class="tb-close" onclick="closeEditor()">
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
-    Back
-  </button>
-  <div class="tb-group">
-    <span class="tb-label">Logo URL</span>
-    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
-  </div>
-  <div class="tb-group">
-    <div class="tb-swatch-wrap">
-      <span class="tb-swatch-label">Header</span>
-      <input type="color" id="tb-primary" value="{{ brand_primary or '#1e3a1e' }}" oninput="applyColor('primary', this.value)" title="Nav background">
-    </div>
-    <div class="tb-swatch-wrap">
-      <span class="tb-swatch-label">Accent</span>
-      <input type="color" id="tb-accent" value="{{ brand_accent or '#B89A5A' }}" oninput="applyColor('accent', this.value)" title="Accent colour">
-    </div>
-    <div class="tb-swatch-wrap">
-      <span class="tb-swatch-label">Text</span>
-      <input type="color" id="tb-text" value="{{ brand_text or '#ffffff' }}" oninput="applyColor('text', this.value)" title="Header text">
-    </div>
-  </div>
-  <span class="tb-saved" id="tb-saved">✓ Saved</span>
-  <button class="tb-save" onclick="saveChanges()">Save changes</button>
-</div>
-
-<form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
-  <input type="hidden" name="logo_url"           id="f-logo_url"           value="{{ logo_url or '' }}">
-  <input type="hidden" name="brand_primary"       id="f-brand_primary"      value="{{ brand_primary or '#1e3a1e' }}">
-  <input type="hidden" name="brand_accent"        id="f-brand_accent"       value="{{ brand_accent or '#B89A5A' }}">
-  <input type="hidden" name="brand_text"          id="f-brand_text"         value="{{ brand_text or '#ffffff' }}">
-  <input type="hidden" name="welcome_text"        id="f-welcome_text"       value="{{ welcome_text or '' }}">
-  <input type="hidden" name="custom_tagline"      id="f-custom_tagline"     value="{{ car_park_tagline or '' }}">
-  <input type="hidden" name="custom_description"  id="f-custom_description" value="">
-  {% for feat in features %}
-  <input type="hidden" name="features" value="{{ feat }}">
-  {% endfor %}
-</form>
-
-<script>
-  function focusLogoInput() {
-    const inp = document.getElementById('tb-logo');
-    inp.focus(); inp.select();
-  }
-  function updateLogo(url) {
-    document.querySelectorAll('.welcome-logo, #logo-preview-main, #scroll-nav img').forEach(img => {
-      if (url) img.src = url;
-    });
-    document.getElementById('f-logo_url').value = url;
-  }
-  function applyColor(key, val) {
-    if (key === 'primary') {
-      document.getElementById('scroll-nav').style.background = val;
-      document.getElementById('f-brand_primary').value = val;
-    } else if (key === 'accent') {
-      document.querySelectorAll('.nav-title, .welcome-title').forEach(el => el.style.color = val);
-      document.getElementById('f-brand_accent').value = val;
-    } else if (key === 'text') {
-      document.querySelectorAll('#scroll-nav .nav-home span, .menu-title').forEach(el => el.style.color = val);
-      document.getElementById('f-brand_text').value = val;
-    }
-  }
-  document.querySelectorAll('[data-editable]').forEach(el => {
-    el.addEventListener('input', () => {
-      const hidden = document.getElementById('f-' + el.dataset.field);
-      if (hidden) hidden.value = el.innerText.trim();
-    });
-    el.addEventListener('keydown', e => {
-      if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); el.blur(); }
-    });
-  });
-  function saveChanges() {
-    document.querySelectorAll('[data-editable]').forEach(el => {
-      const hidden = document.getElementById('f-' + el.dataset.field);
-      if (hidden) hidden.value = el.innerText.trim();
-    });
-    document.getElementById('edit-form').submit();
-  }
-  function closeEditor() {
-    if (window.parent && window.parent !== window) {
-      window.parent.postMessage({ action: 'closeEditor' }, '*');
-    } else {
-      window.location.href = '/owner/dashboard';
-    }
-  }
-  // Apply brand colours on load
-  applyColor('primary', '{{ brand_primary or "#1e3a1e" }}');
-  applyColor('accent',  '{{ brand_accent  or "#B89A5A" }}');
-  applyColor('text',    '{{ brand_text    or "#ffffff" }}');
-</script>
 {% endif %}
 {% endblock %}
