@@ -45,6 +45,10 @@ def migrate():
             if "custom_features" not in columns:
                 conn.execute(text("ALTER TABLE car_parks ADD COLUMN custom_features VARCHAR"))
                 conn.commit()
+            if "page_contents" not in columns:
+                conn.execute(text("ALTER TABLE car_parks ADD COLUMN page_contents TEXT"))
+                conn.commit()
+                log.info("migrate(): added page_contents column")
         # Backfill Shere Manor logo and welcome text if not set
         with engine.connect() as conn:
             conn.execute(text(

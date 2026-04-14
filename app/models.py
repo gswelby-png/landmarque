@@ -1,5 +1,5 @@
 from sqlalchemy import (
-    Column, Integer, String, Boolean, DateTime, Date, ForeignKey, Enum
+    Column, Integer, String, Boolean, DateTime, Date, ForeignKey, Enum, Text
 )
 from sqlalchemy.orm import relationship
 from datetime import datetime, timezone
@@ -65,6 +65,7 @@ class CarPark(Base):
     custom_tagline = Column(String, nullable=True)
     custom_description = Column(String, nullable=True)
     custom_features = Column(String, nullable=True)   # JSON list of feature strings
+    page_contents = Column(Text, nullable=True)        # JSON dict {page_slug: content}
     is_active = Column(Boolean, default=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 

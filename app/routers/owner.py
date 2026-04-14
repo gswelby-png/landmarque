@@ -665,3 +665,43 @@ def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)
         "brand_accent": brand_accent,
         "brand_text": brand_text,
     })
+
+
+# ── Per-page content API ─────────────────────────────────────────────────────
+
+from fastapi.responses import JSONResponse as _JSONResponse  # noqa: E402
+
+
+@router.get("/page-content/{cp_slug}/{page}")
+def get_page_content(cp_slug: str, page: str, request: Request, db: Session = Depends(get_db)):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    contents: dict = {}
+    if cp.page_contents:
+        try:
+            contents = json.loads(cp.page_contents)
+        except Exception:
+            pass
+    return _JSONResponse({"content": contents.get(page, "")})
+
+
+@router.post("/page-content/{cp_slug}/{page}")
+async def save_page_content(cp_slug: str, page: str, request: Request, db: Session = Depends(get_db)):
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.owner_id == owner.id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    body = await request.json()
+    content = str(body.get("content", ""))
+    contents: dict = {}
+    if cp.page_contents:
+        try:
+            contents = json.loads(cp.page_contents)
+        except Exception:
+            pass
+    contents[page] = content
+    cp.page_contents = json.dumps(contents)
+    db.commit()
+    return _JSONResponse({"ok": True})
