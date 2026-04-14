@@ -582,6 +582,18 @@ def _get_estate(slug: str):
     return ESTATES.get(slug)
 
 
+def _get_page_intro(car_park, page_key: str) -> str:
+    """Return owner-saved intro text for a sub-page, or empty string."""
+    import json as _json
+    if not car_park or not getattr(car_park, "page_contents", None):
+        return ""
+    try:
+        contents = _json.loads(car_park.page_contents)
+        return contents.get(page_key, "")
+    except Exception:
+        return ""
+
+
 def _resolve_features(car_park, estate: dict) -> list:
     """Return features list: use car_park.custom_features if set, else ESTATES dict."""
     import json as _json
@@ -940,6 +952,7 @@ def visitor_walking_list(request: Request, slug: str, db: Session = Depends(get_
         "car_park_name": "Walking Routes",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "walks": walks,
+        "page_intro_override": _get_page_intro(car_park, "walking"),
     })
 
 
@@ -977,6 +990,7 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Movie Connections",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "page_intro_override": _get_page_intro(car_park, "movies"),
     })
 
 
@@ -1009,6 +1023,7 @@ def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Our History",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "page_intro_override": _get_page_intro(car_park, "history"),
     })
 
 
@@ -1027,6 +1042,7 @@ def visitor_places_of_interest(request: Request, slug: str, db: Session = Depend
         "car_park_name": "Places of Interest",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "places": places,
+        "page_intro_override": _get_page_intro(car_park, "places-of-interest"),
     })
 
 
@@ -1045,6 +1061,7 @@ def visitor_fun_for_kids(request: Request, slug: str, db: Session = Depends(get_
         "car_park_name": "Fun for Kids",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "places": places,
+        "page_intro_override": _get_page_intro(car_park, "fun-for-kids"),
     })
 
 
@@ -1063,6 +1080,7 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
         "car_park_name": "Places to Eat",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "places": places,
+        "page_intro_override": _get_page_intro(car_park, "places-to-eat"),
     })
 
 
@@ -1086,6 +1104,7 @@ def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db))
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "shops": SHOPPING.get(slug, []),
         "local_produce": LOCAL_PRODUCE.get(slug, []),
+        "page_intro_override": _get_page_intro(car_park, "shopping"),
     })
 
 
@@ -1105,6 +1124,7 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
         "tiers": BENCH_TIERS,
         "bench_types": BENCH_TYPES,
         "bench_locations": BENCH_LOCATIONS.get(slug, []),
+        "page_intro_override": _get_page_intro(car_park, "sponsor-a-bench"),
     })
 
 
@@ -1121,6 +1141,7 @@ def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Legacy",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "page_intro_override": _get_page_intro(car_park, "legacy"),
     })
 
 

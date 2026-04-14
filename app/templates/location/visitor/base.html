@@ -192,6 +192,12 @@
     </div>
     {% endblock %}
 
+    {% if page_intro_override %}
+    <div style="padding:1.25rem 0 .5rem; text-align:center;">
+      <p style="font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300;max-width:440px;margin:0 auto;">{{ page_intro_override }}</p>
+    </div>
+    {% endif %}
+
     {% block content %}{% endblock %}
 
   </div>
@@ -220,38 +226,104 @@
   </footer>
 
 <script>
-  /* Sub-page editor toolbar — shown when navigated to from the WYSIWYG welcome editor */
+  /* Sub-page editor bar — shown when navigated to from the WYSIWYG welcome editor */
   (function () {
     if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
 
-    var S = 'font-family:Raleway,Helvetica,sans-serif;';
+    var cpSlug = sessionStorage.getItem('lm_editor_cp') || '';
+    var page   = window.location.pathname.split('/').filter(Boolean).pop();
+    var S = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
+
+    /* ── Top bar ── */
     var bar = document.createElement('div');
-    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:48px;background:#0a0a0a;border-bottom:1px solid rgba(184,154,90,.25);display:flex;align-items:center;padding:0 1.25rem;z-index:9999;gap:1rem;' + S;
+    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:52px;background:#0a0a0a;border-bottom:1px solid rgba(184,154,90,.28);display:flex;align-items:center;padding:0 1rem;z-index:9999;gap:.75rem;overflow:hidden;' + S;
 
     var back = document.createElement('button');
-    back.style.cssText = 'display:flex;align-items:center;gap:.45rem;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.45);cursor:pointer;background:none;border:none;padding:0 1.1rem 0 0;border-right:1px solid rgba(255,255,255,.07);height:100%;white-space:nowrap;transition:color .15s;' + S;
-    back.innerHTML = '<svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Welcome page';
-    back.onmouseenter = function(){ this.style.color='#fff'; };
-    back.onmouseleave = function(){ this.style.color='rgba(255,255,255,.45)'; };
-    back.onclick = function(){ history.back(); };
+    back.style.cssText = 'display:flex;align-items:center;gap:.4rem;font-size:.56rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;background:none;border:none;padding:0 1rem 0 0;border-right:1px solid rgba(255,255,255,.07);height:100%;white-space:nowrap;' + S;
+    back.innerHTML = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Welcome';
+    back.onmouseenter = function(){ this.style.color='#B89A5A'; };
+    back.onmouseleave = function(){ this.style.color='rgba(255,255,255,.4)'; };
+    /* Navigate directly to the preview URL so we don't lose editor state on back() */
+    back.onclick = function(){
+      if (cpSlug) {
+        window.location.href = '/owner/estate/preview/' + cpSlug;
+      } else {
+        history.back();
+      }
+    };
 
     var lbl = document.createElement('span');
-    lbl.style.cssText = 'font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.3);' + S;
-    lbl.textContent = 'Previewing — ' + (document.title.split('—')[1] || document.title).trim();
+    lbl.style.cssText = 'font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;' + S;
+    lbl.textContent = (document.title.split('—')[0] || document.title).trim();
 
-    var hint = document.createElement('span');
-    hint.style.cssText = 'margin-left:auto;font-size:.6rem;color:rgba(255,255,255,.18);letter-spacing:.5px;' + S;
-    hint.textContent = 'Read only — return to welcome page to save changes';
+    var spacer = document.createElement('span');
+    spacer.style.flex = '1';
+
+    var saveBtn = document.createElement('button');
+    saveBtn.style.cssText = 'flex-shrink:0;background:#B89A5A;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.45rem 1rem;' + S;
+    saveBtn.textContent = 'Save intro';
+    saveBtn.onclick = saveIntro;
 
     bar.appendChild(back);
     bar.appendChild(lbl);
-    bar.appendChild(hint);
+    bar.appendChild(spacer);
+    bar.appendChild(saveBtn);
     document.body.insertBefore(bar, document.body.firstChild);
 
     /* Push scroll-nav below the bar */
     var nav = document.getElementById('scroll-nav');
-    if (nav) nav.style.top = '48px';
-    document.body.style.paddingTop = '48px';
+    if (nav) nav.style.top = '52px';
+    document.body.style.paddingTop = '52px';
+
+    /* ── Floating edit drawer (bottom) ── */
+    var drawer = document.createElement('div');
+    drawer.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#0d0d0d;border-top:1px solid rgba(184,154,90,.2);padding:.75rem 1rem;display:flex;flex-direction:column;gap:.5rem;' + S;
+
+    var drawerLabel = document.createElement('span');
+    drawerLabel.style.cssText = 'font-size:.52rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.22);' + S;
+    drawerLabel.textContent = 'Page intro text — shown to visitors at the top of this page';
+
+    var ta = document.createElement('textarea');
+    ta.id = 'lm-intro-ta';
+    ta.placeholder = 'Type a short introduction for this page…';
+    ta.rows = 3;
+    ta.style.cssText = 'width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.85);font-size:.85rem;line-height:1.6;padding:.6rem .75rem;resize:none;outline:none;' + S;
+    ta.onfocus = function(){ this.style.borderColor='rgba(184,154,90,.4)'; };
+    ta.onblur  = function(){ this.style.borderColor='rgba(255,255,255,.1)'; };
+
+    drawer.appendChild(drawerLabel);
+    drawer.appendChild(ta);
+    document.body.appendChild(drawer);
+
+    /* Load existing intro text */
+    if (cpSlug && page) {
+      fetch('/owner/page-content/' + cpSlug + '/' + page)
+        .then(function(r){ return r.json(); })
+        .then(function(d){ if (d.content) ta.value = d.content; })
+        .catch(function(){});
+    }
+
+    function saveIntro() {
+      var content = ta.value.trim();
+      saveBtn.textContent = 'Saving…';
+      saveBtn.disabled = true;
+      fetch('/owner/page-content/' + cpSlug + '/' + page, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({content: content})
+      })
+      .then(function(r){ return r.json(); })
+      .then(function(d){
+        saveBtn.textContent = d.ok ? 'Saved ✓' : 'Error';
+        saveBtn.disabled = false;
+        setTimeout(function(){ saveBtn.textContent = 'Save intro'; }, 2000);
+      })
+      .catch(function(){
+        saveBtn.textContent = 'Error';
+        saveBtn.disabled = false;
+        setTimeout(function(){ saveBtn.textContent = 'Save intro'; }, 2000);
+      });
+    }
   })();
 </script>
 </body>
