@@ -192,12 +192,6 @@
     </div>
     {% endblock %}
 
-    {% if page_intro_override %}
-    <div style="padding:1.25rem 0 .5rem; text-align:center;">
-      <p style="font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.75;font-weight:300;max-width:440px;margin:0 auto;">{{ page_intro_override }}</p>
-    </div>
-    {% endif %}
-
     {% block content %}{% endblock %}
 
   </div>
@@ -226,105 +220,192 @@
   </footer>
 
 <script>
-  /* Sub-page editor bar — shown when navigated to from the WYSIWYG welcome editor */
-  (function () {
-    if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
+/* Sub-page editor — shown when navigated to from the WYSIWYG welcome editor */
+(function () {
+  if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
 
-    var cpSlug = sessionStorage.getItem('lm_editor_cp') || '';
-    var page   = window.location.pathname.split('/').filter(Boolean).pop();
-    var S = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
+  var cpSlug = sessionStorage.getItem('lm_editor_cp') || '';
+  var page   = window.location.pathname.split('/').filter(Boolean).pop();
+  var F = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
 
-    /* ── Top bar ── */
-    var bar = document.createElement('div');
-    bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:52px;background:#0a0a0a;border-bottom:1px solid rgba(184,154,90,.28);display:flex;align-items:center;padding:0 1rem;z-index:9999;gap:.75rem;overflow:hidden;' + S;
+  /* ── Top bar ── */
+  var bar = document.createElement('div');
+  bar.style.cssText = 'position:fixed;top:0;left:0;right:0;height:52px;background:#0a0a0a;border-bottom:1px solid rgba(184,154,90,.28);display:flex;align-items:center;padding:0 1rem;z-index:9999;gap:.75rem;' + F;
 
-    var back = document.createElement('button');
-    back.style.cssText = 'display:flex;align-items:center;gap:.4rem;font-size:.56rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;background:none;border:none;padding:0 1rem 0 0;border-right:1px solid rgba(255,255,255,.07);height:100%;white-space:nowrap;' + S;
-    back.innerHTML = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Welcome';
-    back.onmouseenter = function(){ this.style.color='#B89A5A'; };
-    back.onmouseleave = function(){ this.style.color='rgba(255,255,255,.4)'; };
-    /* Navigate directly to the preview URL so we don't lose editor state on back() */
-    back.onclick = function(){
-      if (cpSlug) {
-        window.location.href = '/owner/estate/preview/' + cpSlug;
-      } else {
-        history.back();
-      }
-    };
+  var backBtn = document.createElement('button');
+  backBtn.style.cssText = 'display:flex;align-items:center;gap:.4rem;font-size:.56rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.4);cursor:pointer;background:none;border:none;padding:0 1rem 0 0;border-right:1px solid rgba(255,255,255,.07);height:100%;white-space:nowrap;' + F;
+  backBtn.innerHTML = '<svg width="9" height="9" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>Welcome';
+  backBtn.onmouseenter = function(){ this.style.color='#B89A5A'; };
+  backBtn.onmouseleave = function(){ this.style.color='rgba(255,255,255,.4)'; };
+  backBtn.onclick = function(){
+    if (cpSlug) window.location.href = '/owner/estate/preview/' + cpSlug;
+    else history.back();
+  };
 
-    var lbl = document.createElement('span');
-    lbl.style.cssText = 'font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;' + S;
-    lbl.textContent = (document.title.split('—')[0] || document.title).trim();
+  var lbl = document.createElement('span');
+  lbl.style.cssText = 'font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;' + F;
+  lbl.textContent = 'Editing: ' + (document.title.split('—')[0] || document.title).trim();
 
-    var spacer = document.createElement('span');
-    spacer.style.flex = '1';
+  var spacer = document.createElement('span'); spacer.style.flex = '1';
 
-    var saveBtn = document.createElement('button');
-    saveBtn.style.cssText = 'flex-shrink:0;background:#B89A5A;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.45rem 1rem;' + S;
-    saveBtn.textContent = 'Save intro';
-    saveBtn.onclick = saveIntro;
+  var saveBtn = document.createElement('button');
+  saveBtn.style.cssText = 'flex-shrink:0;background:#B89A5A;color:#fff;border:none;border-radius:3px;cursor:pointer;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.45rem 1.1rem;' + F;
+  saveBtn.textContent = 'Save page';
 
-    bar.appendChild(back);
-    bar.appendChild(lbl);
-    bar.appendChild(spacer);
-    bar.appendChild(saveBtn);
-    document.body.insertBefore(bar, document.body.firstChild);
+  bar.appendChild(backBtn); bar.appendChild(lbl); bar.appendChild(spacer); bar.appendChild(saveBtn);
+  document.body.insertBefore(bar, document.body.firstChild);
 
-    /* Push scroll-nav below the bar */
-    var nav = document.getElementById('scroll-nav');
-    if (nav) nav.style.top = '52px';
-    document.body.style.paddingTop = '52px';
+  var nav = document.getElementById('scroll-nav');
+  if (nav) nav.style.top = '52px';
+  document.body.style.paddingTop = '52px';
 
-    /* ── Floating edit drawer (bottom) ── */
-    var drawer = document.createElement('div');
-    drawer.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:9998;background:#0d0d0d;border-top:1px solid rgba(184,154,90,.2);padding:.75rem 1rem;display:flex;flex-direction:column;gap:.5rem;' + S;
+  /* ── Find editable content body ── */
+  var body = document.querySelector('[data-lm-editable-body]');
+  if (!body) return; // page not wired for editing yet
 
-    var drawerLabel = document.createElement('span');
-    drawerLabel.style.cssText = 'font-size:.52rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.22);' + S;
-    drawerLabel.textContent = 'Page intro text — shown to visitors at the top of this page';
+  /* ── Make text elements contenteditable ── */
+  var TEXT_SEL = [
+    'p', 'h1', 'h2', 'h3', 'h4',
+    '.chapter-title', '.history-page-title', '.history-page-subtitle',
+    '.page-title', '.page-subtitle', '.section-body',
+    '.chapter-image-caption', '.walk-title', '.walk-summary',
+    '.place-name', '.place-summary', '.shop-name', '.shop-desc',
+  ].join(',');
 
-    var ta = document.createElement('textarea');
-    ta.id = 'lm-intro-ta';
-    ta.placeholder = 'Type a short introduction for this page…';
-    ta.rows = 3;
-    ta.style.cssText = 'width:100%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:4px;color:rgba(255,255,255,.85);font-size:.85rem;line-height:1.6;padding:.6rem .75rem;resize:none;outline:none;' + S;
-    ta.onfocus = function(){ this.style.borderColor='rgba(184,154,90,.4)'; };
-    ta.onblur  = function(){ this.style.borderColor='rgba(255,255,255,.1)'; };
+  body.querySelectorAll(TEXT_SEL).forEach(function(el) {
+    /* Skip elements inside form controls */
+    if (el.closest('form, button, label, .amount-btn')) return;
+    el.contentEditable = 'true';
+    el.spellcheck = false;
+    el.style.outline = '2px dashed transparent';
+    el.style.borderRadius = '2px';
+    el.style.cursor = 'text';
+    el.style.transition = 'outline .1s';
+    el.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
+    el.addEventListener('blur',  function(){ this.style.outline='2px dashed transparent'; });
+    el.addEventListener('keydown', function(e){
+      if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); this.blur(); }
+    });
+  });
 
-    drawer.appendChild(drawerLabel);
-    drawer.appendChild(ta);
-    document.body.appendChild(drawer);
+  /* ── Image editing ── */
+  var currentImg = null;
 
-    /* Load existing intro text */
-    if (cpSlug && page) {
-      fetch('/owner/page-content/' + cpSlug + '/' + page)
-        .then(function(r){ return r.json(); })
-        .then(function(d){ if (d.content) ta.value = d.content; })
-        .catch(function(){});
-    }
+  function closeImgPopup() {
+    var p = document.getElementById('lm-img-popup');
+    if (p) p.remove();
+  }
 
-    function saveIntro() {
-      var content = ta.value.trim();
-      saveBtn.textContent = 'Saving…';
-      saveBtn.disabled = true;
-      fetch('/owner/page-content/' + cpSlug + '/' + page, {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({content: content})
-      })
-      .then(function(r){ return r.json(); })
-      .then(function(d){
-        saveBtn.textContent = d.ok ? 'Saved ✓' : 'Error';
-        saveBtn.disabled = false;
-        setTimeout(function(){ saveBtn.textContent = 'Save intro'; }, 2000);
-      })
-      .catch(function(){
-        saveBtn.textContent = 'Error';
-        saveBtn.disabled = false;
-        setTimeout(function(){ saveBtn.textContent = 'Save intro'; }, 2000);
-      });
-    }
-  })();
+  function showImgPopup(img) {
+    closeImgPopup();
+    currentImg = img;
+    var popup = document.createElement('div');
+    popup.id = 'lm-img-popup';
+    popup.style.cssText = 'position:fixed;bottom:0;left:0;right:0;z-index:10001;background:#111;border-top:2px solid #B89A5A;padding:1rem 1.25rem;display:flex;flex-direction:column;gap:.75rem;' + F;
+
+    /* Header */
+    var hdr = document.createElement('div');
+    hdr.style.cssText = 'display:flex;align-items:center;justify-content:space-between;';
+    var hTitle = document.createElement('span');
+    hTitle.textContent = 'Edit Image';
+    hTitle.style.cssText = 'font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;' + F;
+    var hClose = document.createElement('button');
+    hClose.innerHTML = '&times;';
+    hClose.style.cssText = 'background:none;border:none;color:rgba(255,255,255,.4);font-size:1.4rem;cursor:pointer;line-height:1;padding:0;' + F;
+    hClose.onclick = closeImgPopup;
+    hdr.appendChild(hTitle); hdr.appendChild(hClose);
+
+    /* URL row */
+    var urlRow = document.createElement('div');
+    urlRow.style.cssText = 'display:flex;gap:.5rem;';
+    var urlInput = document.createElement('input');
+    urlInput.type = 'url';
+    urlInput.value = img.getAttribute('src') || '';
+    urlInput.placeholder = 'Paste image URL…';
+    urlInput.style.cssText = 'flex:1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:3px;color:#fff;font-size:.82rem;padding:.5rem .75rem;outline:none;min-width:0;' + F;
+    var applyBtn = document.createElement('button');
+    applyBtn.textContent = 'Apply';
+    applyBtn.style.cssText = 'flex-shrink:0;background:#B89A5A;color:#fff;border:none;border-radius:3px;padding:.5rem 1rem;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;' + F;
+    applyBtn.onclick = function(){ img.src = urlInput.value; img.style.display=''; closeImgPopup(); };
+    urlRow.appendChild(urlInput); urlRow.appendChild(applyBtn);
+
+    /* Upload + remove row */
+    var actRow = document.createElement('div');
+    actRow.style.cssText = 'display:flex;gap:.5rem;flex-wrap:wrap;';
+
+    var fileInput = document.createElement('input');
+    fileInput.type = 'file'; fileInput.accept = 'image/*'; fileInput.style.display = 'none';
+    fileInput.addEventListener('change', function(e){
+      var file = e.target.files[0]; if (!file) return;
+      var fd = new FormData(); fd.append('file', file);
+      uploadBtn.textContent = 'Uploading…'; uploadBtn.disabled = true;
+      fetch('/owner/upload-image', {method:'POST', body:fd})
+        .then(function(r){return r.json();})
+        .then(function(d){
+          if (d.url){ img.src = d.url; img.style.display=''; closeImgPopup(); }
+          else { uploadBtn.textContent = 'Error'; uploadBtn.disabled = false; }
+        }).catch(function(){ uploadBtn.textContent = 'Error'; uploadBtn.disabled = false; });
+    });
+
+    var uploadBtn = document.createElement('button');
+    uploadBtn.textContent = 'Upload from device';
+    uploadBtn.style.cssText = 'background:rgba(255,255,255,.06);color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.12);border-radius:3px;padding:.5rem 1rem;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;' + F;
+    uploadBtn.onclick = function(){ fileInput.click(); };
+
+    var removeBtn = document.createElement('button');
+    removeBtn.textContent = 'Remove image';
+    removeBtn.style.cssText = 'background:rgba(255,60,60,.1);color:rgba(255,100,100,.85);border:1px solid rgba(255,60,60,.2);border-radius:3px;padding:.5rem 1rem;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;' + F;
+    removeBtn.onclick = function(){ img.style.display='none'; closeImgPopup(); };
+
+    actRow.appendChild(fileInput); actRow.appendChild(uploadBtn); actRow.appendChild(removeBtn);
+
+    popup.appendChild(hdr); popup.appendChild(urlRow); popup.appendChild(actRow);
+    document.body.appendChild(popup);
+    urlInput.focus(); urlInput.select();
+  }
+
+  body.querySelectorAll('img').forEach(function(img){
+    img.style.cursor = 'pointer';
+    img.title = 'Click to edit this image';
+    img.addEventListener('mouseenter', function(){ if (!document.getElementById('lm-img-popup')) this.style.outline='3px solid #B89A5A'; });
+    img.addEventListener('mouseleave', function(){ this.style.outline=''; });
+    img.addEventListener('click', function(e){ e.preventDefault(); showImgPopup(this); });
+  });
+
+  /* ── Save page ── */
+  saveBtn.onclick = function(){
+    var clone = body.cloneNode(true);
+    /* Strip editor-only attributes */
+    clone.querySelectorAll('[contenteditable]').forEach(function(el){
+      el.removeAttribute('contenteditable');
+      el.style.outline = '';
+      el.style.cursor = '';
+      el.style.borderRadius = '';
+      el.style.transition = '';
+    });
+    clone.querySelectorAll('img').forEach(function(img){
+      img.style.cursor = '';
+      img.title = '';
+      img.style.outline = '';
+    });
+    var html = clone.outerHTML;
+    saveBtn.textContent = 'Saving…'; saveBtn.disabled = true;
+    fetch('/owner/page-content/' + cpSlug + '/' + page, {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({content: html})
+    })
+    .then(function(r){return r.json();})
+    .then(function(d){
+      saveBtn.textContent = d.ok ? 'Saved ✓' : 'Error';
+      saveBtn.disabled = false;
+      setTimeout(function(){ saveBtn.textContent = 'Save page'; }, 2000);
+    })
+    .catch(function(){ saveBtn.textContent = 'Error'; saveBtn.disabled = false;
+      setTimeout(function(){ saveBtn.textContent = 'Save page'; }, 2000); });
+  };
+
+})();
 </script>
 </body>
 </html>

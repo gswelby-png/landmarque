@@ -64,7 +64,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="history-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="history-wrap" data-lm-editable-body>
 
   <div class="history-page-title">Movie Connections</div>
   <p class="history-page-subtitle">Shere has been a favourite location for film and television productions for decades. Here are some of the most notable.</p>
@@ -96,4 +97,5 @@
   </div>
 
 </div>
+{% endif %}
 {% endblock %}

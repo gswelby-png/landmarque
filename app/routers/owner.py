@@ -3,7 +3,7 @@ import io
 import json
 import qrcode
 
-from fastapi import APIRouter, Depends, Request, Form, HTTPException, Query
+from fastapi import APIRouter, Depends, Request, Form, HTTPException, Query, UploadFile, File
 from fastapi.responses import HTMLResponse, RedirectResponse, StreamingResponse
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
@@ -685,6 +685,25 @@ def get_page_content(cp_slug: str, page: str, request: Request, db: Session = De
         except Exception:
             pass
     return _JSONResponse({"content": contents.get(page, "")})
+
+
+@router.post("/upload-image")
+async def upload_image(request: Request, file: UploadFile = File(...), db: Session = Depends(get_db)):
+    import os, uuid as _uuid
+    owner = current_owner(request, db)
+    ctype = file.content_type or ""
+    if not ctype.startswith("image/"):
+        raise HTTPException(status_code=400, detail="File must be an image")
+    fname = file.filename or "img"
+    ext = fname.rsplit(".", 1)[-1].lower() if "." in fname else "jpg"
+    if ext not in {"jpg", "jpeg", "png", "gif", "webp", "svg", "avif"}:
+        ext = "jpg"
+    filename = f"{owner.id}_{_uuid.uuid4().hex[:10]}.{ext}"
+    upload_dir = "app/static/uploads"
+    os.makedirs(upload_dir, exist_ok=True)
+    with open(os.path.join(upload_dir, filename), "wb") as fh:
+        fh.write(await file.read())
+    return _JSONResponse({"url": f"/static/uploads/{filename}"})
 
 
 @router.post("/page-content/{cp_slug}/{page}")

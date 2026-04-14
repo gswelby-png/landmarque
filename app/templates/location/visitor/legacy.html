@@ -122,7 +122,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="page-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Legacy</div>
   <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future — however modestly — your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
@@ -200,4 +201,5 @@
     alert('Thank you for your generosity. Payment processing will be integrated here.');
   }
 </script>
+{% endif %}
 {% endblock %}

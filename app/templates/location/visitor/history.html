@@ -64,7 +64,8 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-<div class="history-wrap">
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="history-wrap" data-lm-editable-body>
 
   <div class="history-page-title">Our History</div>
   <p class="history-page-subtitle">We hope you will enjoy our little presentation about the history of the village.</p>
@@ -116,4 +117,5 @@
   </div>
 
 </div>
+{% endif %}
 {% endblock %}
