@@ -75,11 +75,15 @@
     .menu-close:hover { color: #fff; }
 
     .menu-body {
-      padding: 3rem 2.5rem 4rem;
+      padding: 0 2.5rem 4rem;
+      display: flex;
+      flex-direction: column;
+      max-width: 900px;
+    }
+    .menu-groups {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 3rem;
-      max-width: 900px;
     }
 
     .menu-group-label {
@@ -103,6 +107,14 @@
       color: rgba(255,255,255,.38); padding-left: .75rem;
     }
     .menu-group a.sub:hover { color: rgba(255,255,255,.8); }
+    .menu-explore-btn {
+      display: flex; align-items: center; justify-content: center; gap: .6rem;
+      margin: 2.5rem 0 2rem; padding: 1.1rem 1.5rem;
+      background: var(--accent); color: #fff; text-decoration: none;
+      font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 3px; transition: filter .2s; flex-shrink: 0;
+    }
+    .menu-explore-btn:hover { filter: brightness(110%); }
 
     /* ── Page ── */
     .page-wrap {
@@ -227,7 +239,7 @@
     @media (max-width: 600px) {
       nav { padding: 1.2rem 1.25rem; }
       .menu-header { padding: 1.2rem 1.25rem; }
-      .menu-body { padding: 2rem 1.25rem 3rem; }
+      .menu-body { padding: 0 1.25rem 3rem; }
     }
   </style>
   {% block extra_css %}{% endblock %}
@@ -250,28 +262,30 @@
     </div>
     <div class="menu-body">
 
-      <div class="menu-group">
-        <div class="menu-group-label">LandMarque</div>
-        <a href="/landmarque" onclick="closeMenu()">Home</a>
-        <a href="/landmarque/parking" onclick="closeMenu()">Parking</a>
-        <a href="/landmarque/legacies" onclick="closeMenu()">Legacies</a>
-        <a href="/landmarque/benches" onclick="closeMenu()">Benches</a>
-        <a href="/landmarque/trees" onclick="closeMenu()">Trees</a>
-        <a href="/landmarque/walking-routes" onclick="closeMenu()">Walking Routes</a>
-        <a href="/landmarque/cycle-routes" onclick="closeMenu()">Cycle Routes</a>
-        <a href="/landmarque/places-of-interest" onclick="closeMenu()">Places of Interest</a>
-      </div>
+      <a href="/explore/estates" class="menu-explore-btn" onclick="closeMenu()">
+        Explore all estates
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
 
-      <div class="menu-group">
-        <div class="menu-group-label">Estate Owners</div>
-        <a href="/landmarque/register" onclick="closeMenu()">Register Your Estate</a>
-        <a href="/owner/login" onclick="closeMenu()">Owner Login</a>
-      </div>
+      <div class="menu-groups">
+        <div class="menu-group">
+          <div class="menu-group-label">LandMarque</div>
+          <a href="/landmarque" onclick="closeMenu()">Home</a>
+          <a href="/landmarque/parking" onclick="closeMenu()">Parking</a>
+          <a href="/landmarque/legacies" onclick="closeMenu()">Legacies</a>
+          <a href="/landmarque/benches" onclick="closeMenu()">Benches</a>
+          <a href="/landmarque/trees" onclick="closeMenu()">Trees</a>
+          <a href="/landmarque/walking-routes" onclick="closeMenu()">Walking Routes</a>
+          <a href="/landmarque/cycle-routes" onclick="closeMenu()">Cycle Routes</a>
+          <a href="/landmarque/places-of-interest" onclick="closeMenu()">Places of Interest</a>
+          <a href="/landmarque/contact" onclick="closeMenu()">Get in Touch</a>
+        </div>
 
-      <div class="menu-group">
-        <div class="menu-group-label">Visitors</div>
-        <a href="/explore/estates" onclick="closeMenu()" style="color:#B89A5A;">Explore All Estates</a>
-        <a href="/landmarque/contact" onclick="closeMenu()">Get in Touch</a>
+        <div class="menu-group">
+          <div class="menu-group-label">Estate Owners</div>
+          <a href="/landmarque/register" onclick="closeMenu()">Register Your Estate</a>
+          <a href="/owner/login" onclick="closeMenu()">Owner Login</a>
+        </div>
       </div>
 
     </div>
