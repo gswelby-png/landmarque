@@ -747,20 +747,27 @@ def visitor_parking_select(request: Request, slug: str, db: Session = Depends(ge
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    # All active car parks for this owner
+    all_cps = []
+    if car_park:
+        all_cps = (db.query(CarPark)
+                   .filter(CarPark.owner_id == car_park.owner_id, CarPark.is_active == True)
+                   .order_by(CarPark.id).all())
     return templates.TemplateResponse("location/visitor/parking_select.html", {
         "request": request,
         "slug": slug,
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Parking Locations",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "car_parks": all_cps,
     })
 
 
-def _parking_response(request, slug, car_park_name_override, db):
+def _parking_response(request, slug, car_park_name_override, db, target_cp_slug=None):
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
-    cp_slug = estate["car_park_slug"]
+    cp_slug = target_cp_slug or estate["car_park_slug"]
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug, CarPark.is_active == True).first()
     if not car_park:
         raise HTTPException(status_code=503, detail="Car park not available")
@@ -775,7 +782,7 @@ def _parking_response(request, slug, car_park_name_override, db):
     }
     return templates.TemplateResponse("driver/park.html", {
         "request": request,
-        "car_park_name": car_park_name_override,
+        "car_park_name": car_park_name_override or car_park.name,
         "car_park_slug": cp_slug,
         "car_park_tagline": car_park.tagline,
         "estate_name": car_park.owner.name,
@@ -823,6 +830,11 @@ def visitor_parking_roadside(request: Request, slug: str, db: Session = Depends(
         "car_park_name": "Roadside Parking",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
     })
+
+
+@router.get("/{slug}/visitor/parking/{car_park_slug}", response_class=HTMLResponse)
+def visitor_parking_by_slug(request: Request, slug: str, car_park_slug: str, db: Session = Depends(get_db)):
+    return _parking_response(request, slug, None, db, target_cp_slug=car_park_slug)
 
 
 @router.get("/{slug}/visitor/parking-start", response_class=HTMLResponse)

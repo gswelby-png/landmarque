@@ -49,8 +49,10 @@
 <div class="page-wrap">
   <div class="page-title">Parking</div>
   <p class="page-subtitle">Please let us know where you have parked so we can best assist you.</p>
-  <a href="/location/{{ slug }}/visitor/parking-farm-field-car-park" class="btn-menu">Farm Field Car Park <span class="btn-arrow">→</span></a>
-  <a href="/location/{{ slug }}/visitor/village-hall-car-park" class="btn-menu">Village Hall Car Park <span class="btn-arrow">→</span></a>
-  <a href="/location/{{ slug }}/visitor/roadside-parking" class="btn-menu">Roadside Parking <span class="btn-arrow">→</span></a>
+  {% for cp in car_parks %}
+  <a href="/location/{{ slug }}/visitor/parking/{{ cp.slug }}" class="btn-menu">{{ cp.name }} <span class="btn-arrow">→</span></a>
+  {% else %}
+  <p style="color:#888;font-size:.9rem;padding-top:1rem;">No parking areas have been set up yet.</p>
+  {% endfor %}
 </div>
 {% endblock %}

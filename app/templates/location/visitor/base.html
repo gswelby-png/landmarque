@@ -267,6 +267,10 @@
   if (nav) nav.style.top = '52px';
   document.body.style.paddingTop = '52px';
 
+  /* Redirect logo/nav-home link back to owner preview so edit mode is preserved */
+  var navHome = document.querySelector('#scroll-nav .nav-home');
+  if (navHome) navHome.href = '/owner/estate/preview/' + cpSlug;
+
   /* ── Find editable content body ── */
   var body = document.querySelector('[data-lm-editable-body]');
   if (!body) return;
