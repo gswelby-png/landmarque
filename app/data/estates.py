@@ -55,14 +55,6 @@ ESTATES = {
         "lat": 51.2070, "lng": -0.3980,
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy"],
     },
-    "watts-gallery-estate": {
-        "name": "Watts Gallery",
-        "tagline": "A Victorian artist's village — the home and studios of G.F. Watts in the Surrey Hills.",
-        "description": "Watts Gallery in Compton near Guildford is a Victorian artists' village created by the painter G.F. Watts and his wife Mary. The gallery houses the largest collection of Watts's work, alongside a tea shop, pottery, and the extraordinary Watts Memorial Chapel.",
-        "county": "Surrey",
-        "lat": 51.2000, "lng": -0.5700,
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "shopping", "benches", "legacy"],
-    },
     "loseley-park": {
         "name": "Loseley Park",
         "tagline": "A privately owned Elizabethan manor farmed by the same family for 450 years.",
@@ -71,15 +63,6 @@ ESTATES = {
         "lat": 51.2109, "lng": -0.5889,
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
-    "painshill-park": {
-        "name": "Painshill Park",
-        "tagline": "An eighteenth-century landscape garden with a crystal grotto on the banks of the River Mole.",
-        "description": "Painshill is a restored Georgian landscape garden in Cobham, created by Charles Hamilton between 1738 and 1773. Its circuit walk takes visitors past a crystal grotto, gothic temple, ruined abbey, and vineyard — one of England's finest examples of the picturesque landscape movement.",
-        "county": "Surrey",
-        "lat": 51.3339, "lng": -0.4219,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
-    },
-
     # ── West Sussex — private estates ────────────────────────────────────────────
 
     "arundel-castle": {
@@ -122,15 +105,6 @@ ESTATES = {
         "lat": 51.0280, "lng": -0.2710,
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
     },
-    "west-dean-estate": {
-        "name": "West Dean Estate",
-        "tagline": "A flint house, a wild garden, and the South Downs — home to the Edward James Foundation.",
-        "description": "West Dean Estate near Chichester is home to the Edward James Foundation, an arts and education charity. The 6,000-acre estate includes a flint house, 35-acre walled garden, arboretum, and parkland walks in the South Downs National Park.",
-        "county": "West Sussex",
-        "lat": 50.9130, "lng": -0.7780,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
-    },
-
     # ── East Sussex — private estates ────────────────────────────────────────────
 
     "firle-place": {
@@ -168,14 +142,6 @@ ESTATES = {
         "lat": 51.1908, "lng": 0.1097,
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
     },
-    "leeds-castle": {
-        "name": "Leeds Castle",
-        "tagline": "The loveliest castle in the world — a medieval fortress rising from its island lake.",
-        "description": "Leeds Castle has been a Norman stronghold, a palace of medieval queens, and a country retreat to six of England's medieval monarchs. Set on two islands in a lake in the Kentish Weald, it now hosts major events and offers award-winning gardens and grounds.",
-        "county": "Kent",
-        "lat": 51.2469, "lng": 0.6256,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
-    },
     "lullingstone-castle": {
         "name": "Lullingstone Castle",
         "tagline": "A Tudor gatehouse and a World Garden — five centuries of one family in the Darent valley.",
@@ -183,14 +149,6 @@ ESTATES = {
         "county": "Kent",
         "lat": 51.3810, "lng": 0.1610,
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "fun-for-kids"],
-    },
-    "godinton-house": {
-        "name": "Godinton House",
-        "tagline": "A Jacobean manor in a remarkable topiary garden near Ashford.",
-        "description": "Godinton House is a privately owned Jacobean house near Ashford with one of the finest collections of topiary in England and an interesting interior with carved panelling and period furniture.",
-        "county": "Kent",
-        "lat": 51.1530, "lng": 0.8450,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "groombridge-place": {
         "name": "Groombridge Place",

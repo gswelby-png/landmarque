@@ -351,12 +351,7 @@
   ALL_ESTATES.forEach(e => {
     if (!e.lat || !e.lng) return;
     const m = L.marker([e.lat, e.lng], { icon: goldIcon }).addTo(map);
-    m.bindPopup(
-      '<div style="font-family:Raleway,sans-serif;min-width:130px;">' +
-      '<div style="font-size:.54rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#B89A5A;margin-bottom:.2rem;">' + (e.county||'') + '</div>' +
-      '<div style="font-size:.82rem;font-weight:700;color:#111;margin-bottom:.35rem;">' + e.name + '</div>' +
-      '<a href="/explore/' + e.slug + '" style="font-size:.7rem;font-weight:700;color:#B89A5A;text-decoration:none;">View &rarr;</a></div>'
-    );
+    m.on('click', () => { window.location.href = '/explore/' + e.slug; });
     markers[e.slug] = m;
   });
 
