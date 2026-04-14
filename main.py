@@ -187,7 +187,7 @@ def root(request: Request):
 
 @app.get("/landmarque", response_class=HTMLResponse)
 def home(request: Request):
-    return templates.TemplateResponse("home.html", {"request": request})
+    return RedirectResponse(url="/", status_code=302)
 
 
 @app.get("/landmarque/parking", response_class=HTMLResponse)
