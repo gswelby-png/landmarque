@@ -19,6 +19,7 @@
       border-bottom: 1px solid rgba(255,255,255,.05);
     }
     .nav-brand { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: .5rem; }
+    .nav-brand-word { display: inline; }
     .nav-logo { width: 24px; height: 24px; }
     .nav-links { display: flex; gap: 2rem; align-items: center; }
     .nav-links a { font-size: .7rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; text-decoration: none; color: rgba(255,255,255,.5); transition: color .15s; }
@@ -89,23 +90,18 @@
 <body>
 
 <nav>
-  <a href="/explore" class="nav-brand">
+  <a href="/explore/estates" class="nav-brand">
     <img src="/static/treering1_gold.png" class="nav-logo" alt="">
-    <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+    <span class="nav-brand-word"><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></span>
   </a>
   <div class="nav-links">
-    <a href="/explore">Explore</a>
     <a href="/explore/estates">All Estates</a>
     <a href="/landmarque">For Landowners</a>
   </div>
 </nav>
 
 <div class="breadcrumb">
-  <a href="/explore">Explore</a>
-  <span>/</span>
-  <a href="/explore/estates">Estates</a>
-  <span>/</span>
-  <a href="/explore/{{ slug }}" style="color:rgba(255,255,255,.5)">{{ estate.name }}</a>
+  <a href="/explore/estates">&larr; All estates</a>
 </div>
 
 <div class="estate-hero">
@@ -115,7 +111,7 @@
   <p class="estate-tagline">{{ estate.tagline }}</p>
   <div class="features">
     {% for f in estate.features %}
-    <span class="feat-chip {% if f in ['parking','benches','legacy'] %}highlight{% endif %}">{{ f|replace('-', ' ') }}</span>
+    <span class="feat-chip {% if f in ['history','movies','shopping','places-to-eat','fun-for-kids','walking','cycling','places-of-interest'] %}highlight{% endif %}">{{ f|replace('-', ' ') }}</span>
     {% endfor %}
   </div>
 </div>
@@ -137,6 +133,8 @@
   </div>
 
   <a href="/explore/estates" class="back">&larr; Back to all estates</a>
+
+
 </div>
 
 <footer>
