@@ -1,541 +1,863 @@
-{% extends "base.html" %}
-{% block title %}Dashboard{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <title>Owner Dashboard — LandMarque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&family=Cormorant+Garamond:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root { --accent: #B89A5A; --dark: #0a0a0a; --card: #111; --border: rgba(255,255,255,.07); --muted: rgba(255,255,255,.35); }
+    body { background: var(--dark); color: #fff; font-family: 'Raleway', Helvetica, Arial, sans-serif; min-height: 100vh; -webkit-font-smoothing: antialiased; }
 
-{% block navbar %}
-<nav class="navbar navbar-dark bg-dark">
-  <div class="container">
-    <a class="navbar-brand" href="/"><span style="color:#8B3A2A">LAND</span><span style="color:#fff">MARQUE</span></a>
-    <div class="d-flex align-items-center gap-3">
-      <span style="color:rgba(255,255,255,.6); font-size:.8rem; letter-spacing:.5px;">{{ owner_name }}</span>
-      <button onclick="togglePwPanel()" title="Change password" style="display:flex; align-items:center; opacity:.7; transition:opacity .15s; background:none; border:none; padding:0; cursor:pointer;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
-        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
-        </svg>
-      </button>
-      <a href="/owner/logout" title="Sign out" style="display:flex; align-items:center; opacity:.7; transition:opacity .15s;" onmouseover="this.style.opacity=1" onmouseout="this.style.opacity=.7">
-        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <circle cx="12" cy="12" r="10"/><circle cx="12" cy="9" r="3"/><path d="M6.5 19.5a6 6 0 0 1 11 0"/>
-        </svg>
-      </a>
+    /* ── Top bar ── */
+    .dash-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+      background: rgba(10,10,10,.97); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+    }
+    .dash-header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 2rem; height: 56px; gap: 1.5rem;
+    }
+    .dash-brand {
+      font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 700;
+      text-decoration: none; display: flex; align-items: center; gap: .45rem; flex-shrink: 0;
+    }
+    .dash-brand img { width: 22px; height: 22px; }
+
+    .dash-owner {
+      font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted); flex-shrink: 0;
+    }
+
+    .dash-actions { display: flex; align-items: center; gap: 1rem; }
+    .dash-actions a, .dash-actions button {
+      font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); text-decoration: none; background: none; border: none;
+      cursor: pointer; transition: color .15s; padding: 0;
+    }
+    .dash-actions a:hover, .dash-actions button:hover { color: var(--accent); }
+
+    /* ── Tab navigation ── */
+    .dash-tabs {
+      position: fixed; top: 56px; left: 0; right: 0; z-index: 190;
+      background: #0d0d0d; border-bottom: 1px solid var(--border);
+      display: flex; overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .dash-tabs::-webkit-scrollbar { display: none; }
+    .dash-tab {
+      flex-shrink: 0; padding: 0 1.75rem; height: 44px;
+      display: flex; align-items: center; gap: .5rem;
+      font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); cursor: pointer;
+      background: none; border: none; border-bottom: 2px solid transparent;
+      transition: color .15s, border-color .15s;
+      white-space: nowrap;
+    }
+    .dash-tab:hover { color: rgba(255,255,255,.65); }
+    .dash-tab.active { color: #fff; border-bottom-color: var(--accent); }
+    .dash-tab svg { opacity: .5; }
+    .dash-tab.active svg { opacity: 1; }
+
+    /* ── Page body ── */
+    .dash-body { padding-top: 116px; max-width: 960px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; padding-bottom: 5rem; }
+
+    /* ── Tab sections ── */
+    .tab-section { display: none; padding-top: 2.5rem; }
+    .tab-section.active { display: block; }
+
+    /* ── Section title ── */
+    .sec-eyebrow { font-size: .58rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: .5rem; line-height: 1.1; }
+    .sec-rule { width: 28px; height: 1px; background: var(--accent); margin-bottom: 2rem; }
+    .sec-sub { font-size: .88rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 540px; margin-bottom: 2.5rem; }
+
+    /* ── Stat cards ── */
+    .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 2.5rem; }
+    .stat-card { background: var(--card); padding: 1.5rem 1.75rem; }
+    .stat-label { font-size: .57rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
+    .stat-value { font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -1px; }
+    .stat-value.gold { color: var(--accent); }
+
+    /* ── Cards ── */
+    .card {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: 4px; margin-bottom: 1rem; overflow: hidden;
+    }
+    .card-header {
+      padding: 1.25rem 1.5rem;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
+    }
+    .card-title { font-size: .92rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
+    .card-sub { font-size: .75rem; font-weight: 300; color: var(--muted); }
+    .card-body { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); }
+
+    /* Live badge */
+    .live-badge {
+      display: inline-flex; align-items: center; gap: .3rem;
+      font-size: .58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: #4caf79; background: rgba(76,175,121,.1); border: 1px solid rgba(76,175,121,.2);
+      border-radius: 2px; padding: .2rem .5rem;
+    }
+    .live-dot-pulse { width: 5px; height: 5px; border-radius: 50%; background: #4caf79; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+
+    /* ── Tab buttons (within cards) ── */
+    .btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
+    .btn-sm {
+      font-size: .6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      color: var(--muted); background: none; border: 1px solid rgba(255,255,255,.12);
+      border-radius: 3px; padding: .3rem .8rem; cursor: pointer; white-space: nowrap;
+      transition: border-color .15s, color .15s; text-decoration: none; display: inline-flex; align-items: center;
+    }
+    .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-sm.active { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: var(--accent); color: #fff; border: none;
+      font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .65rem 1.25rem; border-radius: 3px; cursor: pointer;
+      transition: filter .15s; text-decoration: none; white-space: nowrap;
+    }
+    .btn-gold:hover { filter: brightness(110%); color: #fff; }
+
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: none; color: var(--muted); border: 1px solid rgba(255,255,255,.12);
+      font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      padding: .65rem 1.25rem; border-radius: 3px; cursor: pointer;
+      transition: border-color .15s, color .15s; text-decoration: none; white-space: nowrap;
+    }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* ── Section panels inside cp cards ── */
+    .cp-sec { display: none; border-top: 1px solid var(--border); }
+
+    /* ── Form elements (dark) ── */
+    .form-label {
+      display: block; font-size: .57rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: .4rem;
+    }
+    .form-input, .form-select {
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+      border-radius: 3px; padding: .65rem .9rem;
+      font-family: 'Raleway', sans-serif; font-size: .85rem; font-weight: 300;
+      color: #fff; outline: none; width: 100%;
+      transition: border-color .15s, background .15s; -webkit-appearance: none;
+    }
+    .form-input::placeholder { color: rgba(255,255,255,.2); }
+    .form-input:focus, .form-select:focus { border-color: rgba(184,154,90,.5); background: rgba(184,154,90,.03); }
+    .form-select option { background: #111; color: #fff; }
+
+    /* ── Tables ── */
+    .data-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
+    .data-table th {
+      font-size: .57rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      color: var(--muted); padding: .6rem .75rem; border-bottom: 1px solid var(--border);
+      text-align: left; white-space: nowrap;
+    }
+    .data-table td { padding: .6rem .75rem; border-bottom: 1px solid rgba(255,255,255,.04); color: rgba(255,255,255,.75); }
+    .data-table tbody tr:last-child td { border-bottom: none; }
+    .data-table tbody tr:hover td { background: rgba(255,255,255,.02); }
+
+    .plate { letter-spacing: 2px; font-weight: 700; color: #fff; font-size: .8rem; }
+    .active-row td { color: #4caf79 !important; }
+
+    /* ── Delete button ── */
+    .btn-del {
+      background: none; border: none; color: rgba(255,255,255,.2); font-size: .8rem;
+      cursor: pointer; padding: .15rem .4rem; border-radius: 2px; transition: color .12s, background .12s;
+    }
+    .btn-del:hover { color: #fff; background: rgba(180,60,60,.5); }
+
+    /* ── Activity divider ── */
+    .activity-divider td { padding: 0; border-bottom: 1px solid var(--accent); opacity: .4; }
+
+    /* ── Alert banner ── */
+    .alert {
+      padding: .9rem 1.25rem; border-radius: 3px; margin-bottom: 1.5rem;
+      font-size: .8rem; font-weight: 600; line-height: 1.5;
+    }
+    .alert-ok { background: rgba(76,175,121,.08); border-left: 3px solid rgba(76,175,121,.5); color: rgba(150,255,180,.75); }
+    .alert-err { background: rgba(180,60,60,.08); border-left: 3px solid rgba(180,60,60,.4); color: rgba(255,160,160,.75); }
+
+    /* ── Grid helpers ── */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
+    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    @media (max-width: 680px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .dash-header-inner { padding: 0 1.25rem; }
+      .dash-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .dash-tab { padding: 0 1.25rem; }
+    }
+
+    /* ── Revenue summary in overview ── */
+    .cp-rev-row {
+      display: flex; gap: 2rem; flex-wrap: wrap;
+      font-size: .75rem; color: var(--muted);
+    }
+    .cp-rev-row b { color: #fff; font-weight: 700; }
+
+    /* ── Website tab feature chips ── */
+    .feat-chip {
+      display: inline-flex; align-items: center; gap: .4rem;
+      font-size: .62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
+      color: var(--muted); border: 1px solid rgba(255,255,255,.12);
+      border-radius: 2px; padding: .25rem .6rem; cursor: pointer;
+      transition: border-color .15s, color .15s, background .15s;
+    }
+    .feat-chip input { display: none; }
+    .feat-chip.checked { color: var(--accent); border-color: rgba(184,154,90,.4); background: rgba(184,154,90,.06); }
+
+    /* ── Settings form ── */
+    .settings-card { max-width: 440px; }
+    .settings-card .card-body { display: flex; flex-direction: column; gap: 1rem; }
+
+    /* ── Signage card ── */
+    .qr-block {
+      display: flex; align-items: center; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap;
+      padding: 1.25rem 1.5rem;
+    }
+    .qr-info { flex: 1; min-width: 200px; }
+    .qr-info h4 { font-size: .88rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
+    .qr-info p { font-size: .75rem; font-weight: 300; color: var(--muted); line-height: 1.6; }
+  </style>
+</head>
+<body>
+
+<!-- ── Top bar ── -->
+<header class="dash-header">
+  <div class="dash-header-inner">
+    <a href="/" class="dash-brand">
+      <img src="/static/treering1_gold.png" alt="">
+      <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+    </a>
+    <span class="dash-owner">{{ owner_name }}</span>
+    <div class="dash-actions">
+      <a href="/location/shere-manor-estate/visitor/welcome" target="_blank">View site</a>
+      <a href="/owner/logout">Sign out</a>
     </div>
   </div>
+</header>
+
+<!-- ── Tabs ── -->
+<nav class="dash-tabs">
+  <button class="dash-tab active" onclick="switchTab('overview', this)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+    Overview
+  </button>
+  <button class="dash-tab" onclick="switchTab('parking', this)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17l3.5-9h7L19 17"/><rect x="3" y="17" width="18" height="4" rx="1"/><circle cx="7.5" cy="21" r="1.5"/><circle cx="16.5" cy="21" r="1.5"/></svg>
+    Parking
+  </button>
+  <button class="dash-tab" onclick="switchTab('website', this)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+    Website
+  </button>
+  <button class="dash-tab" onclick="switchTab('signage', this)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M16 21h5M21 16v5"/><rect x="11" y="11" width="3" height="3"/></svg>
+    Signage
+  </button>
+  <button class="dash-tab" onclick="switchTab('settings', this)">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+    Settings
+  </button>
 </nav>
-{% endblock %}
 
-{% block head %}
-<style>
-  /* ── Page ── */
-  .page-heading { font-size: 1.4rem; font-weight: 700; letter-spacing: 1px; margin: 0; }
+<div class="dash-body">
 
-  /* ── Stat cards ── */
-  .stat { padding: 1.25rem 1.5rem; }
-  .stat-l { font-size: .68rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-bottom: .35rem; }
-  .stat-v { font-size: 1.9rem; font-weight: 700; color: var(--text); line-height: 1; }
+  <!-- ════════════════════════════════════════════
+       OVERVIEW
+  ═════════════════════════════════════════════ -->
+  <section class="tab-section active" id="tab-overview">
+    <p class="sec-eyebrow">{{ owner_name }}</p>
+    <h2 class="sec-title">Overview</h2>
+    <div class="sec-rule"></div>
 
-  /* ── Car park card ── */
-  .cp-header { padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
-  .cp-name   { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: .2rem; display: flex; align-items: center; gap: .6rem; }
-  .cp-addr   { font-size: .8rem; color: var(--muted); margin-bottom: .45rem; }
-  .cp-stats  { font-size: .75rem; color: var(--muted); }
-  .cp-stats b { color: var(--text); font-weight: 700; }
-  .cp-right  { display: flex; align-items: center; gap: .6rem; flex-shrink: 0; margin-top: .15rem; }
-
-  .live-dot {
-    display: inline-flex; align-items: center; justify-content: center;
-    background: #e9f7ee; color: #1a6b2a;
-    font-size: .65rem; font-weight: 700; letter-spacing: .5px;
-    min-width: 1.4rem; height: 1.4rem; border-radius: 50%;
-    padding: 0 .35rem;
-  }
-
-.sec-btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
-  .btn-sec {
-    font-size: .7rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-    color: var(--muted); background: none; border: 1px solid var(--border);
-    border-radius: 3px; padding: .3rem .75rem; cursor: pointer; white-space: nowrap;
-    transition: border-color .15s, color .15s, background .15s;
-  }
-  .btn-sec:hover { border-color: var(--accent); color: var(--accent); }
-  .btn-sec.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-
-  /* ── Expanded sections ── */
-  .sec-body { display: none; border-top: 1px solid var(--border); }
-
-  /* ── Pricing table ── */
-  .pricing-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
-  .pricing-table th {
-    font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-    color: var(--muted); padding: .5rem .75rem; border-bottom: 1px solid var(--border);
-    text-align: left; white-space: nowrap;
-  }
-  .pricing-table td { padding: .6rem .75rem; border-bottom: 1px solid var(--border); color: var(--text); }
-  .pricing-table tbody tr:last-child td { border-bottom: none; }
-  .btn-del { background: none; border: none; color: #ccc; font-size: .82rem; cursor: pointer; padding: .1rem .3rem; border-radius: 2px; transition: color .12s, background .12s; }
-  .btn-del:hover { color: #fff; background: var(--accent); }
-
-  /* ── Action footer ── */
-  .tab-footer { padding: 1rem 1.5rem; border-top: 1px solid var(--border); display: flex; align-items: center; gap: .75rem; flex-wrap: wrap; }
-  .tab-footer .spacer { flex: 1; }
-/* ── Parking log ── */
-  .log-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
-  .log-table th { font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .5rem .75rem; border-bottom: 1px solid var(--border); text-align: left; }
-  .log-table td { padding: .55rem .75rem; font-size: .85rem; border-bottom: 1px solid #f3f2f0; }
-  .log-table tbody tr:last-child td { border-bottom: none; }
-
-  /* ── Change password panel ── */
-  .pw-panel { display: none; background: #1a1a1a; border-bottom: 1px solid #333; }
-  .pw-panel-inner { max-width: 1320px; margin: 0 auto; padding: .85rem 1.5rem; display: flex; align-items: center; gap: 1rem; flex-wrap: wrap; }
-  .pw-panel label { font-size: .65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.5); margin-bottom: 0; }
-  .pw-panel input { background: #2a2a2a; border: 1px solid #444; border-radius: 3px; color: #fff; font-family: 'Raleway',sans-serif; font-size: .82rem; padding: .35rem .75rem; width: 160px; outline: none; }
-  .pw-panel input:focus { border-color: var(--accent); }
-  .pw-panel-msg { font-size: .75rem; margin-left: .5rem; }
-</style>
-{% endblock %}
-
-{% block content %}
-
-<!-- Change password slide-down panel -->
-<div class="pw-panel" id="pw-panel">
-  <div class="pw-panel-inner">
-    <form method="post" action="/owner/change-password" class="d-flex align-items-center gap-2 flex-wrap">
-      <label>Change password</label>
-      <input type="password" name="current_password" placeholder="Current password" required minlength="1" autocomplete="current-password">
-      <input type="password" name="new_password" placeholder="New password" required minlength="6" autocomplete="new-password">
-      <button type="submit" class="act" style="font-size:.68rem; font-weight:700; letter-spacing:.5px; padding:.3rem .75rem; border-radius:3px; border:1px solid var(--accent); color:var(--accent); background:none; cursor:pointer;">Set</button>
-      <button type="button" onclick="togglePwPanel()" style="font-size:.68rem; color:rgba(255,255,255,.4); background:none; border:none; cursor:pointer; padding:.3rem .5rem;">Cancel</button>
-      {% if pw_ok %}<span class="pw-panel-msg" style="color:#4caf50;">Password updated.</span>{% endif %}
-      {% if pw_error %}<span class="pw-panel-msg" style="color:#e57373;">Incorrect current password or password too short.</span>{% endif %}
-    </form>
-  </div>
-</div>
-
-<!-- Heading -->
-<div class="d-flex align-items-center justify-content-between mt-5 pt-3 mb-4">
-  <h4 class="page-heading">{{ owner_name }}</h4>
-</div>
-
-<!-- Stats -->
-<div class="row g-3 mb-4">
-  <div class="col-md-4">
-    <div class="card stat">
-      <div class="stat-l">Today</div>
-      <div class="stat-v">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+    <!-- Revenue stats -->
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Today</div>
+        <div class="stat-value">£{{ "%.2f"|format(today_revenue / 100) }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">This month</div>
+        <div class="stat-value">£{{ "%.2f"|format(month_revenue / 100) }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Year to date</div>
+        <div class="stat-value gold">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Live vehicles</div>
+        <div class="stat-value">{{ cp_data | sum(attribute='live_count') }}</div>
+      </div>
     </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card stat">
-      <div class="stat-l">This month</div>
-      <div class="stat-v">£{{ "%.2f"|format(month_revenue / 100) }}</div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card stat">
-      <div class="stat-l">Year to date</div>
-      <div class="stat-v">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
-    </div>
-  </div>
-</div>
 
-<!-- Car parks -->
-<div class="d-flex align-items-center justify-content-between mb-3" style="margin-top:3.75rem;">
-  <h6 class="fw-bold mb-0" style="letter-spacing:.5px;">Car parks</h6>
-</div>
-
-{% if cp_data %}
-<div class="d-flex flex-column gap-3 mb-5">
-  {% for cp in cp_data %}
-  <div class="card" id="card-{{ cp.id }}">
-
-    <div class="cp-header">
-      <div>
-        <div class="cp-name">
-          {{ cp.name }}
-          {% if cp.live_count > 0 %}
-          <span class="live-dot" title="{{ cp.live_count }} vehicle{{ 's' if cp.live_count != 1 else '' }} parked">{{ cp.live_count }}</span>
-          {% endif %}
+    <!-- Per car park summary -->
+    {% for cp in cp_data %}
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="card-header">
+        <div>
+          <div class="card-title" style="display:flex;align-items:center;gap:.65rem;">
+            {{ cp.name }}
+            {% if cp.live_count > 0 %}
+            <span class="live-badge"><span class="live-dot-pulse"></span>{{ cp.live_count }} live</span>
+            {% endif %}
+          </div>
+          <div class="card-sub" style="margin-top:.3rem;">{{ cp.address }}</div>
+          <div class="cp-rev-row" style="margin-top:.65rem;">
+            <span>Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b></span>
+            <span>Month <b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b></span>
+            <span>YTD <b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b></span>
+          </div>
         </div>
-        <div class="cp-addr">{{ cp.address }}</div>
-        <div class="cp-stats">
-          Today&nbsp;<b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b>
-          &ensp;·&ensp;Month&nbsp;<b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b>
-          &ensp;·&ensp;YTD&nbsp;<b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b>
-        </div>
-      </div>
-      <div class="cp-right">
-        <div class="sec-btn-row">
-          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'edit', this)">Edit</button>
-          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'prices', this)">Prices</button>
-          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'signage', this)">Signage</button>
-          <button class="btn-sec" onclick="toggleSection({{ cp.id }}, 'log', this)">Activity</button>
-          <a href="/owner/estate/edit/{{ cp.slug }}" class="btn-sec" style="text-decoration:none;">Edit estate page</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- EDIT section -->
-    <div class="sec-body" id="sec-{{ cp.id }}-edit">
-      <div style="padding: 1.25rem 1.5rem; background: #faf9f7;">
-        <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
-          <div class="row g-2 align-items-end">
-            <div class="col-md-4">
-              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Name</label>
-              <input type="text" name="name" class="form-control form-control-sm" value="{{ cp.name }}" required>
-            </div>
-            <div class="col-md-4">
-              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Address</label>
-              <input type="text" name="address" class="form-control form-control-sm" value="{{ cp.address }}">
-            </div>
-            <div class="col-md-3">
-              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">Description</label>
-              <input type="text" name="description" class="form-control form-control-sm" value="{{ cp.description }}">
-            </div>
-          </div>
-          <div class="row g-2 align-items-end mt-1">
-            <div class="col-md-5">
-              <label style="font-size:.68rem; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--muted); display:block; margin-bottom:.3rem;">
-                URL slug
-                <span style="font-weight:300; letter-spacing:0; text-transform:none; margin-left:.4rem; color:#bbb;">— old URLs will redirect automatically</span>
-              </label>
-              <input type="text" name="slug" class="form-control form-control-sm" value="{{ cp.slug }}"
-                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only">
-            </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- PRICES section -->
-    <div class="sec-body" id="sec-{{ cp.id }}-prices">
-      {% if cp.rules %}
-      <div class="table-responsive">
-      <table class="pricing-table">
-        <thead>
-          <tr>
-            <th>Day type</th>
-            <th>Hourly</th>
-            <th class="d-none d-md-table-cell">Max hrs</th>
-            <th>All day</th>
-            <th class="d-none d-md-table-cell">From</th>
-            <th class="d-none d-md-table-cell">To</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody>
-          {% for r in cp.rules %}
-          <tr>
-            <td>{{ r.day_type }}</td>
-            <td>{{ r.hourly }}</td>
-            <td class="d-none d-md-table-cell">{{ r.max_hours }}</td>
-            <td>{{ r.all_day }}</td>
-            <td class="d-none d-md-table-cell">{{ r.valid_from }}</td>
-            <td class="d-none d-md-table-cell">{{ r.valid_to }}</td>
-            <td style="width:4rem; text-align:right; white-space:nowrap;">
-              <button class="btn-del rule-edit-toggle" data-cp="{{ cp.id }}" style="color:#888; margin-right:.2rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">&#9998;</button>
-              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')" style="display:inline;">
-                <button type="submit" class="btn-del">&#10005;</button>
-              </form>
-            </td>
-          </tr>
-          <tr id="rule-edit-{{ cp.id }}-{{ r.id }}" style="display:none;">
-            <td colspan="7" style="padding:1rem 1.25rem; background:#faf9f7;">
-              <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/update">
-                <div class="row g-2">
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Day type</label>
-                    <select name="day_type" class="form-select form-select-sm" required>
-                      <option value="weekday" {% if r.day_type_raw == 'weekday' %}selected{% endif %}>Weekday</option>
-                      <option value="weekend" {% if r.day_type_raw == 'weekend' %}selected{% endif %}>Weekend</option>
-                      <option value="bank_holiday" {% if r.day_type_raw == 'bank_holiday' %}selected{% endif %}>Bank holiday</option>
-                    </select>
-                  </div>
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Hourly (£)</label>
-                    <input type="number" name="hourly_rate" class="form-control form-control-sm" step="0.01" min="0" value="{{ r.hourly_raw }}" required>
-                  </div>
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Max hours</label>
-                    <input type="number" name="max_hourly_hours" class="form-control form-control-sm" min="1" value="{{ r.max_hours_raw }}">
-                  </div>
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">All day (£)</label>
-                    <input type="number" name="all_day_price" class="form-control form-control-sm" step="0.01" min="0" value="{{ r.all_day_raw }}">
-                  </div>
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid from</label>
-                    <input type="date" name="valid_from" class="form-control form-control-sm" value="{{ r.valid_from_raw }}" required>
-                  </div>
-                  <div class="col-sm-6 col-md-2">
-                    <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid to <span style="font-weight:300;">(optional)</span></label>
-                    <input type="date" name="valid_to" class="form-control form-control-sm" value="{{ r.valid_to_raw }}">
-                  </div>
-                </div>
-                <div class="d-flex gap-2 mt-2">
-                  <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem;">Save</button>
-                  <button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;" onclick="toggleRuleEdit('{{ cp.id }}', '{{ r.id }}')">Cancel</button>
-                </div>
-              </form>
-            </td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
-      </div>
-      {% else %}
-      <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No pricing rules set.</p>
-      {% endif %}
-      <div class="tab-footer">
-        <button id="btn-new-rule-{{ cp.id }}" class="btn btn-sm btn-success" style="font-size:.72rem; letter-spacing:.5px;" onclick="toggleNewRule({{ cp.id }})">+ New rule</button>
+        <button class="btn-sm" onclick="switchTab('parking', document.querySelector('[onclick*=parking]'))">Manage →</button>
       </div>
 
-      <!-- Inline new rule form -->
-      <div id="new-rule-{{ cp.id }}" style="display:none; padding:1.25rem 1.5rem; background:#faf9f7; border-top:1px solid var(--border);">
-        <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing">
-          <div class="row g-2">
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Day type</label>
-              <select name="day_type" class="form-select form-select-sm" required>
-                <option value="" disabled selected>Select</option>
-                <option value="weekday">Weekday</option>
-                <option value="weekend">Weekend</option>
-                <option value="bank_holiday">Bank holiday</option>
-              </select>
-            </div>
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Hourly (£)</label>
-              <input type="number" name="hourly_rate" class="form-control form-control-sm" step="0.01" min="0" value="0.00" required>
-            </div>
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Max hours</label>
-              <input type="number" name="max_hourly_hours" class="form-control form-control-sm" min="1" value="0">
-            </div>
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">All day (£)</label>
-              <input type="number" name="all_day_price" class="form-control form-control-sm" step="0.01" min="0" value="0.00">
-            </div>
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid from</label>
-              <input type="date" name="valid_from" class="form-control form-control-sm" required>
-            </div>
-            <div class="col-sm-6 col-md-2">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Valid to <span style="font-weight:300;">(optional)</span></label>
-              <input type="date" name="valid_to" class="form-control form-control-sm">
-            </div>
-          </div>
-          <div class="d-flex gap-2 mt-2">
-            <button type="submit" class="btn btn-sm btn-success" style="font-size:.72rem;">Save rule</button>
-            <button type="button" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem;" onclick="toggleNewRule({{ cp.id }})">Cancel</button>
-          </div>
-        </form>
-      </div>
-    </div>
-
-    <!-- SIGNAGE section -->
-    <div class="sec-body" id="sec-{{ cp.id }}-signage">
-      <p style="padding: 1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">Signage options coming soon.</p>
-    </div>
-
-    <!-- PARKING LOG section -->
-    <div class="sec-body" id="sec-{{ cp.id }}-log">
+      <!-- Recent activity preview (last 5) -->
       {% if cp.transactions %}
-      <div class="table-responsive">
-      <table class="log-table">
-        <thead>
-          <tr>
-            <th style="width:30%;">Plate</th>
-            <th style="width:25%;">Duration</th>
-            <th style="width:45%;">Expires</th>
-          </tr>
-        </thead>
-        <tbody>
-          {% set ns = namespace(prev_active=true) %}
-          {% for t in cp.transactions %}
-          {% set c = "#1a6b2a" if t.active else "var(--text)" %}
-          {% if ns.prev_active and not t.active %}
-          <tr><td colspan="3" style="padding:0; border-bottom:2px solid var(--border);"></td></tr>
-          {% endif %}
-          {% set ns.prev_active = t.active %}
-          <tr>
-            <td style="color:{{ c }}; letter-spacing:1.5px; font-weight:700;">{{ t.plate }}</td>
-            <td style="color:{{ c }};">{{ t.duration }}</td>
-            <td style="color:{{ c }}; font-size:.78rem;">{{ t.expires }}</td>
-          </tr>
-          {% endfor %}
-        </tbody>
-      </table>
+      <div style="border-top:1px solid var(--border); overflow-x:auto;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Plate</th>
+              <th>Duration</th>
+              <th>Amount</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for t in cp.transactions[:5] %}
+            <tr {% if t.active %}class="active-row"{% endif %}>
+              <td class="plate">{{ t.plate }}</td>
+              <td>{{ t.duration }}</td>
+              <td>{{ t.amount }}</td>
+              <td>
+                {% if t.active %}
+                <span class="live-badge"><span class="live-dot-pulse"></span>Active</span>
+                {% else %}
+                <span style="font-size:.65rem;color:var(--muted);">Expired</span>
+                {% endif %}
+              </td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
       </div>
-      {% else %}
-      <p style="padding:1.25rem 1.5rem; font-size:.82rem; color:var(--muted); margin:0;">No parking recorded yet.</p>
       {% endif %}
-      <div class="tab-footer">
-        <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn btn-sm btn-outline-secondary" style="font-size:.72rem; letter-spacing:.5px;">&#8595; Export CSV</a>
+    </div>
+    {% else %}
+    <div class="card">
+      <div class="card-body">
+        <p style="font-size:.85rem;color:var(--muted);line-height:1.7;">No car parks set up yet. Go to the <button class="btn-sm" onclick="switchTab('parking', document.querySelector('[onclick*=parking]'))" style="display:inline;cursor:pointer;">Parking</button> tab to add your first car park.</p>
       </div>
     </div>
+    {% endfor %}
+  </section>
 
-  </div>
-  {% endfor %}
 
-  <!-- New car park card (hidden until button clicked) -->
-  <div class="card" id="card-new" style="display:none;">
-    <div class="cp-header">
-      <div>
-        <div class="cp-name" style="color:var(--muted);">New car park</div>
-        <div class="cp-addr">Fill in the details and save</div>
+  <!-- ════════════════════════════════════════════
+       PARKING
+  ═════════════════════════════════════════════ -->
+  <section class="tab-section" id="tab-parking">
+    <p class="sec-eyebrow">Management</p>
+    <h2 class="sec-title">Parking</h2>
+    <div class="sec-rule"></div>
+
+    {% if cp_data %}
+    {% for cp in cp_data %}
+    <div class="card" id="cpcard-{{ cp.id }}">
+
+      <div class="card-header">
+        <div>
+          <div class="card-title" style="display:flex;align-items:center;gap:.65rem;">
+            {{ cp.name }}
+            {% if cp.live_count > 0 %}
+            <span class="live-badge"><span class="live-dot-pulse"></span>{{ cp.live_count }} live</span>
+            {% endif %}
+          </div>
+          <div class="card-sub" style="margin-top:.25rem;">{{ cp.address }}</div>
+        </div>
+        <div class="btn-row">
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'edit', this)">Edit</button>
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'prices', this)">Pricing</button>
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'log', this)">Activity</button>
+        </div>
       </div>
+
+      <!-- EDIT -->
+      <div class="cp-sec" id="cpsec-{{ cp.id }}-edit">
+        <div style="padding:1.5rem;">
+          <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
+            <div class="grid-2" style="margin-bottom:1rem;">
+              <div>
+                <label class="form-label">Car park name</label>
+                <input class="form-input" type="text" name="name" value="{{ cp.name }}" required>
+              </div>
+              <div>
+                <label class="form-label">Address</label>
+                <input class="form-input" type="text" name="address" value="{{ cp.address }}">
+              </div>
+            </div>
+            <div class="grid-2" style="margin-bottom:1.25rem;">
+              <div>
+                <label class="form-label">Description</label>
+                <input class="form-input" type="text" name="description" value="{{ cp.description }}">
+              </div>
+              <div>
+                <label class="form-label">URL slug</label>
+                <input class="form-input" type="text" name="slug" value="{{ cp.slug }}" pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only">
+              </div>
+            </div>
+            <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+              <button type="submit" class="btn-gold">Save changes</button>
+              <button type="button" class="btn-ghost" onclick="toggleCpSec({{ cp.id }}, 'edit', null)">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- PRICING -->
+      <div class="cp-sec" id="cpsec-{{ cp.id }}-prices">
+        {% if cp.rules %}
+        <div style="overflow-x:auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Day type</th>
+                <th>Hourly</th>
+                <th>Max hrs</th>
+                <th>All day</th>
+                <th>Valid from</th>
+                <th>Valid to</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for r in cp.rules %}
+              <tr>
+                <td>{{ r.day_type }}</td>
+                <td>{{ r.hourly }}</td>
+                <td>{{ r.max_hours }}</td>
+                <td>{{ r.all_day }}</td>
+                <td>{{ r.valid_from }}</td>
+                <td>{{ r.valid_to }}</td>
+                <td style="width:4rem;text-align:right;white-space:nowrap;">
+                  <button class="btn-del" onclick="toggleRuleEdit('{{ cp.id }}','{{ r.id }}')">&#9998;</button>
+                  <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')" style="display:inline;">
+                    <button type="submit" class="btn-del">&#10005;</button>
+                  </form>
+                </td>
+              </tr>
+              <tr id="rule-edit-{{ cp.id }}-{{ r.id }}" style="display:none;">
+                <td colspan="7" style="padding:1.25rem;background:rgba(255,255,255,.02);">
+                  <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/update">
+                    <div class="grid-4" style="margin-bottom:.75rem;">
+                      <div>
+                        <label class="form-label">Day type</label>
+                        <select class="form-select" name="day_type" required>
+                          <option value="weekday" {% if r.day_type_raw=='weekday' %}selected{% endif %}>Weekday</option>
+                          <option value="weekend" {% if r.day_type_raw=='weekend' %}selected{% endif %}>Weekend</option>
+                          <option value="bank_holiday" {% if r.day_type_raw=='bank_holiday' %}selected{% endif %}>Bank holiday</option>
+                        </select>
+                      </div>
+                      <div>
+                        <label class="form-label">Hourly (£)</label>
+                        <input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="{{ r.hourly_raw }}" required>
+                      </div>
+                      <div>
+                        <label class="form-label">Max hours</label>
+                        <input class="form-input" type="number" name="max_hourly_hours" min="1" value="{{ r.max_hours_raw }}">
+                      </div>
+                      <div>
+                        <label class="form-label">All day (£)</label>
+                        <input class="form-input" type="number" name="all_day_price" step="0.01" min="0" value="{{ r.all_day_raw }}">
+                      </div>
+                    </div>
+                    <div class="grid-2" style="margin-bottom:.75rem;max-width:360px;">
+                      <div>
+                        <label class="form-label">Valid from</label>
+                        <input class="form-input" type="date" name="valid_from" value="{{ r.valid_from_raw }}" required>
+                      </div>
+                      <div>
+                        <label class="form-label">Valid to (optional)</label>
+                        <input class="form-input" type="date" name="valid_to" value="{{ r.valid_to_raw }}">
+                      </div>
+                    </div>
+                    <div style="display:flex;gap:.6rem;">
+                      <button type="submit" class="btn-gold">Save</button>
+                      <button type="button" class="btn-ghost" onclick="toggleRuleEdit('{{ cp.id }}','{{ r.id }}')">Cancel</button>
+                    </div>
+                  </form>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <div style="padding:1.25rem 1.5rem;">
+          <p style="font-size:.82rem;color:var(--muted);">No pricing rules set up yet.</p>
+        </div>
+        {% endif %}
+
+        <!-- New rule form -->
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
+          <button id="btn-new-rule-{{ cp.id }}" class="btn-gold" onclick="toggleNewRule({{ cp.id }})">+ Add rule</button>
+          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn-ghost">↓ Export CSV</a>
+        </div>
+
+        <div id="new-rule-{{ cp.id }}" style="display:none;padding:1.25rem 1.5rem;border-top:1px solid var(--border);background:rgba(255,255,255,.01);">
+          <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing">
+            <div class="grid-4" style="margin-bottom:.75rem;">
+              <div>
+                <label class="form-label">Day type</label>
+                <select class="form-select" name="day_type" required>
+                  <option value="" disabled selected>Select</option>
+                  <option value="weekday">Weekday</option>
+                  <option value="weekend">Weekend</option>
+                  <option value="bank_holiday">Bank holiday</option>
+                </select>
+              </div>
+              <div>
+                <label class="form-label">Hourly (£)</label>
+                <input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="0.00" required>
+              </div>
+              <div>
+                <label class="form-label">Max hours</label>
+                <input class="form-input" type="number" name="max_hourly_hours" min="1">
+              </div>
+              <div>
+                <label class="form-label">All day (£)</label>
+                <input class="form-input" type="number" name="all_day_price" step="0.01" min="0">
+              </div>
+            </div>
+            <div class="grid-2" style="margin-bottom:.75rem;max-width:360px;">
+              <div>
+                <label class="form-label">Valid from</label>
+                <input class="form-input" type="date" name="valid_from" required>
+              </div>
+              <div>
+                <label class="form-label">Valid to (optional)</label>
+                <input class="form-input" type="date" name="valid_to">
+              </div>
+            </div>
+            <div style="display:flex;gap:.6rem;">
+              <button type="submit" class="btn-gold">Save rule</button>
+              <button type="button" class="btn-ghost" onclick="toggleNewRule({{ cp.id }})">Cancel</button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <!-- ACTIVITY LOG -->
+      <div class="cp-sec" id="cpsec-{{ cp.id }}-log">
+        {% if cp.transactions %}
+        <div style="overflow-x:auto;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Plate</th>
+                <th>Duration</th>
+                <th>Amount</th>
+                <th>Expires</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% set ns = namespace(prev_active=true) %}
+              {% for t in cp.transactions %}
+              {% if ns.prev_active and not t.active %}
+              <tr class="activity-divider"><td colspan="4"></td></tr>
+              {% endif %}
+              {% set ns.prev_active = t.active %}
+              <tr {% if t.active %}class="active-row"{% endif %}>
+                <td class="plate">{{ t.plate }}</td>
+                <td>{{ t.duration }}</td>
+                <td>{{ t.amount }}</td>
+                <td style="font-size:.75rem;">{{ t.expires }}</td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+        </div>
+        {% else %}
+        <div style="padding:1.25rem 1.5rem;">
+          <p style="font-size:.82rem;color:var(--muted);">No parking recorded yet.</p>
+        </div>
+        {% endif %}
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);">
+          <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn-ghost">↓ Export CSV</a>
+        </div>
+      </div>
+
     </div>
-    <div class="sec-body" style="display:block; border-top:1px solid var(--border);">
-      <div style="padding:1.25rem 1.5rem; background:#faf9f7;">
+    {% endfor %}
+    {% endif %}
+
+    <!-- Add new car park -->
+    <div style="margin-top:1.5rem;">
+      <button class="btn-gold" onclick="toggleNewCp()">+ Add car park</button>
+    </div>
+
+    <div id="new-cp-card" class="card" style="display:none;margin-top:1rem;">
+      <div class="card-header">
+        <div>
+          <div class="card-title">New car park</div>
+          <div class="card-sub">Enter the details below to add a new car park to your estate</div>
+        </div>
+        <button class="btn-sm" onclick="toggleNewCp()">Cancel</button>
+      </div>
+      <div class="card-body">
         <form method="post" action="/owner/car-parks/new">
-          <div class="row g-2 align-items-end">
-            <div class="col-md-4">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Name</label>
-              <input type="text" name="name" class="form-control form-control-sm" placeholder="e.g. Village Car Park" required>
+          <div class="grid-2" style="margin-bottom:1rem;">
+            <div>
+              <label class="form-label">Car park name</label>
+              <input class="form-input" type="text" name="name" placeholder="e.g. Village Car Park" required>
             </div>
-            <div class="col-md-4">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Address</label>
-              <input type="text" name="address" class="form-control form-control-sm" placeholder="e.g. Shere, Surrey">
-            </div>
-            <div class="col-md-3">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Description</label>
-              <input type="text" name="description" class="form-control form-control-sm">
+            <div>
+              <label class="form-label">Address</label>
+              <input class="form-input" type="text" name="address" placeholder="e.g. Shere, Surrey">
             </div>
           </div>
-          <div class="row g-2 align-items-end mt-1">
-            <div class="col-md-5">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">URL slug</label>
-              <input type="text" name="slug" class="form-control form-control-sm" placeholder="e.g. village-car-park"
-                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
+          <div class="grid-2" style="margin-bottom:1.25rem;">
+            <div>
+              <label class="form-label">Description</label>
+              <input class="form-input" type="text" name="description">
             </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
+            <div>
+              <label class="form-label">URL slug</label>
+              <input class="form-input" type="text" name="slug" placeholder="e.g. village-car-park" pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
             </div>
-            <div class="col-md-2">
-              <button type="button" class="btn btn-sm btn-outline-secondary w-100" onclick="document.getElementById('card-new').style.display='none'">Cancel</button>
-            </div>
+          </div>
+          <button type="submit" class="btn-gold">Create car park</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       WEBSITE
+  ═════════════════════════════════════════════ -->
+  <section class="tab-section" id="tab-website">
+    <p class="sec-eyebrow">Your Estate</p>
+    <h2 class="sec-title">Website</h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub">Customise the public-facing pages for your estate — your logo, colours, welcome message, features, and more.</p>
+
+    {% for cp in cp_data %}
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="qr-block">
+        <div class="qr-info">
+          <h4>{{ cp.name }}</h4>
+          <p>Edit your estate's public visitor page — branding, welcome text, and visible features.</p>
+        </div>
+        <a href="/owner/estate/edit/{{ cp.slug }}" class="btn-gold">
+          Edit estate page
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+    {% else %}
+    <div class="card">
+      <div class="card-body">
+        <p style="font-size:.85rem;color:var(--muted);">Add a car park first to unlock the estate website editor.</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="card" style="margin-top:1.5rem;">
+      <div class="card-header" style="flex-direction:column;align-items:flex-start;gap:.75rem;">
+        <div>
+          <div class="card-title">View your estate on LandMarque</div>
+          <div class="card-sub" style="margin-top:.25rem;">See how visitors discover your estate on the public map and estate pages.</div>
+        </div>
+        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
+          {% for cp in cp_data %}
+          <a href="/location/{{ cp.slug }}/visitor/welcome" class="btn-ghost" target="_blank">Visitor page ↗</a>
+          <a href="/explore/shere-manor-estate" class="btn-ghost" target="_blank">Discovery page ↗</a>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       SIGNAGE
+  ═════════════════════════════════════════════ -->
+  <section class="tab-section" id="tab-signage">
+    <p class="sec-eyebrow">On-site</p>
+    <h2 class="sec-title">Signage</h2>
+    <div class="sec-rule"></div>
+    <p class="sec-sub">Download your QR codes for printing, or contact LandMarque to order professionally printed signage for your car park entrance.</p>
+
+    {% for cp in cp_data %}
+    <div class="card" style="margin-bottom:1rem;">
+      <div class="qr-block">
+        <div class="qr-info">
+          <h4>{{ cp.name }}</h4>
+          <p>QR code links visitors directly to your payment page. Place at car park entrance, 1.2–1.5m height for best scan rate.</p>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:.6rem;align-items:flex-start;">
+          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn-gold">
+            ↓ Download QR code
+          </a>
+          <a href="mailto:info@landmarque.co.uk?subject=Signage%20order%20for%20{{ cp.name }}" class="btn-ghost">Order printed signs</a>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="card">
+      <div class="card-body">
+        <p style="font-size:.85rem;color:var(--muted);">Add a car park first to generate your QR code.</p>
+      </div>
+    </div>
+    {% endfor %}
+
+    <div class="card" style="margin-top:1.5rem;background:rgba(184,154,90,.04);border-color:rgba(184,154,90,.15);">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Professional signage</div>
+          <div class="card-sub" style="margin-top:.3rem;max-width:480px;line-height:1.7;">LandMarque can supply branded, weatherproof signage designed for rural and estate environments. Discreet and effective — no enforcement language. Get in touch to discuss options.</div>
+        </div>
+        <a href="mailto:info@landmarque.co.uk?subject=Signage%20enquiry" class="btn-gold" style="flex-shrink:0;">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ════════════════════════════════════════════
+       SETTINGS
+  ═════════════════════════════════════════════ -->
+  <section class="tab-section" id="tab-settings">
+    <p class="sec-eyebrow">Account</p>
+    <h2 class="sec-title">Settings</h2>
+    <div class="sec-rule"></div>
+
+    {% if pw_ok %}
+    <div class="alert alert-ok">Password updated successfully.</div>
+    {% endif %}
+    {% if pw_error %}
+    <div class="alert alert-err">Incorrect current password, or new password too short (minimum 6 characters).</div>
+    {% endif %}
+
+    <div class="card settings-card">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Change password</div>
+          <div class="card-sub" style="margin-top:.2rem;">Minimum 6 characters.</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <form method="post" action="/owner/change-password" style="display:flex;flex-direction:column;gap:1rem;">
+          <div>
+            <label class="form-label">Current password</label>
+            <input class="form-input" type="password" name="current_password" required autocomplete="current-password" placeholder="••••••••">
+          </div>
+          <div>
+            <label class="form-label">New password</label>
+            <input class="form-input" type="password" name="new_password" required minlength="6" autocomplete="new-password" placeholder="••••••••">
+          </div>
+          <div>
+            <button type="submit" class="btn-gold" style="align-self:flex-start;">Update password</button>
           </div>
         </form>
       </div>
     </div>
-  </div>
 
-</div>
-
-{% else %}
-<!-- No car parks yet — show new card directly -->
-<div class="d-flex flex-column gap-3 mb-5">
-  <div class="card" id="card-new">
-    <div class="cp-header">
-      <div>
-        <div class="cp-name" style="color:var(--muted);">New car park</div>
-        <div class="cp-addr">Fill in the details and save</div>
+    <div class="card settings-card" style="margin-top:1rem;">
+      <div class="card-header">
+        <div>
+          <div class="card-title">Need help?</div>
+          <div class="card-sub" style="margin-top:.2rem;line-height:1.7;">Contact the LandMarque team for any changes to your account, estate details, or billing.</div>
+        </div>
+      </div>
+      <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);">
+        <a href="mailto:info@landmarque.co.uk" class="btn-ghost">Email LandMarque</a>
       </div>
     </div>
-    <div class="sec-body" style="display:block; border-top:1px solid var(--border);">
-      <div style="padding:1.25rem 1.5rem; background:#faf9f7;">
-        <form method="post" action="/owner/car-parks/new">
-          <div class="row g-2 align-items-end">
-            <div class="col-md-4">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Name</label>
-              <input type="text" name="name" class="form-control form-control-sm" placeholder="e.g. Village Car Park" required>
-            </div>
-            <div class="col-md-4">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Address</label>
-              <input type="text" name="address" class="form-control form-control-sm" placeholder="e.g. Shere, Surrey">
-            </div>
-            <div class="col-md-3">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">Description</label>
-              <input type="text" name="description" class="form-control form-control-sm">
-            </div>
-          </div>
-          <div class="row g-2 align-items-end mt-1">
-            <div class="col-md-5">
-              <label style="font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);display:block;margin-bottom:.3rem;">URL slug</label>
-              <input type="text" name="slug" class="form-control form-control-sm" placeholder="e.g. village-car-park"
-                     pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
-            </div>
-            <div class="col-md-2">
-              <button type="submit" class="btn btn-sm btn-success w-100">Save</button>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</div>
-{% endif %}
 
-<div class="text-end mb-5" style="margin-top:-.5rem;">
-  <button class="btn btn-sm btn-success" onclick="showNewCard()" style="font-size:.72rem; letter-spacing:1px; text-transform:uppercase;">Add new car park</button>
-</div>
+    <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
+      <a href="/owner/logout" style="font-size:.65rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='rgba(255,255,255,.5)'" onmouseout="this.style.color='rgba(255,255,255,.2)'">Sign out →</a>
+    </div>
+  </section>
+
+</div><!-- /dash-body -->
 
 <script>
-// Auto-refresh every 3 minutes to keep live counts current
-setTimeout(() => location.reload(), 180000);
+// Auto-refresh every 3 minutes
+setTimeout(() => location.reload(), 180_000);
 
-function togglePwPanel() {
-  const p = document.getElementById('pw-panel');
-  const open = p.style.display === 'block';
-  p.style.display = open ? 'none' : 'block';
-  if (!open) p.querySelector('input').focus();
+// ── Tab switching ──
+function switchTab(name, btn) {
+  document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.dash-tab').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + name).classList.add('active');
+  if (btn) btn.classList.add('active');
 }
 
-// Auto-open panel if there's a pw message
-{% if pw_ok or pw_error %}
-document.addEventListener('DOMContentLoaded', () => {
-  document.getElementById('pw-panel').style.display = 'block';
-});
-{% endif %}
+// Restore tab from hash
+const tabFromHash = location.hash.replace('#','');
+if (tabFromHash && document.getElementById('tab-' + tabFromHash)) {
+  const btn = document.querySelector('[onclick*="' + tabFromHash + '"]');
+  switchTab(tabFromHash, btn);
+}
 
+// ── Car park section toggle ──
+function toggleCpSec(id, sec, btn) {
+  const card = document.getElementById('cpcard-' + id);
+  const allSecs = card.querySelectorAll('.cp-sec');
+  const allBtns = card.querySelectorAll('.btn-row .btn-sm');
+  const target = document.getElementById('cpsec-' + id + '-' + sec);
+  const isOpen = target.style.display === 'block';
+  allSecs.forEach(s => s.style.display = 'none');
+  allBtns.forEach(b => b.classList.remove('active'));
+  if (!isOpen) {
+    target.style.display = 'block';
+    if (btn) btn.classList.add('active');
+  }
+}
+
+// ── Pricing rule edit ──
 function toggleRuleEdit(cpId, ruleId) {
   const row = document.getElementById('rule-edit-' + cpId + '-' + ruleId);
   const isOpen = row.style.display === 'table-row';
-  // Close all edit rows for this cp
   document.querySelectorAll('[id^="rule-edit-' + cpId + '-"]').forEach(r => r.style.display = 'none');
-  if (!isOpen) {
-    row.style.display = 'table-row';
-    // Hide new rule button and form
-    document.getElementById('btn-new-rule-' + cpId).style.display = 'none';
-    document.getElementById('new-rule-' + cpId).style.display = 'none';
-  } else {
-    document.getElementById('btn-new-rule-' + cpId).style.display = '';
-  }
+  if (!isOpen) row.style.display = 'table-row';
 }
 
 function toggleNewRule(id) {
   const el = document.getElementById('new-rule-' + id);
   const isOpen = el.style.display === 'block';
   el.style.display = isOpen ? 'none' : 'block';
-  // Hide/show all rule edit buttons for this cp
-  document.querySelectorAll('.rule-edit-toggle[data-cp="' + id + '"]').forEach(b => b.style.display = isOpen ? '' : 'none');
-  // Close any open edit rows
+  if (!isOpen) el.querySelector('select').focus();
+}
+
+// ── New car park ──
+function toggleNewCp() {
+  const card = document.getElementById('new-cp-card');
+  const isOpen = card.style.display === 'block';
+  card.style.display = isOpen ? 'none' : 'block';
   if (!isOpen) {
-    document.querySelectorAll('[id^="rule-edit-' + id + '-"]').forEach(r => r.style.display = 'none');
-    el.querySelector('input[name=hourly_rate]').focus();
+    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setTimeout(() => card.querySelector('input[name=name]').focus(), 250);
   }
 }
 
-function showNewCard() {
-  const card = document.getElementById('card-new');
-  card.style.display = 'block';
-  card.scrollIntoView({behavior: 'smooth', block: 'start'});
-  setTimeout(() => card.querySelector('input[name=name]').focus(), 300);
-}
-
-function toggleSection(id, sec, btn) {
-  const card = document.getElementById('card-' + id);
-  const allSecs = card.querySelectorAll('.sec-body');
-  const allBtns = card.querySelectorAll('.btn-sec');
-  const target = document.getElementById('sec-' + id + '-' + sec);
-  const isOpen = target.style.display === 'block';
-  allSecs.forEach(s => s.style.display = 'none');
-  allBtns.forEach(b => b.classList.remove('active'));
-  if (!isOpen) {
-    target.style.display = 'block';
-    btn.classList.add('active');
-  }
-}
-
+// Auto-open settings tab if pw message
+{% if pw_ok or pw_error %}
+switchTab('settings', document.querySelector('[onclick*="settings"]'));
+{% endif %}
 </script>
-{% endblock %}
+</body>
+</html>
