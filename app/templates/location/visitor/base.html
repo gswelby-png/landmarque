@@ -220,11 +220,18 @@
   </footer>
 
 <script>
-/* Sub-page editor — shown when navigated to from the WYSIWYG welcome editor */
+/* Sub-page editor — activates whenever page is inside owner dashboard iframe */
 (function () {
-  if (!(window.parent !== window && sessionStorage.getItem('lm_editor_back'))) return;
+  /* Must be a visitor page inside an iframe */
+  if (window.parent === window) return;
+  if (window.location.pathname.indexOf('/location/') === -1) return;
 
-  var cpSlug  = sessionStorage.getItem('lm_editor_cp') || '';
+  /* cpSlug: prefer template value (always fresh), fall back to sessionStorage */
+  var TMPL_CP = '{{ cp_slug | default("") }}';
+  var cpSlug  = TMPL_CP || sessionStorage.getItem('lm_editor_cp') || '';
+  if (!cpSlug) return;
+  if (TMPL_CP) sessionStorage.setItem('lm_editor_cp', TMPL_CP);
+
   var page    = window.location.pathname.split('/').filter(Boolean).pop();
   var F       = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
   var INP_CSS = 'width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:3px;color:#fff;font-size:.82rem;padding:.5rem .75rem;outline:none;font-family:inherit;box-sizing:border-box;';
@@ -269,17 +276,87 @@
     'p','h1','h2','h3','h4',
     '.chapter-title','.history-page-title','.history-page-subtitle',
     '.page-title','.page-subtitle','.section-body',
-    '.chapter-image-caption','.walk-title','.walk-summary',
-    '.entry-name','.entry-summary','.entry-meta',
+    '.chapter-image-caption','.walk-title','.walk-summary','.walk-distance',
+    '.entry-name','.entry-summary','.entry-meta','.entry-stat-value',
     '.shop-name','.shop-description','.shop-meta','.shop-hours',
     '.place-name','.place-summary','.shop-desc',
   ].join(',');
 
-  /* ── Wire body: text + images (safe to call repeatedly) ── */
+  /* ── Remove buttons (list pages only) ── */
+  function addRemoveButtons() {
+    if (!cfg) return;
+    /* Clear old buttons to avoid duplicates */
+    body.querySelectorAll('.lm-del-btn').forEach(function(b){ b.remove(); });
+
+    function makeDelBtn(onDel) {
+      var btn = document.createElement('button');
+      btn.className = 'lm-del-btn';
+      btn.textContent = '× Remove';
+      btn.style.cssText = 'background:rgba(200,40,40,.85);color:#fff;border:none;border-radius:3px;font-size:.52rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:.3rem .6rem;cursor:pointer;flex-shrink:0;' + F;
+      btn.onclick = onDel;
+      return btn;
+    }
+
+    if (page === 'walking') {
+      body.querySelectorAll('.walk-card').forEach(function(card){
+        var wrap = document.createElement('div');
+        wrap.style.cssText = 'position:relative;display:block;';
+        card.parentNode.insertBefore(wrap, card);
+        wrap.appendChild(card);
+        var btn = makeDelBtn(function(e){ e.preventDefault(); e.stopPropagation(); wrap.remove(); });
+        btn.style.cssText += ';position:absolute;top:.6rem;right:.6rem;z-index:5;';
+        wrap.appendChild(btn);
+      });
+      return;
+    }
+
+    /* Divider-based pages: group nodes between <hr.divider> elements */
+    var dividers = Array.from(body.querySelectorAll('hr.divider'));
+    dividers.forEach(function(hr){
+      var nodes = [];
+      var cur = hr.nextSibling;
+      while (cur) {
+        if (cur.nodeType===1 && cur.tagName==='HR' && cur.classList.contains('divider')) break;
+        nodes.push(cur);
+        cur = cur.nextSibling;
+      }
+      /* Find the heading element of this section */
+      var heading = null;
+      for (var i=0; i<nodes.length; i++) {
+        var n = nodes[i];
+        if (n.nodeType===1 && (n.classList.contains('entry-name') || n.classList.contains('shop-name') || n.classList.contains('chapter-title'))) {
+          heading = n; break;
+        }
+      }
+      if (!heading) return;
+      /* Inject remove button inside heading, right-aligned */
+      var row = document.createElement('div');
+      row.style.cssText = 'display:flex;align-items:center;justify-content:space-between;gap:.5rem;';
+      var textSpan = document.createElement('span');
+      textSpan.innerHTML = heading.innerHTML;
+      textSpan.contentEditable = 'true';
+      textSpan.spellcheck = false;
+      textSpan.style.cssText = 'flex:1;outline:2px dashed transparent;border-radius:2px;cursor:text;transition:outline .1s;';
+      textSpan.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
+      textSpan.addEventListener('blur',  function(){ heading.innerHTML = row.outerHTML; });
+      var btn = makeDelBtn(function(){
+        hr.remove();
+        nodes.forEach(function(n){ if (n.parentNode) n.parentNode.removeChild(n); });
+      });
+      row.appendChild(textSpan);
+      row.appendChild(btn);
+      heading.innerHTML = '';
+      heading.appendChild(row);
+      /* Mark as already wired for contentEditable */
+      heading.contentEditable = 'false';
+    });
+  }
+
+  /* ── Wire body: text + images + remove buttons (safe to call repeatedly) ── */
   function wireBody() {
     body.querySelectorAll(TEXT_SEL).forEach(function(el) {
       if (el.contentEditable === 'true') return;
-      if (el.closest('form,button,label,.amount-btn')) return;
+      if (el.closest('form,button,label,.amount-btn,.lm-del-btn')) return;
       el.contentEditable = 'true';
       el.spellcheck = false;
       el.style.outline = '2px dashed transparent';
@@ -301,6 +378,7 @@
       img.addEventListener('mouseleave', function(){ this.style.outline=''; });
       img.addEventListener('click', function(e){ e.preventDefault(); showImgPopup(this); });
     });
+    addRemoveButtons();
   }
 
   wireBody();
@@ -504,14 +582,14 @@
     return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
   }
 
-  /* ── Add Item panel ── */
+  /* ── Add Item floating button + panel ── */
   var cfg = ADD_CONFIGS[page];
   if (cfg) {
-    var addBtn = document.createElement('button');
-    addBtn.style.cssText = 'flex-shrink:0;background:rgba(184,154,90,.12);color:#B89A5A;border:1px solid rgba(184,154,90,.3);border-radius:3px;cursor:pointer;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;padding:.45rem .9rem;' + F;
-    addBtn.textContent = '+ Add';
-    addBtn.onclick = showAddPanel;
-    bar.insertBefore(addBtn, saveBtn);
+    var fab = document.createElement('button');
+    fab.style.cssText = 'position:fixed;right:0;top:50%;transform:translateY(-50%);z-index:10000;background:#B89A5A;color:#fff;border:none;border-radius:6px 0 0 6px;writing-mode:vertical-rl;text-orientation:mixed;padding:1.1rem .6rem;font-size:.58rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;box-shadow:-3px 0 12px rgba(0,0,0,.35);cursor:pointer;line-height:1;' + F;
+    fab.textContent = '+ Add item';
+    fab.onclick = showAddPanel;
+    document.body.appendChild(fab);
 
     function closeAddPanel() {
       var p = document.getElementById('lm-add-panel');
@@ -586,6 +664,16 @@
   /* ── Save page ── */
   saveBtn.onclick = function(){
     var clone = body.cloneNode(true);
+    /* Strip delete buttons and their wrappers for walk cards */
+    clone.querySelectorAll('.lm-del-btn').forEach(function(b){ b.remove(); });
+    /* Unwrap walk-card position wrappers added by addRemoveButtons */
+    clone.querySelectorAll('div[style*="position:relative"]').forEach(function(wrap){
+      var card = wrap.querySelector('.walk-card');
+      if (card && wrap.children.length === 1) {
+        wrap.parentNode.insertBefore(card, wrap);
+        wrap.remove();
+      }
+    });
     clone.querySelectorAll('[contenteditable]').forEach(function(el){
       el.removeAttribute('contenteditable');
       el.style.outline = '';

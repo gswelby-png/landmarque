@@ -951,6 +951,7 @@ def visitor_walking_list(request: Request, slug: str, db: Session = Depends(get_
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Walking Routes",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "walks": walks,
         "page_content_html": _get_page_content_html(car_park, "walking"),
     })
@@ -990,6 +991,7 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Movie Connections",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "page_content_html": _get_page_content_html(car_park, "movies"),
     })
 
@@ -1023,6 +1025,7 @@ def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Our History",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "page_content_html": _get_page_content_html(car_park, "history"),
     })
 
@@ -1041,6 +1044,7 @@ def visitor_places_of_interest(request: Request, slug: str, db: Session = Depend
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Places of Interest",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "places": places,
         "page_content_html": _get_page_content_html(car_park, "places-of-interest"),
     })
@@ -1060,6 +1064,7 @@ def visitor_fun_for_kids(request: Request, slug: str, db: Session = Depends(get_
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Fun for Kids",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "places": places,
         "page_content_html": _get_page_content_html(car_park, "fun-for-kids"),
     })
@@ -1079,6 +1084,7 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Places to Eat",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "places": places,
         "page_content_html": _get_page_content_html(car_park, "places-to-eat"),
     })
@@ -1102,6 +1108,7 @@ def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db))
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Shopping",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "shops": SHOPPING.get(slug, []),
         "local_produce": LOCAL_PRODUCE.get(slug, []),
         "page_content_html": _get_page_content_html(car_park, "shopping"),
@@ -1121,6 +1128,7 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Sponsor a Bench",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "tiers": BENCH_TIERS,
         "bench_types": BENCH_TYPES,
         "bench_locations": BENCH_LOCATIONS.get(slug, []),
@@ -1141,6 +1149,7 @@ def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": "Legacy",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug": cp_slug or "",
         "page_content_html": _get_page_content_html(car_park, "legacy"),
     })
 
