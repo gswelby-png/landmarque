@@ -26,86 +26,66 @@
       text-decoration: none; display: flex; align-items: center; gap: .45rem; flex-shrink: 0;
     }
     .dash-brand img { width: 22px; height: 22px; }
+    .dash-brand-word { display: inline; }
 
-    .dash-owner {
-      font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      color: var(--muted); flex-shrink: 0;
-    }
+    .dash-owner { font-size: .68rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); flex-shrink: 0; }
 
-    .dash-actions { display: flex; align-items: center; gap: 1rem; }
-    .dash-actions a, .dash-actions button {
+    .dash-actions { display: flex; align-items: center; gap: 1.25rem; }
+    .dash-actions a {
       font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--muted); text-decoration: none; background: none; border: none;
-      cursor: pointer; transition: color .15s; padding: 0;
+      color: var(--muted); text-decoration: none; transition: color .15s;
     }
-    .dash-actions a:hover, .dash-actions button:hover { color: var(--accent); }
+    .dash-actions a:hover { color: var(--accent); }
 
-    /* ── Tab navigation ── */
+    /* ── Tabs ── */
     .dash-tabs {
       position: fixed; top: 56px; left: 0; right: 0; z-index: 190;
       background: #0d0d0d; border-bottom: 1px solid var(--border);
-      display: flex; overflow-x: auto;
-      scrollbar-width: none;
+      display: flex; overflow-x: auto; scrollbar-width: none;
     }
     .dash-tabs::-webkit-scrollbar { display: none; }
     .dash-tab {
-      flex-shrink: 0; padding: 0 1.75rem; height: 44px;
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .62rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+      flex-shrink: 0; padding: 0 1.5rem; height: 44px;
+      display: flex; align-items: center; gap: .45rem;
+      font-size: .6rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
       color: var(--muted); cursor: pointer;
       background: none; border: none; border-bottom: 2px solid transparent;
-      transition: color .15s, border-color .15s;
-      white-space: nowrap;
+      transition: color .15s, border-color .15s; white-space: nowrap;
     }
-    .dash-tab:hover { color: rgba(255,255,255,.65); }
+    .dash-tab:hover { color: rgba(255,255,255,.6); }
     .dash-tab.active { color: #fff; border-bottom-color: var(--accent); }
-    .dash-tab svg { opacity: .5; }
-    .dash-tab.active svg { opacity: 1; }
 
-    /* ── Page body ── */
+    /* ── Body ── */
     .dash-body { padding-top: 116px; max-width: 960px; margin: 0 auto; padding-left: 2rem; padding-right: 2rem; padding-bottom: 5rem; }
 
-    /* ── Tab sections ── */
     .tab-section { display: none; padding-top: 2.5rem; }
     .tab-section.active { display: block; }
 
-    /* ── Section title ── */
-    .sec-eyebrow { font-size: .58rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: .6rem; }
-    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.8rem); font-weight: 700; color: #fff; margin-bottom: .5rem; line-height: 1.1; }
+    /* ── Section heading ── */
+    .sec-eyebrow { font-size: .58rem; font-weight: 700; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+    .sec-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; color: #fff; line-height: 1.1; margin-bottom: .5rem; }
     .sec-rule { width: 28px; height: 1px; background: var(--accent); margin-bottom: 2rem; }
-    .sec-sub { font-size: .88rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 540px; margin-bottom: 2.5rem; }
+    .sec-sub { font-size: .88rem; font-weight: 300; color: var(--muted); line-height: 1.8; max-width: 540px; margin-bottom: 2rem; }
 
     /* ── Stat cards ── */
     .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1px; background: var(--border); border: 1px solid var(--border); border-radius: 4px; overflow: hidden; margin-bottom: 2.5rem; }
     .stat-card { background: var(--card); padding: 1.5rem 1.75rem; }
     .stat-label { font-size: .57rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: .6rem; }
-    .stat-value { font-size: 2rem; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -1px; }
+    .stat-value { font-size: 1.9rem; font-weight: 700; color: #fff; line-height: 1; letter-spacing: -1px; }
     .stat-value.gold { color: var(--accent); }
 
     /* ── Cards ── */
-    .card {
-      background: var(--card); border: 1px solid var(--border);
-      border-radius: 4px; margin-bottom: 1rem; overflow: hidden;
-    }
-    .card-header {
-      padding: 1.25rem 1.5rem;
-      display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem;
-    }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 4px; margin-bottom: 1rem; overflow: hidden; }
+    .card-header { padding: 1.25rem 1.5rem; display: flex; justify-content: space-between; align-items: flex-start; gap: 1rem; }
     .card-title { font-size: .92rem; font-weight: 700; color: #fff; margin-bottom: .2rem; }
-    .card-sub { font-size: .75rem; font-weight: 300; color: var(--muted); }
-    .card-body { padding: 1.25rem 1.5rem; border-top: 1px solid var(--border); }
+    .card-sub { font-size: .75rem; font-weight: 300; color: var(--muted); line-height: 1.6; }
 
     /* Live badge */
-    .live-badge {
-      display: inline-flex; align-items: center; gap: .3rem;
-      font-size: .58rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
-      color: #4caf79; background: rgba(76,175,121,.1); border: 1px solid rgba(76,175,121,.2);
-      border-radius: 2px; padding: .2rem .5rem;
-    }
-    .live-dot-pulse { width: 5px; height: 5px; border-radius: 50%; background: #4caf79; animation: pulse 1.5s infinite; }
-    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.4} }
+    .live-badge { display: inline-flex; align-items: center; gap: .3rem; font-size: .57rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: #4caf79; background: rgba(76,175,121,.1); border: 1px solid rgba(76,175,121,.2); border-radius: 2px; padding: .2rem .5rem; }
+    .live-pulse { width: 5px; height: 5px; border-radius: 50%; background: #4caf79; animation: pulse 1.5s infinite; }
+    @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
 
-    /* ── Tab buttons (within cards) ── */
+    /* ── Buttons ── */
     .btn-row { display: flex; gap: .4rem; flex-wrap: wrap; }
     .btn-sm {
       font-size: .6rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
@@ -115,7 +95,6 @@
     }
     .btn-sm:hover { border-color: var(--accent); color: var(--accent); }
     .btn-sm.active { background: var(--accent); border-color: var(--accent); color: #fff; }
-
     .btn-gold {
       display: inline-flex; align-items: center; gap: .5rem;
       background: var(--accent); color: #fff; border: none;
@@ -125,7 +104,6 @@
       transition: filter .15s; text-decoration: none; white-space: nowrap;
     }
     .btn-gold:hover { filter: brightness(110%); color: #fff; }
-
     .btn-ghost {
       display: inline-flex; align-items: center; gap: .5rem;
       background: none; color: var(--muted); border: 1px solid rgba(255,255,255,.12);
@@ -136,99 +114,140 @@
     }
     .btn-ghost:hover { border-color: var(--accent); color: var(--accent); }
 
-    /* ── Section panels inside cp cards ── */
+    /* ── Parking section panels ── */
     .cp-sec { display: none; border-top: 1px solid var(--border); }
 
-    /* ── Form elements (dark) ── */
-    .form-label {
-      display: block; font-size: .57rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: var(--accent); margin-bottom: .4rem;
-    }
-    .form-input, .form-select {
+    /* ── Form elements ── */
+    .form-label { display: block; font-size: .57rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); margin-bottom: .4rem; }
+    .form-input, .form-select, .form-textarea {
       background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
       border-radius: 3px; padding: .65rem .9rem;
       font-family: 'Raleway', sans-serif; font-size: .85rem; font-weight: 300;
       color: #fff; outline: none; width: 100%;
       transition: border-color .15s, background .15s; -webkit-appearance: none;
     }
-    .form-input::placeholder { color: rgba(255,255,255,.2); }
-    .form-input:focus, .form-select:focus { border-color: rgba(184,154,90,.5); background: rgba(184,154,90,.03); }
+    .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,.2); }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: rgba(184,154,90,.5); background: rgba(184,154,90,.03); }
     .form-select option { background: #111; color: #fff; }
+    .form-textarea { resize: vertical; line-height: 1.7; }
+    .form-hint { font-size: .65rem; color: rgba(255,255,255,.22); margin-top: .35rem; }
 
     /* ── Tables ── */
     .data-table { width: 100%; border-collapse: collapse; font-size: .82rem; }
-    .data-table th {
-      font-size: .57rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--muted); padding: .6rem .75rem; border-bottom: 1px solid var(--border);
-      text-align: left; white-space: nowrap;
-    }
+    .data-table th { font-size: .57rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); padding: .6rem .75rem; border-bottom: 1px solid var(--border); text-align: left; white-space: nowrap; }
     .data-table td { padding: .6rem .75rem; border-bottom: 1px solid rgba(255,255,255,.04); color: rgba(255,255,255,.75); }
     .data-table tbody tr:last-child td { border-bottom: none; }
-    .data-table tbody tr:hover td { background: rgba(255,255,255,.02); }
-
     .plate { letter-spacing: 2px; font-weight: 700; color: #fff; font-size: .8rem; }
     .active-row td { color: #4caf79 !important; }
+    .activity-divider td { padding: 0; border-bottom: 1px solid rgba(184,154,90,.35); }
 
-    /* ── Delete button ── */
-    .btn-del {
-      background: none; border: none; color: rgba(255,255,255,.2); font-size: .8rem;
-      cursor: pointer; padding: .15rem .4rem; border-radius: 2px; transition: color .12s, background .12s;
-    }
+    /* Delete button */
+    .btn-del { background: none; border: none; color: rgba(255,255,255,.2); font-size: .8rem; cursor: pointer; padding: .15rem .4rem; border-radius: 2px; transition: color .12s, background .12s; }
     .btn-del:hover { color: #fff; background: rgba(180,60,60,.5); }
 
-    /* ── Activity divider ── */
-    .activity-divider td { padding: 0; border-bottom: 1px solid var(--accent); opacity: .4; }
-
-    /* ── Alert banner ── */
-    .alert {
-      padding: .9rem 1.25rem; border-radius: 3px; margin-bottom: 1.5rem;
-      font-size: .8rem; font-weight: 600; line-height: 1.5;
-    }
+    /* ── Alerts ── */
+    .alert { padding: .9rem 1.25rem; border-radius: 3px; margin-bottom: 1.5rem; font-size: .8rem; font-weight: 600; line-height: 1.5; }
     .alert-ok { background: rgba(76,175,121,.08); border-left: 3px solid rgba(76,175,121,.5); color: rgba(150,255,180,.75); }
     .alert-err { background: rgba(180,60,60,.08); border-left: 3px solid rgba(180,60,60,.4); color: rgba(255,160,160,.75); }
 
-    /* ── Grid helpers ── */
+    /* ── Grids ── */
     .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
     .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    @media (max-width: 680px) {
-      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
-      .dash-header-inner { padding: 0 1.25rem; }
-      .dash-body { padding-left: 1.25rem; padding-right: 1.25rem; }
-      .dash-tab { padding: 0 1.25rem; }
-    }
+    .grid-4 { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; }
 
-    /* ── Revenue summary in overview ── */
-    .cp-rev-row {
-      display: flex; gap: 2rem; flex-wrap: wrap;
-      font-size: .75rem; color: var(--muted);
-    }
+    /* ── Revenue per cp ── */
+    .cp-rev-row { display: flex; gap: 2rem; flex-wrap: wrap; font-size: .75rem; color: var(--muted); margin-top: .6rem; }
     .cp-rev-row b { color: #fff; font-weight: 700; }
 
-    /* ── Website tab feature chips ── */
-    .feat-chip {
-      display: inline-flex; align-items: center; gap: .4rem;
-      font-size: .62rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase;
-      color: var(--muted); border: 1px solid rgba(255,255,255,.12);
-      border-radius: 2px; padding: .25rem .6rem; cursor: pointer;
-      transition: border-color .15s, color .15s, background .15s;
+    /* ── Website editor ── */
+    .editor-layout { display: grid; grid-template-columns: 1fr 420px; gap: 1.5rem; align-items: start; }
+    .editor-preview {
+      position: sticky; top: 120px;
+      background: #0d0d0d; border: 1px solid var(--border); border-radius: 4px;
+      overflow: hidden;
     }
-    .feat-chip input { display: none; }
-    .feat-chip.checked { color: var(--accent); border-color: rgba(184,154,90,.4); background: rgba(184,154,90,.06); }
-
-    /* ── Settings form ── */
-    .settings-card { max-width: 440px; }
-    .settings-card .card-body { display: flex; flex-direction: column; gap: 1rem; }
-
-    /* ── Signage card ── */
-    .qr-block {
+    .preview-bar {
       display: flex; align-items: center; justify-content: space-between;
-      gap: 1.5rem; flex-wrap: wrap;
-      padding: 1.25rem 1.5rem;
+      padding: .6rem 1rem; border-bottom: 1px solid var(--border);
+      background: #0a0a0a;
     }
-    .qr-info { flex: 1; min-width: 200px; }
+    .preview-bar-dots { display: flex; gap: .4rem; }
+    .preview-bar-dots span { width: 8px; height: 8px; border-radius: 50%; background: rgba(255,255,255,.15); }
+    .preview-url { font-size: .6rem; color: var(--muted); letter-spacing: .5px; flex: 1; text-align: center; }
+    .preview-iframe {
+      width: 200%; height: 640px;
+      border: none;
+      transform: scale(.5); transform-origin: top left;
+      pointer-events: none;
+    }
+    .preview-iframe-wrap { height: 320px; overflow: hidden; }
+
+    .editor-form { display: flex; flex-direction: column; gap: 0; }
+    .editor-section {
+      border-bottom: 1px solid var(--border);
+    }
+    .editor-section-head {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1rem 1.25rem; cursor: pointer; user-select: none;
+      transition: background .15s;
+    }
+    .editor-section-head:hover { background: rgba(255,255,255,.02); }
+    .editor-section-title { font-size: .62rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,.55); }
+    .editor-section-arrow { color: var(--muted); font-size: .7rem; transition: transform .2s; }
+    .editor-section-body { padding: 0 1.25rem 1.25rem; display: none; }
+    .editor-section.open .editor-section-body { display: block; }
+    .editor-section.open .editor-section-arrow { transform: rotate(90deg); }
+
+    /* Color pickers */
+    .color-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: .75rem; }
+    .color-swatch-wrap { display: flex; align-items: center; gap: .55rem; margin-top: .4rem; }
+    .color-swatch-wrap input[type=color] { width: 34px; height: 34px; border: none; background: none; cursor: pointer; border-radius: 3px; padding: 0; }
+    .color-hex { flex: 1; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); border-radius: 3px; color: #fff; font-family: 'Raleway', sans-serif; font-size: .78rem; padding: .45rem .65rem; outline: none; transition: border-color .15s; }
+    .color-hex:focus { border-color: rgba(184,154,90,.5); }
+    .color-label { font-size: .55rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,.3); }
+
+    /* Feature blocks */
+    .blocks-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .55rem; margin-top: .75rem; }
+    .block-card { background: rgba(255,255,255,.02); border: 1px solid rgba(255,255,255,.07); border-radius: 4px; padding: .85rem .9rem; display: flex; align-items: flex-start; gap: .65rem; cursor: pointer; transition: border-color .15s; }
+    .block-card.on { border-color: rgba(184,154,90,.35); background: rgba(184,154,90,.04); }
+    .block-name { font-size: .75rem; font-weight: 700; color: rgba(255,255,255,.6); margin-bottom: .1rem; }
+    .block-card.on .block-name { color: var(--accent); }
+    .block-desc { font-size: .65rem; font-weight: 300; color: rgba(255,255,255,.25); line-height: 1.5; }
+    /* Toggle */
+    .toggle { position: relative; width: 32px; height: 18px; flex-shrink: 0; margin-top: .1rem; }
+    .toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+    .toggle-track { position: absolute; inset: 0; border-radius: 9px; background: #1e1e1e; border: 1px solid rgba(255,255,255,.1); transition: background .2s; }
+    .toggle input:checked + .toggle-track { background: var(--accent); border-color: var(--accent); }
+    .toggle-knob { position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: rgba(255,255,255,.35); transition: transform .2s, background .2s; }
+    .toggle input:checked ~ .toggle-knob { transform: translateX(14px); background: #fff; }
+
+    /* Logo preview */
+    .logo-preview { margin-top: .65rem; max-height: 52px; opacity: .85; display: none; }
+
+    /* Editor save bar */
+    .editor-save-bar { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.25rem; background: #0d0d0d; border-top: 1px solid var(--border); gap: 1rem; flex-wrap: wrap; }
+    .editor-save-bar p { font-size: .7rem; color: var(--muted); }
+
+    /* Signage */
+    .qr-block { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; padding: 1.25rem 1.5rem; }
     .qr-info h4 { font-size: .88rem; font-weight: 700; color: #fff; margin-bottom: .3rem; }
     .qr-info p { font-size: .75rem; font-weight: 300; color: var(--muted); line-height: 1.6; }
+
+    /* Settings */
+    .settings-card { max-width: 420px; }
+
+    @media (max-width: 860px) {
+      .editor-layout { grid-template-columns: 1fr; }
+      .editor-preview { position: static; display: none; }
+    }
+    @media (max-width: 680px) {
+      .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+      .color-row { grid-template-columns: 1fr 1fr; }
+      .dash-header-inner { padding: 0 1.25rem; }
+      .dash-body { padding-left: 1.25rem; padding-right: 1.25rem; }
+      .dash-tab { padding: 0 1.1rem; }
+      .blocks-grid { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 <body>
@@ -238,11 +257,10 @@
   <div class="dash-header-inner">
     <a href="/" class="dash-brand">
       <img src="/static/treering1_gold.png" alt="">
-      <span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span>
+      <span class="dash-brand-word"><span style="color:#B89A5A">Land</span><span style="color:#fff">Marque</span></span>
     </a>
     <span class="dash-owner">{{ owner_name }}</span>
     <div class="dash-actions">
-      <a href="/location/shere-manor-estate/visitor/welcome" target="_blank">View site</a>
       <a href="/owner/logout">Sign out</a>
     </div>
   </div>
@@ -250,39 +268,36 @@
 
 <!-- ── Tabs ── -->
 <nav class="dash-tabs">
-  <button class="dash-tab active" onclick="switchTab('overview', this)">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+  <button class="dash-tab active" onclick="switchTab('overview',this)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
     Overview
   </button>
-  <button class="dash-tab" onclick="switchTab('parking', this)">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17l3.5-9h7L19 17"/><rect x="3" y="17" width="18" height="4" rx="1"/><circle cx="7.5" cy="21" r="1.5"/><circle cx="16.5" cy="21" r="1.5"/></svg>
+  <button class="dash-tab" onclick="switchTab('parking',this)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 17l3.5-9h7L19 17"/><rect x="3" y="17" width="18" height="4" rx="1"/></svg>
     Parking
   </button>
-  <button class="dash-tab" onclick="switchTab('website', this)">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+  <button class="dash-tab" onclick="switchTab('website',this)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
     Website
   </button>
-  <button class="dash-tab" onclick="switchTab('signage', this)">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M16 21h5M21 16v5"/><rect x="11" y="11" width="3" height="3"/></svg>
+  <button class="dash-tab" onclick="switchTab('signage',this)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M16 21h5M21 16v5"/><rect x="11" y="11" width="3" height="3"/></svg>
     Signage
   </button>
-  <button class="dash-tab" onclick="switchTab('settings', this)">
-    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+  <button class="dash-tab" onclick="switchTab('settings',this)">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
     Settings
   </button>
 </nav>
 
 <div class="dash-body">
 
-  <!-- ════════════════════════════════════════════
-       OVERVIEW
-  ═════════════════════════════════════════════ -->
+  <!-- ════════════ OVERVIEW ════════════ -->
   <section class="tab-section active" id="tab-overview">
     <p class="sec-eyebrow">{{ owner_name }}</p>
     <h2 class="sec-title">Overview</h2>
     <div class="sec-rule"></div>
 
-    <!-- Revenue stats -->
     <div class="stats-row">
       <div class="stat-card">
         <div class="stat-label">Today</div>
@@ -297,100 +312,77 @@
         <div class="stat-value gold">£{{ "%.2f"|format(ytd_revenue / 100) }}</div>
       </div>
       <div class="stat-card">
-        <div class="stat-label">Live vehicles</div>
+        <div class="stat-label">Live now</div>
         <div class="stat-value">{{ cp_data | sum(attribute='live_count') }}</div>
       </div>
     </div>
 
-    <!-- Per car park summary -->
-    {% for cp in cp_data %}
-    <div class="card" style="margin-bottom:1rem;">
-      <div class="card-header">
-        <div>
-          <div class="card-title" style="display:flex;align-items:center;gap:.65rem;">
-            {{ cp.name }}
-            {% if cp.live_count > 0 %}
-            <span class="live-badge"><span class="live-dot-pulse"></span>{{ cp.live_count }} live</span>
-            {% endif %}
-          </div>
-          <div class="card-sub" style="margin-top:.3rem;">{{ cp.address }}</div>
-          <div class="cp-rev-row" style="margin-top:.65rem;">
-            <span>Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b></span>
-            <span>Month <b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b></span>
-            <span>YTD <b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b></span>
-          </div>
-        </div>
-        <button class="btn-sm" onclick="switchTab('parking', document.querySelector('[onclick*=parking]'))">Manage →</button>
-      </div>
+    <!-- Recent activity across all car parks -->
+    {% set all_txns = [] %}
+    {% for cp in cp_data %}{% for t in cp.transactions[:20] %}{% if all_txns.append(t) %}{% endif %}{% endfor %}{% endfor %}
 
-      <!-- Recent activity preview (last 5) -->
-      {% if cp.transactions %}
-      <div style="border-top:1px solid var(--border); overflow-x:auto;">
+    {% if all_txns %}
+    <div class="card">
+      <div class="card-header" style="padding-bottom:.75rem;">
+        <div class="card-title">Recent activity</div>
+        <a href="#" class="btn-sm" onclick="switchTab('parking',document.querySelector('[onclick*=parking]'));return false;">View all →</a>
+      </div>
+      <div style="overflow-x:auto;">
         <table class="data-table">
           <thead>
-            <tr>
-              <th>Plate</th>
-              <th>Duration</th>
-              <th>Amount</th>
-              <th>Status</th>
-            </tr>
+            <tr><th>Plate</th><th>Duration</th><th>Amount</th><th>Status</th></tr>
           </thead>
           <tbody>
-            {% for t in cp.transactions[:5] %}
+            {% set ns = namespace(prev_active=true) %}
+            {% for t in all_txns[:12] %}
+            {% if ns.prev_active and not t.active %}
+            <tr class="activity-divider"><td colspan="4"></td></tr>
+            {% endif %}
+            {% set ns.prev_active = t.active %}
             <tr {% if t.active %}class="active-row"{% endif %}>
               <td class="plate">{{ t.plate }}</td>
               <td>{{ t.duration }}</td>
               <td>{{ t.amount }}</td>
-              <td>
-                {% if t.active %}
-                <span class="live-badge"><span class="live-dot-pulse"></span>Active</span>
-                {% else %}
-                <span style="font-size:.65rem;color:var(--muted);">Expired</span>
-                {% endif %}
-              </td>
+              <td>{% if t.active %}<span class="live-badge"><span class="live-pulse"></span>Active</span>{% else %}<span style="font-size:.65rem;color:var(--muted);">Expired</span>{% endif %}</td>
             </tr>
             {% endfor %}
           </tbody>
         </table>
       </div>
-      {% endif %}
     </div>
     {% else %}
     <div class="card">
-      <div class="card-body">
-        <p style="font-size:.85rem;color:var(--muted);line-height:1.7;">No car parks set up yet. Go to the <button class="btn-sm" onclick="switchTab('parking', document.querySelector('[onclick*=parking]'))" style="display:inline;cursor:pointer;">Parking</button> tab to add your first car park.</p>
-      </div>
+      <div style="padding:1.5rem;font-size:.85rem;color:var(--muted);">No parking activity recorded yet.</div>
     </div>
-    {% endfor %}
+    {% endif %}
   </section>
 
 
-  <!-- ════════════════════════════════════════════
-       PARKING
-  ═════════════════════════════════════════════ -->
+  <!-- ════════════ PARKING ════════════ -->
   <section class="tab-section" id="tab-parking">
     <p class="sec-eyebrow">Management</p>
     <h2 class="sec-title">Parking</h2>
     <div class="sec-rule"></div>
 
-    {% if cp_data %}
     {% for cp in cp_data %}
     <div class="card" id="cpcard-{{ cp.id }}">
-
       <div class="card-header">
         <div>
           <div class="card-title" style="display:flex;align-items:center;gap:.65rem;">
             {{ cp.name }}
-            {% if cp.live_count > 0 %}
-            <span class="live-badge"><span class="live-dot-pulse"></span>{{ cp.live_count }} live</span>
-            {% endif %}
+            {% if cp.live_count > 0 %}<span class="live-badge"><span class="live-pulse"></span>{{ cp.live_count }} live</span>{% endif %}
           </div>
-          <div class="card-sub" style="margin-top:.25rem;">{{ cp.address }}</div>
+          <div class="card-sub" style="margin-top:.2rem;">{{ cp.address }}</div>
+          <div class="cp-rev-row">
+            <span>Today <b>£{{ "%.2f"|format(cp.today_rev / 100) }}</b></span>
+            <span>Month <b>£{{ "%.2f"|format(cp.month_rev / 100) }}</b></span>
+            <span>YTD <b>£{{ "%.2f"|format(cp.ytd_rev / 100) }}</b></span>
+          </div>
         </div>
         <div class="btn-row">
-          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'edit', this)">Edit</button>
-          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'prices', this)">Pricing</button>
-          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }}, 'log', this)">Activity</button>
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }},'edit',this)">Edit</button>
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }},'prices',this)">Pricing</button>
+          <button class="btn-sm" onclick="toggleCpSec({{ cp.id }},'log',this)">Activity</button>
         </div>
       </div>
 
@@ -399,28 +391,16 @@
         <div style="padding:1.5rem;">
           <form method="post" action="/owner/car-parks/{{ cp.id }}/edit">
             <div class="grid-2" style="margin-bottom:1rem;">
-              <div>
-                <label class="form-label">Car park name</label>
-                <input class="form-input" type="text" name="name" value="{{ cp.name }}" required>
-              </div>
-              <div>
-                <label class="form-label">Address</label>
-                <input class="form-input" type="text" name="address" value="{{ cp.address }}">
-              </div>
+              <div><label class="form-label">Name</label><input class="form-input" type="text" name="name" value="{{ cp.name }}" required></div>
+              <div><label class="form-label">Address</label><input class="form-input" type="text" name="address" value="{{ cp.address }}"></div>
             </div>
             <div class="grid-2" style="margin-bottom:1.25rem;">
-              <div>
-                <label class="form-label">Description</label>
-                <input class="form-input" type="text" name="description" value="{{ cp.description }}">
-              </div>
-              <div>
-                <label class="form-label">URL slug</label>
-                <input class="form-input" type="text" name="slug" value="{{ cp.slug }}" pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only">
-              </div>
+              <div><label class="form-label">Description</label><input class="form-input" type="text" name="description" value="{{ cp.description }}"></div>
+              <div><label class="form-label">URL slug <span style="font-size:.8em;color:rgba(255,255,255,.2);font-weight:300;text-transform:none;letter-spacing:0;">(old slugs redirect automatically)</span></label><input class="form-input" type="text" name="slug" value="{{ cp.slug }}" pattern="[a-z0-9\-]+"></div>
             </div>
             <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
               <button type="submit" class="btn-gold">Save changes</button>
-              <button type="button" class="btn-ghost" onclick="toggleCpSec({{ cp.id }}, 'edit', null)">Cancel</button>
+              <button type="button" class="btn-ghost" onclick="toggleCpSec({{ cp.id }},'edit',null)">Cancel</button>
             </div>
           </form>
         </div>
@@ -431,26 +411,12 @@
         {% if cp.rules %}
         <div style="overflow-x:auto;">
           <table class="data-table">
-            <thead>
-              <tr>
-                <th>Day type</th>
-                <th>Hourly</th>
-                <th>Max hrs</th>
-                <th>All day</th>
-                <th>Valid from</th>
-                <th>Valid to</th>
-                <th></th>
-              </tr>
-            </thead>
+            <thead><tr><th>Day type</th><th>Hourly</th><th>Max hrs</th><th>All day</th><th>Valid from</th><th>Valid to</th><th></th></tr></thead>
             <tbody>
               {% for r in cp.rules %}
               <tr>
-                <td>{{ r.day_type }}</td>
-                <td>{{ r.hourly }}</td>
-                <td>{{ r.max_hours }}</td>
-                <td>{{ r.all_day }}</td>
-                <td>{{ r.valid_from }}</td>
-                <td>{{ r.valid_to }}</td>
+                <td>{{ r.day_type }}</td><td>{{ r.hourly }}</td><td>{{ r.max_hours }}</td>
+                <td>{{ r.all_day }}</td><td>{{ r.valid_from }}</td><td>{{ r.valid_to }}</td>
                 <td style="width:4rem;text-align:right;white-space:nowrap;">
                   <button class="btn-del" onclick="toggleRuleEdit('{{ cp.id }}','{{ r.id }}')">&#9998;</button>
                   <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/delete" onsubmit="return confirm('Delete this rule?')" style="display:inline;">
@@ -462,41 +428,16 @@
                 <td colspan="7" style="padding:1.25rem;background:rgba(255,255,255,.02);">
                   <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing/{{ r.id }}/update">
                     <div class="grid-4" style="margin-bottom:.75rem;">
-                      <div>
-                        <label class="form-label">Day type</label>
-                        <select class="form-select" name="day_type" required>
-                          <option value="weekday" {% if r.day_type_raw=='weekday' %}selected{% endif %}>Weekday</option>
-                          <option value="weekend" {% if r.day_type_raw=='weekend' %}selected{% endif %}>Weekend</option>
-                          <option value="bank_holiday" {% if r.day_type_raw=='bank_holiday' %}selected{% endif %}>Bank holiday</option>
-                        </select>
-                      </div>
-                      <div>
-                        <label class="form-label">Hourly (£)</label>
-                        <input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="{{ r.hourly_raw }}" required>
-                      </div>
-                      <div>
-                        <label class="form-label">Max hours</label>
-                        <input class="form-input" type="number" name="max_hourly_hours" min="1" value="{{ r.max_hours_raw }}">
-                      </div>
-                      <div>
-                        <label class="form-label">All day (£)</label>
-                        <input class="form-input" type="number" name="all_day_price" step="0.01" min="0" value="{{ r.all_day_raw }}">
-                      </div>
+                      <div><label class="form-label">Day type</label><select class="form-select" name="day_type" required><option value="weekday" {% if r.day_type_raw=='weekday' %}selected{% endif %}>Weekday</option><option value="weekend" {% if r.day_type_raw=='weekend' %}selected{% endif %}>Weekend</option><option value="bank_holiday" {% if r.day_type_raw=='bank_holiday' %}selected{% endif %}>Bank holiday</option></select></div>
+                      <div><label class="form-label">Hourly (£)</label><input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="{{ r.hourly_raw }}" required></div>
+                      <div><label class="form-label">Max hours</label><input class="form-input" type="number" name="max_hourly_hours" min="1" value="{{ r.max_hours_raw }}"></div>
+                      <div><label class="form-label">All day (£)</label><input class="form-input" type="number" name="all_day_price" step="0.01" min="0" value="{{ r.all_day_raw }}"></div>
                     </div>
-                    <div class="grid-2" style="margin-bottom:.75rem;max-width:360px;">
-                      <div>
-                        <label class="form-label">Valid from</label>
-                        <input class="form-input" type="date" name="valid_from" value="{{ r.valid_from_raw }}" required>
-                      </div>
-                      <div>
-                        <label class="form-label">Valid to (optional)</label>
-                        <input class="form-input" type="date" name="valid_to" value="{{ r.valid_to_raw }}">
-                      </div>
+                    <div class="grid-2" style="margin-bottom:.75rem;max-width:340px;">
+                      <div><label class="form-label">Valid from</label><input class="form-input" type="date" name="valid_from" value="{{ r.valid_from_raw }}" required></div>
+                      <div><label class="form-label">Valid to (optional)</label><input class="form-input" type="date" name="valid_to" value="{{ r.valid_to_raw }}"></div>
                     </div>
-                    <div style="display:flex;gap:.6rem;">
-                      <button type="submit" class="btn-gold">Save</button>
-                      <button type="button" class="btn-ghost" onclick="toggleRuleEdit('{{ cp.id }}','{{ r.id }}')">Cancel</button>
-                    </div>
+                    <div style="display:flex;gap:.6rem;"><button type="submit" class="btn-gold">Save</button><button type="button" class="btn-ghost" onclick="toggleRuleEdit('{{ cp.id }}','{{ r.id }}')">Cancel</button></div>
                   </form>
                 </td>
               </tr>
@@ -505,84 +446,42 @@
           </table>
         </div>
         {% else %}
-        <div style="padding:1.25rem 1.5rem;">
-          <p style="font-size:.82rem;color:var(--muted);">No pricing rules set up yet.</p>
-        </div>
+        <div style="padding:1.25rem 1.5rem;"><p style="font-size:.82rem;color:var(--muted);">No pricing rules yet.</p></div>
         {% endif %}
-
-        <!-- New rule form -->
-        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;">
-          <button id="btn-new-rule-{{ cp.id }}" class="btn-gold" onclick="toggleNewRule({{ cp.id }})">+ Add rule</button>
+        <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);display:flex;gap:.6rem;flex-wrap:wrap;">
+          <button id="btn-nr-{{ cp.id }}" class="btn-gold" onclick="toggleNewRule({{ cp.id }})">+ Add rule</button>
           <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn-ghost">↓ Export CSV</a>
         </div>
-
         <div id="new-rule-{{ cp.id }}" style="display:none;padding:1.25rem 1.5rem;border-top:1px solid var(--border);background:rgba(255,255,255,.01);">
           <form method="post" action="/owner/car-parks/{{ cp.id }}/pricing">
             <div class="grid-4" style="margin-bottom:.75rem;">
-              <div>
-                <label class="form-label">Day type</label>
-                <select class="form-select" name="day_type" required>
-                  <option value="" disabled selected>Select</option>
-                  <option value="weekday">Weekday</option>
-                  <option value="weekend">Weekend</option>
-                  <option value="bank_holiday">Bank holiday</option>
-                </select>
-              </div>
-              <div>
-                <label class="form-label">Hourly (£)</label>
-                <input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="0.00" required>
-              </div>
-              <div>
-                <label class="form-label">Max hours</label>
-                <input class="form-input" type="number" name="max_hourly_hours" min="1">
-              </div>
-              <div>
-                <label class="form-label">All day (£)</label>
-                <input class="form-input" type="number" name="all_day_price" step="0.01" min="0">
-              </div>
+              <div><label class="form-label">Day type</label><select class="form-select" name="day_type" required><option value="" disabled selected>Select</option><option value="weekday">Weekday</option><option value="weekend">Weekend</option><option value="bank_holiday">Bank holiday</option></select></div>
+              <div><label class="form-label">Hourly (£)</label><input class="form-input" type="number" name="hourly_rate" step="0.01" min="0" value="0.00" required></div>
+              <div><label class="form-label">Max hours</label><input class="form-input" type="number" name="max_hourly_hours" min="1"></div>
+              <div><label class="form-label">All day (£)</label><input class="form-input" type="number" name="all_day_price" step="0.01" min="0"></div>
             </div>
-            <div class="grid-2" style="margin-bottom:.75rem;max-width:360px;">
-              <div>
-                <label class="form-label">Valid from</label>
-                <input class="form-input" type="date" name="valid_from" required>
-              </div>
-              <div>
-                <label class="form-label">Valid to (optional)</label>
-                <input class="form-input" type="date" name="valid_to">
-              </div>
+            <div class="grid-2" style="margin-bottom:.75rem;max-width:340px;">
+              <div><label class="form-label">Valid from</label><input class="form-input" type="date" name="valid_from" required></div>
+              <div><label class="form-label">Valid to (optional)</label><input class="form-input" type="date" name="valid_to"></div>
             </div>
-            <div style="display:flex;gap:.6rem;">
-              <button type="submit" class="btn-gold">Save rule</button>
-              <button type="button" class="btn-ghost" onclick="toggleNewRule({{ cp.id }})">Cancel</button>
-            </div>
+            <div style="display:flex;gap:.6rem;"><button type="submit" class="btn-gold">Save rule</button><button type="button" class="btn-ghost" onclick="toggleNewRule({{ cp.id }})">Cancel</button></div>
           </form>
         </div>
       </div>
 
-      <!-- ACTIVITY LOG -->
+      <!-- ACTIVITY -->
       <div class="cp-sec" id="cpsec-{{ cp.id }}-log">
         {% if cp.transactions %}
         <div style="overflow-x:auto;">
           <table class="data-table">
-            <thead>
-              <tr>
-                <th>Plate</th>
-                <th>Duration</th>
-                <th>Amount</th>
-                <th>Expires</th>
-              </tr>
-            </thead>
+            <thead><tr><th>Plate</th><th>Duration</th><th>Amount</th><th>Expires</th></tr></thead>
             <tbody>
               {% set ns = namespace(prev_active=true) %}
               {% for t in cp.transactions %}
-              {% if ns.prev_active and not t.active %}
-              <tr class="activity-divider"><td colspan="4"></td></tr>
-              {% endif %}
+              {% if ns.prev_active and not t.active %}<tr class="activity-divider"><td colspan="4"></td></tr>{% endif %}
               {% set ns.prev_active = t.active %}
               <tr {% if t.active %}class="active-row"{% endif %}>
-                <td class="plate">{{ t.plate }}</td>
-                <td>{{ t.duration }}</td>
-                <td>{{ t.amount }}</td>
+                <td class="plate">{{ t.plate }}</td><td>{{ t.duration }}</td><td>{{ t.amount }}</td>
                 <td style="font-size:.75rem;">{{ t.expires }}</td>
               </tr>
               {% endfor %}
@@ -590,111 +489,181 @@
           </table>
         </div>
         {% else %}
-        <div style="padding:1.25rem 1.5rem;">
-          <p style="font-size:.82rem;color:var(--muted);">No parking recorded yet.</p>
-        </div>
+        <div style="padding:1.25rem 1.5rem;"><p style="font-size:.82rem;color:var(--muted);">No parking recorded yet.</p></div>
         {% endif %}
         <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);">
           <a href="/owner/car-parks/{{ cp.id }}/export-csv" class="btn-ghost">↓ Export CSV</a>
         </div>
       </div>
-
     </div>
     {% endfor %}
-    {% endif %}
 
-    <!-- Add new car park -->
     <div style="margin-top:1.5rem;">
       <button class="btn-gold" onclick="toggleNewCp()">+ Add car park</button>
     </div>
-
     <div id="new-cp-card" class="card" style="display:none;margin-top:1rem;">
       <div class="card-header">
-        <div>
-          <div class="card-title">New car park</div>
-          <div class="card-sub">Enter the details below to add a new car park to your estate</div>
-        </div>
+        <div><div class="card-title">New car park</div><div class="card-sub">Add a new parking area to your estate</div></div>
         <button class="btn-sm" onclick="toggleNewCp()">Cancel</button>
       </div>
-      <div class="card-body">
+      <div style="padding:1.25rem 1.5rem;">
         <form method="post" action="/owner/car-parks/new">
           <div class="grid-2" style="margin-bottom:1rem;">
-            <div>
-              <label class="form-label">Car park name</label>
-              <input class="form-input" type="text" name="name" placeholder="e.g. Village Car Park" required>
-            </div>
-            <div>
-              <label class="form-label">Address</label>
-              <input class="form-input" type="text" name="address" placeholder="e.g. Shere, Surrey">
-            </div>
+            <div><label class="form-label">Name</label><input class="form-input" type="text" name="name" placeholder="e.g. Village Car Park" required></div>
+            <div><label class="form-label">Address</label><input class="form-input" type="text" name="address" placeholder="e.g. Shere, Surrey"></div>
           </div>
           <div class="grid-2" style="margin-bottom:1.25rem;">
-            <div>
-              <label class="form-label">Description</label>
-              <input class="form-input" type="text" name="description">
-            </div>
-            <div>
-              <label class="form-label">URL slug</label>
-              <input class="form-input" type="text" name="slug" placeholder="e.g. village-car-park" pattern="[a-z0-9\-]+" title="Lowercase letters, numbers and hyphens only" required>
-            </div>
+            <div><label class="form-label">Description</label><input class="form-input" type="text" name="description"></div>
+            <div><label class="form-label">URL slug</label><input class="form-input" type="text" name="slug" placeholder="e.g. village-car-park" pattern="[a-z0-9\-]+" required></div>
           </div>
-          <button type="submit" class="btn-gold">Create car park</button>
+          <button type="submit" class="btn-gold">Create</button>
         </form>
       </div>
     </div>
   </section>
 
 
-  <!-- ════════════════════════════════════════════
-       WEBSITE
-  ═════════════════════════════════════════════ -->
+  <!-- ════════════ WEBSITE ════════════ -->
   <section class="tab-section" id="tab-website">
     <p class="sec-eyebrow">Your Estate</p>
     <h2 class="sec-title">Website</h2>
     <div class="sec-rule"></div>
-    <p class="sec-sub">Customise the public-facing pages for your estate — your logo, colours, welcome message, features, and more.</p>
+
+    {% if website_saved %}
+    <div class="alert alert-ok" style="margin-bottom:1.5rem;">Changes saved — your estate page has been updated.</div>
+    {% endif %}
 
     {% for cp in cp_data %}
-    <div class="card" style="margin-bottom:1rem;">
-      <div class="qr-block">
-        <div class="qr-info">
-          <h4>{{ cp.name }}</h4>
-          <p>Edit your estate's public visitor page — branding, welcome text, and visible features.</p>
-        </div>
-        <a href="/owner/estate/edit/{{ cp.slug }}" class="btn-gold">
-          Edit estate page
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
-      </div>
-    </div>
-    {% else %}
-    <div class="card">
-      <div class="card-body">
-        <p style="font-size:.85rem;color:var(--muted);">Add a car park first to unlock the estate website editor.</p>
-      </div>
-    </div>
-    {% endfor %}
+    {% if cp.estate_slug %}
+    <div class="editor-layout">
 
-    <div class="card" style="margin-top:1.5rem;">
-      <div class="card-header" style="flex-direction:column;align-items:flex-start;gap:.75rem;">
-        <div>
-          <div class="card-title">View your estate on LandMarque</div>
-          <div class="card-sub" style="margin-top:.25rem;">See how visitors discover your estate on the public map and estate pages.</div>
+      <!-- Live preview -->
+      <div class="editor-preview">
+        <div class="preview-bar">
+          <div class="preview-bar-dots"><span></span><span></span><span></span></div>
+          <div class="preview-url">landmarque.co.uk / location / {{ cp.estate_slug }} / visitor / welcome</div>
+          <a href="/location/{{ cp.estate_slug }}/visitor/welcome" target="_blank" style="font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='#B89A5A'" onmouseout="this.style.color=''">Open ↗</a>
         </div>
-        <div style="display:flex;gap:.75rem;flex-wrap:wrap;">
-          {% for cp in cp_data %}
-          <a href="/location/{{ cp.slug }}/visitor/welcome" class="btn-ghost" target="_blank">Visitor page ↗</a>
-          <a href="/explore/shere-manor-estate" class="btn-ghost" target="_blank">Discovery page ↗</a>
-          {% endfor %}
+        <div class="preview-iframe-wrap">
+          <iframe class="preview-iframe" id="preview-iframe-{{ cp.id }}" src="/location/{{ cp.estate_slug }}/visitor/welcome" title="Estate preview"></iframe>
         </div>
       </div>
+
+      <!-- Edit form -->
+      <div class="editor-form card">
+        <form id="estate-form-{{ cp.id }}" method="POST" action="/owner/estate/edit/{{ cp.slug }}">
+
+          <!-- Branding -->
+          <div class="editor-section open" id="esec-brand-{{ cp.id }}">
+            <div class="editor-section-head" onclick="toggleEditorSec('brand-{{ cp.id }}')">
+              <span class="editor-section-title">Logo &amp; Branding</span>
+              <span class="editor-section-arrow">›</span>
+            </div>
+            <div class="editor-section-body">
+              <div style="margin-bottom:1rem;">
+                <label class="form-label">Logo URL</label>
+                <input class="form-input" type="url" name="logo_url" value="{{ cp.logo_url }}" placeholder="https://yourestate.co.uk/logo.png" oninput="previewLogo(this.value,'{{ cp.id }}')">
+                <div class="form-hint">Link to your estate logo — PNG or SVG recommended.</div>
+                <img class="logo-preview" id="logo-prev-{{ cp.id }}" src="{{ cp.logo_url }}" alt="">
+              </div>
+              <div>
+                <label class="form-label" style="margin-bottom:.65rem;">Brand colours</label>
+                <div class="color-row">
+                  <div>
+                    <div class="color-label">Header bg</div>
+                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-primary" value="{{ cp.brand_primary }}" oninput="syncHex('{{ cp.id }}','primary',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-primary" name="brand_primary" value="{{ cp.brand_primary }}" oninput="syncColor('{{ cp.id }}','primary',this.value)" maxlength="7"></div>
+                  </div>
+                  <div>
+                    <div class="color-label">Accent</div>
+                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-accent" value="{{ cp.brand_accent }}" oninput="syncHex('{{ cp.id }}','accent',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-accent" name="brand_accent" value="{{ cp.brand_accent }}" oninput="syncColor('{{ cp.id }}','accent',this.value)" maxlength="7"></div>
+                  </div>
+                  <div>
+                    <div class="color-label">Header text</div>
+                    <div class="color-swatch-wrap"><input type="color" id="cp-{{ cp.id }}-c-text" value="{{ cp.brand_text }}" oninput="syncHex('{{ cp.id }}','text',this.value)"><input class="color-hex" id="cp-{{ cp.id }}-h-text" name="brand_text" value="{{ cp.brand_text }}" oninput="syncColor('{{ cp.id }}','text',this.value)" maxlength="7"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Content -->
+          <div class="editor-section" id="esec-content-{{ cp.id }}">
+            <div class="editor-section-head" onclick="toggleEditorSec('content-{{ cp.id }}')">
+              <span class="editor-section-title">Text &amp; Content</span>
+              <span class="editor-section-arrow">›</span>
+            </div>
+            <div class="editor-section-body">
+              <div style="margin-bottom:1rem;">
+                <label class="form-label">Welcome message</label>
+                <textarea class="form-textarea" name="welcome_text" style="min-height:80px;" placeholder="A warm welcome message shown at the top of your visitor page…">{{ cp.welcome_text }}</textarea>
+              </div>
+              <div style="margin-bottom:1rem;">
+                <label class="form-label">Estate tagline</label>
+                <input class="form-input" type="text" name="custom_tagline" value="{{ cp.custom_tagline }}" placeholder="A short, memorable line about your estate">
+              </div>
+              <div>
+                <label class="form-label">Estate description</label>
+                <textarea class="form-textarea" name="custom_description" style="min-height:90px;" placeholder="A longer description for the public discovery page…">{{ cp.custom_description }}</textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Page blocks -->
+          <div class="editor-section" id="esec-blocks-{{ cp.id }}">
+            <div class="editor-section-head" onclick="toggleEditorSec('blocks-{{ cp.id }}')">
+              <span class="editor-section-title">Page sections</span>
+              <span class="editor-section-arrow">›</span>
+            </div>
+            <div class="editor-section-body">
+              <p style="font-size:.72rem;font-weight:300;color:var(--muted);line-height:1.7;margin-bottom:.75rem;">Choose which sections appear on your visitor page. Only enable what you have content for.</p>
+              <div class="blocks-grid">
+                {% set all_features = [
+                  ('parking',           'Parking',            'QR code cashless parking'),
+                  ('history',           'Our History',        'Story of your estate'),
+                  ('movies',            'Film locations',     'Movie & TV connections'),
+                  ('events',            'Events',             'Upcoming estate events'),
+                  ('walking',           'Walking routes',     'Guided walks from the estate'),
+                  ('cycling',           'Cycling routes',     'Bike routes through the estate'),
+                  ('places-to-eat',     'Places to eat',      'Pubs, cafés & restaurants'),
+                  ('places-of-interest','Points of interest', 'Notable spots & landmarks'),
+                  ('fun-for-kids',      'Family friendly',    'Activities for children'),
+                  ('shopping',          'Shopping',           'Estate shop or local retail'),
+                  ('benches',           'Sponsor a bench',    'Memorial benches'),
+                  ('legacy',            'Leave a legacy',     'Gifts in wills'),
+                ] %}
+                {% for feat_id, feat_name, feat_desc in all_features %}
+                {% set is_on = feat_id in cp.active_features %}
+                <div class="block-card {{ 'on' if is_on }}" onclick="toggleBlock(this)">
+                  <label class="toggle" onclick="event.stopPropagation()">
+                    <input type="checkbox" name="features" value="{{ feat_id }}" {{ 'checked' if is_on }} onchange="this.closest('.block-card').classList.toggle('on',this.checked)">
+                    <span class="toggle-track"></span>
+                    <span class="toggle-knob"></span>
+                  </label>
+                  <div>
+                    <div class="block-name">{{ feat_name }}</div>
+                    <div class="block-desc">{{ feat_desc }}</div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </div>
+
+          <!-- Save bar -->
+          <div class="editor-save-bar">
+            <p>Changes take effect immediately on your live page.</p>
+            <button type="submit" class="btn-gold">Save changes</button>
+          </div>
+
+        </form>
+      </div>
     </div>
+    {% endif %}
+    {% endfor %}
   </section>
 
 
-  <!-- ════════════════════════════════════════════
-       SIGNAGE
-  ═════════════════════════════════════════════ -->
+  <!-- ════════════ SIGNAGE ════════════ -->
   <section class="tab-section" id="tab-signage">
     <p class="sec-eyebrow">On-site</p>
     <h2 class="sec-title">Signage</h2>
@@ -706,29 +675,23 @@
       <div class="qr-block">
         <div class="qr-info">
           <h4>{{ cp.name }}</h4>
-          <p>QR code links visitors directly to your payment page. Place at car park entrance, 1.2–1.5m height for best scan rate.</p>
+          <p>Links visitors directly to your payment page. Place at 1.2–1.5m height at the car park entrance for best scan rate.</p>
         </div>
         <div style="display:flex;flex-direction:column;gap:.6rem;align-items:flex-start;">
-          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn-gold">
-            ↓ Download QR code
-          </a>
+          <a href="/owner/car-parks/{{ cp.id }}/qr" class="btn-gold">↓ Download QR code</a>
           <a href="mailto:info@landmarque.co.uk?subject=Signage%20order%20for%20{{ cp.name }}" class="btn-ghost">Order printed signs</a>
         </div>
       </div>
     </div>
     {% else %}
-    <div class="card">
-      <div class="card-body">
-        <p style="font-size:.85rem;color:var(--muted);">Add a car park first to generate your QR code.</p>
-      </div>
-    </div>
+    <div class="card"><div style="padding:1.25rem 1.5rem;font-size:.85rem;color:var(--muted);">Add a car park first to generate your QR code.</div></div>
     {% endfor %}
 
     <div class="card" style="margin-top:1.5rem;background:rgba(184,154,90,.04);border-color:rgba(184,154,90,.15);">
       <div class="card-header">
         <div>
           <div class="card-title">Professional signage</div>
-          <div class="card-sub" style="margin-top:.3rem;max-width:480px;line-height:1.7;">LandMarque can supply branded, weatherproof signage designed for rural and estate environments. Discreet and effective — no enforcement language. Get in touch to discuss options.</div>
+          <div class="card-sub" style="margin-top:.3rem;max-width:480px;line-height:1.7;">LandMarque can supply branded, weatherproof signage designed for rural and estate environments. Discreet and effective — no enforcement language. Contact us to discuss options.</div>
         </div>
         <a href="mailto:info@landmarque.co.uk?subject=Signage%20enquiry" class="btn-gold" style="flex-shrink:0;">Get in touch</a>
       </div>
@@ -736,51 +699,31 @@
   </section>
 
 
-  <!-- ════════════════════════════════════════════
-       SETTINGS
-  ═════════════════════════════════════════════ -->
+  <!-- ════════════ SETTINGS ════════════ -->
   <section class="tab-section" id="tab-settings">
     <p class="sec-eyebrow">Account</p>
     <h2 class="sec-title">Settings</h2>
     <div class="sec-rule"></div>
 
-    {% if pw_ok %}
-    <div class="alert alert-ok">Password updated successfully.</div>
-    {% endif %}
-    {% if pw_error %}
-    <div class="alert alert-err">Incorrect current password, or new password too short (minimum 6 characters).</div>
-    {% endif %}
+    {% if pw_ok %}<div class="alert alert-ok">Password updated successfully.</div>{% endif %}
+    {% if pw_error %}<div class="alert alert-err">Incorrect current password, or new password too short (minimum 6 characters).</div>{% endif %}
 
     <div class="card settings-card">
       <div class="card-header">
-        <div>
-          <div class="card-title">Change password</div>
-          <div class="card-sub" style="margin-top:.2rem;">Minimum 6 characters.</div>
-        </div>
+        <div><div class="card-title">Change password</div><div class="card-sub" style="margin-top:.2rem;">Minimum 6 characters.</div></div>
       </div>
-      <div class="card-body">
+      <div style="padding:1.25rem 1.5rem;">
         <form method="post" action="/owner/change-password" style="display:flex;flex-direction:column;gap:1rem;">
-          <div>
-            <label class="form-label">Current password</label>
-            <input class="form-input" type="password" name="current_password" required autocomplete="current-password" placeholder="••••••••">
-          </div>
-          <div>
-            <label class="form-label">New password</label>
-            <input class="form-input" type="password" name="new_password" required minlength="6" autocomplete="new-password" placeholder="••••••••">
-          </div>
-          <div>
-            <button type="submit" class="btn-gold" style="align-self:flex-start;">Update password</button>
-          </div>
+          <div><label class="form-label">Current password</label><input class="form-input" type="password" name="current_password" required autocomplete="current-password" placeholder="••••••••"></div>
+          <div><label class="form-label">New password</label><input class="form-input" type="password" name="new_password" required minlength="6" autocomplete="new-password" placeholder="••••••••"></div>
+          <div><button type="submit" class="btn-gold" style="align-self:flex-start;">Update password</button></div>
         </form>
       </div>
     </div>
 
     <div class="card settings-card" style="margin-top:1rem;">
       <div class="card-header">
-        <div>
-          <div class="card-title">Need help?</div>
-          <div class="card-sub" style="margin-top:.2rem;line-height:1.7;">Contact the LandMarque team for any changes to your account, estate details, or billing.</div>
-        </div>
+        <div><div class="card-title">Support</div><div class="card-sub" style="margin-top:.2rem;line-height:1.7;">Contact the LandMarque team for any questions about your account, payouts, or estate setup.</div></div>
       </div>
       <div style="padding:1rem 1.5rem;border-top:1px solid var(--border);">
         <a href="mailto:info@landmarque.co.uk" class="btn-ghost">Email LandMarque</a>
@@ -792,28 +735,28 @@
     </div>
   </section>
 
-</div><!-- /dash-body -->
+</div>
 
 <script>
-// Auto-refresh every 3 minutes
 setTimeout(() => location.reload(), 180_000);
 
-// ── Tab switching ──
 function switchTab(name, btn) {
   document.querySelectorAll('.tab-section').forEach(s => s.classList.remove('active'));
   document.querySelectorAll('.dash-tab').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + name).classList.add('active');
   if (btn) btn.classList.add('active');
+  location.hash = name;
 }
 
-// Restore tab from hash
-const tabFromHash = location.hash.replace('#','');
-if (tabFromHash && document.getElementById('tab-' + tabFromHash)) {
-  const btn = document.querySelector('[onclick*="' + tabFromHash + '"]');
-  switchTab(tabFromHash, btn);
+// Restore tab from hash or query param
+const hashTab = location.hash.replace('#','');
+if (hashTab && document.getElementById('tab-' + hashTab)) {
+  switchTab(hashTab, document.querySelector('.dash-tab[onclick*="' + hashTab + '"]'));
 }
+{% if pw_ok or pw_error %}switchTab('settings', document.querySelector('.dash-tab[onclick*="settings"]'));{% endif %}
+{% if website_saved %}switchTab('website', document.querySelector('.dash-tab[onclick*="website"]'));{% endif %}
 
-// ── Car park section toggle ──
+// ── Parking helpers ──
 function toggleCpSec(id, sec, btn) {
   const card = document.getElementById('cpcard-' + id);
   const allSecs = card.querySelectorAll('.cp-sec');
@@ -822,42 +765,51 @@ function toggleCpSec(id, sec, btn) {
   const isOpen = target.style.display === 'block';
   allSecs.forEach(s => s.style.display = 'none');
   allBtns.forEach(b => b.classList.remove('active'));
-  if (!isOpen) {
-    target.style.display = 'block';
-    if (btn) btn.classList.add('active');
-  }
+  if (!isOpen) { target.style.display = 'block'; if (btn) btn.classList.add('active'); }
 }
-
-// ── Pricing rule edit ──
 function toggleRuleEdit(cpId, ruleId) {
   const row = document.getElementById('rule-edit-' + cpId + '-' + ruleId);
   const isOpen = row.style.display === 'table-row';
   document.querySelectorAll('[id^="rule-edit-' + cpId + '-"]').forEach(r => r.style.display = 'none');
   if (!isOpen) row.style.display = 'table-row';
 }
-
 function toggleNewRule(id) {
   const el = document.getElementById('new-rule-' + id);
-  const isOpen = el.style.display === 'block';
-  el.style.display = isOpen ? 'none' : 'block';
-  if (!isOpen) el.querySelector('select').focus();
+  el.style.display = el.style.display === 'block' ? 'none' : 'block';
 }
-
-// ── New car park ──
 function toggleNewCp() {
   const card = document.getElementById('new-cp-card');
   const isOpen = card.style.display === 'block';
   card.style.display = isOpen ? 'none' : 'block';
-  if (!isOpen) {
-    card.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    setTimeout(() => card.querySelector('input[name=name]').focus(), 250);
-  }
+  if (!isOpen) { card.scrollIntoView({behavior:'smooth',block:'start'}); setTimeout(() => card.querySelector('input[name=name]').focus(), 250); }
 }
 
-// Auto-open settings tab if pw message
-{% if pw_ok or pw_error %}
-switchTab('settings', document.querySelector('[onclick*="settings"]'));
-{% endif %}
+// ── Website editor helpers ──
+function toggleEditorSec(id) {
+  const el = document.getElementById('esec-' + id);
+  el.classList.toggle('open');
+}
+function toggleBlock(card) {
+  const cb = card.querySelector('input[type=checkbox]');
+  cb.checked = !cb.checked;
+  card.classList.toggle('on', cb.checked);
+}
+function previewLogo(url, cpId) {
+  const img = document.getElementById('logo-prev-' + cpId);
+  if (url) { img.src = url; img.style.display = 'block'; }
+  else { img.style.display = 'none'; }
+}
+function syncHex(cpId, key, val) {
+  document.getElementById('cp-' + cpId + '-h-' + key).value = val;
+}
+function syncColor(cpId, key, val) {
+  if (/^#[0-9a-fA-F]{6}$/.test(val)) document.getElementById('cp-' + cpId + '-c-' + key).value = val;
+}
+
+// Show logo on load if URL exists
+document.querySelectorAll('input[name=logo_url]').forEach(inp => {
+  if (inp.value) { const id = inp.closest('form').id.replace('estate-form-',''); previewLogo(inp.value, id); }
+});
 </script>
 </body>
 </html>

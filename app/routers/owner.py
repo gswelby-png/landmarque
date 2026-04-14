@@ -100,7 +100,7 @@ def logout():
 # ── Dashboard ───────────────────────────────────────────────────────────────
 
 @router.get("/dashboard", response_class=HTMLResponse)
-def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Query(False), pw_error: bool = Query(False)):
+def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Query(False), pw_error: bool = Query(False), website_saved: bool = Query(False)):
     owner = current_owner(request, db)
     today = date.today()
     month_start = today.replace(day=1)
@@ -191,17 +191,39 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
 
         txns_sorted = sorted(txns, key=sort_key)[:100]
 
+        # Estate editor fields
+        estate_slug = _estate_slug_for_cp(cp.slug)
+        from ..data.estates import ESTATES as _ESTATES
+        _estate_data = _ESTATES.get(estate_slug, {}) if estate_slug else {}
+        if cp.custom_features:
+            try:
+                _active_features = set(json.loads(cp.custom_features))
+            except Exception:
+                _active_features = set(_estate_data.get("features", []))
+        else:
+            _active_features = set(_estate_data.get("features", []))
+
         cp_data.append({
             "id": cp.id,
             "name": cp.name,
             "address": cp.address or "",
             "description": cp.description or "",
             "slug": cp.slug,
+            "estate_slug": estate_slug or "",
             "is_active": cp.is_active,
             "live_count": cp_live,
             "today_rev": cp_today_rev,
             "month_rev": cp_month_rev,
             "ytd_rev": cp_ytd_rev,
+            # Estate editor fields
+            "logo_url": cp.logo_url or "",
+            "brand_primary": cp.brand_primary or "#1a3a2a",
+            "brand_accent": cp.brand_accent or "#c8a84b",
+            "brand_text": cp.brand_text or "#ffffff",
+            "welcome_text": cp.welcome_text or "",
+            "custom_tagline": cp.custom_tagline or "",
+            "custom_description": cp.custom_description or "",
+            "active_features": _active_features,
             "rules": [
                 {
                     "id": r.id,
@@ -246,6 +268,7 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
         "cp_data": cp_data,
         "pw_ok": pw_ok,
         "pw_error": pw_error,
+        "website_saved": website_saved,
     })
 
 
@@ -596,4 +619,4 @@ async def save_estate_page(
     cp.custom_features = json.dumps(features) if features else None
     db.commit()
 
-    return RedirectResponse(f"/owner/estate/edit/{cp_slug}?saved=1", status_code=303)
+    return RedirectResponse("/owner/dashboard?website_saved=1", status_code=303)
