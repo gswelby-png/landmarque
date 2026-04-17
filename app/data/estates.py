@@ -1,6 +1,7 @@
 # All estates in the LandMarque network.
 # features controls which blocks appear on the visitor welcome page.
 # car_park_slug links to a CarPark record in the database (only set when onboarded).
+# brand_primary / brand_accent: per-estate identity colours used on visitor pages.
 
 ESTATES = {
 
@@ -13,6 +14,8 @@ ESTATES = {
         "county": "Surrey",
         "lat": 51.2164, "lng": -0.4444,
         "car_park_slug": "shere-manor",
+        "brand_primary": "#1e3a1e",
+        "brand_accent": "#B89A5A",
         "features": ["parking", "history", "movies", "places-to-eat", "walking", "places-of-interest", "fun-for-kids", "shopping", "benches", "legacy"],
     },
     "hurtwood-estate": {
@@ -21,6 +24,8 @@ ESTATES = {
         "description": "The Hurtwood Estate is one of the most significant private landholdings in the Surrey Hills AONB, covering moorland, ancient woodland, and heathland around Peaslake, Holmbury Hill, and Ewhurst. The estate generously allows public access to the majority of its land and manages several car parks serving the Surrey Hills walking and cycling community.",
         "county": "Surrey",
         "lat": 51.1834, "lng": -0.3883,
+        "brand_primary": "#0f1a0f",
+        "brand_accent": "#8B9456",
         "features": ["parking", "walking", "cycling", "places-of-interest", "benches", "legacy"],
     },
     "albury-estate": {
@@ -29,6 +34,8 @@ ESTATES = {
         "description": "Albury Park is a private estate in the Tillingbourne valley immediately east of Shere, landscaped by John Evelyn in the seventeenth century. The estate includes a remarkable series of terraced gardens, a Pugin chapel, and the former parish church of St Peter and St Paul — one of Surrey's finest Saxon buildings.",
         "county": "Surrey",
         "lat": 51.2133, "lng": -0.4233,
+        "brand_primary": "#1a1408",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
     "wotton-estate": {
@@ -37,6 +44,8 @@ ESTATES = {
         "description": "Wotton House near Dorking is the ancestral home of the Evelyn family, most famous for the diarist John Evelyn who created the gardens here before lending his expertise to Albury Park. The estate grounds, with their temples, terraces, and ponds, were designed by Evelyn himself and restored in the late twentieth century.",
         "county": "Surrey",
         "lat": 51.2048, "lng": -0.4069,
+        "brand_primary": "#12180e",
+        "brand_accent": "#A8924A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
     "denbies-wine-estate": {
@@ -45,6 +54,8 @@ ESTATES = {
         "description": "Denbies Wine Estate near Dorking is England's largest single-estate winery, with 265 acres of vines on the chalk slopes of the North Downs. The estate offers vineyard tours, a winery, gallery, restaurant, and accommodation, and is one of Surrey's most popular visitor attractions.",
         "county": "Surrey",
         "lat": 51.2337, "lng": -0.3357,
+        "brand_primary": "#1a0a14",
+        "brand_accent": "#8B1C3A",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
     },
     "abinger-estate": {
@@ -53,6 +64,8 @@ ESTATES = {
         "description": "The Abinger Estate encompasses the villages of Abinger Common and Abinger Hammer in the Surrey Hills, with ancient woodland, the Friday Street hammer pond, and walking routes onto Leith Hill. The estate has strong associations with E.M. Forster, who spent much of his life in the area.",
         "county": "Surrey",
         "lat": 51.2070, "lng": -0.3980,
+        "brand_primary": "#121a0e",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy"],
     },
     "loseley-park": {
@@ -61,8 +74,11 @@ ESTATES = {
         "description": "Loseley Park is a working farm and Elizabethan manor house on the edge of Guildford, home to the More-Molyneux family since 1562. The walled garden, built from stone salvaged from Waverley Abbey, is one of the finest in Surrey.",
         "county": "Surrey",
         "lat": 51.2109, "lng": -0.5889,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+        "brand_primary": "#0e160a",
+        "brand_accent": "#A8924A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
+
     # ── West Sussex — private estates ────────────────────────────────────────────
 
     "arundel-castle": {
@@ -71,7 +87,9 @@ ESTATES = {
         "description": "Arundel Castle is the ancestral home of the Duke of Norfolk, one of the premier peers of England. The castle dates from the eleventh century and houses a remarkable collection of paintings, furniture, and personal possessions of Mary Queen of Scots.",
         "county": "West Sussex",
         "lat": 50.8561, "lng": -0.5510,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+        "brand_primary": "#1a0e0e",
+        "brand_accent": "#C9A84C",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "goodwood-estate": {
         "name": "Goodwood Estate",
@@ -79,7 +97,9 @@ ESTATES = {
         "description": "Goodwood Estate in West Sussex is one of Britain's most celebrated sporting estates, home to the Festival of Speed, Goodwood Revival, and the Glorious Goodwood horseracing festival. The estate farm, hotel, and golf course support a year-round visitor offer.",
         "county": "West Sussex",
         "lat": 50.8651, "lng": -0.7554,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "cycling"],
+        "brand_primary": "#0d1a12",
+        "brand_accent": "#2B8A3E",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "cycling", "benches", "legacy", "events"],
     },
     "cowdray-park": {
         "name": "Cowdray Estate",
@@ -87,7 +107,9 @@ ESTATES = {
         "description": "Cowdray Estate near Midhurst is a 16,500-acre sporting estate and one of Britain's leading polo venues. The estate contains the dramatic ruins of Cowdray House, destroyed by fire in 1793, and a working farm. The annual Cowdray Park Polo Gold Cup is one of the most prestigious in the world.",
         "county": "West Sussex",
         "lat": 50.9900, "lng": -0.7400,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+        "brand_primary": "#1c1408",
+        "brand_accent": "#C5A55A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "parham-house": {
         "name": "Parham House",
@@ -95,6 +117,8 @@ ESTATES = {
         "description": "Parham House is a privately owned Elizabethan house near Pulborough, set in a deer park below the South Downs. The house contains a collection of fine art, needlework, and furniture, and the four-acre walled garden is among the finest in Sussex.",
         "county": "West Sussex",
         "lat": 50.9330, "lng": -0.4420,
+        "brand_primary": "#180e0a",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "leonardslee-gardens": {
@@ -103,8 +127,11 @@ ESTATES = {
         "description": "Leonardslee Gardens near Horsham is a privately owned woodland garden in a steep valley, created by Sir Edmund Loder from 1889. Famous for its bluebells, rhododendrons, and wallabies, the garden reopened after restoration in 2019 and includes a luxury hotel and restaurant.",
         "county": "West Sussex",
         "lat": 51.0280, "lng": -0.2710,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+        "brand_primary": "#0a1a0a",
+        "brand_accent": "#5A8A3A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
+
     # ── East Sussex — private estates ────────────────────────────────────────────
 
     "firle-place": {
@@ -113,6 +140,8 @@ ESTATES = {
         "description": "Firle Place is a privately owned country house in East Sussex, home to the Gage family since the fifteenth century. The house contains an outstanding collection of Old Master paintings and is set in the South Downs National Park below the chalk escarpment of Firle Beacon.",
         "county": "East Sussex",
         "lat": 50.8470, "lng": 0.0830,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "glynde-place": {
@@ -121,6 +150,8 @@ ESTATES = {
         "description": "Glynde Place is a privately owned sixteenth-century house near Lewes, built from knapped flint and overlooking the South Downs. The house has been home to the Trevor and Brand families and retains an intimate, lived-in character.",
         "county": "East Sussex",
         "lat": 50.8660, "lng": 0.0520,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
 
@@ -132,7 +163,9 @@ ESTATES = {
         "description": "Penshurst Place has been home to the Sidney family since 1552, one of England's finest examples of a medieval baron's hall with rooms and furniture dating back to the fourteenth century. The walled gardens are among the oldest in England.",
         "county": "Kent",
         "lat": 51.1734, "lng": 0.1697,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "fun-for-kids"],
+        "brand_primary": "#18100a",
+        "brand_accent": "#C9A84C",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "hever-castle": {
         "name": "Hever Castle",
@@ -140,7 +173,9 @@ ESTATES = {
         "description": "Hever Castle was the childhood home of Anne Boleyn, the second wife of Henry VIII. The thirteenth-century castle was later acquired by William Waldorf Astor, who added the award-winning gardens. Today the castle and grounds offer one of Kent's finest visitor experiences.",
         "county": "Kent",
         "lat": 51.1908, "lng": 0.1097,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+        "brand_primary": "#1a0e06",
+        "brand_accent": "#C9A84C",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "lullingstone-castle": {
         "name": "Lullingstone Castle",
@@ -148,7 +183,9 @@ ESTATES = {
         "description": "Lullingstone Castle is a privately owned Tudor and Georgian house in the Darent valley, home to the Hart Dyke family. The estate is home to the World Garden of Plants, created by Tom Hart Dyke after his capture in the Darien Gap, containing plants from every country in the world.",
         "county": "Kent",
         "lat": 51.3810, "lng": 0.1610,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "fun-for-kids"],
+        "brand_primary": "#0a1812",
+        "brand_accent": "#5A8A3A",
+        "features": ["history", "walking", "places-of-interest", "fun-for-kids", "benches", "legacy", "events"],
     },
     "groombridge-place": {
         "name": "Groombridge Place",
@@ -156,7 +193,9 @@ ESTATES = {
         "description": "Groombridge Place is a privately owned seventeenth-century moated manor on the Kent-Sussex border, with formal walled gardens designed by John Evelyn and an enchanted forest attraction. The manor was used as the location for the 1993 film of The Secret Garden.",
         "county": "Kent",
         "lat": 51.1120, "lng": 0.1740,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "movies", "fun-for-kids", "events"],
+        "brand_primary": "#0a1a0e",
+        "brand_accent": "#5A8A3A",
+        "features": ["history", "walking", "places-of-interest", "fun-for-kids", "movies", "benches", "legacy", "events"],
     },
 
     # ── Hampshire — private estates ───────────────────────────────────────────────
@@ -167,7 +206,9 @@ ESTATES = {
         "description": "Highclere Castle is the ancestral home of the Earl of Carnarvon and the filming location for all series of Downton Abbey. The Gothic Revival mansion sits in 1,000 acres of Capability Brown parkland and attracts over 200,000 visitors a year.",
         "county": "Hampshire",
         "lat": 51.3247, "lng": -1.3635,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "movies", "fun-for-kids"],
+        "brand_primary": "#0d0d1a",
+        "brand_accent": "#D4AF37",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "beaulieu-estate": {
         "name": "Beaulieu Estate",
@@ -175,7 +216,9 @@ ESTATES = {
         "description": "Beaulieu is a private estate in the New Forest, home to the Montagu family and the National Motor Museum. The estate includes Palace House, the ruins of Beaulieu Abbey, and extensive grounds on the Beaulieu River.",
         "county": "Hampshire",
         "lat": 50.8143, "lng": -1.4562,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+        "brand_primary": "#0a1a0a",
+        "brand_accent": "#7CAE7A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "exbury-gardens": {
         "name": "Exbury Gardens",
@@ -183,7 +226,9 @@ ESTATES = {
         "description": "Exbury Gardens in the New Forest was created by Lionel de Rothschild in the 1920s and contains one of the world's great collections of rhododendrons, azaleas, camellias, and magnolias. The steam railway and seasonal events make it one of Hampshire's leading visitor attractions.",
         "county": "Hampshire",
         "lat": 50.7999, "lng": -1.3699,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat", "fun-for-kids"],
+        "brand_primary": "#0a1a0a",
+        "brand_accent": "#D05C7A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
     },
     "broadlands-estate": {
         "name": "Broadlands Estate",
@@ -191,6 +236,8 @@ ESTATES = {
         "description": "Broadlands is a Palladian mansion near Romsey, the ancestral home of Lord Mountbatten and the honeymoon retreat of both The Queen and Prince Philip, and Princess Anne. The estate grounds run down to the River Test.",
         "county": "Hampshire",
         "lat": 51.0232, "lng": -1.5000,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
     "stratfield-saye-estate": {
@@ -199,6 +246,8 @@ ESTATES = {
         "description": "Stratfield Saye is the ancestral home of the Duke of Wellington, given to the first Duke by the nation following his victory at Waterloo. The house retains its Regency character and the estate runs a regular events and open day programme.",
         "county": "Hampshire",
         "lat": 51.3432, "lng": -1.0778,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#C9A84C",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "avington-park": {
@@ -207,6 +256,8 @@ ESTATES = {
         "description": "Avington Park is a privately owned Georgian house near Winchester, set in parkland above the chalk stream of the River Itchen. The house was visited by Charles II and is one of a small number of privately owned houses that open to the public on a regular basis.",
         "county": "Hampshire",
         "lat": 51.0720, "lng": -1.2700,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
 
@@ -218,6 +269,8 @@ ESTATES = {
         "description": "Englefield Estate near Theale is one of the largest private estates in Berkshire, owned by the Benyon family. The house dates from the sixteenth century and the garden includes a walled kitchen garden and extensive woodland.",
         "county": "Berkshire",
         "lat": 51.4270, "lng": -1.1110,
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "welford-park": {
@@ -226,7 +279,9 @@ ESTATES = {
         "description": "Welford Park is a privately owned Queen Anne house in the Lambourn valley near Newbury, with grounds that attract thousands of visitors each February for what is considered one of England's finest snowdrop gardens.",
         "county": "Berkshire",
         "lat": 51.4290, "lng": -1.4100,
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events", "places-to-eat"],
+        "brand_primary": "#0e1218",
+        "brand_accent": "#B89A5A",
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
 }

@@ -5348,6 +5348,36 @@ def _resolve_features(car_park, estate: dict) -> list:
     return estate.get("features", [])
 
 
+def _get_brand(estate: dict, car_park) -> dict:
+    """Return brand colours: car_park DB values if onboarded, else per-estate defaults."""
+    if car_park:
+        return {
+            "primary": car_park.brand_primary or estate.get("brand_primary", "#111"),
+            "accent":  car_park.brand_accent  or estate.get("brand_accent",  "#B89A5A"),
+            "text":    car_park.brand_text    or "#ffffff",
+        }
+    return {
+        "primary": estate.get("brand_primary", "#111"),
+        "accent":  estate.get("brand_accent",  "#B89A5A"),
+        "text":    "#ffffff",
+    }
+
+
+def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -> dict:
+    """Common template context shared by every visitor page."""
+    return {
+        "request":    request,
+        "slug":       slug,
+        "estate":     estate,
+        "estate_name": car_park.owner.name if car_park else estate["name"],
+        "car_park_name": page_name,
+        "logo_url":   (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "cp_slug":    estate.get("car_park_slug", "") or "",
+        "brand":      _get_brand(estate, car_park),
+        "features":   _resolve_features(car_park, estate),
+    }
+
+
 # ── Estate information pages ──────────────────────────────────────────────────
 
 @router.get("/{slug}", response_class=HTMLResponse)
@@ -5464,23 +5494,12 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    brand = {
-        "primary": (car_park.brand_primary or "#1e3a1e") if car_park else "#1e3a1e",
-        "accent": (car_park.brand_accent or "#B89A5A") if car_park else "#B89A5A",
-        "text": (car_park.brand_text or "#ffffff") if car_park else "#ffffff",
-    }
-    return templates.TemplateResponse("location/visitor/welcome.html", {
-        "request": request,
-        "slug": slug,
-        "estate": estate,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Welcome",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
+    ctx = _base_ctx(request, slug, estate, car_park, "Welcome")
+    ctx.update({
         "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
         "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
-        "brand": brand,
-        "features": _resolve_features(car_park, estate),
     })
+    return templates.TemplateResponse("location/visitor/welcome.html", ctx)
 
 
 @router.get("/{slug}/visitor/parking-select", response_class=HTMLResponse)
@@ -5700,16 +5719,9 @@ def visitor_walking_list(request: Request, slug: str, db: Session = Depends(get_
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     walks = WALKS.get(slug, [])
-    return templates.TemplateResponse("location/visitor/walking_list.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Walking Routes",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "walks": walks,
-        "page_content_html": _get_page_content_html(car_park, "walking"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Walking Routes")
+    ctx.update({"walks": walks, "page_content_html": _get_page_content_html(car_park, "walking")})
+    return templates.TemplateResponse("location/visitor/walking_list.html", ctx)
 
 
 @router.get("/{slug}/visitor/walking/{walk_slug}", response_class=HTMLResponse)
@@ -5723,14 +5735,9 @@ def visitor_walking_detail(request: Request, slug: str, walk_slug: str, db: Sess
     walk = next((w for w in walks if w["slug"] == walk_slug), None)
     if not walk:
         raise HTTPException(status_code=404)
-    return templates.TemplateResponse("location/visitor/walking_detail.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": car_park.name if car_park else "",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "walk": walk,
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, walk["title"])
+    ctx["walk"] = walk
+    return templates.TemplateResponse("location/visitor/walking_detail.html", ctx)
 
 
 @router.get("/{slug}/visitor/movies", response_class=HTMLResponse)
@@ -5740,15 +5747,9 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    return templates.TemplateResponse("location/visitor/movies.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Movie Connections",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "page_content_html": _get_page_content_html(car_park, "movies"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Movie Connections")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "movies")
+    return templates.TemplateResponse("location/visitor/movies.html", ctx)
 
 
 @router.get("/{slug}/visitor/history-test", response_class=HTMLResponse)
@@ -5774,15 +5775,9 @@ def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    return templates.TemplateResponse("location/visitor/history.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Our History",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "page_content_html": _get_page_content_html(car_park, "history"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Our History")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "history")
+    return templates.TemplateResponse("location/visitor/history.html", ctx)
 
 
 @router.get("/{slug}/visitor/places-of-interest", response_class=HTMLResponse)
@@ -5793,16 +5788,9 @@ def visitor_places_of_interest(request: Request, slug: str, db: Session = Depend
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = PLACES_OF_INTEREST.get(slug, [])
-    return templates.TemplateResponse("location/visitor/places_of_interest.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Places of Interest",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "places": places,
-        "page_content_html": _get_page_content_html(car_park, "places-of-interest"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Places of Interest")
+    ctx.update({"places": places, "page_content_html": _get_page_content_html(car_park, "places-of-interest")})
+    return templates.TemplateResponse("location/visitor/places_of_interest.html", ctx)
 
 
 @router.get("/{slug}/visitor/fun-for-kids", response_class=HTMLResponse)
@@ -5813,16 +5801,9 @@ def visitor_fun_for_kids(request: Request, slug: str, db: Session = Depends(get_
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = FUN_FOR_KIDS.get(slug, [])
-    return templates.TemplateResponse("location/visitor/fun_for_kids.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Fun for Kids",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "places": places,
-        "page_content_html": _get_page_content_html(car_park, "fun-for-kids"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Fun for Kids")
+    ctx.update({"places": places, "page_content_html": _get_page_content_html(car_park, "fun-for-kids")})
+    return templates.TemplateResponse("location/visitor/fun_for_kids.html", ctx)
 
 
 @router.get("/{slug}/visitor/places-to-eat", response_class=HTMLResponse)
@@ -5833,16 +5814,9 @@ def visitor_places_to_eat(request: Request, slug: str, db: Session = Depends(get
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     places = PLACES_TO_EAT.get(slug, [])
-    return templates.TemplateResponse("location/visitor/places_to_eat.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Places to Eat",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "places": places,
-        "page_content_html": _get_page_content_html(car_park, "places-to-eat"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Places to Eat")
+    ctx.update({"places": places, "page_content_html": _get_page_content_html(car_park, "places-to-eat")})
+    return templates.TemplateResponse("location/visitor/places_to_eat.html", ctx)
 
 
 @router.get("/{slug}/visitor/merch", response_class=HTMLResponse)
@@ -5857,17 +5831,13 @@ def visitor_shopping(request: Request, slug: str, db: Session = Depends(get_db))
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    return templates.TemplateResponse("location/visitor/shopping.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Shopping",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
+    ctx = _base_ctx(request, slug, estate, car_park, "Shopping")
+    ctx.update({
         "shops": SHOPPING.get(slug, []),
         "local_produce": LOCAL_PRODUCE.get(slug, []),
         "page_content_html": _get_page_content_html(car_park, "shopping"),
     })
+    return templates.TemplateResponse("location/visitor/shopping.html", ctx)
 
 
 @router.get("/{slug}/visitor/sponsor-a-bench", response_class=HTMLResponse)
@@ -5877,18 +5847,14 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    return templates.TemplateResponse("location/visitor/bench.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Sponsor a Bench",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
+    ctx = _base_ctx(request, slug, estate, car_park, "Sponsor a Bench")
+    ctx.update({
         "tiers": BENCH_TIERS,
         "bench_types": BENCH_TYPES,
         "bench_locations": BENCH_LOCATIONS.get(slug, []),
         "page_content_html": _get_page_content_html(car_park, "sponsor-a-bench"),
     })
+    return templates.TemplateResponse("location/visitor/bench.html", ctx)
 
 
 @router.get("/{slug}/visitor/legacy", response_class=HTMLResponse)
@@ -5898,15 +5864,9 @@ def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
-    return templates.TemplateResponse("location/visitor/legacy.html", {
-        "request": request,
-        "slug": slug,
-        "estate_name": car_park.owner.name if car_park else estate["name"],
-        "car_park_name": "Legacy",
-        "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
-        "cp_slug": cp_slug or "",
-        "page_content_html": _get_page_content_html(car_park, "legacy"),
-    })
+    ctx = _base_ctx(request, slug, estate, car_park, "Legacy")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "legacy")
+    return templates.TemplateResponse("location/visitor/legacy.html", ctx)
 
 
 @router.get("/{slug}/visitor/parking-receipt", response_class=HTMLResponse)

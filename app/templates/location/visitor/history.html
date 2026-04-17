@@ -65,55 +65,24 @@
 
 {% block content %}
 {% if page_content_html %}{{ page_content_html|safe }}{% else %}
-<div class="history-wrap" data-lm-editable-body>
+<div class="history-wrap">
 
-  <div class="history-page-title">Our History</div>
-  <p class="history-page-subtitle">We hope you will enjoy our little presentation about the history of the village.</p>
+  <div class="history-page-title">{{ estate_name }}</div>
+  <p class="history-page-subtitle">{{ estate.tagline }}</p>
 
   <hr class="divider">
 
   <div class="chapter">
-    <div class="chapter-title">Origins</div>
-    <img src="/static/images/memorial.jpg" alt="Shere village centre" class="chapter-image">
-    <p>The name Shere is thought to derive from the Old English word <em>scīr</em>, meaning bright or clear — almost certainly a reference to the Tillingbourne, the chalk stream that runs through the heart of the village and has shaped its character for well over a thousand years. Settlement here is ancient: there is evidence of Bronze Age activity on the surrounding downland, and the Romans made use of the valley as part of their network of routes through the Surrey Hills.</p>
-    <p>By the time of the Domesday Book in 1086, Shere was a well-established community. The survey records a mill on the Tillingbourne — one of the earliest references to what would become a defining feature of the valley's economy for the next eight centuries. The land was held by the Bishop of Bayeux, half-brother to William the Conqueror, and the village was assessed at a value that placed it among the more prosperous settlements in the county.</p>
+    <div class="chapter-title">About This Estate</div>
+    <p>{{ estate.description }}</p>
+    <p>{{ estate.county }} &middot; <a href="/location/{{ slug }}/visitor/places-of-interest" style="color:inherit;">Explore Places of Interest &rarr;</a></p>
   </div>
 
   <hr class="divider">
 
   <div class="chapter">
-    <div class="chapter-title">St James' Church</div>
-    <img src="/static/images/church.jpg" alt="St James Church, Shere" class="chapter-image">
-    <p>The parish church of St James is the oldest standing building in Shere and one of the finest Norman churches in Surrey. Construction of the present structure began around 1190, though there had been a place of worship on the site for considerably longer. The square flint tower — a landmark visible from the surrounding hills — dates from this period, as does the basic form of the nave and chancel.</p>
-    <p>The church is perhaps best known for the story of Christine Carpenter, a young woman from the village who in 1329 petitioned the Bishop of Winchester to be enclosed as an anchorite within a small cell built into the north wall of the chancel. Anchorites were religious recluses who chose to be literally walled in, receiving food through a small hatch and observing the altar through a tiny squint window that survives to this day. Christine's enclosure was a significant event and her story has been told and retold for nearly seven centuries. Remarkably, records show she twice attempted to leave before being re-enclosed — a human detail that makes her story feel unusually vivid across the distance of time.</p>
-    <p>The churchyard contains headstones dating from the seventeenth century and offers fine views east across the rooftops toward the wooded ridge of the North Downs. The interior retains much of its medieval character, including a thirteenth-century font and several fragments of early stained glass.</p>
-  </div>
-
-  <hr class="divider">
-
-  <div class="chapter">
-    <div class="chapter-title">The Tillingbourne Valley</div>
-    <img src="/static/images/village-ford.jpg" alt="The River Tillingbourne, Shere" class="chapter-image">
-    <p>To understand Shere is to understand the Tillingbourne. This chalk stream, rising on the southern slopes of the North Downs near Albury and flowing westward to join the River Wey at Shalford, was for several centuries one of the most intensively industrialised river valleys in southern England. Its fast, reliable flow made it ideal for powering mills, and by the sixteenth century a succession of industrial enterprises had established themselves along its banks.</p>
-    <p>Gunpowder was manufactured in the valley from at least the 1580s, making use of the water power, the local timber for charcoal, and the relative isolation that the surrounding hills provided. The Chilworth gunpowder mills, just downstream, supplied the Crown for over three centuries and were still operating during the First World War. Iron working, paper making, and cloth fulling all took place at various points along the stream, and the physical remains of leats, mill ponds, and foundations can still be found by those who look carefully.</p>
-    <p>Today the Tillingbourne is celebrated for rather different reasons. Chalk streams are among the rarest freshwater habitats in the world — only around two hundred exist globally, and nearly all of them are in southern England. The water here is exceptionally clear and cold, emerging from the chalk aquifer at a near-constant temperature, and supports brown trout, water voles, kingfishers, and a rich diversity of aquatic insects. The shallow ford in the village centre, where families have paddled on summer afternoons for as long as anyone can remember, draws its character directly from this geological good fortune.</p>
-  </div>
-
-  <hr class="divider">
-
-  <div class="chapter">
-    <div class="chapter-title">The Village in Its Prime</div>
-    <p>Middle Street, the main thoroughfare, contains some of the finest vernacular architecture in Surrey. The majority of the timber-framed buildings date from the fifteenth and sixteenth centuries, and the overall streetscape has changed remarkably little since the eighteenth. This is not entirely accidental: the village was largely bypassed by the railway — the nearest station at Gomshall is some distance away — and this happy accident of geography preserved it from the kind of Victorian development that transformed so many comparable settlements.</p>
-    <p>The White Horse public house, which occupies a prominent position on the street, is among the oldest buildings in the village. Licensed premises have operated on the site since at least the fourteenth century, and the building retains much of its original character despite the inevitable alterations of successive generations. It has been a stopping point for travellers, drovers, and more recently walkers coming off the North Downs Way for as long as the village has been a destination rather than merely a place people passed through.</p>
-    <p>John Evelyn, the seventeenth-century diarist and one of the founders of the Royal Society, knew this valley well. He was a close friend of the owner of Albury Park, the great house immediately to the west, and visited repeatedly. His diaries contain several references to walks and rides through the Tillingbourne valley that are recognisable to anyone who knows the area today.</p>
-  </div>
-
-  <hr class="divider">
-
-  <div class="chapter">
-    <div class="chapter-title">The Village Today</div>
-    <p>Shere today is a living community as much as a visitor destination, and the balance between the two is something its residents tend carefully. The population is small — a few hundred people — but the village supports a remarkable range of independent businesses for its size: the tea rooms, the pub, the pottery, the small shops along Middle Street. There is a village school, a cricket club, and a calendar of events that keeps the community bound together through the seasons.</p>
-    <p>The surrounding farmland and woodland remain in active use, and the estate that encompasses much of the valley continues to be managed with an eye to both productivity and conservation. The chalk stream is in better condition than it has been for generations, and the hills above the village are as good for walking as they have ever been. Whatever brings you here — the architecture, the film locations, the landscape, or simply the pleasure of a good walk followed by a decent lunch — we hope you will find what you are looking for, and that you will come back.</p>
+    <div class="chapter-title">Full Heritage Guide Coming Soon</div>
+    <p style="color:#555;">We are preparing a detailed history of {{ estate_name }} for this guide. In the meantime, explore the walking routes, places of interest, and local attractions available now using the navigation above.</p>
   </div>
 
 </div>

@@ -198,7 +198,7 @@
 {% block content %}
 <div class="welcome-intro">
   <p class="welcome-intro-title">Welcome</p>
-  <p class="welcome-intro-body"{% if edit_mode %} data-editable data-field="welcome_text" contenteditable="true" spellcheck="false" title="Click to edit"{% endif %}>{{ welcome_text or 'We very much hope that you will enjoy your visit to our village.' }}</p>
+  <p class="welcome-intro-body"{% if edit_mode %} data-editable data-field="welcome_text" contenteditable="true" spellcheck="false" title="Click to edit"{% endif %}>{{ welcome_text or estate.description or estate.tagline }}</p>
 </div>
 
 {% if edit_mode %}
@@ -475,23 +475,28 @@
   </a>
   {% endif %}
 
-  {% set row1 = [] %}
-  {% if 'history' in features %}{% set _ = row1.append('history') %}{% endif %}
-  {% if 'movies' in features %}{% set _ = row1.append('movies') %}{% endif %}
-  {% if 'events' in features %}{% set _ = row1.append('events') %}{% endif %}
-  {% if 'cycling' in features %}{% set _ = row1.append('cycling') %}{% endif %}
+  {# Build row1: history/movies pair, or events/cycling pair #}
+  {% set r1a = 'history' if 'history' in features else ('events' if 'events' in features else '') %}
+  {% set r1b = 'movies' if 'movies' in features else ('cycling' if 'cycling' in features else '') %}
 
-  {% if row1|length >= 2 %}
+  {% if r1a and r1b %}
   <div class="nav-2col">
-    {% if 'history' in features %}
+    {% if r1a == 'history' %}
     <a href="/location/{{ slug }}/visitor/history" class="nav-card">
       <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/>
       </svg>
       <div class="nav-title">Our History</div>
     </a>
+    {% elif r1a == 'events' %}
+    <a href="/location/{{ slug }}/visitor/events" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/>
+      </svg>
+      <div class="nav-title">Events</div>
+    </a>
     {% endif %}
-    {% if 'movies' in features %}
+    {% if r1b == 'movies' %}
     <a href="/location/{{ slug }}/visitor/movies" class="nav-card">
       <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <rect x="2" y="10" width="20" height="14" rx="2"/>
@@ -500,16 +505,7 @@
       </svg>
       <div class="nav-title">Movie Connections</div>
     </a>
-    {% endif %}
-    {% if 'events' in features and 'history' not in features %}
-    <a href="/location/{{ slug }}/visitor/events" class="nav-card">
-      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/>
-      </svg>
-      <div class="nav-title">Events</div>
-    </a>
-    {% endif %}
-    {% if 'cycling' in features and 'movies' not in features %}
+    {% elif r1b == 'cycling' %}
     <a href="/location/{{ slug }}/visitor/cycling" class="nav-card">
       <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
         <circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/>
@@ -519,13 +515,21 @@
     </a>
     {% endif %}
   </div>
-  {% elif row1|length == 1 %}
-  {% if 'history' in features %}
+  {% elif r1a %}
+  {# Only one item — show full width #}
+  {% if r1a == 'history' %}
   <a href="/location/{{ slug }}/visitor/history" class="nav-card-full">
     <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
       <path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/>
     </svg>
     <div class="nav-title">Our History</div>
+  </a>
+  {% elif r1a == 'events' %}
+  <a href="/location/{{ slug }}/visitor/events" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/>
+    </svg>
+    <div class="nav-title">Events</div>
   </a>
   {% endif %}
   {% endif %}

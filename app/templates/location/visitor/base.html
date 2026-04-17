@@ -162,16 +162,18 @@
     </div>
     <nav>
       <a href="/location/{{ slug }}/visitor/welcome">Welcome</a>
-      <a href="/location/{{ slug }}/visitor/parking-select">Parking</a>
-      <a href="/location/{{ slug }}/visitor/history">Our History</a>
-      <a href="/location/{{ slug }}/visitor/movies">Movie Connections</a>
-      <a href="/location/{{ slug }}/visitor/places-to-eat">Places to Eat</a>
-      <a href="/location/{{ slug }}/visitor/places-of-interest">Places of Interest</a>
-      <a href="/location/{{ slug }}/visitor/walking">Walking Routes</a>
-      <a href="/location/{{ slug }}/visitor/fun-for-kids">Fun for Kids</a>
-      <a href="/location/{{ slug }}/visitor/shopping">Shopping</a>
-      <a href="/location/{{ slug }}/visitor/sponsor-a-bench">Sponsor a Bench</a>
-      <a href="/location/{{ slug }}/visitor/legacy">Legacy</a>
+      {% if features and 'parking' in features %}<a href="/location/{{ slug }}/visitor/parking-select">Parking</a>{% endif %}
+      {% if features and 'history' in features %}<a href="/location/{{ slug }}/visitor/history">Our History</a>{% endif %}
+      {% if features and 'movies' in features %}<a href="/location/{{ slug }}/visitor/movies">Movie Connections</a>{% endif %}
+      {% if features and 'places-to-eat' in features %}<a href="/location/{{ slug }}/visitor/places-to-eat">Places to Eat</a>{% endif %}
+      {% if features and 'walking' in features %}<a href="/location/{{ slug }}/visitor/walking">Walking Routes</a>{% endif %}
+      {% if features and 'cycling' in features %}<a href="/location/{{ slug }}/visitor/cycling">Cycling Routes</a>{% endif %}
+      {% if features and 'places-of-interest' in features %}<a href="/location/{{ slug }}/visitor/places-of-interest">Places of Interest</a>{% endif %}
+      {% if features and 'fun-for-kids' in features %}<a href="/location/{{ slug }}/visitor/fun-for-kids">Fun for Kids</a>{% endif %}
+      {% if features and 'shopping' in features %}<a href="/location/{{ slug }}/visitor/shopping">Shopping</a>{% endif %}
+      {% if features and 'benches' in features %}<a href="/location/{{ slug }}/visitor/sponsor-a-bench">Sponsor a Bench</a>{% endif %}
+      {% if features and 'legacy' in features %}<a href="/location/{{ slug }}/visitor/legacy">Legacy</a>{% endif %}
+      {% if features and 'events' in features %}<a href="/location/{{ slug }}/visitor/events">Events</a>{% endif %}
     </nav>
     <div class="all-estates-box">
       <a href="/explore/estates" class="all-estates-link">
@@ -204,19 +206,22 @@
   <div style="height:20vh; min-height:120px;"></div>
   <footer style="max-width:520px; margin:0 auto; padding:2.5rem 1.25rem 3rem; border-top:1px solid #1a1a1a;">
     {% block footer_nav %}
+    {% set fa = "font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" %}
     <p style="font-size:.6rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.25); margin-bottom:1.25rem;">Navigate</p>
     <div style="display:grid; grid-template-columns:1fr 1fr; gap:.1rem 1rem;">
-      <a href="/location/{{ slug }}/visitor/welcome" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Welcome</a>
-      <a href="/location/{{ slug }}/visitor/parking-select" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Parking</a>
-      <a href="/location/{{ slug }}/visitor/history" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Our History</a>
-      <a href="/location/{{ slug }}/visitor/movies" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Movie Connections</a>
-      <a href="/location/{{ slug }}/visitor/places-to-eat" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places to Eat</a>
-      <a href="/location/{{ slug }}/visitor/places-of-interest" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places of Interest</a>
-      <a href="/location/{{ slug }}/visitor/walking" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Walking Routes</a>
-      <a href="/location/{{ slug }}/visitor/fun-for-kids" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Fun for Kids</a>
-      <a href="/location/{{ slug }}/visitor/shopping" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Shopping</a>
-      <a href="/location/{{ slug }}/visitor/sponsor-a-bench" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Sponsor a Bench</a>
-      <a href="/location/{{ slug }}/visitor/legacy" style="font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Legacy</a>
+      <a href="/location/{{ slug }}/visitor/welcome" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Welcome</a>
+      {% if features and 'parking' in features %}<a href="/location/{{ slug }}/visitor/parking-select" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Parking</a>{% endif %}
+      {% if features and 'history' in features %}<a href="/location/{{ slug }}/visitor/history" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Our History</a>{% endif %}
+      {% if features and 'movies' in features %}<a href="/location/{{ slug }}/visitor/movies" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Movie Connections</a>{% endif %}
+      {% if features and 'places-to-eat' in features %}<a href="/location/{{ slug }}/visitor/places-to-eat" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places to Eat</a>{% endif %}
+      {% if features and 'walking' in features %}<a href="/location/{{ slug }}/visitor/walking" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Walking Routes</a>{% endif %}
+      {% if features and 'cycling' in features %}<a href="/location/{{ slug }}/visitor/cycling" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Cycling Routes</a>{% endif %}
+      {% if features and 'places-of-interest' in features %}<a href="/location/{{ slug }}/visitor/places-of-interest" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Places of Interest</a>{% endif %}
+      {% if features and 'fun-for-kids' in features %}<a href="/location/{{ slug }}/visitor/fun-for-kids" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Fun for Kids</a>{% endif %}
+      {% if features and 'shopping' in features %}<a href="/location/{{ slug }}/visitor/shopping" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Shopping</a>{% endif %}
+      {% if features and 'benches' in features %}<a href="/location/{{ slug }}/visitor/sponsor-a-bench" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Sponsor a Bench</a>{% endif %}
+      {% if features and 'legacy' in features %}<a href="/location/{{ slug }}/visitor/legacy" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Legacy</a>{% endif %}
+      {% if features and 'events' in features %}<a href="/location/{{ slug }}/visitor/events" style="{{ fa }}" onmouseover="this.style.color=window._BA||'#B89A5A'" onmouseout="this.style.color='rgba(255,255,255,.45)'">Events</a>{% endif %}
     </div>
     {% endblock footer_nav %}
     <div style="padding-top: 2rem;">
