@@ -14,7 +14,7 @@
     .welcome-header { text-align: center; padding: 6rem 1rem 1.25rem; }
     .welcome-logo { width: 55%; max-width: 220px; height: auto; margin-bottom: 1.2rem; }
     .welcome-title {
-      font-family: 'Raleway', sans-serif; font-weight: 700; color: #B89A5A;
+      font-family: 'Raleway', sans-serif; font-weight: 700; color: var(--brand-accent, #B89A5A);
       text-transform: uppercase; text-align: center; line-height: 1.15; margin-bottom: .6rem;
     }
     .welcome-title-main { font-size: clamp(2rem, 10vw, 3.2rem); display: block; letter-spacing: 3px; }
@@ -29,7 +29,7 @@
       text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222;
       padding: 1.4rem 1.25rem; margin-bottom: .75rem; gap: .6rem; transition: border-color .15s;
     }
-    .nav-card-full:hover { border-color: #B89A5A; }
+    .nav-card-full:hover { border-color: var(--brand-accent, #B89A5A); }
     .nav-2col { display: grid; grid-template-columns: 1fr 1fr; gap: .75rem; margin-bottom: .75rem; }
     .nav-2col.solo { grid-template-columns: 1fr; }
     .nav-card {
@@ -37,9 +37,9 @@
       text-decoration: none; background: #111; border-radius: 8px; border: 1px solid #222;
       padding: 1.4rem .75rem; gap: .6rem; min-height: 110px; transition: border-color .15s;
     }
-    .nav-card:hover { border-color: #B89A5A; }
+    .nav-card:hover { border-color: var(--brand-accent, #B89A5A); }
     .nav-icon { color: #fff; display: block; width: 28px; height: 28px; }
-    .nav-title { font-size: .78rem; font-weight: 700; color: #B89A5A; letter-spacing: .5px; text-align: center; line-height: 1.3; }
+    .nav-title { font-size: .78rem; font-weight: 700; color: var(--brand-accent, #B89A5A); letter-spacing: .5px; text-align: center; line-height: 1.3; }
     .nav-desc { font-size: .72rem; color: rgba(255,255,255,.4); font-weight: 300; text-align: center; line-height: 1.5; }
 
     {% if edit_mode %}
@@ -363,10 +363,12 @@
   // ── Colours ──
   function applyColor(key, val) {
     if (key === 'primary') {
+      document.documentElement.style.setProperty('--brand-primary', val);
       document.getElementById('scroll-nav').style.background = val;
       document.getElementById('f-brand_primary').value = val;
     } else if (key === 'accent') {
-      document.querySelectorAll('.nav-title, .welcome-title').forEach(el => el.style.color = val);
+      document.documentElement.style.setProperty('--brand-accent', val);
+      window._BA = val;
       document.getElementById('f-brand_accent').value = val;
     } else if (key === 'text') {
       document.querySelectorAll('#scroll-nav .nav-home span, .menu-title').forEach(el => el.style.color = val);

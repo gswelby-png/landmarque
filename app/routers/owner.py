@@ -112,7 +112,16 @@ def logout():
 # ── Dashboard ───────────────────────────────────────────────────────────────
 
 @router.get("/dashboard", response_class=HTMLResponse)
-def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Query(False), pw_error: bool = Query(False), website_saved: bool = Query(False)):
+def dashboard(
+    request: Request,
+    db: Session = Depends(get_db),
+    pw_ok: bool = Query(False),
+    pw_error: bool = Query(False),
+    website_saved: bool = Query(False),
+    profile_ok: bool = Query(False),
+    profile_error: bool = Query(False),
+    deleted: str = Query(""),
+):
     owner = current_owner(request, db)
     today = date.today()
     month_start = today.replace(day=1)
@@ -123,6 +132,9 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
         if dt is None:
             return None
         return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
+
+    # ── Total live count across all parks ───────────────────────────────────
+    live_count = 0
 
     # ── Overall revenue stats ────────────────────────────────────────────────
     today_revenue = (
@@ -174,6 +186,7 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
 
         # Per-car-park live count
         cp_live = sum(1 for t in txns if _is_active_txn(t, now_utc))
+        live_count += cp_live
 
         # Per-car-park revenue
         cp_today_rev = sum(
@@ -271,16 +284,53 @@ def dashboard(request: Request, db: Session = Depends(get_db), pw_ok: bool = Que
             ],
         })
 
+    # ── Totals for payouts section ───────────────────────────────────────────
+    total_gross = (
+        db.query(func.sum(Transaction.amount_pence))
+        .join(CarPark)
+        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
+        .scalar() or 0
+    )
+    total_commission = (
+        db.query(func.sum(Transaction.commission_pence))
+        .join(CarPark)
+        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
+        .scalar() or 0
+    )
+    total_earned = (
+        db.query(func.sum(Transaction.owner_amount_pence))
+        .join(CarPark)
+        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
+        .scalar() or 0
+    )
+    total_txn_count = (
+        db.query(func.count(Transaction.id))
+        .join(CarPark)
+        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
+        .scalar() or 0
+    )
+
     return templates.TemplateResponse("owner/dashboard.html", {
         "request": request,
         "owner_name": owner.name,
+        "owner_email": owner.email,
+        "commission_pct": owner.commission_pct,
+        "stripe_connected": bool(owner.stripe_account_id),
         "today_revenue": today_revenue,
         "month_revenue": month_revenue,
         "ytd_revenue": ytd_revenue,
+        "live_count": live_count,
+        "total_gross": total_gross,
+        "total_commission": total_commission,
+        "total_earned": total_earned,
+        "total_txn_count": total_txn_count,
         "cp_data": cp_data,
         "pw_ok": pw_ok,
         "pw_error": pw_error,
         "website_saved": website_saved,
+        "profile_ok": profile_ok,
+        "profile_error": profile_error,
+        "deleted": deleted,
     })
 
 
@@ -497,6 +547,133 @@ def change_password(
     owner.password_hash = hash_password(new_password)
     db.commit()
     return RedirectResponse("/owner/dashboard?pw_ok=1", status_code=303)
+
+
+# ── Analytics ────────────────────────────────────────────────────────────────
+
+@router.get("/analytics/revenue")
+def analytics_revenue(request: Request, days: int = Query(30), db: Session = Depends(get_db)):
+    """Return daily owner revenue for the last N days as JSON for Chart.js."""
+    from datetime import timedelta, datetime as _dt
+    owner = current_owner(request, db)
+    end = date.today()
+    start = end - timedelta(days=days - 1)
+
+    txns = (
+        db.query(Transaction)
+        .join(CarPark)
+        .filter(
+            CarPark.owner_id == owner.id,
+            Transaction.status == TransactionStatus.paid,
+            Transaction.parked_at >= _dt.combine(start, _dt.min.time()),
+        )
+        .all()
+    )
+
+    daily: dict[str, int] = {}
+    for i in range(days):
+        d = (start + timedelta(days=i)).isoformat()
+        daily[d] = 0
+
+    def _aware(dt):
+        if dt is None:
+            return None
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
+
+    for t in txns:
+        pa = _aware(t.parked_at)
+        if pa:
+            key = pa.date().isoformat()
+            if key in daily:
+                daily[key] += t.owner_amount_pence
+
+    return _JSONResponse({
+        "labels": list(daily.keys()),
+        "values": [v / 100 for v in daily.values()],
+    })
+
+
+@router.post("/car-parks/{cp_id}/delete")
+def delete_car_park(cp_id: int, request: Request, db: Session = Depends(get_db)):
+    """Hard-delete a car park with no paid transactions; soft-disable if it has history."""
+    owner = current_owner(request, db)
+    cp = db.query(CarPark).filter(CarPark.id == cp_id, CarPark.owner_id == owner.id).first()
+    if not cp:
+        raise HTTPException(status_code=404)
+    paid_count = (
+        db.query(func.count(Transaction.id))
+        .filter(Transaction.car_park_id == cp_id, Transaction.status == TransactionStatus.paid)
+        .scalar() or 0
+    )
+    if paid_count > 0:
+        cp.is_active = False
+        db.commit()
+        return RedirectResponse("/owner/dashboard?deleted=soft#car-parks", status_code=303)
+    db.delete(cp)
+    db.commit()
+    return RedirectResponse("/owner/dashboard?deleted=1#car-parks", status_code=303)
+
+
+@router.post("/update-profile")
+def update_profile(
+    request: Request,
+    name: str = Form(...),
+    email: str = Form(...),
+    db: Session = Depends(get_db),
+):
+    owner = current_owner(request, db)
+    existing = db.query(Owner).filter(Owner.email == email, Owner.id != owner.id).first()
+    if existing:
+        return RedirectResponse("/owner/dashboard?profile_error=1#settings", status_code=303)
+    owner.name = name
+    owner.email = email
+    db.commit()
+    # Reissue token with same owner id (email changed but id stable)
+    token = create_token({"sub": str(owner.id), "role": "owner"})
+    response = RedirectResponse("/owner/dashboard?profile_ok=1#settings", status_code=303)
+    response.set_cookie("owner_token", token, httponly=True, max_age=43200)
+    return response
+
+
+@router.get("/export-all-csv")
+def export_all_csv(request: Request, db: Session = Depends(get_db)):
+    """Export all paid transactions across all of this owner's car parks."""
+    owner = current_owner(request, db)
+    txns = (
+        db.query(Transaction, CarPark.name.label("cp_name"))
+        .join(CarPark)
+        .filter(CarPark.owner_id == owner.id, Transaction.status == TransactionStatus.paid)
+        .order_by(Transaction.parked_at.desc())
+        .all()
+    )
+
+    def make_aware(dt):
+        if dt is None:
+            return None
+        return dt.replace(tzinfo=timezone.utc) if dt.tzinfo is None else dt
+
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerow(["Car Park", "Plate", "Duration", "Gross (£)", "Commission (£)", "Net (£)", "Parked At", "Expires At"])
+    for t, cp_name in txns:
+        pa = make_aware(t.parked_at)
+        ex = make_aware(t.expires_at)
+        writer.writerow([
+            cp_name,
+            t.number_plate,
+            "All day" if t.is_all_day else f"{t.duration_hours}h",
+            f"{t.amount_pence / 100:.2f}",
+            f"{t.commission_pence / 100:.2f}",
+            f"{t.owner_amount_pence / 100:.2f}",
+            pa.strftime("%Y-%m-%d %H:%M") if pa else "",
+            ex.strftime("%Y-%m-%d %H:%M") if ex else ("All day" if t.is_all_day else ""),
+        ])
+    output.seek(0)
+    return StreamingResponse(
+        io.BytesIO(output.getvalue().encode()),
+        media_type="text/csv",
+        headers={"Content-Disposition": 'attachment; filename="all-transactions.csv"'},
+    )
 
 
 # ── Transactions ─────────────────────────────────────────────────────────────
