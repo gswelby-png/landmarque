@@ -5229,6 +5229,473 @@ LOCAL_PRODUCE = {
     ]
 }
 
+# ── Estate history content ────────────────────────────────────────────────────
+# Each entry: subtitle + chapters list (title, image_url, image_caption, paragraphs)
+HISTORY = {
+    "shere-manor-estate": {
+        "subtitle": "One of England's best-preserved medieval villages — shaped by a thousand years of chalk stream, common land, and careful stewardship.",
+        "chapters": [
+            {
+                "title": "Origins",
+                "image_url": "/static/images/memorial.jpg",
+                "image_caption": "The village centre, Shere",
+                "paragraphs": [
+                    "The name Shere is thought to derive from the Old English word scīr, meaning bright or clear — almost certainly a reference to the Tillingbourne, the chalk stream that runs through the heart of the village and has shaped its character for well over a thousand years. Settlement here is ancient: there is evidence of Bronze Age activity on the surrounding downland, and the Romans made use of the valley as part of their network of routes through the Surrey Hills.",
+                    "By the time of the Domesday Book in 1086, Shere was a well-established community. The survey records a mill on the Tillingbourne — one of the earliest references to what would become a defining feature of the valley's economy for the next eight centuries. The land was held by the Bishop of Bayeux, half-brother to William the Conqueror, and the village was assessed at a value that placed it among the more prosperous settlements in the county.",
+                ],
+            },
+            {
+                "title": "St James' Church",
+                "image_url": "/static/images/church.jpg",
+                "image_caption": "St James' Church, Shere — Norman origins, c.1190",
+                "paragraphs": [
+                    "The parish church of St James is the oldest standing building in Shere and one of the finest Norman churches in Surrey. Construction of the present structure began around 1190, though there had been a place of worship on the site for considerably longer. The square flint tower — a landmark visible from the surrounding hills — dates from this period, as does the basic form of the nave and chancel.",
+                    "The church is perhaps best known for the story of Christine Carpenter, a young woman from the village who in 1329 petitioned the Bishop of Winchester to be enclosed as an anchorite within a small cell built into the north wall of the chancel. Anchorites were religious recluses who chose to be literally walled in, receiving food through a small hatch and observing the altar through a tiny squint window that survives to this day. Remarkably, records show she twice attempted to leave before being re-enclosed — a human detail that makes her story feel unusually vivid across the distance of time.",
+                ],
+            },
+            {
+                "title": "The Tillingbourne Valley",
+                "image_url": "/static/images/village-ford.jpg",
+                "image_caption": "The ford over the Tillingbourne, Shere village",
+                "paragraphs": [
+                    "To understand Shere is to understand the Tillingbourne. This chalk stream, rising on the southern slopes of the North Downs near Albury and flowing westward to join the River Wey at Shalford, was for several centuries one of the most intensively industrialised river valleys in southern England. Its fast, reliable flow made it ideal for powering mills, and by the sixteenth century a succession of industrial enterprises had established themselves along its banks.",
+                    "Chalk streams are among the rarest freshwater habitats in the world — only around two hundred exist globally, and nearly all of them are in southern England. The water here is exceptionally clear and cold, emerging from the chalk aquifer at a near-constant temperature, and supports brown trout, water voles, kingfishers, and a rich diversity of aquatic insects. The shallow ford in the village centre, where families have paddled on summer afternoons for as long as anyone can remember, draws its character directly from this geological good fortune.",
+                ],
+            },
+            {
+                "title": "The Village Today",
+                "image_url": "/static/images/middle-street.jpg",
+                "image_caption": "Middle Street, Shere — largely unchanged since the eighteenth century",
+                "paragraphs": [
+                    "Middle Street, the main thoroughfare, contains some of the finest vernacular architecture in Surrey. The majority of the timber-framed buildings date from the fifteenth and sixteenth centuries, and the overall streetscape has changed remarkably little since the eighteenth. The village was largely bypassed by the railway — the nearest station at Gomshall is some distance away — and this happy accident of geography preserved it from the kind of Victorian development that transformed so many comparable settlements.",
+                    "Shere today is a living community as much as a visitor destination, and the balance between the two is something its residents tend carefully. The village supports a remarkable range of independent businesses: the tea rooms, the pub, the pottery, the small shops along Middle Street. The surrounding farmland and woodland remain in active use, and the estate that encompasses much of the valley continues to be managed with an eye to both productivity and conservation.",
+                ],
+            },
+        ],
+    },
+}
+
+HISTORY["arundel-castle"] = {
+    "subtitle": "A Thousand Years of Norman Power, Ducal Splendour, and Living History in West Sussex",
+    "chapters": [
+        {
+            "title": "Norman Origins",
+            "image_url": "",
+            "image_caption": "The great keep of Arundel Castle, rising above the River Arun as it has since the Norman Conquest",
+            "paragraphs": [
+                "In the turbulent months following the Norman Conquest of 1066, William the Conqueror moved swiftly to consolidate his hold over southern England, distributing the vanquished kingdom among his most trusted lieutenants. In 1067 he granted the rape of Arundel — a broad swathe of West Sussex stretching from the Downs to the sea — to Roger de Montgomery, one of the foremost magnates of the Norman world. Roger raised a motte-and-bailey castle on the chalk ridge above the River Arun, commanding the river crossing and the coastal plain beyond. It was a characteristically Norman act of dominion: swift, practical, and designed to endure.",
+                "The strategic importance of the site was immediately apparent to the Crown. Henry I seized the castle following Roger's son Robert de Bellême's rebellion in 1102, and for much of the twelfth century Arundel functioned as a royal stronghold of the first order. It was at Arundel that Henry I's widow, Queen Adeliza, gave shelter to the Empress Matilda in 1139, an act that ignited one of the opening episodes of the civil war known as The Anarchy. The great stone keep — its cylindrical shell still standing today — was raised during this period of royal occupation, replacing Roger's timber fortifications with masonry worthy of a king.",
+            ],
+        },
+        {
+            "title": "The Howard Dynasty",
+            "image_url": "",
+            "image_caption": "The Fitzalan Chapel, the fourteenth-century chantry shared between the Church of England and the Roman Catholic faith",
+            "paragraphs": [
+                "The history of Arundel Castle is inseparable from the history of the Howard family, Dukes of Norfolk, who have held the estate in an unbroken line since 1483. As England's premier dukes and hereditary Earl Marshals — the officers responsible for the ceremonial governance of the realm — the Howards occupied a position of singular prominence in English public life. Their tenure at Arundel encompassed some of the most turbulent chapters in the national story: the Reformation, the Elizabethan religious settlement, and the long, dangerous years when adherence to Roman Catholicism placed the family in perpetual tension with the Crown.",
+                "The Fitzalan Chapel, built in the fourteenth century as a collegiate chantry for the Fitzalan earls who preceded the Howards at Arundel, became a quiet symbol of that tension. Bisected by the Reformation, it remains today one of England's most singular religious spaces: the nave belongs to the Church of England parish, while the chancel — containing the magnificent Fitzalan tombs — remains Roman Catholic. The Howard family maintained the old faith through generations of persecution, and the chapel embodies the improbable survival of that tradition. Several Howards were imprisoned or executed for their faith, yet the dynasty endured, its loyalty to Rome outlasting the severest pressures the Tudor and Stuart states could bring to bear.",
+            ],
+        },
+        {
+            "title": "Civil War and Restoration",
+            "image_url": "",
+            "image_caption": "The barbican and gatehouse, rebuilt in the nineteenth century after the devastation of the Parliamentary siege of 1643–44",
+            "paragraphs": [
+                "The English Civil War visited catastrophic destruction upon Arundel Castle. In December 1643 a Parliamentarian force under Sir William Waller besieged the castle, which had been garrisoned for the King. After eighteen days of bombardment, the Royalist defenders capitulated, their supplies exhausted and their walls badly breached. The Parliamentarians held the castle for much of the following year before a Royalist counterattack retook it. By the war's end the great medieval fortress had been systematically slighted — its towers demolished, its roofs stripped, its great hall left open to the sky. For much of the later seventeenth century, Arundel Castle stood as a roofless, wind-scoured ruin, a monument to the violence of the age.",
+                "Partial restoration began under the eighth and ninth Dukes in the late seventeenth and early eighteenth centuries, but it was the eleventh Duke who made the most ambitious attempt to render the castle habitable again, undertaking substantial rebuilding in the 1780s. These efforts, however, were eclipsed entirely by the extraordinary programme of reconstruction undertaken by the fifteenth Duke between 1875 and 1900. Employing the architect C.A. Buckler, the Duke rebuilt Arundel on a grand Victorian Gothic scale, creating the soaring great hall, the library, and the private apartments that give the castle much of its present character. The result is a building that reads simultaneously as medieval stronghold and Victorian palace — a layered monument to nine centuries of continuous occupation.",
+            ],
+        },
+        {
+            "title": "The Victorian Revival",
+            "image_url": "",
+            "image_caption": "The Victorian great hall, completed in 1900, its vaulted roof and armorial glass a testament to the fifteenth Duke's ambitions",
+            "paragraphs": [
+                "The fifteenth Duke of Norfolk's Victorian transformation of Arundel was one of the most ambitious private building projects of the nineteenth century. Where his predecessors had patched and repaired, the fifteenth Duke rebuilt wholesale, pouring a fortune derived from the family's South Yorkshire coal estates into a structure of theatrical grandeur. The great hall, completed in 1900, rises the full height of the main range, its hammer-beam ceiling hung with heraldic shields, its tall windows filled with armorial glass tracing the lineage of the Howards and their predecessors. The result is not merely a house but a dynastic statement, architecture pressed into the service of historical memory.",
+                "Today Arundel Castle remains the private home of the Duke and Duchess of Norfolk, opening its doors to visitors each summer with a breadth of experience that few historic houses can match. The armoury houses one of the most significant collections of arms and armour in private hands, while the castle's grounds — sweeping down to the medieval town and the water meadows of the Arun — are among the most romantically picturesque in England. The Baron's Hall serves periodically as a setting for concerts and events, and the Fitzalan Chapel continues to hold services. At Arundel, history is not merely displayed but actively inhabited, the living seat of England's oldest dukedom.",
+            ],
+        },
+    ],
+}
+
+HISTORY["penshurst-place"] = {
+    "subtitle": "Seven Centuries of Chivalry, Poetry, and English Country Life in the Heart of Kent",
+    "chapters": [
+        {
+            "title": "Medieval Origins",
+            "image_url": "",
+            "image_caption": "The Baron's Hall of 1341, one of the finest and most complete medieval great halls surviving in England",
+            "paragraphs": [
+                "Penshurst Place was born from the ambitions of one of medieval England's most remarkable self-made men. Sir John de Pulteney, a London merchant who rose to become Lord Mayor of the city on no fewer than four occasions between 1331 and 1337, acquired the manor of Penshurst in 1341 and immediately set about constructing a residence commensurate with his extraordinary wealth and civic standing. The house he raised was no modest manor: at its heart stood the Baron's Hall, a great aisled chamber of golden sandstone some sixty feet in length, its roof carried on octagonal chestnut columns and soaring to a crown-post ceiling of breathtaking craftsmanship. It was a merchant prince's vision of aristocratic magnificence.",
+                "The Baron's Hall is the oldest and most celebrated room in the house, and one of the finest medieval domestic interiors surviving anywhere in England. Its proportions, its original louvre above the central hearth, and the remarkable completeness of its fabric place it in a category shared by only a handful of buildings in the country. Pulteney died in 1349, almost certainly a victim of the Black Death that swept through England with devastating force, and Penshurst passed through several hands over the following two centuries, including a period in royal ownership under Henry VIII. Throughout these transitions the great hall stood unchanged, a fourteenth-century chamber waiting for the family that would make it lastingly famous.",
+            ],
+        },
+        {
+            "title": "The Sidney Legacy",
+            "image_url": "",
+            "image_caption": "Portrait of Sir Philip Sidney, poet, soldier, and Elizabethan ideal, born at Penshurst in 1554",
+            "paragraphs": [
+                "The association of Penshurst Place with the Sidney family — which endures to this day — began in 1552, when the young King Edward VI granted the estate to his steward Sir William Sidney in recognition of loyal service. It was a gift that would shape the course of English cultural history. Sir William's grandson, Philip Sidney, was born at Penshurst in 1554, and grew up to become one of the most luminous figures of the Elizabethan age: soldier, courtier, diplomat, and poet, whose sonnet sequence Astrophil and Stella and the prose romance Arcadia established him as the era's preeminent literary knight. His death at the siege of Zutphen in 1586, aged only thirty-one, confirmed the legend — the perfect Renaissance man cut down in his prime.",
+                "Philip's younger brother Robert Sidney, later created the first Earl of Leicester, was equally distinguished in public life, and it was Robert who transformed Penshurst from a medieval manor into a house capable of entertaining on a courtly scale. His friendship with the playwright Ben Jonson produced one of the most celebrated poems in the English language: To Penshurst, published in 1616, praises the house and its family with an ardour that transcends mere flattery. Jonson's vision of Penshurst as a place of pastoral abundance, generous hospitality, and moral integrity established a template for English country-house poetry and fixed Penshurst's reputation as the ideal of the cultivated, humane estate. The poem is still read today as one of the founding texts of English topographical verse.",
+            ],
+        },
+        {
+            "title": "Gardens and Elizabethan Life",
+            "image_url": "",
+            "image_caption": "The formal garden at Penshurst, laid out from the 1560s and among the oldest surviving examples of its kind in England",
+            "paragraphs": [
+                "The gardens at Penshurst Place are among the most historically significant in England, a living document of four and a half centuries of English horticultural taste. The formal layout was begun in the 1560s under Sir Henry Sidney, Philip's father, who enclosed a series of garden rooms with clipped yew hedges and planted orchards and kitchen gardens on the slopes below the house. The essential structure established in the Elizabethan period — the division into walled enclosures, the alignment with the principal axes of the house, the integration of ornamental and productive planting — survives to this day, overlaid with successive embellishments but never fundamentally altered. This continuity of design gives Penshurst's gardens a rarity and authenticity that few historic gardens can claim.",
+                "Within the garden walls, the Elizabethan spirit of the place is powerfully present. The Italian Garden, the nut garden, and the rose garden succeed one another in a sequence that rewards unhurried exploration. The kitchen garden, still in productive use, supplies the house with vegetables and cut flowers in a tradition of self-sufficiency that Sir Henry Sidney would have recognised immediately. Beyond the formal enclosures, the park stretches across the Medway valley, its ancient oaks and rolling pasture unchanged in character since the sixteenth century. Standing at the boundary of garden and park on a clear morning, with the sandstone towers of the house rising behind you, it is possible to understand why Ben Jonson found in Penshurst an image of the good life that transcended mere real estate.",
+            ],
+        },
+        {
+            "title": "Estate and Village Today",
+            "image_url": "",
+            "image_caption": "The village of Penshurst, its estate cottages and medieval church of St John the Baptist clustered about the park gates",
+            "paragraphs": [
+                "Penshurst Place survived the Civil War largely intact — the Sidney family's political dexterity sparing them the systematic destruction visited upon more committed Royalist strongholds — and the house was restored and extended in the Victorian era with a sensitivity unusual for the period. The long gallery, the state rooms, and the extensive private apartments were furnished and embellished by successive generations of the Sidney family, and today they contain a collection of portraits, arms, armour, and decorative art that constitutes a remarkable record of English aristocratic life from the fourteenth century to the present. The house is still the family home of Viscount De L'Isle, whose family has maintained Penshurst in private hands for nearly five centuries.",
+                "The village of Penshurst itself is integral to any understanding of the estate. The medieval church of St John the Baptist, where generations of Sidneys lie buried, anchors the village square, while the estate cottages — many of them Victorian in their present form but occupying plots of far greater antiquity — create a settlement of exceptional charm and coherence. The relationship between house and village, between landowner and community, is one that Penshurst has navigated with conspicuous success across the centuries. Today, with the house open to visitors, the gardens drawing enthusiasts from across the country, and the estate farm still in active agricultural use, Penshurst continues to demonstrate that the great English country house is not a relic but a living institution, its history still being written.",
+            ],
+        },
+    ],
+}
+
+HISTORY["hever-castle"] = {
+    "subtitle": "A medieval fortress and the childhood home of Anne Boleyn, transformed over six centuries from a knights' stronghold into one of England's most romantic castle estates.",
+    "chapters": [
+        {
+            "title": "The Medieval Castle",
+            "image_url": "",
+            "image_caption": "The double moat and fortified gatehouse of Hever Castle, dating to the late 13th century.",
+            "paragraphs": [
+                "Hever Castle traces its origins to 1270, when William de Hever erected a stone gatehouse and outer walls on this low-lying Kentish land, enclosing the structure within a double moat fed by the River Eden. The arrangement was less a military fortress than a fortified manor — a statement of status from a family climbing the ranks of medieval English society. The thick curtain walls, the portcullis groove still visible in the gatehouse arch, and the oak drawbridge collectively speak to an age when even prosperous gentry needed to signal both wealth and defensibility. By the late 14th century the property had passed through several hands, each generation adding modest embellishments while preserving the castle's compact, self-contained character.",
+                "In 1462 the castle was acquired by Geoffrey Boleyn, a prosperous London mercer and former Lord Mayor who saw in Hever an opportunity to anchor his family firmly among the landed gentry of Kent. Geoffrey set about enlarging the inner accommodation, adding a great hall and more comfortable private apartments within the old walls. His improvements were practical rather than showy, reflecting the mercantile sensibility of a self-made man eager to establish a dynastic seat. The property he consolidated would become the foundation upon which his grandson Thomas would raise one of the most talked-about households in early Tudor England, and upon which the fate of a dynasty — and a queen — would ultimately rest.",
+            ],
+        },
+        {
+            "title": "The Boleyns and Anne",
+            "image_url": "",
+            "image_caption": "A portrait of Anne Boleyn, who spent her formative years at Hever before captivating the court of Henry VIII.",
+            "paragraphs": [
+                "Thomas Boleyn, created Earl of Wiltshire and Earl of Ormond, transformed Hever in the early decades of the sixteenth century into a residence befitting a leading diplomat and courtier. He enlarged the great hall, installed fine timber panelling, and furnished the rooms with the tapestries, plate, and books expected of a man who moved in the highest European circles. It was in this cultured, ambitious household that his daughter Anne spent her formative years before departing for the courts of Burgundy and France, where she absorbed the refined manners and intellectual confidence that would make her irresistible to Henry VIII. The rooms at Hever formed her earliest mental landscape: the river-scented air, the candlelit great hall, the walled garden where the family walked in the evenings.",
+                "Henry VIII first courted Anne Boleyn in the early 1520s, and surviving letters suggest he visited Hever on several occasions, riding down from Greenwich or Richmond to press his suit in the Kentish countryside. Anne kept the King at a carefully judged distance for years, a strategy that inflamed his desire and ultimately drove him to break with Rome. Their courtship reshaped the religious and political constitution of England. After Henry finally married Anne in 1533, Hever briefly stood at the very centre of power in the realm. That ascendancy ended brutally in May 1536 when Anne was executed on charges of adultery and treason — charges almost universally regarded today as fabricated. Henry seized the castle, stripped it of its Boleyn associations, and granted it to his fourth wife, Anne of Cleves, as part of her generous divorce settlement in 1540.",
+            ],
+        },
+        {
+            "title": "The Astor Restoration",
+            "image_url": "",
+            "image_caption": "William Waldorf Astor's Tudor Village, built to house guests without disturbing the castle's medieval silhouette.",
+            "paragraphs": [
+                "By the nineteenth century Hever had passed through a succession of owners and fallen into a state of picturesque but genuine decay. The moats were silted, the timbers damp-ridden, and the great hall subdivided into farm storage. The castle's redemption arrived in 1903 in the form of William Waldorf Astor, the American-born press baron and future Viscount Astor, who purchased the estate and committed what was then an almost incomprehensible fortune — estimated at ten million pounds in contemporary accounts — to its restoration. Astor employed the architect Frank Loughborough Pearson and an army of craftsmen to shore up the medieval structure, reinstall appropriate oak fittings, and rehang the rooms with a collection of Tudor portraits, arms, armour, and antique furniture that he had been assembling for years with systematic, scholarly enthusiasm.",
+                "Astor faced a particular problem familiar to great restorers: where to house guests when the castle itself offered limited space without disturbing its medieval character. His solution was the Tudor Village, a purpose-built complex of cottages and halls arranged around a series of courtyards immediately adjacent to the castle, constructed between 1903 and 1906 in a convincing vernacular style that reads as organically connected to the older structure rather than as an intrusion. Beyond the walls, Astor's ambitions extended across the landscape: he directed the excavation of a thirty-five-acre lake, requiring the labour of some eight hundred men working over two years, and laid out the Italian Garden — a sequence of formal enclosures populated with ancient Roman statuary, sarcophagi, and architectural fragments he had acquired during his years as American Minister to Italy.",
+            ],
+        },
+        {
+            "title": "The Gardens, Lake, and Collections",
+            "image_url": "",
+            "image_caption": "The Italian Garden at Hever, where Roman antiquities collected by William Waldorf Astor are displayed among clipped yew and box.",
+            "paragraphs": [
+                "The gardens that surround Hever Castle today represent one of the most complete Edwardian landscape achievements in England. The yew maze, planted by Astor's gardeners in the early years of the twentieth century, has matured into an impenetrable labyrinth of dark hedging that gives the grounds a sense of mystery appropriate to the castle's history. The walled rose garden, the topiary chessmen, the rhododendron walks, and the Anne Boleyn Garden — named in deliberate homage to the castle's most famous resident — each contribute to a layered horticultural narrative that moves from the formal to the naturalistic as one travels further from the walls. The thirty-five-acre lake anchors the wider parkland, its glassy surface reflecting the castle's towers in conditions of stillness that have made it one of the most photographed views in Kent.",
+                "Inside the castle, the collections assembled by William Waldorf Astor remain the core of what visitors encounter today. The long gallery and the private apartments contain an array of Tudor and Stuart portraits, among them a striking Holbein depiction of Henry VIII that confronts visitors with the physical reality of the man who so altered Hever's destiny. Books of Hours, illuminated manuscripts, and early printed volumes fill the library shelves, while the arms and armour collection lining the staircase walls evokes the martial world from which the castle emerged. Astor's heirs eventually opened the estate to the public, and today Hever is managed as a major heritage attraction, offering visitors not only the rooms and gardens but rowing on the lake, a water maze, and a programme of jousting and open-air theatre that keeps the Tudor drama of the place very much alive.",
+            ],
+        },
+    ],
+}
+
+HISTORY["highclere-castle"] = {
+    "subtitle": "The spectacular Victorian-Gothic seat of the Earls of Carnarvon, renowned for its Barry interiors, Egyptological treasures, and its global fame as the setting for Downton Abbey.",
+    "chapters": [
+        {
+            "title": "The Barry Transformation",
+            "image_url": "",
+            "image_caption": "The south front of Highclere Castle, redesigned by Sir Charles Barry between 1839 and 1878 in an exuberant Italianate Gothic style.",
+            "paragraphs": [
+                "A house of some kind has stood on the Highclere estate since at least the early medieval period, when the Bishops of Winchester held extensive manorial lands across this part of Hampshire. By the early eighteenth century the property had passed to the Herbert family, later Earls of Carnarvon, who commissioned a handsome Jacobean mansion of sufficient grandeur for an aristocratic household but of limited architectural ambition. That restraint was decisively abandoned in 1839, when the 3rd Earl engaged Sir Charles Barry — then simultaneously at work on the rebuilt Houses of Parliament at Westminster — to remodel the house entirely. Barry's vision was extravagant: he encased the old structure in a new skin of Bath stone, raising towers and turrets, adding balustraded terraces, and crowning the roofline with an array of pinnacles and carved ornament that transforms the building into something between a Renaissance palazzo and a Gothic fantasy.",
+                "Barry's work at Highclere occupied the better part of four decades, continuing in modified form under his son Edward after the elder architect's death, and was not fully complete until 1878. The interiors he created are as dramatic as the exterior promises: the central saloon rises through the full height of the house in a soaring gothic arcade of gilded plasterwork, recalling the atmosphere of a cathedral nave repurposed for aristocratic living. The library is lined from floor to gallery rail with thousands of volumes beneath a richly coffered ceiling, while the music room and the dining room demonstrate Barry's equal fluency in Renaissance ornament. The whole ensemble declares the Herbert family's place among the grandest of Victorian noble houses, and it does so with a confidence that has lost nothing in the intervening century and a half.",
+            ],
+        },
+        {
+            "title": "The Carnarvon Legacy",
+            "image_url": "",
+            "image_caption": "Capability Brown's designed parkland stretches southward from the castle terraces, framing views across the Hampshire downland.",
+            "paragraphs": [
+                "The wider landscape in which Highclere sits was shaped by Lancelot 'Capability' Brown, who was engaged in the 1770s to remodel the park in the naturalistic manner he was simultaneously applying to estates across England. Brown swept away the earlier formal gardens, replacing them with sweeping grass that appears to lap against the castle walls, planting strategic belts and clumps of trees that frame views and conceal boundaries, and manipulating the ground levels to create the impression of a naturally undulating Hampshire landscape perfected by an invisible hand. The views from the castle's upper terraces southward across the chalk downland towards Beacon Hill — an Iron Age hillfort that the Carnarvon family incorporated into the estate — remain among the finest inland prospects in southern England.",
+                "The 3rd Earl also established Highclere Stud, beginning a tradition of thoroughbred breeding that has become an integral part of the estate's identity and has been sustained by successive Earls with genuine competitive success. Several notable racehorses have carried the Carnarvon colours, and the stud has contributed winners at the highest levels of the Flat season. Beyond racing, the Carnarvon family shaped the estate's agricultural and social character across generations, acting as landlords, employers, and patrons to the community of villages that surrounds the park. This dual identity — as sporting aristocrats and responsible landowners — mirrors the character of the fictional Crawley family of Downton Abbey so precisely that the casting of Highclere as the series' setting seems in retrospect inevitable.",
+            ],
+        },
+        {
+            "title": "Tutankhamun's Discovery",
+            "image_url": "",
+            "image_caption": "The Egyptian Exhibition at Highclere Castle commemorates the 5th Earl's partnership with Howard Carter and the opening of Tutankhamun's tomb in 1922.",
+            "paragraphs": [
+                "George Herbert, the 5th Earl of Carnarvon, was by temperament a collector, a traveller, and a man of considerable intellectual curiosity who turned to Egyptology following a serious motoring accident that left him unable to endure the cold and damp of an English winter. From 1907 he began funding excavations in the Valley of the Kings, and in 1909 he entered into the partnership with the archaeologist Howard Carter that would produce the most celebrated discovery in the history of the discipline. For over a decade the two men methodically explored sites across the Theban necropolis, finding significant tombs but not the intact royal burial they sought. By 1922 Lord Carnarvon was on the point of abandoning the concession when Carter persuaded him to fund one final season.",
+                "On the 4th of November 1922, Carter's workmen uncovered the first stone step of a stairway cut into the bedrock of the Valley of the Kings. Within days they had cleared the descent to a sealed doorway bearing the cartouche of Tutankhamun, an 18th Dynasty pharaoh who had died around 1323 BC. When the tomb was formally opened in the presence of Lord Carnarvon on the 26th of November, Carter made his famous observation that he could see 'wonderful things' within — a room packed with gilded furniture, statues, chariots, and ritual objects undisturbed for more than three thousand years. Lord Carnarvon did not live to witness the full excavation: he died in Cairo in April 1923, swiftly generating the legend of the 'Curse of the Pharaohs'. Highclere's Egyptian Exhibition, housed in the castle's cellars, commemorates his achievement with artefacts, photographs, and the story of the discovery told in compelling detail.",
+            ],
+        },
+        {
+            "title": "Downton Abbey and Today",
+            "image_url": "",
+            "image_caption": "The north front of Highclere Castle, recognisable to millions of viewers worldwide as the exterior of Downton Abbey.",
+            "paragraphs": [
+                "In 2010 the creator Julian Fellowes chose Highclere Castle as the exterior and principal interior location for Downton Abbey, the period drama that would become one of the most watched British television productions in history, eventually broadcasting to over 120 countries. The decision was, in one sense, straightforward: no other building in England so perfectly embodied the Edwardian aristocratic world that Fellowes wished to evoke. Yet the partnership between the castle and the production proved mutually transformative. The show introduced Highclere to audiences who had never previously heard of it, while the castle's genuine historical depth — the layers of family history, the Egyptian discoveries, the Capability Brown park — gave the fictional drama a resonance that a purpose-built set could never have provided.",
+                "Today Highclere is managed by the 8th Earl and Countess of Carnarvon as both a family home and a major public attraction, opening its doors on selected dates throughout the year for tours of the principal rooms, the Egyptian Exhibition, and the gardens. The Countess has written extensively on the castle's history and has been instrumental in broadening its public profile through books, a podcast, and an active engagement with the global Downton Abbey fan community. The estate remains a working agricultural enterprise and a centre of thoroughbred breeding, balancing the demands of heritage and hospitality with the rhythms of a living country house. Visits typically begin on the south terrace, from which Barry's extraordinary roofline rises against the Hampshire sky — a view that manages, simultaneously, to be intimately familiar and endlessly surprising.",
+            ],
+        },
+    ],
+}
+
+HISTORY["beaulieu-estate"] = {
+    "subtitle": "A Thousand Years of Faith, Family, and Innovation in the Heart of the New Forest",
+    "chapters": [
+        {
+            "title": "King John's Abbey: The Founding of Beaulieu",
+            "image_url": "",
+            "image_caption": "The ruins of Beaulieu Abbey, founded by King John in 1204, stand as a testament to Cistercian ambition in the New Forest.",
+            "paragraphs": [
+                "In the spring of 1204, King John made a gift of unusual piety to the Cistercian order — a tract of royal hunting forest in Hampshire that would become one of the most celebrated monastic houses in medieval England. According to tradition, the king had been shamed in a dream by an abbot whose monks he had ordered mistreated, and the founding of Beaulieu Abbey was his act of atonement. Whatever the truth of that legend, his endowment was generous: land, timber, and a substantial income to raise up an abbey church of considerable ambition in the valley of the Beaulieu River.",
+                "The monks who settled here were drawn from the Cistercian house at Cîteaux in Burgundy, and they brought with them the order's characteristic discipline — simplicity of life, hard labour, and a preference for remote, watered valleys far from the distractions of town and court. They called their new home Bellus Locus Regis, the Beautiful Place of the King. Over the following century they raised a great church, a cloister, and the full complement of monastic buildings, supporting themselves through sheep farming, fishing on the tidal river, and the careful stewardship of the forest lands that surrounded them on every side.",
+            ],
+        },
+        {
+            "title": "The Dissolution and the Birth of Palace House",
+            "image_url": "",
+            "image_caption": "Palace House, the ancestral home of the Montagu family, incorporates the medieval gatehouse of Beaulieu Abbey into its Victorian Gothic fabric.",
+            "paragraphs": [
+                "When Henry VIII's commissioners arrived at Beaulieu in 1538 to dissolve the monastery, they found a community that had endured for over three centuries. The abbey was surrendered, its lands seized, and its monks scattered. What had been one of the great Cistercian houses of southern England was reduced, in a matter of months, to a property asset of the Crown. The great church was demolished for its stone, but other buildings survived: the refectory, which had served as the monks' dining hall, was converted into a parish church and remains in use to this day — one of the most complete surviving examples of Cistercian domestic architecture in England.",
+                "The monastic gatehouse, which had controlled access to the abbey precinct from the village, passed through several hands before being acquired by the Montagu family, in whose possession it has remained ever since. Through successive generations, the old gatehouse was enlarged and transformed. The most dramatic phase of work came in the nineteenth century, when the 1st Baron Montagu commissioned substantial additions in the Victorian Gothic style, marrying the medieval stonework of the original structure with pointed arches, decorative battlements, and comfortable domestic interiors. The result — Palace House — is a building of remarkable layered character, where every corridor holds the memory of a different age.",
+            ],
+        },
+        {
+            "title": "The National Motor Museum",
+            "image_url": "",
+            "image_caption": "The National Motor Museum, established at Beaulieu in 1952, houses one of the world's finest collections of historic vehicles.",
+            "paragraphs": [
+                "The motor museum that today draws hundreds of thousands of visitors each year to Beaulieu began in 1952 as a modest display of five historic vehicles, assembled in the entrance hall of Palace House by Edward Douglas-Scott-Montagu, the 3rd Baron Montagu. His father, the 2nd Baron, had been among the earliest and most passionate advocates of the motor car in Britain, a friend of Rolls and Royce and a pioneer who had driven one of the first automobiles ever seen in the New Forest. The son's collection was conceived as a memorial to his father's passion and to the transformative era of early motoring that he represented.",
+                "From those five vehicles, the collection has grown into one of the world's great automotive museums, housing more than two hundred and fifty cars, motorcycles, and commercial vehicles spanning the full history of mechanised transport. Among the treasures are land speed record breakers, veteran cars of extraordinary rarity, vehicles that shaped the history of British industry, and iconic machines drawn from the golden age of motor racing. The museum moved into its purpose-built exhibition hall in 1972, and has continued to expand its holdings, its research library, and its programme of events, establishing Beaulieu as an international centre of automotive heritage without parallel in Britain.",
+            ],
+        },
+        {
+            "title": "Wartime Secrets and the New Forest Landscape",
+            "image_url": "",
+            "image_caption": "The Beaulieu River and surrounding New Forest provided cover and seclusion for the SOE's wartime training operations during the Second World War.",
+            "paragraphs": [
+                "During the Second World War, the seclusion that had once attracted Cistercian monks to the Beaulieu valley recommended it for a very different purpose. The entire estate was requisitioned by the Special Operations Executive — Churchill's famous instruction to 'set Europe ablaze' made flesh in a secret organisation dedicated to sabotage, subversion, and the training of agents for clandestine operations behind enemy lines. At Beaulieu, recruits underwent their final and most intensive preparation: the arts of cover, disguise, dead-letter drops, and resistance to interrogation were taught in the requisitioned country houses dotted through the estate, far from curious eyes.",
+                "The New Forest that enfolds Beaulieu is one of England's oldest and most singular landscapes, a place shaped by royal decree since William the Conqueror established it as a hunting ground in 1079. Its ancient woodlands, open heathland, and tidal marshes form the living context of the estate — a landscape largely unchanged in character from the one that greeted King John's Cistercian monks eight centuries ago. The Beaulieu River, navigable by small craft as far as Buckler's Hard — the eighteenth-century shipbuilding village on the estate where timber from the forest was fashioned into men-of-war for the Royal Navy — remains one of the most beautiful and unspoiled waterways in southern England.",
+            ],
+        },
+    ],
+}
+
+HISTORY["goodwood-estate"] = {
+    "subtitle": "Four Centuries of Sport, Art, and Aristocratic Vision on the Sussex Downs",
+    "chapters": [
+        {
+            "title": "The Richmond Legacy",
+            "image_url": "",
+            "image_caption": "Goodwood House, the ancestral seat of the Dukes of Richmond, commands the Sussex Downs above Chichester from its elevated park.",
+            "paragraphs": [
+                "The story of Goodwood begins with a royal liaison and a generous father. Charles Lennox, the 1st Duke of Richmond, was the illegitimate son of King Charles II and his French mistress Louise de Kérouaille, Duchess of Portsmouth. Created Duke of Richmond in 1675, he was one of the most handsomely endowed of the king's numerous natural children. In 1697 he purchased Goodwood House and its surrounding lands, establishing a seat in West Sussex that would grow, over the following three centuries, into one of the most celebrated sporting and cultural estates in England.",
+                "The Lennox family proved themselves remarkable stewards of the inheritance. Each successive Duke added to the house, the collection, the park, and the estate's sporting facilities with a consistency of taste and ambition that is rare across so long a span. The family's connections — to the Crown, to the military, to the artistic and intellectual life of the eighteenth and nineteenth centuries — brought Goodwood into contact with every current of fashionable life. Fox hunting, horse racing, cricket, and entertaining on a magnificent scale: the Dukes of Richmond made Goodwood a byword for aristocratic pleasure pursued with genuine discernment and considerable style.",
+            ],
+        },
+        {
+            "title": "Goodwood House and Its Collections",
+            "image_url": "",
+            "image_caption": "The Regency interiors of Goodwood House contain one of England's finest private collections, including celebrated works by Canaletto and exceptional French decorative arts.",
+            "paragraphs": [
+                "The house that stands at the heart of the estate today is largely the work of James Wyatt, who was commissioned by the 3rd Duke of Richmond at the very end of the eighteenth century to transform what had been a more modest structure into a residence worthy of his family's position and collections. Wyatt's design — executed from around 1800 — is at once restrained and idiosyncratic, its most distinctive features being the canted corner towers that give the garden front its unmistakeable silhouette. The building was planned on an even grander scale: Wyatt envisaged an enormous octagonal house, but only three of the projected eight sides were completed before the 3rd Duke's death brought the project to a close.",
+                "Within, the house contains one of the finest private art collections remaining in England. At its heart is an outstanding group of paintings by Canaletto, acquired by the 2nd Duke during his time as British Ambassador to Venice — views of the city and its ceremonies that retain the luminous precision for which the artist was celebrated throughout Europe. Alongside them hang works by Van Dyck, Stubbs, and Lely, while the state rooms contain a remarkable assembly of French furniture and Sèvres porcelain acquired by successive Dukes with a continental confidence of taste.",
+            ],
+        },
+        {
+            "title": "Glorious Goodwood Racing",
+            "image_url": "",
+            "image_caption": "Goodwood Racecourse, established in 1801, is widely regarded as the most scenically beautiful flat racing venue in England.",
+            "paragraphs": [
+                "In 1801 the 3rd Duke of Richmond established a racecourse on the high ground of the estate, and in doing so created what many judges consider the most beautiful flat racing track in England. Set on the broad ridge of the South Downs with views south to the Channel and north across the Weald, Goodwood Racecourse combines natural drama with a distinctive left-handed course of unusual shape — the result of working within the contours of the Downs rather than imposing a standard oval upon them. The July Festival, known universally as Glorious Goodwood, became one of the unmissable fixtures of the English summer season within a generation of its foundation.",
+                "The phrase 'Glorious Goodwood' was not merely promotional sentiment. The combination of superb racing over a testing and unusual course, the setting on the Downs, and the proximity of Chichester and the south coast houses of the aristocracy made the July meeting a social and sporting occasion of the first order. Trainers and owners from across the country brought their best horses to compete on what became one of the most demanding and prestigious tracks in the flat racing calendar. Champions were made at Goodwood, and the course's role in shaping the thoroughbred breed through the quality of its racing has been continuous from the 3rd Duke's day to the present.",
+            ],
+        },
+        {
+            "title": "The Motor Sport Revival",
+            "image_url": "",
+            "image_caption": "The Festival of Speed hill climb and the Goodwood Revival together have established the estate as the spiritual home of historic motor sport in Britain.",
+            "paragraphs": [
+                "When the motor racing circuit established on the estate's perimeter road after the Second World War was finally closed by the RAC in 1966, it seemed that Goodwood's chapter in the history of motor sport had ended. For three decades the circuit lay dormant, its tarmac slowly greening over. Then, in 1993, the current Duke of Richmond opened the estate's private drive to motor sport with the first Festival of Speed — a hill climb from the house to the top of the park that brought the world's greatest racing cars and their drivers to West Sussex for a weekend of informal celebration that captured the imagination of enthusiasts and journalists alike.",
+                "The success of the Festival of Speed demonstrated an appetite for something the mainstream motor sport calendar could not supply: proximity, informality, and genuine historical depth. In 1998 the circuit itself was reopened for the first Goodwood Revival, a meeting run entirely in the period style of the circuit's original operation between 1948 and 1966. Competitors race in cars eligible for the original circuit's era, officials dress in period uniform, and spectators are encouraged to attend in the dress of the time. The Revival has become the largest historic motor sport event in the world, drawing competitors and visitors from across the globe and re-establishing Goodwood as the spiritual home of British motor racing heritage.",
+            ],
+        },
+    ],
+}
+
+HISTORY["loseley-park"] = {
+    "subtitle": "An Elizabethan Manor Built on Abbey Stone, Four and a Half Centuries in One Family's Care",
+    "chapters": [
+        {
+            "title": "Building Loseley",
+            "image_url": "",
+            "image_caption": "The south front of Loseley Park, its dressed Bargate stone glowing in afternoon light, little changed since Sir William More completed the house in 1568.",
+            "paragraphs": [
+                "When Sir William More laid the foundations of Loseley Park between 1562 and 1568, he was participating in one of the great building booms of Tudor England. The dissolution of the monasteries a generation earlier had left the countryside scattered with redundant ecclesiastical stone, and More was shrewd enough to exploit this abundance. The bulk of Loseley's fabric was quarried from the ruins of Waverley Abbey, the first Cistercian house in England, dissolved by Henry VIII in 1536. That ancient pale Bargate sandstone, worked by medieval masons for four centuries of monastic life, was carted the short distance south to Guildford and reset into the walls of a thoroughly modern country house.",
+                "The result was a building of considerable restraint and authority. Unlike the fantastical prodigy houses that some of his contemporaries were raising, More built compactly and rationally, his three-storey south front presenting orderly mullioned windows to the park. The interior, however, was no less ambitious. The Great Hall was fitted with panelling of extraordinary provenance: carved oak removed from Henry VIII's Nonsuch Palace in Surrey, a building so extravagant in its decoration that contemporaries compared it to a wonder of the world. When Nonsuch was demolished in 1682, Loseley preserved one of its finest surviving fragments, embedding a royal palace's vanished splendour within a private gentleman's hall.",
+            ],
+        },
+        {
+            "title": "Royal Visits and the More-Molyneux Line",
+            "image_url": "",
+            "image_caption": "The Great Hall at Loseley, its Tudor panelling from the demolished Nonsuch Palace forming a backdrop to nearly five centuries of More family history.",
+            "paragraphs": [
+                "Sir William More was a man of sufficient standing to attract the most demanding guest in England. Elizabeth I visited Loseley Park on three separate occasions, her progresses through Surrey bringing the entire machinery of the royal court to More's door. Such visits were a mark of signal favour but also an immense financial burden: entertaining the Queen required weeks of preparation, vast quantities of food and drink, elaborate entertainments, and the accommodation of dozens of courtiers and servants. That More hosted Elizabeth three times speaks to his political reliability, his personal wealth, and the genuine comfort and elegance of the house he had built. James I, too, stayed at Loseley, extending the house's royal associations into the Stuart age.",
+                "The family's survival across four and a half centuries of English history is itself remarkable. Through the upheavals of the Civil War, the agricultural depressions of the nineteenth century, the catastrophic losses of two world wars and the crushing taxation of the twentieth century, the More-Molyneux line held Loseley. Marriages brought the Molyneux name into conjunction with More, but the essential continuity of ownership was never broken. Today Loseley is acknowledged as one of the longest uninterrupted examples of single-family ownership in the country, the house and its surrounding estate still managed by direct descendants of the man who raised its walls from Waverley's ruins.",
+            ],
+        },
+        {
+            "title": "The Garden Tradition",
+            "image_url": "",
+            "image_caption": "The rose garden within Loseley's walled enclosure, one of five distinct garden areas considered among the finest designed landscapes in Surrey.",
+            "paragraphs": [
+                "The walled garden at Loseley occupies a position of quiet distinction among Surrey's great gardens. Its origins lie centuries before the Arts and Crafts movement transformed English horticulture, but it was the influence of that movement, and the advice of Gertrude Jekyll in particular, that gave the garden its lasting character. Jekyll, who lived only a few miles away at Munstead Wood and whose partnership with Edwin Lutyens defined the aesthetic of a generation, brought to Loseley her habitual genius for orchestrating colour and texture within a strong architectural framework. The connection placed Loseley within the most progressive currents of late Victorian and Edwardian garden thought.",
+                "The garden as it stands today is organised into five distinct areas, each with its own mood and planting palette, each contained within the warm Bargate stone walls that give the enclosure its sense of sheltered intimacy. A white garden of silvery foliage and cream-coloured blooms succeeds a voluptuous rose garden stocked with old varieties whose fragrance carries across the surrounding parkland in June. A moat walk, a herb garden and a flower garden complete the sequence, offering a progression of experiences rooted equally in historical precedent and living horticulture. The walled garden is consistently ranked among the finest privately maintained gardens in the county, drawing visitors from across the south of England.",
+            ],
+        },
+        {
+            "title": "Farm, Dairy, and the Living Estate",
+            "image_url": "",
+            "image_caption": "Loseley Park Farm, where the estate's celebrated dairy herd has grazed the Surrey parkland since the venture that gave rise to one of England's best-known artisan dairy brands.",
+            "paragraphs": [
+                "Loseley has never been merely a house preserved in amber. The estate surrounding it has functioned as a working farm for as long as the house has stood, and it was this agricultural pragmatism that generated one of the More-Molyneux family's most enduring enterprises. In the 1960s, faced with the economic pressures that were forcing many historic houses into institutional use or outright closure, the family turned to their dairy herd as the basis for a new commercial venture. Loseley Park dairy products, and above all the ice cream produced from the rich milk of the estate's cows, became nationally recognised for their quality, establishing a brand identity grounded explicitly in the landscape and heritage of the estate.",
+                "The dairy business was more than a commercial rescue: it represented a coherent philosophy of what a historic estate could be in the modern world. Rather than freezing Loseley as a museum of its Elizabethan origins, the More-Molyneux family committed to keeping it animate, its fields productive, its outbuildings purposeful, its revenues generated by genuine agricultural activity rather than by the admission fees of passive visitors alone. That philosophy persists into the present century. The parkland remains grazed, the walled garden is cultivated to a high standard, the house is open to visitors, and events from weddings to outdoor theatre take place regularly within its grounds, sustaining a community of use that would have been entirely recognisable to Sir William More.",
+            ],
+        },
+    ],
+}
+
+HISTORY["cowdray-park"] = {
+    "subtitle": "A Tudor giant, a devastating curse, and the sport of kings — all on one breathtaking West Sussex estate.",
+    "chapters": [
+        {
+            "title": "The Tudor House",
+            "image_url": "",
+            "image_caption": "The ruins of Cowdray House, one of England's greatest Tudor mansions, Midhurst, West Sussex.",
+            "paragraphs": [
+                "Cowdray House was begun in the 1520s for Sir David Owen, an illegitimate son of Owen Tudor and therefore a half-uncle of Henry VII. Owen chose a commanding site above the River Rother near Midhurst, and the great quadrangular house that rose there — built in warm golden sandstone — was one of the most ambitious domestic buildings of its age. Ownership passed to Sir William Fitzwilliam, later Earl of Southampton and a close confidant of Henry VIII, who enlarged and enriched the house through the 1530s, adding the magnificent gatehouse and the great hall whose roofless shell still dominates the site today.",
+                "What survives is enough to reveal just how grand Cowdray once was. The gatehouse alone, with its oriel windows and heraldic carvings, ranks among the finest examples of early Tudor architecture in England. Fitzwilliam spared no expense: the house was furnished with tapestries, painted ceilings and a chapel fit for a king — which is exactly the sort of guest he expected. Cowdray sat at the very apex of Tudor courtier culture, a stage for display and power, and its ruins carry that ambition still.",
+            ],
+        },
+        {
+            "title": "Henry VIII's Visit",
+            "image_url": "",
+            "image_caption": "A contemporary portrait of Henry VIII, whose 1538 visit to Cowdray was recorded in lavish detail.",
+            "paragraphs": [
+                "In August 1538 Henry VIII arrived at Cowdray with his full court for a stay of several days — one of the most glittering occasions in the house's history. The king was at the height of his power, recently widowed from Jane Seymour and still commanding the obedience of every noble in England. Fitzwilliam, eager to cement royal favour, laid on a spectacle worthy of the occasion: banquets in the great hall, hunting in the deer park, and entertainments that reportedly cost a small fortune. Contemporary accounts describe the king shooting deer from a standing — a raised platform in the park — and being presented with gifts of exceptional richness.",
+                "The visit was not merely social. Henry's progress through Sussex in 1538 was partly a tour of coastal defences at a moment when invasion from Catholic Europe felt genuinely possible, and Cowdray lay on his route. Fitzwilliam's lavish hospitality served a political purpose, demonstrating loyalty and resource at a time when men of lesser standing were losing their heads. The king departed satisfied, and Fitzwilliam's position was secure. For later generations the visit became part of Cowdray's founding mythology — the idea that this was a house that had hosted England's most formidable monarch and measured up to the occasion.",
+            ],
+        },
+        {
+            "title": "The Fire & the Curse",
+            "image_url": "",
+            "image_caption": "The roofless remains of the great hall at Cowdray, gutted by fire on 24 September 1793.",
+            "paragraphs": [
+                "On the night of 24 September 1793 a fire broke out in a carpenter's workshop adjoining Cowdray House. Fanned by autumn winds, it spread with terrible speed through the largely empty building — the family were away — and by morning the roof had collapsed and the interior was entirely destroyed. The timing was extraordinary, even to contemporaries: just days earlier, Anthony Browne, 8th Viscount Montague, the last of his line, had drowned while attempting to shoot the falls at Laufenburg on the Rhine. In a single week, the ancient Browne family lost both their heir and their ancestral home.",
+                "The disaster was quickly woven into a pre-existing legend known as the Curse of Cowdray. The story holds that when Henry VIII dissolved Battle Abbey and granted its lands to Sir Anthony Browne, a monk pronounced a solemn curse: that fire and water would consume the family's prosperity. Whether the monk existed or not, the story proved irresistible, and the simultaneous ruin of house and line by fire and flood gave it a currency it has never entirely lost. The ruins were left as they fell, and they have been quietly crumbling — and quietly magnificent — ever since. They are Grade I listed and open to the public, one of the most atmospheric historic sites in the south of England.",
+            ],
+        },
+        {
+            "title": "Polo & the Modern Estate",
+            "image_url": "",
+            "image_caption": "Polo at Cowdray Park: the Gold Cup, contested each July, is the world's most prestigious outdoor polo tournament.",
+            "paragraphs": [
+                "The estate's modern chapter began in 1908 when Weetman Pearson, 1st Viscount Cowdray, purchased Cowdray and set about restoring the park and improving the agricultural estate. Pearson had made one of the great Victorian and Edwardian fortunes in civil engineering — his company built, among much else, the Blackwall Tunnel and the first deep drainage system for Mexico City — and he brought the same methodical energy to Cowdray. He built a new house, Cowdray Park House, in the Elizabethan Revival style, and began the systematic management of the 16,500-acre estate that continues today.",
+                "The introduction of polo transformed Cowdray's public identity. The Cowdray Park Polo Club was established in the 1930s and rapidly became one of the sport's most celebrated venues. The Gold Cup, held each July on the sun-bleached lawns of the park, draws the world's finest players and has been described as the most prestigious outdoor polo tournament on earth. Today the estate encompasses working farms, commercial forestry, holiday cottages and the historic ruins, all managed by the Pearson family. The combination of Tudor grandeur, romantic catastrophe and sporting excellence makes Cowdray unlike anywhere else in England.",
+            ],
+        },
+    ],
+}
+
+HISTORY["denbies-wine-estate"] = {
+    "subtitle": "From Thomas Cubitt's vanished Victorian palace to England's largest single-estate winery — Denbies holds two extraordinary stories in one Surrey hillside.",
+    "chapters": [
+        {
+            "title": "Thomas Cubitt's Vision",
+            "image_url": "",
+            "image_caption": "Thomas Cubitt, the master builder who shaped Belgravia, Pimlico and, in his retirement, the Denbies estate at Dorking.",
+            "paragraphs": [
+                "Thomas Cubitt is one of the great unsung figures of Victorian England. As the master builder behind Belgravia and Pimlico — the stucco terraces that define the grandest parts of west London — he transformed the capital's geography more profoundly than almost any individual of his century. When he turned his attention to a country estate in the 1850s, he chose a spectacular site on the chalk slopes of the North Downs above Dorking in Surrey, with views south across the Weald that on a clear day reach to the South Downs. The house he built there, Denbies, was in keeping with both his ambitions and his means: a large Italianate mansion of considerable quality, set in landscaped grounds that exploited every contour of the hillside.",
+                "Cubitt had not merely bought an existing estate and improved it; he shaped the whole landscape, planting trees, laying out drives and creating the kind of controlled prospect that the Victorians considered the proper setting for a gentleman's seat. The estate became a model of improving Victorian land management as much as it was a private residence. Cubitt died in 1855 before he could enjoy the property for long, but the house and its grounds survived intact for almost a century, passing through several owners who maintained both the building and the character of the estate he had envisaged.",
+            ],
+        },
+        {
+            "title": "The Great House and Its Fate",
+            "image_url": "",
+            "image_caption": "The site of Denbies House, demolished in 1953: only the terraced gardens give any hint of the Victorian mansion that once stood here.",
+            "paragraphs": [
+                "By the time the Second World War ended, Denbies House faced the fate of hundreds of English country houses: the combination of wartime requisitioning, punishing taxation, the collapse of the servant economy and prohibitive maintenance costs made its future untenable. The house had been used by the military during the war, and it emerged from that service in poor condition. In 1953 the decision was taken to demolish it — a decision that would have seemed extraordinary a generation earlier but that had by then become commonplace across rural England, as the country shed houses it could no longer afford to keep.",
+                "The demolition of Denbies is a loss that the architectural historian can mourn without quite resolving: it was one of the finest Victorian country houses in Surrey, and almost nothing survives above ground to mark it. What the demolition did, however, was leave the estate as bare farmland at a moment when the question of what to do with such land was still open. The chalk slopes of the North Downs, too thin-soiled and steep for conventional arable farming, would eventually suggest their own answer — one that nobody in 1953 could have predicted.",
+            ],
+        },
+        {
+            "title": "The Vineyard Revolution",
+            "image_url": "",
+            "image_caption": "Vines on the chalk slopes above Dorking: Denbies now produces over 400,000 bottles annually from 265 acres of vineyard.",
+            "paragraphs": [
+                "In 1986 Adrian White, a businessman with a background in engineering, purchased the Denbies estate and made a decision that seemed eccentric at the time: he would plant it entirely with vines. The chalk and greensand soils of the North Downs, he had concluded, were geologically close to those of the Champagne region in France — capable of producing the kind of cool-climate grapes that make refined sparkling and still wines. The resulting vineyard, 265 acres planted across the south-facing slopes above Dorking, is the largest single-estate wine operation in England, and its establishment effectively launched the modern era of English viticulture.",
+                "The scale of the enterprise was without precedent in England. White invested not only in the vines but in a purpose-built winery, visitor centre and restaurant, creating from scratch a wine tourism destination that drew on the Napa and Burgundy models while being unmistakably Surrey in character. The first vintages surprised critics. By the 1990s Denbies wines were winning medals at international competitions, and the estate had helped shift perception of English wine from an eccentric niche to a credible category. The vineyard revolution White started has since spread across the North and South Downs, with dozens of estates following the model he pioneered.",
+            ],
+        },
+        {
+            "title": "Wine & the North Downs Today",
+            "image_url": "",
+            "image_caption": "View south from the Denbies vineyard across the Weald, with Box Hill and the North Downs escarpment visible on the right.",
+            "paragraphs": [
+                "Today Denbies produces over 400,000 bottles a year from its 265-acre vineyard, including sparkling wines made by the traditional method, still whites from Bacchus and Ortega grapes, and increasingly accomplished reds from Pinot Noir. The estate offers vineyard tours by tractor and trailer, wine tastings, a working winery visitors can walk through during harvest, and a full restaurant with views across the vineyard to the wooded scarp of the North Downs. It has become one of Surrey's most visited attractions — not in spite of being a working farm, but because of it.",
+                "The geology that makes Denbies what it is — the chalk and Upper Greensand of the North Downs — is the same geology that underlies the Surrey Hills Area of Outstanding Natural Beauty surrounding the estate. Box Hill, one of the most celebrated viewpoints in south-east England, is visible from the upper rows of vines. Walking the North Downs Way long-distance footpath, which passes close to the estate, it is possible to understand Denbies in its full landscape context: a working vineyard embedded in one of England's most beautiful chalk hill ranges, producing wine that could not come from anywhere else.",
+            ],
+        },
+    ],
+}
+
+HISTORY["hurtwood-estate"] = {
+    "subtitle": "Three thousand acres of ancient Surrey heathland, freely open to the public for a century — the Hurtwood is one of England's most generous landscapes.",
+    "chapters": [
+        {
+            "title": "The Ancient Hurtwood",
+            "image_url": "",
+            "image_caption": "Heathland and birch scrub on the Hurtwood, Surrey Hills: a landscape shaped by grazing and charcoal-burning over two millennia.",
+            "paragraphs": [
+                "The name Hurtwood comes from the Old English 'hurte' — the bilberry or whortleberry, a low-growing moorland shrub whose dark berries once carpeted the sandy heaths of this part of the Surrey Hills. The wood itself forms part of the ancient manor of Shere, one of the oldest administrative units in the county, whose lands were held at the time of Domesday and whose boundaries have shifted remarkably little over the intervening millennium. The Hurtwood sits on the greensand ridge that runs west to east through Surrey, a band of acid, free-draining soils quite different from the chalk of the North Downs to the north, and it is this geology that gives the landscape its particular character: open heath, scrubby birchwood, patches of Scots pine and, on the higher ground, sweeping views across the Weald.",
+                "The estate was associated from the medieval period with the Bray family, whose most distinguished member, Sir Reginald Bray, served Henry VII as a trusted administrator and is credited with finding the crown of England in a hawthorn bush at Bosworth Field and placing it on the new king's head. The Bray connection gave the manor a certain historical gravity, but the Hurtwood itself remained what it had always been: common land grazed by the villagers of Shere and the surrounding parishes, a working landscape of marginal soils used for fuel, fodder and the rough pasture of sheep and cattle.",
+            ],
+        },
+        {
+            "title": "The Public Access Covenant",
+            "image_url": "",
+            "image_caption": "One of fifteen car parks managed by the Friends of the Hurtwood charity, which has maintained free public access since 1926.",
+            "paragraphs": [
+                "In 1926 the then owner of the Hurtwood estate took a step that was genuinely unusual for a private landowner in inter-war England: he granted a formal covenant giving the public permanent right of access across the entire 3,000-acre estate. The covenant was not a temporary concession or a permissive path agreement revocable at will; it was a binding legal instrument that ran with the land, ensuring that whoever owned the Hurtwood in the future could not close it to walkers. At a time when access to the English countryside was fiercely contested — the mass trespass on Kinder Scout was still six years away — this was an act of considerable liberality.",
+                "To manage the practical realities of large-scale public access, the Friends of the Hurtwood was established as a registered charity (number 200053). The charity maintains fifteen car parks distributed around the edge of the estate, keeps the network of paths and bridleways in good repair, and works with the landowner on the conservation management of the heathland and woodland. The arrangement has proved remarkably durable: visitors have been walking, cycling and riding across the Hurtwood for a full century without charge, and the charity continues to fund its work largely through voluntary donations and car park contributions.",
+            ],
+        },
+        {
+            "title": "The Hills & Their History",
+            "image_url": "",
+            "image_caption": "The view north from Holmbury Hill (261m) across the Surrey Weald: the summit marks the site of an Iron Age hillfort.",
+            "paragraphs": [
+                "The two high points of the Hurtwood — Holmbury Hill at 261 metres and Pitch Hill to the east — are among the most rewarding viewpoints in the Surrey Hills, and both carry visible traces of the deep past. Holmbury Hill is crowned by an Iron Age hillfort, its ramparts still clearly legible as a roughly oval enclosure some 200 metres across. The fort was probably built between 100 and 50 BC, during the century before the Roman invasion, when hilltop enclosures of this kind served as refuges, livestock corrals and centres of local power. Its ditches and banks have eroded over two millennia but remain substantial enough that even a casual visitor walking the summit path will notice the ground rising and falling in a pattern too regular to be natural.",
+                "Pitch Hill, though slightly lower, offers a different kind of drama. Here the greensand breaks through the surface as a series of sandstone outcrops — warm orange rock that catches the evening light — and the views south from the edge are almost as wide as those from Holmbury. Between and below the two hills, the Hurtwood conceals a network of deep lanes and ancient tracks, some of them holloway — medieval routes worn into the sandstone by centuries of use until they run several metres below the surrounding ground level. These holloways are among the most atmospheric features of the Surrey Hills, and the Hurtwood contains some of the finest examples.",
+            ],
+        },
+        {
+            "title": "The Hurtwood Today",
+            "image_url": "",
+            "image_caption": "Autumn heather and bracken on the Hurtwood: the estate is a Site of Special Scientific Interest for its lowland heath habitats.",
+            "paragraphs": [
+                "The Hurtwood is designated a Site of Special Scientific Interest (SSSI) for its lowland heathland habitats, which support a range of plants and animals that have become rare across south-east England as heath has been lost to agriculture, forestry and development. Heather, gorse and cross-leaved heath survive here in quantity, and the estate provides habitat for species including Dartford warbler, nightjar, adder and the silver-studded blue butterfly — all creatures of open, acid ground that have retreated elsewhere as their habitat has shrunk. Active conservation management, including rotational cutting and grazing, is needed to prevent the heath from succeeding to birch scrub and eventually woodland, and this work is carried out in partnership between the landowner, the Friends of the Hurtwood and Natural England.",
+                "For the walker, the Hurtwood offers an experience increasingly rare within an hour of central London: genuine wildness, long sight-lines, the smell of heather and pine, and almost complete absence of traffic noise on the higher ground. The fifteen car parks managed by the Friends provide easy access from multiple directions, and the paths connect to a wider network of Surrey Hills routes including the Greensand Way long-distance trail. Whether you come for the Iron Age fort on Holmbury Hill, the sandstone outcrops of Pitch Hill, the bilberries that gave this ancient wood its name, or simply the silence, the Hurtwood rewards every visit.",
+            ],
+        },
+    ],
+}
+
+
 # Bench types available for new bench orders
 BENCH_TYPES = [
     {
@@ -5777,6 +6244,7 @@ def visitor_history(request: Request, slug: str, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     ctx = _base_ctx(request, slug, estate, car_park, "Our History")
     ctx["page_content_html"] = _get_page_content_html(car_park, "history")
+    ctx["history_data"] = HISTORY.get(slug)
     return templates.TemplateResponse("location/visitor/history.html", ctx)
 
 

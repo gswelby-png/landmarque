@@ -310,7 +310,10 @@
   let userLat = null, userLng = null;
   let currentSort = 'distance';
   let activeFeats = new Set();
-  let markers = {};
+  let markerLayers = {};
+
+  const GOLD_STYLE = { color: '#B89A5A', fillColor: '#B89A5A', fillOpacity: 0.12, weight: 1.5, opacity: 0.75 };
+  const DIM_STYLE  = { color: '#3a3a3a', fillColor: '#2a2a2a', fillOpacity: 0.04, weight: 1,   opacity: 0.25 };
 
   function haversine(lat1, lon1, lat2, lon2) {
     const R = 6371, r = Math.PI / 180;
@@ -332,36 +335,86 @@
   }).addTo(map);
   map.setView([53, -2], 6);
 
-  const goldIcon = L.divIcon({
-    className: '',
-    html: '<div style="width:10px;height:10px;background:#B89A5A;border-radius:50%;border:2px solid rgba(255,255,255,.7);box-shadow:0 0 5px rgba(184,154,90,.5);"></div>',
-    iconSize:[10,10], iconAnchor:[5,5]
-  });
-  const dimIcon = L.divIcon({
-    className: '',
-    html: '<div style="width:7px;height:7px;background:#3a3a3a;border-radius:50%;border:1px solid #444;"></div>',
-    iconSize:[7,7], iconAnchor:[3,3]
-  });
-  const youIcon = L.divIcon({
-    className: '',
-    html: '<div style="width:14px;height:14px;background:#fff;border-radius:50%;border:3px solid #B89A5A;box-shadow:0 0 8px rgba(184,154,90,.8);"></div>',
-    iconSize:[14,14], iconAnchor:[7,7]
-  });
-
+  // Initial circle markers — visible immediately, replaced by real polygons once Overpass loads
   ALL_ESTATES.forEach(e => {
     if (!e.lat || !e.lng) return;
-    const m = L.marker([e.lat, e.lng], { icon: goldIcon }).addTo(map);
-    m.on('click', () => { window.location.href = '/explore/' + e.slug; });
-    markers[e.slug] = m;
+    const layer = L.circle([e.lat, e.lng], Object.assign({ radius: 900 }, GOLD_STYLE)).addTo(map);
+    layer.on('click', () => { window.location.href = '/explore/' + e.slug; });
+    markerLayers[e.slug] = layer;
   });
 
-  // Geolocation
+  // Load real estate boundary polygons from OpenStreetMap via Overpass API
+  (async () => {
+    const withCoords = ALL_ESTATES.filter(e => e.lat && e.lng);
+    const parts = withCoords.map(e =>
+      `relation(around:5000,${e.lat},${e.lng})["boundary"]`
+    );
+    const query =
+      `[out:json][timeout:60];\n(\n  ${parts.join(';\n  ')};\n);\nout body;\n>;\nout skel qt;`;
+    let data;
+    try {
+      const resp = await fetch('https://overpass-api.de/api/interpreter', {
+        method: 'POST',
+        body: 'data=' + encodeURIComponent(query)
+      });
+      if (!resp.ok) return;
+      data = await resp.json();
+    } catch (err) { return; }
+
+    // Build node & way lookup tables
+    const nodeMap = {}, wayMap = {};
+    data.elements.forEach(el => {
+      if (el.type === 'node') nodeMap[el.id] = [el.lat, el.lon];
+      if (el.type === 'way')  wayMap[el.id]  = el.nodes;
+    });
+
+    const assigned = new Set();
+    data.elements.filter(el => el.type === 'relation').forEach(rel => {
+      const outerIds = (rel.members || [])
+        .filter(m => m.type === 'way' && m.role === 'outer')
+        .map(m => m.ref);
+      if (!outerIds.length) return;
+
+      // Centroid of outer ring to match against nearest estate
+      const allPts = outerIds.flatMap(wid =>
+        (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
+      );
+      if (!allPts.length) return;
+      const cLat = allPts.reduce((s, p) => s + p[0], 0) / allPts.length;
+      const cLng = allPts.reduce((s, p) => s + p[1], 0) / allPts.length;
+
+      let best = null, bestD = Infinity;
+      withCoords.forEach(e => {
+        const d = Math.hypot(cLat - e.lat, cLng - e.lng);
+        if (d < bestD) { bestD = d; best = e; }
+      });
+      // Reject if centroid is >12 km from nearest estate, or already assigned
+      if (!best || bestD > 0.12 || assigned.has(best.slug)) return;
+      assigned.add(best.slug);
+
+      // Build Leaflet polygon rings from outer way node sequences
+      const rings = outerIds.map(wid =>
+        (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
+      ).filter(r => r.length > 2);
+      if (!rings.length) return;
+
+      // Swap circle placeholder for real boundary polygon
+      map.removeLayer(markerLayers[best.slug]);
+      const poly = L.polygon(rings, GOLD_STYLE).addTo(map);
+      poly.on('click', () => { window.location.href = '/explore/' + best.slug; });
+      markerLayers[best.slug] = poly;
+    });
+  })();
+
+  // Geolocation — user position stays as a small circle marker
   const nearLabel = document.getElementById('near-label');
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(pos => {
       userLat = pos.coords.latitude;
       userLng = pos.coords.longitude;
-      L.marker([userLat, userLng], { icon: youIcon }).addTo(map).bindPopup('You are here');
+      L.circleMarker([userLat, userLng], {
+        radius: 7, color: '#B89A5A', fillColor: '#fff', fillOpacity: 1, weight: 3
+      }).addTo(map).bindPopup('You are here');
       map.setView([userLat, userLng], 9);
       nearLabel.textContent = 'Sorted by distance';
       document.querySelectorAll('.estate-card').forEach(card => {
@@ -388,10 +441,10 @@
       if (matchQ && matchF) {
         card.classList.remove('hidden');
         visible.push(card);
-        if (markers[card.dataset.slug]) markers[card.dataset.slug].setIcon(goldIcon);
+        if (markerLayers[card.dataset.slug]) markerLayers[card.dataset.slug].setStyle(GOLD_STYLE);
       } else {
         card.classList.add('hidden');
-        if (markers[card.dataset.slug]) markers[card.dataset.slug].setIcon(dimIcon);
+        if (markerLayers[card.dataset.slug]) markerLayers[card.dataset.slug].setStyle(DIM_STYLE);
       }
     });
     visible.sort((a, b) => {

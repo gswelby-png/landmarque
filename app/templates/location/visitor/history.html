@@ -64,7 +64,33 @@
 {% block header %}{% endblock %}
 
 {% block content %}
-{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+{% if page_content_html %}{{ page_content_html|safe }}
+{% elif history_data %}
+<div class="history-wrap">
+
+  <div class="history-page-title">{{ estate_name }}</div>
+  <p class="history-page-subtitle">{{ history_data.subtitle }}</p>
+
+  <hr class="divider">
+
+  {% for chapter in history_data.chapters %}
+  <div class="chapter">
+    <div class="chapter-title">{{ chapter.title }}</div>
+    {% if chapter.image_url %}
+    <img class="chapter-image" src="{{ chapter.image_url }}" alt="{{ chapter.image_caption }}">
+    {% if chapter.image_caption %}
+    <p class="chapter-image-caption">{{ chapter.image_caption }}</p>
+    {% endif %}
+    {% endif %}
+    {% for para in chapter.paragraphs %}
+    <p>{{ para }}</p>
+    {% endfor %}
+  </div>
+  {% if not loop.last %}<hr class="divider">{% endif %}
+  {% endfor %}
+
+</div>
+{% else %}
 <div class="history-wrap">
 
   <div class="history-page-title">{{ estate_name }}</div>
