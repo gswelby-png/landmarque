@@ -5695,6 +5695,641 @@ HISTORY["hurtwood-estate"] = {
     ],
 }
 
+HISTORY["albury-estate"] = {
+    "subtitle": "A Surrey Hills estate shaped by centuries of ambition — from Norman lords and John Evelyn's visionary gardens to Augustus Pugin's Gothic masterstroke.",
+    "chapters": [
+        {
+            "title": "ORIGINS & MEDIEVAL HISTORY",
+            "image_url": "",
+            "image_caption": "The redundant Saxon and medieval church at Albury Park, one of Surrey's most remarkable ecclesiastical survivals",
+            "paragraphs": [
+                "The land at Albury has been settled since before the Conquest, and its ancient church — now redundant and preserved in the care of the Churches Conservation Trust — stands as the most eloquent witness to that long continuity. Saxon in origin, enlarged through the Norman and medieval periods, it contains a remarkable series of architectural features spanning nearly a thousand years: a Saxon chancel arch, a twelfth-century nave, and a Jacobean chapel added by the Howards of Albury. Set apart from the modern village, it retains an atmosphere of extraordinary stillness, its grassy churchyard shaded by immense yews, its flint walls recording the successive ambitions of those who once held the surrounding estate.",
+                "The Tillingbourne valley, in which Albury sits, has long been among the most sheltered and productive in the Surrey Hills. Its waters once powered a succession of mills, and its fertile floor supported the agricultural wealth that underpinned the estate's fortunes across the medieval centuries. The manor passed through numerous hands — including the powerful Howards — before arriving in the seventeenth century at a moment of transformation. It was under the ownership of Henry Howard, later sixth Duke of Norfolk, that Albury would first attract the attentions of one of the age's greatest minds and begin its journey from ancient manor to designed landscape.",
+            ],
+        },
+        {
+            "title": "JOHN EVELYN AND THE GARDENS",
+            "image_url": "",
+            "image_caption": "The terraced hillside gardens at Albury Park, conceived by John Evelyn in the 1670s and among the earliest landscape designs of their kind in England",
+            "paragraphs": [
+                "In 1667, Henry Howard invited his close friend John Evelyn — diarist, polymath, and the foremost garden theorist of his age — to lay out the grounds at Albury. The result was one of the earliest and most ambitious formal garden designs in England, conceived under the twin influences of Evelyn's extensive travels in France and Italy and his profound admiration for classical antiquity. Evelyn carved a great terrace into the hillside above the house, nearly a quarter of a mile in length, and cut through it a remarkable tunnel some two hundred and fifty feet long — a feat of horticultural engineering without precedent in Surrey. Below, he laid out parterres, ponds, and plantations that brought continental grandeur to this intimate valley.",
+                "Evelyn's scheme at Albury was described in his own diary with evident pride, and it influenced his celebrated treatise Sylva, the foundational text of English arboriculture. Though the strict geometry of his formal garden has softened over the centuries — later owners introduced the flowing lines of the landscape style — the great terrace and its tunnel survive substantially intact, constituting one of the most significant seventeenth-century garden survivals in the country. To walk along Evelyn's terrace today, with the Tillingbourne glinting in the valley below and the Surrey Hills rising beyond, is to stand within a living monument to the age of the gentleman-scholar.",
+            ],
+        },
+        {
+            "title": "PUGIN'S TRANSFORMATION",
+            "image_url": "",
+            "image_caption": "The north facade of Albury Park house as remodelled by Augustus Welby Northmore Pugin in 1847, with its distinctive Gothic chimneystack skyline",
+            "paragraphs": [
+                "By the mid-nineteenth century, Albury had passed into the ownership of Henry Drummond, a banker, politician, and founder of the Catholic Apostolic Church, who in 1847 commissioned Augustus Welby Northmore Pugin to remodel the house in an ambitious Gothic Revival style. Pugin was at the height of his creative powers — this was the period in which he was also completing his work on the Palace of Westminster — and the commission at Albury afforded him the rare opportunity to apply his medieval vision to a substantial country house in a setting of natural beauty. He transformed the existing Tudor and Jacobean fabric with a vigour that was characteristically his own, adding clustered chimneystacks, pointed gables, and decorative stonework that drew directly from the English Gothic tradition he had spent his career championing.",
+                "The result is a house of singular character, its skyline of sixty-three individually designed chimneystacks — no two alike — representing perhaps Pugin's most exuberant essay in domestic Gothic. Though the interiors were substantially altered by subsequent owners, the exterior survives as one of the most important examples of Pugin's residential work, and the house is listed Grade I. Drummond and Pugin shared not merely an aesthetic but a deep Catholic sympathetic vision, and the chapel that Pugin added to the estate church was conceived with the same liturgical seriousness that informed his great ecclesiastical commissions. Together, house and chapel constitute a remarkable memorial to one of Victorian England's most brilliant and tormented creative spirits.",
+            ],
+        },
+        {
+            "title": "THE ESTATE TODAY",
+            "image_url": "",
+            "image_caption": "The parkland and River Tillingbourne at Albury, looking towards Pugin's transformed house through veteran oak and sweet chestnut",
+            "paragraphs": [
+                "Albury Park today operates as a private residential estate, with the principal house divided into apartments and the wider grounds managed for the enjoyment of residents and a small number of visitors. The great terrace laid out by Evelyn remains walkable, the tunnel still draws the eye with its improbable length, and the ancient parkland — with its magnificent sweet chestnuts, many of them planted in the seventeenth century — gives the estate a grandeur that transcends its relatively modest acreage. The redundant church, accessible to visitors, is maintained by the Churches Conservation Trust and represents a must-visit for anyone with an interest in the continuous human occupation of this valley across more than a millennium.",
+                "The Tillingbourne, which winds below the terrace and through the estate's water meadows, links Albury to the broader story of Surrey Hills industry and ecology — once driving the mills that brought prosperity to the valley, now a chalk stream of ecological importance, recovering quietly under sympathetic management. The estate exists at a compelling intersection of English history: medieval faith, seventeenth-century horticultural ambition, and Victorian Gothic Revival artistry are all legible in the landscape for those who know where to look. Albury rewards the attentive visitor with layers of meaning that few Surrey estates can match.",
+            ],
+        },
+    ],
+}
+
+HISTORY["wotton-estate"] = {
+    "subtitle": "Birthplace and lifelong passion of John Evelyn, the great seventeenth-century diarist whose gardens here shaped the course of English landscape thinking.",
+    "chapters": [
+        {
+            "title": "JOHN EVELYN AND HIS WORLD",
+            "image_url": "",
+            "image_caption": "Portrait of John Evelyn (1620–1706), diarist and arboriculturalist, whose connection with Wotton House spanned his entire life",
+            "paragraphs": [
+                "John Evelyn was born at Wotton House on 31 October 1620, and the estate in the Surrey Hills near Dorking would remain the emotional and intellectual centre of his long life even when his circumstances drew him to London, Oxford, and the courts of Europe. The house had been in the Evelyn family since the sixteenth century, sustained by the profits of gunpowder mills — a quietly ironic foundation for a man who would become the era's most eloquent advocate for trees, gardens, and the improving of the natural world. His diary, kept for over sixty years and running to more than a million words, is among the most extraordinary documents of the seventeenth century: a record of friendship with Pepys, of the Great Fire and the Great Plague, of scientific inquiry at the nascent Royal Society, and always, returning like a theme, of Wotton.",
+                "Though Wotton passed in the first instance to his elder brother George, John Evelyn was never far from its affairs, and the estate shaped his thinking at every stage. His travels in France and Italy in the 1640s — made during the upheaval of the Civil War — brought back an education in formal garden design, in classical antiquity, and in the landscape traditions of the continent that he would spend the rest of his life translating into an English idiom. Wotton was both his laboratory and his inheritance: the place where ideas became earth, water, and stone, and where the principles articulated in Sylva and Elysium Britannicum could be tested against the specific genius of a Surrey valley.",
+            ],
+        },
+        {
+            "title": "THE WOTTON GARDENS",
+            "image_url": "",
+            "image_caption": "The cascading water garden and terraced grounds at Wotton House, surviving elements of Evelyn's seventeenth-century design",
+            "paragraphs": [
+                "The gardens that Evelyn created at Wotton — partly for his own pleasure, partly to advise and assist his brother George — were conceived on an ambitious scale that reflected the full range of his continental experience. He laid out formal terraces on the hillside above the house, created a series of interconnected ponds fed by natural springs, and planted with a botanical generosity that anticipated the landscape movement by several decades. The water cascade that descends through the grounds is among the most atmospheric garden survivals of the seventeenth century in England, its gentle fall and wooded setting suggesting the Italian giardino that so captivated Evelyn on his Grand Tour. He designed, too, a small island temple — a garden building of genuine sophistication for its period.",
+                "Evelyn's own account of Wotton in his diary is characteristically precise and affectionate, noting improvements made over decades with the attention of a man who understood that gardens are not made but grown. The formal structure he imposed has been softened by time and by the naturalistic replanting of succeeding generations, but the bones of his design remain legible — particularly the relationship between the house, the hillside, and the water that gives Wotton its particular character. The gardens were designated of special historic interest, and they stand as the most tangible surviving expression of the garden philosophy of England's first great horticultural theorist.",
+            ],
+        },
+        {
+            "title": "A HOUSE REBORN",
+            "image_url": "",
+            "image_caption": "The south front of Wotton House, rebuilt after the catastrophic fire of 1869 and subsequently restored to serve as a country house hotel",
+            "paragraphs": [
+                "The house that George Evelyn remodelled in the 1640s and 1650s — creating the substantial brick mansion that gave the estate its Georgian character — survived largely intact for two centuries before catastrophe struck in 1869, when fire gutted the principal rooms and destroyed much of the historic fabric that John Evelyn himself had known. The rebuilding that followed was competent if uninspired, restoring the house to habitable condition but stripping away much of the seventeenth-century character that had made it so evocative a memorial to its most famous resident. Through the nineteenth and twentieth centuries, Wotton passed through several ownerships, each leaving its mark on the fabric and the grounds, and the estate's trajectory was one of gradual adaptation to the changing economics of country house life.",
+                "The most recent chapter in the house's physical story has been its conversion and restoration as a hotel and conference centre, a use that has required sensitive investment in both the structure and the grounds. The restoration has succeeded in returning the house to a condition of maintained dignity, and the gardens have been the particular beneficiary of recent care — the cascade cleared, the ponds restored, and the historic terraces once again legible as the work of a designing intelligence. For a house so intimately associated with the idea of stewardship — Evelyn's entire intellectual life was devoted to the responsible management of the natural world — it is perhaps fitting that its modern existence depends upon the sustained attention of those who value what he left behind.",
+            ],
+        },
+        {
+            "title": "THE ESTATE IN LITERATURE",
+            "image_url": "",
+            "image_caption": "A page from John Evelyn's diary, the great documentary record of seventeenth-century life in which Wotton appears as a recurring place of meaning",
+            "paragraphs": [
+                "No English country house is more thoroughly documented in literature than Wotton, and the documentation is remarkable precisely because it is the work of the house's own occupant rather than of an outside observer. Evelyn's diary — first published in 1818 and now recognised as one of the supreme works of English autobiographical writing — returns to Wotton at every stage of his life, and the house and its garden function within it almost as a character: a fixed point of meaning against which the turbulence of the seventeenth century — Civil War, Restoration, plague, fire, revolution — can be measured. To read the diary is to inhabit Wotton as Evelyn inhabited it, with a sense of its seasons, its weather, its particular quality of light through the Surrey Hills.",
+                "Sylva, or A Discourse of Forest Trees, published in 1664 and addressed to the Fellows of the Royal Society, drew directly on Evelyn's experience at Wotton and Albury to produce what remains the founding text of British arboriculture. Its argument — that England's naval and economic future depended upon the deliberate cultivation of native timber — was both practically urgent and philosophically rich, rooting the case for planting in a vision of national stewardship that anticipated the conservation thinking of later centuries. The trees Evelyn planted at Wotton are long gone, but the ideas he planted in Sylva have proved more durable: the book ran to multiple editions across two centuries and shaped the thinking of every significant landscape practitioner who came after him.",
+            ],
+        },
+    ],
+}
+
+HISTORY["parham-house"] = {
+    "subtitle": "One of England's most perfectly preserved Elizabethan houses, set within its original deer park in West Sussex and filled with exceptional collections assembled over four centuries.",
+    "chapters": [
+        {
+            "title": "ELIZABETHAN ORIGINS",
+            "image_url": "",
+            "image_caption": "The south front of Parham House, built in 1577 of local Pulborough stone and little altered in its essential character since the reign of Elizabeth I",
+            "paragraphs": [
+                "Parham House was begun in 1577, the year that Sir Thomas Palmer received licence to build on land that had passed from the dissolved Monastery of Westminster at the Dissolution. The date places it precisely within the great flowering of Elizabethan domestic architecture — that confident, ambitious style that produced Longleat, Hardwick, and Burghley — and Parham shares with those greater houses the characteristic qualities of the age: the long, light-hungry facades of mullioned windows, the lofty great hall rising through two storeys, and the skyline of chimneys and gables that announces the wealth and aspiration of the builder. Built of warm Pulborough stone quarried from the estate, it sits with an authority that suggests deep rootedness, though in truth it was a new foundation on ancient land.",
+                "The house passed through several families before arriving, in the eighteenth century, in the hands of the Bisshopp family and subsequently the Curzon-Herrick family, each adding to the collections and adjusting the interiors without fundamentally disturbing the Elizabethan character of the whole. It is this continuity of restraint — the repeated choice not to rebuild, not to remodel in the fashionable style of the moment — that has preserved Parham as one of the most authentic Elizabethan interiors in England. When the Pearson family acquired it in 1922, they found a house that had survived four centuries with its essential character intact, and they understood immediately both the responsibility and the privilege of that inheritance.",
+            ],
+        },
+        {
+            "title": "THE COLLECTIONS",
+            "image_url": "",
+            "image_caption": "The Great Hall at Parham, hung with Tudor and Stuart portraits above rush matting, as it has appeared since the Pearson family's restoration in the 1920s",
+            "paragraphs": [
+                "The collections at Parham are among the finest in any house open to the public in the south of England, and their distinction lies not in sheer number but in quality and coherence. The portrait collection — spanning the Tudor, Stuart, and Georgian periods — is hung in the great rooms with an eye for character that transforms the experience of moving through the house into something approaching a conversation across centuries. Many of the portraits are of historical figures with no connection to Parham's own story, acquired for their artistic merit and their capacity to people the interiors with the faces of their age. Among them hang works by or attributed to Holbein, Gheeraerts, and Lely, giving the collection a scope that belies the relative modesty of the house's scale.",
+                "The needlework collection is, however, Parham's most celebrated distinction, and it is nationally significant. Assembled principally by the Pearson family in the twentieth century, it encompasses remarkable examples of English embroidery from the sixteenth to the eighteenth centuries, including rare pieces of Elizabethan and Jacobean work that illuminate a domestic craft tradition too often overlooked in accounts of the decorative arts. The great bed in the Green Room, hung with original needlework, and the series of embroidered panels displayed throughout the house create an atmosphere of intimate richness entirely appropriate to the building. For students of textile history, Parham is simply without rival among houses of its size.",
+            ],
+        },
+        {
+            "title": "THE WALLED GARDEN & PARK",
+            "image_url": "",
+            "image_caption": "The four-acre walled garden at Parham, with its celebrated Wendy House and herbaceous borders backed by ancient brick and flint walls",
+            "paragraphs": [
+                "The four-acre walled garden at Parham is among the largest and most productive in the ownership of a private house open to visitors in England. Its walls of brick and flint, warmed by the West Sussex sun, enclose a working garden of considerable ambition — herbaceous borders of great depth and complexity, a cutting garden, a kitchen garden supplying the house, and at its centre the celebrated Wendy House, a small thatched building that has become one of the most photographed garden features in the county. The planting is managed with a sensitivity to the Elizabethan and Georgian periods in which the house was furnished, favouring species and varieties that carry historical resonance alongside contemporary horticultural interest.",
+                "Beyond the walled garden, the parkland at Parham is a landscape of ancient beauty. Fallow deer graze beneath veteran oak trees whose age rivals the house itself, and the broad sweep of the park — undivided by roads and largely unchanged in its essential topography since the Tudor period — gives the view from the house's south front a quality of timelessness that photography struggles to convey. The South Downs rise beyond the park's boundaries, their chalk escarpment providing a dramatic backdrop that situates Parham within the broader landscape of West Sussex with a clarity of composition that seems almost designed. In spring and summer, the combination of deer, ancient oaks, and open pasture makes the park one of the finest examples of designed Elizabethan setting in the country.",
+            ],
+        },
+        {
+            "title": "PARHAM TODAY",
+            "image_url": "",
+            "image_caption": "The west front of Parham House seen across the deer park on a summer morning, a view that has changed little in its essential elements since the seventeenth century",
+            "paragraphs": [
+                "Parham today is a house that wears its obligations lightly — open to the public throughout the summer season, available for private events and education, yet still very much a home in the hands of the Pearson family who have cared for it for over a century. The Parham Park Trust, established to secure the house and its collections in perpetuity, represents the family's commitment to a future in which Parham continues to be lived in, cared for, and enjoyed by those who share their appreciation of its exceptional qualities. This combination of family stewardship and charitable governance is an increasingly rare and valued model in the management of historic houses, and Parham has navigated it with evident success.",
+                "The house's programme of events — from plant sales and garden tours to craft fairs and antique markets — draws a wide and varied audience to the estate throughout the year, and the gardens and parkland are increasingly recognised not merely as settings for the house but as destinations in their own right. Conservation work continues steadily, informed by ongoing research into the collections and the building fabric. New findings about the history of the portraits, the origins of the needlework, and the development of the garden continue to emerge, reminding visitors that Parham is not a static monument but a living institution still in the process of discovering and telling its own story.",
+            ],
+        },
+    ],
+}
+
+HISTORY["leonardslee-gardens"] = {
+    "subtitle": "A vast Victorian woodland garden in the Sussex Weald, where the Loder family cultivated botanical genius, extraordinary rhododendrons, and a colony of free-roaming wallabies across more than a century of inspired stewardship.",
+    "chapters": [
+        {
+            "title": "THE LODER VISION",
+            "image_url": "",
+            "image_caption": "The valley lakes at Leonardslee Gardens in late spring, with the woodland canopy reflected in still water beneath flowering rhododendrons",
+            "paragraphs": [
+                "When Sir Edmund Loder acquired Leonardslee in 1889, he inherited not a garden but a potential — 240 acres of steeply wooded Wealden ghyll, cut through by a chain of hammer ponds left by the iron industry that had shaped this part of Sussex for centuries. A man of scientific temperament and considerable private means, Loder grasped immediately both the challenge and the opportunity that this dramatic topography presented. The acid, free-draining soils of the Weald were precisely suited to the ericaceous plants — rhododendrons, azaleas, camellias, magnolias — that were flooding into English gardens from the plant hunters of the Victorian era, and the shelter afforded by the deep valley promised protection from the frosts that elsewhere in England limited the cultivation of these tender exotics.",
+                "Loder's approach was systematic and visionary in equal measure. He planted on a scale that reflected both his resources and his ambition, establishing the woodland framework that gives Leonardslee its distinctive character — the paths winding through mature conifers and deciduous trees, opening at intervals to views across the chain of lakes — while simultaneously pursuing a programme of hybridisation that would produce some of the most celebrated rhododendron varieties in the world. He corresponded with the great botanists of his age, received plants from Kew and from private collectors across Europe and Asia, and maintained meticulous records of his plantings that remain valuable documents for garden historians today.",
+            ],
+        },
+        {
+            "title": "THE RHODODENDRON COLLECTION",
+            "image_url": "",
+            "image_caption": "Rhododendron loderi 'King George' in full flower at Leonardslee, the most celebrated of the hybrids raised by Sir Edmund Loder in the 1890s",
+            "paragraphs": [
+                "The rhododendron collection at Leonardslee is one of the most important in private hands anywhere in the world, and its crown jewel is Rhododendron x loderi — the hybrid raised by Sir Edmund in 1901 by crossing Rhododendron fortunei with Rhododendron griffithianum, two species newly introduced from Asia. The result exceeded every expectation: a vigorous, large-leafed shrub producing enormous trusses of flowers in white and the softest pink, heavily fragrant, of a quality that immediately attracted the attention of the Royal Horticultural Society. 'King George', the finest clone of the cross, received an Award of Garden Merit that it retains to this day, and specimens planted in the original grove by Loder himself have grown to tree-like proportions, creating in late May an experience of floral abundance that is without parallel in the English garden.",
+                "The broader rhododendron and azalea collection at Leonardslee encompasses hundreds of species and cultivars, planted through the valley in drifts and masses that create the impression less of a curated collection than of a natural forest. The timing of the flowering season — from the earliest species in March through to the late azaleas of early June — extends the garden's period of peak interest across three months, drawing visitors from across Europe and beyond. The rock garden, created from Sussex sandstone and planted with dwarf rhododendrons and alpine species, adds a further dimension to what is already a collection of extraordinary breadth. At its spring peak, the combination of flowering trees, shrubs, and their reflections in the hammer pond lakes creates an effect of almost supernatural beauty.",
+            ],
+        },
+        {
+            "title": "THE WALLABIES OF LEONARDSLEE",
+            "image_url": "",
+            "image_caption": "Bennett's wallabies in the deer park at Leonardslee, descendants of the animals introduced by Sir Edmund Loder in the 1890s and free-ranging on the estate for over a century",
+            "paragraphs": [
+                "Among the many distinctions of Leonardslee, none is more surprising to the first-time visitor than the sight of Bennett's wallabies grazing freely in the deer park below the main garden. The colony was established by Sir Edmund Loder in the 1890s — one expression of the Victorian passion for exotic animal husbandry — and has survived on the estate continuously ever since, making it one of the longest-established free-ranging wallaby populations in England. The animals have adapted with remarkable success to the Sussex climate, their compact build and thick fur providing adequate insulation against the mild winters of the Weald, and successive generations have bred without difficulty in the sheltered conditions of the enclosed park.",
+                "The wallabies became, over the course of the twentieth century, as much a part of Leonardslee's identity as the rhododendrons themselves, and the sight of them moving through the early morning mist below the lakes — improbable, unhurried, entirely at home — is one of those experiences that visitors describe years afterwards with undiminished wonder. They have outlasted several changes of ownership, survived the disruptions of two World Wars and the long period of the garden's closure in the early twenty-first century, and returned with the reopened garden as a living thread of continuity connecting the present to Sir Edmund's founding vision. Their presence is a reminder that Leonardslee was always as much a statement of personality as a horticultural enterprise.",
+            ],
+        },
+        {
+            "title": "RESTORATION AND REVIVAL",
+            "image_url": "",
+            "image_caption": "Leonardslee Gardens following the completion of the restoration programme, with the lakes cleared, paths reopened, and the Victorian tea house returned to use",
+            "paragraphs": [
+                "After the death of the last Loder family member to live at Leonardslee, the garden passed through successive ownerships and eventually into a period of closure that lasted several years into the twenty-first century. The fabric of the garden — the lakes, the paths, the structures, and above all the plants — suffered the inevitable consequences of reduced maintenance, and there was genuine anxiety among botanists and garden historians that collections of irreplaceable importance might be lost. The reopening of Leonardslee under new ownership, following an extensive programme of restoration, was therefore greeted with widespread relief and considerable critical attention: a garden of this significance returning to life is an event of national importance.",
+                "The restoration has been conducted with a commitment to the Loder vision that has won broad admiration. The hammer pond lakes have been cleared and their margins restored; the paths through the woodland have been reopened and resurfaced; the Victorian structures — the rock garden, the tea house, the viewing platforms — have been repaired and returned to use; and the planting has been carefully renewed where loss had occurred, drawing on the original records to guide decisions of species and placement. New facilities — a restaurant, improved visitor infrastructure, carefully sited accommodation — have been added with a sensitivity to the landscape that reflects the understanding that Leonardslee's commercial future depends upon the integrity of the experience it offers. The garden that visitors find today is both a restoration of what the Loders created and a confident statement of what Leonardslee can be in the century ahead.",
+            ],
+        },
+    ],
+}
+
+HISTORY["exbury-gardens"] = {
+    "subtitle": "Lionel de Rothschild's magnificent obsession — two hundred acres of Hampshire woodland transformed into the world's greatest rhododendron garden, complete with its own steam railway and an unbroken legacy of botanical discovery.",
+    "chapters": [
+        {
+            "title": "LIONEL DE ROTHSCHILD'S VISION",
+            "image_url": "",
+            "image_caption": "Lionel Nathan de Rothschild (1882–1942), the banker and botanist who created Exbury Gardens from 1919 and dedicated his life to its development",
+            "paragraphs": [
+                "When Lionel Nathan de Rothschild purchased the Exbury estate in 1919, he was thirty-seven years old, in possession of one of England's great private fortunes, and possessed of a passion for plants that those who knew him recognised immediately as something altogether more than a gentleman's hobby. The two-hundred-acre woodland garden he set out to create on the western shore of the Beaulieu River in Hampshire was conceived from the outset on a scale that reflected both his resources and the absolute seriousness of his botanical ambitions. He employed a workforce of some ten thousand labourers over the course of the 1920s to prepare the ground — laying twenty-two miles of underground irrigation pipe, constructing bridges, paths, and walls, and planting on a scale that had no precedent in English private garden history.",
+                "Rothschild brought to Exbury the combination of analytical rigour and aesthetic sensitivity that characterised the best of the Rothschild tradition. He studied botany systematically, corresponded with the leading plant hunters of his generation — including Frank Kingdon-Ward and George Forrest — and received from their expeditions to the Himalayas, China, and Burma the plant material that would form the foundation of his collection. He visited Kew regularly, sat on the Council of the Royal Horticultural Society, and was elected a Fellow of the Linnean Society, bringing to his garden the authority of a scientist as well as the instincts of an artist. At Exbury, these two modes of understanding were never in conflict: science served beauty, and beauty justified science.",
+            ],
+        },
+        {
+            "title": "THE ROTHSCHILD HYBRIDS",
+            "image_url": "",
+            "image_caption": "Rhododendron 'Exbury' in bloom in the Home Wood, one of the hundreds of named hybrids raised by Lionel de Rothschild and his successors at Exbury",
+            "paragraphs": [
+                "The hybridisation programme that Lionel de Rothschild established at Exbury was the most ambitious ever undertaken by a private individual, and its results transformed the genus Rhododendron as grown in gardens throughout the temperate world. Working in the purpose-built laboratory and propagating houses he constructed at Exbury, Rothschild made thousands of controlled crosses between species collected from the wild, selecting for flower colour, fragrance, vigour, and hardiness with the patience and precision of a scientist who understood that the finest results might require a generation of plants to assess. The hybrids that emerged — many of them bearing the names of family members, racehorses, and places associated with the Rothschild world — include some of the most widely grown garden shrubs of the twentieth century.",
+                "Among the most celebrated are the Exbury azaleas — deciduous hybrids derived from North American and Asian species, producing in late May a display of colour in yellow, orange, salmon, and flame that has never been surpassed. Their fragrance, carried across the garden on warm evenings, is an experience that regular visitors describe as one of the particular pleasures of the English garden year. The rhododendron collection proper encompasses hundreds of species and named cultivars, planted in the woodland in associations that allow visitors to understand the full range of the genus — from the gigantic-leafed species of the Himalayas to the dwarf alpines of the rock garden — within a single, coherent landscape.",
+            ],
+        },
+        {
+            "title": "THE STEAM RAILWAY",
+            "image_url": "",
+            "image_caption": "The Exbury steam railway winding through the southern section of the garden, with rhododendrons in flower along the lineside in late May",
+            "paragraphs": [
+                "The narrow-gauge steam railway that winds for nearly two miles through the southern section of Exbury Gardens is an institution beloved by visitors of every age, and its origins reflect the practical as much as the romantic. The line was originally laid to serve the operational needs of the garden — transporting plants, compost, and equipment across terrain that resisted conventional vehicle access — and in this respect it belongs to a tradition of estate railways found at a number of large English country houses and gardens in the early twentieth century. The transition to passenger carrying, which transformed the railway from a working tool into one of Exbury's most distinctive attractions, came about as the garden opened more fully to visitors in the later twentieth century.",
+                "The railway operates a fleet of small steam and diesel locomotives, the most characterful of which are the named steam engines that haul open carriages through the woodland and along the margins of the ponds in what amounts to a guided tour of the southern quarter of the garden. For families with young children, the railway is frequently the most vividly remembered aspect of a visit, the combination of live steam, whistles, and moving landscape providing a sensory richness that no static garden experience can replicate. For the garden itself, the railway performs the valuable function of drawing visitors into areas they might not otherwise reach — dispersing the crowds that concentrate around the most celebrated plantings and ensuring that the full extent of Lionel de Rothschild's vision is experienced rather than merely glimpsed.",
+            ],
+        },
+        {
+            "title": "THE RIVER & THE ESTATE TODAY",
+            "image_url": "",
+            "image_caption": "The Beaulieu River at Exbury, with the tidal foreshore and marshes of the New Forest beyond — the water boundary that shapes the estate's character and ecology",
+            "paragraphs": [
+                "The Beaulieu River, against which Exbury's eastern and southern boundaries press, is not merely a picturesque feature but a defining ecological and historical presence. Tidal through the section that borders the estate, it connects Exbury to the broader world of the New Forest and the Solent, its mudflats and saltmarshes forming one of the most important wildlife habitats in southern England. Wading birds and wildfowl use the foreshore through the winter months; in summer, the river is busy with yachts making for Buckler's Hard, the historic shipbuilding village a mile upstream. The relationship between the enclosed world of the garden and the open, tidal world of the river gives Exbury a sense of place that gardens without such a boundary rarely achieve.",
+                "The estate today remains in the care of the de Rothschild family, whose commitment to Lionel's vision has survived the disruptions of war — the garden was requisitioned by the Royal Navy during the Second World War and took years to recover — and the economic pressures of the later twentieth century. Edmund de Rothschild, Lionel's son, devoted much of his life to the garden's restoration and continued development, and the current generation has brought to it both the resources and the botanical knowledge necessary to ensure its continuation as a living institution of international significance. The hybridisation work continues, the collections are managed with scientific seriousness, and the garden opens each year to visitors who come from across the world to witness what one man's passion, applied with sufficient resource and intelligence, can achieve.",
+            ],
+        },
+    ],
+}
+
+HISTORY["broadlands-estate"] = {
+    "subtitle": "From the birthplace of a Victorian Prime Minister to the honeymoon retreat of a Queen, Broadlands has occupied the very heart of English public life for three centuries.",
+    "chapters": [
+        {
+            "title": "THE PALMERSTON CONNECTION",
+            "image_url": "",
+            "image_caption": "The south front of Broadlands, its Palladian facade reflected in the quiet waters of the River Test",
+            "paragraphs": [
+                "The manor of Broadlands stands in one of Hampshire's most celebrated river landscapes, its lawns running down to the broad, chalk-clear waters of the Test in a prospect of Arcadian perfection. The estate's associations with national greatness begin with a birth: Henry John Temple, the future Lord Palmerston, was born here in 1784, the son of the second Viscount. The house he entered was already distinguished — a Palladian composition of exceptional refinement, remodelled from an earlier structure by Henry Holland in the 1760s under the patronage of the first Viscount Palmerston, who employed Capability Brown to lay out the grounds with characteristic sweeping naturalism. Brown's genius transformed what had been a formal garden into a landscape of open parkland, serpentine water, and carefully composed tree planting that appears, even now, to be the work of nature rather than art.",
+                "Palmerston himself — twice Foreign Secretary and twice Prime Minister, the dominant figure in British foreign policy for a generation — grew up at Broadlands and retained a deep affection for it throughout a political life of exceptional longevity and drama. The house shaped the man: its blend of elegance and practicality, its connections to Hampshire society, and its river setting instilled in the young Temple an instinct for the well-managed estate that would later translate into a confident, pragmatic approach to affairs of state. When he died in 1865, still Prime Minister at eighty, he was buried in Westminster Abbey, but it was to Broadlands that his contemporaries looked when they sought to understand the private life behind the public legend.",
+            ],
+        },
+        {
+            "title": "THE MOUNTBATTEN ERA",
+            "image_url": "",
+            "image_caption": "Admiral of the Fleet Earl Mountbatten of Burma, photographed at Broadlands in the early 1960s",
+            "paragraphs": [
+                "Broadlands entered its most dramatic period of fame in the twentieth century when it became the seat of Admiral of the Fleet Earl Mountbatten of Burma, one of the most remarkable figures of the age. Mountbatten came to Broadlands through his marriage in 1922 to Edwina Ashley, granddaughter of the financier Sir Ernest Cassel and one of the richest heiresses in England. The couple refurbished the house to a standard of considerable comfort, entertaining a roster of guests that ranged from film stars to heads of government. Mountbatten's career — naval commander, Supreme Allied Commander South-East Asia, last Viceroy of India — brought Broadlands into contact with the central events of the mid-twentieth century, and the house accumulated the memorabilia of an extraordinary life: medals, gifts from Indian princes, portraits, and dispatches from the furthest reaches of Empire.",
+                "Edwina Mountbatten, who proved to be a figure of equal if very different distinction, transformed Broadlands into a place of practical generosity during the Second World War, working tirelessly for St John Ambulance and overseeing the use of the house for military purposes. Mountbatten's assassination by an IRA bomb in 1979 cast a long shadow over the estate. He is buried in Romsey Abbey, within sight of the house, and the rooms at Broadlands still bear the imprint of his personality with an immediacy that more impersonal historic houses rarely achieve.",
+            ],
+        },
+        {
+            "title": "A ROYAL HONEYMOON",
+            "image_url": "",
+            "image_caption": "The porticoed entrance front of Broadlands, where Princess Elizabeth and Prince Philip arrived for their honeymoon in November 1947",
+            "paragraphs": [
+                "In November 1947, Broadlands received two of the most famous guests in its long history. Princess Elizabeth and Lieutenant Philip Mountbatten, newly married at Westminster Abbey in a ceremony that brought a note of splendour to an austere and exhausted nation, chose Broadlands as the first stage of their honeymoon. Philip was Mountbatten's nephew, and the intimacy of the family connection made the Hampshire house feel both private and welcoming. The couple arrived to find the estate in its late-autumn best, the Test meadows quiet, the parkland golden, and the house prepared to offer the seclusion that the most famous newly-weds in the world desperately required.",
+                "The significance of the honeymoon was not lost on the royal family: thirty-two years later, Prince Charles and Lady Diana Spencer began their own honeymoon at Broadlands in August 1981, returning to the house where Charles's great-uncle Mountbatten — murdered only two years before, and a profound influence on the young Prince — had spent so much of his life. The repetition was deliberate and deeply felt. Broadlands had become, for the Windsors, a place freighted with personal meaning: a private house whose history happened to intersect, at the most intimate moments, with the public history of the monarchy itself. Today, a permanent exhibition in the house records both honeymoon visits with photographs and personal objects of considerable poignancy.",
+            ],
+        },
+        {
+            "title": "THE TEST AND THE TRADITIONS",
+            "image_url": "",
+            "image_caption": "The River Test at Broadlands, its chalk-filtered currents among the most celebrated trout-fishing waters in England",
+            "paragraphs": [
+                "Beyond the house and its famous associations, Broadlands is inseparable from its river. The Test is the presiding genius of the estate: a chalk stream of legendary clarity, its gravel beds and ranunculus weed producing the conditions that brown trout find ideal, and that fly-fishermen pursue with devotion bordering on religion. Broadlands holds some of the most coveted fishing on the entire river, and the traditions of the chalk-stream — the dry fly, the upstream cast, the careful reading of water — are observed here with the seriousness they have always commanded. The meadows flanking the Test are managed to support the river's ecology, their unimproved grassland and water margins providing habitat for insects, waders, and the mayflies whose brief, furious season is the hinge on which the chalk-stream calendar turns.",
+                "The house today is owned and managed by the Brabourne family, descendants of Lord Mountbatten's daughter Lady Patricia, and remains a private home. It opens periodically to visitors, who can move through rooms still furnished with Mountbatten's personal collections: his uniforms and decorations, the gifts and tributes of a career that spanned two world wars and the dissolution of empire, and a remarkable photographic record of the family's connections to the great events of the century. Capability Brown's landscape, now well into its third century, has achieved the serene permanence that only time can confer.",
+            ],
+        },
+    ],
+}
+
+HISTORY["stratfield-saye-estate"] = {
+    "subtitle": "Given to the Duke of Wellington by a grateful nation after Waterloo, Stratfield Saye remains the family seat of England's most celebrated soldier, its rooms and grounds an intimate monument to the man who changed the course of European history.",
+    "chapters": [
+        {
+            "title": "THE GIFT OF A NATION",
+            "image_url": "",
+            "image_caption": "The entrance front of Stratfield Saye House, the relatively modest Hampshire seat preferred by Wellington over the grandeur of Blenheim",
+            "paragraphs": [
+                "In the summer of 1815, with Napoleon finally broken and the long ordeal of the French wars at an end, a grateful Parliament voted to bestow upon the Duke of Wellington a sum of money sufficient to purchase an estate commensurate with his achievement. The gesture echoed a precedent set after Blenheim a century earlier, when a similarly grateful nation had given the first Duke of Marlborough the funds to build his enormous Oxfordshire palace. Wellington, who possessed a decidedly un-Marlburian streak of practicality, had other ideas. When he acquired Stratfield Saye in Hampshire in 1817 for £263,000 — then an enormous sum — he chose a house that was solid, comfortable, and blessedly manageable rather than grandiose. His contemporaries were frequently surprised. Here was the conqueror of Napoleon living in what amounted to a well-appointed country gentleman's residence.",
+                "Wellington considered — and seriously investigated — building himself a new palace to be called Waterloo Palace, and various architects produced designs of appropriate magnificence. But the Duke's instincts proved more frugal than heroic. He improved and enlarged Stratfield Saye instead, inserting a corridor to connect previously separate parts of the house, installing central heating — one of the first houses in England to enjoy it — and furnishing the rooms with a combination of captured French treasures, gifts from European sovereigns, and plain English comfort. The contrast with Blenheim was entirely intentional. Wellington, who had seen the miseries of war at first hand, had little appetite for the theatrical self-glorification that Marlborough's palace embodied.",
+            ],
+        },
+        {
+            "title": "WELLINGTON AT HOME",
+            "image_url": "",
+            "image_caption": "Wellington's library at Stratfield Saye, furnished with the books and personal objects he used daily until his death in 1852",
+            "paragraphs": [
+                "The interior of Stratfield Saye is unlike almost any other great house in England, and its difference is its principal distinction. Where other houses of comparable historical importance have been curated into something approaching a museum, Stratfield Saye retains an almost disarming domesticity. The rooms are furnished as Wellington left them: his books are shelved as he arranged them, his prints and portraits hang in the groupings he chose, his newspaper rack still stands by his favourite chair. The Duke was a compulsive annotator and correspondent, and the quantity of paper he generated in a long life of military command and political office is staggering; the house's archive, still largely intact, constitutes one of the most important collections of nineteenth-century historical documents in private hands.",
+                "Wellington lived at Stratfield Saye for the last thirty-five years of his life, and the house absorbed his personality completely. He was a demanding and exacting landlord — his estate correspondence reveals a meticulous attention to agricultural improvement, building works, and the welfare of his tenants — but he was also capable of genuine relaxation within the Hampshire landscape he had made his own. He died there in September 1852, and was mourned as no English soldier had been mourned before or since.",
+            ],
+        },
+        {
+            "title": "COPENHAGEN AND THE COLLECTIONS",
+            "image_url": "",
+            "image_caption": "The grave of Copenhagen, Wellington's chestnut charger ridden for sixteen hours at Waterloo, in the grounds of Stratfield Saye",
+            "paragraphs": [
+                "Among the many objects that make Stratfield Saye exceptional, none is more affecting than the grave of Copenhagen, the chestnut thoroughbred that carried Wellington throughout the seventeen hours of the Battle of Waterloo. Copenhagen was no ordinary horse: a grandson of Eclipse, the greatest racehorse of the eighteenth century, he combined speed, stamina, and an equable temperament that made him uniquely suited to the demands of a long day's fighting. Wellington valued him extravagantly, and when Copenhagen died in 1836 at the age of twenty-eight, he was buried with full honours in the grounds of Stratfield Saye. His grave, marked with a simple stone, remains one of the most visited spots on the estate.",
+                "The collections within the house are correspondingly remarkable. The picture collection includes portraits by Goya, Lawrence, and Wilkie, as well as a series of paintings documenting the Peninsular War campaigns that constitute an important historical record. The plate and porcelain rooms contain gifts from the sovereigns of Europe — services from the King of Prussia, the Tsar of Russia, and the Portuguese Crown — assembled as tributes to the man who had saved their thrones. The personal objects are in some ways more moving than the grand diplomatic gifts: the Field Marshal's baton, his camp furniture, the despatch box he carried through the Peninsula, and the funeral car — an extraordinary object of cast iron and bronze — in which his body was conveyed to St Paul's Cathedral.",
+            ],
+        },
+        {
+            "title": "THE ESTATE TODAY",
+            "image_url": "",
+            "image_caption": "The walled garden and parkland at Stratfield Saye, their Hampshire setting largely unchanged since the first Duke's time",
+            "paragraphs": [
+                "Stratfield Saye remains the home of the Duke of Wellington — the title has descended in an unbroken line since 1814 — and the estate continues as a working agricultural and forestry enterprise of several thousand acres. The park, laid out in the English landscape tradition with generous planting of oak, chestnut, and beech, has reached a maturity that gives the grounds a calm authority. The River Loddon winds through the lower part of the park, its water meadows managed for conservation as well as amenity, and the walled garden has been restored to productive use. There is a confidence about the place that speaks of continuity: seven generations of the same family have walked these paths, managed this land, and maintained this house.",
+                "The house opens to visitors during the summer months, and the experience it offers is genuinely unlike that of any other historic house in England. There are no roped-off rooms, no museological distance between visitor and object. Wellington's presence is palpable in a way that the more formally presented houses cannot replicate, because Stratfield Saye was never intended as a public monument but as a private home. The Duke's own explanation for preferring it to something grander has a characteristic dry humour: a large house, he remarked, meant a large establishment, and he had seen enough large establishments in the field to want none of them in retirement. In its modesty, Stratfield Saye is paradoxically more eloquent about its owner's greatness than any palace could have been.",
+            ],
+        },
+    ],
+}
+
+HISTORY["avington-park"] = {
+    "subtitle": "A Baroque jewel in the Hampshire chalk, Avington Park carries the ghost of Charles II's court within walls that have survived intact to offer one of the most complete Georgian interiors in England.",
+    "chapters": [
+        {
+            "title": "ROYAL CONNECTIONS",
+            "image_url": "",
+            "image_caption": "The south front of Avington Park, its brick Baroque facade rising above lawns that run to the River Itchen",
+            "paragraphs": [
+                "Avington Park occupies a position of singular beauty in the Itchen valley a few miles east of Winchester, its lawns reaching down to the river through an eighteenth-century landscape of considerable distinction. The estate's royal associations begin with the Restoration, when Charles II — never happier than when pursuing game and female company in roughly equal measure — used Avington as a hunting lodge, taking advantage of its proximity to his residence at Winchester. The tradition that Nell Gwyn, his most celebrated mistress, accompanied the King to Avington is persistent and circumstantially plausible. The house's Baroque character, its lavish decoration, and its association with pleasure rather than ceremony all accord well with the spirit of the later Stuart court.",
+                "The Winchester area held a particular appeal for Charles: he had conceived the ambition of building himself a new palace at Winchester to rival Versailles, and Wren designed his Winchester palace — the shell of which still stands — while the court's presence drew attention and investment to the surrounding estates. Avington benefited directly from this royal proximity, acquiring the associations and the architectural ambitions that would define its subsequent history. The connection with Nell Gwyn, whether strictly accurate or not, gives Avington a narrative warmth that more austerely documented houses often lack.",
+            ],
+        },
+        {
+            "title": "THE BAROQUE INTERIOR",
+            "image_url": "",
+            "image_caption": "The painted ceiling of the ballroom at Avington Park, an intact example of high Baroque decorative painting of exceptional rarity",
+            "paragraphs": [
+                "The interiors of Avington Park constitute its principal claim to architectural importance. Within what appears, from the outside, to be a handsome but not exceptional early Georgian house, the visitor discovers a series of rooms of extraordinary completeness and quality. The painted ceilings — allegories of the seasons, classical mythologies, swags of fruit and flowers rendered in the full vocabulary of Baroque illusionism — are among the finest surviving examples of this kind of decorative painting in England outside the great Baroque palaces of Blenheim and Chatsworth. They date largely from the early eighteenth century, the work of craftsmen whose technical accomplishment is unmistakable.",
+                "The ballroom is the grandest of the state rooms, its walls and ceiling treated as a continuous painted surface of considerable ambition, the architectural details picked out in gilt that has softened over three centuries to a warmth no modern restoration could replicate. The library, the drawing rooms, and the entrance hall are furnished in a manner consistent with the house's Georgian completeness — the accumulation of objects across two centuries gives the interior a layered authenticity that the work of a single decorating campaign can never achieve. Avington survived the nineteenth century's passion for improvement largely unscathed, and this restraint on the part of its owners has proved, in retrospect, to be its greatest gift to posterity.",
+            ],
+        },
+        {
+            "title": "THE SHELLEY FAMILY",
+            "image_url": "",
+            "image_caption": "The church of St Mary at Avington, remodelled in the eighteenth century and containing monuments to the Shelley family",
+            "paragraphs": [
+                "The family most closely associated with Avington's Georgian flowering was the Shelleys — the older branch of the family who acquired the estate in the eighteenth century and undertook the building and decoration that define the house today. Sir Charles Shelley carried out extensive works to the house in the early eighteenth century, and subsequent generations maintained the property with a consistency of taste and purpose that allowed the Baroque decorations to survive without the wholesale refashioning that so often overtook comparable houses in the Victorian period. The estate church of St Mary, standing immediately adjacent to the house, was rebuilt in a refined Georgian manner that harmonises perfectly with the domestic architecture.",
+                "The Shelleys' stewardship of Avington extended over more than a century and represents one of the more benign examples of the English gentry's relationship with an inherited property. They did not build excessively, did not strip away what they had inherited, and did not attempt to impose the fashions of any single moment on a house whose character had already been substantially determined. When the estate eventually passed out of their hands, it carried with it an unusually complete record of early Georgian taste: a house in which the decorations, the furnishings, and the landscape setting had evolved together over generations, each element reinforcing the others, the whole amounting to something considerably greater than the sum of its parts.",
+            ],
+        },
+        {
+            "title": "AVINGTON TODAY",
+            "image_url": "",
+            "image_caption": "The walled garden and parkland at Avington, the River Itchen visible through the trees beyond the lawn",
+            "paragraphs": [
+                "Avington Park today is a private house, its painted rooms and chalk-stream setting known primarily to those who seek it out on the occasional open days that allow a wider public into one of Hampshire's most rewarding historic interiors. Visitors encounter rooms furnished for habitation rather than display, objects arranged for use rather than contemplation, the whole enterprise conducted with the comfortable informality of a place that is still, first and foremost, someone's home.",
+                "The River Itchen, flowing through the park with the particular clarity of a Hampshire chalk stream, provides a northern boundary of natural beauty, its banks supporting the flora and fauna — watercress, mayfly, brown trout, water crowfoot — that characterise these rare and fragile waterways. The park itself is broadly as it was in the eighteenth century, its specimen trees now at a magnificent maturity, the vista from the south front unchanged in essentials since the Shelleys looked out across it two hundred years ago. In a county rich with historic houses of every period and degree, Avington occupies a distinctive niche: small enough to be intimate, decorated to a level of quality that would be remarkable in a much larger house, and preserved with a completeness that makes it an experience unlike any other in Hampshire.",
+            ],
+        },
+    ],
+}
+
+HISTORY["firle-place"] = {
+    "subtitle": "For more than five centuries the home of the Gage family, Firle Place stands beneath the Sussex Downs in a landscape that nurtured the Bloomsbury Group and gave the world the greengage plum.",
+    "chapters": [
+        {
+            "title": "FIVE CENTURIES OF THE GAGES",
+            "image_url": "",
+            "image_caption": "The Tudor and Georgian south front of Firle Place, backed by the escarpment of the South Downs in East Sussex",
+            "paragraphs": [
+                "The manor of Firle has been in the possession of the Gage family since the late fifteenth century, a tenure of continuous occupation that ranks among the longest of any English estate and lends the house an accumulation of historical memory that no amount of subsequent restoration or embellishment could manufacture. The original Tudor house was built by Sir John Gage, Comptroller of the Household to Henry VIII and a figure of considerable influence at the mid-Tudor court. Sir John was a man of pragmatic religious instincts who navigated the perils of the Reformation with unusual success, serving as Constable of the Tower of London under Edward VI and returning to high office under the Catholic Mary I. His monument in the nearby church of St Peter is one of the finest Tudor memorials in Sussex, its alabaster effigy preserving a face of composed authority.",
+                "The house that Sir John built was substantially remodelled in the early eighteenth century by the seventh Viscount Gage, who encased the Tudor structure in the Caen stone facade that defines Firle's exterior today. The remodelling was extensive but not destructive: the Tudor bones of the building survive within the Georgian skin, and the layout of the rooms reflects the organic growth of five centuries rather than the rational planning of a single campaign. This palimpsest quality — Tudor room proportions within Georgian architecture, medieval undercrofts beneath early modern floors — gives Firle Place a physical depth that corresponds to its extraordinary historical continuity.",
+            ],
+        },
+        {
+            "title": "THE BLOOMSBURY CONNECTION",
+            "image_url": "",
+            "image_caption": "Charleston Farmhouse, visible from Firle Park, home of the Bloomsbury Group and now among the most celebrated artists' houses in England",
+            "paragraphs": [
+                "Firle Place's connection to the Bloomsbury Group is one of the more improbable chapters in the history of any English country house. In 1916, the painter Vanessa Bell and her companion Duncan Grant — both central figures in the Bloomsbury circle — moved into Charleston Farmhouse at the foot of Firle Beacon, within sight of the park walls of Firle Place. They remained there for the rest of their lives, decorating every surface of the farmhouse in the exuberant Post-Impressionist manner that became the visual signature of the group, and receiving a remarkable procession of literary and artistic visitors: Virginia Woolf (Vanessa's sister), Lytton Strachey, John Maynard Keynes, E. M. Forster, Roger Fry.",
+                "Virginia Woolf walked the Downs between Rodmell and Firle repeatedly, drawing on the landscape — its chalk paths, its wide views over the Weald and the Channel — for the spatial imagination that informs her fiction. The Gage family's long-established presence in the valley provided, for the Bloomsbury writers and painters, a counterpoint to their own radical modernity: an England of continuous tradition against which their experiments in living and art could be measured. Today Charleston, now meticulously preserved and open to the public, draws visitors from across the world to the landscape that Firle Place has anchored for five hundred years.",
+            ],
+        },
+        {
+            "title": "THE COLLECTIONS",
+            "image_url": "",
+            "image_caption": "The drawing room at Firle Place, its walls hung with Old Master paintings accumulated by the Gage family over four centuries",
+            "paragraphs": [
+                "The collection of paintings, furniture, and porcelain at Firle Place is one of the finest in private hands in the south of England, and its assembly over four centuries reflects both the family's Continental connections and the discernment of several exceptionally gifted collectors. The second Viscount Gage spent considerable time in France and the Low Countries in the 1720s and 1730s, acquiring pictures and furnishings of the first quality that gave the collection its initial distinction. Subsequent generations added Sèvres porcelain, English furniture of the Georgian period, and a remarkable group of drawings and watercolours. The whole is displayed in rooms of appropriate grandeur, the scale of the house well-suited to the scale of the collection.",
+                "Among the pictures, works by Reynolds, Lely, Rubens, and Teniers sit alongside family portraits of every period, the accumulation creating a visual history of the Gages across five centuries that is as instructive as any written genealogy. The Long Gallery — extended and refurnished in the eighteenth century — provides an enfilade of particular magnificence, its views across the park and toward the Downs complementing the pictures on its walls with a prospect that is itself a kind of landscape painting. The Sèvres services, assembled with considerable care and expense, are among the best outside the great national collections.",
+            ],
+        },
+        {
+            "title": "CHARLESTON AND THE DOWNS",
+            "image_url": "",
+            "image_caption": "The South Downs above Firle Beacon, the landscape that shaped both the Gage family and the Bloomsbury Group over five centuries",
+            "paragraphs": [
+                "To understand Firle Place fully is to understand the landscape that contains it. The South Downs rise directly behind the house, their chalk escarpment forming a backdrop of theatrical abruptness that changes character with every shift of light and season. Firle Beacon, the highest point on the East Sussex Downs at 217 metres, is accessible on foot from the park, and the view from the summit — north across the Weald to the distant hills of Surrey and Kent, south to the Channel and the coast — is among the finest in England.",
+                "The greengage plum takes its name from this family and this place. Sir William Gage, writing in the early eighteenth century, is credited with introducing the golden-green plum from France — where it was known as the Reine-Claude — and naming it for himself after it lost its label in transit. Whether the story is precisely accurate matters less than the fact that Firle Place has given its name to one of the great pleasures of the English summer. Today the house opens regularly to visitors, its rooms and gardens offering an experience shaped by five centuries of unbroken family occupation.",
+            ],
+        },
+    ],
+}
+
+HISTORY["glynde-place"] = {
+    "subtitle": "A sixteenth-century manor set beneath the Sussex Downs, Glynde Place unites five centuries of collected magnificence with the living tradition of the Glyndebourne opera festival that has made this corner of East Sussex world-famous.",
+    "chapters": [
+        {
+            "title": "ORIGINS OF THE MANOR",
+            "image_url": "",
+            "image_caption": "The flint and Caen stone facade of Glynde Place, its sixteenth-century core unchanged in outline since the house was built",
+            "paragraphs": [
+                "Glynde Place was built in the 1560s for William Morley, a member of the Sussex gentry whose family had held land in the Glynde valley since the medieval period. The house he constructed represents one of the most complete and least-altered examples of Elizabethan domestic architecture in Sussex, its distinctive combination of flint rubble walls, Caen stone dressings, and Flemish-influenced detailing creating an exterior of considerable character that speaks directly to the building fashions and trade connections of mid-Tudor England. The use of Caen stone — imported from Normandy — was a mark of ambition and resources, linking Glynde to the long tradition of high-quality English building that drew on Continental quarries for its finest material.",
+                "The estate descended through the Morley family for several generations before passing by inheritance to the Trevor family in the seventeenth century, and subsequently to the Brands — later created Viscounts Hampden — in whose ownership the house remains today. Each transition brought new blood, new collections, and new ideas, but the architectural fabric of the house survived these changes with remarkable integrity. Unlike many of its contemporaries, Glynde was not subjected to a comprehensive Baroque or Georgian remodelling: the Tudor structure was enlarged and improved rather than demolished and rebuilt.",
+            ],
+        },
+        {
+            "title": "THE COLLECTIONS",
+            "image_url": "",
+            "image_caption": "The great hall at Glynde Place, its walls hung with Rubens portraits and Zoffany paintings accumulated by successive generations",
+            "paragraphs": [
+                "The art collection at Glynde Place is the house's most celebrated attribute, and its quality reflects the taste and resources of several generations of exceptionally discerning collectors. The most distinguished pieces are the portraits by Peter Paul Rubens, whose presence in a Sussex manor house speaks to the broad reach of the seventeenth-century art market and to the ambitions of the families who shaped the collection. Rubens's ability to charge a sitter with psychological presence while situating them within compositions of baroque dynamism gives these works an authority that dominates any room they occupy.",
+                "The Zoffany paintings are among the finest works by this German-born artist in private ownership, their combination of technical brilliance and social observation placing them among the most compelling documents of eighteenth-century English life. Beyond the pictures, the house contains fine furniture of several periods, rare porcelain, and a library whose contents reflect the intellectual interests of successive owner-generations. Together, these collections give Glynde Place an artistic density that is extraordinary for a house of its relatively modest size.",
+            ],
+        },
+        {
+            "title": "GLYNDEBOURNE AND THE OPERA",
+            "image_url": "",
+            "image_caption": "The Glyndebourne opera house, established on the neighbouring estate in 1934 and expanded to its current form in 1994",
+            "paragraphs": [
+                "The decision by John Christie to build an opera house in the grounds of Glyndebourne, his estate adjoining Glynde, in 1934 was one of the most audacious and improbable acts of English cultural patronage in the twentieth century. Christie, an Eton-educated eccentric of considerable private means and passionate musical convictions, conceived the idea of presenting opera at the highest possible standard in a rural Sussex setting. The first festivals, presenting Mozart operas under the conductor Fritz Busch and the stage director Carl Ebert — both refugees from Nazi Germany — established almost immediately that Christie's gamble had produced something of genuine and lasting quality.",
+                "Glyndebourne has grown considerably since those intimate beginnings. The original opera house was replaced in 1994 by a purpose-built auditorium of fourteen hundred seats, designed by Michael Hopkins to integrate with the farm buildings and landscape of the estate. The festival, which runs from May to August each year, attracts audiences from across the world and has become one of the fixed points of the English summer season — a place where the informality of picnicking in the gardens during the long interval coexists with the concentrated seriousness of hearing Mozart, Strauss, or Britten performed at the highest level.",
+            ],
+        },
+        {
+            "title": "THE SUSSEX DOWNS SETTING",
+            "image_url": "",
+            "image_caption": "The South Downs above Glynde, the chalk escarpment forming the dramatic natural backdrop to both the house and the opera festival",
+            "paragraphs": [
+                "The setting of Glynde Place in the Ouse valley, with the South Downs rising immediately to the south and the broader Weald stretching away to the north, is as significant to the estate's identity as any element of its architecture or collections. The Downs here have a particular quality: the chalk escarpment drops steeply to the valley floor, creating a landscape of dramatic juxtapositions — the intimate and sheltered village of Glynde against the wide, sky-filled openness of the hills above. Mount Caburn, the Iron Age hillfort that dominates the ridge immediately north of the estate, has looked down on the manor since before recorded history.",
+                "The estate today is managed with a care for landscape and biodiversity that reflects the best traditions of the English landowner's relationship with the natural world. The chalk grassland of the surrounding Downs — one of the most species-rich habitats in northern Europe, its short turf supporting dozens of wildflower species and the insects that depend on them — is maintained through grazing management that keeps the scrub at bay. For the visitor arriving at Glynde Place, the experience of moving from the intimate scale of the Elizabethan courtyard through the rich rooms of the house and out into the Downland landscape beyond is one of the most satisfying sequences of any Sussex estate.",
+            ],
+        },
+    ],
+}
+
+
+# ── Estate movies / film-location content ────────────────────────────────────
+# Each entry: subtitle + chapters list (title, image_url, image_caption, paragraphs)
+MOVIES = {}
+
+MOVIES["hever-castle"] = {
+    "subtitle": "From Tudor courtrooms to Boleyn bedchambers — Hever Castle has drawn film-makers for more than half a century, its moat, gatehouse, and medieval interiors providing an unrivalled backdrop for stories of passion, power, and royal intrigue.",
+    "chapters": [
+        {
+            "title": "ANNE OF THE THOUSAND DAYS (1969)",
+            "image_url": "",
+            "image_caption": "Richard Burton as Henry VIII at Hever Castle, location for the 1969 Academy Award-nominated historical drama.",
+            "paragraphs": [
+                "Universal Pictures' lavish adaptation of Maxwell Anderson's stage play was the production that first placed Hever Castle firmly on the cinematic map. Directed by Charles Jarrott and starring Richard Burton as Henry VIII and the French-Canadian actress Geneviève Bujold as Anne Boleyn, the film was shot largely on location in England between 1968 and 1969. Hever provided the castle's exterior and courtyard for the scenes depicting the Boleyn family home, with the moat, the drawbridge, and the turreted gatehouse lending the production an immediate authenticity that no studio set could have replicated. Burton and Bujold were photographed on location in the castle gardens, and portions of the film's domestic scenes were dressed and lit inside the Astor-restored interiors.",
+                "The production attracted significant controversy at the time owing to Burton's decision to film in England rather than Hollywood, and the shoot was one of the most expensive British productions of its era. Bujold received an Academy Award nomination for Best Actress — one of ten nominations the film received in total, winning for Best Costume Design. Her portrayal of Anne as a woman of fierce intelligence and strategic acuity rather than merely a romantic victim set a standard that later actresses have measured themselves against. For visitors to Hever today, standing in the same courtyard where Bujold delivered some of the film's most charged scenes gives the castle's stones an additional resonance beyond their Tudor history.",
+            ],
+        },
+        {
+            "title": "THE OTHER BOLEYN GIRL (2008)",
+            "image_url": "",
+            "image_caption": "Hever Castle's Tudor interiors were dressed for the 2008 Focus Features production starring Natalie Portman and Scarlett Johansson.",
+            "paragraphs": [
+                "Nearly four decades after Anne of the Thousand Days, Hever featured again in a major Boleyn production when Focus Features adapted Philippa Gregory's bestselling novel The Other Boleyn Girl. Directed by Justin Chadwick and starring Natalie Portman as Anne Boleyn and Scarlett Johansson as her sister Mary, the film used Hever's exterior, courtyard, and several interior spaces to represent the Boleyn family estate. The production team worked closely with Hever's curatorial staff to dress the Tudor rooms — panelled walls, carved fireplaces, and stone-flagged floors — to period, and the castle's compact layout meant that the intimate domestic scenes between the two sisters could be filmed with a convincing sense of confinement and proximity that served the story's claustrophobic tensions.",
+                "Production designer John Paul Kelly used Hever's double moat as a key visual element in establishing the Boleyn home as simultaneously beautiful and fortress-like, a place where the family's ambitions and anxieties are contained within ancient walls. Eric Bana played Henry VIII, and the casting of two of Hollywood's leading actresses of the moment ensured the film received wide international distribution. The shoot at Hever was accompanied by considerable press interest, with extensive behind-the-scenes photography of Portman and Johansson on location in the castle gardens. The film performed strongly at the international box office and introduced a new generation of viewers to Hever's distinctive silhouette.",
+            ],
+        },
+        {
+            "title": "WOLF HALL (2015, BBC)",
+            "image_url": "",
+            "image_caption": "The BBC's Emmy-winning Wolf Hall used Hever's medieval chambers for scenes depicting the Boleyn household during Thomas Cromwell's rise to power.",
+            "paragraphs": [
+                "The BBC's critically acclaimed adaptation of Hilary Mantel's Wolf Hall novels, broadcast in 2015 and directed by Peter Kosminsky, represents perhaps the most distinguished screen use of Hever Castle in recent decades. Starring Mark Rylance as Thomas Cromwell, Damian Lewis as Henry VIII, and Claire Foy as Anne Boleyn, the six-part series was shot almost entirely on candlelit location — a deliberate and celebrated aesthetic choice that gave the production an atmospheric authenticity far removed from conventional period drama. Hever's medieval chambers and low-ceilinged interiors were ideal for this approach, their stone walls and thick timbers absorbing light in a way that television studios simply cannot replicate.",
+                "Director of photography Gavin Finney shot the Hever sequences in near-natural light conditions, using candles, torches, and minimal supplementary lighting to create images of exceptional intimacy and texture. The scenes depicting the Boleyn household — including the key sequences in which Anne's ascendancy over Henry is established and her relationship with Cromwell begins its fateful deterioration — were filmed in rooms that Anne Boleyn herself may have used. Wolf Hall won the BAFTA for Best Drama Series and the Primetime Emmy for Outstanding Limited Series, and its use of Hever was widely praised by critics as one of the key factors in the production's extraordinary sense of period authenticity.",
+            ],
+        },
+        {
+            "title": "OTHER PRODUCTIONS AND THE CASTLE ON SCREEN",
+            "image_url": "",
+            "image_caption": "Hever's moat and gatehouse have appeared in numerous television documentaries, commercials, and drama productions beyond the major feature films.",
+            "paragraphs": [
+                "Beyond its three landmark Tudor drama appearances, Hever Castle has served as a location for a wide range of additional productions. The castle featured in scenes for the ITV period drama Henry VIII (2003), in which Ray Winstone played the king with characteristically physical intensity, and various sequences from the castle's exterior and grounds have appeared in documentary productions covering Tudor history for the BBC, Channel 4, and international broadcasters including PBS and the History Channel. The moat and drawbridge are among the most immediately recognisable images in any visual survey of Tudor England, which has made Hever a natural choice for period pieces requiring authentic medieval architecture without studio reconstruction.",
+                "The Italian Garden and the lakeside have also served as locations for commercial photography and fashion shoots, with the long walk of the Pompeiian Wall and the classical statuary providing a backdrop that reads simultaneously as English and Continental. The estate has occasionally been used for outdoor events and concerts that have brought performers and audiences into direct contact with the landscape's cinematic heritage. The castle management maintains an active relationship with production companies, and Hever continues to be sought out by film-makers who understand that no set-builder can replicate what centuries of genuine occupation produce in stone, timber, and moat-water.",
+            ],
+        },
+    ],
+}
+
+MOVIES["highclere-castle"] = {
+    "subtitle": "Highclere Castle's soaring Victorian-Gothic silhouette has made it the most recognisable stately home on the planet — as the exterior and primary interior of Downton Abbey, it has been watched by over 120 million people across more than 100 countries.",
+    "chapters": [
+        {
+            "title": "DOWNTON ABBEY (ITV, 2010–2015)",
+            "image_url": "",
+            "image_caption": "The north front of Highclere Castle, which serves as the exterior of Downton Abbey in Julian Fellowes's globally successful drama series.",
+            "paragraphs": [
+                "When Julian Fellowes began developing Downton Abbey for ITV in the late 2000s, location scouts considered several Hampshire and Wiltshire houses before settling on Highclere as the one building that could carry the dramatic weight of the series. The north and south fronts of the castle, Barry's pinnacled roofline against the Hampshire sky, became the defining visual identity of what would grow into the most successful British television export of its era. The principal interior rooms — the Saloon, the Library, the Drawing Room, and the grand staircase — were used as primary filming locations throughout the series, their genuine late-Victorian fittings requiring minimal dressing to pass as the Edwardian and interwar interiors the scripts called for. The cast would arrive in the early morning, with filming typically concentrated across six-week blocks each summer when the castle was closed to the public.",
+                "The series ran for six series between 2010 and 2015, accumulating an audience estimated at over 120 million viewers across 120 countries. Hugh Bonneville as the Earl of Grantham, Maggie Smith as the Dowager Countess, and Michelle Dockery as Lady Mary became among the most recognisable faces in international television, and their association with Highclere's rooms and corridors was so complete that the castle itself became a character of the drama. The production team's relationship with the 8th Earl and Countess of Carnarvon was close and collaborative throughout, with the Countess noting in her memoirs that the cast quickly settled into the rhythms of the house, treating it with the respect owed to a genuine family home rather than a hired set.",
+            ],
+        },
+        {
+            "title": "DOWNTON ABBEY: THE FILMS (2019 AND 2022)",
+            "image_url": "",
+            "image_caption": "The Downton Abbey feature films of 2019 and 2022 returned the full cast to Highclere for extended location shoots.",
+            "paragraphs": [
+                "Following the conclusion of the television series, Focus Features produced two feature films that returned the principal cast to Highclere for extended location work. Downton Abbey (2019), directed by Michael Engler, centred on a royal visit by King George V and Queen Mary and required the castle to double as both the Crawley family home and the backdrop for scenes involving the sovereign's retinue. The film grossed over $194 million at the worldwide box office against a budget of approximately $13 million, confirming that the audience loyalty built across six television series had translated directly into theatrical appetite. Highclere's interiors and exterior featured prominently, including sequences filmed in the castle's Egyptian Exhibition cellars, which were visible to cinema audiences for the first time.",
+                "Downton Abbey: A New Era (2022), also directed by Engler, again brought the full ensemble cast to Highclere, with additional scenes filmed at the Château de Montréal in the Gard region of France to represent the Crawley family's inheritance of a Riviera villa. The film was the first to acknowledge the Egyptological dimension of the real Highclere story within its narrative texture, weaving references to archaeology and discovery into the plotline. Both films were shot in part during the restrictions of the COVID-19 pandemic, requiring the production to implement a closed-set protocol that severely limited access — an unusual challenge for a house that, in normal circumstances, opens to thousands of visitors each year.",
+            ],
+        },
+        {
+            "title": "JEEVES AND WOOSTER (ITV, 1990–1993)",
+            "image_url": "",
+            "image_caption": "Highclere provided exterior and grounds locations for several episodes of the ITV adaptation of P.G. Wodehouse's Jeeves and Wooster stories.",
+            "paragraphs": [
+                "A decade before Downton Abbey established Highclere's global profile, the castle appeared in a rather different and considerably more comedic context: the ITV adaptation of P.G. Wodehouse's Jeeves and Wooster stories, starring Stephen Fry as Jeeves and Hugh Laurie as Bertie Wooster. The production used Highclere's exterior, grounds, and gardens for several episodes across the series' four-year run, exploiting the castle's authentic Edwardian character to provide a suitably aristocratic backdrop for Wooster's perpetual entanglements with aunts, engagements, and country house parties. The contrast between the castle's genuine grandeur and the wilfully absurdist comedic action being played against it was entirely intentional.",
+                "The Jeeves and Wooster appearances represent an earlier and less widely remembered strand of Highclere's screen history, and they illustrate a point that the castle's management has occasionally made: the building is almost uniquely versatile as a location, equally effective as the setting for high tragedy, domestic comedy, or period melodrama. Stephen Fry has spoken warmly about the experience of filming at Highclere, describing the atmosphere of the house as genuinely affecting and noting that even experienced actors found themselves slightly awed by the scale and completeness of the interiors. The series was broadcast to considerable success and remains well regarded by Wodehouse enthusiasts as one of the better screen treatments of the material.",
+            ],
+        },
+        {
+            "title": "HIGHCLERE ON THE WORLD STAGE",
+            "image_url": "",
+            "image_caption": "The global reach of Downton Abbey has made Highclere Castle one of England's most visited heritage attractions and a pilgrimage destination for fans from across the world.",
+            "paragraphs": [
+                "The cumulative effect of Highclere's screen appearances — and Downton Abbey in particular — has been to transform the castle from a much-admired Hampshire country house into a global cultural landmark. The estate now welcomes visitors from every continent, with American, Australian, and Japanese fans making up a substantial proportion of its audience on any given open day. The Countess of Carnarvon has responded to this phenomenon with characteristic energy, writing multiple books that draw on the castle's real history to contextualise and enrich the fictional world that television viewers know, and establishing a podcast and social media presence that keep the estate in continuous global conversation.",
+                "The relationship between Highclere's authentic history and its fictional identity as Downton Abbey has proven to be genuinely symbiotic rather than merely commercial. Visitors who arrive knowing only the drama frequently leave knowing about the 5th Earl's discovery of Tutankhamun's tomb, Capability Brown's parkland, and the Herbert family's centuries of Hampshire stewardship — layers of real history that the fictional drama's surface glamour initially conceals. The castle has therefore used its screen fame as a gateway to historical education in a way that relatively few heritage sites have managed, turning passive entertainment audiences into active heritage visitors.",
+            ],
+        },
+    ],
+}
+
+MOVIES["beaulieu-estate"] = {
+    "subtitle": "Beaulieu's combination of a medieval abbey, a Victorian Gothic house, and miles of private road across the New Forest have made it an irresistible proposition for film-makers — from the golden age of British cinema through to the present day.",
+    "chapters": [
+        {
+            "title": "THE ITALIAN JOB (1969)",
+            "image_url": "",
+            "image_caption": "Beaulieu's grounds and Palace House exterior featured in the Paramount Pictures production of The Italian Job, filmed in 1968.",
+            "paragraphs": [
+                "The original Italian Job, directed by Peter Collinson and starring Michael Caine, Noël Coward, and Benny Hill, remains one of the most celebrated British films of the late 1960s, and its production history is inseparable from Beaulieu. The National Motor Museum — then the Montagu Motor Museum, founded in 1952 by the 3rd Baron Montagu — provided vehicles and technical expertise that were central to the film's identity. More significantly, the Beaulieu grounds and approach roads featured in location filming for the production, exploiting the estate's unique combination of private roads, period architecture, and New Forest backdrop to serve the heist narrative's English sequences. The film's car-centred premise made the National Motor Museum's involvement a natural fit, and the two have remained associated in the public imagination ever since.",
+                "The Italian Job's British sequences required locations that could represent both affluent country-house England and the grittier urban margins of the criminal underworld, and Beaulieu served the former role with its customary elegance. Michael Caine has referred to the production as one of the most enjoyable shoots of his career, with the New Forest location work providing a contrast to the more arduous Italian filming in Turin and the Alps. The film's enduring cult status — cemented by its famously ambiguous cliff-hanger ending — has ensured that its Beaulieu association is regularly cited in the estate's own literature and in the National Motor Museum's collection, which includes vehicles directly connected to the production.",
+            ],
+        },
+        {
+            "title": "JAMES BOND CONNECTIONS",
+            "image_url": "",
+            "image_caption": "The National Motor Museum at Beaulieu houses an extensive On Screen Cars exhibition, including vehicles from James Bond productions spanning more than six decades.",
+            "paragraphs": [
+                "While Beaulieu itself has not served as a primary filming location for the James Bond franchise, the connection between the estate and the Bond films is deep and genuine through the National Motor Museum's On Screen Cars exhibition — one of the most significant collections of film and television vehicles in the world. The exhibition brings together an extraordinary assembly of Bond cars across multiple films and eras, including the Aston Martin DB5 in its various iterations, the Lotus Esprit submarine car from The Spy Who Loved Me (1977), and a range of vehicles from the Roger Moore, Timothy Dalton, and Pierce Brosnan eras. The collection provides a physical history of the Bond franchise told through its machinery, and it draws fans to Beaulieu from around the world.",
+                "Lord Montagu's relationship with the Bond production team — Eon Productions — was long and productive, with the Museum providing vehicles, technical expertise, and historical documentation to successive productions. The On Screen Cars gallery was substantially expanded and refurbished in the 2000s to acknowledge the breadth and significance of the collection. Beyond Bond, the exhibition includes vehicles from The Italian Job, Chitty Chitty Bang Bang, and numerous British television productions, making it the most comprehensive overview of screen motoring history available anywhere in the United Kingdom. The connection between the fictional world of espionage and the very real history of motoring that the Montagu family has preserved gives Beaulieu's film heritage an unusual depth.",
+            ],
+        },
+        {
+            "title": "CHITTY CHITTY BANG BANG (1968) AND THE MOTOR MUSEUM",
+            "image_url": "",
+            "image_caption": "The National Motor Museum at Beaulieu houses the original Chitty Chitty Bang Bang car, built by production designer Ken Adam for the 1968 United Artists film.",
+            "paragraphs": [
+                "Among the most beloved objects in the National Motor Museum is the original Chitty Chitty Bang Bang car, built by the production designer Ken Adam for the 1968 United Artists musical-fantasy directed by Ken Hughes and starring Dick Van Dyke and Sally Ann Howes. The car — formally designated GEN 11 and designed to appear as a fantastical Edwardian racing machine capable of flight and water travel — was fabricated by the Ford Motor Company's advanced styling studio in the United Kingdom and has remained one of cinema's most recognisable vehicles. The Beaulieu Motor Museum acquired it for permanent display, and it occupies a position of affectionate prominence in the collection, surrounded by film stills, production photographs, and the story of its creation.",
+                "The car's presence at Beaulieu draws visitors for whom the film has a particular nostalgic resonance — it has been a staple of family Christmas television viewing for decades — and the contrast between the vehicle's fantastical appearance and the serious motor-historical context of the museum that surrounds it is entirely deliberate. Ken Adam, who also designed the sets for several James Bond films and for Stanley Kubrick's Dr Strangelove, created in Chitty Chitty Bang Bang one of his most purely joyful pieces of work, and the car itself embodies the optimistic spirit of Sixties British popular cinema in physical form. Beaulieu's custodianship of the vehicle has ensured its preservation in excellent condition for more than half a century.",
+            ],
+        },
+        {
+            "title": "OTHER PRODUCTIONS AND THE NEW FOREST AS LOCATION",
+            "image_url": "",
+            "image_caption": "Beaulieu's abbey ruins, Palace House exterior, and the surrounding New Forest have appeared in numerous television dramas and documentary productions.",
+            "paragraphs": [
+                "Beyond its landmark film connections, Beaulieu has served as a location for a wide range of television productions that have exploited the visual variety of the estate. The abbey ruins — roofless and romantically overgrown since the Dissolution of the Monasteries under Henry VIII — have appeared in period dramas requiring authentic medieval ecclesiastical architecture, including documentary reconstructions of monastic life produced for the BBC and Channel 4. The Domus Conversorum, the surviving lay brothers' dormitory that now houses the Abbey's permanent exhibition, has served as a location for historical drama requiring a medieval interior with genuine fabric rather than studio reconstruction.",
+                "The New Forest context in which Beaulieu sits has also made it a natural choice for productions requiring the particular quality of English ancient woodland and open heath that the Forest provides. The Beaulieu River estuary, the tidal mudflats visible from Buckler's Hard, and the estate's private roads through managed forest have all appeared in various documentary and drama productions over the years. The estate's combination of historical depth, architectural variety, and natural landscape ensures that it continues to attract film and television production companies seeking locations that offer genuine complexity rather than a single visual note.",
+            ],
+        },
+    ],
+}
+
+MOVIES["arundel-castle"] = {
+    "subtitle": "Arundel Castle's medieval battlements, Victorian state rooms, and sweeping Sussex parkland have served as the backdrop for some of the most acclaimed British historical dramas of the past three decades — a reflection of a building that manages to be simultaneously medieval fortress and lived-in home.",
+    "chapters": [
+        {
+            "title": "THE MADNESS OF KING GEORGE (1994)",
+            "image_url": "",
+            "image_caption": "Arundel Castle doubled as Windsor Castle for Nicholas Hytner's acclaimed Goldcrest production, with Nigel Hawthorne in the title role.",
+            "paragraphs": [
+                "Nicholas Hytner's The Madness of King George, adapted by Alan Bennett from his own stage play and released in 1994, remains one of the most admired British historical films of the modern era. Starring Nigel Hawthorne as the stricken George III — in a performance that earned him an Academy Award nomination for Best Actor — the film required a location capable of representing Windsor Castle's state apartments and exterior with sufficient authenticity to sustain the narrative's royal setting. Windsor itself was unavailable for the level of intrusion a major film production requires, and Arundel was identified as the outstanding alternative: its Victorian Gothic state rooms and great hall, dressed minimally to the period, read convincingly as the Georgian royal interiors the script demanded.",
+                "Arundel's castle exterior — its walls, towers, and keep rising steeply above the River Arun — provided the film's visual shorthand for royal confinement, the stone battlements underscoring the sense of a king imprisoned within his own court. Helen Mirren played Queen Charlotte, Ian Holm the physician Willis, and Rupert Everett the Prince of Wales, and the ensemble's scenes in Arundel's great hall and library were among the most dramatically intense in the film. The production was a critical and commercial success, earning four Academy Award nominations including Best Picture, and it established a template for the intelligent British period film that dominated the mid-1990s art-house circuit. For Arundel the production represented both a logistical achievement — maintaining a major shoot in a lived-in castle — and a significant raising of the location's international profile.",
+            ],
+        },
+        {
+            "title": "THE YOUNG VICTORIA (2009)",
+            "image_url": "",
+            "image_caption": "Emily Blunt as Queen Victoria and Rupert Friend as Prince Albert, with Arundel's interiors standing in for Kensington Palace and Windsor in the 2009 production.",
+            "paragraphs": [
+                "GK Films' The Young Victoria, directed by Jean-Marc Vallée and written by Julian Fellowes, used Arundel Castle as one of its principal interior locations for scenes depicting Victoria's early reign and her relationship with Prince Albert. Emily Blunt's portrayal of the young queen earned her a Golden Globe nomination, and Rupert Friend played Albert with a combination of intellectual gravity and personal warmth that the script's sympathetic characterisation demanded. Arundel's baronial hall and state apartments were dressed to represent a composite of Kensington Palace and Windsor Castle interiors, with the production's design team — led by the Oscar-winning Patrice Vermette — working with Arundel's curatorial staff to ensure that the Victorian furnishings already present in the castle could be supplemented with appropriate period dressing.",
+                "The production used Arundel's exterior in establishing shots designed to communicate the weight and formality of royal power, the castle's walls and towers providing a visual grammar of institutional grandeur that complemented Blunt's nuanced performance of Victoria's inner life. Martin Scorsese served as executive producer, and the film received extensive attention on its release, particularly for Blunt's performance and for the quality of its production design. The Arundel sequences were praised by critics for their atmospheric authenticity, and the film's overall visual approach — warm, intimate lighting within grand architectural spaces — suited the castle's character perfectly. The Young Victoria remains the most internationally visible of Arundel's recent screen appearances and the one most likely to bring visitors to the castle in recognition.",
+            ],
+        },
+        {
+            "title": "THE CROWN AND BBC PERIOD DRAMAS",
+            "image_url": "",
+            "image_caption": "Arundel's library, great hall, and baron's chamber have served as locations for numerous BBC period dramas requiring authentic Victorian and Edwardian interiors.",
+            "paragraphs": [
+                "Beyond its two major feature film credits, Arundel Castle has served as a location for a consistent stream of BBC and ITV period drama productions that have drawn on its extraordinary architectural variety. The castle's capacity to represent several distinct historical periods simultaneously — the medieval keep and towers for pre-modern settings, the Victorian Gothic state rooms for nineteenth-century interiors, and the parkland and gardens for outdoor scenes across a wide chronological range — makes it exceptionally useful to period drama location managers working to tight schedules and tighter budgets. The approach road through the park, with views of the castle rising above the River Arun, has appeared in numerous productions as a generic image of English aristocratic arrival.",
+                "The BBC's various adaptations of Victorian and Edwardian literature have found Arundel particularly accommodating. The castle's library — lined floor to ceiling with thousands of volumes in a room of genuine architectural distinction — has served as a location requiring a private gentleman's library of convincing scale, while the armoury's collection of arms and armour has provided period-accurate props for productions requiring medieval military equipment. The relationship between Arundel's curatorial and estates staff and visiting production companies has been managed with care over many decades, ensuring that the castle's fabric is protected while making it genuinely available for the creative use that sustains its international reputation.",
+            ],
+        },
+        {
+            "title": "ARUNDEL AS A LIVING FILM SET",
+            "image_url": "",
+            "image_caption": "The south front and formal gardens of Arundel Castle, where the interplay of medieval, Victorian, and natural landscape elements continues to attract film-makers.",
+            "paragraphs": [
+                "What distinguishes Arundel from many comparable locations is its quality as a genuinely inhabited castle rather than a museum. The Duke and Duchess of Norfolk continue to live in the private apartments, and the castle's events programme — jousting, medieval encampments, theatrical performances — maintains a sense of living dramatic purpose that communicates itself on screen. Film-makers frequently note that Arundel's rooms have a quality of occupancy, a sense that these spaces are used and cared for, that distinguishes them from the slightly embalmed atmosphere of some heritage interiors.",
+                "The castle's programme of restoration and conservation, ongoing under the present Duke, has also ensured that the fabric of the building remains in the condition that film-makers require: surfaces that read as genuine rather than maintained at the expense of authenticity, floors that carry the marks of centuries of use, window glass that has the subtle irregularity of the old rather than the uniform clarity of the new. These qualities, invisible in themselves but cumulatively powerful on screen, explain why Arundel continues to attract productions seeking historical drama locations of the highest quality. The castle's combination of medieval, Victorian, and living-domestic character is, in the South of England, essentially without peer.",
+            ],
+        },
+    ],
+}
+
+MOVIES["penshurst-place"] = {
+    "subtitle": "Penshurst Place's fourteenth-century Baron's Hall — one of the most complete medieval domestic interiors in England — has made it a location of first choice for productions seeking authentic Tudor and Plantagenet settings, with a screen history that spans the age of chivalry to the Wars of the Roses.",
+    "chapters": [
+        {
+            "title": "THE WHITE QUEEN (BBC, 2013)",
+            "image_url": "",
+            "image_caption": "The Baron's Hall of Penshurst Place, built in 1341, served as a primary filming location for the BBC's adaptation of Philippa Gregory's Wars of the Roses novels.",
+            "paragraphs": [
+                "The BBC's adaptation of Philippa Gregory's White Queen novels — broadcast in ten episodes in 2013 and directed by James Kent, Jamie Payne, and Colin Teague — brought the Wars of the Roses to mainstream British and international television with a production that made extensive use of Penshurst Place as one of its principal location settings. The Baron's Hall of 1341, with its arched chestnut columns, central hearth, and crown-post ceiling, was an ideal choice for the production's requirement of a convincing medieval great hall that could serve multiple dramatic purposes across the series: feasts, audiences, confrontations, and the domestic scenes that ground the political drama in a believable physical world. The hall's genuine medieval fabric — unaltered in its essential character since the fourteenth century — meant that the production team could dress and light it with a minimum of artificial intervention.",
+                "Rebecca Ferguson played Elizabeth Woodville, the commoner who became queen consort to Edward IV, and the Penshurst sequences were central to the series' visual identity. The production's approach to Penshurst was deliberately realistic rather than theatrical: director of photography Owen McPhedran used natural light supplemented by period-appropriate candle and torch effects to create a sense of medieval domestic life as it might actually have appeared, rather than the glamorised vision that costume drama frequently substitutes for historical truth. The White Queen was sold to Starz in the United States and broadcast internationally, introducing Penshurst's incomparable interiors to a global audience of period drama enthusiasts.",
+            ],
+        },
+        {
+            "title": "THE HOLLOW CROWN (BBC, 2012 AND 2016)",
+            "image_url": "",
+            "image_caption": "The Hollow Crown's adaptation of Shakespeare's history plays used Penshurst Place's medieval hall and exterior for key scenes depicting royal courts of medieval England.",
+            "paragraphs": [
+                "The BBC's The Hollow Crown — an ambitious cycle of Shakespeare's history plays produced for the Diamond Jubilee year and broadcast in 2012, with a second series following in 2016 — was one of the most prestigious British drama productions of the decade, bringing together a cast of extraordinary depth and quality to perform the plays in cinematic form. Penshurst Place featured in the first series, which covered Richard II, Henry IV Parts 1 and 2, and Henry V, with the medieval hall and the castle's exterior providing locations for court and domestic scenes set in the late Plantagenet and early Lancastrian periods. The production's design team, led by production designer Richard Bridgland, used Penshurst's authentic medieval fabric as a foundation upon which to construct a visual world that was simultaneously historically grounded and cinematically dynamic.",
+                "The second series, covering Henry VI and Richard III and featuring Benedict Cumberbatch in a celebrated portrayal of Richard III, also made use of English castle locations with Penshurst among them. Tom Hiddleston's performance as Henry V in the first series received particular critical acclaim, and the Penshurst-filmed sequences contributed to the production's overall visual coherence — a sense of a medieval England rendered in authentic materials rather than studio artifice. The Hollow Crown was broadcast to international audiences through PBS in the United States and attracted extensive critical praise for its combination of Shakespearean fidelity with cinematic ambition, winning multiple BAFTA and Primetime Emmy nominations.",
+            ],
+        },
+        {
+            "title": "TUDOR DRAMA AND THE BARON'S HALL",
+            "image_url": "",
+            "image_caption": "The fourteenth-century Baron's Hall has served as a filming location for television productions covering the entire Tudor period, from Henry VII to Elizabeth I.",
+            "paragraphs": [
+                "The Baron's Hall's unique status as one of the most authentically preserved medieval great halls in England has made it a recurrent location for productions covering the Tudor period, a century and a half in which the hall itself was a fully functioning aristocratic domestic space. The Sidney family's occupation of Penshurst from 1552 means that the hall would have been familiar to many of the historical figures dramatised in Tudor-period television productions, including figures who were guests here in life. This biographical connection between Penshurst and the Tudor world it represents on screen gives the location a resonance beyond mere architectural appropriateness.",
+                "Various BBC and ITV productions covering the reigns of Henry VII, Henry VIII, Edward VI, Mary I, and Elizabeth I have used Penshurst's hall and the castle's exterior as components of their period world-building, typically combining the location with studio interior work and other English castle locations to construct a composite visual environment. The estate has also hosted documentary filming covering the Sidney family's extraordinary legacy — Philip Sidney, the Elizabethan soldier-poet born at Penshurst in 1554, is himself a figure of sufficient historical significance to merit documentary treatment — giving the location a dual screen life as both drama setting and historical subject.",
+            ],
+        },
+        {
+            "title": "PENSHURST'S SCREEN LEGACY AND THE LIVING ESTATE",
+            "image_url": "",
+            "image_caption": "The gatehouse and south front of Penshurst Place, whose combination of medieval and Tudor fabric makes it one of the most cinematically versatile historic houses in England.",
+            "paragraphs": [
+                "Penshurst Place's continued attraction for film and television production companies rests on a combination of factors that are unusual even among England's exceptional stock of medieval and Tudor architecture. The Baron's Hall is the critical asset: a room of this age, completeness, and atmospheric quality is extraordinarily rare, and its sustained cinematic use across multiple decades reflects a consistent appreciation by production designers and directors of photography of what genuine medieval fabric offers that no reconstruction can provide. The hall's proportions, the play of light through its high windows, and the texture of its sandstone columns and plaster walls produce images of medieval domesticity that carry immediate conviction.",
+                "The wider estate — gardens laid out from the Elizabethan period, parkland running down to the Medway valley, and the church of St John the Baptist with its Sidney memorials adjacent to the house — provides a range of outdoor locations that extend the cinematic possibilities of the site considerably. The Sidney family's continuing ownership and active management of Penshurst ensures that the estate is maintained in the condition that both heritage visitors and location managers require: a living historic house rather than a frozen museum, with the sense of continuous occupation that no artificial dressing can convincingly simulate. Penshurst's screen history is an extension of its real history, and the two are, in the end, inseparable.",
+            ],
+        },
+    ],
+}
+
 
 # Bench types available for new bench orders
 BENCH_TYPES = [
@@ -5842,6 +6477,7 @@ def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -
         "cp_slug":    estate.get("car_park_slug", "") or "",
         "brand":      _get_brand(estate, car_park),
         "features":   _resolve_features(car_park, estate),
+        "ad_slot_html": None,  # Future: set per-estate ad HTML to monetise visitor pages
     }
 
 
@@ -6216,6 +6852,7 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     ctx = _base_ctx(request, slug, estate, car_park, "Movie Connections")
     ctx["page_content_html"] = _get_page_content_html(car_park, "movies")
+    ctx["movies_data"] = MOVIES.get(slug)
     return templates.TemplateResponse("location/visitor/movies.html", ctx)
 
 

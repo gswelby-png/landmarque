@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Error — LandMarque</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: #050505;
+      min-height: 100vh;
+      font-family: 'Raleway', Helvetica, Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      text-align: center;
+      -webkit-font-smoothing: antialiased;
+    }
+    .mark { margin-bottom: 2rem; opacity: .4; }
+    .code { font-size: 5rem; font-weight: 800; letter-spacing: -2px; color: #fff; line-height: 1; margin-bottom: .5rem; }
+    .code span { color: #8B3A2A; }
+    .msg { font-size: .72rem; font-weight: 700; letter-spacing: 4px; text-transform: uppercase; color: rgba(255,255,255,.3); margin-bottom: .75rem; }
+    .detail { font-size: .85rem; font-weight: 300; color: rgba(255,255,255,.2); line-height: 1.7; max-width: 320px; margin-bottom: 2.5rem; }
+    .home-btn { display: inline-flex; align-items: center; gap: .5rem; background: #B89A5A; color: #fff; text-decoration: none; font-size: .65rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: .8rem 1.5rem; border-radius: 3px; }
+  </style>
+</head>
+<body>
+  <div class="mark">
+    <img src="/static/treering1_gold.png" width="48" height="48" alt="LandMarque">
+  </div>
+  <div class="code"><span>5</span>00</div>
+  <div class="msg">Something went wrong</div>
+  <p class="detail">We encountered an unexpected error. Our team has been notified. Please try again in a moment.</p>
+  <a href="/" class="home-btn">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    Return home
+  </a>
+</body>
+</html>

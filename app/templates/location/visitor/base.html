@@ -5,6 +5,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="color-scheme" content="light">
   <title>{% block title %}{{ estate_name }}{% endblock %}</title>
+  {% set _desc = car_park_tagline or welcome_text or (estate_name + ' — visitor guide, history, walking routes and more.') %}
+  {% set _title_full = self.title() + ' | LandMarque' %}
+  <meta name="description" content="{{ _desc[:160] }}">
+  <link rel="canonical" href="https://landmarque.co.uk/location/{{ slug }}/visitor/welcome">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ _title_full }}">
+  <meta property="og:description" content="{{ _desc[:200] }}">
+  <meta property="og:url" content="https://landmarque.co.uk/location/{{ slug }}/visitor/welcome">
+  {% if logo_url %}<meta property="og:image" content="{{ logo_url }}">{% endif %}
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ _title_full }}">
+  <meta name="twitter:description" content="{{ _desc[:200] }}">
   <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }

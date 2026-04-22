@@ -334,9 +334,44 @@ async def contact_post(
 
 
 
+@app.get("/sitemap.xml", response_class=HTMLResponse)
+def sitemap(request: Request):
+    from app.data.estates import ESTATES as _E
+    urls = [
+        "https://landmarque.co.uk/",
+        "https://landmarque.co.uk/explore/estates",
+        "https://landmarque.co.uk/landmarque/about",
+        "https://landmarque.co.uk/landmarque/register",
+        "https://landmarque.co.uk/landmarque/parking",
+        "https://landmarque.co.uk/landmarque/legacies",
+        "https://landmarque.co.uk/landmarque/benches",
+        "https://landmarque.co.uk/landmarque/trees",
+        "https://landmarque.co.uk/contact",
+    ]
+    for slug, data in _E.items():
+        urls.append(f"https://landmarque.co.uk/explore/{slug}")
+        urls.append(f"https://landmarque.co.uk/location/{slug}/visitor/welcome")
+        for feat in data.get("features", []):
+            if feat == "parking":
+                continue
+            page = {
+                "history": "history", "movies": "movies", "places-to-eat": "places-to-eat",
+                "walking": "walking", "cycling": "cycling", "places-of-interest": "places-of-interest",
+                "fun-for-kids": "fun-for-kids", "shopping": "shopping",
+                "benches": "sponsor-a-bench", "legacy": "legacy", "events": "events",
+            }.get(feat)
+            if page:
+                urls.append(f"https://landmarque.co.uk/location/{slug}/visitor/{page}")
+    body = '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
+    for u in urls:
+        body += f"  <url><loc>{u}</loc></url>\n"
+    body += "</urlset>"
+    return HTMLResponse(content=body, media_type="application/xml")
+
+
 @app.get("/robots.txt", response_class=PlainTextResponse)
 def robots():
-    return "User-agent: *\nDisallow: /admin/\nDisallow: /owner/\nDisallow: /check/\nAllow: /park/\nAllow: /\n"
+    return "User-agent: *\nDisallow: /admin/\nDisallow: /owner/\nDisallow: /check/\nAllow: /park/\nAllow: /\nSitemap: https://landmarque.co.uk/sitemap.xml\n"
 
 
 @app.exception_handler(404)
@@ -352,4 +387,12 @@ async def service_unavailable(request: Request, exc: HTTPException):
     return HTMLResponse(
         templates.get_template("errors/503.html").render({"request": request}),
         status_code=503,
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception(request: Request, exc: Exception):
+    return HTMLResponse(
+        templates.get_template("errors/500.html").render({"request": request}),
+        status_code=500,
     )

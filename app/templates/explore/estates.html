@@ -131,10 +131,14 @@
 
     .estate-card {
       display: flex; align-items: center; gap: .9rem;
-      padding: 1rem 1.1rem; border-bottom: 1px solid rgba(255,255,255,.045);
-      text-decoration: none; color: inherit; transition: background .1s;
+      padding: 1.1rem 1.1rem; border-bottom: 1px solid rgba(255,255,255,.045);
+      text-decoration: none; color: inherit;
+      transition: background .15s, transform .15s;
+      opacity: 0; transform: translateY(8px);
     }
-    .estate-card:hover { background: rgba(255,255,255,.025); }
+    .estate-card.revealed { opacity: 1; transform: translateY(0); transition: background .15s, transform .25s ease, opacity .25s ease; }
+    .estate-card:hover { background: rgba(255,255,255,.03); }
+    .estate-card:active { transform: scale(.99); }
     .estate-card.hidden { display: none; }
     .card-body { flex: 1; min-width: 0; }
     .card-top { display: flex; align-items: center; gap: .55rem; margin-bottom: .25rem; }
@@ -191,6 +195,7 @@
 
 <!-- Map — starts at very top -->
 <div id="map"></div>
+<div id="map-loading" style="position:fixed;bottom:calc(var(--map-h) * 0.08);left:50%;transform:translateX(-50%);z-index:10;background:rgba(0,0,0,.65);color:rgba(255,255,255,.75);font-size:.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:.4rem .9rem;border-radius:20px;backdrop-filter:blur(4px);pointer-events:none;transition:opacity .4s;">Loading boundaries…</div>
 
 <!-- Logo overlaid on map, no background -->
 <a href="/" class="map-logo">
@@ -205,7 +210,7 @@
 
 <!-- Filter bar directly below map -->
 <div class="filter-bar">
-  <input class="filter-search" id="search" type="text" placeholder="Search estates or counties…" oninput="applyFilters()">
+  <input class="filter-search" id="search" type="text" placeholder="Search estates or counties…" oninput="_filtersEverChanged=true;applyFilters()">
   <button class="filter-btn" id="filter-toggle-btn" onclick="togglePanel()">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="8" y1="12" x2="16" y2="12"/><line x1="11" y1="18" x2="13" y2="18"/></svg>
     Sort &amp; filter
@@ -351,15 +356,16 @@
     );
     const query =
       `[out:json][timeout:60];\n(\n  ${parts.join(';\n  ')};\n);\nout body;\n>;\nout skel qt;`;
+    const loadingEl = document.getElementById('map-loading');
     let data;
     try {
       const resp = await fetch('https://overpass-api.de/api/interpreter', {
         method: 'POST',
         body: 'data=' + encodeURIComponent(query)
       });
-      if (!resp.ok) return;
+      if (!resp.ok) { if (loadingEl) loadingEl.style.opacity = '0'; return; }
       data = await resp.json();
-    } catch (err) { return; }
+    } catch (err) { if (loadingEl) loadingEl.style.opacity = '0'; return; }
 
     // Build node & way lookup tables
     const nodeMap = {}, wayMap = {};
@@ -404,6 +410,7 @@
       poly.on('click', () => { window.location.href = '/explore/' + best.slug; });
       markerLayers[best.slug] = poly;
     });
+    if (loadingEl) loadingEl.style.opacity = '0';
   })();
 
   // Geolocation — user position stays as a small circle marker
@@ -430,6 +437,7 @@
     }, () => { applyFilters(); });
   } else { applyFilters(); }
 
+  let _filtersEverChanged = false;
   function applyFilters() {
     const q = document.getElementById('search').value.toLowerCase().trim();
     const cards = Array.from(document.querySelectorAll('.estate-card'));
@@ -440,6 +448,7 @@
       const matchF = activeFeats.size === 0 || [...activeFeats].every(f => feats.includes(f));
       if (matchQ && matchF) {
         card.classList.remove('hidden');
+        if (_filtersEverChanged) card.classList.add('revealed'); // instant-reveal on filter change
         visible.push(card);
         if (markerLayers[card.dataset.slug]) markerLayers[card.dataset.slug].setStyle(GOLD_STYLE);
       } else {
@@ -466,6 +475,7 @@
     document.querySelectorAll('.sort-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     currentSort = btn.dataset.sort;
+    _filtersEverChanged = true;
     applyFilters();
   }
 
@@ -482,6 +492,7 @@
         else { activeFeats.add(feat); chip.classList.add('active'); }
         if (activeFeats.size === 0) document.querySelector('.feat-filter[data-feat=""]').classList.add('active');
       }
+      _filtersEverChanged = true;
       applyFilters();
     });
   });
@@ -497,6 +508,12 @@
   }
 
   applyFilters();
+
+  // Scroll-reveal cards with IntersectionObserver
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); revealObs.unobserve(e.target); } });
+  }, { rootMargin: '0px 0px -30px 0px', threshold: 0.05 });
+  document.querySelectorAll('.estate-card').forEach(c => revealObs.observe(c));
 </script>
 </body>
 </html>
