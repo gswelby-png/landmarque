@@ -351,9 +351,20 @@
   // Load real estate boundary polygons from OpenStreetMap via Overpass API
   (async () => {
     const withCoords = ALL_ESTATES.filter(e => e.lat && e.lng);
-    const parts = withCoords.map(e =>
-      `relation(around:5000,${e.lat},${e.lng})["boundary"]`
-    );
+    // Exclude administrative boundaries (parishes/districts/counties) which are noisy
+    // and prefer leisure/landuse/protected-area relations that actually represent estate grounds
+    const parts = withCoords.flatMap(e => [
+      `relation(around:2500,${e.lat},${e.lng})["leisure"="park"]["name"]`,
+      `relation(around:2500,${e.lat},${e.lng})["leisure"="garden"]["name"]`,
+      `relation(around:2500,${e.lat},${e.lng})["leisure"="nature_reserve"]["name"]`,
+      `relation(around:2500,${e.lat},${e.lng})["boundary"="protected_area"]["name"]`,
+      `relation(around:2500,${e.lat},${e.lng})["historic"="manor"]["name"]`,
+      `way(around:2500,${e.lat},${e.lng})["leisure"="park"]["name"]`,
+      `way(around:2500,${e.lat},${e.lng})["leisure"="garden"]["name"]`,
+      `way(around:2500,${e.lat},${e.lng})["leisure"="nature_reserve"]["name"]`,
+      `way(around:2500,${e.lat},${e.lng})["landuse"="farmland"]["name"]`,
+      `way(around:2500,${e.lat},${e.lng})["historic"]["name"]`,
+    ]);
     const query =
       `[out:json][timeout:60];\n(\n  ${parts.join(';\n  ')};\n);\nout body;\n>;\nout skel qt;`;
     const loadingEl = document.getElementById('map-loading');
@@ -368,48 +379,59 @@
     } catch (err) { if (loadingEl) loadingEl.style.opacity = '0'; return; }
 
     // Build node & way lookup tables
-    const nodeMap = {}, wayMap = {};
+    const nodeMap = {}, wayMap = {}, wayTagMap = {};
     data.elements.forEach(el => {
       if (el.type === 'node') nodeMap[el.id] = [el.lat, el.lon];
-      if (el.type === 'way')  wayMap[el.id]  = el.nodes;
+      if (el.type === 'way')  { wayMap[el.id] = el.nodes; wayTagMap[el.id] = el.tags || {}; }
     });
 
-    const assigned = new Set();
-    data.elements.filter(el => el.type === 'relation').forEach(rel => {
-      const outerIds = (rel.members || [])
-        .filter(m => m.type === 'way' && m.role === 'outer')
-        .map(m => m.ref);
-      if (!outerIds.length) return;
-
-      // Centroid of outer ring to match against nearest estate
-      const allPts = outerIds.flatMap(wid =>
-        (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
-      );
-      if (!allPts.length) return;
-      const cLat = allPts.reduce((s, p) => s + p[0], 0) / allPts.length;
-      const cLng = allPts.reduce((s, p) => s + p[1], 0) / allPts.length;
-
+    function tryAssign(pts, buildRings, label) {
+      if (!pts.length) return false;
+      const cLat = pts.reduce((s, p) => s + p[0], 0) / pts.length;
+      const cLng = pts.reduce((s, p) => s + p[1], 0) / pts.length;
       let best = null, bestD = Infinity;
       withCoords.forEach(e => {
         const d = Math.hypot(cLat - e.lat, cLng - e.lng);
         if (d < bestD) { bestD = d; best = e; }
       });
-      // Reject if centroid is >12 km from nearest estate, or already assigned
-      if (!best || bestD > 0.12 || assigned.has(best.slug)) return;
+      // Reject if centroid >5 km from nearest estate, or already assigned
+      if (!best || bestD > 0.045 || assigned.has(best.slug)) return false;
+      const rings = buildRings();
+      if (!rings.length) return false;
       assigned.add(best.slug);
-
-      // Build Leaflet polygon rings from outer way node sequences
-      const rings = outerIds.map(wid =>
-        (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
-      ).filter(r => r.length > 2);
-      if (!rings.length) return;
-
-      // Swap circle placeholder for real boundary polygon
       map.removeLayer(markerLayers[best.slug]);
       const poly = L.polygon(rings, GOLD_STYLE).addTo(map);
       poly.on('click', () => { window.location.href = '/explore/' + best.slug; });
       markerLayers[best.slug] = poly;
+      return true;
+    }
+
+    const assigned = new Set();
+
+    // Relations (multi-polygon estate grounds)
+    data.elements.filter(el => el.type === 'relation').forEach(rel => {
+      const outerIds = (rel.members || [])
+        .filter(m => m.type === 'way' && m.role === 'outer')
+        .map(m => m.ref);
+      if (!outerIds.length) return;
+      const allPts = outerIds.flatMap(wid =>
+        (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
+      );
+      tryAssign(allPts, () =>
+        outerIds.map(wid =>
+          (wayMap[wid] || []).map(nid => nodeMap[nid]).filter(Boolean)
+        ).filter(r => r.length > 2),
+        rel.tags && rel.tags.name
+      );
     });
+
+    // Simple closed ways (single-polygon grounds or gardens)
+    data.elements.filter(el => el.type === 'way' && el.nodes && el.nodes.length > 3).forEach(w => {
+      if (assigned.size >= withCoords.length) return;
+      const pts = (w.nodes || []).map(nid => nodeMap[nid]).filter(Boolean);
+      tryAssign(pts, () => [pts.filter(p => p)], w.tags && w.tags.name);
+    });
+
     if (loadingEl) loadingEl.style.opacity = '0';
   })();
 
