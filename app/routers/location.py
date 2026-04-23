@@ -8259,6 +8259,72 @@ MOVIES["penshurst-place"] = {
     ],
 }
 
+MOVIES["shere-manor-estate"] = {
+    "subtitle": "Shere village has graced cinema screens for decades, but it was Nancy Meyers' 2006 romantic comedy The Holiday that made this Surrey gem a pilgrimage destination for film lovers worldwide.",
+    "chapters": [
+        {
+            "title": "THE HOLIDAY — AN ENGLISH IDYLL ON SCREEN",
+            "image_url": "",
+            "image_caption": "Cameron Diaz as Amanda Woods approaches the snow-dusted lane leading to Rosehill Cottage in Shere, Surrey — the iconic exterior used for Iris Simpkins' fictional home in The Holiday (2006).",
+            "paragraphs": [
+                "When director Nancy Meyers set out to find the most quintessentially English village imaginable for her 2006 romantic comedy The Holiday, her location scouts landed in Shere — and the choice was immediately obvious. The film follows Iris Simpkins, played by Kate Winslet, swapping homes with American advertising executive Amanda Woods, played by Cameron Diaz, who arrives in the Surrey Hills to find herself in a picture-perfect cottage surrounded by frosted hedgerows and medieval lanes. The village was not merely a backdrop; Meyers named Iris's fictional home village 'Shere' in the script itself, making the real place inseparable from the story.",
+                "Rosehill Cottage on the edge of the village served as the exterior of Iris's home, and its appearance — stone walls, a low gate, and the gentle rise of the Surrey Hills behind it — became one of the most recognisable images in early twenty-first century romantic cinema. The film went on to gross over $200 million worldwide, and in the years since its release Shere has received a steady and devoted stream of visitors who arrive clutching screenshots, retracing Amanda's steps through the village lanes and seeking out the views that Meyers' camera lingered over so affectionately.",
+            ]
+        },
+        {
+            "title": "SHERE THROUGH THE LENS",
+            "image_url": "",
+            "image_caption": "The Norman tower of St James's Church rises above the timber-framed rooftops of Shere's medieval high street — a composition that has appeared in film and television productions spanning more than half a century.",
+            "paragraphs": [
+                "Long before The Holiday brought global attention to Shere, the village had already established itself as one of the most consistently used locations in the British film and television industry. Its medieval street plan has remained largely unaltered for centuries, offering production designers a rare combination of Norman architecture, Tudor timber framing, a clear chalk stream — the Tillingbourne — running through the centre, and a village green unspoiled by modern intrusion. The Church of St James, with its twelfth-century tower and Norman doorway, has featured in period dramas, costume films, and contemporary productions alike, providing an instant visual shorthand for English rural tradition.",
+                "The proximity of Shere to the major studio complexes at Shepperton and Pinewood — both reachable within forty minutes — makes it an economically practical as well as visually compelling choice for location managers working to tight schedules. The village's enduring appeal lies in its ability to stand in for almost any era of English history while remaining entirely, unmistakably itself.",
+            ]
+        },
+        {
+            "title": "VISITING THE FILM LOCATIONS",
+            "image_url": "",
+            "image_caption": "Visitors pause outside the tea rooms on Shere's main street on a bright spring afternoon, the same view of timber-framed facades and the Tillingbourne that has been captured by film crews across generations of productions.",
+            "paragraphs": [
+                "For visitors arriving in Shere as fans of The Holiday, the experience of recognition is immediate and deeply satisfying. The lane approaching Rosehill Cottage, the view of St James's Church tower from the village green, the narrow streets where Amanda Woods wanders bewildered and enchanted in the film's opening English scenes — all remain essentially unchanged from what appeared on screen in 2006. The village tea rooms, housed in buildings whose exteriors featured in background shots throughout the film, offer the natural first stop for film tourists.",
+                "St James's Church welcomes visitors throughout the year, and its interior — with its Norman arcading and quiet medieval atmosphere — rewards those who linger beyond the famous exterior. The Tillingbourne stream running alongside the main street, the old well on the village square, and the surrounding footpaths through the Surrey Hills AONB all form part of an experience that goes well beyond any single film. Those who arrive chasing The Holiday tend to stay far longer than they planned, drawn in by the same quality that has made Shere irresistible to film-makers for generations: the sense that time has moved more gently here than almost anywhere else in the south of England.",
+            ]
+        },
+    ]
+}
+
+MOVIES["groombridge-place"] = {
+    "subtitle": "The moated manor and walled gardens of Groombridge Place have brought Frances Hodgson Burnett's most beloved novel to life twice on screen — a distinction shared by almost no other location in British film history.",
+    "chapters": [
+        {
+            "title": "THE SECRET GARDEN — FROM PAGE TO SCREEN",
+            "image_url": "",
+            "image_caption": "The walled gardens at Groombridge Place as they appeared during filming of the 1993 Warner Bros. adaptation of The Secret Garden, directed by Agnieszka Holland.",
+            "paragraphs": [
+                "When director Agnieszka Holland set out to adapt Frances Hodgson Burnett's 1911 novel for Warner Bros. and American Zoetrope in 1993, she needed a location that could carry the full emotional weight of Misselthwaite Manor — a place that felt simultaneously grand and melancholy, forbidding on the outside and secretly alive within. Groombridge Place answered every requirement. Its formal walled gardens, softened by decades of naturalistic planting, became the film's central setting, standing in for the neglected garden that orphan Mary Lennox, played by Kate Maberly, discovers and coaxes back to life alongside Colin Craven, played by Heydon Prowse, and Dickon, played by Andrew Knott.",
+                "Maggie Smith's performance as the austere Mrs Medlock gave the manor sequences their chill, but it is the walled garden footage that viewers remember most vividly — the creeping ivy, the hidden door, the slow return of colour to overgrown beds. Holland's camera treated Groombridge's gardens as a living character in their own right, and the film's critical success cemented the estate's identity as the definitive on-screen home of Burnett's story. Visitors who walk through the walled gardens today are retracing Mary's steps almost exactly as Holland framed them.",
+            ]
+        },
+        {
+            "title": "A SECOND SECRET GARDEN",
+            "image_url": "",
+            "image_caption": "The south-facing walled garden at Groombridge Place dressed for the 2020 adaptation directed by Marc Munden, with the moat and manor visible in the background.",
+            "paragraphs": [
+                "In 2020, director Marc Munden brought a new version of The Secret Garden to the screen for Studiocanal, starring Colin Firth as Archibald Craven, Julie Walters as Mrs Medlock, and Dixie Egerickx as Mary. Munden and his production team returned to Groombridge Place, knowing that Holland's film had already defined its visual identity for a generation of audiences. The decision speaks to something irreplaceable about the estate's character — no other location combined a working moat, a genuinely walled formal garden, and surrounding ancient woodland in quite the same proportions.",
+                "The result is a rare distinction in British film history: a single estate serving as the principal location for two entirely separate studio adaptations of the same source novel, produced twenty-seven years apart. Each film brought its own aesthetic — Holland's version grounded in period realism, Munden's leaning into a more heightened, dreamlike visual language — yet both found Groombridge's geometry of enclosure and revelation essential to telling Burnett's story. Standing inside the walled gardens today carries a double resonance, the space layered with two distinct cinematic memories.",
+            ]
+        },
+        {
+            "title": "CONAN DOYLE & THE LITERARY LEGACY",
+            "image_url": "",
+            "image_caption": "The ancient woodland of the Enchanted Forest at Groombridge Place, whose moody atmosphere drew both filmmakers and, a century earlier, the creator of Sherlock Holmes.",
+            "paragraphs": [
+                "The estate's connection to storytelling runs deeper than its film credits. Sir Arthur Conan Doyle knew the Groombridge area intimately, and literary historians have long argued that the moated manor served as the primary inspiration for Birlstone Manor in The Valley of Fear, published in 1915 — one of the four Sherlock Holmes novels. In that story, the isolated moated house and its drawbridge are central to the mystery's architecture, and the physical correspondence between Conan Doyle's description and Groombridge Place is close enough to be more than coincidence.",
+                "The ancient woodland that borders the formal gardens — developed into the Enchanted Forest visitor attraction — carries its own storytelling charge. Its identity as a place of mystery and discovery grew naturally from the woodland's existing character, the same quality that made it a sympathetic backdrop for the Secret Garden productions and, before them, a landscape that Conan Doyle found suggestive enough to put into print. Groombridge Place sits at an unusual confluence of literary and cinematic history, a working estate that has been shaping the English imagination for well over a century.",
+            ]
+        },
+    ]
+}
+
 
 # Bench types available for new bench orders
 BENCH_TYPES = [

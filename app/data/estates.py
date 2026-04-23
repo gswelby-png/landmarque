@@ -89,7 +89,7 @@ ESTATES = {
         "lat": 50.8561, "lng": -0.5510,
         "brand_primary": "#1a0e0e",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "goodwood-estate": {
         "name": "Goodwood Estate",
@@ -165,7 +165,7 @@ ESTATES = {
         "lat": 51.1734, "lng": 0.1697,
         "brand_primary": "#18100a",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "hever-castle": {
         "name": "Hever Castle",
@@ -175,7 +175,7 @@ ESTATES = {
         "lat": 51.1908, "lng": 0.1097,
         "brand_primary": "#1a0e06",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "lullingstone-castle": {
         "name": "Lullingstone Castle",
@@ -218,7 +218,7 @@ ESTATES = {
         "lat": 50.8143, "lng": -1.4562,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#7CAE7A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "exbury-gardens": {
         "name": "Exbury Gardens",
