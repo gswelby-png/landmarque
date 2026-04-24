@@ -33,24 +33,24 @@
     #scroll-nav .nav-inner {
       display: flex; align-items: center; justify-content: space-between;
       max-width: 520px; margin: 0 auto;
-      padding: .85rem 1.25rem;
+      padding: 1.06rem 1.25rem;
     }
     #scroll-nav .nav-home {
       display: flex; align-items: center; gap: .65rem;
       text-decoration: none; flex: 1;
     }
-    #scroll-nav img { height: 22px; width: auto; flex-shrink: 0; display: block; }
+    #scroll-nav img { height: 26px; width: auto; flex-shrink: 0; display: block; }
     #scroll-nav .nav-home span {
-      font-weight: 700; font-size: .75rem; color: #fff;
+      font-weight: 700; font-size: .94rem; color: #fff;
       letter-spacing: 1.5px; text-transform: uppercase; line-height: 1;
     }
     #hamburger-btn {
       background: none; border: none; cursor: pointer;
       padding: .25rem; display: flex; flex-direction: column;
-      gap: 5px; flex-shrink: 0;
+      gap: 6px; flex-shrink: 0;
     }
     #hamburger-btn span {
-      display: block; width: 22px; height: 2px;
+      display: block; width: 28px; height: 2px;
       background: #fff; border-radius: 2px;
       transition: background .15s;
     }
@@ -170,6 +170,21 @@
     .page-reveal { opacity: 0; transform: translateY(14px); animation: pageReveal .5s ease forwards; }
     @keyframes pageReveal { to { opacity:1; transform:translateY(0); } }
     {% block extra_css %}{% endblock %}
+    /* ── Visitor content wrapper — overrideable per breakpoint ── */
+    #visitor-main { max-width: 520px; margin: 0 auto; padding: 1.25rem 1.25rem 0; }
+    #visitor-footer { max-width: 520px; margin: 0 auto; padding: 2.5rem 1.25rem 3rem; border-top: 1px solid #1a1a1a; }
+  </style>
+  <style>
+  @media (min-width: 780px) {
+    #scroll-nav .nav-inner { max-width: 960px !important; padding: .9rem 2.5rem !important; }
+    #hamburger-menu .menu-header { max-width: 960px !important; }
+    #hamburger-menu nav { max-width: 960px !important; padding: 1.5rem 2.5rem !important; }
+    .all-estates-box { max-width: 960px !important; }
+    #visitor-main { max-width: 960px; padding: 1.5rem 2.5rem 0; }
+    #visitor-footer { max-width: 960px; padding: 3rem 2.5rem; }
+    /* Wider page-wrap on content pages */
+    .page-wrap { width: 100% !important; margin: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
+  }
   </style>
   {% if brand %}
   <style>
@@ -234,7 +249,7 @@
     </div>
   </div>
 
-  <div style="max-width:520px; margin:0 auto; padding:1.25rem 1.25rem 0;">
+  <div id="visitor-main">
 
     {% block header %}{% endblock %}
 
@@ -250,7 +265,7 @@
   </div>
 
   <div style="height:20vh; min-height:120px;"></div>
-  <footer style="max-width:520px; margin:0 auto; padding:2.5rem 1.25rem 3rem; border-top:1px solid #1a1a1a;">
+  <footer id="visitor-footer">
     {% block footer_nav %}
     {% set fa = "font-size:.83rem; color:rgba(255,255,255,.45); font-weight:400; text-decoration:none; padding:.45rem 0; border-bottom:1px solid #111; transition:color .15s;" %}
     <p style="font-size:.6rem; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.25); margin-bottom:1.25rem;">Navigate</p>

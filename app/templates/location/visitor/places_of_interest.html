@@ -1,14 +1,9 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Places of Interest — {{ estate_name }}{% endblock %}
+{% block title %}Places of Interest â€” {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
     /* Nav bar */
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     /* Footer */
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
@@ -82,7 +77,7 @@
   {% if not loop.first %}<hr class="divider">{% endif %}
 
   <div class="entry-name">{{ place.name }}</div>
-  <div class="entry-meta">{{ place.type }} · {{ place.distance }}</div>
+  <div class="entry-meta">{{ place.type }} Â· {{ place.distance }}</div>
 
   {% if place.image_url %}
   <img src="{{ place.image_url }}" alt="{{ place.name }}" class="entry-image">
@@ -92,7 +87,7 @@
 
   <p class="entry-summary">{{ place.summary }}</p>
   <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
-     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+     target="_blank" rel="noopener" class="directions-link">Get Directions â†’</a>
 
   {% endfor %}
 

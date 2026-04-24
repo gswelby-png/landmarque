@@ -175,6 +175,20 @@
     }
     .menu-home-btn:hover { filter: brightness(115%); color: #fff; }
 
+    /* ── MAP TOOLTIPS ── */
+    .estate-tip {
+      background: rgba(10,10,10,.95) !important;
+      border: 1px solid rgba(184,154,90,.45) !important;
+      border-radius: 5px !important;
+      padding: .55rem .85rem !important;
+      box-shadow: 0 4px 16px rgba(0,0,0,.6) !important;
+      backdrop-filter: blur(8px);
+      pointer-events: none;
+    }
+    .estate-tip::before { display: none !important; }
+    .estate-tip-name { font-family: 'Raleway', sans-serif; font-size: .75rem; font-weight: 700; color: #fff; margin-bottom: .2rem; white-space: nowrap; }
+    .estate-tip-tag { font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 300; color: rgba(255,255,255,.45); white-space: nowrap; max-width: 220px; overflow: hidden; text-overflow: ellipsis; }
+
     /* ── DESKTOP ── */
     @media (min-width: 800px) {
       :root { --map-h: 52vh; --filter-h: 56px; }
@@ -320,8 +334,10 @@
   let activeFeats = new Set();
   let markerLayers = {};
 
-  const GOLD_STYLE = { color: '#B89A5A', fillColor: '#B89A5A', fillOpacity: 0.12, weight: 1.5, opacity: 0.75 };
-  const DIM_STYLE  = { color: '#3a3a3a', fillColor: '#2a2a2a', fillOpacity: 0.04, weight: 1,   opacity: 0.25 };
+  const GOLD_STYLE   = { color: '#B89A5A', fillColor: '#B89A5A', fillOpacity: 0.12, weight: 1.5, opacity: 0.75 };
+  const DIM_STYLE    = { color: '#3a3a3a', fillColor: '#2a2a2a', fillOpacity: 0.04, weight: 1,   opacity: 0.25 };
+  const MARKER_STYLE = { radius: 7, color: '#B89A5A', fillColor: '#B89A5A', fillOpacity: 0.8, weight: 2 };
+  const MARKER_DIM   = { radius: 5, color: '#444', fillColor: '#333', fillOpacity: 0.5, weight: 1 };
 
   function haversine(lat1, lon1, lat2, lon2) {
     const R = 6371, r = Math.PI / 180;
@@ -346,7 +362,11 @@
   // Initial circle markers — visible immediately, replaced by real polygons once Overpass loads
   ALL_ESTATES.forEach(e => {
     if (!e.lat || !e.lng) return;
-    const layer = L.circle([e.lat, e.lng], Object.assign({ radius: 900 }, GOLD_STYLE)).addTo(map);
+    const layer = L.circleMarker([e.lat, e.lng], MARKER_STYLE).addTo(map);
+    layer.bindTooltip(
+      `<div class="estate-tip-name">${e.name}</div><div class="estate-tip-tag">${e.tagline || e.county || ''}</div>`,
+      { className: 'estate-tip', sticky: true, direction: 'top', offset: [0, -8] }
+    );
     layer.on('click', () => { window.location.href = '/explore/' + e.slug; });
     markerLayers[e.slug] = layer;
   });
@@ -404,6 +424,10 @@
       assigned.add(best.slug);
       map.removeLayer(markerLayers[best.slug]);
       const poly = L.polygon(rings, GOLD_STYLE).addTo(map);
+      poly.bindTooltip(
+        `<div class="estate-tip-name">${best.name}</div><div class="estate-tip-tag">${best.tagline || best.county || ''}</div>`,
+        { className: 'estate-tip', sticky: true, direction: 'top', offset: [0, -8] }
+      );
       poly.on('click', () => { window.location.href = '/explore/' + best.slug; });
       markerLayers[best.slug] = poly;
       return true;
@@ -473,12 +497,14 @@
       const matchF = activeFeats.size === 0 || [...activeFeats].every(f => feats.includes(f));
       if (matchQ && matchF) {
         card.classList.remove('hidden');
-        if (_filtersEverChanged) card.classList.add('revealed'); // instant-reveal on filter change
+        if (_filtersEverChanged) card.classList.add('revealed');
         visible.push(card);
-        if (markerLayers[card.dataset.slug]) markerLayers[card.dataset.slug].setStyle(GOLD_STYLE);
+        const ml = markerLayers[card.dataset.slug];
+        if (ml) ml.setStyle(ml._radius !== undefined ? MARKER_STYLE : GOLD_STYLE);
       } else {
         card.classList.add('hidden');
-        if (markerLayers[card.dataset.slug]) markerLayers[card.dataset.slug].setStyle(DIM_STYLE);
+        const ml = markerLayers[card.dataset.slug];
+        if (ml) ml.setStyle(ml._radius !== undefined ? MARKER_DIM : DIM_STYLE);
       }
     });
     visible.sort((a, b) => {

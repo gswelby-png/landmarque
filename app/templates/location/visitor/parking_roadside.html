@@ -1,13 +1,8 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}{{ estate_name }} — Roadside Parking{% endblock %}
+{% block title %}{{ estate_name }} â€” Roadside Parking{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
@@ -60,8 +55,8 @@
 {% block content %}
 <div class="page-wrap">
   <div class="page-title">Roadside Parking</div>
-  <p class="page-body">Roadside parking in and around the village is free of charge and is not managed by the Shere Manor Estate.<br><br>If you would like to make a donation to Shere Manor Estate charity — to support the public services we provide around the village, including this visitor guide — it would be very much appreciated.</p>
+  <p class="page-body">Roadside parking in and around the village is free of charge and is not managed by the Shere Manor Estate.<br><br>If you would like to make a donation to Shere Manor Estate charity â€” to support the public services we provide around the village, including this visitor guide â€” it would be very much appreciated.</p>
   <a href="#" class="btn-donate">Make a Donation</a>
-  <a href="/location/{{ slug }}/visitor/welcome" class="btn-browse">Continue Browsing →</a>
+  <a href="/location/{{ slug }}/visitor/welcome" class="btn-browse">Continue Browsing â†’</a>
 </div>
 {% endblock %}

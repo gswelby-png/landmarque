@@ -1,20 +1,15 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}{{ estate_name }} — Welcome{% endblock %}
+{% block title %}{{ estate_name }} â€” Welcome{% endblock %}
 
 {% block extra_css %}
-    /* ── Nav bar ── */
+    /* â”€â”€ Nav bar â”€â”€ */
     #scroll-nav { background: rgba(0,0,0,0) !important; border-bottom-color: transparent !important; transition: background .3s, border-color .3s; }
     #scroll-nav.scrolled { background: rgba(0,0,0,0.92) !important; border-bottom-color: rgba(255,255,255,.08) !important; backdrop-filter: blur(12px); }
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
-    /* ── Hero ── */
+    /* â”€â”€ Hero â”€â”€ */
     .welcome-header {
       position: relative;
       min-height: 100svh; min-height: 100vh;
@@ -48,11 +43,11 @@
     }
     .hero-scroll-arrow { animation: heroArrow 2.2s ease-in-out infinite; }
     @keyframes heroArrow { 0%,100%{transform:translateY(0)} 55%{transform:translateY(7px)} }
-    /* ── Welcome intro ── */
+    /* â”€â”€ Welcome intro â”€â”€ */
     .welcome-intro { text-align: center; padding: 2.5rem 0 2.25rem; }
     .welcome-intro-title { font-size: 1.45rem; font-weight: 700; color: #fff; letter-spacing: .4px; margin-bottom: 1rem; }
     .welcome-intro-body { font-size: .92rem; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.75; }
-    /* ── Nav grid ── */
+    /* â”€â”€ Nav grid â”€â”€ */
     .nav-grid { padding: 0 0 2rem; }
     /* Full-width cards: horizontal row layout */
     .nav-card-full {
@@ -153,7 +148,7 @@
     }
 
     {% if edit_mode %}
-    /* ── Edit mode ── */
+    /* â”€â”€ Edit mode â”€â”€ */
     body { padding-top: 52px; }
     #scroll-nav { top: 52px; }
 
@@ -316,7 +311,7 @@
 </div>
 
 {% if edit_mode %}
-{# ── EDIT MODE: all cards pre-rendered, JS toggles visibility ── #}
+{# â”€â”€ EDIT MODE: all cards pre-rendered, JS toggles visibility â”€â”€ #}
 <div class="nav-grid" id="em-grid">
 
   <a href="/location/{{ slug }}/visitor/parking-select" class="nav-card-full" data-feature="parking"{% if 'parking' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
@@ -402,7 +397,7 @@
 
 </div>
 
-{# ── Sidebar ── #}
+{# â”€â”€ Sidebar â”€â”€ #}
 <div id="edit-sidebar">
   <div class="sb-head">
     <span class="sb-head-title">Page Elements</span>
@@ -447,7 +442,7 @@
   <div class="sb-hint">Click any card to open that page and edit its content directly. Toggle cards on/off with the switches above.</div>
 </div>
 
-{# ── Edit toolbar ── #}
+{# â”€â”€ Edit toolbar â”€â”€ #}
 <div id="edit-toolbar">
   <button class="tb-close" onclick="closeEditor()">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -455,7 +450,7 @@
   </button>
   <div class="tb-group">
     <span class="tb-label">Logo URL</span>
-    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
+    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://â€¦/logo.png" oninput="updateLogo(this.value)">
   </div>
   <div class="tb-group">
     <div class="tb-swatch-wrap">
@@ -475,7 +470,7 @@
   <button class="tb-save" onclick="saveChanges()">Save changes</button>
 </div>
 
-{# ── Hidden form ── #}
+{# â”€â”€ Hidden form â”€â”€ #}
 <form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
   <input type="hidden" name="logo_url"           id="f-logo_url"           value="{{ logo_url or '' }}">
   <input type="hidden" name="brand_primary"       id="f-brand_primary"      value="{{ brand_primary or '#1e3a1e' }}">
@@ -492,7 +487,7 @@
 </form>
 
 <script>
-  // ── Logo ──
+  // â”€â”€ Logo â”€â”€
   function focusLogoInput() {
     const inp = document.getElementById('tb-logo');
     inp.focus(); inp.select();
@@ -504,7 +499,7 @@
     document.getElementById('f-logo_url').value = url;
   }
 
-  // ── Colours ──
+  // â”€â”€ Colours â”€â”€
   function applyColor(key, val) {
     if (key === 'primary') {
       document.documentElement.style.setProperty('--brand-primary', val);
@@ -520,7 +515,7 @@
     }
   }
 
-  // ── Editable text ──
+  // â”€â”€ Editable text â”€â”€
   document.querySelectorAll('[data-editable]').forEach(el => {
     el.addEventListener('input', () => {
       const hidden = document.getElementById('f-' + el.dataset.field);
@@ -531,10 +526,10 @@
     });
   });
 
-  // ── Fix: clear the "back to editor" flag when the welcome editor loads ──
+  // â”€â”€ Fix: clear the "back to editor" flag when the welcome editor loads â”€â”€
   sessionStorage.removeItem('lm_editor_back');
 
-  // ── Feature sidebar toggles ──
+  // â”€â”€ Feature sidebar toggles â”€â”€
   // Paired rows: if one card in a 2-col row is hidden, the other goes full-width
   const ROWS = ['em-row1', 'em-row2', 'em-row3', 'em-row4', 'em-row5', 'em-row6'];
 
@@ -574,13 +569,13 @@
   // Initialise row layouts on load
   ROWS.forEach(recalcRow);
 
-  // ── Nav card click: mark as coming from editor so sub-pages show edit bar ──
+  // â”€â”€ Nav card click: mark as coming from editor so sub-pages show edit bar â”€â”€
   function setEditorBack() {
     sessionStorage.setItem('lm_editor_back', '1');
     sessionStorage.setItem('lm_editor_cp', '{{ cp_slug }}');
   }
 
-  // ── Save welcome page changes ──
+  // â”€â”€ Save welcome page changes â”€â”€
   function saveChanges() {
     document.querySelectorAll('[data-editable]').forEach(el => {
       const hidden = document.getElementById('f-' + el.dataset.field);
@@ -589,7 +584,7 @@
     document.getElementById('edit-form').submit();
   }
 
-  // ── Close — postMessage to parent dashboard ──
+  // â”€â”€ Close â€” postMessage to parent dashboard â”€â”€
   function closeEditor() {
     sessionStorage.removeItem('lm_editor_back');
     if (window.parent && window.parent !== window) {
@@ -606,18 +601,18 @@
 </script>
 
 {% else %}
-{# ── Normal visitor nav grid ── #}
+{# â”€â”€ Normal visitor nav grid â”€â”€ #}
 <div class="nav-grid">
 
   {% if 'parking' in features %}
   <a href="/location/{{ slug }}/visitor/parking-select" class="nav-card-full reveal">
     <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/><circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/></svg></div>
-    <div class="nav-body"><div class="nav-title">Parking</div><div class="nav-subtitle">Pay & display · Spaces available</div></div>
+    <div class="nav-body"><div class="nav-title">Parking</div><div class="nav-subtitle">Pay & display Â· Spaces available</div></div>
     <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
 
-  {# ── Macro for half-width card ── #}
+  {# â”€â”€ Macro for half-width card â”€â”€ #}
   {# Row 1: history + movies #}
   {% set r1_items = [] %}
   {% if 'history' in features %}{% set _ = r1_items.append(('history', '/location/'+slug+'/visitor/history', 'M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10', 'Our History', 'Centuries of heritage')) %}{% endif %}

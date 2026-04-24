@@ -1,13 +1,8 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}{{ estate_name }} — Parking{% endblock %}
+{% block title %}{{ estate_name }} â€” Parking{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
@@ -58,7 +53,7 @@
   <div class="page-title">Parking</div>
   <p class="page-subtitle">Please let us know where you have parked so we can best assist you.</p>
   {% for cp in car_parks %}
-  <a href="/location/{{ slug }}/visitor/parking/{{ cp.slug }}" class="btn-menu">{{ cp.name }} <span class="btn-arrow">→</span></a>
+  <a href="/location/{{ slug }}/visitor/parking/{{ cp.slug }}" class="btn-menu">{{ cp.name }} <span class="btn-arrow">â†’</span></a>
   {% else %}
   <p style="color:#888;font-size:.9rem;padding-top:1rem;">No parking areas have been set up yet.</p>
   {% endfor %}

@@ -1,13 +1,8 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Legacy — {{ estate_name }}{% endblock %}
+{% block title %}Legacy â€” {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
@@ -131,28 +126,28 @@
 <div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Legacy</div>
-  <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future — however modestly — your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
+  <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future â€” however modestly â€” your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
 
-  <p class="section-body">Every donation, large or small, is used directly on the estate. There are no administrative overheads and no third parties — your contribution goes straight to the ground beneath your feet.</p>
+  <p class="section-body">Every donation, large or small, is used directly on the estate. There are no administrative overheads and no third parties â€” your contribution goes straight to the ground beneath your feet.</p>
 
   <hr class="divider">
 
   <div class="amounts-label">Choose an amount</div>
   <div class="amounts-grid">
     <button class="amount-btn" onclick="selectAmount(this, 10)">
-      <div class="amount-value">£10</div>
+      <div class="amount-value">Â£10</div>
       <div class="amount-label">Plants a tree</div>
     </button>
     <button class="amount-btn" onclick="selectAmount(this, 25)">
-      <div class="amount-value">£25</div>
+      <div class="amount-value">Â£25</div>
       <div class="amount-label">Restores a gate post</div>
     </button>
     <button class="amount-btn" onclick="selectAmount(this, 50)">
-      <div class="amount-value">£50</div>
+      <div class="amount-value">Â£50</div>
       <div class="amount-label">Repairs a dry-stone wall</div>
     </button>
     <button class="amount-btn" onclick="selectAmount(this, 100)">
-      <div class="amount-value">£100</div>
+      <div class="amount-value">Â£100</div>
       <div class="amount-label">Restores a stretch of path</div>
     </button>
   </div>
@@ -160,7 +155,7 @@
   <div class="custom-amount-wrap">
     <label>Or enter your own amount</label>
     <div class="custom-amount-input-row">
-      <span>£</span>
+      <span>Â£</span>
       <input type="number" id="custom-amount" min="1" placeholder="Your amount" oninput="clearSelected()">
     </div>
   </div>
@@ -171,13 +166,13 @@
   </div>
 
   <div id="donated-msg" style="display:none;background:#eaf7ea;border-radius:8px;padding:1.25rem;text-align:center;font-size:.95rem;color:#2a7a2a;font-weight:600;margin-bottom:1rem;">
-    Thank you — your donation means a great deal to us.
+    Thank you â€” your donation means a great deal to us.
   </div>
   <button class="donate-btn" id="donate-btn" onclick="handleDonate()">Donate Now</button>
 
   <hr class="divider">
 
-  <p class="section-body">This estate does not receive public funding. It is maintained entirely through the generosity of those who love it — and through the quiet determination of a small team who have dedicated themselves to keeping it alive for future generations.</p>
+  <p class="section-body">This estate does not receive public funding. It is maintained entirely through the generosity of those who love it â€” and through the quiet determination of a small team who have dedicated themselves to keeping it alive for future generations.</p>
   <p class="section-body">When you give, you are helping to protect ancient woodland, maintain the chalk stream that has run through this valley for thousands of years, restore buildings that would otherwise be lost, and keep footpaths open for everyone who walks here. None of that happens without people who care enough to contribute.</p>
   <p class="section-body">We are deeply grateful for every gift, whatever its size. The estate endures because people like you have always believed it is worth preserving.</p>
 
@@ -212,7 +207,7 @@
     }
     const btn = document.getElementById('donate-btn');
     btn.disabled = true;
-    btn.textContent = 'Processing…';
+    btn.textContent = 'Processingâ€¦';
     const message = document.getElementById('donation-message').value;
     const resp = await fetch('/location/{{ slug }}/visitor/donate', {
       method: 'POST',

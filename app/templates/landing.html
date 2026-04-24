@@ -107,9 +107,9 @@
     .hero-bg {
       position: absolute; inset: 0; z-index: 0;
       background:
-        radial-gradient(ellipse 80% 60% at 15% 85%, rgba(22,42,18,.85) 0%, transparent 55%),
+        radial-gradient(ellipse 80% 60% at 15% 85%, rgba(5,5,5,.85) 0%, transparent 55%),
         radial-gradient(ellipse 60% 50% at 85% 10%, rgba(184,154,90,.06) 0%, transparent 55%),
-        radial-gradient(ellipse 100% 60% at 50% 110%, rgba(12,28,10,.9) 0%, transparent 60%),
+        radial-gradient(ellipse 100% 60% at 50% 110%, rgba(0,0,0,.9) 0%, transparent 60%),
         var(--dark);
       animation: auroraShift 18s ease-in-out infinite alternate;
     }
@@ -196,9 +196,10 @@
 
     /* ─── SCROLL INDICATOR ──────────────────────────────────── */
     .scroll-cue {
-      position: absolute; bottom: 2.5rem; left: 50%; transform: translateX(-50%);
+      position: absolute; bottom: 2.5rem; left: 0; right: 0;
       display: flex; flex-direction: column; align-items: center; gap: .6rem;
       opacity: 0; animation: fadeUp .9s 1.1s both;
+      pointer-events: none;
     }
     .scroll-track {
       width: 1px; height: 48px;
@@ -533,7 +534,7 @@
 
     @media (max-width: 580px) {
       nav { padding: .9rem 1.25rem; }
-      .hero { padding: 7rem 1.25rem 5rem; }
+      .hero { padding: 7rem 1.25rem 8rem; }
       .section { padding: 5rem 1.25rem; }
       .cta-section { padding: 6rem 1.25rem 7rem; }
       footer { padding: 2rem 1.25rem; flex-direction: column; align-items: flex-start; }
@@ -616,12 +617,12 @@
 <!-- ═══ STATS ══════════════════════════════════════════════════════════════ -->
 <div class="stats-section">
   <div class="stat-item reveal">
-    <div class="stat-number" data-count="26" data-suffix="+">0+</div>
-    <div class="stat-label">Private estates</div>
+    <div class="stat-number" data-count="0" data-suffix="" data-text="1 scan">1 scan</div>
+    <div class="stat-label">Instant access on arrival</div>
   </div>
   <div class="stat-item reveal reveal-d1">
-    <div class="stat-number" data-count="8" data-suffix="">0</div>
-    <div class="stat-label">Counties</div>
+    <div class="stat-number" data-count="0" data-suffix="" data-text="Any screen">Any screen</div>
+    <div class="stat-label">Phone, tablet, or desktop</div>
   </div>
   <div class="stat-item reveal reveal-d2">
     <div class="stat-number" data-count="500" data-suffix="+">0+</div>
@@ -629,7 +630,7 @@
   </div>
   <div class="stat-item reveal reveal-d3">
     <div class="stat-number" data-count="0" data-suffix="" data-text="Free">Free</div>
-    <div class="stat-label">No app required</div>
+    <div class="stat-label">For every visitor</div>
   </div>
 </div>
 

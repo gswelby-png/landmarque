@@ -1,13 +1,8 @@
-{% extends "location/visitor/base.html" %}
+﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Sponsor a Bench — {{ estate_name }}{% endblock %}
+{% block title %}Sponsor a Bench â€” {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
-    #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
-    #scroll-nav img { height: 28px; }
-    #scroll-nav .nav-home span { font-size: .94rem; }
-    #hamburger-btn { gap: 6px; }
-    #hamburger-btn span { width: 28px; }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
@@ -155,7 +150,7 @@
 <div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Sponsor a Bench</div>
-  <p class="page-subtitle">A bench on this estate is more than a place to sit — it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that means a great deal to you, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
+  <p class="page-subtitle">A bench on this estate is more than a place to sit â€” it is a permanent mark on a landscape that endures. Whether you want to honour a loved one, celebrate a milestone, or simply give something back to a place that means a great deal to you, a sponsored bench is a gift that will be enjoyed by visitors for generations to come.</p>
 
   <hr class="divider">
 
@@ -208,7 +203,7 @@
       <div class="form-group">
         <label>Preferred location</label>
         <select name="location" id="location-select">
-          <option value="">— select a location —</option>
+          <option value="">â€” select a location â€”</option>
           {% for loc in bench_locations %}
           <option value="{{ loc.slug }}">{{ loc.name }}</option>
           {% endfor %}
@@ -217,7 +212,7 @@
       <div class="form-group">
         <label>Bench style</label>
         <select name="bench_type" id="bench-type-select">
-          <option value="">— select a bench style —</option>
+          <option value="">â€” select a bench style â€”</option>
           {% for bt in bench_types %}
           <option value="{{ bt.slug }}">{{ bt.name }}</option>
           {% endfor %}
@@ -234,7 +229,7 @@
       <button type="submit" class="form-submit">Send Enquiry</button>
     </form>
     <div class="form-success" id="form-success">
-      Thank you — we will be in touch within two working days.
+      Thank you â€” we will be in touch within two working days.
     </div>
   </div>
 
