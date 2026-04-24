@@ -268,6 +268,10 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
       Earnings
     </button>
+    <button class="nav-item" data-sec="enquiries">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+      Enquiries{% if bench_enquiries %} <span style="background:var(--gold);color:#000;font-size:.55rem;font-weight:800;border-radius:8px;padding:.1rem .4rem;margin-left:.3rem;vertical-align:middle;">{{ bench_enquiries|length }}</span>{% endif %}
+    </button>
     <button class="nav-item" data-sec="signage">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M16 21h5M21 16v5"/><rect x="11" y="11" width="3" height="3"/></svg>
       Signage
@@ -817,6 +821,55 @@
     <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
       <a href="/owner/logout" style="font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='rgba(255,255,255,.45)'" onmouseout="this.style.color='rgba(255,255,255,.2)'">Sign out →</a>
     </div>
+  </section>
+
+  <section class="sec" id="sec-enquiries">
+    <p class="eyebrow">Bench Sponsorship</p>
+    <h2 class="sec-title">Enquiries</h2>
+    <div class="sec-rule"></div>
+
+    {% if bench_enquiries %}
+    <div class="card" style="margin-bottom:1.5rem;">
+      <div class="card-head">
+        <div><div class="card-title">Bench enquiries</div><div class="card-sub" style="margin-top:.2rem;">{{ bench_enquiries|length }} enquir{{ 'y' if bench_enquiries|length == 1 else 'ies' }} received across your estates</div></div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="data-table" style="min-width:600px;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Location</th>
+              <th>Style</th>
+              <th>Inscription</th>
+              <th>Notes</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for eq in bench_enquiries %}
+            <tr>
+              <td style="white-space:nowrap;color:var(--muted);font-size:.7rem;">{{ eq.date }}</td>
+              <td style="font-weight:600;">{{ eq.name }}</td>
+              <td><a href="mailto:{{ eq.email }}" style="color:var(--gold);text-decoration:none;">{{ eq.email }}</a></td>
+              <td style="font-size:.78rem;">{{ eq.location }}</td>
+              <td style="font-size:.78rem;">{{ eq.bench_type }}</td>
+              <td style="font-size:.78rem;font-style:{% if eq.inscription %}normal{% else %}italic{% endif %};color:{% if eq.inscription %}inherit{% else %}var(--muted){% endif %};">{{ eq.inscription or 'none' }}</td>
+              <td style="font-size:.75rem;color:var(--muted);max-width:180px;white-space:normal;line-height:1.4;">{{ eq.notes or '—' }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    <div class="card" style="max-width:440px;">
+      <div style="padding:2rem 1.5rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:.75rem;opacity:.3;">🪑</div>
+        <div style="font-size:.88rem;color:var(--muted);line-height:1.7;">No bench enquiries yet. When visitors submit the sponsor-a-bench form on your estate page, their enquiries will appear here.</div>
+      </div>
+    </div>
+    {% endif %}
   </section>
 
 </div><!-- end .main -->

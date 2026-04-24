@@ -12,7 +12,7 @@ from datetime import date, datetime, timezone
 from jose import JWTError
 
 from ..database import get_db
-from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType, SlugRedirect
+from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType, SlugRedirect, BenchEnquiry
 from ..auth import hash_password, verify_password, create_token, decode_token
 
 router = APIRouter(prefix="/owner")
@@ -298,6 +298,32 @@ def dashboard(
         .scalar() or 0
     )
 
+    # ── Bench enquiries for this owner's estates ────────────────────────────
+    owner_estate_slugs = [cp["estate_slug"] for cp in cp_data if cp["estate_slug"]]
+    bench_enquiries = []
+    if owner_estate_slugs:
+        rows = (
+            db.query(BenchEnquiry)
+            .filter(BenchEnquiry.estate_slug.in_(owner_estate_slugs))
+            .order_by(BenchEnquiry.created_at.desc())
+            .limit(200)
+            .all()
+        )
+        bench_enquiries = [
+            {
+                "id": r.id,
+                "estate_slug": r.estate_slug,
+                "name": r.name,
+                "email": r.email,
+                "location": r.location_slug or "—",
+                "bench_type": r.bench_type_slug or "—",
+                "inscription": r.inscription or "",
+                "notes": r.notes or "",
+                "date": r.created_at.strftime("%d %b %Y") if r.created_at else "—",
+            }
+            for r in rows
+        ]
+
     return templates.TemplateResponse("owner/dashboard.html", {
         "request": request,
         "owner_name": owner.name,
@@ -313,6 +339,7 @@ def dashboard(
         "total_earned": total_earned,
         "total_txn_count": total_txn_count,
         "cp_data": cp_data,
+        "bench_enquiries": bench_enquiries,
         "pw_ok": pw_ok,
         "pw_error": pw_error,
         "website_saved": website_saved,
