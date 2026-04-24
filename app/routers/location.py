@@ -11207,6 +11207,13 @@ def _get_brand(estate: dict, car_park) -> dict:
 
 def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -> dict:
     """Common template context shared by every visitor page."""
+    # Pull hero image from first HISTORY chapter
+    hero_image_url = ""
+    hist = HISTORY.get(slug, {})
+    if isinstance(hist, dict):
+        chaps = hist.get("chapters", [])
+        if chaps and chaps[0].get("image_url"):
+            hero_image_url = chaps[0]["image_url"]
     return {
         "request":    request,
         "slug":       slug,
@@ -11217,7 +11224,8 @@ def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -
         "cp_slug":    estate.get("car_park_slug", "") or "",
         "brand":      _get_brand(estate, car_park),
         "features":   _resolve_features(car_park, estate),
-        "ad_slot_html": None,  # Future: set per-estate ad HTML to monetise visitor pages
+        "hero_image_url": hero_image_url,
+        "ad_slot_html": None,
     }
 
 
