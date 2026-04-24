@@ -823,18 +823,30 @@ def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)
     brand_accent  = cp.brand_accent  or "#B89A5A"
     brand_text    = cp.brand_text    or "#ffffff"
 
+    from ..routers.location import _get_nearby_estates, HISTORY as _HISTORY
+    _slug = estate_slug or cp_slug
+    _hist = _HISTORY.get(_slug, {})
+    _hero = ""
+    if isinstance(_hist, dict):
+        _chaps = _hist.get("chapters", [])
+        if _chaps and _chaps[0].get("image_url"):
+            _hero = _chaps[0]["image_url"]
+
     # Render the real welcome template so the preview is pixel-perfect
     return templates.TemplateResponse("location/visitor/welcome.html", {
         "request": request,
-        "slug": estate_slug or cp_slug,          # estate slug for correct nav links
+        "slug": _slug,
         "estate": estate,
-        "estate_name": owner_obj.name,            # same as real visitor page
+        "estate_name": owner_obj.name,
         "car_park_name": "Welcome",
         "logo_url": cp.logo_url or "",
         "welcome_text": cp.welcome_text or "",
         "car_park_tagline": cp.custom_tagline or estate.get("tagline", ""),
         "brand": {"primary": brand_primary, "accent": brand_accent, "text": brand_text},
         "features": features,
+        "hero_image_url": _hero,
+        "nearby_estates": _get_nearby_estates(_slug, estate) if estate else [],
+        "ad_slot_html": None,
         # Edit mode extras
         "edit_mode": True,
         "cp_slug": cp_slug,

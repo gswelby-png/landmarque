@@ -18,35 +18,40 @@
       padding: 0 1.25rem 4rem;
     }
     .page-title {
-      font-size: 1.6rem; font-weight: 700; color: #000;
-      letter-spacing: .5px; padding: 6rem 0 1rem;
+      font-size: 1.75rem; font-weight: 800; color: #000;
+      letter-spacing: .3px; padding: 5.5rem 0 1rem;
+      position: relative; padding-bottom: 1rem;
+    }
+    .page-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 2px; background: var(--brand-accent, #B89A5A);
     }
     .page-body {
-      font-size: .95rem; color: #555;
-      font-weight: 300; line-height: 1.8; margin-bottom: 2.5rem;
+      font-size: .92rem; color: #777;
+      font-weight: 300; line-height: 1.85; margin: 1.25rem 0 2.5rem;
     }
     .btn-donate {
       display: flex; align-items: center; justify-content: center;
       text-decoration: none;
       background: #000; color: #fff;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 700; font-size: 1rem; letter-spacing: .5px;
-      border-radius: 6px;
+      font-weight: 700; font-size: .94rem; letter-spacing: .5px;
+      border-radius: 8px;
       padding: 1.1rem 1.25rem; width: 100%;
-      border: none; transition: background .15s;
+      border: none; transition: background .2s, transform .15s;
     }
-    .btn-donate:hover { background: #B89A5A; }
+    .btn-donate:hover { background: var(--brand-accent, #B89A5A); transform: translateY(-1px); }
     .btn-browse {
       display: block; width: 100%;
-      background: transparent; color: #000;
-      border: 2px solid #e0e0e0; border-radius: 6px;
-      padding: 1.1rem; font-size: 1rem; font-weight: 700;
+      background: transparent; color: #555;
+      border: 1px solid #e8e8e8; border-radius: 8px;
+      padding: 1.1rem; font-size: .88rem; font-weight: 700;
       letter-spacing: .5px; text-align: center;
       text-decoration: none; margin-top: .75rem;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      transition: border-color .15s;
+      transition: border-color .2s, color .2s;
     }
-    .btn-browse:hover { border-color: #B89A5A; color: #B89A5A; }
+    .btn-browse:hover { border-color: rgba(184,154,90,.4); color: var(--brand-accent, #B89A5A); }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}

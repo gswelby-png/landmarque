@@ -18,28 +18,36 @@
       padding: 0 1.25rem 4rem;
     }
     .page-title {
-      font-size: 1.6rem; font-weight: 700; color: #000;
-      letter-spacing: .5px; padding: 6rem 0 1rem;
+      font-size: 1.75rem; font-weight: 800; color: #000;
+      letter-spacing: .3px; padding: 5.5rem 0 1rem;
+      position: relative; padding-bottom: 1rem;
+    }
+    .page-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 2px; background: var(--brand-accent, #B89A5A);
     }
     .page-subtitle {
-      font-size: .95rem; color: #666;
-      font-weight: 300; line-height: 1.7; margin-bottom: 2.5rem;
+      font-size: .92rem; color: #777;
+      font-weight: 300; line-height: 1.75; margin: 1.25rem 0 2.5rem;
     }
     .btn-menu {
       display: flex; align-items: center;
       text-decoration: none;
       background: #fff; color: #000;
       font-family: 'Raleway', Helvetica, Arial, sans-serif;
-      font-weight: 600; font-size: 1rem; letter-spacing: .5px;
-      border-radius: 6px;
-      padding: 1rem 1.25rem; width: 100%;
-      border: 1px solid #e0e0e0; transition: border-color .15s;
+      font-weight: 700; font-size: .96rem; letter-spacing: .3px;
+      border-radius: 10px;
+      padding: 1.1rem 1.25rem; width: 100%;
+      border: 1px solid #e8e8e8;
+      box-shadow: 0 1px 4px rgba(0,0,0,.04);
+      transition: border-color .2s, transform .18s, box-shadow .18s;
     }
-    .btn-menu:hover { border-color: #B89A5A; color: #000; }
+    .btn-menu:hover { border-color: rgba(184,154,90,.5); color: #000; transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.08); }
     .btn-menu + .btn-menu { margin-top: .65rem; }
     .btn-arrow {
-      margin-left: auto; color: #B89A5A; font-size: 1.1rem;
+      margin-left: auto; color: #B89A5A; font-size: 1rem; transition: transform .15s;
     }
+    .btn-menu:hover .btn-arrow { transform: translateX(3px); }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
