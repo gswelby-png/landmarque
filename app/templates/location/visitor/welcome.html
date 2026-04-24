@@ -254,6 +254,33 @@
     </a>
   </div>
 
+  <div class="nav-2col" id="em-row5">
+    <a href="/location/{{ slug }}/visitor/gardens" class="nav-card" data-feature="gardens"{% if 'gardens' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6"/><path d="M12 14c-2-4 2-8 4-10 2 2 6 6 4 10"/><path d="M4 28h24"/></svg>
+      <div class="nav-title">Gardens</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/events" class="nav-card" data-feature="events"{% if 'events' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/></svg>
+      <div class="nav-title">Events</div>
+    </a>
+  </div>
+
+  <div class="nav-2col" id="em-row6">
+    <a href="/location/{{ slug }}/visitor/cycling" class="nav-card" data-feature="cycling"{% if 'cycling' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/><path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/></svg>
+      <div class="nav-title">Cycling Routes</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/winery" class="nav-card" data-feature="winery"{% if 'winery' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4"/><path d="M16 20v8M10 28h12"/></svg>
+      <div class="nav-title">The Winery</div>
+    </a>
+  </div>
+
+  <a href="/location/{{ slug }}/visitor/polo" class="nav-card-full" data-feature="polo"{% if 'polo' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="8" r="2.5"/><path d="M20 10l-4 6-4-2-4 10M4 28l4-4"/><path d="M26 14l2 4M26 14c-2-2-4-2-6-1"/></svg>
+    <div class="nav-title">Polo</div>
+  </a>
+
   <a href="/location/{{ slug }}/visitor/legacy" class="nav-card-full" data-feature="legacy" style="{% if 'legacy' not in features %}display:none;{% endif %}margin-bottom:0" onclick="setEditorBack()">
     <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4C9 4 4 9 4 16s5 12 12 12 12-5 12-12S23 4 16 4z"/><path d="M16 10v6l4 4"/><path d="M10 16h2M20 16h2M16 10v-2M16 26v-2"/></svg>
     <div class="nav-title">Legacy</div>
@@ -282,6 +309,9 @@
       ('benches',           'Sponsor a Bench',      'Memorial seating'),
       ('legacy',            'Legacy',               'Charitable giving'),
       ('events',            'Events',               'Estate calendar'),
+      ('gardens',           'Gardens',              'Estate gardens'),
+      ('winery',            'The Winery',           'Vineyard & winery'),
+      ('polo',              'Polo',                 'Polo matches & events'),
     ] %}
 
     {% for feat_id, feat_name, feat_desc in sb_items %}
@@ -392,7 +422,7 @@
 
   // ── Feature sidebar toggles ──
   // Paired rows: if one card in a 2-col row is hidden, the other goes full-width
-  const ROWS = ['em-row1', 'em-row2', 'em-row3', 'em-row4'];
+  const ROWS = ['em-row1', 'em-row2', 'em-row3', 'em-row4', 'em-row5', 'em-row6'];
 
   function recalcRow(rowId) {
     const row = document.getElementById(rowId);
@@ -475,9 +505,9 @@
   </a>
   {% endif %}
 
-  {# Build row1: history/movies pair, or events/cycling pair #}
-  {% set r1a = 'history' if 'history' in features else ('events' if 'events' in features else '') %}
-  {% set r1b = 'movies' if 'movies' in features else ('cycling' if 'cycling' in features else '') %}
+  {# Row 1: history + movies #}
+  {% set r1a = 'history' if 'history' in features else '' %}
+  {% set r1b = 'movies' if 'movies' in features else '' %}
 
   {% if r1a and r1b %}
   <div class="nav-2col">
@@ -648,6 +678,70 @@
       <path d="M11 14v-4M21 14v-4"/>
     </svg>
     <div class="nav-title">Sponsor a Bench</div>
+  </a>
+  {% endif %}
+
+  {# Row 5: gardens + events #}
+  {% set row5 = [] %}
+  {% if 'gardens' in features %}{% set _ = row5.append('gardens') %}{% endif %}
+  {% if 'events' in features %}{% set _ = row5.append('events') %}{% endif %}
+
+  {% if row5|length == 2 %}
+  <div class="nav-2col">
+    <a href="/location/{{ slug }}/visitor/gardens" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6"/><path d="M12 14c-2-4 2-8 4-10 2 2 6 6 4 10"/><path d="M4 28h24"/></svg>
+      <div class="nav-title">Gardens</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/events" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/></svg>
+      <div class="nav-title">Events</div>
+    </a>
+  </div>
+  {% elif 'gardens' in features %}
+  <a href="/location/{{ slug }}/visitor/gardens" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6"/><path d="M12 14c-2-4 2-8 4-10 2 2 6 6 4 10"/><path d="M4 28h24"/></svg>
+    <div class="nav-title">Gardens</div>
+  </a>
+  {% elif 'events' in features %}
+  <a href="/location/{{ slug }}/visitor/events" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/></svg>
+    <div class="nav-title">Events</div>
+  </a>
+  {% endif %}
+
+  {# Row 6: cycling + winery #}
+  {% set row6 = [] %}
+  {% if 'cycling' in features %}{% set _ = row6.append('cycling') %}{% endif %}
+  {% if 'winery' in features %}{% set _ = row6.append('winery') %}{% endif %}
+
+  {% if row6|length == 2 %}
+  <div class="nav-2col">
+    <a href="/location/{{ slug }}/visitor/cycling" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/><path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/></svg>
+      <div class="nav-title">Cycling Routes</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/winery" class="nav-card">
+      <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4"/><path d="M16 20v8M10 28h12"/></svg>
+      <div class="nav-title">The Winery</div>
+    </a>
+  </div>
+  {% elif 'cycling' in features %}
+  <a href="/location/{{ slug }}/visitor/cycling" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/><path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/></svg>
+    <div class="nav-title">Cycling Routes</div>
+  </a>
+  {% elif 'winery' in features %}
+  <a href="/location/{{ slug }}/visitor/winery" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4"/><path d="M16 20v8M10 28h12"/></svg>
+    <div class="nav-title">The Winery</div>
+  </a>
+  {% endif %}
+
+  {# Polo — full width #}
+  {% if 'polo' in features %}
+  <a href="/location/{{ slug }}/visitor/polo" class="nav-card-full">
+    <svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="20" cy="8" r="2.5"/><path d="M20 10l-4 6-4-2-4 10M4 28l4-4"/><path d="M26 14l2 4M26 14c-2-2-4-2-6-1"/></svg>
+    <div class="nav-title">Polo</div>
   </a>
   {% endif %}
 

@@ -56,7 +56,7 @@ ESTATES = {
         "lat": 51.2337, "lng": -0.3357,
         "brand_primary": "#1a0a14",
         "brand_accent": "#8B1C3A",
-        "features": ["history", "walking", "winery", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
+        "features": ["history", "walking", "winery", "cycling", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
     },
     "abinger-estate": {
         "name": "Abinger Estate",
@@ -66,7 +66,7 @@ ESTATES = {
         "lat": 51.2070, "lng": -0.3980,
         "brand_primary": "#121a0e",
         "brand_accent": "#B89A5A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "benches", "legacy"],
     },
     "loseley-park": {
         "name": "Loseley Park",
@@ -76,7 +76,7 @@ ESTATES = {
         "lat": 51.2109, "lng": -0.5889,
         "brand_primary": "#0e160a",
         "brand_accent": "#A8924A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
 
     # ── West Sussex — private estates ────────────────────────────────────────────
@@ -89,7 +89,7 @@ ESTATES = {
         "lat": 50.8561, "lng": -0.5510,
         "brand_primary": "#1a0e0e",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "goodwood-estate": {
         "name": "Goodwood Estate",
@@ -119,7 +119,7 @@ ESTATES = {
         "lat": 50.9330, "lng": -0.4420,
         "brand_primary": "#180e0a",
         "brand_accent": "#B89A5A",
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy", "events"],
     },
     "leonardslee-gardens": {
         "name": "Leonardslee Gardens",
@@ -208,7 +208,7 @@ ESTATES = {
         "lat": 51.3247, "lng": -1.3635,
         "brand_primary": "#0d0d1a",
         "brand_accent": "#D4AF37",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "beaulieu-estate": {
         "name": "Beaulieu Estate",
@@ -228,7 +228,7 @@ ESTATES = {
         "lat": 50.7999, "lng": -1.3699,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#D05C7A",
-        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
     },
     "broadlands-estate": {
         "name": "Broadlands Estate",
@@ -238,7 +238,7 @@ ESTATES = {
         "lat": 51.0232, "lng": -1.5000,
         "brand_primary": "#0e1218",
         "brand_accent": "#B89A5A",
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy"],
     },
     "stratfield-saye-estate": {
         "name": "Stratfield Saye Estate",
@@ -271,7 +271,7 @@ ESTATES = {
         "lat": 51.4270, "lng": -1.1110,
         "brand_primary": "#0e1218",
         "brand_accent": "#B89A5A",
-        "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
+        "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy", "events"],
     },
     "welford-park": {
         "name": "Welford Park",

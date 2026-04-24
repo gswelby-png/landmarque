@@ -8817,6 +8817,468 @@ EVENTS["penshurst-place"] = {
     ]
 }
 
+EVENTS["denbies-wine-estate"] = {
+    "subtitle": "Denbies Wine Estate runs one of the most varied event programmes of any English vineyard — from harvest celebrations and wine festivals to outdoor concerts and specialist tasting experiences throughout the year.",
+    "chapters": [
+        {
+            "title": "HARVEST & WINE FESTIVALS",
+            "image_url": "",
+            "image_caption": "Visitors at the Denbies harvest festival, watching the grape picking on the chalk slopes above Dorking — the annual harvest event is one of the estate's most popular occasions.",
+            "paragraphs": [
+                "The harvest at Denbies — typically running from late September into October — is the most important event in the estate's calendar and is marked by a programme of harvest celebrations that allow visitors to experience the picking season directly. Vineyard walks during harvest allow guests to observe the picking teams at work across the chalk slopes, and the winery doors are open for tasting the freshly pressed juice before fermentation begins.",
+                "The annual Denbies Wine Festival in early autumn is the centrepiece of the harvest programme, bringing together the estate's own wines with English wine producers from across the south-east. The festival combines tutored tastings, winemaker masterclasses, and food pairings, and has established itself as one of the leading events on the English wine calendar. The setting — the vineyard slopes above Dorking, with the North Downs escarpment as backdrop — is genuinely exceptional.",
+            ]
+        },
+        {
+            "title": "OUTDOOR EVENTS & CONCERTS",
+            "image_url": "",
+            "image_caption": "An outdoor concert on the estate lawns at Denbies, with the vineyard slopes in the background — the estate's amphitheatre setting makes it a natural outdoor performance venue.",
+            "paragraphs": [
+                "The natural amphitheatre created by the chalk slopes at Denbies has made the estate an increasingly popular outdoor events venue. Summer concerts, from classical to popular music, take advantage of the setting's natural acoustics and the vineyard backdrop to create events with a quality of place that is difficult to replicate in a conventional venue. The estate wines are available throughout, and the combination of music, wine, and the landscape is consistently well received.",
+                "The outdoor events programme also includes open-air cinema evenings during the summer months, farmers' markets and artisan food events on the lower estate, and Christmas market events from November onwards. Each event is designed to use the estate's distinctive character — the vineyard, the chalk downs, the winery building — as an active element of the experience rather than merely as backdrop.",
+            ]
+        },
+        {
+            "title": "VINEYARD TOURS & TASTINGS",
+            "image_url": "",
+            "image_caption": "A guided vineyard tour at Denbies, with guests walking through the rows in early summer when the vine canopy is developing.",
+            "paragraphs": [
+                "Beyond the seasonal events, Denbies runs a continuous programme of vineyard tours and tasting experiences throughout the open season. These range from the standard vineyard and winery tour — a comprehensive introduction to English wine production that takes visitors from the vine through to the finished bottle — to specialist evenings focused on food and wine pairing, individual grape varieties, or comparative tastings of English versus French sparkling wines.",
+                "The private tasting programme allows groups to arrange bespoke experiences, including a vineyard walk with the winemaker, a behind-the-scenes tour of the production cellar, and a tutored tasting of library wines from older vintages not available in the retail shop. For anyone with a serious interest in English wine, these private experiences represent a level of access and depth that is unusual even among established producers.",
+            ]
+        },
+    ]
+}
+
+EVENTS["arundel-castle"] = {
+    "subtitle": "Arundel Castle hosts an annual programme of events that draws on its extraordinary setting — from the Tulip Festival and jousting tournaments in the grounds to the Arundel Festival which fills the town and castle precincts each August.",
+    "chapters": [
+        {
+            "title": "THE TULIP FESTIVAL",
+            "image_url": "",
+            "image_caption": "The walled garden at Arundel Castle during the Tulip Festival in April and May — the formal beds contain over 100,000 tulips planted each autumn in a programme that changes annually.",
+            "paragraphs": [
+                "The Arundel Castle Tulip Festival takes place each April and May and has become one of the most significant spring garden events in England. The walled garden at the castle is planted each autumn with over one hundred thousand tulip bulbs across a programme that changes from year to year, with new varieties, new colour combinations, and new planting schemes that ensure the festival has a fresh character each season.",
+                "The scale and quality of the tulip planting at Arundel is exceptional — the walled garden contains dozens of varieties, from the classic Darwin Hybrid cultivars to the elegant single early tulips and the extravagant parrot and fringed forms. The planting is designed for spectacle, and at peak flowering in late April the effect is genuinely overwhelming. The festival consistently attracts visitors from across the south of England and has waiting lists for weekend admissions in good years.",
+            ]
+        },
+        {
+            "title": "JOUSTING & MEDIEVAL EVENTS",
+            "image_url": "",
+            "image_caption": "A jousting tournament in the grounds of Arundel Castle, with the castle keep visible above the lists — the castle's medieval character provides an authentic setting for period reenactment.",
+            "paragraphs": [
+                "The medieval character of Arundel Castle — parts of the structure date to the late eleventh century — makes it a natural setting for jousting tournaments and period reenactment events. The castle hosts several jousting weekends each year, with mounted knights in period armour competing in the grounds below the keep. The combination of the genuine medieval architecture and the reenactment programme creates an atmosphere with few equivalents in England.",
+                "The wider historical events programme at Arundel includes living history encampments, archery displays, and medieval craft demonstrations. These events are developed in partnership with specialist reenactment groups and draw on the castle's own collections to ensure a level of historical authenticity that goes beyond theatrical entertainment.",
+            ]
+        },
+        {
+            "title": "THE ARUNDEL FESTIVAL",
+            "image_url": "",
+            "image_caption": "The outdoor performance space at Arundel Castle during the Arundel Festival — the annual August event brings theatre, music, and street performance to the castle precincts and the town below.",
+            "paragraphs": [
+                "The Arundel Festival — held over ten days in August — is the largest cultural event in West Sussex and one of the most significant arts festivals in the south of England. The festival uses the castle precincts, the cathedral, the town streets, and various indoor venues to present a programme that combines professional theatre and music with street performance, outdoor cinema, and community events.",
+                "The castle's open-air theatre on the upper grounds is the festival's centrepiece, hosting major productions — typically Shakespeare or large-scale musical theatre — in a setting that is genuinely dramatic. The combination of the castle backdrop, the summer evenings, and the quality of the productions has made the Arundel Festival open-air theatre one of the most sought-after summer entertainment experiences in the region.",
+            ]
+        },
+    ]
+}
+
+EVENTS["cowdray-park"] = {
+    "subtitle": "Cowdray Estate's event programme is dominated by the polo season — from spring fixtures through to the Veuve Clicquot Gold Cup in July — but the estate also hosts shooting, equestrian, and heritage events throughout the year.",
+    "chapters": [
+        {
+            "title": "THE POLO SEASON",
+            "image_url": "",
+            "image_caption": "Cowdray Park polo grounds during a summer fixture — the polo season runs from May into September, with the Gold Cup as the centrepiece and lower-handicap matches on most weekends.",
+            "paragraphs": [
+                "The polo season at Cowdray runs from May into September, with matches played on five full-size grounds across the estate. The season builds from spring low-goal fixtures through medium-goal tournaments in June to the climax of the Veuve Clicquot Gold Cup — the English Open — in July. The Gold Cup draws the world's top players and is a genuine international sporting occasion that doubles as a social event of the English summer calendar.",
+                "Outside the Gold Cup period, polo matches take place most weekends from May onwards and are freely accessible from the touchline. The estate is open to the public for all matches, and the combination of elite sport, the South Downs backdrop, and the ruins of Cowdray House as a permanent visual reference makes an afternoon at the polo here unlike any comparable experience in English sport.",
+            ]
+        },
+        {
+            "title": "SHOOTING & FIELD SPORTS",
+            "image_url": "",
+            "image_caption": "The Cowdray Estate gamekeeping team preparing the shoot for the season — the estate's 16,500 acres support one of the finest driven shoots in the south of England.",
+            "paragraphs": [
+                "Cowdray Estate supports one of the most highly regarded driven shoots in the south of England, with pheasant and partridge shooting on the estate's varied terrain from October into February. The landscape — a combination of hanging woodland, open downland, and valley farmland — produces drives of considerable variety and quality, and the estate's gamekeeping team has developed the shoot over many decades.",
+                "The estate also offers stalking on the deer population that inhabits the woodland and parkland, and fly fishing on the River Rother. The combination of polo in summer and field sports from autumn into spring makes Cowdray a year-round sporting estate in the fullest sense.",
+            ]
+        },
+        {
+            "title": "HERITAGE EVENTS & THE RUINS",
+            "image_url": "",
+            "image_caption": "The ruins of Cowdray House, destroyed by fire in 1793, seen from the polo grounds — the roofless shell of the Tudor mansion is one of the most atmospheric historic ruins in the south of England.",
+            "paragraphs": [
+                "The ruins of Cowdray House — the great Tudor mansion destroyed by fire in 1793 — stand at the northern edge of the estate and are a constant presence for visitors at any event. The roofless shell of the house, with its surviving gatehouse, towers, and great hall walls, is one of the most atmospheric historic ruins in the south of England and is managed by the Cowdray Heritage Trust.",
+                "The Trust organises regular heritage events, guided tours of the ruins, and educational programmes that explore the extraordinary history of the house and the successive owners who shaped it from the sixteenth century onwards. The connection between the ruin and the living estate around it — the polo, the farming, the managed woodland — gives Cowdray a historical depth that is unusual among active sporting estates.",
+            ]
+        },
+    ]
+}
+
+EVENTS["parham-house"] = {
+    "subtitle": "Parham House opens its house, grounds, and deer park for a programme of events through the year, from garden open days and plant fairs to the annual Parham Charity Events that draw visitors across Sussex.",
+    "chapters": [
+        {
+            "title": "GARDEN OPEN DAYS",
+            "image_url": "",
+            "image_caption": "The four-acre walled garden at Parham House in summer — the garden is among the finest in Sussex and open days give visitors access to both the garden and the house.",
+            "paragraphs": [
+                "Parham House opens its walled garden and the house itself for a series of open days through the summer season. The four-acre walled garden at Parham is among the finest in Sussex, containing a kitchen garden in continuous production, a cutting flower garden, orchard, and an extensive herbaceous planting. The garden dates in its current form to the 1920s but occupies a walled enclosure that is considerably older.",
+                "Open day visits allow access to both the garden and the state rooms of the house — a rare combination at a privately owned property of this quality. The house contains an outstanding collection of Elizabethan portraiture, needlework, and furniture, and the guided tour that accompanies open days provides access and context that is not available on standard ticketed visits.",
+            ]
+        },
+        {
+            "title": "CHARITY & COMMUNITY EVENTS",
+            "image_url": "",
+            "image_caption": "A charity event in the grounds of Parham House, with the South Downs visible beyond the ha-ha — the estate's deer park and formal gardens provide an exceptional setting for fundraising events.",
+            "paragraphs": [
+                "The Parham House Trust uses the estate's exceptional setting to host a programme of charity events each year, raising funds for both the conservation of the house and for charitable causes supported by the Tritton family. These events make use of the full range of the estate's spaces — the state rooms for formal dinners, the garden for daytime events, and the deer park for larger outdoor occasions.",
+                "The quality of the setting — the deer park below the South Downs, the Elizabethan house, and the walled garden — makes Parham one of the most sought-after private event venues in West Sussex. The estate's programme is selective rather than commercial, and the events retain the character of occasions at a privately occupied country house rather than a heritage venue.",
+            ]
+        },
+        {
+            "title": "THE SUSSEX ANTIQUES FAIR",
+            "image_url": "",
+            "image_caption": "Dealers and visitors at the Parham House antiques fair — the annual event draws specialist dealers from across England to one of the most attractive country house settings in Sussex.",
+            "paragraphs": [
+                "The annual antiques fair at Parham House draws specialist dealers from across England and has established a reputation for quality that reflects the house's own collections. The combination of a genuine country house setting — the dealers are installed in the stable yard and the outbuildings, with some exhibiting in the service wings of the house itself — and a curated selection of dealers differentiates the Parham fair from the general antiques market format.",
+                "The house collections themselves provide a reference point for the quality of the material on show: Elizabethan furniture, seventeenth-century needlework, and Old Master paintings of the type that furnished houses like Parham are the natural specialisms of the dealers who exhibit here. For collectors with a serious interest in the period, the combination of the fair and the house tour makes a visit to Parham uniquely rewarding.",
+            ]
+        },
+    ]
+}
+
+EVENTS["leonardslee-gardens"] = {
+    "subtitle": "Leonardslee Gardens runs a year-round event programme built around the extraordinary seasonal character of the valley — from the celebrated rhododendron season in spring to art exhibitions, literary events, and the hotel's own seasonal celebrations.",
+    "chapters": [
+        {
+            "title": "THE RHODODENDRON SEASON",
+            "image_url": "",
+            "image_caption": "Visitors walking through the rhododendron woodland at Leonardslee in May, at the height of the flowering season that draws visitors from across the south of England.",
+            "paragraphs": [
+                "The rhododendron season at Leonardslee runs from late April into early June and is the garden's most celebrated period. As the flowering builds from the early-season camellias through to the main rhododendron and azalea display, the estate runs a programme of specialist events — early morning photography walks, guided botanical tours, plant identification days, and specialist talks — that allow visitors with different levels of horticultural interest to engage with the collection.",
+                "The plant sale that accompanies the spring season offers propagated material from the estate's own collection, including named Exbury azalea hybrids and divisions of the significant perennial plantings in the lower garden. The sale material is of consistently high quality and includes some plants unavailable commercially, making it a significant draw for specialist gardeners.",
+            ]
+        },
+        {
+            "title": "ART EXHIBITIONS & CULTURAL EVENTS",
+            "image_url": "",
+            "image_caption": "A contemporary art installation in the woodland at Leonardslee Gardens — the estate has developed a strong programme of art in nature events that use the garden's landscape as the primary context.",
+            "paragraphs": [
+                "The reopening of Leonardslee following its restoration in 2019 included the development of a cultural programme that uses the extraordinary valley landscape as the context for contemporary art. Sculpture trails in the woodland, site-specific installations that respond to the garden's character, and artist residencies have established Leonardslee as a venue where the relationship between art and landscape is taken seriously.",
+                "The hotel's association with the estate has also brought a programme of literary events, wine dinners, and cultural evenings that draw on the estate's heritage and the wider cultural life of the Sussex Weald. These events tend to be intimate and carefully curated — the scale of the hotel and the restaurant means that the audience is small and the experience correspondingly personal.",
+            ]
+        },
+        {
+            "title": "SEASONAL CELEBRATIONS",
+            "image_url": "",
+            "image_caption": "The valley at Leonardslee in autumn, when the Japanese maples and the deciduous woodland create a second peak of colour — the estate's seasonal events programme reflects the changing character of the landscape.",
+            "paragraphs": [
+                "Leonardslee's event programme reflects the strongly seasonal character of the valley. The autumn colour season — typically from mid-October into November, when the Japanese maples, sweetgums, and deciduous woodland turn — is increasingly celebrated in its own right, with guided walks and photography events that make the most of the transformation.",
+                "The Christmas period brings a programme of seasonal events using both the hotel and the garden — illuminated evening walks through the woodland, seasonal dinners in the restaurant, and new year celebrations that mark the turning of the garden calendar. For the estate, which closed for much of the late twentieth century, the development of a year-round events programme that takes full advantage of the valley's exceptional character is an ongoing project.",
+            ]
+        },
+    ]
+}
+
+EVENTS["firle-place"] = {
+    "subtitle": "Firle Place hosts an annual programme of events that draws on its proximity to Glyndebourne, its Gage family heritage, and the exceptional landscape of the South Downs in which it sits.",
+    "chapters": [
+        {
+            "title": "GLYNDEBOURNE & THE FIRLE FESTIVAL",
+            "image_url": "",
+            "image_caption": "Firle Place from the South Downs, with the chalk escarpment of Firle Beacon above — the estate's proximity to Glyndebourne opera house makes it a natural companion to the opera season.",
+            "paragraphs": [
+                "Firle Place sits within three miles of Glyndebourne opera house, and the two share a cultural atmosphere rooted in the same downland landscape. The Firle Festival, held in the grounds of the house in summer, draws on this proximity — the festival's programming has included outdoor opera performances, classical concerts, and cultural events that complement the Glyndebourne season and draw audiences already visiting the area for opera.",
+                "The combination of Firle's setting below Firle Beacon, the house's Elizabethan character, and the parkland landscape creates an outdoor event venue with considerable natural quality. The relationship between Firle and the wider cultural life of East Sussex — the Charleston Farmhouse, Glyndebourne, and the South Downs literary associations — gives events here a cultural depth that extends beyond the estate itself.",
+            ]
+        },
+        {
+            "title": "ESTATE OPEN DAYS",
+            "image_url": "",
+            "image_caption": "The south front of Firle Place during an open day — the house is one of the finest privately owned collections of Old Master paintings in England and opens to the public on selected summer afternoons.",
+            "paragraphs": [
+                "Firle Place opens to the public on selected afternoons through the summer season, and the open days give access to one of the finest privately owned collections of Old Master paintings and European furniture in England. The collection reflects the Gage family's close connections with European courts and with the artistic patronage of the eighteenth and nineteenth centuries, and includes work by Van Dyck, Rubens, and Snyders.",
+                "The open days are also an opportunity to see the house in its lived-in character — Firle Place is an occupied private house, and the rooms have the quality of a space that functions rather than merely exhibits. The combination of the collection and the living character of the house is rare among properties of this quality.",
+            ]
+        },
+        {
+            "title": "THE SOUTH DOWNS SETTING",
+            "image_url": "",
+            "image_caption": "The parkland at Firle Place with the chalk escarpment of the South Downs beyond — the estate's setting at the foot of the downs is one of the finest in Sussex.",
+            "paragraphs": [
+                "The setting of Firle Place at the foot of the chalk escarpment is one of the defining qualities of the estate, and events here take full advantage of it. The South Downs Way runs across Firle Beacon directly above the house, and the views from the ridge down to the house, across the Weald to the Channel, are among the finest in Sussex.",
+                "The Gage family farming operation covers the downland above the house as well as the valley floor, and the agricultural character of the wider estate is visible in the seasonal rhythm of the landscape. Events at Firle tend to have a strongly outdoor character — the landscape is too good to ignore — and the combination of cultural programme and walking access to the downs gives a day here a range of experience that is difficult to replicate elsewhere in Sussex.",
+            ]
+        },
+    ]
+}
+
+EVENTS["hever-castle"] = {
+    "subtitle": "Hever Castle hosts one of the most ambitious and varied event programmes of any castle in England — from the spectacular Festival of Flowers to jousting tournaments, Christmas light trails, and outdoor theatre on the lakeside.",
+    "chapters": [
+        {
+            "title": "THE FESTIVAL OF FLOWERS",
+            "image_url": "",
+            "image_caption": "The Italian Garden at Hever Castle during the Festival of Flowers, with floral installations complementing the formal beds and the Pompeiian Wall beyond.",
+            "paragraphs": [
+                "The Hever Castle Festival of Flowers takes place each year in early summer and transforms the estate's already exceptional gardens into a showcase for contemporary floral art. Professional floral designers and garden artists create large-scale installations throughout the formal gardens — in the Italian Garden, the Rose Garden, the Tudor Garden, and along the lakeside — that complement and contrast with the permanent planting.",
+                "The festival draws exhibitors and visitors from across the south of England and has developed a reputation for the ambition and quality of its installations. The combination of the Edwardian Italian Garden — itself one of the finest in England — as the setting for contemporary floral art creates a dialogue between historical garden design and current practice that is distinctive and engaging.",
+            ]
+        },
+        {
+            "title": "JOUSTING TOURNAMENTS",
+            "image_url": "",
+            "image_caption": "A jousting tournament in the grounds of Hever Castle — the castle's long history as a royal residence makes it a natural setting for medieval reenactment and period spectacle.",
+            "paragraphs": [
+                "Hever Castle hosts several jousting weekends each year, with professional jousters competing in a tournament that uses the castle's Tudor heritage as its reference point. The event recreates the type of tournament that would have been familiar to the castle's most famous resident, Anne Boleyn, and the combination of the medieval castle, the moat, and the period-dressed participants creates a convincing historical atmosphere.",
+                "Beyond the jousting, the medieval events programme at Hever includes archery, falconry, and living history encampments that bring the Tudor period to life across the grounds. The castle retains its character as a private residence — it is not a heritage site in institutional care — and the events programme reflects the family's desire to use the castle's history actively rather than merely to display it.",
+            ]
+        },
+        {
+            "title": "CHRISTMAS & WINTER EVENTS",
+            "image_url": "",
+            "image_caption": "Hever Castle illuminated for the Christmas season, with the moat reflecting the lights — the winter events programme transforms the castle and grounds after dark.",
+            "paragraphs": [
+                "The Christmas and winter events programme at Hever Castle has grown substantially in recent years and now rivals the summer season in popularity. The Castle by Candlelight programme brings visitors into the state rooms of the castle for an experience of the historic interior by candlelight, with period decoration and seasonal music. The light trail through the gardens and around the lake extends the event into the grounds.",
+                "Outdoor ice skating on the lake — one of the most theatrical seasonal venues in the south-east — runs from November into January and is one of the estate's most popular events. The combination of the medieval castle, the lake, and the winter lights creates a setting for ice skating that is genuinely unmatched in the region.",
+            ]
+        },
+    ]
+}
+
+EVENTS["lullingstone-castle"] = {
+    "subtitle": "Lullingstone Castle hosts a programme of open days and special events through the year, centred on the World Garden of Plants and the castle's extraordinary five-century history in the Darent valley.",
+    "chapters": [
+        {
+            "title": "WORLD GARDEN OPEN DAYS",
+            "image_url": "",
+            "image_caption": "Tom Hart Dyke leading a tour of the World Garden of Plants at Lullingstone Castle — the creator of the garden runs regular guided tours that tell the story of each planting zone.",
+            "paragraphs": [
+                "The World Garden of Plants is open throughout the season for self-guided visits, but the most rewarding way to experience it is on one of the guided tours led by Tom Hart Dyke himself. Tom's account of his nine months as a hostage in the Colombian jungle — and of the botanical observations he made there that fed directly into the garden's design — is both dramatic and illuminating, giving the garden's geographical layout a personal dimension that no guidebook can replicate.",
+                "Special open days through the year focus on particular zones of the World Garden, with accompanying talks on the plants of those regions, their medicinal uses, their cultural significance, and the conditions under which Tom collected them. These events draw both gardening enthusiasts and those interested in the human story behind the garden's creation.",
+            ]
+        },
+        {
+            "title": "THE ROMAN VILLA CONNECTION",
+            "image_url": "",
+            "image_caption": "The mosaic floor in the Roman villa at Lullingstone, now in the care of English Heritage — the villa is one of the best-preserved Roman sites in Britain and complements a visit to the castle.",
+            "paragraphs": [
+                "Events at Lullingstone Castle often make use of the estate's broader historical context, including the extraordinary Roman villa that lies within the estate boundary. The villa — now managed by English Heritage as one of the most significant Roman sites in Britain — was occupied from the first to the fourth century and contains one of the finest in situ mosaic floors surviving anywhere in the country.",
+                "Combined visit events allow access to both the castle, the World Garden, and the Roman villa on a single day, giving visitors a perspective on the depth of human occupation in this particular stretch of the Darent valley that is genuinely unusual. The juxtaposition of a Roman mosaic floor, a Tudor gatehouse, and a garden conceived during captivity in the Colombian jungle is a reminder of the extraordinary range of human experience compressed into this small valley.",
+            ]
+        },
+        {
+            "title": "SEASONAL GARDEN EVENTS",
+            "image_url": "",
+            "image_caption": "The World Garden in early summer, when plants from warmer climates are moved outside and the full geographic range of the collection is visible.",
+            "paragraphs": [
+                "The World Garden has its own strong seasonal character, and events through the year are timed to highlight different aspects of the collection. In early summer, when tender plants from tropical and subtropical regions are moved outside from the greenhouse, the full geographic range of the collection is visible for the first time since the previous autumn. This transition is marked with a seasonal opening event that draws visitors who want to see the collection at its fullest.",
+                "The summer solstice event at Lullingstone — using the castle grounds and the garden as a setting for an evening celebration — has become a fixture in the estate's annual calendar. The combination of the ancient parkland, the Tudor gatehouse, and the extraordinary World Garden in the late evening light creates an occasion with a quality of place that is difficult to describe and easy to experience.",
+            ]
+        },
+    ]
+}
+
+EVENTS["groombridge-place"] = {
+    "subtitle": "Groombridge Place hosts a full programme of events through its visitor season, from medieval weekends and enchanted forest events to garden tours and the seasonal celebrations that bring the walled gardens and woodland to life.",
+    "chapters": [
+        {
+            "title": "THE ENCHANTED FOREST EVENTS",
+            "image_url": "",
+            "image_caption": "An evening event in the Enchanted Forest at Groombridge Place, with illuminations in the ancient woodland creating an atmosphere quite unlike the daytime garden experience.",
+            "paragraphs": [
+                "The Enchanted Forest at Groombridge Place hosts a sequence of events through the year that use the woodland's atmospheric character to create experiences unlike anything available in the daytime garden. Halloween events in October transform the forest with theatrical installations and performers, and the combination of ancient oaks, autumn mist, and carefully constructed atmosphere makes these events genuinely striking.",
+                "The illuminated winter events in the Enchanted Forest extend the season into November and December, using light installations among the bare-canopied trees to create a nighttime landscape that is very different from the summer woodland. The treewalk is particularly effective after dark, when the illuminated canopy and the sounds of the winter forest create an immersive experience.",
+            ]
+        },
+        {
+            "title": "MEDIEVAL EVENTS & REENACTMENT",
+            "image_url": "",
+            "image_caption": "A reenactment event in the formal gardens at Groombridge Place, drawing on the estate's seventeenth-century heritage and its associations with both the Restoration period and the earlier Tudor history of the region.",
+            "paragraphs": [
+                "The estate at Groombridge has strong period associations — the manor house dates to the 1660s, the gardens to the same Restoration decade, and the wider area has connections to Conan Doyle and to the medieval history of the Kent-Sussex border. These associations are used as the basis for a programme of period events that range from seventeenth-century living history to Tudor reenactment in the garden setting.",
+                "The medieval weekend events draw specialist reenactment groups for combat displays, archery, falconry, and period craft demonstrations in the courtyard and gardens. The scale and quality of these events is consistently above the standard of similar events at comparable visitor attractions, and they draw audiences who come specifically for the reenactment rather than the wider garden visit.",
+            ]
+        },
+        {
+            "title": "GARDEN EVENTS & TOURS",
+            "image_url": "",
+            "image_caption": "A guided tour of the formal walled gardens at Groombridge Place, focusing on the seventeenth-century design and the film connections that have made the gardens famous.",
+            "paragraphs": [
+                "The formal walled gardens at Groombridge are available for specialist garden tours through the season, with guides who focus on the garden's seventeenth-century design, the influence of John Evelyn, and the film history that has brought the gardens to international attention. These tours are designed for visitors with a specific interest in garden history rather than as a general visitor activity.",
+                "Plant sales in the kitchen garden allow visitors to take away propagated material from the estate's own planting — particularly the unusual topiary varieties and the heritage herbaceous plants that line the formal beds. The combination of historical garden visit and the opportunity to buy plants from the garden itself is a format that works well for the type of visitor the garden attracts.",
+            ]
+        },
+    ]
+}
+
+EVENTS["highclere-castle"] = {
+    "subtitle": "Highclere Castle — the real-life Downton Abbey — hosts a carefully controlled programme of public events and open days that balance the castle's status as a private family home with the extraordinary public interest generated by its television connections.",
+    "chapters": [
+        {
+            "title": "OPEN WEEKENDS",
+            "image_url": "",
+            "image_caption": "The south front of Highclere Castle during an open weekend — the castle is one of the most photographed houses in England following its use as the location for Downton Abbey.",
+            "paragraphs": [
+                "Highclere Castle opens to the public for a limited number of weekends each year, and the demand for tickets consistently exceeds supply. The open weekends give access to the principal state rooms of the castle — the saloon, the library, the dining room — as well as the Egyptian exhibition in the basement, which draws on the fifth Earl's association with Howard Carter and the discovery of Tutankhamun's tomb.",
+                "The castle remains the private home of the Earl and Countess of Carnarvon, and the open day experience reflects this — visitors are in an occupied house, not a heritage centre. The furniture, books, and personal possessions of the family are visible in the rooms, and the guided tour provides context for the castle's history and collections that goes well beyond the Downton Abbey association.",
+            ]
+        },
+        {
+            "title": "THE DOWNTON ABBEY CONNECTION",
+            "image_url": "",
+            "image_caption": "The great hall at Highclere Castle, where the Crawley family gathered throughout the television series — the hall is one of the castle's most dramatic interior spaces and features prominently in Downton Abbey.",
+            "paragraphs": [
+                "The filming of Downton Abbey at Highclere from 2010 to 2015 transformed the castle's public profile and created a global audience that has sustained visitor interest at extraordinary levels. The castle's role as the exterior and interior of Crawley House — with a small number of other locations doubling for specific scenes — means that visitors who know the series will find the principal rooms immediately recognisable.",
+                "The Carnarvon family has been thoughtful about managing the Downton connection alongside the castle's own history. The guided tour presents the castle's genuine history — the second-century foundation of the site, the first Earl's career as Secretary of State, the fifth Earl's Egyptology — as the primary content, with the Downton connections acknowledged as a contemporary layer in a much longer story.",
+            ]
+        },
+        {
+            "title": "THE EGYPTIAN EXHIBITION",
+            "image_url": "",
+            "image_caption": "A reproduction of artefacts from the tomb of Tutankhamun in the Egyptian exhibition at Highclere Castle — the fifth Earl of Carnarvon co-sponsored the discovery with Howard Carter in 1922.",
+            "paragraphs": [
+                "The Egyptian exhibition in the castle's basement rooms tells the story of the fifth Earl of Carnarvon's association with Howard Carter and the discovery of Tutankhamun's tomb in the Valley of the Kings in 1922. The exhibition is built around reproductions of key artefacts from the discovery, archive photographs, and documents from the Carnarvon family's records.",
+                "The fifth Earl died at Highclere shortly after the tomb's opening, and the family connection to one of the most celebrated archaeological discoveries of the twentieth century is part of the castle's permanent character. The exhibition gives visitors who come for Downton Abbey a second, equally compelling historical narrative — and one that predates the television series by nearly a century.",
+            ]
+        },
+    ]
+}
+
+EVENTS["stratfield-saye-estate"] = {
+    "subtitle": "Stratfield Saye Estate opens its house and grounds for a programme of events each year, celebrating the Wellington connection that has defined the estate since 1817 and the continuing life of a great Hampshire country house.",
+    "chapters": [
+        {
+            "title": "OPEN DAYS & HOUSE TOURS",
+            "image_url": "",
+            "image_caption": "The south front of Stratfield Saye House during an open day — the house retains the Regency character it had when the Duke of Wellington moved in after Waterloo and has changed remarkably little since.",
+            "paragraphs": [
+                "Stratfield Saye opens its house to the public for a series of open days through the summer, and the experience is genuinely distinctive among country house visits. The house retains the Regency character it had when the first Duke took up residence after Waterloo — the wallpapers, the floor coverings, the arrangement of the rooms — and the effect is of a house preserved rather than restored, its authentic character intact.",
+                "The guided tour gives access to the principal rooms, including the library with its collection of books gathered by the Duke from his campaigns, the music room, and the rooms hung with prints and paintings that tell the story of the Waterloo campaign and its aftermath. The personal possessions of the Duke — his boots, his spectacles, his letters — are displayed in a way that gives the visit an intimacy rare in houses of this historical significance.",
+            ]
+        },
+        {
+            "title": "WELLINGTON ANNIVERSARY EVENTS",
+            "image_url": "",
+            "image_caption": "The Wellington Exhibition at Stratfield Saye, displaying artefacts and memorabilia from the Iron Duke's career — the collection includes items from Waterloo and from the Duke's period as Prime Minister.",
+            "paragraphs": [
+                "The anniversary of the Battle of Waterloo (18 June) is marked at Stratfield Saye with special events that draw on the estate's unmatched collection of Wellington material. These events typically combine an enhanced house tour with lectures on Wellington's military career, the Waterloo campaign, and the political life of the Duke as Prime Minister from 1828 to 1830.",
+                "The anniversary events draw enthusiasts of Napoleonic and Regency history from across Britain and from the Netherlands and Belgium, where the Waterloo connection remains active. The combination of a house that was literally given by the nation to the victor of Waterloo, in its original condition, with a collection of material from the campaign itself makes Stratfield Saye uniquely positioned to mark the anniversary in a way that no museum, however well-funded, could replicate.",
+            ]
+        },
+        {
+            "title": "ESTATE EVENTS & COUNTRYSIDE",
+            "image_url": "",
+            "image_caption": "The parkland at Stratfield Saye in spring, with the herd of red deer visible in the middle distance — the estate's woodland and parkland support a full countryside activities programme.",
+            "paragraphs": [
+                "Beyond the house-focused Wellington programme, Stratfield Saye runs a countryside events calendar that draws on the estate's 5,500 acres of farmland, woodland, and parkland. The estate's herd of red deer — visible from the road that passes through the park — is the most immediately striking element of the landscape, and deer-watching walks are a regular part of the events programme.",
+                "The Hampshire estate's position between the Test and Loddon valleys, with access to chalk stream fishing and woodland game, supports a field sports programme through the autumn and winter months. Rough shooting and driven pheasant days on the estate supplement the house-based summer programme to create a year-round events calendar that reflects the full range of what a working Hampshire estate can offer.",
+            ]
+        },
+    ]
+}
+
+EVENTS["avington-park"] = {
+    "subtitle": "Avington Park opens its Georgian house for a limited programme of public events each year, offering one of the most intimate and least commercialised country house experiences in Hampshire.",
+    "chapters": [
+        {
+            "title": "SUMMER OPEN DAYS",
+            "image_url": "",
+            "image_caption": "The south front of Avington Park above the River Itchen — the house opens for a small number of afternoon visits each summer, giving access to rooms that retain their Georgian character.",
+            "paragraphs": [
+                "Avington Park is one of a small number of privately owned Georgian houses in England that open to the public on a regular basis rather than through a national heritage organisation. The house opens for a limited number of Sunday afternoon visits through the summer, and the experience is correspondingly personal — the rooms are shown with context and anecdote by family members or long-standing staff rather than by uniformly trained guides.",
+                "The house retains its Georgian character with unusual completeness — the wallpapers, the plasterwork ceilings, and the arrangement of the rooms have changed little since the eighteenth century. The combination of this authentic character and the intimacy of a small-group visit makes Avington one of the most rewarding country house experiences in Hampshire for visitors with a genuine interest in the period.",
+            ]
+        },
+        {
+            "title": "THE ITCHEN VALLEY SETTING",
+            "image_url": "",
+            "image_caption": "The grounds at Avington Park descending to the River Itchen — the chalk stream runs along the eastern boundary of the estate and gives the landscape its particular quality.",
+            "paragraphs": [
+                "The setting of Avington Park on the River Itchen is central to its character. The Itchen is one of England's finest chalk streams — clear, spring-fed, and supporting a wild brown trout population that has been fished by generations of the estate's owners. The view from the south front of the house down across the lawns to the river and the water meadows beyond has the quality of a composed landscape painting.",
+                "The open day experience at Avington includes access to the grounds and the riverbank as well as the house, and visitors who allow enough time can walk the river path that runs along the Itchen between Winchester and the house. The combination of the Georgian house and the chalk stream valley makes a day at Avington a genuinely restorative experience.",
+            ]
+        },
+        {
+            "title": "PRIVATE HIRE & ESTATE EVENTS",
+            "image_url": "",
+            "image_caption": "The ball room at Avington Park — the house's grand Regency ballroom is used for private events and is one of the most elegant rooms of its period in Hampshire.",
+            "paragraphs": [
+                "Avington Park is available for private hire for weddings, corporate events, and private dinners, and the combination of the Georgian rooms, the ballroom, and the grounds makes it one of the most sought-after private venues in Hampshire. The house's limited public programme is supplemented by private events that provide the income necessary to maintain a building of this complexity and quality.",
+                "The estate's programme of private and public events reflects the difficulty of sustaining privately owned historic houses in the twenty-first century — the public open days represent a genuine commitment to access, while the private hire programme provides the financial foundation that makes continued private ownership viable.",
+            ]
+        },
+    ]
+}
+
+EVENTS["englefield-estate"] = {
+    "subtitle": "Englefield Estate opens its renowned gardens for regular public access and runs a programme of events through the year that draws on the estate's horticultural excellence and its position as one of Berkshire's leading private estates.",
+    "chapters": [
+        {
+            "title": "GARDEN OPEN DAYS",
+            "image_url": "",
+            "image_caption": "The walled kitchen garden at Englefield Estate in summer — the garden is open to the public on selected days and is among the finest privately maintained gardens in Berkshire.",
+            "paragraphs": [
+                "The gardens at Englefield Estate are open to the public every Monday throughout the year, making it one of the most accessible private gardens of its quality in England. The regular Monday opening gives visitors the opportunity to experience the garden across different seasons — the snowdrops and early bulbs of late winter, the spring border colour, the full summer planting, and the autumn transformation of the woodland garden.",
+                "The garden contains a walled kitchen garden in active production, a formal terrace garden around the house, a woodland walk, and a deer park that extends across the upper slopes of the estate. The combination of formal and naturalistic elements across a substantial area gives the garden a variety that rewards repeated visits.",
+            ]
+        },
+        {
+            "title": "NGS & CHARITY EVENTS",
+            "image_url": "",
+            "image_caption": "Visitors at an NGS open day at Englefield Estate, with the Italianate house in the background — the estate opens for National Garden Scheme days and a programme of charity events through the summer.",
+            "paragraphs": [
+                "Englefield Estate participates in the National Garden Scheme's annual open day programme, and the NGS days draw substantial audiences who come specifically to see the garden at its seasonal best. The estate's head gardener and garden team are available on NGS days for tours and conversations, and the quality of the guided experience on these days is consistently remarked upon by visitors.",
+                "The wider charity events programme uses both the gardens and the house for fundraising events that support causes connected to the estate and the Benyon family's public interests. These events range from garden fairs and plant sales to more formal dinners and private house tours, and the combination of exceptional setting and genuine engagement from the family gives them a character that distinguished them from standard heritage venue events.",
+            ]
+        },
+        {
+            "title": "THE BENYON CONNECTION",
+            "image_url": "",
+            "image_caption": "The Italianate house at Englefield Estate, rebuilt in the sixteenth century and significantly modified in the Victorian period — the Benyon family has owned the estate since the late eighteenth century.",
+            "paragraphs": [
+                "The Benyon family has owned Englefield since the late eighteenth century, and the estate's history under their stewardship has been one of continuous and thoughtful management of both the agricultural and the heritage assets. Richard Benyon — a former government minister and one of the estate's current generation — has been an active advocate for the kind of private stewardship that maintains historic houses and landscapes in private ownership.",
+                "The estate's 12,000 acres include not just the house and gardens but a substantial farming operation, woodland management, and a portfolio of traditional estate buildings in the surrounding villages. Events at Englefield often acknowledge this wider estate context — the farm open days, the village events, and the estate craftspeople who work on the buildings are all part of the story of what a large English estate actually is in the twenty-first century.",
+            ]
+        },
+    ]
+}
+
+EVENTS["welford-park"] = {
+    "subtitle": "Welford Park's events programme is built around the famous snowdrop season in February, but extends through the year with garden open days, NGS visits, and seasonal celebrations in one of Berkshire's finest private grounds.",
+    "chapters": [
+        {
+            "title": "THE SNOWDROP SEASON",
+            "image_url": "",
+            "image_caption": "Visitors walking through the snowdrop woodland at Welford Park in February — the few-week opening each year for the snowdrop season attracts visitors from across England.",
+            "paragraphs": [
+                "The Welford Park snowdrop season opening is one of the most anticipated garden events on the English calendar, drawing visitors from across the country to see what many consider the finest snowdrop display in England. The estate opens for a few weeks each February when the snowdrops are at their peak, and the combination of the woodland display, the tea rooms in the stable courtyard, and the Queen Anne house as backdrop creates an experience that visitors return to year after year.",
+                "The event is deliberately simple — there is no elaborate programme, no special installations, and no entertainment beyond the garden itself and the excellent refreshments. The decision to let the snowdrops speak for themselves has been consistently vindicated by the response of visitors, who find the directness of the experience more satisfying than events with more elaborate presentation.",
+            ]
+        },
+        {
+            "title": "SUMMER GARDEN OPEN DAYS",
+            "image_url": "",
+            "image_caption": "The formal garden at Welford Park in summer, with the house and the River Lambourn beyond — the summer open days give access to the garden in a season quite different from the famous snowdrop period.",
+            "paragraphs": [
+                "Beyond the snowdrop season, Welford Park opens its gardens for NGS charity days in summer, giving visitors the opportunity to see the estate in its summer character — the herbaceous borders, the walled kitchen garden in full production, and the formal garden around the house at its most planted and colourful.",
+                "The summer open days give a perspective on Welford Park that the winter snowdrop visit cannot: the garden as a working, producing space, the house in its warmer season, and the River Lambourn running through the water meadows at the foot of the grounds. For visitors who know the estate only from the snowdrop season, the summer visit is often a revelation.",
+            ]
+        },
+        {
+            "title": "SEASONAL CELEBRATIONS",
+            "image_url": "",
+            "image_caption": "Welford Park in autumn, with the deciduous woodland and the parkland grasses creating the seasonal transition between the summer garden and the winter snowdrop landscape.",
+            "paragraphs": [
+                "The estate's seasonal programme extends into autumn and Christmas, with a Christmas opening that makes use of the house's warm domestic character and the stable courtyard's natural quality as a setting for seasonal events. The combination of the historic house, the tea rooms, and the winter landscape of the Lambourn valley creates Christmas events that are deliberately understated rather than commercially ambitious.",
+                "The Welford Park approach to events — modest in scale, high in quality, and deeply rooted in the character of the place — is a conscious choice that reflects the family's approach to ownership. The estate is not managed as a visitor attraction in the commercial sense but as a private garden that opens generously and welcomes the public on terms that reflect what the place actually is.",
+            ]
+        },
+    ]
+}
+
 CYCLING = {}
 
 CYCLING["hurtwood-estate"] = {
@@ -8884,6 +9346,303 @@ CYCLING["goodwood-estate"] = {
             "paragraphs": [
                 "Goodwood Estate sits at the northern edge of the South Downs National Park, making it a natural starting point for road and gravel cycling into one of the finest cycling landscapes in the south of England. The South Downs Way — an eighty-mile off-road route from Winchester to Eastbourne — passes within a few miles of the estate.",
                 "The gravel riding opportunities on and around the estate are significant and relatively undiscovered compared to the motor circuit. The chalk downland tracks, the estate farm roads, and the bridleways of the South Downs National Park combine to provide a varied gravel cycling network that rewards exploration with views, solitude, and some of the most attractive downland riding in the south.",
+            ]
+        },
+    ]
+}
+
+CYCLING["arundel-castle"] = {
+    "subtitle": "Arundel Castle sits at the gateway to the South Downs cycling landscape — the castle is a natural starting point for road and gravel routes along the Arun valley and onto the chalk escarpment of the South Downs National Park.",
+    "chapters": [
+        {
+            "title": "THE ARUN VALLEY",
+            "image_url": "",
+            "image_caption": "Cyclists on the quiet lanes of the Arun valley below Arundel Castle — the flat flood meadows alongside the river provide easy riding through some of the most attractive countryside in West Sussex.",
+            "paragraphs": [
+                "The Arun valley below Arundel offers some of the most pleasant road cycling in West Sussex — flat, quiet lanes through flood meadows and water meadows that follow the river south toward Littlehampton and north toward Pulborough. The valley's flat character makes it accessible to cyclists of all abilities, and the views of the castle rising above the river on the eastern bank are visible for much of the route.",
+                "The Sustrans National Cycle Route 2 passes through the valley and provides a waymarked low-traffic route that connects Arundel with Worthing to the east and Chichester to the west. This coast-to-coast route gives cyclists direct access to the seafront without navigating the busier A roads, and the section through the Arun valley is consistently rated among the most enjoyable stretches.",
+            ]
+        },
+        {
+            "title": "THE SOUTH DOWNS CLIMBS",
+            "image_url": "",
+            "image_caption": "A cyclist ascending the road from Arundel toward the South Downs escarpment — the chalk ridge above the town offers long views and demanding climbs that reward the effort.",
+            "paragraphs": [
+                "For more ambitious road cyclists, the roads climbing out of Arundel toward the South Downs escarpment provide sustained gradients and exceptional views from the ridge. The climb from the town toward Bignor Hill — one of the high points of the chalk ridge above the Arun valley — gains around three hundred metres over a few miles and is the kind of sustained climb that rewards a cycling visit to the area.",
+                "The South Downs Way itself is a bridleway and available to mountain bikers and gravel riders along its eighty-mile route from Winchester to Eastbourne. The section of the Way above Arundel — taking in Houghton Down, the forest of Charlton and Eartham, and the views south toward the Channel — is one of the finest stretches of off-road cycling in the south of England.",
+            ]
+        },
+        {
+            "title": "PRACTICAL INFORMATION",
+            "image_url": "",
+            "image_caption": "The market town of Arundel from the River Arun — the town is a well-equipped base for cycling in the South Downs, with facilities, cafes, and accommodation to support a cycling visit.",
+            "paragraphs": [
+                "Arundel is a well-equipped base for a cycling visit to this part of the South Downs. The town has a range of cafes and restaurants suited to the post-ride recovery, and the castle and its surroundings provide an obvious cultural focus that complements the physical effort of the riding.",
+                "The town is accessible by train from London Bridge, Gatwick, and Brighton, making a car-free cycling day feasible for those who want to ride the valley lanes or access the South Downs Way without the logistics of driving. Several of the cafes in the town are accustomed to accommodating cyclists and have outside space and bicycle parking.",
+            ]
+        },
+    ]
+}
+
+CYCLING["denbies-wine-estate"] = {
+    "subtitle": "Denbies Wine Estate sits on the North Downs above Dorking at the heart of one of the south-east's most popular cycling areas — the estate's own vineyard roads connect directly with the North Downs Way and the Surrey Hills network.",
+    "chapters": [
+        {
+            "title": "NORTH DOWNS WAY CYCLING",
+            "image_url": "",
+            "image_caption": "Cyclists on the North Downs Way above Dorking, with the Denbies vineyard visible on the chalk slopes below — the long-distance trail passes directly through the estate's landscape.",
+            "paragraphs": [
+                "The North Downs Way passes directly through the landscape above Denbies Wine Estate, and the chalk ridge above the vineyard is one of the most rewarding sections of this long-distance trail for gravel and mountain bikers. The trail is bridleway for much of its length through Surrey, making it legally available to cyclists, and the views from the ridge — south across the Weald to the South Downs, north across the Thames valley toward London — are exceptional.",
+                "The section of the North Downs Way from Box Hill east toward Reigate, with Denbies visible below on the chalk slopes, is considered one of the finest pieces of off-road cycling in the Surrey Hills. The chalk surface is fast and grippy in dry conditions and gives the riding a distinctive quality compared to the clay-based trails in the valley woodland below.",
+            ]
+        },
+        {
+            "title": "VINEYARD CYCLING",
+            "image_url": "",
+            "image_caption": "Cycling on the estate roads at Denbies Wine Estate, with rows of vines on either side and the North Downs escarpment above.",
+            "paragraphs": [
+                "The estate roads at Denbies that run between the vine rows offer a quiet and visually striking cycling environment that is available to visitors. The rows of vines on either side, the chalk soil underfoot, and the escarpment rising above create a setting for cycling that is genuinely distinctive in an English context — closer in character to the vineyard cycling of Champagne or Burgundy than to the typical Surrey lane experience.",
+                "The estate welcomes cyclists who want to use the vineyard roads as part of a longer route, and the combination of the winery café and restaurant as a rest stop makes Denbies a natural focus for a cycling day in this area. Several organised sportives and charity rides use the estate roads as part of their routes through the Surrey Hills.",
+            ]
+        },
+        {
+            "title": "SURREY HILLS NETWORK",
+            "image_url": "",
+            "image_caption": "Road cyclists on the lanes above Dorking — the Surrey Hills AONB surrounding Denbies contains some of the most popular road cycling in the south-east of England.",
+            "paragraphs": [
+                "The Surrey Hills surrounding Denbies are among the most popular road cycling destinations in England, driven partly by their proximity to London and partly by the quality of the lanes — narrow, relatively quiet, and with a variety of terrain from flat valley riding to steep escarpment climbs. The Box Hill climb — a Tour de France stage finish in 2012 — is within a few miles of the estate, and the wider network of lanes through Abinger, Gomshall, and Shere provides dozens of route variations.",
+                "The area around Denbies is also one of the most active sportive venues in England, with several major organised rides passing through the estate's immediate area each season. For visitors who want to explore the area independently, the estate's position on the A24 south of Dorking makes it easily accessible from London and the M25, and there is ample parking for those arriving by car with bikes.",
+            ]
+        },
+    ]
+}
+
+CYCLING["abinger-estate"] = {
+    "subtitle": "Abinger Estate sits at the heart of the Surrey Hills mountain biking network, neighbouring the famous Hurtwood trails and providing access to some of the finest technical single-track riding in south-east England.",
+    "chapters": [
+        {
+            "title": "THE SURREY HILLS TRAIL NETWORK",
+            "image_url": "",
+            "image_caption": "Mountain bikers on the trails above Abinger Common — the estate's position in the Surrey Hills places it at the centre of the most extensive trail network in the south-east.",
+            "paragraphs": [
+                "The Abinger Estate occupies a central position in the Surrey Hills mountain biking landscape, with the Hurtwood trail network immediately adjacent and the wider system of bridleways, byways, and estate roads extending in all directions from the estate's woodland. The sandstone ridges and the steep valley sides of this part of the Surrey Hills produce terrain with genuine technical challenge — rooted descents, off-camber sections, and dramatic elevation changes within a relatively small area.",
+                "The Friday Street valley, which runs through the lower edge of the estate, is one of the most atmospheric starting points for cycling in the Surrey Hills — the ancient hammer pond at the bottom of the valley, the steep woodland on either side, and the network of trails climbing out of the valley onto the ridge above all contribute to an experience that rewards exploring on a bike rather than rushing through.",
+            ]
+        },
+        {
+            "title": "LEITH HILL & THE GREENSAND RIDGE",
+            "image_url": "",
+            "image_caption": "Looking south from Leith Hill Tower toward the South Downs on a clear day — the highest point in south-east England, Leith Hill rises directly from the Abinger Estate landscape.",
+            "paragraphs": [
+                "Leith Hill — at 294 metres the highest point in south-east England — rises directly from the Abinger Estate landscape and is the natural objective for any cycling visit to the area. The climb to the tower from the valley is challenging by any standard, and the view from the top — on a clear day extending from the South Downs to the Thames estuary — rewards the effort generously.",
+                "The Greensand Ridge that connects Leith Hill with the Hurtwood to the north-east and Holmbury Hill to the north provides a sustained ridge ride with consistent views and varied terrain. The ridge is accessible by gravel bike or mountain bike and gives riders a high-level route through the heart of the Surrey Hills that avoids the valley lanes and the traffic they carry.",
+            ]
+        },
+        {
+            "title": "E.M. FORSTER TRAILS",
+            "image_url": "",
+            "image_caption": "The lanes near Abinger Common — the area was home to E.M. Forster for much of his life, and the gentle pastoral landscape he described in his essays is still accessible on bicycle.",
+            "paragraphs": [
+                "E.M. Forster spent much of his adult life in the Abinger area, and his essays about the Surrey Hills — collected in Abinger Harvest — describe a landscape of lanes, heaths, and ancient woodland that is still recognisable today. Cycling through the lanes around Abinger Common and Abinger Hammer gives a perspective on this landscape that Forster himself would have known, and the quietness of the roads in the valley makes the experience genuinely contemplative.",
+                "The village of Abinger Hammer — named for the medieval iron hammer mill that once occupied the site on the River Tillingbourne — is a natural waypoint on a cycling circuit of the valley. The cafe in the village stores and the pub at Abinger Common provide the kind of stopping points that make a leisure cycling day in the Surrey Hills genuinely satisfying.",
+            ]
+        },
+    ]
+}
+
+CYCLING["loseley-park"] = {
+    "subtitle": "Loseley Park is surrounded by some of the finest quiet lane cycling in Surrey, with routes that connect the estate to the North Downs, the River Wey, and the cathedral city of Guildford through a network of low-traffic roads.",
+    "chapters": [
+        {
+            "title": "THE SURREY LANES",
+            "image_url": "",
+            "image_caption": "Cyclists on the quiet lanes between Loseley Park and Shalford — the network of minor roads connecting the estate with the River Wey and the North Downs provides varied and attractive cycling.",
+            "paragraphs": [
+                "The lanes around Loseley Park offer some of the most pleasant road cycling in Surrey — a network of minor roads connecting the estate with the River Wey valley, the villages of Shalford, Bramley, and Compton, and the foot of the North Downs escarpment above Guildford. The roads are quiet by the standards of the Home Counties, the hedgerows are generous, and the combination of flat valley sections and gentle climbs toward the downs gives the area a varied character.",
+                "The estate roads at Loseley itself are available to cyclists with appropriate access, and the combination of the parkland, the walled garden visible from the road, and the Elizabethan house in the background makes cycling through the estate a particularly atmospheric experience. The estate's head gardener and farm team are used to cyclists passing through and are welcoming.",
+            ]
+        },
+        {
+            "title": "THE NORTH DOWNS CONNECTION",
+            "image_url": "",
+            "image_caption": "The chalk escarpment of the North Downs above Guildford — Loseley Park sits at the foot of the downs and provides a natural base for routes that climb onto the ridge.",
+            "paragraphs": [
+                "The North Downs escarpment rises sharply from the Wey valley a short distance north of Loseley Park, and the roads climbing from the valley floor to the ridge at Newlands Corner and beyond provide the kind of sustained hill climbing that road cyclists seek out in this part of Surrey. The descent back to the valley, with views over the Wey to the South Downs beyond, is one of the better cycling descents in the county.",
+                "The North Downs Way bridleway, which runs along the crest of the chalk ridge, is available to gravel and mountain bikes for most of its length through Surrey. The combination of the estate ride at Loseley and a ridge section on the North Downs Way can form the basis of a substantial half-day circuit that covers varied terrain and rewards the effort with exceptional views.",
+            ]
+        },
+        {
+            "title": "CYCLE TO LOSELEY",
+            "image_url": "",
+            "image_caption": "The approach to Loseley Park by cycle along the estate drive — the estate is accessible from Guildford railway station via quiet back roads with minimal traffic.",
+            "paragraphs": [
+                "Loseley Park is accessible from Guildford railway station by a route of approximately four miles using back roads and the Sustrans network. The station is on the main Waterloo to Portsmouth line and is accessible from London in around 35 minutes. For visitors arriving from London for a cycling day in the area, Guildford makes an excellent base.",
+                "The combination of the estate visit at Loseley with the wider lane network around the River Wey and the foot of the North Downs makes for a cycling day of considerable variety and quality. Several local cycling clubs use the Loseley area as part of regular club routes, and the estate's tea rooms and farm shop provide the natural stopping point for any organised ride that passes this way.",
+            ]
+        },
+    ]
+}
+
+CYCLING["parham-house"] = {
+    "subtitle": "Parham House sits in the shadow of the South Downs, and the estate is a natural starting point for cycling routes along the Arun valley and onto the chalk ridge of the South Downs National Park.",
+    "chapters": [
+        {
+            "title": "THE SOUTH DOWNS WAY",
+            "image_url": "",
+            "image_caption": "Cyclists on the South Downs Way above Parham, with the deer park and the house visible in the valley below — the chalk escarpment provides the most dramatic cycling in West Sussex.",
+            "paragraphs": [
+                "The South Downs Way bridleway runs along the chalk ridge directly above Parham House, providing off-road cyclists with one of the finest long-distance riding experiences in England. The section of the Way between Washington to the east and Amberley to the west passes above the estate and gives riders views down across the Arun valley, with Parham visible in the deer park below.",
+                "The access track from the estate to the South Downs Way ridge involves a significant climb — around 200 metres over a couple of miles — but the gradient is steady rather than brutal, and the views that open as you gain height reward the effort. The ridge itself, once reached, is fast and open chalk downland with a surface that is firm and rideable in most conditions from spring to autumn.",
+            ]
+        },
+        {
+            "title": "THE ARUN VALLEY LANES",
+            "image_url": "",
+            "image_caption": "Quiet lanes in the Arun valley near Parham House — the valley floor provides flat, low-traffic cycling between the estate and the market towns of Pulborough and Arundel.",
+            "paragraphs": [
+                "The Arun valley below Parham offers flat, quiet lane cycling through some of the most attractive flood meadow and water meadow landscape in Sussex. The lanes connect Parham with Pulborough to the north, Amberley to the south, and Storrington to the east, and the network of back roads gives cyclists a traffic-free route through the valley that avoids the busier roads through Storrington and the A29.",
+                "The valley riding here has a particular quality in the early morning and at dusk, when the light on the water meadows and the chalk ridge behind creates a landscape of considerable beauty. Several of the West Sussex cycling clubs use the Arun valley network for regular rides, and the combination of flat valley lanes and available climbs to the ridge makes it a versatile base for a cycling day.",
+            ]
+        },
+        {
+            "title": "PRACTICAL INFORMATION",
+            "image_url": "",
+            "image_caption": "The approach to Parham House across the deer park — the estate provides parking for visitors and is accessible by bike from Pulborough railway station.",
+            "paragraphs": [
+                "Parham House is accessible by bike from Pulborough railway station — on the Arun Valley line between Horsham and Littlehampton — using a combination of quiet lanes and the National Cycle Network. The journey from the station takes about twenty minutes and connects with routes toward Amberley and the South Downs Way.",
+                "The estate provides parking for cycling visitors, and the combination of the house and garden visit with a riding session on the lanes or the South Downs Way makes Parham a natural focus for a cycling day in this part of West Sussex. The village pub at Rackham, within easy cycling distance of the estate, provides the conventional post-ride refreshment.",
+            ]
+        },
+    ]
+}
+
+CYCLING["highclere-castle"] = {
+    "subtitle": "Highclere Castle sits in the North Wessex Downs, an Area of Outstanding Natural Beauty that offers road cyclists some of the finest lane riding in the south of England — quiet, rolling chalk downland with long views and minimal traffic.",
+    "chapters": [
+        {
+            "title": "THE NORTH WESSEX DOWNS",
+            "image_url": "",
+            "image_caption": "Cyclists on the chalk downland lanes above Highclere — the North Wessex Downs AONB offers sustained road cycling through some of the least trafficked countryside in the south of England.",
+            "paragraphs": [
+                "The North Wessex Downs that surround Highclere Castle are among the finest road cycling landscapes in the south of England. The chalk downland landscape — rolling, open, and sustained at elevation — produces a particular quality of lane riding: long sight lines, gentle but persistent gradients, and views across the Kennet valley to the north and the Newbury downs to the south that reward the rider who is prepared to look away from the road.",
+                "The lanes around Highclere are genuinely quiet — this is not the suburban Surrey Hills but a more remote and rural chalk landscape, where a morning ride will often produce no more than a dozen vehicle encounters over thirty kilometres. The quality of this low-traffic cycling, within two hours of London, is remarkable and underappreciated.",
+            ]
+        },
+        {
+            "title": "KINGSCLERE & THE TRAINING GROUNDS",
+            "image_url": "",
+            "image_caption": "The gallops above Kingsclere, where racehorses train on the downs within sight of Highclere — the roads through the training ground area give cyclists an unusual perspective on English horseracing.",
+            "paragraphs": [
+                "The village of Kingsclere, a few miles north of Highclere, sits at the edge of one of England's principal racehorse training areas. The gallops on the chalk downland above the village are used by strings from several Kingsclere-based training operations, and a morning ride through this area will often produce encounters with strings of thoroughbreds working on the downs — an experience that is simultaneously incongruous and entirely authentic to the character of this part of Hampshire.",
+                "The roads through the training area are quiet and the gallops themselves are fenced, so the two communities — cyclists and racehorses — can coexist without conflict. The combination of the chalk downland, the racing strings, and the visibility of Highclere Castle on the horizon makes this a cycling route with an unusual combination of natural and cultural interest.",
+            ]
+        },
+        {
+            "title": "CONNECTING ROUTES",
+            "image_url": "",
+            "image_caption": "The lanes through the Enborne valley connecting Highclere with Newbury — the market town provides a well-equipped base for cycling in the North Wessex Downs.",
+            "paragraphs": [
+                "Newbury, six miles north-east of Highclere, provides the natural base for a cycling day in this area — the town has a railway station on the Great Western main line, good facilities, and a network of quiet lanes radiating outward toward the downs. The ride from Newbury station to Highclere and back, incorporating the lanes through Kingsclere and the higher ground toward Litchfield, makes for a half-day route of genuine quality.",
+                "The Kennet and Avon Canal towpath, which passes through Newbury, provides an additional cycling option for those who want a flat, traffic-free route to and from the downs riding. The towpath connects with the National Cycle Network and gives cyclists an alternative to the roads for the valley sections of a longer route.",
+            ]
+        },
+    ]
+}
+
+CYCLING["broadlands-estate"] = {
+    "subtitle": "Broadlands Estate sits at the heart of the Test valley cycling network — a network of quiet Hampshire lanes connecting the chalk stream valley with the New Forest to the south and the Wiltshire downs to the north.",
+    "chapters": [
+        {
+            "title": "THE TEST VALLEY LANES",
+            "image_url": "",
+            "image_caption": "Cyclists on the quiet lanes along the River Test near Broadlands — the chalk stream valley provides flat, traffic-free cycling through some of the most attractive countryside in Hampshire.",
+            "paragraphs": [
+                "The River Test valley is one of the great cycling landscapes of southern England — a chalk stream valley of unusual quality, its crystal-clear water and the surrounding water meadows creating a landscape that rewards slow travel. The lanes that follow the river between Winchester and Southampton pass through a sequence of villages — King's Somborne, Mottisfont, Romsey — that retain their character and provide natural stopping points on a longer route.",
+                "Broadlands Estate, with its Palladian house visible from the river path below, is a natural focus on any cycling route through the Test valley. The estate's southern boundary follows the river for a considerable distance, and the views of the house from the far bank have the quality of an eighteenth-century landscape painting.",
+            ]
+        },
+        {
+            "title": "THE NEW FOREST CONNECTION",
+            "image_url": "",
+            "image_caption": "A cyclist entering the New Forest at Cadnam, within easy cycling distance of Broadlands — the Forest's gravel tracks and quiet roads provide a completely different cycling environment from the Test valley lanes.",
+            "paragraphs": [
+                "Broadlands sits on the northern edge of the New Forest, and the combination of Test valley lane cycling and New Forest track cycling available from the estate gives visitors two completely contrasting cycling experiences within a short distance. The Forest's gravel tracks and forest roads — managed by Forestry England as part of a cycling trail network — offer off-road riding through ancient woodland that is quite unlike the open downland cycling available to the north.",
+                "The New Forest Cycling Festival, held annually in the Forest, draws riders from across the south to explore the gravel track network and the quiet Forest roads. The combination of the Festival and a base at or near Broadlands gives visitors access to both the managed Forest trails and the wider Test valley network.",
+            ]
+        },
+        {
+            "title": "ROMSEY & THE RAILWAY",
+            "image_url": "",
+            "image_caption": "The market town of Romsey, adjacent to Broadlands — the town provides facilities for cyclists and is accessible by train from Southampton Central.",
+            "paragraphs": [
+                "Romsey, adjacent to Broadlands Estate, is the natural base for cycling in this area. The town has good facilities for cyclists, is accessible by train from Southampton Central, and has a network of quiet lanes radiating outward toward the Test valley, the New Forest, and the downs above Winchester.",
+                "The Abbey in Romsey — one of the best-preserved Norman churches in England — gives the town a cultural focus that complements the cycling in the surrounding countryside. A day beginning with a visit to the abbey, followed by a Test valley ride with Broadlands in view, and ending with refreshments in the town represents a satisfying combination of cultural and physical experience.",
+            ]
+        },
+    ]
+}
+
+CYCLING["exbury-gardens"] = {
+    "subtitle": "Exbury Gardens sits within the New Forest National Park, giving cyclists access to one of the finest gravel and road cycling networks in southern England — forest tracks, quiet forest roads, and the flat lanes of the Beaulieu river valley.",
+    "chapters": [
+        {
+            "title": "THE NEW FOREST TRAILS",
+            "image_url": "",
+            "image_caption": "A gravel cyclist on the forest tracks near Exbury Gardens — the New Forest's network of gravel tracks and quiet roads provides some of the most varied and accessible cycling in the south of England.",
+            "paragraphs": [
+                "The New Forest National Park surrounds Exbury Gardens and provides cyclists with one of the most varied cycling environments in England. The Forest's gravel track network — maintained by Forestry England and open to cyclists throughout — covers over a hundred miles of track through ancient inclosures, open heath, and riverine woodland. The variety of terrain and the absence of traffic make the Forest a genuinely exceptional cycling destination.",
+                "The tracks around Exbury connect through the Beaulieu river valley with the wider Forest network, giving cyclists access to the heath and the inclosed woodland without the complexity of navigating unfamiliar bridleway networks. Several well-established cycling routes use Exbury as a waypoint, and the garden's café makes an obvious rest stop on a longer Forest ride.",
+            ]
+        },
+        {
+            "title": "THE BEAULIEU RIVER VALLEY",
+            "image_url": "",
+            "image_caption": "The quiet lanes of the Beaulieu river valley — the tidal estuary separates Exbury from Beaulieu village and provides the landscape context for the flattest and most accessible cycling in this part of the Forest.",
+            "paragraphs": [
+                "The lanes of the Beaulieu river valley connect Exbury with Beaulieu village and the National Motor Museum, and the combination of the two estates on a single cycling day makes a natural circuit. The valley lanes are flat, quiet, and visually attractive — the tidal estuary is visible at intervals, the Forest edge forms the skyline to the north, and the small villages of Bucklers Hard and St Leonard's lie along the route.",
+                "Bucklers Hard — the eighteenth-century shipbuilding village on the Beaulieu estuary, where Nelson's ships were built — is accessible by bike from Exbury via a combination of lane and riverside path, and the contrast between the National Motor Museum at Beaulieu and the Georgian maritime village at Bucklers Hard gives a cycling day in this valley an unusual combination of interests.",
+            ]
+        },
+        {
+            "title": "CYCLING IN THE FOREST",
+            "image_url": "",
+            "image_caption": "New Forest ponies grazing beside a gravel track near Exbury — the free-roaming ponies of the Forest are one of the most distinctive features of cycling in the National Park.",
+            "paragraphs": [
+                "Cycling in the New Forest is a uniquely atmospheric experience, partly because of the free-roaming ponies, cattle, and deer that share the tracks with cyclists. The Forest's commoners have the right to graze their animals on the open Forest, and encounters with ponies standing in the middle of a gravel track or cattle crossing between inclosures are common and add considerably to the experience.",
+                "The ponies are accustomed to cyclists and will usually move clear of the track without pressure, but riders should slow to walking pace when approaching animals and give them space. The combination of the ancient woodland, the open heath, the wildlife, and the historical character of the Forest makes cycling here an experience that is quite unlike road or trail cycling in any other part of England.",
+            ]
+        },
+    ]
+}
+
+CYCLING["englefield-estate"] = {
+    "subtitle": "Englefield Estate sits in the Thames valley cycling landscape of west Berkshire — an area of quiet lanes, chalk downland, and the Thames riverside path that offers one of the most varied cycling environments in the south of England.",
+    "chapters": [
+        {
+            "title": "THE THAMES PATH & VALLEY LANES",
+            "image_url": "",
+            "image_caption": "Cyclists on the quiet lanes of the Thames valley west of Reading — Englefield Estate sits at the edge of this network of low-traffic roads connecting the river with the Berkshire Downs.",
+            "paragraphs": [
+                "The Thames valley west of Reading provides a network of quiet lanes that connect Englefield Estate with the riverside towns of Pangbourne and Goring, the Oxfordshire villages above the river, and the foot of the Berkshire Downs to the south. The combination of flat valley cycling along the river and the longer climbs onto the chalk downland above gives the area a range of cycling options suitable for different abilities and different amounts of time.",
+                "The Thames Path National Trail, which runs along the river between London and the source in Gloucestershire, passes through Pangbourne a few miles from Englefield and provides a traffic-free route along the river suitable for cyclists on hybrid or gravel bikes. The combination of the Thames Path section and the lanes through the estate makes for a varied circuit.",
+            ]
+        },
+        {
+            "title": "THE BERKSHIRE DOWNS",
+            "image_url": "",
+            "image_caption": "Road cyclists on the Berkshire Downs above the Thames valley — the chalk escarpment provides sustained climbing and long views over the river valley to the Chilterns beyond.",
+            "paragraphs": [
+                "The Berkshire Downs rise sharply from the Thames valley south of Englefield Estate, and the roads climbing from the valley to the chalk ridge provide the kind of sustained road cycling that the valley floor cannot offer. The Ridgeway national trail follows the chalk escarpment and is available to cyclists along much of its length, giving access to a long-distance off-road route with exceptional views.",
+                "The stretch of the Ridgeway between the Thames crossing at Streatley and the Vale of the White Horse above Wantage passes through some of the most open and uninterrupted chalk downland in England. The combination of the estate visit at Englefield and a Ridgeway section on a longer ride makes for a day that uses the landscape at its most varied and its most spectacular.",
+            ]
+        },
+        {
+            "title": "CYCLE TO ENGLEFIELD",
+            "image_url": "",
+            "image_caption": "The approach to Englefield Estate through the parkland — the estate is accessible by bike from Theale railway station via quiet lanes.",
+            "paragraphs": [
+                "Englefield Estate is accessible from Theale railway station — on the Great Western main line west of Reading — by a quiet lane route of approximately three miles. The station is accessible from London Paddington in around 45 minutes, making a day visit to the estate by train and bike feasible for Londoners who want to cycle in the Thames valley without driving.",
+                "The estate's Monday open day policy means that cyclists who plan their visit around the regular garden access can explore the grounds and then continue on a longer route using the valley lanes and the Berkshire Downs without needing to plan around infrequent special events. The combination of regular access, a good café in the estate outbuildings, and the quality of the surrounding cycling makes Englefield an unusually well-placed destination for a cycling day.",
             ]
         },
     ]
