@@ -56,6 +56,7 @@ ESTATES = {
         "lat": 51.2337, "lng": -0.3357,
         "brand_primary": "#1a0a14",
         "brand_accent": "#8B1C3A",
+        "logo_url": "https://denbies.wpenginepowered.com/wp-content/uploads/2023/06/Top-logo-landscape-1.png",
         "features": ["history", "walking", "winery", "cycling", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
     },
     "abinger-estate": {
@@ -76,6 +77,7 @@ ESTATES = {
         "lat": 51.2109, "lng": -0.5889,
         "brand_primary": "#0e160a",
         "brand_accent": "#A8924A",
+        "logo_url": "https://loseleypark.co.uk/wp-content/uploads/2025/01/Loseley-Logo-navy-font-with-crest1-scaled.jpg",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
 
@@ -89,6 +91,7 @@ ESTATES = {
         "lat": 50.8561, "lng": -0.5510,
         "brand_primary": "#1a0e0e",
         "brand_accent": "#C9A84C",
+        "logo_url": "https://www.arundelcastle.org/wp-content/uploads/2019/10/arundel-castle-logo.png",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "goodwood-estate": {
@@ -99,6 +102,7 @@ ESTATES = {
         "lat": 50.8651, "lng": -0.7554,
         "brand_primary": "#0d1a12",
         "brand_accent": "#2B8A3E",
+        "logo_url": "https://www.goodwood.com/globalassets/brand-assets/logos/core-brand/png/goodwood-core-brand---logo---mono.png",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "cycling", "benches", "legacy", "events"],
     },
     "cowdray-park": {
@@ -129,6 +133,7 @@ ESTATES = {
         "lat": 51.0280, "lng": -0.2710,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#5A8A3A",
+        "logo_url": "https://images.squarespace-cdn.com/content/v1/6076f00c6c78f01b3db89925/1618411757822-YFVQ421DSKW7AE64857G/Leonardslee+Logo+Long+White.png?format=1500w",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
@@ -142,6 +147,7 @@ ESTATES = {
         "lat": 50.8470, "lng": 0.0830,
         "brand_primary": "#0e1218",
         "brand_accent": "#B89A5A",
+        "logo_url": "https://firle.com/wp-content/uploads/2023/08/firle-logo.svg",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "glynde-place": {
@@ -165,6 +171,7 @@ ESTATES = {
         "lat": 51.1734, "lng": 0.1697,
         "brand_primary": "#18100a",
         "brand_accent": "#C9A84C",
+        "logo_url": "https://www.penshurstplace.com/public/uploads/browser/images/new-logo.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "hever-castle": {
@@ -175,6 +182,7 @@ ESTATES = {
         "lat": 51.1908, "lng": 0.1097,
         "brand_primary": "#1a0e06",
         "brand_accent": "#C9A84C",
+        "logo_url": "https://www.hevercastle.co.uk/wp-content/themes/Heaver/assets/images/logo-3.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "lullingstone-castle": {
@@ -208,6 +216,7 @@ ESTATES = {
         "lat": 51.3247, "lng": -1.3635,
         "brand_primary": "#0d0d1a",
         "brand_accent": "#D4AF37",
+        "logo_url": "https://www.highclerecastle.co.uk/backend/images/highclere-logo.png",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "beaulieu-estate": {
@@ -218,6 +227,7 @@ ESTATES = {
         "lat": 50.8143, "lng": -1.4562,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#7CAE7A",
+        "logo_url": "https://www.beaulieu.co.uk/wp-content/uploads/2018/07/Beaulieu-Logo-240-75.png",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "exbury-gardens": {
@@ -228,6 +238,7 @@ ESTATES = {
         "lat": 50.7999, "lng": -1.3699,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#D05C7A",
+        "logo_url": "https://exbury.co.uk/wp-content/uploads/2025/03/exbury-wo.svg",
         "features": ["history", "walking", "gardens", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
     },
     "broadlands-estate": {
@@ -248,6 +259,7 @@ ESTATES = {
         "lat": 51.3432, "lng": -1.0778,
         "brand_primary": "#0e1218",
         "brand_accent": "#C9A84C",
+        "logo_url": "https://stratfield-saye.co.uk/wp-content/uploads/main_crest.gif",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "avington-park": {
@@ -281,6 +293,7 @@ ESTATES = {
         "lat": 51.4290, "lng": -1.4100,
         "brand_primary": "#0e1218",
         "brand_accent": "#B89A5A",
+        "logo_url": "https://www.welfordpark.co.uk/wp-content/uploads/logo-webv3.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 

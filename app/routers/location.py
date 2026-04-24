@@ -11250,6 +11250,8 @@ def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -
             hero_image_url = chaps[0]["image_url"]
     logo = (getattr(car_park, "logo_url", None) or "") if car_park else ""
     if not logo:
+        logo = estate.get("logo_url", "") if estate else ""
+    if not logo:
         logo = f"/location/{slug}/mark.svg"
     return {
         "request":    request,
