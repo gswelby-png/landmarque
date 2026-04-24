@@ -63,21 +63,6 @@
       border: none; border-top: 1px solid #ececec;
       margin: 0;
     }
-    .share-row {
-      display: flex; gap: .75rem; margin-top: 2.5rem; padding-top: 2rem;
-      border-top: 1px solid #ececec;
-    }
-    .share-btn {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .78rem; font-weight: 700; letter-spacing: .5px;
-      padding: .65rem 1rem; border-radius: 6px; border: none;
-      cursor: pointer; text-decoration: none; flex: 1; justify-content: center;
-      transition: filter .15s;
-    }
-    .share-btn:hover { filter: brightness(92%); }
-    .share-whatsapp { background: #25D366; color: #fff; }
-    .share-copy { background: #f2f2f2; color: #333; }
-    .share-copy.copied { background: #e8f5e9; color: #2e7d32; }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
@@ -109,13 +94,6 @@
   {% if not loop.last %}<hr class="divider">{% endif %}
   {% endfor %}
 
-  <div class="share-row">
-    <a class="share-btn share-whatsapp" href="whatsapp://send?text={{ estate_name | urlencode }}%20-%20film%20%26%20TV%20connections%20https%3A%2F%2Flandmarque.co.uk%2Flocation%2F{{ slug }}%2Fvisitor%2Fmovies" data-action="share/whatsapp/share">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2.007C6.48 2.007 2 6.487 2 12.007c0 1.968.565 3.8 1.548 5.353L2.006 22l4.772-1.512A9.932 9.932 0 0012 21.993c5.52 0 10-4.48 10-9.986 0-5.52-4.48-10.006-10-10zM12 20c-1.72 0-3.32-.46-4.7-1.27l-.338-.2-3.497 1.108 1.124-3.4-.22-.35A7.977 7.977 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
-      Share
-    </a>
-    <button class="share-btn share-copy" onclick="(function(b){navigator.clipboard.writeText(window.location.href).then(function(){b.textContent='Copied!';b.classList.add('copied');setTimeout(function(){b.textContent='Copy link';b.classList.remove('copied')},2000)})})(this)">Copy link</button>
-  </div>
 
 </div>
 {% else %}
