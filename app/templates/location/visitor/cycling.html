@@ -3,119 +3,105 @@
 {% block title %}Cycling Routes — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
+    /* Nav bar */
     #scroll-nav .nav-inner { padding: 1.06rem 1.25rem; }
     #scroll-nav img { height: 28px; }
     #scroll-nav .nav-home span { font-size: .94rem; }
     #hamburger-btn { gap: 6px; }
     #hamburger-btn span { width: 28px; }
+    /* Footer */
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { display: none !important; }
-    .history-wrap {
+    /* White content area */
+    .page-wrap {
       background: #fff;
       width: calc(100% + 2.5rem);
       margin: 0 -1.25rem;
       padding: 0 1.25rem 4rem;
     }
-    .history-page-title {
+    .page-title {
       font-size: 1.6rem; font-weight: 700; color: #000;
       letter-spacing: .5px; padding: 6rem 0 1.25rem;
     }
-    .history-page-subtitle {
+    .page-subtitle {
       font-size: .95rem; color: #666;
-      font-weight: 300; line-height: 1.7;
-      margin-bottom: 1.5rem;
+      font-weight: 300; line-height: 1.7; margin-bottom: 2rem;
     }
-    .chapter { margin-bottom: 3rem; }
-    .chapter-title {
-      font-size: 1.2rem; font-weight: 700; color: #000;
-      letter-spacing: .5px; padding-top: 2.25rem; margin-bottom: 1.1rem;
+    /* Route cards */
+    .route-card {
+      background: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 1.25rem;
+      text-decoration: none;
+      display: block;
+      border: 1px solid #e0e0e0;
+      transition: border-color .15s;
     }
-    .chapter p {
-      font-size: 1rem; color: #222;
-      line-height: 1.9; font-weight: 400; margin-bottom: 1.1rem;
+    .route-card:hover { border-color: #B89A5A; }
+    .route-image {
+      width: 100%; height: 180px; object-fit: cover; display: block;
     }
-    .chapter p:last-child { margin-bottom: 0; }
-    .chapter-image {
-      display: block; width: calc(100% + 2.5rem);
-      margin: 1.5rem -1.25rem;
-      aspect-ratio: 16/9; object-fit: cover;
+    .route-image-placeholder {
+      width: 100%; height: 180px; background: #f5f5f5;
+      display: flex; align-items: center; justify-content: center;
+      color: #bbb; font-size: .7rem; letter-spacing: 2px; text-transform: uppercase;
     }
-    .chapter-image-caption {
-      font-size: .75rem; color: #888;
-      font-weight: 400; letter-spacing: .5px;
-      margin-top: -.75rem; margin-bottom: 1.5rem;
+    .route-body { padding: 1.25rem; }
+    .route-header {
+      display: flex; justify-content: space-between; align-items: baseline;
+      margin-bottom: .5rem; gap: .5rem;
     }
-    .divider {
-      border: none; border-top: 1px solid #e0e0e0;
-      margin: 0;
+    .route-title { font-size: 1.05rem; font-weight: 700; color: #000; letter-spacing: .5px; }
+    .route-distance { font-size: .8rem; font-weight: 700; color: #B89A5A; letter-spacing: 1px; flex-shrink: 0; }
+    .route-meta { display: flex; gap: .5rem; align-items: center; margin-bottom: .6rem; }
+    .route-difficulty {
+      font-size: .65rem; font-weight: 700; letter-spacing: 1.2px;
+      text-transform: uppercase; padding: .25rem .55rem;
+      border-radius: 3px; line-height: 1;
     }
-    .share-row {
-      display: flex; gap: .75rem; margin-top: 2.5rem; padding-top: 2rem;
-      border-top: 1px solid #e8e8e8;
-    }
-    .share-btn {
-      display: flex; align-items: center; gap: .5rem;
-      font-size: .78rem; font-weight: 700; letter-spacing: .5px;
-      padding: .55rem 1rem; border-radius: 4px; border: none;
-      cursor: pointer; text-decoration: none; flex: 1; justify-content: center;
-    }
-    .share-whatsapp { background: #25D366; color: #fff; }
-    .share-copy { background: #f0f0f0; color: #333; }
-    .share-copy.copied { background: #e8f5e9; color: #2e7d32; }
+    .difficulty-easy    { background: #e8f5e9; color: #2e7d32; }
+    .difficulty-moderate{ background: #fff3e0; color: #e65100; }
+    .difficulty-challenging { background: #fce4ec; color: #c62828; }
+    .route-terrain { font-size: .75rem; color: #888; font-weight: 400; }
+    .route-summary { font-size: .9rem; color: #555; line-height: 1.65; font-weight: 400; }
 {% endblock %}
 
 {% block page_intro %}{% endblock %}
 {% block header %}{% endblock %}
 
 {% block content %}
-{% if page_content_html %}{{ page_content_html|safe }}
-{% elif cycling_data %}
-<div class="history-wrap" data-lm-editable-body>
+{% if page_content_html %}{{ page_content_html|safe }}{% else %}
+<div class="page-wrap" data-lm-editable-body>
 
-  <div class="history-page-title">Cycling Routes</div>
-  <p class="history-page-subtitle">{{ cycling_data.subtitle }}</p>
+  <div class="page-title">Cycling Routes</div>
+  <p class="page-subtitle">Explore the cycling routes around {{ estate_name }}. Each route includes a map, waypoints, and difficulty rating.</p>
 
-  <hr class="divider">
-
-  {% for chapter in cycling_data.chapters %}
-  <div class="chapter">
-    <div class="chapter-title">{{ chapter.title }}</div>
-    {% if chapter.image_url %}
-    <img class="chapter-image" src="{{ chapter.image_url }}" alt="{{ chapter.image_caption }}">
-    {% if chapter.image_caption %}
-    <p class="chapter-image-caption">{{ chapter.image_caption }}</p>
+  {% if cycling_routes %}
+  {% for route in cycling_routes %}
+  <a href="/location/{{ slug }}/visitor/cycling/{{ route.slug }}" class="route-card">
+    {% if route.image_url %}
+    <img src="{{ route.image_url }}" alt="{{ route.title }}" class="route-image">
+    {% else %}
+    <div class="route-image-placeholder">Image coming soon</div>
     {% endif %}
-    {% endif %}
-    {% for para in chapter.paragraphs %}
-    <p>{{ para }}</p>
-    {% endfor %}
-  </div>
-  {% if not loop.last %}<hr class="divider">{% endif %}
+    <div class="route-body">
+      <div class="route-header">
+        <span class="route-title">{{ route.title }}</span>
+        <span class="route-distance">{{ route.distance }}</span>
+      </div>
+      <div class="route-meta">
+        <span class="route-difficulty difficulty-{{ route.difficulty | lower }}">{{ route.difficulty }}</span>
+        <span class="route-terrain">{{ route.terrain }}</span>
+      </div>
+      <p class="route-summary">{{ route.summary }}</p>
+    </div>
+  </a>
   {% endfor %}
-
-  <div class="share-row">
-    <a class="share-btn share-whatsapp" href="whatsapp://send?text={{ estate_name | urlencode }}%20-%20Cycling%20Routes%20https%3A%2F%2Flandmarque.co.uk%2Flocation%2F{{ slug }}%2Fvisitor%2Fcycling" data-action="share/whatsapp/share">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M11.999 2.007C6.48 2.007 2 6.487 2 12.007c0 1.968.565 3.8 1.548 5.353L2.006 22l4.772-1.512A9.932 9.932 0 0012 21.993c5.52 0 10-4.48 10-9.986 0-5.52-4.48-10.006-10-10zM12 20c-1.72 0-3.32-.46-4.7-1.27l-.338-.2-3.497 1.108 1.124-3.4-.22-.35A7.977 7.977 0 014 12c0-4.41 3.59-8 8-8s8 3.59 8 8-3.59 8-8 8z"/></svg>
-      Share
-    </a>
-    <button class="share-btn share-copy" onclick="(function(b){navigator.clipboard.writeText(window.location.href).then(function(){b.textContent='Copied!';b.classList.add('copied');setTimeout(function(){b.textContent='Copy link';b.classList.remove('copied')},2000)})})(this)">Copy link</button>
-  </div>
-
-</div>
-{% else %}
-<div class="history-wrap" data-lm-editable-body>
-
-  <div class="history-page-title">Cycling Routes</div>
-  <p class="history-page-subtitle">{{ estate_name }} offers cycling routes on the estate. Detailed route information is being added to this guide.</p>
-
-  <hr class="divider">
-
-  <div class="chapter">
-    <div class="chapter-title">{{ estate_name }}</div>
-    <p>{{ estate.description }}</p>
-    <p style="color:#555;">Full details of cycling routes at {{ estate_name }} are being prepared for this guide. Check back soon.</p>
-  </div>
+  {% else %}
+  <p style="color:#888;font-size:.95rem;">Cycling route details are being added to this guide. Check back soon.</p>
+  {% endif %}
 
 </div>
 {% endif %}
