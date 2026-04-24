@@ -138,6 +138,37 @@
     .page-intro { padding: 5rem 0 2rem; text-align: center; }
     .page-intro-title { font-size: 1.6rem; font-weight: 700; color: #fff; letter-spacing: .5px; margin-bottom: 1.1rem; }
     .page-intro-body { font-size: .87rem; color: rgba(255,255,255,.55); font-weight: 300; line-height: 1.7; }
+    /* ── Global content page upgrades ── */
+    .page-title {
+      position: relative; padding-bottom: .85rem !important;
+    }
+    .page-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 2px; background: var(--brand-accent, #B89A5A);
+    }
+    /* Card lift on hover — applies to all card types */
+    .walk-card, .route-card {
+      border-radius: 10px !important;
+      box-shadow: 0 1px 4px rgba(0,0,0,.05);
+      transition: border-color .2s, transform .22s cubic-bezier(.25,.46,.45,.94), box-shadow .22s !important;
+    }
+    .walk-card:hover, .route-card:hover {
+      transform: translateY(-3px) !important;
+      box-shadow: 0 8px 24px rgba(0,0,0,.1) !important;
+    }
+    .walk-image, .route-image {
+      height: 200px !important;
+    }
+    /* Entry cards (places-to-eat, POI, kids, shopping) */
+    .entry-stats {
+      border-radius: 8px !important;
+      overflow: hidden;
+    }
+    /* Chapter images — full bleed with rounded corners on standalone */
+    .chapter-image { border-radius: 0; }
+    /* Reveal animation for content pages */
+    .page-reveal { opacity: 0; transform: translateY(14px); animation: pageReveal .5s ease forwards; }
+    @keyframes pageReveal { to { opacity:1; transform:translateY(0); } }
     {% block extra_css %}{% endblock %}
   </style>
   {% if brand %}
