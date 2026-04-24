@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, HTTPException, Request, Form
-from fastapi.responses import HTMLResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, RedirectResponse, Response
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
 from datetime import date, datetime, timedelta, timezone
@@ -11234,22 +11234,30 @@ def _get_nearby_estates(slug: str, estate: dict, n: int = 4) -> list:
     return result[:n]
 
 
+def _estate_initials(name: str) -> str:
+    skip = {"the", "a", "an", "of", "and", "&"}
+    words = [w for w in name.split() if w.lower() not in skip]
+    return "".join(w[0] for w in words[:2]).upper()
+
+
 def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -> dict:
     """Common template context shared by every visitor page."""
-    # Pull hero image from first HISTORY chapter
     hero_image_url = ""
     hist = HISTORY.get(slug, {})
     if isinstance(hist, dict):
         chaps = hist.get("chapters", [])
         if chaps and chaps[0].get("image_url"):
             hero_image_url = chaps[0]["image_url"]
+    logo = (getattr(car_park, "logo_url", None) or "") if car_park else ""
+    if not logo:
+        logo = f"/location/{slug}/mark.svg"
     return {
         "request":    request,
         "slug":       slug,
         "estate":     estate,
         "estate_name": car_park.owner.name if car_park else estate["name"],
         "car_park_name": page_name,
-        "logo_url":   (getattr(car_park, "logo_url", None) or "") if car_park else "",
+        "logo_url":   logo,
         "cp_slug":    estate.get("car_park_slug", "") or "",
         "brand":      _get_brand(estate, car_park),
         "features":   _resolve_features(car_park, estate),
@@ -11267,6 +11275,21 @@ def location_home(request: Request, slug: str):
     if not estate:
         return RedirectResponse(url="/", status_code=302)
     return templates.TemplateResponse("location/home.html", {"request": request, "slug": slug, "estate": estate})
+
+
+@router.get("/{slug}/mark.svg")
+def estate_mark_svg(slug: str):
+    estate = _get_estate(slug)
+    name = estate["name"] if estate else slug.replace("-", " ").title()
+    initials = _estate_initials(name)
+    accent = estate.get("brand_accent", "#B89A5A") if estate else "#B89A5A"
+    svg = f'''<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <rect width="100" height="100" rx="8" fill="#0a0a0a"/>
+  <text x="50" y="67" font-family="Georgia,serif" font-size="42" font-weight="700"
+        fill="{accent}" text-anchor="middle" letter-spacing="2">{initials}</text>
+</svg>'''
+    return Response(content=svg, media_type="image/svg+xml",
+                    headers={"Cache-Control": "public, max-age=86400"})
 
 
 @router.get("/{slug}/parking", response_class=HTMLResponse)

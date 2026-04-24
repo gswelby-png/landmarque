@@ -273,16 +273,15 @@
     /* ─── STATS ─────────────────────────────────────────────── */
     .stats-section {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       border-bottom: 1px solid var(--border);
+      max-width: 560px; margin: 0 auto;
     }
     .stat-item {
       padding: 2.5rem 2rem;
       border-right: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
     }
-    .stat-item:nth-child(even) { border-right: none; }
-    .stat-item:nth-child(3), .stat-item:nth-child(4) { border-bottom: none; }
+    .stat-item:last-child { border-right: none; }
     .stat-number {
       font-family: 'Cormorant Garamond', serif;
       font-size: clamp(2.2rem, 7vw, 4.5rem);
@@ -297,10 +296,7 @@
       color: var(--text-dim);
     }
     @media (min-width: 640px) {
-      .stats-section { grid-template-columns: repeat(4, 1fr); }
-      .stat-item { border-right: 1px solid var(--border); border-bottom: none; }
-      .stat-item:last-child { border-right: none; }
-      .stat-item:nth-child(even) { border-right: 1px solid var(--border); }
+      .stats-section { max-width: 560px; }
     }
 
     /* ─── SECTIONS ──────────────────────────────────────────── */
@@ -617,18 +613,10 @@
 <!-- ═══ STATS ══════════════════════════════════════════════════════════════ -->
 <div class="stats-section">
   <div class="stat-item reveal">
-    <div class="stat-number" data-count="0" data-suffix="" data-text="1 scan">1 scan</div>
-    <div class="stat-label">Instant access on arrival</div>
-  </div>
-  <div class="stat-item reveal reveal-d1">
-    <div class="stat-number" data-count="0" data-suffix="" data-text="Any screen">Any screen</div>
-    <div class="stat-label">Phone, tablet, or desktop</div>
-  </div>
-  <div class="stat-item reveal reveal-d2">
     <div class="stat-number" data-count="500" data-suffix="+">0+</div>
     <div class="stat-label">Years of history</div>
   </div>
-  <div class="stat-item reveal reveal-d3">
+  <div class="stat-item reveal reveal-d1">
     <div class="stat-number" data-count="0" data-suffix="" data-text="Free">Free</div>
     <div class="stat-label">For every visitor</div>
   </div>
