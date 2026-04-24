@@ -558,7 +558,7 @@
           +'<div class="entry-stat"><div class="entry-stat-value">'+esc(v.open)+'</div><div class="entry-stat-label">Open Today</div></div>'
           +'</div>'
           +'<p class="entry-summary">'+esc(v.summary)+'</p>'
-          +'<a href="#" class="directions-link">Get Directions →</a>';
+          +'<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v.name)+'" target="_blank" rel="noopener" class="directions-link">Get Directions →</a>';
       }
     },
     'walking': {
@@ -602,7 +602,7 @@
           +'<div class="entry-meta">'+esc(v.type)+' · '+esc(v.distance)+'</div>'
           +img
           +'<p class="entry-summary">'+esc(v.summary)+'</p>'
-          +'<a href="#" class="directions-link">Get Directions →</a>';
+          +'<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v.name)+'" target="_blank" rel="noopener" class="directions-link">Get Directions →</a>';
       }
     },
     'places-of-interest': {
@@ -623,7 +623,7 @@
           +'<div class="entry-meta">'+esc(v.type)+' · '+esc(v.distance)+'</div>'
           +img
           +'<p class="entry-summary">'+esc(v.summary)+'</p>'
-          +'<a href="#" class="directions-link">Get Directions →</a>';
+          +'<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v.name)+'" target="_blank" rel="noopener" class="directions-link">Get Directions →</a>';
       }
     },
     'shopping': {
@@ -649,7 +649,7 @@
           +'<div class="shop-meta">'+esc(v.type)+dist+'</div>'
           +hours+img
           +'<p class="shop-description">'+esc(v.summary)+'</p>'
-          +'<a href="#" class="directions-link">Get Directions →</a>'
+          +'<a href="https://www.google.com/maps/search/?api=1&query='+encodeURIComponent(v.name)+'" target="_blank" rel="noopener" class="directions-link">Get Directions →</a>'
           +website;
       }
     },
