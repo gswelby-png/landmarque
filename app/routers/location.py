@@ -5,6 +5,7 @@ from sqlalchemy.orm import Session
 from datetime import date, datetime, timedelta, timezone
 import stripe
 import os
+import math
 
 from ..database import get_db
 from ..models import CarPark, Transaction, TransactionStatus
@@ -11205,6 +11206,34 @@ def _get_brand(estate: dict, car_park) -> dict:
     }
 
 
+def _haversine_km(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
+    dlat = math.radians(lat2 - lat1)
+    dlng = math.radians(lng2 - lng1)
+    a = math.sin(dlat / 2) ** 2 + math.cos(math.radians(lat1)) * math.cos(math.radians(lat2)) * math.sin(dlng / 2) ** 2
+    return 6371 * 2 * math.asin(math.sqrt(a))
+
+
+def _get_nearby_estates(slug: str, estate: dict, n: int = 4) -> list:
+    e_lat, e_lng = estate.get("lat", 0.0), estate.get("lng", 0.0)
+    result = []
+    for other_slug, other in ESTATES.items():
+        if other_slug == slug:
+            continue
+        dist = _haversine_km(e_lat, e_lng, other.get("lat", 0.0), other.get("lng", 0.0))
+        dist_label = f"{dist:.0f} km away" if dist >= 1 else f"{int(dist * 1000)} m away"
+        result.append({
+            "slug": other_slug,
+            "name": other["name"],
+            "county": other.get("county", ""),
+            "tagline": other.get("tagline", ""),
+            "brand_accent": other.get("brand_accent", "#B89A5A"),
+            "dist_km": dist,
+            "dist_label": dist_label,
+        })
+    result.sort(key=lambda x: x["dist_km"])
+    return result[:n]
+
+
 def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -> dict:
     """Common template context shared by every visitor page."""
     # Pull hero image from first HISTORY chapter
@@ -11225,6 +11254,7 @@ def _base_ctx(request, slug: str, estate: dict, car_park, page_name: str = "") -
         "brand":      _get_brand(estate, car_park),
         "features":   _resolve_features(car_park, estate),
         "hero_image_url": hero_image_url,
+        "nearby_estates": _get_nearby_estates(slug, estate),
         "ad_slot_html": None,
     }
 

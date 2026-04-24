@@ -90,18 +90,6 @@ def login(
     return response
 
 
-@router.get("/dev-login")
-def dev_login(db: Session = Depends(get_db)):
-    """Dev convenience: auto-login as the first owner without credentials."""
-    owner = db.query(Owner).order_by(Owner.id).first()
-    if not owner:
-        return RedirectResponse("/owner/login", status_code=303)
-    token = create_token({"sub": str(owner.id), "role": "owner"})
-    response = RedirectResponse("/owner/dashboard", status_code=303)
-    response.set_cookie("owner_token", token, httponly=True, max_age=43200)
-    return response
-
-
 @router.get("/logout")
 def logout():
     response = RedirectResponse("/owner/login", status_code=303)
