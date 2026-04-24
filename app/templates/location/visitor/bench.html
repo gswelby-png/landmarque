@@ -250,10 +250,33 @@
     if (sel) sel.value = slug;
   }
 
-  function submitBenchForm(e) {
+  async function submitBenchForm(e) {
     e.preventDefault();
-    document.getElementById('bench-form').style.display = 'none';
-    document.getElementById('form-success').style.display = 'block';
+    const form = document.getElementById('bench-form');
+    const btn = form.querySelector('.form-submit');
+    const data = Object.fromEntries(new FormData(form));
+    btn.disabled = true;
+    btn.textContent = 'Sending…';
+    try {
+      const resp = await fetch('/location/{{ slug }}/visitor/sponsor-a-bench', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(data)
+      });
+      const json = await resp.json();
+      if (json.ok) {
+        form.style.display = 'none';
+        document.getElementById('form-success').style.display = 'block';
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Send Enquiry';
+        alert(json.error || 'Something went wrong. Please try again.');
+      }
+    } catch {
+      btn.disabled = false;
+      btn.textContent = 'Send Enquiry';
+      alert('Something went wrong. Please try again.');
+    }
   }
 </script>
 {% endif %}

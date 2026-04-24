@@ -11849,6 +11849,37 @@ def visitor_bench(request: Request, slug: str, db: Session = Depends(get_db)):
     return templates.TemplateResponse("location/visitor/bench.html", ctx)
 
 
+@router.post("/{slug}/visitor/sponsor-a-bench")
+async def visitor_bench_enquiry(slug: str, request: Request, db: Session = Depends(get_db)):
+    from fastapi.responses import JSONResponse
+    from ..models import BenchEnquiry
+    estate = _get_estate(slug)
+    if not estate:
+        return JSONResponse({"error": "Estate not found"}, status_code=404)
+    try:
+        body = await request.json()
+    except Exception:
+        return JSONResponse({"error": "Invalid request"}, status_code=400)
+
+    name = str(body.get("name", "")).strip()[:200]
+    email = str(body.get("email", "")).strip()[:200]
+    if not name or not email or "@" not in email:
+        return JSONResponse({"error": "Name and valid email are required"}, status_code=400)
+
+    enquiry = BenchEnquiry(
+        estate_slug=slug,
+        name=name,
+        email=email,
+        location_slug=str(body.get("location", "")).strip()[:100] or None,
+        bench_type_slug=str(body.get("bench_type", "")).strip()[:100] or None,
+        inscription=str(body.get("inscription", "")).strip()[:40] or None,
+        notes=str(body.get("notes", "")).strip()[:1000] or None,
+    )
+    db.add(enquiry)
+    db.commit()
+    return JSONResponse({"ok": True})
+
+
 @router.get("/{slug}/visitor/legacy", response_class=HTMLResponse)
 def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)

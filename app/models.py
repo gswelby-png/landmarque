@@ -123,3 +123,17 @@ class Transaction(Base):
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
 
     car_park = relationship("CarPark", back_populates="transactions")
+
+
+class BenchEnquiry(Base):
+    __tablename__ = "bench_enquiries"
+
+    id = Column(Integer, primary_key=True)
+    estate_slug = Column(String, nullable=False, index=True)
+    name = Column(String, nullable=False)
+    email = Column(String, nullable=False)
+    location_slug = Column(String, nullable=True)
+    bench_type_slug = Column(String, nullable=True)
+    inscription = Column(String, nullable=True)
+    notes = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
