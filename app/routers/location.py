@@ -24,7 +24,7 @@ WALKS = {
             "duration": "1 hr",
             "difficulty": "Easy",
             "summary": "A peaceful circuit of the castle's magnificent 38-acre lake, with views of the Japanese Tea House, the Italian Loggia, and the castle itself reflected across still water.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Half_Moon_Pond%2C_Hever_Castle_-_geograph.org.uk_-_5922095.jpg",
             "center": [51.1925, 0.1117],
             "zoom": 14,
             "waypoint_zoom": 16,
@@ -44,7 +44,7 @@ WALKS = {
                         "The walk begins at the castle forecourt, where the moat and drawbridge make for one of the most photographed scenes in Kent. The stone gatehouse dates from the 13th century and was already old when Anne Boleyn played here as a child. Take a moment to absorb the view before setting off — the castle reflected in the moat water is particularly striking in early morning light.",
                         "Follow the signed Lake Walk path heading south-east through the formal gardens. You will pass the Yew Maze on your left — planted in 1904 using more than a thousand yew trees imported from the Netherlands — and the Water Maze on Sixteen Acre Island, where stepping stones conceal hidden jets ready to drench the unwary.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
                 {
                     "title": "The Italian Loggia",
@@ -52,7 +52,7 @@ WALKS = {
                         "At the northern end of the lake, the Italian Loggia announces itself with a sweep of colonnaded stonework descending to the water's edge. William Waldorf Astor — the American millionaire who rescued Hever from near-ruin in 1903 — had the loggia and the entire Italian Garden constructed to display his extraordinary collection of ancient Greek and Roman sculpture, amassed during his time as US Ambassador to Italy.",
                         "The statuary lining the Pompeiian Wall nearby includes pieces of genuine antiquity sitting alongside high-quality Edwardian reproductions. Some figures are two millennia old. The scale of the project was remarkable: over eight hundred men spent two years excavating the lake alone. The result is one of the finest Edwardian gardens in England, and virtually unchanged from when Astor first laid eyes on it.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hever_Castle_Italian_Gardens2.JPG/1280px-Hever_Castle_Italian_Gardens2.JPG"
                 },
                 {
                     "title": "Japanese Tea House",
@@ -60,7 +60,7 @@ WALKS = {
                         "About halfway round the lake you will spot the Japanese Tea House Folly perched on the edge of Sixteen Acre Island, its reflected silhouette shimmering on the water. This charming lakeside pavilion was originally built in the Edwardian period and was faithfully reconstructed in 2013 to mark the 30th anniversary of the Guthrie family's ownership of Hever. It is best viewed from a distance — the reflection and the surrounding pines give it a distinctly Japanese woodblock print quality.",
                         "This stretch of the lake walk offers the best birdwatching on the estate. Kingfishers are regularly seen darting low across the surface, and grey herons stand motionless in the shallows on the far bank. In summer, great crested grebes perform their elaborate courtship dances here, and mute swans nest in the reeds at the southern end.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
                 {
                     "title": "Anne Boleyn's Walk",
@@ -68,7 +68,7 @@ WALKS = {
                         "The return leg passes through Anne Boleyn's Walk, a broad avenue of mature trees planted over a century ago. The scale of the trees — some now reaching thirty metres — gives this section a cathedral-like quality, especially in autumn when the canopy turns gold and amber. It is easy to understand why this was designated as a separate named walk: on a calm day it is one of the most tranquil spots on the entire estate.",
                         "The path loops back toward the castle through the formal rose gardens and the Italian Garden's outer terraces. Look back toward the lake as you rise — there are fine views of the water and the loggia behind you. The full circuit brings you back to the forecourt with a fresh appreciation of just how much Astor achieved in reshaping this landscape, and how seamlessly it has aged into something that feels entirely natural.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hever_Castle_Italian_Gardens2.JPG/1280px-Hever_Castle_Italian_Gardens2.JPG"
                 },
             ],
         },
@@ -79,7 +79,7 @@ WALKS = {
             "duration": "45 min",
             "difficulty": "Easy",
             "summary": "A leisurely wander through the award-winning Italian Garden, past ancient statuary, grottoes, fountains and the Pompeiian Wall — the finest Edwardian garden in the South East.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Hever_Castle_Italian_Gardens2%282014-06-20%29.JPG",
             "center": [51.1920, 0.1095],
             "zoom": 16,
             "waypoint_zoom": 17,
@@ -98,7 +98,7 @@ WALKS = {
                         "The Pompeiian Wall is the defining feature of the Italian Garden — a 160-metre-long colonnaded walk lined with ancient and Edwardian statuary, enclosed by climbing roses and wisteria. The niches between the columns contain pieces of genuine Roman and Greek antiquity, including funerary urns, marble torsos, and inscribed tablets, sitting alongside high-quality reproductions commissioned by William Waldorf Astor in the early 1900s.",
                         "Walking the length of the wall is an extraordinary experience — part museum, part garden, entirely unlike anything else in England. The effect Astor was seeking was unambiguous: he wanted visitors to feel they had stepped into a patrician Italian garden of the Renaissance period. He very largely succeeded.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hever_Castle_Italian_Gardens2.JPG/1280px-Hever_Castle_Italian_Gardens2.JPG"
                 },
                 {
                     "title": "Grottoes and Fountains",
@@ -106,7 +106,7 @@ WALKS = {
                         "Set into the hillside at the garden's southern end are a series of shaded grottoes — moss-covered stone alcoves with dripping water features and statuary within. They were designed to provide cool relief from summer heat and to evoke the garden follies of 18th-century Italy. Even on a warm day they retain a refreshing chill, and the sound of running water makes them a peaceful place to pause.",
                         "The central fountain of the Italian Garden is modelled on Florentine renaissance precedents. In summer, the plume of water and the surrounding beds of lavender and agapanthus make this the most photographed spot in the garden. The whole area rewards slow exploration — there is almost always some detail, inscription or carving that first-time visitors miss entirely.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hever_Castle_Italian_Gardens2.JPG/1280px-Hever_Castle_Italian_Gardens2.JPG"
                 },
                 {
                     "title": "The Anne Boleyn Statue",
@@ -114,7 +114,7 @@ WALKS = {
                         "In the heart of the Italian Garden stands a graceful marble statue of Anne Boleyn, placed here as a tribute to the woman most closely associated with Hever. Anne was born around 1501 and spent her early childhood at the castle before being sent abroad for her education. She returned to Hever in the late 1520s, and it was here that Henry VIII sent his famous love letters — seven of which survive in the Vatican Library, though historians remain uncertain how they arrived there.",
                         "The statue captures something of the intelligence and composure that contemporaries attributed to Anne. She was highly educated by the standards of her time, spoke French fluently, and was an accomplished musician and dancer. The garden setting seems appropriate: there is good evidence that Anne found pleasure in the grounds of Hever during the anxious months of Henry's pursuit, walking here while her fate was decided at court.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
                 {
                     "title": "The Rose and Herb Gardens",
@@ -122,7 +122,7 @@ WALKS = {
                         "The walk concludes through Hever's rose gardens, which contain hundreds of varieties and are at their most spectacular in late June. The beds are arranged in formal geometric patterns with topiary hedging — a style faithful to the Tudor gardens that would have existed here in Anne Boleyn's time, though the planting itself is largely Victorian and Edwardian. The herb garden alongside follows a medieval pattern and is planted with species in use during the Tudor period.",
                         "The overall effect of the Italian Garden — statuary, water, fragrance, enclosure — is one of the most complete sensory experiences in any English garden. Allow more time than you think you need: it repays unhurried attention, and the combination of ancient Rome and Edwardian England is an improbable but entirely successful one.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Hever_Castle_Italian_Gardens2.JPG/1280px-Hever_Castle_Italian_Gardens2.JPG"
                 },
             ],
         },
@@ -133,7 +133,7 @@ WALKS = {
             "duration": "2.5 hrs",
             "difficulty": "Moderate",
             "summary": "A classic High Weald circuit linking Hever Castle with the picture-perfect Tudor village of Chiddingstone — two of the finest heritage sites in the Kentish Weald, connected by ancient footpaths and Eden Valley countryside.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chiddingstone_Post_Office_-_geograph.org.uk_-_1260248.jpg/1280px-Chiddingstone_Post_Office_-_geograph.org.uk_-_1260248.jpg",
             "center": [51.1960, 0.1220],
             "zoom": 13,
             "waypoint_zoom": 15,
@@ -154,7 +154,7 @@ WALKS = {
                         "The walk begins at Hever Castle and heads north-east on the Eden Valley Walk, a long-distance trail that follows the course of the River Eden through some of the finest countryside in the Kentish Weald. The path crosses open farmland with views back toward the castle — on a clear day you can see the keep from over a kilometre away — before entering a stretch of mixed woodland managed for conservation.",
                         "The High Weald landscape through which this walk travels is one of the best-preserved medieval countryside patterns in England. The irregular field boundaries, sunken lanes and ancient hedgerows you pass here follow boundaries established before the Norman Conquest and have survived largely intact for a thousand years. This is remarkable countryside, and it rewards a slow pace.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
                 {
                     "title": "Bough Beech Reservoir",
@@ -162,7 +162,7 @@ WALKS = {
                         "The route passes close to Bough Beech Reservoir, a large artificial lake created in the 1960s to supply water to the Sevenoaks and Tonbridge area. Despite its utilitarian origins it has become one of the most important wildlife sites in Kent, managed as a nature reserve by the Kent Wildlife Trust. The surrounding scrub and wetland edge holds nationally important populations of breeding birds including nightingales, turtle doves, and several warbler species.",
                         "You can hear nightingales singing from this spot in May and early June — one of the most thrilling sounds in the English countryside. The reservoir itself supports significant numbers of wintering wildfowl and waders, including occasional rarities that attract birdwatchers from across the south-east. A short detour to the information centre is worthwhile if you have time.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bough_Beech_Reservoir.jpg/1280px-Bough_Beech_Reservoir.jpg"
                 },
                 {
                     "title": "Chiddingstone Village",
@@ -170,7 +170,7 @@ WALKS = {
                         "Chiddingstone is widely regarded as one of the most complete Tudor villages in England. The long, single street is lined with timber-framed buildings that have changed almost nothing externally since the 16th and 17th centuries, and the National Trust manages the entire street to preserve its character. There is not a chain shop or plastic fascia in sight — the effect is genuinely transporting.",
                         "The Castle Inn at the eastern end of the street has been serving travellers since 1420 and remains a proper country pub with real ales and good food. Chiddingstone Castle — a slightly misleading name for a country house with castle-style battlements — stands just beyond and is open to visitors at weekends in season. The medieval church of St Mary the Virgin sits at the western end and contains some fine monuments to the Streatfeild family, who built much of what you see around you.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chiddingstone_village.jpg/1280px-Chiddingstone_village.jpg"
                 },
                 {
                     "title": "Return via Eden Valley",
@@ -178,7 +178,7 @@ WALKS = {
                         "The return leg follows the Eden Valley Walk south-west through a succession of meadows and hop gardens, crossing the River Eden at a footbridge before climbing gently back toward Hever through ancient woodland. In early spring, bluebells carpet the woodland floor here in drifts of extraordinary intensity. In autumn the same path is richly coloured with fungi and turning leaves.",
                         "The final approach brings you back past St Peter's Church, Hever — a small medieval church in the village that contains the magnificent brass memorial to Sir Thomas Boleyn, Anne's father, who died in 1539. The brass is one of the finest Tudor brasses in England and shows Sir Thomas in his robes as a Knight of the Garter. It is open to visitors and well worth a few minutes of your time before returning to the castle.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
             ],
         },
@@ -189,7 +189,7 @@ WALKS = {
             "duration": "2 hrs",
             "difficulty": "Moderate",
             "summary": "A linear walk along the Eden Valley Walk linking Hever Castle with the handsome village of Leigh, following the River Eden through the peaceful Weald countryside.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Hever_Castle_and_its_moat_-_geograph.org.uk_-_3915053.jpg",
             "center": [51.2000, 0.1300],
             "zoom": 13,
             "waypoint_zoom": 15,
@@ -209,7 +209,7 @@ WALKS = {
                         "The Eden Valley Walk is one of Kent's best long-distance paths, tracing the course of the River Eden from Edenbridge to its confluence with the Medway at Penshurst. This section — from Hever to Leigh — is among the finest: a gentle, mostly flat route through classic Kentish countryside of orchards, hop gardens, water meadows and ancient woodland.",
                         "Leave Hever via the village lane and pick up the Eden Valley Walk waymarkers heading north-east. The path is well signed throughout, but a good map is advisable — the High Weald has a complex network of paths and the Eden Valley Walk occasionally shares routes with other trails before separating again. The going underfoot can be muddy after rain; boots are recommended from October to April.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Hever_Castle_01.jpg/1280px-Hever_Castle_01.jpg"
                 },
                 {
                     "title": "River Eden Meadows",
@@ -217,7 +217,7 @@ WALKS = {
                         "The path soon joins the River Eden itself and follows its northern bank through a series of water meadows that have the feel of a much earlier England — unhurried, unimproved, and populated by little more than cattle, lapwings and the occasional heron. The river here is clean and slow-moving, bordered by crack willows and alder carr, and it is not unusual to spot otters, though they are shy and most often seen at dawn.",
                         "Look across the river toward the soft ridgeline to the south — this is the High Weald AONB, one of the most biodiverse landscapes in southern England. The patchwork of small fields, ancient hedgerows and copses you see from here follows a pattern established in the medieval period and largely unchanged since. The relative absence of modern agricultural intensification has allowed plant and animal diversity to survive here that has been lost from much of lowland England.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chiddingstone_village.jpg/1280px-Chiddingstone_village.jpg"
                 },
                 {
                     "title": "Penshurst View",
@@ -225,7 +225,7 @@ WALKS = {
                         "As the path approaches Penshurst the tower of the church of St John the Baptist becomes visible above the treeline, and shortly after, the roofline of Penshurst Place itself. The view of the medieval manor from the meadows to the west is one of the finest in Kent — the building appears to have grown organically from the landscape rather than been imposed on it, which is essentially what happened over its 680-year history.",
                         "You can detour into Penshurst village for refreshment — the Leicester Arms is an outstanding gastropub — and return to the Eden Valley Walk afterward. Alternatively, continue directly to Leigh following the waymarkers through the estate parkland. Both villages have good bus connections if you would prefer not to retrace your steps to Hever.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "Leigh Village Green",
@@ -233,7 +233,7 @@ WALKS = {
                         "The walk ends at Leigh — pronounced 'Lie' by locals, a source of gentle confusion to visitors — a village of extraordinary prettiness centred on a large triangular green. The cricket ground on the green is in use on summer weekends and watching a match with a pint from the Fleur de Lis pub is one of the most classically English afternoons imaginable. The church of St Mary is worth visiting for its medieval interior and Norman south doorway.",
                         "Leigh station, on the Redhill to Tonbridge line, is a short walk from the green and allows an easy return to Hever or onward to London. Alternatively, taxis are available from Tonbridge. If you are walking back, allow two hours and be aware that the path is significantly more exposed to afternoon sun than the outward leg — carry water.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
             ],
         },
@@ -267,7 +267,7 @@ WALKS = {
                         "The Parkland Walk begins at the visitor entrance to Penshurst Place and immediately enters the ancient parkland that has surrounded the manor for seven centuries. The estate covers around 2,500 acres in total, though the managed parkland open to walkers is a more intimate area of rolling grassland, mature oak and chestnut, and the trout lakes that shimmer in the valley below the house.",
                         "Penshurst Place has been the home of the Sidney family since 1552, when King Edward VI gave the estate to Sir William Sidney, a close courtier. The family has been here continuously for over 470 years — one of the longest unbroken aristocratic occupations in England. The current Viscount De L'Isle, whose family title derives from the Sidney line, still lives in part of the house, which gives Penshurst a lived-in quality missing from many heritage properties.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "The Trout Lakes",
@@ -275,7 +275,7 @@ WALKS = {
                         "The path descends gently to the trout lakes — a series of linked ponds in the valley below the house, surrounded by mature willows and alders. The lakes were established for the estate's game fishing and are still privately managed, but the footpaths run along the banks and the reflections of the house and surrounding woodland in the still water on a calm morning make this one of the most beautiful spots on the estate.",
                         "Grey herons fish here year-round, and in summer the lake margins are busy with damselflies and dragonflies. The woodland edge around the lakes is particularly good for birds: nuthatches, treecreepers, great spotted woodpeckers and all three native woodpecker species have been recorded regularly. The arboretum above the lakes contains specimen trees planted in the Victorian period, some of which have now grown to considerable size.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Bough_Beech_Reservoir.jpg/1280px-Bough_Beech_Reservoir.jpg"
                 },
                 {
                     "title": "The Arboretum",
@@ -283,7 +283,7 @@ WALKS = {
                         "The arboretum on the western slope above the lakes is one of the less-visited corners of the Penshurst estate and all the more rewarding for it. The Victorian plantings include some fine specimen conifers, a collection of rare oaks, and a mature mulberry grove that the estate records suggest may predate the current planting scheme by several centuries. In autumn the colour here is outstanding.",
                         "The Woodland Trail runs through the arboretum and includes a series of natural play features for younger visitors — fallen log tunnels, stepping posts, and quiet clearings with den-building materials. It is an excellent combination of adult interest and child-friendly exploration, and the paths are wide enough for pushchairs in dry conditions. The trail connects back to the main parkland walk at the eastern end.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "View of the Manor",
@@ -291,7 +291,7 @@ WALKS = {
                         "The finest view of Penshurst Place is from the footpath that runs along the northern ridge of the parkland, where the full south-facing facade of the medieval manor is laid out before you. The building's extraordinary complexity — the result of additions and alterations spanning six centuries — is best appreciated from this distance, where you can read the different phases of construction in the changing rooflines and materials.",
                         "The oldest visible section is the Baron's Hall of 1341, its great chestnut-roofed ridge rising above everything around it. To the left is the Buckingham Building of the 1390s, and to the right the Sidney additions of the 16th and 17th centuries. The whole is held together by an ancient yew hedge — over a mile of it — that divides the formal walled garden from the parkland. From up here, it looks exactly as it would have to a horseman returning from a day's hunting in the 1580s.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
             ],
         },
@@ -302,7 +302,7 @@ WALKS = {
             "duration": "1 hr",
             "difficulty": "Easy",
             "summary": "A tranquil walk following the River Medway through the lower estate, part of the Eden Valley Walk long-distance trail — flat, scenic and accessible throughout the year.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/AylesfordBridge.jpg",
             "center": [51.1745, 0.1760],
             "zoom": 14,
             "waypoint_zoom": 16,
@@ -323,7 +323,7 @@ WALKS = {
                         "The Riverside Walk begins in Penshurst village, a settlement that was already old when the Baron's Hall was constructed in 1341. The church of St John the Baptist at the village centre contains a remarkable collection of Sidney family monuments spanning four centuries, and is worth visiting before or after the walk. The village also has the Leicester Arms pub, which has been named in the Good Food Guide and is excellent for lunch.",
                         "From the church, follow the footpath south-west toward the River Medway. The path is signed as part of the Eden Valley Walk, which follows the River Eden from Edenbridge to its confluence with the Medway here at Penshurst. The Medway — one of the principal rivers of Kent — rises on the High Weald and flows north-east eventually to Rochester and the Thames estuary.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "River Medway",
@@ -331,7 +331,7 @@ WALKS = {
                         "The path joins the river bank and follows the Medway through a landscape of riverside meadows, crack willows, and occasional riverside marshland. In winter and spring these meadows are often flooded, bringing with them large numbers of wildfowl — teal, wigeon, shoveler and pintail are all regular. In summer the water is clear enough to see the fish holding in the deeper pools, and the kingfisher is a reliable sight on this stretch.",
                         "The Medway here is neither fast nor dramatic — it is a quiet, reflective river, and the walk along its banks has a quality of peacefulness that the busier estate paths lack. There are no crowds, few other walkers, and the views are of nothing more demanding than willows, water and sky. It is exactly the kind of walk that rewards being in no hurry at all.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/River_Medway_Yalding.jpg/1280px-River_Medway_Yalding.jpg"
                 },
                 {
                     "title": "Lancup Well",
@@ -339,7 +339,7 @@ WALKS = {
                         "A short distance from the river is Lancup Well, a medieval spring that supplied water to the estate for centuries and is marked on Ordnance Survey maps as a place of historic interest. The well is set in a shaded hollow and has a pleasing atmosphere of antiquity — the stonework dates from the Tudor period, though the spring itself is certainly older.",
                         "The surrounding woodland in this area contains ancient ash and field maple, and the ground flora in spring is exceptional: primroses, wood anemones and early purple orchids are all present, followed by a flush of bluebells in late April. The combination of historic fabric, clean water and undisturbed flora makes this one of those tucked-away spots that long-term visitors to Penshurst tend to keep quietly to themselves.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "Return via Estate Boundary",
@@ -347,7 +347,7 @@ WALKS = {
                         "The return leg follows the estate boundary wall — an ancient structure of Kentish ragstone that dates in parts from the medieval period. The wall is overhung with ferns, ivy and occasional garden escapes, and the path alongside it passes through the kind of dappled, enclosed woodland that feels genuinely old. The estate's deer are often seen grazing on the parkland slopes visible above the wall.",
                         "The path emerges at the lower entrance to the walled gardens, where you have the option of entering the formal garden enclosure before returning to the visitor entrance, or heading directly back via the parkland path. If the gardens are open, the lower entrance gives access to the rose garden and the Long Border — both at their best in June and July.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
             ],
         },
@@ -358,7 +358,7 @@ WALKS = {
             "duration": "2 hrs",
             "difficulty": "Moderate",
             "summary": "A wonderful circuit linking Penshurst Place with the Tudor village of Chiddingstone, crossing classic High Weald countryside of ancient lanes, farmland and orchard.",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Chiddingstone_Post_Office_-_geograph.org.uk_-_1260248.jpg/1280px-Chiddingstone_Post_Office_-_geograph.org.uk_-_1260248.jpg",
             "center": [51.1860, 0.1500],
             "zoom": 13,
             "waypoint_zoom": 15,
@@ -380,7 +380,7 @@ WALKS = {
                         "Set out from the Penshurst Place visitor entrance and follow the footpath north-west through the parkland, passing below the house with its magnificent medieval roofline. The path climbs gently through the parkland before reaching open farmland at the estate boundary — a handgate in the ragstone wall marks the transition from private parkland to public footpath.",
                         "The High Weald countryside between Penshurst and Chiddingstone is among the best-preserved medieval landscape in England. The sunken lanes — some worn a metre or more below field level over centuries of use — the irregular field boundaries, and the ancient hedgerows give this stretch of countryside a timeless quality that is increasingly rare in south-east England.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "High Weald Farmland",
@@ -388,7 +388,7 @@ WALKS = {
                         "The path crosses a series of pastoral fields — typically grazed by sheep or cattle — with wide views north toward the greensand ridge and south toward the wooded Weald beyond Groombridge and Withyham. On clear days, the radio masts on the North Downs are visible to the north, and the High Weald's characteristic ridgeline creates a horizon that feels much further away than it actually is.",
                         "Several of the fields on this stretch contain ancient field boundary trees — veteran oaks and ash with girths suggesting ages of 400 years or more. These veterans are ecologically irreplaceable: a single ancient oak supports more species of invertebrate than any other tree in the British Isles, and the lichens and fungi that colonise very old bark are found nowhere else. Look for woodpeckers excavating nest cavities in the softer dead wood of the largest specimens.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chiddingstone_village.jpg/1280px-Chiddingstone_village.jpg"
                 },
                 {
                     "title": "Chiddingstone Village",
@@ -396,7 +396,7 @@ WALKS = {
                         "Chiddingstone is one of the most perfectly preserved Tudor villages in England. The single village street, owned and maintained by the National Trust, is lined entirely with timber-framed buildings dating from the 15th to 17th centuries. There are no shop signs in modern fonts, no intrusive signage — just old buildings, old stone and a pub with origins in 1420.",
                         "The Castle Inn at the end of the street is an excellent stopping point — good real ales, reliable food and an atmosphere of comfortable antiquity. Chiddingstone Castle (actually an 18th-century country house in Gothic style) is open to visitors and contains a fascinating private collection of Japanese lacquerwork, Egyptian antiquities and Stuart memorabilia assembled by the eccentric Denys Bower, who left the house and its contents to the nation on his death in 1977.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chiddingstone_village.jpg/1280px-Chiddingstone_village.jpg"
                 },
                 {
                     "title": "Return via Wat Stock",
@@ -404,7 +404,7 @@ WALKS = {
                         "The return leg follows the Eden Valley Walk south-east from Chiddingstone through the hamlet of Wat Stock and back across the rolling farmland to Penshurst. The path descends through a fine section of ancient woodland before crossing the River Eden at a traditional footbridge — one of several that have stood at roughly this point for centuries.",
                         "The final kilometre runs through the southern edge of the Penshurst Place parkland, with good views of the house and the walled garden wall. If you time the walk to arrive back in the late afternoon, the light on the south face of the manor can be extraordinary — the pale Kentish ragstone glows warm gold in summer evenings, and the tower of the Baron's Hall, visible above everything else, gives the whole scene a quality that visitors sometimes describe, with complete sincerity, as magical.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
             ],
         },
@@ -439,7 +439,7 @@ WALKS = {
                         "Leigh — pronounced 'Lie' by everyone who lives there — is a village of considerable charm centred on a handsome triangular green. The cricket club plays here on summer weekends, and the combination of thatched cottages, the Fleur de Lis pub and a Norman church makes it one of the most satisfying village greens in the county. Start the walk from the green and follow the Eden Valley Walk south toward Penshurst.",
                         "The walk is largely flat — the Eden Valley is a broad, gently graded vale — and the going is straightforward except after sustained rain, when the riverside meadows can be very muddy. Boots are recommended from October to April. The route is signed throughout with Eden Valley Walk waymarkers, though a map is advisable on the Penshurst estate section where several paths converge.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "Eden Valley Meadows",
@@ -447,7 +447,7 @@ WALKS = {
                         "The Eden Valley Walk crosses a series of traditionally managed meadows along the River Eden, a small and beautiful river that rises on the High Weald above Edenbridge and joins the Medway at Penshurst. The meadows here are unimproved — never ploughed or re-seeded — and contain plant species that have been present continuously for centuries. In June, the combination of grasses, sedges and wildflowers is remarkable by modern standards.",
                         "Lapwings breed in the meadows in good years, and the river margins support good populations of water voles — shy, round and entirely charming animals that have vanished from much of England due to habitat loss and mink predation. Listen for the characteristic 'plop' as they enter the water from their bankside runs. Otter spraints are found regularly on the bridge parapets, though the animals themselves are rarely seen in daylight.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Chiddingstone_village.jpg/1280px-Chiddingstone_village.jpg"
                 },
                 {
                     "title": "Penshurst Place Parkland",
@@ -455,7 +455,7 @@ WALKS = {
                         "The path enters the Penshurst Place estate through a kissing gate and crosses the lower parkland with the house visible on the ridge above. The parkland here has been grazed by cattle and deer continuously for many centuries, and the combination of ancient trees — including several veteran oaks of great age — and close-cropped turf gives it the quality of a medieval deer park, which is essentially what it is.",
                         "The path passes below the formal walled garden wall and through the churchyard of the estate church, St John the Baptist, which contains an exceptional collection of Sidney family monuments. If the church is open, the tomb of Sir William Sidney and several fine Elizabethan brasses are worth seeking out. The churchyard itself, with its ancient yew trees and view up to the manor, is a place of considerable beauty.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
                 {
                     "title": "Return via Wat Stock",
@@ -463,7 +463,7 @@ WALKS = {
                         "From Penshurst village, the return route heads north via Wat Stock — a quiet hamlet on the edge of the estate — before cutting across farmland back to Leigh. This section is less-walked than the outward leg and has a pleasingly deserted quality on weekdays. The field paths are well signed and the gentle rise and fall of the ground gives occasional views north toward the greensand hills.",
                         "The walk finishes back on Leigh Green, where the Fleur de Lis is an excellent choice for refreshment. The pub serves a good selection of ales and a solid menu of pub classics — the Sunday roast is particularly well regarded locally. Leigh station, a short walk from the green, gives direct train access to Tonbridge (15 minutes) and from there to London Bridge.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Penshurst_Place_2017.jpg/1280px-Penshurst_Place_2017.jpg"
                 },
             ],
         },
@@ -493,7 +493,7 @@ WALKS = {
                         "Start at the village car park, one of only a handful of spaces available in this small but perpetually busy village. Shere is consistently voted one of the most beautiful villages in England, and it is easy to see why — the streets are lined with timber-framed houses, many dating from the 15th and 16th centuries, and there is not a chain shop or supermarket in sight.",
                         "From the car park, follow the path toward the village centre. You will cross a small bridge over the Tillingbourne, the chalk stream that has shaped life in Shere for centuries. Look down into the crystal-clear water and you may spot brown trout hovering in the current, barely moving in their effortless way against the flow.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
                 {
                     "title": "St James' Church",
@@ -502,7 +502,7 @@ WALKS = {
                         "Look for the small window set into the north wall of the chancel — this is the anchorite's cell, home to Christine Carpenter, who in 1329 had herself voluntarily enclosed within the cell to live a life of prayer and contemplation. She was given food through a small hatch and could see the altar through this little window. Christine's story has fascinated visitors for centuries and was the inspiration for a well-known novel.",
                         "The churchyard is well worth exploring. Several inscribed stones date from the 17th century, and the eastern end offers fine views back across the rooftops toward the wooded hills beyond.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
                 {
                     "title": "Middle Street",
@@ -511,7 +511,7 @@ WALKS = {
                         "The street is home to a good selection of independent shops and eating places. The William Bray tea rooms offer excellent homemade cakes and cream teas. The White Horse pub, which dates from the 14th century, is one of the oldest buildings in the village and a perennial favourite with walkers coming in off the hills. There is also a village stores, a pottery, and several small artisan businesses occupying the old farm buildings at the eastern end.",
                         "Look up as you walk — many of the upper storeys and roof lines predate the current shopfronts by several centuries, and the overall streetscape has changed remarkably little since the 18th century. Film crews have used it repeatedly as a stand-in for various periods of English history.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
                 {
                     "title": "The Tillingbourne",
@@ -520,7 +520,7 @@ WALKS = {
                         "The shallow ford in the centre of the village is enormously popular with families, particularly in summer, when children paddle in the clear, cold water and attempt the stepping stones alongside. The stream supports brown trout, water voles, kingfishers and a rich variety of aquatic insects, and the water quality is among the best in the county.",
                         "Follow the stream back toward the car park, passing the old mill building on your left. The mill was in operation from at least the 16th century and was last used commercially in the early 20th century. The millpond behind it is now a tranquil wildlife area and worth a few quiet minutes before returning to the car.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
             ],
         },
@@ -549,7 +549,7 @@ WALKS = {
                         "As you leave the village behind, the path passes through a succession of classic Surrey countryside — ancient hedgerows, water meadows grazed by cattle in season, and veteran oak trees that would have been saplings when Elizabeth I was on the throne. The valley narrows gently and the sound of traffic fades within a few minutes of leaving the car park.",
                         "Keep an eye out for the old mill leat running parallel to the stream on your right. This man-made channel dates from at least the 13th century and was used to power a succession of mills along the Tillingbourne, which was once one of the most intensively industrialised river valleys in southern England — producing iron, gunpowder and paper at various points in its history.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
                 {
                     "title": "Tillingbourne Valley",
@@ -558,7 +558,7 @@ WALKS = {
                         "The river here is a textbook chalk stream — gin-clear, cold, and fast-flowing over a clean gravel bed. Chalk streams are among the rarest freshwater habitats in the world; only around 200 exist globally, and most are in southern England. This one is in unusually fine condition, largely because the valley has escaped the intensive drainage and fertiliser run-off that has degraded so many comparable rivers. Brown trout are visible most days, rising to take flies on summer evenings.",
                         "About halfway along this section you will pass the remains of an old watermill, its wheel pit and sluice gates still discernible in the undergrowth by the bank. The Tillingbourne drove dozens of mills from the medieval period onward, and the remnants of that industrial past are scattered all along the valley floor for those who look carefully.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
                 {
                     "title": "Albury Park",
@@ -567,7 +567,7 @@ WALKS = {
                         "The estate passed through several hands before being acquired by Henry Drummond in the early 19th century, who commissioned Augustus Pugin — the architect responsible for the interiors of the Houses of Parliament — to carry out extensive work on the house and estate buildings. Pugin's Catholic chapel, with its elaborate Gothic interior, stands near the estate entrance and is occasionally open to visitors.",
                         "The old parish church of St Peter and St Paul stands within the park boundary and is worth a detour if it is open. It is notable for its Saxon chancel arch, an early Norman apse, and the extraordinary series of painted wooden grave covers in the churchyard. The church is no longer in regular use and is maintained by the Churches Conservation Trust.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
                 },
                 {
                     "title": "William IV",
@@ -576,7 +576,7 @@ WALKS = {
                         "The menu changes regularly to reflect seasonal and local produce, and the kitchen has close relationships with several nearby farms. The game dishes are outstanding in autumn and winter, and the puddings are the kind that make you glad you walked here rather than drove. The wine list is thoughtfully assembled and the beer selection includes several good ales from Surrey and Sussex breweries.",
                         "To return, retrace your steps east along the Tillingbourne valley — the walk back is, if anything, even better than the outward leg, since the light is different and the views open up from directions you did not see on the way out. Allow around 50 minutes for the return to Shere.",
                     ],
-                    "image_url": ""
+                    "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
                 },
             ],
         },
@@ -1377,7 +1377,7 @@ WALKS["arundel-castle"] = [
         "duration": "1 hr 15 min",
         "difficulty": "Easy",
         "summary": "A gentle circuit from the castle gates along the western bank of the River Arun, returning through the historic town centre past the Cathedral.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Stopham_Bridge.JPG",
         "center": [50.8550, -0.5510],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -1398,7 +1398,7 @@ WALKS["arundel-castle"] = [
                     "Begin at the main castle gates on High Street, where the towering flint walls of Arundel Castle rise above you. The castle has occupied this strategic position above the River Arun since William the Conqueror's time, and the view from the gate — west across the rooftops and the water meadows beyond — has changed little in centuries. The gatehouse ahead dates from the 18th century, though its foundations are considerably older.",
                     "Head downhill on Mill Road and follow the signed riverside path as it bears left onto the western bank of the Arun. The river here is tidal, and the quality of light on the water changes dramatically between high and low tide — arrive at high tide and the water laps against the reedy margins; at low tide a wide swathe of gleaming mud is revealed, beloved by curlews and redshanks.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "The Black Rabbit Riverside",
@@ -1406,7 +1406,7 @@ WALKS["arundel-castle"] = [
                     "The path follows the riverbank south, passing through the water meadows that form the floodplain of the Arun. This stretch is one of the finest bird-watching spots in West Sussex — look for little egrets hunting in the shallows, flocks of lapwing in winter, and the occasional flash of blue that signals a kingfisher. The flat, open landscape makes sightings easy once you know what to look for.",
                     "After roughly 1.5 km the path reaches the hamlet of South Stoke, where The Black Rabbit pub sits directly on the riverbank with one of the most photographed views in the county — Arundel Castle reflected in the water. The pub takes its name from the white rabbits once bred on the nearby chalk downs. It is a perfect halfway stop for a drink and that view.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "WWT Wetland Edge",
@@ -1414,7 +1414,7 @@ WALKS["arundel-castle"] = [
                     "Crossing back north via the footbridge, the path skirts the southern edge of the WWT Arundel Wetland Centre — 65 acres of managed reedbed, open water, and fen. Even from outside the habitat is extraordinary: reed warblers churr in the summer, marsh harriers quarter the reedbeds in slow, buoyant flight, and in winter bitterns lurk invisibly among the stems. If you have time, a detour into the centre itself is strongly recommended.",
                     "The path continues north alongside the reed margin before climbing gently back into the town. Watch your footing on the boardwalk sections after wet weather — they can be slippery but are generally well maintained.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/WWT_Arundel.jpg/1280px-WWT_Arundel.jpg",
             },
             {
                 "title": "Arundel Cathedral",
@@ -1422,7 +1422,7 @@ WALKS["arundel-castle"] = [
                     "The return route brings you through the upper town past the Cathedral Church of Our Lady and St Philip Howard, whose Gothic spire is visible for miles across the Arun valley. Built between 1869 and 1873 by the 15th Duke of Norfolk to designs by Joseph Hansom — the man who invented the hansom cab — it is one of the finest Victorian Gothic churches in England.",
                     "Step inside if the doors are open: the vaulted nave is magnificent and the stained glass spectacular, particularly in morning light. The shrine of St Philip Howard, a Catholic martyr executed in 1595, is in the south transept. From the cathedral, it is a three-minute walk back down High Street to the castle gates to complete the circuit.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Arundel_Cathedral.jpg/1280px-Arundel_Cathedral.jpg",
             },
         ],
     },
@@ -1433,7 +1433,7 @@ WALKS["arundel-castle"] = [
         "duration": "2 hrs",
         "difficulty": "Moderate",
         "summary": "A rewarding circuit through the castle's private parkland to Hiorne Tower — a Georgian folly on the ridge with sweeping views across the South Downs.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Arundel_Palace_Gardens_-_Sussex.jpg",
         "center": [50.8590, -0.5450],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -1454,7 +1454,7 @@ WALKS["arundel-castle"] = [
                     "The walk enters Arundel Park through the Norfolk Gates at the northern end of the castle complex. This 1,100-acre swath of chalk downland, ancient woodland and parkland has been in the possession of the Dukes of Norfolk since the 16th century and is open to the public on foot throughout the year — a remarkable privilege given its scale and beauty.",
                     "The path climbs steadily north through open grassland managed for wildflowers. In summer the chalk turf is thick with orchids, marbled white butterflies and the hum of bees working through knapweed and scabious. The gradient is moderate but sustained — take your time and turn back regularly for increasingly impressive views over the town and the castle roofline.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "Open Downland Ridge",
@@ -1462,7 +1462,7 @@ WALKS["arundel-castle"] = [
                     "The ridge offers a panoramic view across the coastal plain to the sea on a clear day, with the Arun valley laid out below and the dark mass of the South Downs stretching east and west. The park here is grazed by a herd of fallow deer — one of the oldest managed herds in England — and encounters are common if you walk quietly.",
                     "The chalk grassland on the ridge is a Site of Special Scientific Interest and among the most species-rich habitats in West Sussex. Look down into the turf and you will find at least 30 different plant species per square metre in the best areas. The estate's conservation team manages it through light grazing to prevent the scrub encroachment that would otherwise overtake it within a decade.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg",
             },
             {
                 "title": "Hiorne Tower",
@@ -1470,7 +1470,7 @@ WALKS["arundel-castle"] = [
                     "Hiorne Tower stands on a high point of the park ridge and is visible from much of the Arun valley. Built in 1787 by Francis Hiorne as a Gothic Revival folly, it was erected in the hope of gaining favour with the 11th Duke of Norfolk, who was remodelling the castle at the time. The duke was reportedly unimpressed, but the tower has stood for over 230 years and its silhouette is one of the defining landmarks of the Arundel skyline.",
                     "The tower itself is not open to the public, but the views from the surrounding ground are excellent in all directions. Sit here for a few minutes and you will likely see red kites circling overhead — they were reintroduced to West Sussex in 2005 and have thrived in the Arun valley.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/76/Hiorne_Tower_Arundel_Park.jpg/1280px-Hiorne_Tower_Arundel_Park.jpg",
             },
             {
                 "title": "Swanbourne Lake",
@@ -1478,7 +1478,7 @@ WALKS["arundel-castle"] = [
                     "The descent from the ridge brings you to the shore of Swanbourne Lake, a tranquil millpond enclosed by wooded hillsides that has been a focal point of the park since the 18th century. Rowing boats and pedalos are available for hire in the summer months, and the café on the eastern shore serves hot drinks and light snacks.",
                     "The lake is home to a large colony of swans alongside grebes, coots, tufted duck and a resident heron. Ducks come very close to the path — seed purchased from the kiosk is welcome but please avoid bread. The woodland path back to the castle gates runs along the western shore and is shaded even in the height of summer.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
         ],
     },
@@ -1489,7 +1489,7 @@ WALKS["arundel-castle"] = [
         "duration": "3 hrs",
         "difficulty": "Moderate",
         "summary": "A linear walk following the River Arun north through the South Downs National Park to the ancient village of Amberley — best done one way with a train back.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.8680, -0.5470],
         "zoom": 12,
         "waypoint_zoom": 14,
@@ -1509,7 +1509,7 @@ WALKS["arundel-castle"] = [
                     "The walk begins at Arundel's old town quay, where the River Arun is wide and tidal. The quay was once one of the busiest ports on the Sussex coast, trading coal, timber and Caen stone — the limestone brought from Normandy to build the castle. Mooring rings set into the old stone walls are the last remnants of this seafaring past.",
                     "Head north along the river's western bank, following the South Downs Way signs. The path is flat and well-maintained for the first two kilometres as it passes through the water meadows below the castle. The castle towers above on the right; to the left, the broad water meadows stretch away to the reed-fringed margins of the WWT reserve.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "The South Downs National Park",
@@ -1517,7 +1517,7 @@ WALKS["arundel-castle"] = [
                     "Beyond the WWT reserve the path enters the South Downs National Park proper, where the landscape changes character. The valley narrows and the flanking chalk ridges press closer, with the river looping through an increasingly wild corridor of alder carr, willow and reed. The birdsong can be remarkable in spring — sedge warblers, reed buntings and the booming call of a bittern have all been recorded here.",
                     "Keep the river on your right throughout this section. At Houghton, roughly halfway, there is a small car park and a track up to the village if you need to cut the walk short. The village has a 17th-century pub — The George and Dragon — that does good food.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg",
             },
             {
                 "title": "Amberley Wild Brooks",
@@ -1525,7 +1525,7 @@ WALKS["arundel-castle"] = [
                     "Amberley Wild Brooks is a 350-hectare wetland complex and one of the most important inland wetlands in southern England. In winter it floods to form a vast shallow lake that attracts thousands of wildfowl: wigeon, teal, lapwing and golden plover in numbers rarely seen elsewhere in Sussex. In summer the damp meadows fill with ragged robin, yellow flag iris, and marsh orchids.",
                     "The final approach to Amberley follows a raised causeway across the brooks, with wide views in every direction. The white chalk face of the quarry above the village comes into view as you approach, and the church tower appears above the roofline of this remarkable, almost medieval village.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG",
             },
             {
                 "title": "Amberley Village & Station",
@@ -1533,7 +1533,7 @@ WALKS["arundel-castle"] = [
                     "Amberley village is one of the most beautiful in Sussex — chalk cottages, a Norman church, a ruined medieval castle, and lanes that have barely changed since the 18th century. Take time to explore before heading to the station: the Church of St Michael has extraordinary Norman carvings and a genuine sense of ancient calm.",
                     "Amberley Station is a 10-minute walk from the village centre on the Arun Valley Line, with regular services back to Arundel (approximately 10 minutes by train). Check times before you set out — services are roughly hourly. The train gives an excellent view of the valley route you have just walked.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG",
             },
         ],
     },
@@ -1564,7 +1564,7 @@ WALKS["arundel-castle"] = [
                     "Begin at the foot of Mill Road where the path enters the park via a wooden kissing gate. This is one of Arundel's most popular family walks and is suitable for pushchairs on the main lake path, though the woodland loop on the return is more uneven. The route is signed throughout and almost impossible to get lost.",
                     "The path drops down through mixed woodland before the lake appears through the trees. The first glimpse of Swanbourne — its still water framed by the hanging beech woods above — is genuinely beautiful. The castle towers are visible above the treeline to the south, providing a perfect backdrop that photographers have captured since the earliest days of Victorian tourism.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "Swanbourne Lake & Café",
@@ -1572,7 +1572,7 @@ WALKS["arundel-castle"] = [
                     "Swanbourne Lake was created as a millpond in the 12th century to power the castle's grain mill. Today it is a tranquil wildlife lake, home to a large mute swan colony alongside great crested grebes, tufted duck, and a resident grey heron with the patience of a saint.",
                     "The lakeside café serves hot drinks, homemade cakes, sandwiches and ice creams in season, open most weekends and daily during school holidays. Rowing boats and pedalos are available for hire at the jetty — £4 per adult, £3 per child for 30 minutes — and life jackets are provided. Arrive early on warm days to avoid disappointment.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "Boat Hire Jetty",
@@ -1580,7 +1580,7 @@ WALKS["arundel-castle"] = [
                     "The jetty is the best spot from which to appreciate the scale of the lake and its extraordinary wooded setting. Looking back toward the castle from the water, you have the same view that Victorian artists including J.M.W. Turner came to paint — the castle rising above its wooded hillside, reflected in still water below.",
                     "Children will enjoy feeding the swans and ducks from the jetty — seed is available from the kiosk. Swans can be surprisingly assertive when food is on offer, so small children should be supervised closely.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
             {
                 "title": "Woodland Return Path",
@@ -1588,7 +1588,7 @@ WALKS["arundel-castle"] = [
                     "The return route takes the higher woodland path above the western shore, winding through mature beech and oak before descending back to the Mill Road entrance. The path climbs modestly and offers a different perspective — looking down through the branches at the glittering water and across to the wooded ridge of Arundel Park beyond.",
                     "In bluebells season — typically mid-April to mid-May — this woodland path is spectacular, the floor carpeted in blue as far as you can see. The combination of bluebells, fresh beech leaves and castle glimpses through the canopy is genuinely memorable. The path rejoins the main track just above the kissing gate at the start.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Arundel_Castle_from_the_south-east.jpg/1280px-Arundel_Castle_from_the_south-east.jpg",
             },
         ],
     },
@@ -1622,7 +1622,7 @@ WALKS["denbies-wine-estate"] = [
                     "Begin at the Denbies Visitor Centre — the handsome flint-clad building that houses the winery, restaurants, shop and gallery. The estate covers 265 acres of south-facing chalk slopes on the North Downs above Dorking, making it England's largest single-estate vineyard. From the car park you can already see vine rows climbing the hillside above in orderly lines stretching to the ridge.",
                     "Follow the vineyard track east from the visitor centre, passing through the first blocks of Chardonnay and Pinot Noir. The vines here were established in the late 1980s and are now well into their productive maturity — the oldest blocks have complex root systems reaching deep into the chalk, which is thought to contribute the mineral character for which Denbies wines are known.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
             {
                 "title": "North Downs Ridge View",
@@ -1630,7 +1630,7 @@ WALKS["denbies-wine-estate"] = [
                     "As the path climbs to the upper vineyard, the views open dramatically across the Mole Valley to Box Hill on the opposite side of the gap. On a clear day the horizon extends south across the Weald toward the South Downs, with Leith Hill — the highest point in South East England — visible to the southwest.",
                     "The chalk grassland on the upper slope, where vines give way to unimproved downland, is managed for biodiversity and supports a rich flora in summer — round-headed rampion, common spotted orchid, yellow rattle and numerous chalk-specialist butterflies including Adonis blue and chalkhill blue.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Upper Vineyard Block",
@@ -1638,7 +1638,7 @@ WALKS["denbies-wine-estate"] = [
                     "The upper vineyard blocks on the south-facing slope produce some of Denbies' most distinctive wines — the position maximises sun hours and the drainage through the chalk is excellent. The vineyard train runs past this point on its summer circuit, offering an alternative way to explore for those who prefer not to walk.",
                     "In late summer and early autumn the grapes ripen visibly on the vine. Denbies grows Chardonnay, Pinot Noir, Pinot Meunier, Bacchus and several other varieties, harvested by hand from mid-September. In harvest season the air smells sweetly of fermenting grape juice and you may see the picking teams at work.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
             {
                 "title": "Return via Lower Vineyard",
@@ -1646,7 +1646,7 @@ WALKS["denbies-wine-estate"] = [
                     "The lower vineyard path winds back to the visitor centre through the flatter ground of the valley floor, passing the estate's small lake and willow-fringed pond, which attracts dragonflies in summer and wildfowl in winter. The path is wide and well-surfaced through this section and suitable for pushchairs.",
                     "Back at the visitor centre, the Conservatory Restaurant is open from 9:30am to 4pm daily for light lunches, cakes and afternoon tea — all with excellent views across the vineyard. The wine and gift shop is immediately adjacent and the full Denbies range is available to taste and buy.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
         ],
     },
@@ -1657,7 +1657,7 @@ WALKS["denbies-wine-estate"] = [
         "duration": "3 hrs 30 min",
         "difficulty": "Moderate",
         "summary": "A varied circuit taking in the vineyard, the ancient yew woodland of Norbury Park, the River Mole valley, and the chalk escarpment — one of the finest day walks in Surrey.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Denbies_Vineyard_-_geograph.org.uk_-_971751.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Box_Hill_Salomons_Memorial.jpg",
         "center": [51.2420, -0.3300],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -1678,7 +1678,7 @@ WALKS["denbies-wine-estate"] = [
                     "The walk sets off from the Denbies Visitor Centre and climbs north through the vineyard to the chalk ridge of the North Downs. This opening section offers the best views of the estate as a whole — the vine-covered slopes laid out below you, the flint Visitor Centre at the valley floor, and the wooded Surrey Hills horizon in every direction.",
                     "At the top of the vineyard the path crosses open chalk downland before entering woodland on the descent toward Norbury Park. Follow the North Downs Way signs carefully through this transition — well waymarked but the junction onto the Norbury Park estate is easy to miss in poor visibility.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
             {
                 "title": "Norbury Park Ancient Woodland",
@@ -1686,7 +1686,7 @@ WALKS["denbies-wine-estate"] = [
                     "Norbury Park is a 1,300-acre Surrey County Council estate with a history stretching from Bronze Age settlement to Druid yew groves to the elegant Georgian manor built in 1774. The woodland here — ancient oak, beech, field maple and massive veteran yews — is some of the most atmospheric in the county. Walking under the spreading canopy of 400-year-old yew trees is an experience quite unlike anything else in Surrey.",
                     "The parkland holds a herd of fallow deer, most often seen in the early morning and late afternoon. The estate also supports treecreepers, nuthatches, spotted flycatchers in summer, and in the darker corners of the yew wood a resident colony of pipistrelle bats that emerge at dusk.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "River Mole & Stepping Stones",
@@ -1694,7 +1694,7 @@ WALKS["denbies-wine-estate"] = [
                     "The path descends from Norbury Park to the floor of the Mole Gap, where the River Mole runs through one of the finest stretches of river valley in Surrey. The Stepping Stones at Westhumble are an iconic landmark on the North Downs Way and enormously popular with walkers and families. They were constructed in 1946 but the crossing itself is ancient.",
                     "Note that the Stepping Stones are impassable in flood conditions and can be slippery in frost or after heavy rain. If the river is high, a footbridge 400 metres downstream provides a safe alternative. The meadows alongside the river are excellent for wildflowers in summer, and the river itself supports otters, most often seen at dawn.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "North Downs Way Return",
@@ -1702,7 +1702,7 @@ WALKS["denbies-wine-estate"] = [
                     "The return route climbs back to the North Downs chalk ridge via the North Downs Way, following the escarpment before dropping back to the vineyard. This final ridge section offers the finest views of the walk — south across the Weald to the South Downs on the horizon, north across the London Basin toward the city skyline on a clear day.",
                     "The descent back through the upper vineyard to the Visitor Centre is a fitting finale. The Gallery Restaurant opens for lunch Wednesday to Sunday, and the Conservatory is open daily — cold Denbies sparkling wine is particularly well earned after this distance.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
         ],
     },
@@ -1713,7 +1713,7 @@ WALKS["denbies-wine-estate"] = [
         "duration": "4 hrs 30 min",
         "difficulty": "Challenging",
         "summary": "A classic Surrey Hills circuit combining the famous summit of Box Hill with the vineyard slopes of Denbies — two of the county's great visitor destinations linked by chalk ridge and river valley.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Denbies_Vineyard_-_geograph.org.uk_-_971751.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Box_Hill_Salomons_Memorial.jpg",
         "center": [51.2500, -0.3250],
         "zoom": 12,
         "waypoint_zoom": 14,
@@ -1735,7 +1735,7 @@ WALKS["denbies-wine-estate"] = [
                     "The longest and most demanding Denbies walk begins by climbing the full height of the vineyard to the North Downs ridge, following the vine rows in a steady ascent before breaking onto open chalk grassland at the crest. From the ridge the path joins the North Downs Way — one of England's great walking routes stretching from Farnham to Dover.",
                     "The path east along the ridge crosses Ranmore Common — a wide area of National Trust chalk heath and woodland with good populations of nightjar in summer and stonechat year-round. The common is carpeted in heather and gorse in late summer and is one of the finest accessible open spaces in Surrey.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
             {
                 "title": "Westhumble & Stepping Stones",
@@ -1743,7 +1743,7 @@ WALKS["denbies-wine-estate"] = [
                     "The descent to Westhumble village brings you to the Stepping Stones across the River Mole — one of the most photographed spots in Surrey and genuinely thrilling when the river runs full after autumn rain. The village of Westhumble has a small car park and a railway station on the line between Dorking and Leatherhead, useful as an escape point if the weather turns.",
                     "From the Stepping Stones, the path climbs steeply up the famous zigzag of the Box Hill escarpment — a sustained climb of 160 metres that rewards effort with increasingly spectacular views. The steps were constructed by the National Trust in the 1970s to manage erosion. Take your time and use the benches placed at intervals on the ascent.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Box Hill Summit",
@@ -1751,7 +1751,7 @@ WALKS["denbies-wine-estate"] = [
                     "At 224 metres, Box Hill is the highest point on the North Downs and one of the most visited open spaces in England — yet it retains a genuine wildness. The summit is covered in ancient box woodland and rare chalk grassland, and provides views across the Weald that on a good day extend to the South Downs 30 kilometres away. The National Trust visitor centre sells hot drinks and snacks.",
                     "The hill is famously the scene of the ill-fated picnic in Jane Austen's Emma, making it a literary pilgrimage as much as a walking destination. The Salomons Memorial viewpoint is the finest on the summit, with the classic panorama over Dorking and the Mole Valley below.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Return via Mole Valley",
@@ -1759,7 +1759,7 @@ WALKS["denbies-wine-estate"] = [
                     "The return to Denbies descends from Box Hill via the Mole Gap, following the valley floor path alongside the river through a corridor of alder and willow. This is the coolest and most sheltered section of the walk — good habitat for dippers and grey wagtails on the river gravels. The path is flat and clear all the way back to the Stepping Stones.",
                     "From Westhumble the route climbs back onto the Denbies estate via the lower vineyard, completing the circuit with a final gentle ascent through the vines. The Conservatory Restaurant will be a very welcome sight — cold Denbies sparkling wine is particularly well earned.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
         ],
     },
@@ -1770,7 +1770,7 @@ WALKS["denbies-wine-estate"] = [
         "duration": "2 hrs 15 min",
         "difficulty": "Moderate",
         "summary": "A rewarding circuit from Westhumble Station across Ranmore Common chalk heath, descending through the Denbies vineyard with North Downs panoramas throughout — fully accessible by public transport.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/21/Denbies_Vineyard_-_geograph.org.uk_-_971751.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [51.2420, -0.3400],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -1790,7 +1790,7 @@ WALKS["denbies-wine-estate"] = [
                     "This walk is designed to be done entirely by public transport — trains run frequently from London Victoria, London Bridge, Gatwick and Dorking to Box Hill and Westhumble station (approximately 50 minutes from London). The station sits at the foot of the North Downs in the Mole Gap, with the chalk escarpment rising on both sides.",
                     "From the station, follow the North Downs Way signs westward and begin climbing through beech and yew woodland onto Ranmore Common. The ascent is steady rather than steep and the path excellent, following a broad chalk track surfaced by the National Trust.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Ranmore Common",
@@ -1798,7 +1798,7 @@ WALKS["denbies-wine-estate"] = [
                     "Ranmore Common is a broad area of National Trust chalk heath and woodland on the North Downs ridge, characterised by a distinctive mix of heather, gorse, and acid grassland alongside ancient yew and box woodland. In summer the common is alive with butterflies, grasshoppers and the churring of nightjars at dusk. In winter it is a favourite haunt of redwing and fieldfare feasting on berry-bearing shrubs.",
                     "The parish church of St Barnabas stands alone on the common — a Victorian flint building of considerable charm, always worth a few minutes inside. The churchyard is rich in wildflowers, including early purple orchids in spring.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "North Downs Viewpoint",
@@ -1806,7 +1806,7 @@ WALKS["denbies-wine-estate"] = [
                     "The high point of the common offers views south across the Weald that have changed little since the 18th century. On the clearest days the South Downs are visible on the horizon, 30 kilometres away. The Denbies vineyard is visible below to the south, its vine rows following the contours of the chalk slope in orderly green lines.",
                     "This is prime red kite territory — the birds were reintroduced to the Surrey Hills in 2005 and numbers have grown impressively. It is unusual not to see at least one from this viewpoint, soaring on long, bowed wings with their distinctive forked tail. Buzzards, sparrowhawks and occasional peregrines are also regular.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Denbies Vineyard Descent",
@@ -1814,7 +1814,7 @@ WALKS["denbies-wine-estate"] = [
                     "The descent from Ranmore Common through the Denbies vineyard is one of the most satisfying finales of any Surrey walk — the path drops through the vine rows with ever-improving views until the Visitor Centre appears below. In harvest season (September to October) the path brings you through the active harvest, and the smell of fermenting grape juice drifts up from the winery.",
                     "The Denbies Visitor Centre is the ideal end point — the Conservatory Restaurant serves food from 9:30am daily, the Gallery Restaurant opens for lunch Wednesday to Sunday, and the wine shop sells the full estate range with tasting available. The return to Westhumble Station is a 15-minute walk along the valley floor.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Denbies_Wine_Estate.jpg/1280px-Denbies_Wine_Estate.jpg",
             },
         ],
     },
@@ -2313,7 +2313,7 @@ WALKS["hurtwood-estate"] = [
         "duration": "2 hrs",
         "difficulty": "Moderate",
         "summary": "A classic circuit from Car Park 1 climbing to the Iron Age hillfort summit of Holmbury Hill, dropping into the village of Holmbury St Mary for a pub stop, and returning through Scots pine woodland.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
         "center": [51.1712, -0.4029],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -2343,7 +2343,7 @@ WALKS["hurtwood-estate"] = [
                     "Start at Hurtwood Car Park 1, managed by the Friends of the Hurtwood charity (registered charity no. 200053) and reached by following Radnor Road south from Peaslake village for approximately one mile. The car park sits in the shade of mature Scots pine on a sandy track and is one of 15 free car parks across the Hurtwood open to the public. A voluntary donation box is located near the entrance — contributions go directly toward maintaining the paths and woodland.",
                     "From the car park, take the broad sandy path south-eastward past a small pond on your right, keeping to the main track as it rises steadily through pine and birch. The Hurtwood covers around 3,000 acres of SSSI-designated heathland and woodland and has been freely open to the public since 1926 under a covenant given by Reginald Bray, then Lord of the Manor of Shere.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Holmbury Hill Summit & Hillfort",
@@ -2351,7 +2351,7 @@ WALKS["hurtwood-estate"] = [
                     "At 261 metres (856 ft), Holmbury Hill is Surrey's fourth-highest point and the site of one of the county's most significant Iron Age hillforts. Excavations in 1929 revealed that the fort was probably occupied from around 100 to 70 BC, constructed by Celtic tribes as a communal gathering and trading hub rather than a permanent settlement. The defensive earthworks are still clearly visible: a double rampart system protects the western and northern approaches, with the outer ditch originally around three metres deep and six metres wide.",
                     "The summit viewpoint is one of the finest in southern England. On a clear day you can see across the Weald to the South Downs ridge, and in exceptional conditions the Shoreham Gap — the sea — is visible to the south. The view north takes in the North Downs escarpment. The summit is open heathland, giving a striking contrast to the dense pine woodland of the approach path. Gorse blooms here in late winter and early spring, bright yellow against the dark trees.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Holmbury St Mary Village",
@@ -2359,7 +2359,7 @@ WALKS["hurtwood-estate"] = [
                     "The path descends steeply from the summit into the picturesque village of Holmbury St Mary, a small settlement tucked into the south slope of the Greensand Ridge. The village green is overlooked by the Church of St Mary, a Victorian flint-built church by George Edmund Street, the architect responsible for the Royal Courts of Justice in London. The church is worth a few minutes inside.",
                     "Two pubs serve the village. The Royal Oak is a well-established walkers' pub with a warm welcome for muddy boots and dogs on leads, and a reliable menu of homemade food. The Kings Head has recently been refurbished and has a more contemporary feel with a good kitchen. Both have outdoor seating for fine days. This is the ideal lunch stop on the route before the return climb.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Woodland Return",
@@ -2367,7 +2367,7 @@ WALKS["hurtwood-estate"] = [
                     "From the village green, the return route climbs back northward through the dense Scots pine and birch woodland that makes the Hurtwood so distinctive. The pines were introduced in the 18th century — before that the Hurtwood would have been deciduous forest — and they now create a landscape of real character, especially on misty mornings when the light filters through the canopy in shafts. Keep to the main track as the paths multiply in this section; the route back to Car Park 1 is a steady but manageable climb.",
                     "Watch for roe deer in the woodland margins, especially in the early morning and at dusk. The Hurtwood supports good populations of deer, foxes, and a wide variety of woodland birds including woodpeckers and treecreepers. The sandy, well-drained soils underfoot make this route walkable year-round, though the descent into Holmbury St Mary can be slippery after heavy rain.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
         ],
     },
@@ -2378,7 +2378,7 @@ WALKS["hurtwood-estate"] = [
         "duration": "2 hrs 45 min",
         "difficulty": "Challenging",
         "summary": "The best all-day circuit on the Hurtwood, taking in both main summits — the dramatic sandstone spur of Pitch Hill and the Iron Age hillfort of Holmbury Hill — linked by miles of superb pine and heathland trail.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
         "center": [51.1690, -0.4100],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -2410,14 +2410,14 @@ WALKS["hurtwood-estate"] = [
                     "Start from Hurtwood Car Park 2 (Walking Bottom), the largest and most popular of the Hurtwood's 15 free car parks and situated just south of Peaslake village. It fills by 9:30 am on fine summer weekends, so arrive early or aim for mid-morning once the initial rush has passed. From the car park, walk south through the village briefly, then take the signed footpath into the woodland heading toward Holmbury Hill.",
                     "Peaslake itself is worth a quick stop: the village stores is famous for its homemade cheese straws and pork-and-leek slices, essential fuel for a longer walk. The Hurtwood Inn pub is directly on the central junction and good for a post-walk pint. Surrey Hills Bike Rental operates from the Riders Hub here if any members of your party want to hire bikes and meet you back at the car park.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Holmbury Hill",
                 "description": [
                     "The route climbs first to the Holmbury Hill summit at 261 metres — see the Holmbury Hill Circular walk entry for the full description of the Iron Age fort and viewpoint. From the summit, descend briefly into Holmbury St Mary if you want a pub break, or continue directly west along the ridge path toward Pitch Hill, keeping to the high ground through heather and bracken.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Pitch Hill Summit",
@@ -2425,7 +2425,7 @@ WALKS["hurtwood-estate"] = [
                     "Pitch Hill sits at approximately 257 metres on a narrow sandstone spur above Ewhurst, reached via a quarry path from Hurtwood Car Park 3 (Mil Plain) or along the ridge from Holmbury Hill. The summit offers spectacular views southward over the Weald to the South Downs, taking in the village of Ewhurst in the valley below. A low wooden viewing platform at the top marks the main vantage point.",
                     "Winterfold and Pitch Hill are dotted with old sandstone quarries. The honey-coloured Hurtwood Stone — a high-quality sandstone from the Hythe Beds, similar to the Bargate Stone used in Guildford — has been quarried here since the 12th century and was used in buildings across Surrey. Look out for the characteristic outcrops of exposed sandstone on the approach to the summit: in the right light they glow a warm amber-gold.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Winterfold Return",
@@ -2433,7 +2433,7 @@ WALKS["hurtwood-estate"] = [
                     "From Pitch Hill, the return route heads north-east across Winterfold Heath and through Winterfold Wood, some of the most varied and beautiful woodland on the Hurtwood estate. Ancient oaks and beeches mix with the introduced Scots pine, and the understorey of bracken, heather, and bilberry gives it a wild, open character quite different from the denser plantation sections. The route rejoins the outward track near Peaslake for the final stretch back to Car Park 2.",
                     "This section of the walk is also part of the Greensand Way long-distance route, which runs 108 miles from Haslemere in Surrey to Hamstreet in Kent. Look for the green GW waymarkers on the gateposts.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
         ],
     },
@@ -2471,28 +2471,28 @@ WALKS["hurtwood-estate"] = [
                 "description": [
                     "Start at Hurtwood Car Park 5, known locally as Donkins, accessed from Winterfold Heath Road near Ewhurst (postcode GU5 9EN). This is one of the quieter Hurtwood car parks and a good choice when the Peaslake parks are full on busy weekends. The car park sits on the edge of Winterfold Heath, with the open heathland and woodland stretching away on all sides. Like all Hurtwood car parks, it is free and managed by the Friends of the Hurtwood; please use the donation box.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Winterfold Old Quarries",
                 "description": [
                     "The early section of the walk passes through an area dotted with old sandstone quarries, now largely reclaimed by birch scrub and heather. The honey-coloured Hurtwood Stone quarried here since the 12th century was prized for its hardness and used across Surrey in church and domestic building. The shallow depressions and low cliffs of exposed sandstone are distinctive and well worth pausing to examine — the layering of the Hythe Beds sandstone, laid down in shallow Cretaceous seas around 120 million years ago, is clearly visible in section.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Reynard's Hill Viewpoint",
                 "description": [
                     "The route climbs to the Reynard's Hill viewpoint, a small clearing offering panoramic views southward across the Weald to the line of the South Downs on the horizon. This is a less-visited viewpoint than those on Holmbury Hill or Pitch Hill but arguably the most peaceful, and on a weekday you may well have it to yourself. The name Reynard is the medieval name for a fox — the area has long been associated with foxes and is still home to them.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Heathland Return",
                 "description": [
                     "The return section crosses open heathland before re-entering the mixed woodland of Winterfold Wood. The heathland here is managed for its ecological value: lowland heath of this quality is a nationally scarce habitat, and the Hurtwood SSSI supports a range of specialist heathland species including stonechat, nightjar (listen for the distinctive churring call on summer evenings), and several scarce invertebrates. The path back to Car Park 5 is broad and well-defined, with the sandy Hythe Beds soil draining freely even after wet weather.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
         ],
     },
@@ -2503,7 +2503,7 @@ WALKS["hurtwood-estate"] = [
         "duration": "2 hrs 15 min",
         "difficulty": "Moderate",
         "summary": "A varied circuit exploring the heathland fringes of the Hurtwood around Shere Heath and Farley Heath, with the option to visit the site of the most significant Roman temple in Surrey.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Shere_Church.jpg/1200px-Shere_Church.jpg",
         "center": [51.1900, -0.4100],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -2532,14 +2532,14 @@ WALKS["hurtwood-estate"] = [
                 "description": [
                     "Shere Heath is the northern fringe of the Hurtwood, a mosaic of open heath and secondary birch woodland between the village of Shere and the main Hurtwood woodland block. The heathland here is part of the 3,000-acre SSSI managed by the Friends of the Hurtwood and is one of the largest remaining areas of Surrey heathland outside the Thursley and Chobham commons. The characteristic plants — heather, gorse, cross-leaved heath, and mat-grass — give it a distinctive purple-gold colouring from late July through September.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg",
             },
             {
                 "title": "Hurtwood Woodland",
                 "description": [
                     "From Shere Heath the path enters the main Hurtwood woodland block, an extraordinary mix of ancient sessile oak and beech with the Scots pine that was introduced in the 18th century and now dominates much of the southern section. The understorey in the old oak sections contains rare plants including wood sorrel, wood anemone, and in some damp hollows, the delicate yellow flowers of greater celandine. The woodland also supports a significant population of roe deer and — less commonly seen — fallow deer.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Farley Heath — Roman Temple",
@@ -2547,14 +2547,14 @@ WALKS["hurtwood-estate"] = [
                     "The optional detour to Farley Heath brings you to the site of the most significant Romano-British religious monument in Surrey. The Farley Heath Romano-Celtic temple was in use from before the end of the 1st century AD and may have marked the boundary between the territories of the Regnenses (of Sussex and east Surrey) and the Atrebates (of Hampshire). The temple was excavated in the Victorian era by antiquarian Martin Tupper, who recorded finding over 1,200 coins, bronze objects, pottery, and tile in the black mould of what appeared to be a deliberate burning around 450 AD.",
                     "The outer and inner walls of the rectangular temple have been clearly marked out in stone on the heath, making it easy to appreciate the scale and layout of the structure. The open heathland setting, with views across the surrounding woodland, gives a strong sense of why this elevated position would have been chosen for a place of communal religious importance. Farley Heath is also part of Blackheath Common, another area of high ecological value within the Hurtwood SSSI.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
             {
                 "title": "Heathland Circuit Return",
                 "description": [
                     "The return section skirts the northern edge of the Hurtwood, crossing sections of regenerating heathland where management by the Friends of the Hurtwood has opened up the canopy to allow the heather and gorse to reassert themselves. Watch overhead for buzzards and kestrels, both resident in the Hurtwood in good numbers. The final section back toward Shere Heath can be linked directly to the village of Shere (approximately 1.5 km further north), where the White Horse pub and several cafés offer a very welcome finish.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
             },
         ],
     },
@@ -2659,21 +2659,21 @@ WALKS["loseley-park"] = [
                     "Begin at Loseley House, one of the finest Elizabethan manor houses in England, built between 1562 and 1568 by Sir William More using stone salvaged from the ruins of Waverley Abbey. The house has been home to the More-Molyneux family ever since and is still lived in today — it has a remarkably intimate and personal atmosphere quite unlike the large managed properties of the National Trust. Queen Elizabeth I visited five times, staying for five days in August 1583 on one occasion. James I visited twice, and the drawing room's gilded ceiling was commissioned in anticipation of one of his visits.",
                     "The house tour (included with the combined house and garden ticket) takes approximately 45 minutes and is guided, covering the Great Hall with its panelling from Henry VIII's Nonsuch Palace, the chalk fireplace designed by Hans Holbein, the Grinling Gibbons carvings, and a collection of royal portraits including one of the few surviving likenesses of Anne Boleyn. Allow at least four hours in total to see both the house and the gardens fully.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "The Lakes",
                 "description": [
                     "The path from the house leads south-west across the Front Park to the restored estate lakes, a pair of historic water bodies that fell into disrepair over the 20th century and were fully restored in recent years. The restoration opened up clear views of Loseley House from across the lower lake and significantly improved water quality. The lakes are now a productive wildlife habitat: kingfishers have returned and can often be seen hunting along the margins, and dragonflies and damselflies are plentiful in summer. New picnic benches along the footpath make this one of the best spots on the estate for a quiet pause.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Wildflower Meadow",
                 "description": [
                     "Beyond the lower lake, the path enters the wildflower meadow planted in 2005 on the far side of the moat. The meadow is at its best from late May through July when ox-eye daisies, knapweed, ragged robin, and field scabious are in full bloom, but it retains interest from early spring with cowslips and early purple orchid. Butterflies — including marbled white, ringlet, and common blue — are abundant on warm days, and the meadow provides important foraging habitat for bees and other pollinators from the estate's own wildflower planting programme. Listen for grasshopper warblers and whitethroats in the surrounding hedgerows.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Moat Walk & Walled Garden",
@@ -2681,7 +2681,7 @@ WALKS["loseley-park"] = [
                     "The final section of the circuit follows the moat walk, the charming path that runs around the perimeter of the historic moat surrounding the Walled Garden. The moat itself pre-dates the current house and gives the garden a particularly atmospheric quality — the reflections of the old stone wall in the still water, and the sound of the occasional moorhen, are genuinely memorable. The 2.5-acre Walled Garden on your right contains five themed gardens: the rose garden with over 1,000 old-fashioned rose bushes (at its peak in June), a formal herb garden, a white garden with fountain, a fruit and flower garden, and a spectacular organic vegetable garden. The mulberry tree in the garden is believed to have been planted by Elizabeth I herself.",
                     "The Courtyard Tearoom just inside the estate entrance serves lunches and teas from 11am daily during the open season. The on-estate gift shop and plant sales area — where plants grown in the Walled Garden are propagated for sale — are open from 9am to 4pm. Plants from the garden are among the best souvenirs of a visit.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
         ],
     },
@@ -2722,28 +2722,28 @@ WALKS["loseley-park"] = [
                     "Begin the walk in the village of Compton, one of Surrey's most distinctive villages and home to Watts Gallery — Artists' Village, a remarkable Arts and Crafts heritage site on Down Lane (GU3 1DQ). The gallery houses the largest collection of works by the Victorian painter and sculptor G.F. Watts, and the associated buildings include Limnerslease (the Watts' family home), a Mortuary Chapel designed by Mary Watts that is a remarkable exercise in Celtic Revival decoration, a working studio, tea shop, and a woodland playground called the Verey Playwood. Watts Gallery is open Wednesday to Sunday; check opening times before visiting as they vary by season.",
                     "The Withies Inn is also in Compton — a 16th-century pub and restaurant that has built a serious reputation for well-sourced, classically prepared British food. It is rated 4.4 stars by OpenTable users and is one of the best restaurants in the Guildford area.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Surrey Field Paths",
                 "description": [
                     "From Compton, the route follows quiet field paths and farm tracks south-eastward across the open Surrey countryside toward the Loseley estate. This section of the walk traverses a landscape of mixed arable and pastoral farming — the Hog's Back chalk ridge is visible to the north — and the paths are well-maintained and largely free of the weekend crowds that gather further east in the Surrey Hills. Expect livestock, particularly sheep and cattle, in the fields from spring through autumn.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Loseley Estate Boundary",
                 "description": [
                     "The walk reaches the western boundary of the Loseley estate, skirting the parkland and offering distant views of Loseley House across the Front Park. The estate's 1,400 acres of parkland, farmland, and gardens surround the house on all sides and contribute strongly to the character of the landscape between Guildford and Godalming. The estate has been farmed by the More-Molyneux family for over 450 years and is a working farm as well as a visitor attraction — you may see estate vehicles or farm machinery at work depending on the season.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Littleton Return",
                 "description": [
                     "The return leg passes through the tiny hamlet of Littleton, a scattering of old Surrey cottages that appears largely unchanged since the early 20th century. From Littleton the path climbs gently back toward Compton via the North Downs Way, which traverses this section of the chalk ridge. The views from the higher ground back across the Wey valley toward Guildford are particularly good on a clear day. Return to Watts Gallery for tea in the café (open Wednesday to Sunday, 10am to 5pm, with lunch 11am to 3pm).",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
         ],
     },
@@ -2754,7 +2754,7 @@ WALKS["loseley-park"] = [
         "duration": "1 hr 50 min",
         "difficulty": "Easy",
         "summary": "A flat and rewarding circuit linking Loseley Park with the River Wey towpath, passing through the village of Artington and returning along the ancient drove road of the Pilgrim's Way.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Loseley_House%2C_2012.jpg/1280px-Loseley_House%2C_2012.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Elstead_Bridge_DSC_1620.jpg/1280px-Elstead_Bridge_DSC_1620.jpg",
         "center": [51.2200, -0.5720],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -2783,28 +2783,28 @@ WALKS["loseley-park"] = [
                 "description": [
                     "Begin at the Loseley Park visitor entrance. This walk does not require a garden or house ticket — the public footpath through the estate grounds is accessible separately. Follow the main track north-east from the house, passing through the Front Park with its veteran parkland trees, some of which are several hundred years old. The parkland was laid out in its present form in the 18th century and has the characteristic open, grazed character of a traditional English deer park, though deer are no longer kept here.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Artington Village",
                 "description": [
                     "The path enters the small village of Artington, a quiet residential settlement on the south-western edge of Guildford with a pleasant mix of old cottages and 20th-century houses. The Church of St Luke is a simple Victorian building in an attractive setting. The village is closely associated with the Loseley estate — the estate's farmland extends into the parish — and has a peaceful, off-the-beaten-track quality despite being only two miles from Guildford town centre.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "River Wey Towpath",
                 "description": [
                     "The route drops to the River Wey, one of Surrey's major rivers and the first to be made navigable in England, in 1653. The Wey Navigations — a 20-mile system of river and canal linking Guildford to Weybridge — is now managed by the National Trust and remains open to canoes, narrowboats, and paddleboards. The towpath here is flat, wide, and easy to follow, offering good birdwatching (grey heron, kingfisher, reed bunting, and mute swan are all regular) and the soothing company of the river. In summer, waterlilies cover stretches of the slow-moving water.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/River_Wey_navigations_Weybridge.jpg/1280px-River_Wey_navigations_Weybridge.jpg",
             },
             {
                 "title": "Return via Pilgrims' Way",
                 "description": [
                     "The return from the river follows field paths south-westward, joining the approximate line of the Pilgrims' Way — the ancient route along the foot of the North Downs used by medieval pilgrims travelling between Winchester and Canterbury. This section gives good views back toward the North Downs chalk scarp to the north. The final kilometre returns across the Loseley parkland to the house. The Courtyard Tearoom is open for teas and lunches on arrival (open daily during the season from 11am).",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
         ],
     },
@@ -2815,7 +2815,7 @@ WALKS["loseley-park"] = [
         "duration": "3 hrs 15 min",
         "difficulty": "Moderate",
         "summary": "A longer circuit from Shalford that climbs to the North Downs ridge for big views before sweeping south through the Loseley estate parkland and returning via field paths and the River Wey.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/Loseley_House%2C_2012.jpg/1280px-Loseley_House%2C_2012.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Box_Hill_Salomons_Memorial.jpg",
         "center": [51.2220, -0.5600],
         "zoom": 12,
         "waypoint_zoom": 14,
@@ -2846,28 +2846,28 @@ WALKS["loseley-park"] = [
                 "description": [
                     "Start in the village of Shalford, south of Guildford on the A281, with parking available at the village car park. Shalford is a pleasant suburban village with the River Tillingbourne and Shalford Mill — a National Trust-managed 18th-century watermill — just off the main route and worth a short detour. The walk begins by heading eastward along field paths toward the chalk ridge of the North Downs.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "North Downs Ridge",
                 "description": [
                     "The route climbs to the North Downs ridge, with panoramic views southward across the Wey valley toward the Greensand Hills and beyond to the South Downs on the horizon. The North Downs Way long-distance footpath traverses this section, waymarked with the distinctive acorn symbol of National Trails. The chalk grassland of the ridge supports specialist flora including horseshoe vetch, clustered bellflower, and in the right conditions the rare man orchid. In clear weather the views are among the best within easy reach of Guildford.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Box_Hill_Surrey.jpg/1280px-Box_Hill_Surrey.jpg",
             },
             {
                 "title": "Loseley Park",
                 "description": [
                     "The descent from the North Downs brings the route into the Loseley estate, approaching the house from the north-east across the Front Park. This approach gives the best views of the house's characteristic stone facade, built from Waverley Abbey stone in the warm local buff colour. If you have purchased a garden or house ticket in advance, this is the point to enter the Walled Garden and take the house tour. The Courtyard Tearoom is open from 11am daily during the season.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/Loseley_Park.jpg/1280px-Loseley_Park.jpg",
             },
             {
                 "title": "Return via River Wey",
                 "description": [
                     "The return route heads north-east from Loseley across the parkland and then by field paths to the River Wey, picking up the towpath for the final stretch back toward Shalford. The towpath section is flat and easy, following the canalised river through a quietly beautiful landscape of water meadows and riverside willows. The Wey Navigations attract canoes and narrowboats throughout the season, and the towpath is popular with cyclists and dog walkers as well as walkers.",
                 ],
-                "image_url": "",
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/River_Wey_navigations_Weybridge.jpg/1280px-River_Wey_navigations_Weybridge.jpg",
             },
         ],
     },
@@ -3167,7 +3167,7 @@ WALKS["highclere-castle"] = [
         "duration": "1.5 hrs",
         "difficulty": "Moderate",
         "summary": "A bracing climb to the summit of Beacon Hill — an Iron Age hillfort at 261 m — with sweeping views across the Highclere estate and far into Hampshire and Berkshire.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/View_from_Beacon_Hill_1.JPG",
         "center": [51.3230, -1.3620],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -3192,7 +3192,7 @@ WALKS["highclere-castle"] = [
                     "The walk begins at the National Trust car park at the foot of Beacon Hill, signed off the A34 just south of Highclere village. The car park sits in a shallow hollow of chalk downland — already above the surrounding farmland — and gives an immediate sense of the open, wind-scoured country ahead. The postcode for the car park is RG20 9LR.",
                     "From the rear of the car park, pass through the gate and begin climbing. The path steepens almost immediately, through a mix of chalk grassland and scrub. In spring and early summer the hillside is carpeted with cowslips, and the song of skylarks rises almost continuously from the open ground. In autumn, the smells of chalk and damp bracken make this a particularly atmospheric start to any walk.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "The Iron Age Ramparts",
@@ -3200,7 +3200,7 @@ WALKS["highclere-castle"] = [
                     "As you climb higher the great earthwork ramparts of the Iron Age hillfort become visible — a series of deep, concentric ditches cut into the chalk around 700 BC, now softened by two and a half millennia of weathering into gentle curves that still dominate the hilltop. The fort would have been a commanding presence across the surrounding countryside, its defenders able to see for many miles in every direction.",
                     "The inner ditch and bank are the best preserved, and it is worth taking a slow circuit of the perimeter to appreciate their full scale. The enclosure covers about six hectares — large enough to have sheltered a substantial community of Iron Age Britons along with their livestock. Archaeological finds from the site include pottery, animal bones, and the occasional iron tool, most of which are now in the Hampshire Cultural Trust collections in Winchester.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "The Summit Viewpoint",
@@ -3208,7 +3208,7 @@ WALKS["highclere-castle"] = [
                     "The summit of Beacon Hill at 261 metres is one of the great viewpoints of Hampshire. On a clear day the view extends across the Hampshire Downs in every direction — south towards Winchester and the distant glint of Southampton Water, north into the Berkshire Downs, and west toward the edge of Salisbury Plain. Most compellingly, the view to the north-east drops directly down onto the Highclere Estate, with the Victorian towers of Highclere Castle rising magnificently from the parkland trees, exactly as it appears in the opening credits of Downton Abbey.",
                     "A Bronze Age burial mound crowns the very summit — one of a number of round barrows on this ridge that predate the Iron Age fort by more than a thousand years. The barrow is fenced but clearly visible, a quiet reminder that this hilltop has been a place of significance for at least four thousand years.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Old Burghclere & Return",
@@ -3216,7 +3216,7 @@ WALKS["highclere-castle"] = [
                     "Descend via the eastern flank of the hill toward the hamlet of Old Burghclere, whose flint-walled cottages and medieval church of St Mary sit in a sheltered combe below the fort. The church is one of the oldest in Hampshire and contains some remarkable carved stonework in the chancel — it is usually unlocked during daylight hours and is well worth five minutes.",
                     "Return to the car park by retracing the route up the escarpment, or by taking the lower bridleway that skirts the base of the hill through mixed woodland. The bridleway adds roughly a kilometre to the walk but is sheltered and pleasant in wet weather. Either way, allow around thirty minutes for the descent from the summit.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
         ]
     },
@@ -3227,7 +3227,7 @@ WALKS["highclere-castle"] = [
         "duration": "1.5 hrs",
         "difficulty": "Easy",
         "summary": "A gentle circuit through the Capability Brown parkland, skirting the woods above Dunsmere Lake and passing the Temple of Diana — open during the summer season.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Highclere_Castle_02.jpg",
         "center": [51.3275, -1.3600],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -3251,7 +3251,7 @@ WALKS["highclere-castle"] = [
                     "The walk begins at the castle's main visitor entrance and sets off southward through the formal gardens, which are planted in a style that reflects the Victorian taste of the 3rd Earl of Carnarvon, who commissioned Sir Charles Barry — the architect of the Houses of Parliament — to rebuild the house in its current Italianate Gothic form between 1839 and 1842. The gardens immediately around the castle are laid to smooth grass terraces edged with seasonal bedding and herbaceous borders of considerable beauty.",
                     "Looking back from the first terrace, the south front of the castle rises against the sky in a series of towers and turrets that have become one of the most recognised silhouettes in English country house architecture. It is worth pausing here before the walk takes you into the wider parkland.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "The Capability Brown Parkland",
@@ -3259,7 +3259,7 @@ WALKS["highclere-castle"] = [
                     "The parkland surrounding the castle was designed by Lancelot 'Capability' Brown in 1770–71 and is listed Grade I on the Historic England Register of Parks and Gardens. Brown's genius here, as elsewhere, was in creating a landscape that appears entirely natural while being entirely artificial — every copse, every swell of ground, every view has been calculated to appear as if nature arranged it herself.",
                     "The park is a patchwork of wood pasture, open grassland, and veteran oak and cedar trees. Many of the cedars of Lebanon visible from the castle terrace were planted in the 18th century and are now among the finest specimens in England. In summer the parkland is grazed by cattle and a small herd of deer, adding to the atmosphere of a working, breathing estate rather than a museum piece.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Temple of Diana & Dunsmere Lake",
@@ -3267,7 +3267,7 @@ WALKS["highclere-castle"] = [
                     "The path descends to the southern end of Dunsmere Lake — one of two lakes in the parkland — and continues to the Temple of Diana, a circular garden building constructed in the late 18th century with Ionic columns salvaged from Devonshire House in Piccadilly. The temple stands on a low rise overlooking the lake and the wooded hillside beyond, and the view back across the water toward the castle is one of the estate's finest.",
                     "Dunsmere Lake is fringed by reed beds and patches of marsh that support a wide range of wildfowl. Mandarin ducks are regularly seen here, along with the more familiar mallard, tufted duck, and grey heron. In spring, great crested grebes perform their extraordinary courtship displays on the open water — a spectacular thing to stumble upon on a quiet walk.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "The Woodland Path & Return",
@@ -3275,7 +3275,7 @@ WALKS["highclere-castle"] = [
                     "The return leg follows a broad woodland path along the eastern edge of the park, passing through mixed planting of beech, oak, and sweet chestnut. At intervals, gaps in the trees frame carefully composed views back toward the castle — a characteristic Capability Brown device that ensures the house is always present as the emotional centre of the landscape.",
                     "As you near the castle on the return, look out for the Ha-ha — the sunken wall that runs along the edge of the formal garden, designed to keep livestock out of the pleasure grounds without breaking the view from the castle windows. It is one of the best-preserved examples in Hampshire and easy to miss if you are not looking for it.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
         ]
     },
@@ -3286,7 +3286,7 @@ WALKS["highclere-castle"] = [
         "duration": "2.5 hrs",
         "difficulty": "Moderate",
         "summary": "A fine circular walk along a section of the Wayfarer's Walk long-distance trail, climbing Sidown Hill through the Highclere Estate with wide views across the North Hampshire Downs.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/f0/Beacon-hill-seven-barrows-field-from-a34.jpg",
         "center": [51.3180, -1.3780],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -3311,7 +3311,7 @@ WALKS["highclere-castle"] = [
                     "The walk begins in the hamlet of Crux Easton, which can be reached via country lanes from the A343 between Newbury and Andover. There is limited roadside parking near the hamlet; please take care to park considerately without blocking farm gates. The approximate postcode is RG20 9QG.",
                     "Crux Easton is a tiny settlement of flint and brick cottages surrounded by arable farmland — archetypal North Hampshire downland country, quietly beautiful and almost completely unvisited. The Wayfarer's Walk long-distance trail passes through the hamlet, and this walk follows it east and then north across the Highclere Estate toward Sidown Hill.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Into the Highclere Estate",
@@ -3319,7 +3319,7 @@ WALKS["highclere-castle"] = [
                     "The path climbs steadily eastward from Crux Easton, crossing open arable land before entering the wooded parkland of the Highclere Estate through a wooden gate. The change in character is immediate — the noise of the road fades, the air cools, and the path becomes a broad ride through mixed woodland of oak, ash, and beech. This section of the estate is less visited than the area immediately around the castle and has a pleasantly wild feel.",
                     "The estate covers roughly 5,000 acres in total, of which the Inner Park that most visitors see is only a fraction. The outer parkland and farmland traversed on this walk have the character of classic managed Hampshire countryside — a working landscape that has supported the Carnarvon family for centuries and continues to do so today.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Sidown Hill Summit",
@@ -3327,7 +3327,7 @@ WALKS["highclere-castle"] = [
                     "The path climbs to the open summit of Sidown Hill — at around 210 metres, a significant viewpoint across the Highclere Estate and the surrounding downland. The views here are arguably even more intimate than those from Beacon Hill: rather than looking across the estate from outside, you are standing within it, the parkland trees spread below and the castle visible to the north-east.",
                     "The hill gives its name to the Etruscan Temple that stands in the parkland below — the Temple on Siddown Hill, one of six 18th-century garden buildings placed across the estate by the 1st Earl to frame and punctuate the views. From the summit, the careful geometry of Brown's parkland design becomes apparent in a way it never quite does at ground level.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Return through Woodland",
@@ -3335,7 +3335,7 @@ WALKS["highclere-castle"] = [
                     "The return descends via the northern flank of Sidown Hill, following a waymarked bridleway through old woodland before rejoining the outward route near the estate boundary. The descent is gentle and the path firm underfoot even after wet weather. Allow about 45 minutes from the summit back to Crux Easton.",
                     "This section of the walk passes through an area of particularly fine old beeches, many with the characteristic grey, smooth bark that indicates trees several hundred years old. In autumn the beech colour is exceptional — golds and coppers that make the return leg the best part of the day. The path rejoins the lane into Crux Easton beside a pair of brick-and-flint estate cottages that would not look out of place in a Constable painting.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
         ]
     },
@@ -3369,7 +3369,7 @@ WALKS["highclere-castle"] = [
                     "Highclere village is a scattered estate village strung along the lanes north of the castle, with a mix of Victorian estate cottages and older farm buildings that give it a pleasantly unspoilt character. The village has grown up entirely in the shadow of the castle and estate, and many of the families who live here have connections to the Carnarvon family going back several generations.",
                     "The walk begins at the junction near the Yew Tree pub and heads south along the lane toward the castle entrance. The verges along this stretch are wide and grassy — good for children to walk — and the lane is quiet enough for this to be a relaxed, unhurried stroll at almost any time of day.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "St Michael and All Angels Church",
@@ -3377,7 +3377,7 @@ WALKS["highclere-castle"] = [
                     "The church of St Michael and All Angels stands on a slight rise in the centre of the village and dates from the 12th century, though it was substantially rebuilt in the 19th century under the direction of the 3rd Earl of Carnarvon, who is buried here. The church is a handsome flint building with a square tower and a peaceful, well-maintained churchyard that includes the graves of several members of the Carnarvon family.",
                     "Inside, the church contains some fine stained glass and a notable memorial to the 5th Earl of Carnarvon — the Egyptologist who co-discovered the tomb of Tutankhamun in 1922. The Earl died in Cairo just a few months after the discovery, giving rise to the legend of the 'Curse of Tutankhamun'. He is buried in the churchyard, on the hill called Heaven's Gate above the castle.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "The Castle View",
@@ -3385,7 +3385,7 @@ WALKS["highclere-castle"] = [
                     "As the lane curves south toward the main castle entrance, a gap in the estate planting opens to give the classic view of Highclere Castle — the one seen in the opening credits of Downton Abbey — across an expanse of parkland. The castle sits on a slight rise, its silhouette of towers and turrets designed by Barry to be seen from exactly this angle, and on a sunny day the golden Bath stone glows against the Hampshire sky.",
                     "You do not need a ticket to see the castle from the public road — this view is freely available to anyone who walks or drives past. Many visitors find that this glimpse across the parkland, combined with a walk through the surrounding countryside, gives a perfectly satisfying sense of the estate without the need to go inside.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
             {
                 "title": "Heaven's Gate & Return",
@@ -3393,7 +3393,7 @@ WALKS["highclere-castle"] = [
                     "The return leg climbs briefly north to the promontory known as Heaven's Gate, from which there is a particularly elevated view back across the park and castle. This is where the 5th Earl of Carnarvon is buried — a simple grave marker on the hilltop, in a spot he chose himself. The view he would have woken to every morning of his childhood is spread below you here: the castle, the park, the cedar trees, and the rolling Hampshire countryside stretching away in every direction.",
                     "From Heaven's Gate, the path descends back through the estate woods to Highclere village and the start. The full loop including the detour to Heaven's Gate adds about twenty minutes, but it is the finest viewpoint on this walk and not to be missed.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Highclere_Castle_0009.jpg/1280px-Highclere_Castle_0009.jpg"
             },
         ]
     },
@@ -3410,7 +3410,7 @@ WALKS["beaulieu-estate"] = [
         "duration": "2 hrs",
         "difficulty": "Easy",
         "summary": "The classic New Forest riverside walk — a gentle, flat trail along the wildlife-rich Beaulieu River to the historic 18th-century shipbuilding village of Buckler's Hard.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [50.8042, -1.4375],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -3434,7 +3434,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk begins in the heart of Beaulieu village, picking up the Solent Way long-distance footpath at the old mill bridge over the Beaulieu River. The river here is tidal — a consequence of the estate's remarkable geography, with the river rising on the New Forest heathland to the north but flowing into the sheltered estuary at Buckler's Hard and ultimately into the Solent. The tidal reach brings salt marsh species up into the village, and the water level changes noticeably over the course of a two-hour walk.",
                     "New Forest ponies regularly wander through the village and down to the river bank — there are no cattle grids on the main street, so they come and go as they please. Do not feed them and do not approach them from behind; they are entirely wild animals, despite their apparently tame behaviour. They are one of the great charms of any walk in this part of the Forest.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Beaulieu_Motor_Museum_Panorama.jpg/1280px-Beaulieu_Motor_Museum_Panorama.jpg"
             },
             {
                 "title": "The Beaulieu River Estuary",
@@ -3443,7 +3443,7 @@ WALKS["beaulieu-estate"] = [
                     "Wading birds are the main attraction on the estuary sections: redshank, curlew, lapwing and oystercatcher are resident year-round, and in winter the mudflats attract thousands of wintering wildfowl including teal, wigeon and dark-bellied brent geese from Siberia. The patient observer with binoculars will rarely be disappointed here.",
                     "The Beaulieu River is one of the few rivers in England with a completely private foreshore. The Montagu Estate has owned and managed the entire river since the Dissolution of the Monasteries, when it passed to Thomas Wriothesley with the Abbey. The result is an exceptionally clean, unspoilt waterway.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG"
             },
             {
                 "title": "The Woodland Stretch",
@@ -3451,7 +3451,7 @@ WALKS["beaulieu-estate"] = [
                     "After about three kilometres the path enters a section of ancient oak and beech woodland that runs along the river for nearly a mile. The canopy overhead creates a cathedral effect, and the ground beneath is rich in spring flowers — wood anemone, bluebell, and wild garlic carpeting the floor in April and May.",
                     "This woodland has been part of the Beaulieu Estate since it was granted to the Cistercian monks by King John in 1204, and it has probably been managed as coppice and timber woodland since that time. The gnarled oak pollards along the river bank are likely several hundred years old, the result of centuries of cyclical cutting that encourages wide, spreading canopies rather than tall, straight trunks.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "Buckler's Hard",
@@ -3459,7 +3459,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk ends at Buckler's Hard, one of the most atmospheric places in Hampshire — a perfectly preserved 18th-century shipbuilding village consisting of two rows of Georgian cottages facing each other across a wide green that runs down to the river. The village was built in the 1740s by the 2nd Duke of Montagu as a planned settlement around a proposed Caribbean sugar trade that never materialised; it found its true purpose instead as a shipyard, producing warships for the Royal Navy throughout the second half of the 18th century.",
                     "Nelson's favourite ship, HMS Agamemnon — a 64-gun man-of-war launched here in 1781 from 2,000 New Forest oaks — was built on this slip. She went on to fight at the Battle of Trafalgar and served the Royal Navy for nearly thirty years before being wrecked off Uruguay in 1809. The Maritime Museum at Buckler's Hard tells the full story of the village and its ships; it is small but excellent, and well worth the admission. River cruises depart from the jetty in summer.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Bucklers_Hard.jpg/1280px-Bucklers_Hard.jpg"
             },
         ]
     },
@@ -3470,7 +3470,7 @@ WALKS["beaulieu-estate"] = [
         "duration": "1.5 hrs",
         "difficulty": "Easy",
         "summary": "A gentle circuit across open New Forest heathland to the wildfowl-rich waters of Hatchet Pond, with a good chance of seeing free-roaming ponies, donkeys, and the ancient Bronze Age barrows of the Heath.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [50.8050, -1.4900],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -3495,7 +3495,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk starts from the Forestry England car park at Rans Wood, at the end of Furzey Lane — a turning off the B3054 between Beaulieu and Lymington. The car park is free and gives immediate access to the open heathland of Beaulieu Heath, one of the largest areas of lowland heath in the New Forest and a Site of Special Scientific Interest.",
                     "Beaulieu Heath is at its most spectacular in late summer — August and early September — when the heather comes into flower and the whole landscape turns a deep, warm purple. At other times of year the heath has a subtler beauty: the bleached gold of winter grass, the pale green of new growth in spring, and the wide, open skies that make this one of the finest landscapes for unimpeded views in southern England.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "Bronze Age Barrows",
@@ -3503,7 +3503,7 @@ WALKS["beaulieu-estate"] = [
                     "As the path crosses the open heath, look for the low, rounded mounds that appear periodically in the landscape — these are Bronze Age burial barrows, around 3,500 years old, of which there are more than 200 scattered across the New Forest. The barrows on Beaulieu Heath are among the best preserved, since the open heathland has never been ploughed.",
                     "Each barrow marks the burial site of a high-status individual from the Early Bronze Age — the period of Stonehenge and the Avebury monuments. The New Forest concentrations are among the densest in Britain, suggesting this landscape was considered particularly significant in the Bronze Age. Walking among them gives a vivid, direct connection to a world more than three millennia gone.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "Hatchet Pond",
@@ -3511,7 +3511,7 @@ WALKS["beaulieu-estate"] = [
                     "Hatchet Pond is the largest natural body of water in the New Forest and a favourite haunt of wildfowl. Geese, swans, mallard, tufted duck and coot are present year-round, and in winter the pond attracts pochard, goldeneye, and occasionally rarer diving ducks. New Forest ponies come regularly to drink at the water's edge, and the scene — ponies, open water, heathland horizon — is quintessentially New Forest.",
                     "The Forestry England car park on the far side of the pond is a popular spot, and the pond can be busy at weekends. The path on the south bank, away from the car park, is quieter and gives better views across the water. The reed beds at the eastern end are worth a slow look — bittern have been recorded here, and reed bunting is resident throughout the year.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "Return across the Heath",
@@ -3519,7 +3519,7 @@ WALKS["beaulieu-estate"] = [
                     "The return route crosses the open heath by a different path, giving a wide circular view of the landscape from a slightly elevated ridge. On a clear day the Isle of Wight is visible to the south — the distinctive shape of the Needles chalk stack rising above the Solent. Looking back toward Beaulieu, the tower of Beaulieu Abbey is visible above the treeline, confirming just how flat and open this landscape really is.",
                     "The heath is grazed by New Forest ponies, cattle, and occasionally donkeys throughout the year under the commoners' ancient grazing rights — a system of animal husbandry that dates back to the Norman period and is fundamental to maintaining the open heathland character of the Forest. Without the grazing, the heath would rapidly revert to scrub and woodland.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
         ]
     },
@@ -3553,7 +3553,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk starts at the village green, the central open space around which Beaulieu's old houses and cottages cluster. The green slopes gently toward the river and is bounded on one side by the mill pond — a picturesque body of water formed by the old monastic mill dam that the Cistercian monks constructed shortly after founding the Abbey in 1204. The mill itself, rebuilt in the 18th century, still stands at the end of the pond and is one of the most photographed buildings in the village.",
                     "New Forest ponies are regularly found on the green and around the pond — a completely normal part of life in Beaulieu, where the ancient commoners' grazing rights mean that ponies, donkeys and cattle can wander freely. Please do not feed or touch them, and do not approach foals.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Beaulieu_Motor_Museum_Panorama.jpg/1280px-Beaulieu_Motor_Museum_Panorama.jpg"
             },
             {
                 "title": "Beaulieu Abbey Ruins",
@@ -3561,7 +3561,7 @@ WALKS["beaulieu-estate"] = [
                     "The Abbey ruins occupy the eastern end of the village and are included in a general admission ticket to the Beaulieu attraction complex. What survives is impressive — the outline of the great church can be traced clearly in the standing walls and foundation stones, and the scale of the building, one of the largest Cistercian abbeys in England, is still apparent. At its peak, the Abbey was home to nearly a hundred monks and novices, supported by a large community of lay brothers on the surrounding farms.",
                     "The refectory — the monks' dining hall — survives almost intact and is now used as the parish church of Beaulieu, one of the few examples in England of an abbey building being continuously used by a local congregation since the Dissolution. The building retains its medieval roof timbers and a remarkable pulpit from which a monk would have read aloud during meals. The intimacy of the interior is striking after the expansive ruins outside.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Beaulieu_Motor_Museum_Panorama.jpg/1280px-Beaulieu_Motor_Museum_Panorama.jpg"
             },
             {
                 "title": "Palace House & Gardens",
@@ -3569,7 +3569,7 @@ WALKS["beaulieu-estate"] = [
                     "Palace House began as the 14th-century Great Gatehouse of Beaulieu Abbey — the main ceremonial entrance to the monastery complex. After the Dissolution in 1538, Henry VIII sold the entire estate to Thomas Wriothesley, 1st Earl of Southampton, who converted the gatehouse into a private house. The house has been continuously extended and modified ever since, and it remains the home of the Montagu family today.",
                     "The gardens around Palace House are beautifully maintained and include a walled kitchen garden, herbaceous borders, and fine views down to the river and mill pond. The Victorian kitchen, restored to working condition, gives a vivid impression of the domestic scale of the house in its 19th-century heyday, when a staff of thirty or more would have kept the place running.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Beaulieu_Motor_Museum_Panorama.jpg/1280px-Beaulieu_Motor_Museum_Panorama.jpg"
             },
             {
                 "title": "The High Street & River",
@@ -3577,7 +3577,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk returns via the High Street — a short but characterful thoroughfare lined with independent shops, the Chocolate Studio, Norris of Beaulieu, and the entrance to the Montagu Arms Hotel. The High Street has no cattle grid, so ponies wander in and out at will, creating the extraordinary spectacle of free-roaming animals browsing the pavement outside the shops.",
                     "At the bottom of the High Street, the bridge over the Beaulieu River gives a good vantage point across the mill pond and back toward the Abbey. This is a good spot for watching the tidal flow — at low tide the river bed is visible and wading birds probe the mud below the bridge. At high tide the river fills to its banks and the surface has the glassy stillness of a lake.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Beaulieu_Motor_Museum_Panorama.jpg/1280px-Beaulieu_Motor_Museum_Panorama.jpg"
             },
         ]
     },
@@ -3588,7 +3588,7 @@ WALKS["beaulieu-estate"] = [
         "duration": "2.5 hrs",
         "difficulty": "Easy",
         "summary": "A rewarding linear walk south through New Forest woodland and along quiet lanes to the celebrated Rothschild gardens at Exbury — world-famous for their rhododendrons and azaleas in spring.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [50.8000, -1.4250],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -3611,7 +3611,7 @@ WALKS["beaulieu-estate"] = [
                     "The walk south from Beaulieu follows the Solent Way long-distance coastal path, which runs for 100 kilometres from Milford-on-Sea to Emsworth along the Hampshire coast and tidal inlets. The first section out of Beaulieu is pleasantly varied — passing along the edge of the estate parkland before entering open arable farmland with wide views toward the Solent.",
                     "This route makes an excellent linear walk if a car can be left at Exbury. For a circular return, either retrace the outward route or take the minor lanes back via East Boldre — adding roughly 4 km to the total distance but offering a pleasant contrast between the woodland path south and the open lane north.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "New Forest Woodland",
@@ -3619,7 +3619,7 @@ WALKS["beaulieu-estate"] = [
                     "The central section of the walk passes through a long stretch of managed New Forest woodland — the ancient oaks and beeches that were once the raw material for the Royal Navy's warships. Buckler's Hard, three miles back up the river, consumed 2,000 mature oaks to build HMS Agamemnon alone in 1781; the trees being felled and carted along tracks very similar to the paths you are walking.",
                     "The woodland is managed by a combination of the Forestry England and the Beaulieu Estate, and the ancient commoners' grazing rights mean that ponies and cattle move freely through the trees year-round. This light grazing keeps the woodland floor open, allowing a remarkable diversity of ground-layer plants — wood sorrel, bluebells, cow-wheat, and in wetter hollows, stands of royal fern.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/New_Forest_ponies.jpg/1280px-New_Forest_ponies.jpg"
             },
             {
                 "title": "The Beaulieu Estuary Views",
@@ -3627,7 +3627,7 @@ WALKS["beaulieu-estate"] = [
                     "As the path descends toward the Exbury peninsula, views open southward across the Beaulieu River estuary toward the Solent and, on a clear day, the western end of the Isle of Wight and the Needles. The estuary here is wide and shallow, with extensive mudflats at low tide that attract enormous numbers of wading birds and wildfowl — particularly in winter, when brent geese arrive in their thousands from their arctic breeding grounds.",
                     "The village of Exbury itself, separated from Beaulieu by three miles of lanes, has a quiet, unhurried character — a handful of estate cottages and a small church — that makes it feel entirely removed from the busy tourist routes of the central New Forest.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG"
             },
             {
                 "title": "Exbury Gardens",
@@ -3635,7 +3635,7 @@ WALKS["beaulieu-estate"] = [
                     "Exbury Gardens are among the finest woodland gardens in England, created from the 1920s onwards by Lionel de Rothschild on a 200-acre estate on the east bank of the Beaulieu River. Rothschild was one of the great plant collectors and hybridisers of the 20th century, and his collection of rhododendrons, azaleas, camellias and magnolias — now numbering more than 200 species and hybrids — is world-famous.",
                     "The spring display, from late March through May, is one of the botanical spectacles of southern England — a cascade of colour through the woodland that is unlike anything else in the region. The gardens are open daily from February to November; a steam railway runs through the grounds for younger visitors. Admission is charged, and booking ahead at weekends is advisable in spring.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
         ]
     },
@@ -4162,7 +4162,7 @@ WALKS["goodwood-estate"] = [
         "duration": "2.5 hrs",
         "difficulty": "Moderate",
         "summary": "A classic South Downs circuit from the Fox Goes Free in Charlton, climbing to The Trundle Iron Age hillfort for 360° views over Goodwood Racecourse, Chichester and the Solent.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Goodwood_House%2C_West_Sussex%2C_England-2Oct2011.jpg/1280px-Goodwood_House%2C_West_Sussex%2C_England-2Oct2011.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/The_Trundle_3.jpg/1280px-The_Trundle_3.jpg",
         "center": [50.8970, -0.7510],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -4185,7 +4185,7 @@ WALKS["goodwood-estate"] = [
                     "The walk begins at The Fox Goes Free, a 400-year-old Grade II listed country pub tucked into the village of Charlton at the foot of Levin Down — one mile south of Goodwood Racecourse. It is one of the finest pubs in West Sussex, and if you are here on a weekday morning you will share the car park only with dog walkers and the occasional gamekeeper. From the pub, turn left (west) along Charlton Road and take the first lane on the right heading north, where the tarmac quickly gives way to chalk downland track.",
                     "The village of Charlton has its own quiet history. It was the home of the celebrated Charlton Hunt, which in the early 18th century attracted half the nobility of England to this corner of West Sussex. Charles Lennox, the 2nd Duke of Richmond — who brought cricket and horse racing to Goodwood — was a leading figure in the Hunt and it was the pursuit of foxes across these hills that first drew the Lennox family to the area.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "The Trundle (St Roche's Hill)",
@@ -4193,7 +4193,7 @@ WALKS["goodwood-estate"] = [
                     "The Trundle is the commanding summit of St Roche's Hill at 206 metres, and it is one of the most dramatic viewpoints in the South Downs. The Iron Age hillfort dates from around 500 BC, though its origins go much deeper — a Neolithic causewayed enclosure from around 3000 BC underlies the later ramparts, making this one of the most layered prehistoric sites in Sussex. The double ring of chalk ramparts and ditches are clearly visible and in excellent condition.",
                     "From the summit the view on a clear day is extraordinary: the entire sweep of Goodwood Racecourse lies directly below to the east, with Chichester Cathedral's spire pointing up from the coastal plain beyond, the Isle of Wight floating on the horizon to the south, and the forested Weald rolling north toward Surrey. It is easy to understand why every generation from Neolithic farmers to Second World War radar operators has wanted to occupy this hill.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/79/The_Trundle_3.jpg/1280px-The_Trundle_3.jpg"
             },
             {
                 "title": "Goodwood Racecourse & The Monarch's Way",
@@ -4201,7 +4201,7 @@ WALKS["goodwood-estate"] = [
                     "Descending east from The Trundle along the Monarch's Way long-distance trail, the path drops towards the road opposite the entrance to Goodwood Racecourse. The racecourse itself dates from 1802, established by the 3rd Duke of Richmond on the downland above his house. King Edward VII memorably described it as 'a garden party with racing tacked on,' and the phrase remains the most accurate encapsulation of Glorious Goodwood's particular social atmosphere.",
                     "The Monarch's Way traces a section of the escape route taken by King Charles II after his defeat at the Battle of Worcester in 1651, and the path here follows the same ridge line he would have used to navigate south toward the coast. The going is open and breezy, with the circuit's perimeter fence close by and fine views west back toward The Trundle.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_Motor_Circuit.jpg/1280px-Goodwood_Motor_Circuit.jpg"
             },
             {
                 "title": "Levin Down Nature Reserve",
@@ -4209,7 +4209,7 @@ WALKS["goodwood-estate"] = [
                     "The return leg crosses the western flanks of Levin Down, a Site of Special Scientific Interest managed by the Sussex Wildlife Trust. This chalk grassland has never been ploughed — an increasingly rare distinction — and is consequently home to plant communities that have vanished almost everywhere else in lowland England. In summer the slopes are alive with chalk heath wildflowers: harebells, chalk milkwort, sheep's fescue and the scattered purple of wild thyme. Exmoor ponies and Herdwick sheep graze the turf in rotation, keeping it short enough for the specialist flora to thrive.",
                     "The path descends gently through the reserve and drops back into Charlton via a track past the old village ponds, returning to the Fox Goes Free after roughly 20 minutes. A post-walk pint here is strongly recommended — the ales are well-kept and the menu is reliably good. Note that the walk is best avoided on race days at Goodwood, when the road and parking near the racecourse become congested.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
         ]
     },
@@ -4220,7 +4220,7 @@ WALKS["goodwood-estate"] = [
         "duration": "1 hr",
         "difficulty": "Easy",
         "summary": "The estate's signposted red route from The Goodwood Hotel through 20 acres of semi-ancient woodland and past the organic Home Farm — flat, well-surfaced, and suitable for all ages.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Goodwood_House%2C_West_Sussex%2C_England-2Oct2011.jpg/1280px-Goodwood_House%2C_West_Sussex%2C_England-2Oct2011.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.8992, -0.7442],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -4242,7 +4242,7 @@ WALKS["goodwood-estate"] = [
                     "The walk begins at The Goodwood Hotel, the estate's four-star hotel set at the heart of the 12,000-acre estate. Free parking is available here for walkers, and the Tapsters Paddock — a new three-acre secure dog-walking field named after Tapster, a hound immortalised in a 1733 portrait by John Wootton — is accessible for those arriving with dogs. From the hotel, follow the red waymarked route south-east along the gravelled path, which passes the back of the cricket ground within the first few minutes.",
                     "The Goodwood cricket ground has been active since a receipt for brandy, dated 1702, recorded the first game on the estate — making it one of the oldest continuously used cricket grounds in England. The thatched pavilion is a delight, and on summer weekends you may catch Goodwood Cricket Club in action on the square.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "Seeley Copse Ancient Woodland",
@@ -4250,7 +4250,7 @@ WALKS["goodwood-estate"] = [
                     "Seeley Copse is a 7.5-hectare tract of semi-ancient woodland that forms the centrepiece of the red walking route. The classification 'semi-ancient' means that woodland has existed here continuously since at least 1600, and in parts likely much longer — the variety of field layer plants, including bluebell, wood anemone and dog's mercury, is a reliable indicator of woodland antiquity. The path through the copse is well-maintained and largely flat.",
                     "The canopy is predominantly oak and ash, with hazel coppice at the margins and some fine specimen trees along the main path. Roe deer are frequently seen here in the early morning, and woodpeckers — both great spotted and green — are year-round residents. In spring the bluebells are outstanding and the copse becomes a popular short walk in its own right.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "Goodwood Home Farm",
@@ -4258,7 +4258,7 @@ WALKS["goodwood-estate"] = [
                     "The route passes close to Goodwood Home Farm, one of the most celebrated organic farms in Britain and described as one of the only genuinely self-sustaining organic farms in Europe. The farm has been supplying the estate with food for over 300 years and converted to organic production in 2000 under the 11th Duke of Richmond. It maintains its own dairy and butchery, rearing beef, pork, lamb and venison to the highest welfare standards.",
                     "The Farm Shop is a short detour from the main route and well worth the visit. It stocks the full range of Home Farm produce — organic meat, award-winning cheeses, home-baked sourdough using heritage flour grown on the estate, and a milk vending machine dispensing fresh raw milk and flavoured milkshakes. The estate's own gin and beer, made with homegrown hops and juniper, are also available. A click-and-collect service is offered online for those who wish to take something home.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "Goodwood Estate Grounds",
@@ -4266,7 +4266,7 @@ WALKS["goodwood-estate"] = [
                     "The final section of the red route returns through the wider estate grounds, passing stands of mature parkland timber including 300-year-old cedar trees that were planted when the house was first extended in the early 18th century. The path eventually rejoins the gravelled track near the back of the hotel, completing a circuit that takes in woodland, farmland, and the managed pleasure grounds of the estate in a single, unhurried hour.",
                     "The estate's walking routes are open to visitors year-round and are colour-coded throughout. Dogs are welcome but must be kept on leads across all sections — a rule enforced partly because the Home Farm livestock grazes within sight of the path in several places. The Farmer, Butcher, Chef restaurant at the hotel is an excellent choice for lunch after the walk.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
         ]
     },
@@ -4300,7 +4300,7 @@ WALKS["goodwood-estate"] = [
                     "The walk begins in the hamlet of Halnaker on the A285, where the Anglesey Arms — a handsome listed Georgian pub — makes an ideal start or finish point. From the village, the route picks up the old Roman road of Stane Street heading north-east, which has been in continuous use since at least AD 70. The agger — the raised central spine of the Roman road — is clearly visible underfoot in several places, a remarkable survival after nearly 2,000 years.",
                     "Halnaker itself is a tiny community of farmhouses and estate cottages on the south-eastern edge of the Goodwood Estate. The Goodwood Motor Circuit perimeter is less than a mile to the north, and on weekdays you will often hear the distant sound of test cars and track days drifting across the downs — a peculiarly evocative backdrop to a walk on an ancient road.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Halnaker_Mill.jpg/1280px-Halnaker_Mill.jpg"
             },
             {
                 "title": "The Halnaker Tree Tunnel",
@@ -4308,7 +4308,7 @@ WALKS["goodwood-estate"] = [
                     "The approach to Halnaker Mill from the south-west is one of the most photographed paths in West Sussex: a long, straight avenue of mature beech trees whose canopies have grown to arch overhead, creating a cathedral-like green tunnel in summer and a dramatic skeletal corridor in winter. This is a section of Stane Street, the Roman road linking Chichester (Noviomagus) with London, and the beeches were most likely planted in the 18th century to line the approach to the mill.",
                     "The trees are very old and in places lean dramatically, their roots gripping the chalky trackway. In early morning light filtered through a leaf canopy, or on a misty winter's day when the bare branches lace against a pale sky, the tunnel is genuinely magical — one of those English landscapes that makes visitors stop and stand quietly for a few minutes.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Halnaker_Mill.jpg/1280px-Halnaker_Mill.jpg"
             },
             {
                 "title": "Halnaker Windmill",
@@ -4316,7 +4316,7 @@ WALKS["goodwood-estate"] = [
                     "Halnaker Mill is a Grade II listed tower mill perched on the ridge at 80 metres, with views across Chichester, the coastal plain and the Solent on clear days. The mill was first mentioned in records as early as 1540 as the feudal mill of the Goodwood Estate, though the current four-storey brick tower dates from the 1740s. It was struck by lightning in 1905, damaging the sails, and fell derelict before being restored in 1934 as a memorial to the wife of local landowner Sir William Bird.",
                     "Visitors cannot enter the mill itself, but the path around its base offers fine views in all directions. Rudyard Kipling walked here and wrote the poem 'Ha'naker Mill' in 1902, lamenting the then-ruined state of the structure. The mill has been repaired several times since and its distinctive white cap is a landmark visible from the Goodwood Racecourse stands on the opposite hill.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Halnaker_Mill.jpg/1280px-Halnaker_Mill.jpg"
             },
             {
                 "title": "Boxgrove Priory",
@@ -4324,7 +4324,7 @@ WALKS["goodwood-estate"] = [
                     "The return route can be extended via the village of Boxgrove, a 20-minute walk to the east, where the remains of Boxgrove Priory — a Benedictine priory founded around 1117 — stand in exceptional condition. The guest house and retainer's lodge survive as roofless but substantial ruins, and the priory church, now the parish church of St Mary and St Blaise, contains one of the finest medieval painted stone ceilings in England, dating from around 1530.",
                     "Boxgrove is also the site of the most significant hominid discovery in British prehistory: Homo heidelbergensis fossils and worked flint tools dating to around 500,000 years ago were excavated in the gravel pits to the west of the village in the 1990s. A tibia bone and two teeth from 'Boxgrove Man' are held in the Natural History Museum and represent the oldest well-documented human remains found in Britain.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Boxgrove_Priory_-_geograph.org.uk.jpg/1280px-Boxgrove_Priory_-_geograph.org.uk.jpg"
             },
         ]
     },
@@ -4358,7 +4358,7 @@ WALKS["goodwood-estate"] = [
                     "Begin at The Goodwood Hotel and follow the blue waymarked route south along the gravelled path behind the hotel, passing the cricket ground on the left within the first few hundred metres. The thatched pavilion here is one of the most charming estate buildings, and a board at the ground lists the historical records that suggest cricket has been played on this site since at least 1702 — making it a strong contender for the oldest continuously used cricket ground in England.",
                     "The 2nd Duke of Richmond was one of the great early patrons of cricket and helped codify the laws of the game in the 1720s. The estate's association with the sport runs deep: the ground hosted significant matches involving W.G. Grace in the 19th century, and Goodwood Cricket Club continues to play here through the summer.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "The Park Golf Course",
@@ -4366,7 +4366,7 @@ WALKS["goodwood-estate"] = [
                     "The blue route skirts the fairways of the Park Course, one of two 18-hole courses on the estate. Golf has been played at Goodwood since 1892, making it one of the earlier golf facilities in the south of England. The Park Course was laid out on the estate's pleasure grounds and retains a parkland character — wide, undulating fairways lined with veteran oaks and sweet chestnuts, with fine views across the course toward Chichester and the coastal plain.",
                     "The adjacent woodland along the blue route provides a beautiful fringe to the course and in spring the understorey is particularly good: wood anemone, primrose and patches of wild garlic flower in succession before the canopy closes. The path is clear and well maintained, keeping respectful distance from the golf play at all times.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "The Kennels",
@@ -4374,7 +4374,7 @@ WALKS["goodwood-estate"] = [
                     "The Kennels is one of the finest estate buildings at Goodwood and its history is remarkable. Built in 1787 by the architect James Wyatt to house the 3rd Duke of Richmond's pack of foxhounds — at a time when hunting was the primary social currency of the aristocracy — it was described by contemporaries as the most luxurious dog house in England, complete with central heating for the hounds. By the 20th century the dogs were long gone, and the building served for decades as the Goodwood Golf Clubhouse.",
                     "Today The Kennels houses a smart restaurant and serves as the hub of the estate's sporting memberships. The building retains its handsome Georgian character and the interior is well worth seeing. The restaurant serves lunch daily in elegant, unhurried surroundings — an excellent reason to time the end of the walk to coincide with the kitchen's opening hours.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
             {
                 "title": "Goodwood Estate Woodland",
@@ -4382,7 +4382,7 @@ WALKS["goodwood-estate"] = [
                     "The final section of the blue route passes through the estate woodland east of The Kennels, where a series of management coupes in different stages of growth create a varied and wildlife-rich habitat. The estate manages its woodland using a combination of traditional coppice techniques and continuous-cover forestry, providing both timber and habitat in a single system. The results are impressive: the woodland holds good numbers of dormice, bats and woodland birds, and the herb layer is rich and diverse.",
                     "The route returns to the hotel via a broad ride that passes close to the Goodwood House perimeter. The house itself is visible through the trees in winter — a substantial Regency building in stone, flanked by its copper-domed turrets, set in a landscape of rolling parkland that has barely changed since the late 18th century. Guided tours of the house are available on Sundays and Mondays from March to October.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Goodwood_House.jpg/1280px-Goodwood_House.jpg"
             },
         ]
     },
@@ -4424,7 +4424,7 @@ WALKS["cowdray-park"] = [
                     "The walk begins at the large free car park beside the Cowdray Farm Shop and Café — the social and commercial heart of the Cowdray Estate. The café, which won the FARMA Best On-Farm Café-Restaurant Award, is an ideal place to breakfast before setting out: the sourdough bread is baked in-house daily from Cowdray wheat, and the estate's own beef, lamb and venison appear on the changing seasonal menu. The farm shop itself stocks a superb range of estate produce, artisan cheese, and deli provisions.",
                     "From the car park, the path heads north-east along a wide gravelled track past the edge of the polo grounds. Polo has been played on these lawns for over a century, and in summer months the distant sound of hoofbeats and the crack of mallets drifts across the estate. The grass polo pitches are among the finest in Europe, maintained to immaculate standards for the summer season.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Benbow Pond & The Arboretum",
@@ -4432,7 +4432,7 @@ WALKS["cowdray-park"] = [
                     "The path eventually reaches Benbow Pond, a lovely and peaceful stretch of water set within the 16-acre John Cowdray Arboretum — a collection of over 140 species of trees planted in honour of the 3rd Viscount Cowdray and now reaching fine maturity. The pond is home to swans, mallards, moorhens, and in winter flocks of tufted duck. In the right season a cormorant can often be seen perched on a dead branch at the water's edge, wings spread in characteristic fashion to dry after diving.",
                     "The arboretum's pathways are mown through grass and are ideal for families — children are free to explore the extraordinary variety of tree shapes and textures, from the broad plates of a spreading cedar to the small-leaved delicacy of a Japanese maple in autumn colour. A memorial plaque near the pond edge marks the origin of the planting.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "The Queen Elizabeth Oak & Forest Paths",
@@ -4440,7 +4440,7 @@ WALKS["cowdray-park"] = [
                     "The route passes through the estate's older woodland, where one of the most remarkable trees in Sussex stands in the undergrowth: the Queen Elizabeth Oak, estimated at between 800 and 1,000 years old and recognised as the third oldest Sessile Oak in England. It is named after Queen Elizabeth I, who visited Cowdray in 1591 during one of her summer progresses, and the tree would already have been a mature specimen when she passed beneath it.",
                     "The surrounding forest paths take the walk through a varied mosaic of oak woodland, conifer plantation, and open rides where you are likely to encounter the estate's deer population — roe and fallow both inhabit the forest. The horses and ponies visible in the paddocks beyond the treeline are used for the polo matches on the Lawns and for the Polo Academy, which offers lessons to riders of all abilities.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "The River Rother & Ambersham Bridge",
@@ -4448,7 +4448,7 @@ WALKS["cowdray-park"] = [
                     "The southern arc of the walk reaches the River Rother at Ambersham Bridge — a quiet and beautiful spot where the river winds through water meadows fringed with crack willow and alder. The Rother is a classic lowland river, slow-moving and clear in summer, with brook lamprey, brown trout, and occasional otters. The fly fishery on this stretch is managed by the estate, but non-fishing walkers are welcome on the public path along the bank.",
                     "From the bridge the route turns west, following the riverbank and then cutting north through Todham Rough before crossing Crosters Brook and completing the circuit back to the Farm Shop car park. The final section passes through open parkland with clear views back toward the silhouette of the Cowdray Ruins on the horizon — a deeply atmospheric end to one of the finest estate walks in West Sussex.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG"
             },
         ]
     },
@@ -4459,7 +4459,7 @@ WALKS["cowdray-park"] = [
         "duration": "45 min",
         "difficulty": "Easy",
         "summary": "The short, flat, gravelled loop from the Farm Shop past the polo grounds and Cowdray Ruins — perfect for pushchairs and young children, with a play area extension to Easebourne Park.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cowdray_-_geograph.org.uk_-_5271047.jpg/1280px-Cowdray_-_geograph.org.uk_-_5271047.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [51.0170, -0.7185],
         "zoom": 15,
         "waypoint_zoom": 17,
@@ -4480,7 +4480,7 @@ WALKS["cowdray-park"] = [
                     "The family loop starts at the Cowdray Farm Shop and Café car park (postcode GU29 0AJ), where toilets, a café and a dog-friendly outdoor terrace make it an ideal base for families with young children. The paths are mostly wide, gravelled and level — suitable for pushchairs throughout, though a couple of short sections near the polo ground fence are better walked around than through for wheel users.",
                     "From the car park, a wide surfaced path leads through a gate and begins to follow the edge of the polo grounds. In the polo season — April to September — you may be lucky enough to catch a practice chukka on the adjacent pitch, with riders exercising their ponies in the morning light. Even outside the season the scale of the manicured polo lawns is impressive: these are among the finest playing surfaces in world polo.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "The Polo Grounds",
@@ -4488,7 +4488,7 @@ WALKS["cowdray-park"] = [
                     "The route follows a surfaced path alongside the polo grounds, with the immaculate green lawns stretching away to the east and the forested hillside of the estate rising beyond. Polo at Cowdray has been played since 1910 and the estate hosts around 400 matches each summer. The highlight of the polo calendar is the British Open Polo Championship for the Cowdray Gold Cup, held in July — a spectacular event that draws players and spectators from across the world.",
                     "Children often want to stop and watch whatever is happening on the grounds, and there is usually enough going on — polo ponies being walked, groundsmen working the pitches, lorries moving equipment — to keep small observers occupied. The backdrop of the Cowdray Ruins visible through the trees to the south adds an atmospheric counterpoint to the sporting scene.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Cowdray Heritage Ruins",
@@ -4496,7 +4496,7 @@ WALKS["cowdray-park"] = [
                     "The path brings the ruins of Cowdray House into view — the shell of one of England's most important early Tudor great houses, built by Sir David Owen in the 1520s and expanded into a palatial residence that rivalled Hampton Court in its time. Both Henry VIII and Elizabeth I visited Cowdray during royal progresses, the latter famously staying for six days in 1591 and hunting deer in the park. On 25 September 1793, a fire of unknown origin destroyed the house overnight, leaving the picturesque shell that stands today.",
                     "The ruins can be viewed from the path over the boundary fence — the visitor centre is open weekends only and closed for conservation works in certain seasons; check the Cowdray website before visiting. The Kitchen Tower is the most complete surviving element, rising three storeys above the surrounding rubble. The Heritage Lottery Fund invested £2.7 million in stabilising and opening the ruins to the public in 2007.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Easebourne Park Extension",
@@ -4504,7 +4504,7 @@ WALKS["cowdray-park"] = [
                     "The main family loop returns to the Farm Shop car park via a straight path through the estate, completing the circuit in a comfortable 45 minutes. For families with energetic children who want more, a two-minute walk beyond the loop reaches Easebourne Park — a generously equipped children's play area designed by Wildwood UK using natural oak materials, with a scooter track, mini castle, wildlife pond, and climbing structures built from timber trunks. Eco-friendly toilets are on site and the car park is free.",
                     "The play area can also be reached directly from the A272 and is a popular destination for families from Midhurst and the surrounding villages. Its natural, adventure-playground aesthetic sits well in the estate landscape — a thoughtful piece of provision that sits between the wild and the formal, much like the Cowdray Estate itself.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
         ]
     },
@@ -4536,7 +4536,7 @@ WALKS["cowdray-park"] = [
                     "The walk begins in Midhurst Market Square, a place of commerce and community since the medieval period and still the beating heart of the town. The most photographed building here is the Old Market Hall — a 16th-century timber-framed jettied structure whose overhanging upper storey creates a covered walkway at street level. It now serves as an annexe to the neighbouring Spread Eagle, one of England's oldest coaching inns, first documented in records from 1430.",
                     "Midhurst contains around 100 listed buildings, representing an extraordinary density of historic architecture for a market town of its size. The variety is striking: Tudor timber frames sit beside Georgian brick frontages, which give way to Victorian Italianate terraces. The town escaped significant modernisation in the 20th century largely because of its position within the South Downs National Park landscape, and the result is one of the most complete historic townscapes in West Sussex.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Cowdray Ruins from the Town",
@@ -4544,7 +4544,7 @@ WALKS["cowdray-park"] = [
                     "From the Market Square, the route follows the signed Heritage Trail toward the River Rother and the eastern fringe of the town, where the dramatic silhouette of the Cowdray Ruins comes into view across the water meadows. The approach on foot from the town is one of the most atmospheric ways to appreciate the scale and romance of the ruined house — the gatehouse towers rise above the river trees with the hill-woodland behind, and in early morning mist the scene could belong to a Romantic landscape painting.",
                     "The 1.5-mile walk from the town centre to the ruins is a designated route through the South Downs National Park, passing open polo fields and riverside meadows rich in wildflowers in summer. For those who wish to explore the ruins themselves, the visitor centre operates guided heritage events from the River Ground Stables, Midhurst, GU29 9AL — weekend opening, heritage@cowdray.co.uk for details.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "St Ann's Hill & The Norman Motte",
@@ -4552,7 +4552,7 @@ WALKS["cowdray-park"] = [
                     "The trail climbs briefly to St Ann's Hill, a modest but historically significant eminence above the river where the earthwork mound of a Norman motte-and-bailey castle survives in good condition. The castle was built around 1066 to command views over the River Rother valley and the approaches to the town, and it remained an important defensible position until the more comfortable accommodation of Cowdray House made it redundant in the 16th century. The motte is grassy and unexcavated, its full potential still hidden.",
                     "From the top of St Ann's Hill — which takes only a few minutes to climb — the views over the town and the Rother valley are excellent. The roofscape of Midhurst laid out below, with the South Downs rising beyond, gives a clear sense of why this was a valued strategic position. The church of St Mary Magdalene and St Denys, part-medieval and part-Victorian, stands at the hill's foot and is usually open during the day.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "North Street & The Spread Eagle",
@@ -4560,7 +4560,7 @@ WALKS["cowdray-park"] = [
                     "The return route brings the walk back through North Street — the town's secondary commercial spine — and past the Spread Eagle Hotel, which has been receiving travellers at this corner since the early 15th century. Sloping floors, inglenook fireplaces and oak beams have survived the intervening centuries with remarkable completeness, and the hotel's restaurant continues to serve guests in a dining room whose atmosphere is genuinely historic. Afternoon tea here, at £31 per person, is an agreeable way to conclude the town walk.",
                     "Midhurst is a town that rewards unhurried exploration: the Heritage Trail leaflet, available at the South Downs Visitor Centre on North Street, identifies over 30 points of interest within the town boundary. H.G. Wells attended school here at the Midhurst Grammar School (now a private house), and the town features as a setting in several of his early novels, most notably 'Tono-Bungay.'",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
         ]
     },
@@ -4571,7 +4571,7 @@ WALKS["cowdray-park"] = [
         "duration": "1 hr",
         "difficulty": "Easy",
         "summary": "A gentle, flat circuit of Benbow Pond and the John Cowdray Arboretum — 16 acres of ornamental water and over 140 species of trees, with mown grass paths and wildlife watching throughout.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cowdray_-_geograph.org.uk_-_5271047.jpg/1280px-Cowdray_-_geograph.org.uk_-_5271047.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [51.0200, -0.7150],
         "zoom": 15,
         "waypoint_zoom": 16,
@@ -4592,7 +4592,7 @@ WALKS["cowdray-park"] = [
                     "Benbow Pond is accessible directly from the A272 east of Midhurst, with a free car park immediately adjacent (postcode GU28 0AZ). The pond is a popular and entirely unpretentious destination — families spread out on the grass bank to feed the swans and ducks, walkers pause on the bench by the water's edge, and the general atmosphere is one of relaxed, good-natured informality. Swans, mallards, Canada geese, moorhens, tufted duck and occasionally cormorants all use the pond, and the bird life is abundant enough to absorb children for a good while.",
                     "The pond and surrounding 16-acre arboretum are named for Admiral John Benbow (1653–1702), the celebrated and ferociously determined naval commander who fought a legendary action in the Caribbean against a French squadron despite losing his leg to chainshot, continuing to command from his cabin until his eventual death from wounds. A memorial to the 3rd Viscount Cowdray near the pond edge recalls a later chapter in the estate's history.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "John Cowdray Arboretum",
@@ -4600,7 +4600,7 @@ WALKS["cowdray-park"] = [
                     "The arboretum wraps around the northern end of the pond and extends into open parkland beyond, with mown grass pathways threading between over 140 species of trees. The collection was planted in 2012 and already contains some impressive specimens — the variety of forms, textures and seasonal colours makes this a rewarding place to visit in any season, but it is particularly fine in autumn when the maples, liquidambars and cherries turn red and gold.",
                     "Young children enjoy the arboretum as a place to simply run about in — the mown paths give freedom and the varied tree shapes provide endless interest. There are no specific labels on every tree, but a leaflet available at the Cowdray Farm Shop identifies the main species and helps visitors make sense of what they are looking at. The walk around the full perimeter of the pond and arboretum takes a comfortable hour.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Woodland Fringe & Wildlife",
@@ -4608,7 +4608,7 @@ WALKS["cowdray-park"] = [
                     "The western edge of the loop passes through the woodland fringe of the arboretum, where the planted trees give way to more established native woodland — oak, ash, hazel and field maple — with a good understorey of shrubs. Roe deer are frequently seen here in the early morning, and the pond edge holds reed buntings and occasional kingfishers in suitable seasons. The walk is quiet enough that wildlife encounters are genuinely likely for those who move slowly.",
                     "The path emerges from the woodland to rejoin the pond's southern bank, completing the loop with a final stretch along the water's edge. The resident swans are accustomed to people and will approach closely — particularly if children are carrying the duck pellets sold at the Farm Shop. Please note that bread is actively harmful to waterfowl: the Farm Shop stocks proper pellet food for visitors to use.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
             {
                 "title": "Return to the Pond Car Park",
@@ -4616,7 +4616,7 @@ WALKS["cowdray-park"] = [
                     "The circuit ends back at the pond car park, which is free and has plenty of space even at weekends. The Cowdray Farm Shop and Café at GU29 0AJ — a five-minute drive west along the A272 — is the natural next stop, particularly for those who have worked up an appetite. The café offers breakfast and lunch seven days a week, and the farm shop's deli, butchery and artisan bread counter make it an excellent place to stock up for a picnic on the return visit.",
                     "For those who want to extend the walk, the Midhurst Way long-distance path intersects with the arboretum circuit and can be picked up from the northern end of the pond. The Way runs 29 miles from Haslemere to Arundel and this section through the Cowdray Estate is among its most attractive stretches.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Cowdray_Ruins.jpg/1280px-Cowdray_Ruins.jpg"
             },
         ]
     },
@@ -4652,7 +4652,7 @@ WALKS["albury-estate"] = [
                     "The walk begins at the main entrance to Albury Park, where wrought-iron gates open onto a gravel drive flanked by specimen trees of considerable age. The estate has been settled since at least the Saxon period, and the broad lime avenue ahead follows an alignment first established in the 17th century. In early morning the light filters through the canopy in long horizontal bars, and the smell of damp grass and river water reaches you within moments of passing through the gate.",
                     "The path descends gently toward the Tillingbourne, a chalk stream that rises on the greensand ridge and flows west through this valley before joining the Wey Navigation near Shalford. Chalk streams are among the rarest freshwater habitats in the world — clear, cold, and remarkably stable in temperature — and the Tillingbourne supports a rich community of brown trout, water crowfoot, and in summer a shimmer of fly life above the surface.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
             {
                 "title": "The Tillingbourne Watermeadows",
@@ -4660,7 +4660,7 @@ WALKS["albury-estate"] = [
                     "The route follows the Tillingbourne east through a sequence of open water meadows. Evelyn's landscaping of the 1660s worked with the natural valley topography rather than against it, enhancing the existing river margins with informal planting and carefully placed views. The result, still visible today, is a landscape that feels entirely natural while being subtly shaped at every point. In May and June the meadows fill with meadowsweet, ragged-robin, and yellow flag iris along the wetter margins.",
                     "The stream here is unimproved and largely unmanaged, which has allowed the channel to develop the sinuous bends, gravel beds, and overhanging banks that hold the highest densities of fish and invertebrates. Stand quietly at the bank for a minute or two and you will often see the dark torpedo shapes of trout holding position in the current, perfectly adapted to the chalk-stream environment that has shaped their behaviour over centuries.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Shere_Surrey.jpg/1280px-Shere_Surrey.jpg"
             },
             {
                 "title": "The Ornamental Ponds",
@@ -4668,7 +4668,7 @@ WALKS["albury-estate"] = [
                     "At the eastern end of the estate grounds the Tillingbourne was dammed to create a series of ornamental ponds that form one of the most picturesque features of John Evelyn's design. Evelyn, diarist, polymath and pioneer of English silviculture, used Albury as a laboratory for his ideas about designed landscape — the terraces and water features here predate the great landscape garden movement by half a century. His diary entries from this period describe the satisfaction of directing the shaping of this valley.",
                     "The ponds attract a wide variety of water birds: little grebe nest in the marginal vegetation, grey heron stand sentinel on the far bank, and in winter flocks of teal and wigeon use the open water for feeding and roosting. The reflections of the surrounding trees in the still surface on calm mornings make this one of the most photographed spots in the Surrey Hills.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
             {
                 "title": "Return Through the Park",
@@ -4676,7 +4676,7 @@ WALKS["albury-estate"] = [
                     "The return leg crosses to the north bank of the Tillingbourne via a stone footbridge and follows a broad grass path back west through the parkland. The landscape opens up here to give wide views across the valley floor to the wooded ridge of the North Downs — the characteristic Surrey Hills skyline of hanging beech woods above chalk escarpment. In late afternoon the low sun catches the pale stems of birch and the russet of oak in a way that makes the walk back feel like a different journey entirely.",
                     "The path returns to the park gates through an avenue of old chestnuts, many of which are coppiced periodically to maintain their vigour. The estate is managed with strong emphasis on ecological continuity, and veteran trees are retained wherever possible — several of the parkland oaks are estimated at over 300 years old, predating even Evelyn's improvements and linking this valley directly to its medieval past.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
         ],
     },
@@ -4708,7 +4708,7 @@ WALKS["albury-estate"] = [
                     "The walk begins near the west front of Albury Park House, a rambling country house substantially remodelled by Augustus Pugin in the 1840s for Henry Drummond. The result is an idiosyncratic mix of Tudor and Gothic detailing — tall ornamental chimneys, heraldic devices, and elaborate fenestration — that makes the house instantly recognisable and unlike any other country house in Surrey. The house is now divided into private apartments but the grounds remain accessible to walkers following the permitted routes.",
                     "From the house, the terraces sweep south in a series of broad steps carved from the hillside — one of the most ambitious formal garden schemes in Surrey, and one that has survived remarkably intact despite the passage of three and a half centuries. The terrace walks were described by John Evelyn in his diary as among his proudest achievements, and they remain a monument to his understanding of how landscape could be shaped to create both beauty and meaning.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
             {
                 "title": "The Evelyn Terraces",
@@ -4716,7 +4716,7 @@ WALKS["albury-estate"] = [
                     "The terraces descend the hillside in four great steps, each retained by a clipped hedge or stone wall and offering a different perspective across the Tillingbourne valley below. Evelyn planted them with geometric precision in the French manner, though later owners softened the geometry with informal planting. The view from the top terrace south toward the North Downs is one of the finest in Surrey — a broad sweep of valley, woodland, and farmland that shows why this corner of the county attracted such intense attention from the 17th-century cognoscenti.",
                     "The long terrace walk at the base of the sequence runs east-west along the hillside, sheltered from the north by the slope above and catching afternoon sun on its south-facing aspect. In summer the warm brick and stone walls trap heat and support a range of plants that would not otherwise survive this far north. The path is firm underfoot and entirely flat at this level — the main climbs of the walk are on the connecting steps between terraces.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
             {
                 "title": "The Pugin Chapel",
@@ -4724,7 +4724,7 @@ WALKS["albury-estate"] = [
                     "A short diversion from the main garden path brings you to the private chapel designed by Augustus Pugin in the 1840s — a small but exquisitely detailed work in the Decorated Gothic style that Pugin championed with evangelical fervour. The chapel served the Drummond family and their guests, and its interior is reported to be richly furnished with Pugin's characteristic tiles, metalwork, and stained glass. Access to the interior is not generally possible, but the exterior is freely visible from the garden path.",
                     "Pugin's association with Albury is a significant chapter in the history of the Gothic Revival. He also designed the elaborate chimneys on the house and contributed to the garden buildings in the grounds. His influence on Victorian architecture — from the Palace of Westminster to hundreds of churches — was immense, and this private chapel represents one of the more intimate and personal expressions of his beliefs.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
             {
                 "title": "St Peter and St Paul, Albury",
@@ -4732,7 +4732,7 @@ WALKS["albury-estate"] = [
                     "The walk ends at the ancient church of St Peter and St Paul, set slightly apart from the main estate in its own churchyard above the village. The church retains substantial Saxon fabric — parts of the nave walls date from before the Norman Conquest — making it one of the oldest places of Christian worship in Surrey. The chancel was extended in the Norman period, and the building accumulated further additions through the medieval centuries, leaving a remarkably layered architectural record.",
                     "The churchyard is ancient too, with yew trees of considerable age flanking the gate and table tombs of Surrey stone dating from the 17th and 18th centuries. John Evelyn himself worshipped here regularly during his periods at Albury, and the connection between this quiet church and the man who reshaped the landscape around it adds a particular resonance to the visit. The walk back to the park takes five minutes along the lane.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Albury_Park.jpg/1280px-Albury_Park.jpg"
             },
         ],
     },
@@ -4768,7 +4768,7 @@ WALKS["wotton-estate"] = [
                     "The walk begins at Wotton House, the ancestral home of the Evelyn family from the late 16th century and the birthplace of John Evelyn, diarist and arbiter of taste, in 1620. The present house dates largely from a rebuild after a fire in 1693, though it has been altered and extended many times since. Now operating as a country house hotel, it remains a place of considerable architectural interest, with the main south front looking across a broad terrace to the landscaped grounds below.",
                     "John Evelyn spent much of his working life here between periods in London and abroad, and it was at Wotton that he developed many of the landscape ideas he later set out in Sylva — the foundational text of English silviculture, published in 1664 — and in the unpublished garden treatise Elysium Britannicum. The grounds you are about to walk are the direct expression of those ideas, modified by subsequent owners but retaining the essential character Evelyn imparted.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
             {
                 "title": "The Classical Temples",
@@ -4776,7 +4776,7 @@ WALKS["wotton-estate"] = [
                     "The path descends from the house terrace into the lower garden, where a sequence of classical temples and garden buildings is disposed across the landscape with careful regard for sight lines and the play of light. The most prominent is a Doric temple set on a slight eminence commanding views back to the house — a building that perfectly embodies the 18th-century understanding of how a designed landscape should feel both natural and elevated above the merely natural.",
                     "Several of the garden buildings at Wotton are attributed to the circle of architects who worked for the Evelyn family in the early 18th century, when the gardens were expanded and embellished by Evelyn's successors. The combination of classical pavilions, informal water features, and carefully managed woodland views places Wotton within the mainstream of the English landscape garden tradition, though its origins predate that tradition by several decades.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
             {
                 "title": "The Ornamental Ponds & Cascade",
@@ -4784,7 +4784,7 @@ WALKS["wotton-estate"] = [
                     "The lower section of the garden circuit follows the course of a small stream that has been dammed at several points to create a series of ornamental ponds, the largest of which is crossed by a stone bridge that provides one of the best viewpoints in the garden. The water surface reflects the surrounding woodland and the sky, and on still days the mirror-like quality of the pond turns the landscape into something approaching a Romantic landscape painting.",
                     "A small cascade connects the upper and lower ponds, its sound audible well before you reach it. This kind of moving water feature was a central element of 17th-century garden design, valued both for its visual interest and the symbolism of nature disciplined and enhanced by art. Evelyn wrote at length about the use of water in gardens, and the Wotton ponds are among the surviving examples of his practical application of those principles.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
             {
                 "title": "The Terrace & Woodland Return",
@@ -4792,7 +4792,7 @@ WALKS["wotton-estate"] = [
                     "The return leg of the circuit climbs gently back to the house terrace via the woodland walk to the north of the garden. The wood here is primarily oak and sweet chestnut — species closely associated with Evelyn's planting recommendations in Sylva — with a ground flora of bluebell, wood anemone, and red campion that peaks in April and May. The path is well maintained and entirely straightforward, though walking poles may be useful in wet conditions on the steeper sections.",
                     "The terrace itself extends the full width of the south front and commands a sweeping view across the garden and the valley beyond toward the Leith Hill ridge. Wotton stands at the foot of the greensand hills, and on clear days the tower on the summit of Leith Hill — the highest point in south-east England — is clearly visible above the treeline. The walk back to the hotel entrance takes five minutes along the terrace.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
         ],
     },
@@ -4803,7 +4803,7 @@ WALKS["wotton-estate"] = [
         "duration": "1 hr 30 min",
         "difficulty": "Moderate",
         "summary": "A rewarding walk from the Wotton Estate grounds up through the greensand hills toward the foot of Leith Hill, passing ancient woodland, sunken lanes, and open hillside with panoramic Surrey views.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/%28C%29_Hayley_Bray_%284%29.jpg/1280px-%28C%29_Hayley_Bray_%284%29.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
         "center": [51.2100, -0.4050],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -4825,7 +4825,7 @@ WALKS["wotton-estate"] = [
                     "The walk leaves the formal garden behind and passes through a gate in the estate's northern boundary, joining a network of footpaths and bridleways that climb steadily into the greensand hills above. The transition is abrupt and pleasing: within 200 metres of the gate the managed parkland gives way to the rougher, wilder character of the Surrey Hills, with bracken-covered slopes, lichen-encrusted oaks, and the sudden appearance of long distance views.",
                     "The path follows a sunken lane for the first section of the climb — one of the characteristic features of this part of Surrey, where centuries of traffic have worn the ways down through the soft greensand to depths of several metres. The banks on either side are rich in ferns, mosses, and in spring a continuous ribbon of primrose and wood sorrel. These lanes are ancient communication routes and their age is evident in the sheer depth of the cutting.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
             {
                 "title": "Wotton Common",
@@ -4833,7 +4833,7 @@ WALKS["wotton-estate"] = [
                     "Emerging from the sunken lane, the path crosses Wotton Common — an area of open heathland and secondary woodland managed by the National Trust. The common was grazed for centuries and the cessation of grazing in the 20th century allowed woodland to encroach on the open heath, though active restoration work is gradually recovering the characteristic heathland mosaic of heather, gorse, and silver birch. In late summer the heather flowers purple across the open sections, and the scent of warm gorse carries for some distance.",
                     "The common is good territory for reptiles: slow worms and common lizards are regularly seen basking on the sunny, south-facing edges of the heath, and adders are present though rarely encountered. Look also for Dartford warblers in dense gorse thickets — this is one of their northern outposts in Surrey — and for stonechats perched conspicuously on gorse tips throughout the year.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/49/Wotton_House.jpg/1280px-Wotton_House.jpg"
             },
             {
                 "title": "The Greensand Ridge",
@@ -4841,7 +4841,7 @@ WALKS["wotton-estate"] = [
                     "The route reaches the top of the greensand ridge at a point where the path widens onto a broad, flat summit walk with views north toward the North Downs and the Thames valley beyond. This is the characteristic landscape of the Surrey Hills Area of Outstanding Natural Beauty — an intricate patchwork of woodland, heath, and farmland folded into the hills between the chalk escarpment and the Weald. On clear days the view extends to the London skyline and, in exceptional visibility, to the hills of Essex.",
                     "The greensand here is a warm, reddish-brown sandstone that weathers quickly and supports a thin, acid soil — conditions that favour heathland rather than the richer woodland of the chalk. The ridge walk is a popular one with local walkers, and the path is well worn despite the relatively light traffic of weekdays. The final section of the climb, where the path approaches the flank of Leith Hill, is the steepest of the day.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Leith Hill Viewpoint & Return",
@@ -4849,7 +4849,7 @@ WALKS["wotton-estate"] = [
                     "The walk reaches its high point at a viewpoint on the southern flank of Leith Hill, from which the full sweep of the Sussex Weald is visible to the south — a vast, wooded landscape stretching to the South Downs ridge on the horizon. Leith Hill itself, at 294 metres the highest point in south-east England, is a short detour to the north; the tower on its summit, built by Richard Hull in 1765 to bring the height above 1,000 feet, is open on certain days.",
                     "The return to Wotton follows the outward route in reverse, giving you the views in the opposite direction and the descent of the sunken lane — which, going downhill, rewards careful footwork after rain. The re-entry to the estate grounds through the north boundary gate brings a pleasing sense of arrival back into the designed landscape, with the south front of Wotton House visible ahead through the trees.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
         ],
     },
@@ -4864,7 +4864,7 @@ WALKS["abinger-estate"] = [
         "duration": "1 hr 10 min",
         "difficulty": "Easy",
         "summary": "A beautiful circuit through ancient oak woodland to the hammer pond at Friday Street — one of the most secluded and atmospheric corners of the Surrey Hills.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
         "center": [51.2070, -0.3980],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -4885,7 +4885,7 @@ WALKS["abinger-estate"] = [
                     "The walk begins on the edge of Abinger Common, a large area of common land fringed by ancient woodland on the western slopes of the greensand hills. The common itself is open and grassy, dotted with oak and silver birch, with wide views south across the Weald. It has been common land since at least the medieval period, and the grazing rights that shaped its character are still formally recorded, though cattle no longer roam here as they once did.",
                     "From the common, the path enters the woodland heading south-east toward Friday Street. The transition into the trees is immediate and total: the open sky closes overhead, the temperature drops a degree or two, and the sounds of the common — the wind, birdsong, the distant road — are replaced by the particular quiet of old woodland. The path here follows an ancient routeway through the hills, worn into the greensand over many centuries of use.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Ancient Oak Woodland",
@@ -4893,7 +4893,7 @@ WALKS["abinger-estate"] = [
                     "The woodland between Abinger Common and Friday Street is among the finest ancient woodland in Surrey. Ancient woodland — defined as land continuously wooded since at least 1600 — is an irreplaceable habitat, its soils and structure shaped over hundreds of years by an unbroken succession of living organisms. The indicator species here are textbook: bluebell, wood anemone, yellow archangel, and wild garlic carpet the floor in spring, while the veteran oaks above support hundreds of species of invertebrate in their bark and deadwood.",
                     "Several of the oaks in this wood are of exceptional age and girth. The largest, a multi-stemmed pollard on the lower slope, has a girth suggesting an age of five centuries or more — it was already old when E.M. Forster walked these paths in the early 20th century. Forster lived nearby at Abinger Hammer and drew on the landscape of this valley in his writing, finding in its particular combination of modernity and deep antiquity a metaphor he returned to repeatedly.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Friday Street Hammer Pond",
@@ -4901,7 +4901,7 @@ WALKS["abinger-estate"] = [
                     "The path descends to Friday Street — little more than a scatter of cottages around a mill pond and the Stephan Langton Inn — in a fold of the greensand hills so sheltered that it feels entirely cut off from the surrounding countryside. The hammer pond at the centre of the hamlet was created in the 16th century to power the forge of a Wealden iron mill, one of many that operated in this part of Surrey during the iron industry's brief dominance of the local economy.",
                     "The pond is now entirely peaceful, its surface dark and still under overhanging willows and alders. It holds good populations of perch and roach, and the margins are productive for herons and kingfishers. The Stephan Langton Inn, named after the Archbishop of Canterbury who helped draft Magna Carta and is said to have been born locally, makes an excellent halfway stop for those who time their walk to match the pub's opening hours.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Return Through the Valley",
@@ -4909,7 +4909,7 @@ WALKS["abinger-estate"] = [
                     "The return leg climbs gently out of the Friday Street hollow and follows a parallel path back through the western edge of the woodland, offering slightly different views and a different quality of light in the afternoon sun. The path here is less used than the main approach and passes through sections of more open woodland where the canopy is lower and the understorey of hazel and field maple creates a dappled, intimate walking environment.",
                     "The final section of the return crosses the edge of the common before rejoining the starting point. In late afternoon in summer, the common fills with the smell of warm bracken and the sound of grasshoppers, and the long shadows of the oaks stretch east across the grass. It is one of those quintessentially Surrey moments — utterly unhurried, and entirely worth seeking out.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
         ],
     },
@@ -4920,7 +4920,7 @@ WALKS["abinger-estate"] = [
         "duration": "1 hr 45 min",
         "difficulty": "Moderate",
         "summary": "A varied and rewarding walk from Abinger Common across open heathland and through ancient woodland, climbing to a high point on the Leith Hill ridge with sweeping views over the Surrey Hills and the Weald.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
         "center": [51.2100, -0.3960],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -4942,7 +4942,7 @@ WALKS["abinger-estate"] = [
                     "The walk sets off across Abinger Common heading north-east, using one of the broad grassy tracks that cross the open ground between the scattered oaks. The common has been maintained in this form since at least the 13th century, when it appears in manorial records as shared grazing land. The combination of open grassland, gorse scrub, and veteran trees creates a habitat of high ecological value, and the common is designated as a Site of Special Scientific Interest.",
                     "After crossing the open ground, the path enters the belt of woodland on the common's northern boundary and begins climbing toward the greensand ridge. The ascent is gradual at first, following a well-worn track through secondary woodland of birch and oak before meeting the ancient holloway system that connects the valley villages to the ridge-top paths. These sunken lanes are some of the most evocative features of the Surrey Hills landscape.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Abinger Roughs & National Trust Woodland",
@@ -4950,7 +4950,7 @@ WALKS["abinger-estate"] = [
                     "The mid-section of the walk passes through Abinger Roughs, a National Trust property of considerable beauty — a mixed wood of oak, beech, and sweet chestnut on the rising greensand slope, with a well-maintained path network and seasonal wildflower displays that begin with wood anemone in March and progress through bluebell, wood sorrel, and herb robert as spring advances. The wood is ancient in origin, though its composition has changed significantly since the Victorian period.",
                     "This is the landscape that shaped E.M. Forster's sensibility during his years at Abinger Hammer in the 1920s and 1930s. Forster walked these paths daily and wrote about them with a precision that was unusual for a novelist of his generation — his essay 'My Wood', written after he bought a small piece of woodland near here, is a wry meditation on the effects of property ownership on the human spirit, and it remains one of the finest pieces of writing about the Surrey Hills.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "The Leith Hill Ridge",
@@ -4958,7 +4958,7 @@ WALKS["abinger-estate"] = [
                     "The path reaches the Leith Hill ridge at a point where the woodland opens onto a broad, exposed crest with views in both directions. To the north, the North Downs chalk escarpment is visible as a continuous pale ridge; to the south, the Sussex Weald stretches to the horizon, its villages and church towers just visible above the forest canopy on clear days. This is one of the great viewpoints of the Surrey Hills, all the more satisfying for being reached on foot.",
                     "Leith Hill itself — at 294 metres the highest point in south-east England — is visible to the west, its tower rising above the treeline. The tower was built in 1765 by the eccentric Richard Hull of Leith Hill Place, who reportedly wished to be buried beneath it. The tower is managed by the National Trust and is open on summer weekends; the view from the top, when the added height clears the tree canopy, is extraordinary in clear conditions.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
             {
                 "title": "Descent Through Pasture & Woodland",
@@ -4966,7 +4966,7 @@ WALKS["abinger-estate"] = [
                     "The return from the ridge descends south-west through a mixture of open pasture and broadleaved woodland, following the line of an old field boundary that is marked by a massive hedge of hawthorn, blackthorn, and field maple — the kind of species-rich hedgerow that indicates great age and ecological continuity. The descent is well signed and comfortable underfoot, though the clay at the wood edge can become sticky after rain.",
                     "The final approach to Abinger Common brings you back through the eastern side of the common where the views west open up late in the day. The smell of the commons in the evening — heather and warm earth and the faint sweet rot of old wood — is a reliable trigger for that particular feeling of rightness that a well-paced day's walking produces. The starting point is visible from the last gate, and the car park a few minutes beyond.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg"
             },
         ],
     },
@@ -4981,7 +4981,7 @@ WALKS["broadlands-estate"] = [
         "duration": "1 hr",
         "difficulty": "Easy",
         "summary": "A peaceful riverside walk along the Test — one of England's most celebrated chalk streams — through the water meadows and parkland of Broadlands, the former home of Lord Mountbatten.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Broadlands.jpg/1280px-Broadlands.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
         "center": [51.0232, -1.5000],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5002,7 +5002,7 @@ WALKS["broadlands-estate"] = [
                     "The walk begins in the parkland surrounding Broadlands House, a magnificent Palladian mansion set directly above the River Test at Romsey in Hampshire. The house was completed in its present form by Capability Brown and Henry Holland in the 1760s and 1770s for the Viscount Palmerston, and it is one of Brown's finest river compositions — the south front looks directly across a broad sweep of lawn to the Test below, with the parkland arranged to make the whole scene appear entirely natural.",
                     "Broadlands is best known as the home of Admiral of the Fleet Earl Mountbatten of Burma, who lived here from 1939 until his murder in 1979. The house was also the honeymoon destination of both Queen Elizabeth II and the Prince of Wales — a tradition that underlines its status as one of the most romantically situated country houses in England. The parkland is now managed as part of a working estate and supports a large herd of fallow deer.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Broadlands_house.jpg/1280px-Broadlands_house.jpg"
             },
             {
                 "title": "The River Test",
@@ -5010,7 +5010,7 @@ WALKS["broadlands-estate"] = [
                     "The path descends to the riverside and follows the Test north through the water meadows. The Test is one of the great chalk rivers of England — clear, cold, spring-fed, and relatively constant in flow — and its fishing is legendary. The dry-fly tradition of Test fishing was established here in the 19th century by Frederic Halford, who made Broadlands water the laboratory in which he refined the principles of upstream dry-fly fishing that transformed the sport worldwide. The river is still managed for fly fishing, and on summer evenings the surface is dimpled with rising trout.",
                     "Even without a rod, the Test is an extraordinary river to walk beside. The water clarity is remarkable — in low-flow conditions you can watch individual trout holding station in the current at depths of a metre or more, occasionally drifting sideways to intercept a drifting fly before returning to position. The marginal vegetation — water crowfoot, watercress, and reed sweet-grass — supports dense populations of aquatic invertebrates that underpin the entire food chain.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/River_Test_at_Stockbridge.jpg/1280px-River_Test_at_Stockbridge.jpg"
             },
             {
                 "title": "Water Meadow System",
@@ -5018,7 +5018,7 @@ WALKS["broadlands-estate"] = [
                     "The walk passes through the surviving remnants of the water meadow system that once extended along the Test for many miles. Water meadows — a sophisticated form of flood irrigation perfected in the 17th century — worked by controlled flooding of the riverside grassland in early spring, using the relatively warm groundwater to protect the new grass from frost and advance the spring growth by several weeks, providing vital early grazing for livestock. The system of sluices, drains, and hatches is still visible in the landscape.",
                     "The managed water meadows are now valued primarily as a habitat rather than a farming system. They support a distinctive flora of marsh-loving plants — southern marsh orchid, ragged-robin, marsh marigold, and various sedges — and provide breeding habitat for lapwing, redshank, and snipe. In winter, flocks of wigeon and teal use the wet grassland for grazing, their constant piping and quacking carrying a long way in the still Hampshire air.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/River_Test_at_Stockbridge.jpg/1280px-River_Test_at_Stockbridge.jpg"
             },
             {
                 "title": "Romsey & The Abbey",
@@ -5026,7 +5026,7 @@ WALKS["broadlands-estate"] = [
                     "The return leg of the walk passes close to the edge of Romsey, where the great Norman tower of Romsey Abbey dominates the town's skyline. The abbey was founded in 907 as a Benedictine house for women and the present church dates largely from the 12th century — one of the finest and best-preserved Norman buildings in Hampshire. The abbey contains the grave of Lord Mountbatten and several important medieval sculptures, including a pre-Conquest Saxon crucifix of great power.",
                     "The path back to the house follows the eastern edge of the parkland, offering views across the lawns to the south front of Broadlands. The Capability Brown composition is perhaps best appreciated from this angle — the way the lawn flows to the river, the way the park trees are arranged to frame the house without hiding it, and the way the river itself becomes a mirror for the sky — all hallmarks of Brown's mature style and all still essentially intact after 250 years.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Romsey_Abbey_from_the_south.jpg/1280px-Romsey_Abbey_from_the_south.jpg"
             },
         ],
     },
@@ -5059,7 +5059,7 @@ WALKS["broadlands-estate"] = [
                     "The circuit begins at the south front of Broadlands House, where Capability Brown's masterpiece of spatial composition spreads before you. The broad lawn flowing down to the river is entirely typical of Brown's approach — he described his goal as 'concealing art by art' — and the seamless transition from mown grass to meadow to river creates the impression that the landscape has always been thus. In fact, this view replaced a formal garden, kitchen gardens, and a walled forecourt, all removed by Brown in the 1760s at considerable expense.",
                     "The fallow deer herd is often visible from this point, grazing the further reaches of the park or standing in the shade of the parkland trees in warm weather. Broadlands has maintained a deer herd since the medieval period, and the present animals are descended from those managed by Capability Brown's successors. The park trees — many of them oaks of considerable age — were also carefully positioned by Brown, who thought of individual trees as elements in a three-dimensional composition.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Broadlands_house.jpg/1280px-Broadlands_house.jpg"
             },
             {
                 "title": "The Walled Garden & Kitchen Garden",
@@ -5067,7 +5067,7 @@ WALKS["broadlands-estate"] = [
                     "The northern section of the circuit passes by the historic walled kitchen garden, a substantial enclosure that served the house for over two centuries. Walled kitchen gardens of this type — built with high brick walls to create warm, sheltered growing conditions for tender fruit and vegetables — were a standard feature of large country houses from the 17th century onwards. The Broadlands kitchen garden is of unusual size, reflecting the appetite of a house that regularly entertained large numbers of guests.",
                     "The garden is now used in part for modern horticultural production and in part as an ornamental space, with the original espaliered fruit trees on the south-facing walls still trained against the warm brick. The old glasshouse range on the north side of the garden, though in partial repair, gives a sense of the scale of operations that supported a Victorian country house establishment.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Broadlands_house.jpg/1280px-Broadlands_house.jpg"
             },
             {
                 "title": "The Deer Park & Avenues",
@@ -5075,7 +5075,7 @@ WALKS["broadlands-estate"] = [
                     "The eastern half of the circuit passes through the deer park proper, where the combination of open grassland and veteran trees creates the classic English parkland landscape that Brown and his contemporaries so admired and so skilfully reproduced. The oldest oaks here are of significant age — their massive, spreading crowns and deeply furrowed bark mark them as trees that were already mature when the estate was landscaped in the 18th century. Several have cavities large enough to shelter small mammals and support colonies of saproxylic beetles.",
                     "A lime avenue planted in the 17th century survives on the eastern approach to the house, its alignment suggesting it was once the principal approach drive. Old avenues of this type are important habitats as well as landscape features: the dense canopy creates a distinctive microclimate, the old lime bark supports specialised lichens, and the summer flowers of the lime attract vast numbers of bees. The sound of a lime avenue in full flower on a warm day — a constant deep hum from thousands of insects — is one of the great countryside experiences.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Broadlands_house.jpg/1280px-Broadlands_house.jpg"
             },
             {
                 "title": "The Test Weir & Riverside",
@@ -5083,7 +5083,7 @@ WALKS["broadlands-estate"] = [
                     "The circuit returns to the river via the historic weir on the southern boundary of the estate, where the Test drops over a stone sill in a broad curve of white water. Weirs of this type were originally built to power mills — the Broadlands mill ground grain for the estate for several centuries — and the current weir structure, though modernised, stands on the footprint of the original. The rush of water over the weir, and the pool below it where the river recovers its composure, is a classic chalk-stream scene.",
                     "The final stretch follows the west bank of the Test back to the house, with the Palladian south front gradually coming into view above the meadow grasses. The building's reflection in the calm water below the weir pool is one of the most beautiful compositions in Hampshire landscape — an accident of geography and design that has been photographed and painted continuously since the 18th century. The walk back to the car park takes five minutes from the house.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/River_Test_at_Stockbridge.jpg/1280px-River_Test_at_Stockbridge.jpg"
             },
         ],
     },
@@ -5098,7 +5098,7 @@ WALKS["stratfield-saye-estate"] = [
         "duration": "1 hr 10 min",
         "difficulty": "Easy",
         "summary": "A peaceful woodland circuit through the managed estate woodlands of Stratfield Saye, where the Duke of Wellington's family have planted and tended these trees since the estate was given by a grateful nation after Waterloo.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [51.3432, -1.0778],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5119,7 +5119,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The walk begins at Stratfield Saye House, a relatively modest Jacobean country house that became one of the most historically significant properties in England when it was purchased by the nation in 1817 and presented to the Duke of Wellington in gratitude for his victory at Waterloo. The Duke had been promised a residence worthy of his achievements — Blenheim Palace was the model in mind — but chose instead this comfortable Hampshire house, which he valued for its proximity to London and the quality of its sport.",
                     "The house has been preserved largely as Wellington left it, and a visit to the interior reveals an intimate portrait of the Duke's tastes and domestic life. The grounds, however, are the subject of this walk, and they tell a different story — one of sustained, careful management by successive generations of the Wellington family, who have planted, felled, and replanted the estate's woodland in a continuous programme that continues today.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "Wellington Woodland",
@@ -5127,7 +5127,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The path enters the main block of estate woodland — a mixed wood of oak, ash, beech, and sweet chestnut that covers the rising ground to the north and west of the house. The woodland is actively managed on a long rotation, and the resulting structure — veteran trees of different ages interspersed with younger growth and periodic clearings — creates a far richer habitat than an even-aged plantation. The rides are wide enough to admit good light, and the ride edges in spring and summer are brilliant with wildflowers.",
                     "The Wellington family's tradition of tree-planting dates from the 1st Duke himself, who is said to have planted trees at Stratfield Saye as a form of relaxation and believed that the right trees in the right places were as important to a landscape as the right troops in the right positions. Whether the anecdote is true or not, the mature woodland that exists today reflects several generations of serious silvicultural attention.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "Copenhagen's Grave",
@@ -5135,7 +5135,7 @@ WALKS["stratfield-saye-estate"] = [
                     "A short diversion from the main woodland path leads to the grave of Copenhagen — the chestnut stallion that carried the Duke of Wellington for the entirety of the Battle of Waterloo, some 17 hours of almost continuous action on 18 June 1815. Copenhagen was brought to Stratfield Saye after the battle and lived here until his death in 1836 at the age of 28. He is buried with full military honours, and his grave is marked by a headstone that has become one of the most visited points on the estate.",
                     "Wellington was devoted to Copenhagen, who was the horse he trusted above all others — sure-footed, steady under fire, and possessed of the stamina to sustain the extraordinary physical demands of a major battle. The Duke is said to have remarked that there may have been many faster horses, but there was never a more perfect animal. The grave, set beneath a spreading oak in a quiet corner of the park, is a genuinely moving place.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "Estate Rides & Return",
@@ -5143,7 +5143,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The final section of the woodland walk follows one of the broad estate rides that were cut through the woodland to allow access for game shooting and estate management. These rides are now as valuable for their ecological function as their practical utility — the combination of sheltered, sunny, linear clearings in continuous woodland creates ideal conditions for a range of butterflies, including silver-washed fritillary and white admiral, both of which are regularly seen in the Stratfield Saye woodland in July and August.",
                     "The ride leads back to the edge of the formal park around the house, where the managed woodland gives way to open parkland with specimen trees and long grass. The south front of Stratfield Saye House comes into view across the park, and the walk back across the lawns provides a final opportunity to appreciate the setting that the Duke of Wellington chose over the grand palaces that were on offer. It is, as he understood, a house that fits its landscape perfectly.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
         ],
     },
@@ -5154,7 +5154,7 @@ WALKS["stratfield-saye-estate"] = [
         "duration": "1 hr 35 min",
         "difficulty": "Moderate",
         "summary": "A varied circuit past the key landmarks of the Stratfield Saye Estate, connecting the house, the church, the River Loddon, and the estate village in a walk that traces the full extent of Wellington's Hampshire domain.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
         "center": [51.3400, -1.0800],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -5176,7 +5176,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The trail sets out from the house itself — a building that rewards careful examination before the walk begins. The exterior is plainer than the grand houses typically associated with ducal estates, and this was entirely deliberate: Wellington preferred comfort and practicality to display, and the alterations he made to Stratfield Saye were directed at warmth, convenience, and a library large enough for his books rather than at architectural grandeur. The verandah on the south front was added by the Duke to allow him to sit outside in all weathers — a soldier's pragmatism applied to country house life.",
                     "The surrounding park retains the formal avenues and arranged vistas of the early 18th-century landscape that preceded Wellington's ownership, and the Duke largely preserved these features while adding the informal woodland planting that characterises the estate today. The combination of formal and informal landscape elements is characteristic of the Regency period, when the pure informality of the 18th-century landscape garden was beginning to give way to the more eclectic Victorian approach.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "The Church of St Mary the Virgin",
@@ -5184,7 +5184,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The trail passes the estate church of St Mary the Virgin, which stands within the park close to the house and has served as the Wellington family's place of worship since the 1st Duke's time. The church contains several important memorials to the Wellington family, including monuments to the 1st Duke's direct descendants and contemporary records of the family's long association with the estate. The churchyard is maintained to a high standard and contains headstones spanning three centuries of estate history.",
                     "Wellington himself attended this church regularly when at Stratfield Saye, and the particular quality of quiet that surrounds it — set apart from the village, within park trees, with the house visible through the gate — gives it a character quite unlike a normal parish church. The building is generally accessible during daylight hours, and the interior contains some fine 18th and 19th century woodwork.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "The River Loddon",
@@ -5192,7 +5192,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The trail's furthest point brings you to the River Loddon, which forms the eastern boundary of the Stratfield Saye Estate. The Loddon is a tributary of the Thames, rising in the chalk of the Berkshire Downs and flowing north through Hampshire and Berkshire in a wide, shallow channel. At Stratfield Saye the river is broad and slow-moving, with extensive reed beds on its margins and mature crack willows leaning over the water in the picturesque manner of a Constable painting.",
                     "The fishing on the Loddon is managed by the estate and produces good catches of pike, perch, and roach. The river boundary was important to Wellington strategically as well as aesthetically — it defined the eastern extent of the estate and provided a natural barrier that required no expensive fencing to maintain. The view west from the riverbank across the flat water meadow to the house on its slight eminence is one of the most composed views on the estate.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
             {
                 "title": "Stratfield Saye Village & Return",
@@ -5200,7 +5200,7 @@ WALKS["stratfield-saye-estate"] = [
                     "The return leg of the trail passes through Stratfield Saye village, a small settlement of estate cottages that has been in the care of the Wellington family since 1817. The cottages are mostly Victorian in character — rebuilt or substantially improved by the 2nd and 3rd Dukes in the fashion of model estate villages of the period — and the result is a remarkably unified and picturesque collection of brick and tile buildings set along a quiet lane. The village pub, the Wellington Arms, is named in honour of the estate's most famous owner.",
                     "The trail completes its circuit by crossing the park back to the house via the western parkland, passing the walled garden and the stable block before returning to the south front. The final approach to the house, across the broad lawn with the Hampshire countryside visible on all sides, gives the full measure of what the nation purchased in 1817 — not merely a building, but an entire landscape shaped by centuries of careful management and now, by Wellington's own choices, inseparable from the story of one of England's greatest soldiers.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/85/Stratfield_Saye_House.jpg/1280px-Stratfield_Saye_House.jpg"
             },
         ],
     },
@@ -5235,7 +5235,7 @@ WALKS["avington-park"] = [
                     "The walk begins at the ornate entrance gates to Avington Park, a Georgian mansion with origins in the 16th century. The estate was famously visited by King Charles II and later owned by John Shelley, brother of the poet Percy Bysshe Shelley.",
                     "The parkland here was landscaped in the English style, with sweeping lawns giving way to the river corridor. Look back for fine views of the house's red-brick facade before descending towards the Itchen.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avington_Park.jpg/1280px-Avington_Park.jpg"
             },
             {
                 "title": "River Itchen Hatches",
@@ -5243,7 +5243,7 @@ WALKS["avington-park"] = [
                     "The River Itchen is one of England's premier chalk streams, fed by springs from the Hampshire downs and renowned for crystal-clear, alkaline water. These ancient hatches — wooden sluice gates — were used to manage the water meadows for centuries.",
                     "Farmers would deliberately flood the meadows in early spring to protect grass shoots from frost and encourage early growth, a practice known as 'drowning'. Today the hatches are maintained for wildlife and river management.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/River_Itchen_Winchester.jpg/1280px-River_Itchen_Winchester.jpg"
             },
             {
                 "title": "Northern Water Meadows",
@@ -5251,7 +5251,7 @@ WALKS["avington-park"] = [
                     "This broad expanse of damp grassland is rich with wetland flora in season, including yellow flag iris, meadowsweet and ragged robin. The meadows attract kingfishers, grey herons, and in summer, populations of brown trout are visible in the clear shallows.",
                     "The chalk stream habitat here is among the rarest in the world; fewer than 200 true chalk streams exist globally and most are found in southern England. The Itchen corridor is a Site of Special Scientific Interest.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/River_Itchen_Winchester.jpg/1280px-River_Itchen_Winchester.jpg"
             },
             {
                 "title": "Itchen Footbridge",
@@ -5259,7 +5259,7 @@ WALKS["avington-park"] = [
                     "A simple wooden footbridge marks the return crossing of the river before the path loops back through parkland to the estate. Pause here to watch for water voles along the banksides and listen for the whistle of a kingfisher passing low over the water.",
                     "The return leg follows a drier ridge path with views across the valley floor, giving a sense of the broader river landscape and the gentle Hampshire countryside that surrounds Avington.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4a/River_Itchen_Winchester.jpg/1280px-River_Itchen_Winchester.jpg"
             },
         ],
     },
@@ -5290,7 +5290,7 @@ WALKS["avington-park"] = [
                     "The south-facing front of Avington House presents a handsome Georgian facade of mellow red brick, enlarged in the late 17th century and further refined in the 18th. The house is privately owned and still used as a family residence, open to the public on selected summer days.",
                     "Charles II is said to have stayed here with Barbara Villiers, Duchess of Cleveland, one of his most celebrated mistresses. The King's connection lent the estate considerable social cachet throughout the Restoration period.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avington_Park.jpg/1280px-Avington_Park.jpg"
             },
             {
                 "title": "The Pleasure Ground Lake",
@@ -5298,7 +5298,7 @@ WALKS["avington-park"] = [
                     "A peaceful ornamental lake sits within the pleasure grounds to the south of the house, created as part of the 18th-century landscape improvements. Willows trail their branches into the still water and Canada geese and mallards are frequent visitors.",
                     "The lake was designed to be glimpsed from the principal reception rooms of the house, forming a key element in the composed landscape view. It connects visually with the broader river valley beyond.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avington_Park.jpg/1280px-Avington_Park.jpg"
             },
             {
                 "title": "Estate Woodland Edge",
@@ -5306,7 +5306,7 @@ WALKS["avington-park"] = [
                     "The southeastern corner of the walk passes along the edge of mixed estate woodland, predominantly composed of oak, ash and field maple. In spring, bluebells carpet the woodland floor beneath the still-bare canopy.",
                     "This belt of woodland shelters the park from prevailing winds and provides habitat for spotted flycatchers, treecreepers, and in autumn, a rich crop of fungi along the decaying deadwood.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avington_Park.jpg/1280px-Avington_Park.jpg"
             },
             {
                 "title": "Park Return & Cedars",
@@ -5314,7 +5314,7 @@ WALKS["avington-park"] = [
                     "The return path crosses the open parkland, which is studded with veteran specimen trees including impressive Cedars of Lebanon that were likely planted in the 18th century. These trees are now among the most characterful features of the estate landscape.",
                     "The broad lawn here gives expansive views back towards the house across grazed parkland, a scene little changed in its essential composition from paintings of the estate made two centuries ago.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c9/Avington_Park.jpg/1280px-Avington_Park.jpg"
             },
         ],
     },
@@ -5328,7 +5328,7 @@ WALKS["exbury-gardens"] = [
         "duration": "55 min",
         "difficulty": "Easy",
         "summary": "A winding path through the spectacular heart of Exbury's 200-acre woodland garden, famous for its outstanding collections of rhododendrons, azaleas and camellias.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Colourful_azaleas_in_Exbury_Gardens_-_geograph.org.uk_-_2260731.jpg",
         "center": [50.7999, -1.3699],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5348,7 +5348,7 @@ WALKS["exbury-gardens"] = [
                     "The walk begins near Exbury's celebrated Rock Garden, constructed in the 1920s by Lionel de Rothschild using locally sourced sandstone. Rothschild transformed this sandy New Forest estate into one of the finest woodland gardens in the world, spending the equivalent of millions of pounds on his horticultural passion.",
                     "The Rock Garden features alpine and dwarf rhododendron species alongside moisture-loving plants, providing a sheltered microclimate that allows tender specimens to thrive further north than would otherwise be possible.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
             {
                 "title": "Rhododendron Dell",
@@ -5356,7 +5356,7 @@ WALKS["exbury-gardens"] = [
                     "The central dell is the showpiece of the garden, with towering rhododendron species and Rothschild-bred hybrid cultivars forming cathedral-like canopies of colour in spring. Exbury holds the National Collection of Rhododendron and is famous for the Exbury Azaleas bred here in the 1930s.",
                     "Lionel de Rothschild crossed thousands of plants over decades, selecting for large flower trusses, intense colour and scent. Many of his named cultivars are now grown in gardens worldwide, making Exbury's genetic contribution to horticulture genuinely global.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Leonardslee_rhododendrons.jpg/1280px-Leonardslee_rhododendrons.jpg"
             },
             {
                 "title": "Camellia Walk",
@@ -5364,7 +5364,7 @@ WALKS["exbury-gardens"] = [
                     "A long corridor of mature camellias frames this section of the path, flowering from late January through to April and providing colour before the main rhododendron season begins. The largest specimens here are over a century old and have grown into small trees.",
                     "The acidic, free-draining sandy soil of the New Forest edge proved ideal for acid-loving ericaceous plants, giving Exbury a natural advantage that Rothschild exploited with great skill. Irrigation was provided by an extensive network of pipes and ponds.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
             {
                 "title": "Ponds & Waterside Planting",
@@ -5372,7 +5372,7 @@ WALKS["exbury-gardens"] = [
                     "A series of interconnected ponds in the lower garden support magnificent waterside planting including Gunnera manicata, candelabra primulas and Iris sibirica, creating a lush contrast to the overhead woodland canopy.",
                     "The ponds also serve as wildlife habitats, with grass snakes, dragonflies and water birds all resident. The reflections of flowering rhododendrons in the still water produce some of the garden's most iconic views in late April and May.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
         ],
     },
@@ -5383,7 +5383,7 @@ WALKS["exbury-gardens"] = [
         "duration": "1 hr 20 min",
         "difficulty": "Easy",
         "summary": "A longer circuit combining the outer reaches of Exbury Gardens with a walk along the tidal Beaulieu River estuary, offering views across the Solent.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [50.7999, -1.3699],
         "zoom": 13,
         "waypoint_zoom": 16,
@@ -5404,7 +5404,7 @@ WALKS["exbury-gardens"] = [
                     "The outer section of the estate transitions from formal woodland garden to rougher meadow and scrub, providing a wildlife corridor between the managed garden and the river estuary beyond. Roe deer frequently graze in these quieter areas early in the morning.",
                     "The contrast between the intensively cultivated inner garden and this more naturalistic outer zone reflects a broader philosophy at Exbury, where the garden gradually dissolves into the surrounding New Forest landscape.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
             {
                 "title": "Beaulieu River Foreshore",
@@ -5412,7 +5412,7 @@ WALKS["exbury-gardens"] = [
                     "The Beaulieu River is one of England's few remaining privately owned rivers, controlled by the Montagu family of Beaulieu Abbey. Its tidal reaches here form a sheltered natural harbour with salt marsh, mudflats and reed beds that are rich in wading birds.",
                     "Redshank, curlew and dunlin probe the mudflats at low tide, while the deeper channels hold flocks of wigeon and teal in winter. On clear days the Solent and the chalk downs of the Isle of Wight are visible across the water.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/Stopham_Bridge.JPG/1280px-Stopham_Bridge.JPG"
             },
             {
                 "title": "Exbury Steam Railway",
@@ -5420,7 +5420,7 @@ WALKS["exbury-gardens"] = [
                     "Passing near the miniature steam railway terminus, this section of the walk offers the chance to see the narrow-gauge steam locomotives that carry visitors around the outer reaches of the estate. The railway runs for nearly two miles through garden and woodland.",
                     "The railway operates steam-hauled trains on a 12.25-inch gauge track, giving access to parts of the estate that would otherwise require a lengthy walk. It has become a beloved feature of Exbury in its own right.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
             {
                 "title": "Garden Return via Home Wood",
@@ -5428,7 +5428,7 @@ WALKS["exbury-gardens"] = [
                     "The homeward leg passes through Home Wood, a mature oak and beech woodland that predates Rothschild's garden and provides the structural backbone of the designed landscape. These veteran trees create the high canopy under which the garden's acid-loving shrubs flourish.",
                     "In autumn this section is particularly atmospheric, with golden oak leaves and the rich colours of liquidambar and Japanese maples planted among the older native trees creating a final seasonal spectacle.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Exbury_Gardens.jpg/1280px-Exbury_Gardens.jpg"
             },
         ],
     },
@@ -5442,7 +5442,7 @@ WALKS["firle-place"] = [
         "duration": "1 hr 50 min",
         "difficulty": "Moderate",
         "summary": "A rewarding climb up the South Downs escarpment from Firle Place to the summit of Firle Beacon, with panoramic views across the Weald and the coast.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8e/Firle_Beacon_-_geograph.org.uk_-_961577.jpg",
         "center": [50.8470, 0.0830],
         "zoom": 13,
         "waypoint_zoom": 16,
@@ -5463,7 +5463,7 @@ WALKS["firle-place"] = [
                     "The walk begins at the entrance to Firle Place, the ancient seat of the Gage family who have lived here for over 500 years. The house, a blend of Tudor origins and Georgian refacing, sits at the foot of the South Downs escarpment in a position of commanding natural drama.",
                     "Sir William Gage is credited with introducing the greengage plum to England from France in the 18th century, naming it after himself. The estate's historic orchards were famous in their day and the name 'greengage' remains in everyday English use.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Firle_Place.jpg/1280px-Firle_Place.jpg"
             },
             {
                 "title": "Escarpment Footpath",
@@ -5471,7 +5471,7 @@ WALKS["firle-place"] = [
                     "The path steepens noticeably as it climbs the chalk scarp face, following a well-worn track through short-cropped downland turf. This ancient grassland is among the most biodiverse habitats in northern Europe, supporting dozens of wildflower species including orchids, harebells and clustered bellflower.",
                     "Look out for chalkhill blue butterflies in summer and the characteristic churring of the nightjar on warm evenings. The combination of thin chalk soil and centuries of sheep grazing has created conditions that few other habitats can match for botanical richness.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
             {
                 "title": "Firle Beacon Summit (217m)",
@@ -5479,7 +5479,7 @@ WALKS["firle-place"] = [
                     "At 217 metres, Firle Beacon is the highest point on the eastern South Downs and one of the finest viewpoints in Sussex. On clear days the view extends from the Isle of Wight in the west to Dungeness in the east, with the English Channel glittering to the south.",
                     "The summit is marked by a triangulation pillar and is a scheduled ancient monument, with evidence of prehistoric activity including a Bronze Age barrow cemetery along the ridge. The South Downs Way long-distance path passes directly over the beacon.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
             {
                 "title": "Ridge Return Path",
@@ -5487,7 +5487,7 @@ WALKS["firle-place"] = [
                     "The descent follows the broad ridge before dropping back down the scarp via a gentler slope, giving sustained views northward across the Low Weald towards the wooded sandstone ridges of the High Weald beyond.",
                     "The return through the lower parkland passes close to a Bronze Age field system, where crop marks in dry summers reveal the ghostly outlines of ancient enclosures. Firle parish has been continuously inhabited for at least four thousand years.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
         ],
     },
@@ -5498,7 +5498,7 @@ WALKS["firle-place"] = [
         "duration": "1 hr",
         "difficulty": "Easy",
         "summary": "A peaceful circuit through Firle's ancient deer park, with views up to the South Downs and the chance to observe the estate's fallow deer herd at close quarters.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.8470, 0.0830],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5518,7 +5518,7 @@ WALKS["firle-place"] = [
                     "The walk follows the line of the original deer park pale, the boundary bank and ditch that enclosed the medieval deer park. Firle's deer park is among the oldest in Sussex, with records of deer management here dating to the medieval period.",
                     "A ha-ha — a sunken wall creating a vertical drop invisible from the house — separates the formal gardens from the park, allowing uninterrupted views of grazing deer from the principal rooms. This device was a key feature of 18th-century landscape design.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Firle_Place.jpg/1280px-Firle_Place.jpg"
             },
             {
                 "title": "Fallow Deer Herd",
@@ -5526,7 +5526,7 @@ WALKS["firle-place"] = [
                     "Firle maintains a herd of fallow deer, the classic parkland species introduced to England by the Normans. The dappled coat of the fallow deer made it particularly prized as an ornamental species in aristocratic parks.",
                     "The deer are most active in early morning and late afternoon. In October, the rut brings dramatic behaviour as bucks compete for dominance, their deep groaning calls carrying far across the park. Approach quietly and remain downwind for the best views.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Firle_Place.jpg/1280px-Firle_Place.jpg"
             },
             {
                 "title": "Park Pond & Willows",
@@ -5534,7 +5534,7 @@ WALKS["firle-place"] = [
                     "An ornamental pond in the eastern section of the park is fringed with ancient willows and provides a watering point for the deer herd. Moorhen, little grebe and mallard breed here, and in winter the pond attracts teal.",
                     "The willows are of great age and have been pollarded repeatedly over generations, creating hollow trunks that offer nesting sites for little owls and stock doves. Their gnarled silhouettes are characteristic of the English parkland scene.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Firle_Place.jpg/1280px-Firle_Place.jpg"
             },
             {
                 "title": "View Back to Firle Place",
@@ -5542,7 +5542,7 @@ WALKS["firle-place"] = [
                     "From the northern arc of the park loop, the full south facade of Firle Place is visible across the open grassland, framed by parkland trees. The house's Georgian front of Caen stone replaced an earlier Tudor exterior and presents a beautifully proportioned composition.",
                     "The interior contains one of the finest private art collections in England, assembled by successive generations of the Gage family and including Old Masters by Van Dyck, Guercino and Rubens. The house opens on selected days through the summer season.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Firle_Place.jpg/1280px-Firle_Place.jpg"
             },
         ],
     },
@@ -5556,7 +5556,7 @@ WALKS["glynde-place"] = [
         "duration": "1 hr 35 min",
         "difficulty": "Moderate",
         "summary": "A memorable walk from the flint estate village of Glynde to the summit of Mount Caburn, an Iron Age hillfort with outstanding views over the Ouse valley and Lewes.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3e/Mount_Caburn_and_its_surroundings.jpg/1280px-Mount_Caburn_and_its_surroundings.jpg",
         "center": [50.8660, 0.0520],
         "zoom": 13,
         "waypoint_zoom": 16,
@@ -5576,7 +5576,7 @@ WALKS["glynde-place"] = [
                     "The walk starts beside Glynde Place, an Elizabethan manor house of flint and Caen stone built around 1569 for William Morley. The house passed through marriage to the Trevor and then the Brand families, whose descendants still live here today.",
                     "The estate village of Glynde is a remarkably intact example of a planned landlord's village, with cottages, a forge and the Church of St Mary the Virgin all built in matching local flint. The church contains fine monuments to the Trevor and Morley families.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
             {
                 "title": "Glynde Reach & Flood Plain",
@@ -5584,7 +5584,7 @@ WALKS["glynde-place"] = [
                     "The path crosses the flat alluvial flood plain of Glynde Reach, a tributary of the River Ouse. This low-lying ground supports wet grassland that is valuable for breeding waders including lapwing and redshank.",
                     "The contrast between the open, level flood plain and the abrupt chalk hill of Mount Caburn rising ahead is one of the most striking pieces of scenery in Sussex. The hill appears almost impossibly steep when viewed from the valley floor.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
             {
                 "title": "Mount Caburn Summit & Hillfort",
@@ -5592,7 +5592,7 @@ WALKS["glynde-place"] = [
                     "Mount Caburn (160m) is topped by one of the best-preserved Iron Age hillforts in the South East, with substantial earthwork ramparts enclosing an area of about 3.5 hectares. The fort was occupied from around 500 BC and saw significant activity during the late Iron Age.",
                     "Excavations have revealed storage pits, post holes and metalwork suggesting intensive occupation. The hillfort was constructed to dominate the Ouse valley crossing. The views today are extraordinary, stretching to the English Channel.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
             {
                 "title": "Downland Ridge Return",
@@ -5600,7 +5600,7 @@ WALKS["glynde-place"] = [
                     "The return follows the chalk ridge before descending via a dry valley back towards Glynde. The ridge-top path passes over chalk grassland that is a National Nature Reserve, managed by grazing to maintain its exceptional botanical diversity.",
                     "Pyramidal orchids, round-headed rampion and autumn gentian all grow here in season. The sound of skylarks is constant overhead in spring and early summer, their song carrying far across the open downland.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/South_Downs_Way_towards_Chanctonbury_Ring.jpg/1280px-South_Downs_Way_towards_Chanctonbury_Ring.jpg"
             },
         ],
     },
@@ -5611,7 +5611,7 @@ WALKS["glynde-place"] = [
         "duration": "45 min",
         "difficulty": "Easy",
         "summary": "A short, easy stroll through the historic flint village of Glynde and across estate meadows, with views up to the South Downs and Mount Caburn.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.8660, 0.0520],
         "zoom": 15,
         "waypoint_zoom": 16,
@@ -5631,7 +5631,7 @@ WALKS["glynde-place"] = [
                     "The flint-built parish church of Glynde dates largely from a rebuilding in 1763, carried out by Richard Trevor, Bishop of Durham and owner of Glynde Place. The classical interior is unusual for a rural Sussex church and reflects the bishop's cultivated taste.",
                     "The churchyard contains the graves of several generations of the Trevor and Brand families, and the church houses notable 17th and 18th-century monuments. It remains an active parish church serving the small Glynde community.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
             {
                 "title": "Glynde Forge & Village Green",
@@ -5639,7 +5639,7 @@ WALKS["glynde-place"] = [
                     "The historic forge at the centre of the village is a reminder of the estate's self-sufficient economy, which once required blacksmiths, wheelwrights and other craft workers to keep a working farm estate functioning. The green and surrounding estate cottages retain their 18th-century character.",
                     "Glynde is also famous in the music world as the nearest village to Glyndebourne, the celebrated opera house set in the grounds of the neighbouring estate, whose summer festival has attracted audiences from around the world since 1934.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
             {
                 "title": "Estate Farmland & Field Margins",
@@ -5647,7 +5647,7 @@ WALKS["glynde-place"] = [
                     "The path crosses arable farmland managed as part of the Glynde Place estate, with wide field margins left for wildlife. These uncultivated strips support populations of grey partridge, yellowhammer and corn bunting — all farmland birds in serious national decline.",
                     "The farming here has been sensitive to conservation priorities, and the estate has worked to restore habitat connectivity across the agricultural landscape. The result is a noticeably richer bird life than many comparable lowland farms.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
             {
                 "title": "View of Glynde Place",
@@ -5655,7 +5655,7 @@ WALKS["glynde-place"] = [
                     "The final section of the walk opens onto a view of Glynde Place from the east, revealing the house's distinctive combination of flint rubble walling and ashlar dressings. The stable block and walled gardens are visible to the right of the main house.",
                     "Glynde Place opens to visitors on selected afternoons during the summer, offering access to the formal gardens, the Great Hall with its collection of portraits, and the Long Gallery with views over the estate.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Glynde_Place.jpg/1280px-Glynde_Place.jpg"
             },
         ],
     },
@@ -5669,7 +5669,7 @@ WALKS["leonardslee-gardens"] = [
         "duration": "1 hr 5 min",
         "difficulty": "Easy",
         "summary": "A descent through the spectacular Loder Valley, the heart of Leonardslee's historic woodland garden, passing a series of lakes with views of rhododendrons reflected in still water.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rhododendrons_or_Camellias_at_Leonardslee_Gardens_%28geograph_2310158%29.jpg",
         "center": [51.0280, -0.2710],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5689,7 +5689,7 @@ WALKS["leonardslee-gardens"] = [
                     "The walk begins at the top of the valley where the garden meets the surrounding West Sussex countryside. In late April and early May, the woodland floor is carpeted with a spectacular bluebell display that has made Leonardslee nationally famous among wildflower enthusiasts.",
                     "Sir Edmund Loder acquired the estate in 1889 and immediately began planting the valley with rare trees and shrubs collected from expeditions to the Himalayas, China and the Americas. His son Gerald continued the work and bred the celebrated Loderi rhododendron hybrids, still regarded as among the finest in the world.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Upper Lake & Rock Garden",
@@ -5697,7 +5697,7 @@ WALKS["leonardslee-gardens"] = [
                     "The first of Leonardslee's seven lakes comes into view here, its still surface reflecting the massed colour of rhododendrons on the opposite bank. The lakes were created by damming the small stream that runs through the valley, and their construction in the 19th century was a considerable feat of engineering.",
                     "The Rock Garden beside the upper lake features dwarf rhododendrons, Japanese maples and a collection of alpines, providing intricate planting interest at close quarters in contrast to the grand scale of the valley views.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Lower Lake & Wallaby Paddocks",
@@ -5705,7 +5705,7 @@ WALKS["leonardslee-gardens"] = [
                     "Near the lower lake, Leonardslee maintains its famous colony of free-roaming wallabies, introduced to the estate in the late Victorian era and now a well-established population of red-necked wallabies. They are most often seen grazing at the woodland edges in the early morning.",
                     "The wallabies are entirely wild and self-managing, surviving Sussex winters without supplementary feeding. Their presence at Leonardslee is one of only a handful of self-sustaining wallaby populations in the UK.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Valley Floor & Return Path",
@@ -5713,7 +5713,7 @@ WALKS["leonardslee-gardens"] = [
                     "The valley floor is the lowest and most sheltered part of the garden, where the mildest microclimate allows the cultivation of tender plants. Tree ferns, gunnera and giant rhododendrons create an almost subtropical atmosphere.",
                     "The return path climbs gently back up through the valley, passing the restored Victorian glasshouses that now house the bonsai collection and alpine house. The hotel and spa facilities at the top of the garden complete the circuit.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
         ],
     },
@@ -5744,7 +5744,7 @@ WALKS["leonardslee-gardens"] = [
                     "The walk begins on the terrace above the main valley, where the hotel and principal garden buildings are situated. This elevated position gives immediate views down into the valley and across to the wooded ridges of the surrounding High Weald landscape.",
                     "Leonardslee underwent a major restoration from 2017 onwards after a period of closure, and the upper terraces and glasshouses have been sensitively restored alongside the creation of a luxury hotel within the Victorian-era buildings.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Wallaby Meadow",
@@ -5752,7 +5752,7 @@ WALKS["leonardslee-gardens"] = [
                     "An open meadow in the northern part of the estate is one of the best places to observe the resident wallaby population in a natural setting. The red-necked wallabies have been at Leonardslee since the 1890s and have adapted entirely to the English climate and flora.",
                     "The herd numbers several dozen animals, and their daily rhythms are predictable enough that patient visitors in the early morning or evening light are almost guaranteed sightings. The sight of wallabies grazing in a Sussex meadow against a backdrop of bluebells remains genuinely extraordinary.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Veteran Oak Woodland",
@@ -5760,7 +5760,7 @@ WALKS["leonardslee-gardens"] = [
                     "The northwestern corner of the estate preserves a section of ancient semi-natural woodland with veteran oak trees of great age and ecological importance. These hollow, open-grown trees support hundreds of invertebrate species dependent on decaying heartwood.",
                     "Some of these oaks predate the garden by several centuries and were already mature when Sir Edmund Loder arrived in 1889. They form the skeleton of the natural woodland around which the planted garden was woven, giving the landscape its sense of deep time.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Weald View & Return",
@@ -5768,7 +5768,7 @@ WALKS["leonardslee-gardens"] = [
                     "A gap in the tree canopy opens a view northward across the forested ridges of the High Weald, a landscape of ancient ironworking, sandstone outcrops and dense mixed woodland that once formed part of the great Forest of Anderida.",
                     "The return path descends gently back through mixed plantings of ornamental shrubs and native trees, reconnecting with the main garden circuit and giving a final opportunity to enjoy the Loder Valley before returning to the garden entrance.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
         ],
     },
@@ -5782,7 +5782,7 @@ WALKS["parham-house"] = [
         "duration": "1 hr 30 min",
         "difficulty": "Moderate",
         "summary": "A sweeping circuit through Parham's ancient deer park with views toward the South Downs escarpment and the medieval Church of St Peter.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg/1200px-Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.9330, -0.4420],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5803,7 +5803,7 @@ WALKS["parham-house"] = [
                     "The walk begins at the forecourt of Parham House, the Elizabethan manor built in 1577 and one of the finest examples of its period in England. The house sits in a sheltered bowl below the South Downs, its warm grey stone reflecting the pale Sussex light.",
                     "The surrounding pleasure grounds contain some of the oldest trees on the estate. Look out for the herd of fallow deer that has roamed this park since Tudor times, often grazing within sight of the house.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "Northern Deer Park Boundary",
@@ -5811,7 +5811,7 @@ WALKS["parham-house"] = [
                     "Reaching the northern edge of the park, the South Downs ridge becomes clearly visible to the south, with Amberley Mount and Rackham Hill forming the horizon. The downland here is an Area of Outstanding Natural Beauty.",
                     "The open parkland supports a rich grassland flora, including cowslips in spring and field scabious in summer. The ancient oak and chestnut trees scattered across the park are estimated to be over 400 years old.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "Western Parkland Boundary",
@@ -5819,7 +5819,7 @@ WALKS["parham-house"] = [
                     "The western boundary of the deer park runs along a low ridge with views back toward the house across the ha-ha. This dry ditch, invisible from the house, kept deer from approaching the formal gardens while preserving the illusion of open parkland.",
                     "The grassland slopes here are managed for wildflowers and support several species of butterfly in summer, including the chalkhill blue, which thrives on the calcareous soils of this part of West Sussex.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "Church of St Peter",
@@ -5827,7 +5827,7 @@ WALKS["parham-house"] = [
                     "The medieval Church of St Peter stands within the park boundary and is one of the few estate churches in Sussex still in regular use. It contains a remarkable collection of Elizabethan needlework and monuments to the Bisshopp and Curzon families.",
                     "The churchyard is surrounded by mature yew trees and offers a quiet resting point before the final stretch back to the house. The path south leads directly across the park to the main entrance.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
         ],
     },
@@ -5858,7 +5858,7 @@ WALKS["parham-house"] = [
                     "The south front of Parham House faces a wide expanse of lawns that slope gently toward the walled garden enclosure. This elevation is the oldest surviving facade of the house, retaining its original mullioned windows and Elizabethan proportions.",
                     "The lawns were historically the site of a formal parterre, traces of which were rediscovered during restoration work in the 1920s. The current informal layout was designed to harmonise with the naturalistic park beyond.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "The Walled Garden",
@@ -5866,7 +5866,7 @@ WALKS["parham-house"] = [
                     "Parham's four-acre walled kitchen garden is one of the largest in private hands in England, enclosed within walls of warm red brick dating from the eighteenth century. It was fully restored from dereliction in the 1980s by Lady Emma Barnard and her family.",
                     "The garden is divided into quadrants by grass paths and contains a working kitchen garden, a cutting flower garden, glasshouses, and a herb border. A central apple tunnel extends the full length of the south-facing wall.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "Pleasure Grounds & Lake",
@@ -5874,7 +5874,7 @@ WALKS["parham-house"] = [
                     "The western pleasure grounds contain an ornamental lake fed by a small chalk stream. The planting here was designed to provide colour and interest across all seasons, with magnolias, azaleas and rhododendrons providing spring colour.",
                     "The lake supports moorhens, little grebes and grey herons, and is fringed with irises, bulrushes and native willows. A wooden footbridge at the southern end makes a fine vantage point for watching wildlife.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
             {
                 "title": "Stable Court",
@@ -5882,7 +5882,7 @@ WALKS["parham-house"] = [
                     "The stable court on the eastern side of the house dates from the late seventeenth century and is built in a similar stone to the main house. It formerly housed the working carriages and horses of the estate and now serves as the estate office and visitor entrance.",
                     "A wisteria of considerable age clothes the south-facing stable wall, and in late spring its cascading mauve flowers are among the most photographed features of the estate. The path returns directly to the house forecourt from here.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/93/Parham_House.jpg/1280px-Parham_House.jpg"
             },
         ],
     },
@@ -5896,7 +5896,7 @@ WALKS["lullingstone-castle"] = [
         "duration": "1 hr 15 min",
         "difficulty": "Easy",
         "summary": "A peaceful riverside walk along the Darent Valley Path from the castle grounds through water meadows and past the site of Lullingstone Roman Villa.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lullingstone1Aerialview.jpg/1280px-Lullingstone1Aerialview.jpg",
         "center": [51.3810, 0.1610],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -5916,7 +5916,7 @@ WALKS["lullingstone-castle"] = [
                     "The walk begins beside the Tudor gatehouse of Lullingstone Castle, built in the early sixteenth century and one of the earliest examples of brick construction in Kent. It has remained the home of the Hart Dyke family for over 500 years and is still lived in today.",
                     "The gatehouse faces directly onto the millpond, which was created in the medieval period and today provides one of the most picturesque approaches to any castle in the county. The River Darent flows through the estate immediately beyond.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "Darent Water Meadows",
@@ -5924,7 +5924,7 @@ WALKS["lullingstone-castle"] = [
                     "The Darent Valley Path follows the east bank of the River Darent through a sequence of lush water meadows that flood naturally in winter, creating important wetland habitat. The river here is clear and chalk-fed, supporting populations of brown trout.",
                     "Kingfishers are frequently seen along this stretch, perching on overhanging willows or flying low over the surface of the water. Grey wagtails and dippers are also regularly recorded in the faster-flowing reaches.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "Roman Villa Viewpoint",
@@ -5932,7 +5932,7 @@ WALKS["lullingstone-castle"] = [
                     "The northern section of the walk passes above the site of Lullingstone Roman Villa, one of the most important Roman sites in Britain, now enclosed in a visitor structure managed by English Heritage. The villa was occupied from the first century AD and contains remarkable intact mosaic floors.",
                     "The surrounding hillside above the villa is ancient chalk downland, and the views from the slope across the Darent valley are among the finest in this part of Kent.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Lullingstone_Roman_Villa.jpg/1280px-Lullingstone_Roman_Villa.jpg"
             },
             {
                 "title": "Mill Pond Return",
@@ -5940,7 +5940,7 @@ WALKS["lullingstone-castle"] = [
                     "The return leg follows the west bank of the river back toward the mill pond that sits immediately in front of the castle gatehouse. The mill itself was recorded in the Domesday Book and continued to operate until the early twentieth century.",
                     "The pond is home to a resident pair of mute swans and a variety of wildfowl, including tufted duck and mallard. In spring, the surrounding bankside vegetation becomes dense with meadowsweet, comfrey and water forget-me-not.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
         ],
     },
@@ -5971,7 +5971,7 @@ WALKS["lullingstone-castle"] = [
                     "The circuit begins on the main lawn in front of the Georgian facade of Lullingstone Castle, which was substantially remodelled in the Queen Anne period while retaining the Tudor gatehouse. The house is still used as the private home of the Hart Dyke family.",
                     "The lawns sweep down to the millpond and are edged with veteran specimen trees including a notable cedar of Lebanon and several large plane trees planted in the eighteenth century.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "The World Garden of Plants",
@@ -5979,7 +5979,7 @@ WALKS["lullingstone-castle"] = [
                     "Tom Hart Dyke conceived the World Garden during an orchid-hunting expedition in the jungles of Panama, where he was held captive for nine months in 2000. On his release he created this extraordinary garden, which maps the world's continents through their native plant species.",
                     "The garden is laid out in the shape of a world map, with each bed representing a continent and planted exclusively with species native to that region. It contains over 8,000 plant species and is one of the most biodiverse gardens in private ownership in Britain.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "St Botolph's Church",
@@ -5987,7 +5987,7 @@ WALKS["lullingstone-castle"] = [
                     "The Church of St Botolph stands in a commanding position above the river within the castle grounds and contains a magnificent collection of medieval stained glass. The churchyard is shaded by ancient yew trees and contains the family tombs of the Hart Dykes spanning several centuries.",
                     "The church tower provides a useful landmark for navigation within the estate and offers a fine elevated view across the Darent valley on a clear day.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "Walled Kitchen Garden",
@@ -5995,7 +5995,7 @@ WALKS["lullingstone-castle"] = [
                     "The walled kitchen garden adjacent to the castle dates from the eighteenth century and was recently brought back into productive use. It now supplies fruit, vegetables and cut flowers to the castle and for sale to visitors.",
                     "The warm brick walls support trained fruit trees including pears, apricots and figs, and the beds within are cultivated using traditional methods. The path through the garden leads back to the gatehouse and the start of the circuit.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
         ],
     },
@@ -6009,7 +6009,7 @@ WALKS["groombridge-place"] = [
         "duration": "1 hr",
         "difficulty": "Easy",
         "summary": "A magical circuit around the moated manor and through the atmospheric woodland that inspired Groombridge's celebrated Enchanted Forest.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Groombridge_Place_and_its_moat_-_geograph.org.uk_-_5406092.jpg",
         "center": [51.1120, 0.1740],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -6029,7 +6029,7 @@ WALKS["groombridge-place"] = [
                     "Groombridge Place is a beautiful seventeenth-century moated manor house built in warm red brick between 1652 and 1674, set on the border of Kent and East Sussex. It replaced an earlier medieval structure on the same island site, encircled by its broad defensive moat.",
                     "The house and its formal gardens were used as the primary filming location for the 1993 film adaptation of The Secret Garden. The manor remains privately owned and its formal gardens were laid out in the style of John Evelyn.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "The Moat & Drawbridge",
@@ -6037,7 +6037,7 @@ WALKS["groombridge-place"] = [
                     "The stone-lined moat that encircles Groombridge Place is fed by a natural spring and maintains a clear, still quality that perfectly reflects the brick facade of the house. A traditional wooden footbridge crosses the moat on the south side.",
                     "The moat supports a rich variety of aquatic plants and wildlife, including water lilies, yellow flag iris and colonies of damselflies in summer. Moorhens and mallards nest in the reeds along the inner bank each spring.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "Enchanted Forest Canopy",
@@ -6045,7 +6045,7 @@ WALKS["groombridge-place"] = [
                     "The woodland to the north of the manor is ancient in origin, dominated by mature oak, sweet chestnut and beech that create a dense and atmospheric canopy. This forest has been managed as coppice woodland for centuries and retains a rich understorey of hazel and holly.",
                     "The Enchanted Forest section of the estate has been developed with sculptural and environmental art installations that respond to the natural landscape. Even outside of these installations, the woodland has a naturally theatrical quality in all seasons.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "The Formal Walled Gardens",
@@ -6053,7 +6053,7 @@ WALKS["groombridge-place"] = [
                     "The walled formal gardens at Groombridge Place are among the finest surviving examples of seventeenth-century garden design in England, divided into a series of enclosed rooms by yew hedging and brick walls.",
                     "The Drunken Garden, with its topiary spirals and leaning columns, is one of the most distinctive features and has been maintained in its original eccentric form for over three centuries. The gardens descend in terraces from the house toward the moat.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
         ],
     },
@@ -6085,7 +6085,7 @@ WALKS["groombridge-place"] = [
                     "The walk leaves the estate and passes through Groombridge village, whose triangular green is lined with attractive tile-hung and weatherboarded cottages typical of the Weald. The village straddles the county boundary, with the church in East Sussex and the village shops in Kent.",
                     "The village was associated with Sir Arthur Conan Doyle, who is said to have based Birlstone Manor in The Valley of Fear on Groombridge Place. The Crown Inn on the green has records dating to the sixteenth century.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
             {
                 "title": "High Rocks Approach",
@@ -6093,7 +6093,7 @@ WALKS["groombridge-place"] = [
                     "The path descends through mixed woodland toward the High Rocks, a series of dramatic Ardingly Sandstone outcrops that rise up to twelve metres above the surrounding woodland floor. The rock was laid down approximately 130 million years ago and has been weathered into overhanging cliffs and caves.",
                     "The woodland surrounding High Rocks is ancient semi-natural in character, with notable populations of wood anemone, bluebell and wild garlic in spring.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/High_Rocks_Kent.jpg/1280px-High_Rocks_Kent.jpg"
             },
             {
                 "title": "High Rocks Formation",
@@ -6101,7 +6101,7 @@ WALKS["groombridge-place"] = [
                     "High Rocks is one of the most significant geological features in the High Weald, designated as a Site of Special Scientific Interest. The rocks were used as a prehistoric hill fort and later as a Victorian pleasure garden, with iron bridges linking the summits.",
                     "The cliffs are now popular with rock climbers, and several established routes of varying difficulty ascend the faces. The flat summits of the higher outcrops provide wide views across the surrounding Wealden forest.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/High_Rocks_Kent.jpg/1280px-High_Rocks_Kent.jpg"
             },
             {
                 "title": "Weald Farmland Return",
@@ -6109,7 +6109,7 @@ WALKS["groombridge-place"] = [
                     "The return route climbs gently back through open farmland on the northern side of the High Rocks ridge, with views opening out across the Wealden plain toward Ashdown Forest.",
                     "The hedgerows alongside the return path support a variety of woodland-edge species including bramble, field maple and spindle, and in autumn the hedgerow fruits provide an important food source for migrating thrushes and redwings.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Groombridge_Place.jpg/1280px-Groombridge_Place.jpg"
             },
         ],
     },
@@ -6144,7 +6144,7 @@ WALKS["englefield-estate"] = [
                     "The walk begins at the estate entrance near Englefield House, which has been held by the Benyon family since the 11th century in various forms, making it one of the longest-held estates in England. The current house dates substantially from an Elizabethan rebuild and later Victorian restorations.",
                     "The deer park surrounding the house has been maintained as open grassland since at least the medieval period and is grazed by a herd of red and fallow deer. The parkland contains veteran oak trees estimated to be over 500 years old.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
             {
                 "title": "Ancient Woodland Interior",
@@ -6152,7 +6152,7 @@ WALKS["englefield-estate"] = [
                     "The path enters the ancient woodland that covers the northern and eastern parts of the 12,000-acre estate. This woodland is recorded in historical documents from the twelfth century and contains many ancient woodland indicators including wild service tree and extensive bluebell carpets in spring.",
                     "The woodland is managed under a long-rotation coppice and standards system that maintains its ecological character while providing sustainable timber. The varied structure of the canopy supports a wide range of woodland birds including tawny owl, nuthatch and all three species of British woodpecker.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
             {
                 "title": "Eastern Deer Park",
@@ -6160,7 +6160,7 @@ WALKS["englefield-estate"] = [
                     "The eastern section of the deer park provides open views across the Berkshire lowland toward the Thames valley. The deer herd is most active in the early morning and late afternoon, often grazing in large groups in the open park.",
                     "During the autumn rut, the red deer stags can be heard bellowing across the park, a remarkable experience within this managed private landscape. Roe deer are also frequently seen in the woodland margins throughout the year.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
             {
                 "title": "Estate Stream & Wetland",
@@ -6168,7 +6168,7 @@ WALKS["englefield-estate"] = [
                     "A small chalk stream crosses the southern part of the estate and has been dammed in several places to create ornamental ponds and wetland areas constructed in the eighteenth century as part of landscape improvements.",
                     "The stream corridor supports kingfishers, grey herons and, in recent years, a breeding pair of little egrets. Otters have been recorded on the stream and the wetland margins are rich in aquatic plants including water crowfoot and greater pond sedge.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
         ],
     },
@@ -6199,7 +6199,7 @@ WALKS["englefield-estate"] = [
                     "The circuit begins at the Home Farm, the operational centre of the Englefield estate for centuries. The current farm buildings are largely Victorian in character, built in the model farm style favoured by the great improving landlords of the nineteenth century.",
                     "The farm remains a working unit producing arable crops and livestock, and forms part of the Benyon family's wider commitment to sustainable land management across the estate.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
             {
                 "title": "Walled Kitchen Garden",
@@ -6207,7 +6207,7 @@ WALKS["englefield-estate"] = [
                     "The walled kitchen garden at Englefield is a substantial Victorian structure covering approximately two acres, enclosed within high brick walls that create a sheltered microclimate. It was comprehensively restored in the early twenty-first century.",
                     "The garden now operates as a productive market garden supplying local restaurants and the estate farm shop. Trained fruit trees cover the south-facing walls, and the central beds produce a wide variety of vegetables, salads and cut flowers throughout the growing season.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Lullingstone_Castle.jpg/1280px-Lullingstone_Castle.jpg"
             },
             {
                 "title": "Estate Village & Church",
@@ -6215,7 +6215,7 @@ WALKS["englefield-estate"] = [
                     "The estate village of Englefield is a well-preserved example of Victorian model village planning, with estate cottages built in a consistent vernacular style using local brick and tile. The village school, almshouses and public house were all provided by the Benyon family.",
                     "St Mark's Church stands at the edge of the village and contains notable monuments to the Benyon and Williams families. The churchyard is maintained as a wildlife-friendly space with uncut grass margins.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
             {
                 "title": "Kitchen Garden Wall Walk",
@@ -6223,7 +6223,7 @@ WALKS["englefield-estate"] = [
                     "The final section of the circuit follows the outside of the kitchen garden wall back toward the house, passing through a mature shrubbery of Victorian planting that includes several unusual specimen shrubs.",
                     "The brick walls of the kitchen garden radiate heat well into the evening in summer, creating a warm corridor that attracts bats foraging for insects at dusk. Several species have been recorded along this stretch, including pipistrelle and noctule.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Englefield_House.jpg/1280px-Englefield_House.jpg"
             },
         ],
     },
@@ -6237,7 +6237,7 @@ WALKS["welford-park"] = [
         "duration": "1 hr 15 min",
         "difficulty": "Easy",
         "summary": "A beautiful riverside walk through the famous snowdrop woodland and along the clear chalk stream of the River Lambourn.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Welford_Park_Snowdrops_1.jpg",
         "center": [51.4290, -1.4100],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -6257,7 +6257,7 @@ WALKS["welford-park"] = [
                     "Welford Park is a fine Queen Anne house built around 1702 and set in a secluded valley of the River Lambourn. The estate opens its snowdrop woodland to the public for just a few weeks each February, making it one of the most anticipated seasonal events in Berkshire.",
                     "The house is approached along a long avenue of lime trees that frames a formal vista toward the south front. The park surrounding the house contains veteran trees and traditional hay meadows managed under traditional farming methods.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Welford_Park_snowdrops.jpg/1280px-Welford_Park_snowdrops.jpg"
             },
             {
                 "title": "The Snowdrop Woodland",
@@ -6265,7 +6265,7 @@ WALKS["welford-park"] = [
                     "The woodland to the north of the house is famous throughout southern England for its extraordinary display of snowdrops, which carpet the floor of the ancient broadleaved woodland in February and early March. The display is believed to result from centuries of naturalisation from garden plantings.",
                     "The woodland is ancient in character, dominated by oak and ash with a rich understorey of hazel, elder and hawthorn. Outside the snowdrop season it supports a diverse woodland flora including wood sorrel, wood anemone and early purple orchid.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Welford_Park_snowdrops.jpg/1280px-Welford_Park_snowdrops.jpg"
             },
             {
                 "title": "River Lambourn Waterside",
@@ -6273,7 +6273,7 @@ WALKS["welford-park"] = [
                     "The River Lambourn is one of England's finest chalk streams, renowned for its clarity, stable water temperature and quality of fly fishing. The river rises at Lambourn on the Berkshire Downs and flows through a broad valley of water meadows before joining the Kennet near Newbury.",
                     "The river corridor supports water voles, otters and brown trout, along with populations of white-clawed crayfish in the cleaner reaches. Chalk streams like the Lambourn represent a globally rare habitat.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/River_Lambourn_at_Welford.jpg/1280px-River_Lambourn_at_Welford.jpg"
             },
             {
                 "title": "Lambourn Valley Meadows",
@@ -6281,7 +6281,7 @@ WALKS["welford-park"] = [
                     "The return leg crosses traditional unimproved hay meadows managed by the estate using methods that encourage wildflowers and invertebrates. In summer these meadows support large populations of meadow brown, skipper and marbled white butterflies.",
                     "The meadows are cut for hay in late July, after the wildflowers have set seed, continuing a cycle of management that has maintained their botanical character for centuries. The path through the meadows offers clear views back toward the house across the parkland.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/River_Lambourn_at_Welford.jpg/1280px-River_Lambourn_at_Welford.jpg"
             },
         ],
     },
@@ -6312,7 +6312,7 @@ WALKS["welford-park"] = [
                     "The walk leaves the parkland through a kissing gate in the park boundary fence and enters the open farmland to the west of the house. Looking back, the lime avenue that approaches the south front of the house is clearly visible, its formal geometry contrasting with the natural landscape beyond.",
                     "The parkland inside supports a small herd of cattle that graze the traditional park sward and help to maintain its diverse grassland flora. The park boundary fence is an old specimen of estate ironwork, maintained in its original Victorian form.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Welford_Park_snowdrops.jpg/1280px-Welford_Park_snowdrops.jpg"
             },
             {
                 "title": "Open Downland Farmland",
@@ -6320,7 +6320,7 @@ WALKS["welford-park"] = [
                     "The western section of the route crosses open arable farmland on the lower chalk, with wide views across the Lambourn valley. The Berkshire Downs rise to the north and east, and on clear days the communications mast on Membury airfield is visible on the skyline.",
                     "The field margins along this section are managed as wildlife strips by the estate, providing important nesting and foraging habitat for farmland birds including grey partridge, yellowhammer and corn bunting.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/River_Lambourn_at_Welford.jpg/1280px-River_Lambourn_at_Welford.jpg"
             },
             {
                 "title": "Southern Estate Boundary",
@@ -6328,7 +6328,7 @@ WALKS["welford-park"] = [
                     "The southern boundary of the estate runs along a mature hedgerow that separates the estate from the neighbouring farmland. This hedgerow is likely of medieval origin, containing a diversity of woody species including hawthorn, blackthorn, dogwood, field maple and wayfaring tree.",
                     "The hedgerow supports an important population of hedgehogs, which forage along its base at night, as well as a variety of small mammals and nesting birds. The base of the hedge retains a strip of species-rich grassland that has never been ploughed.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Welford_Park_snowdrops.jpg/1280px-Welford_Park_snowdrops.jpg"
             },
             {
                 "title": "Parkland Return & House Views",
@@ -6336,7 +6336,7 @@ WALKS["welford-park"] = [
                     "The final section of the loop returns across the parkland toward the east front of the house, passing through a scatter of parkland trees including mature oaks, horse chestnuts and a fine specimen beech. The house comes into view across the open grass as the path descends gently toward the forecourt.",
                     "This eastern approach was the original carriage approach from the direction of Welford village, and the gentle contours of the parkland here reflect deliberate eighteenth-century landscaping. The formal gardens on the north side of the house are visible through the iron railings as the walk concludes.",
                 ],
-                "image_url": ""
+                "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Welford_Park_snowdrops.jpg/1280px-Welford_Park_snowdrops.jpg"
             },
         ],
     },
@@ -6927,6 +6927,659 @@ SHOPPING["cowdray-park"] = [
 
 
 # Local produce available to buy in the area — shown on the combined shopping page
+
+PLACES_OF_INTEREST["albury-estate"] = [
+    {
+        "slug": "albury-park-terraced-gardens",
+        "name": "Albury Park Terraced Gardens",
+        "type": "Historic Garden",
+        "summary": "One of John Evelyn's great landscape commissions, the terraced gardens at Albury Park were laid out in the 1650s on the steep hillside above the house. Seven broad terraces descend through clipped yew hedges, with a tunnel cut through the chalk hill and a remarkable Italianate summerhouse. The planting has been carefully restored and the views across the Tillingbourne Valley are some of the finest in the Surrey Hills.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Albury_park_view_from_gate.jpg/1280px-Albury_park_view_from_gate.jpg",
+    },
+    {
+        "slug": "st-peter-and-paul-albury",
+        "name": "St Peter and St Paul Church",
+        "type": "Medieval Church",
+        "summary": "The medieval parish church at Albury was remodelled by Augustus Pugin in the 1840s for Henry Drummond, creating one of the finest Victorian Gothic interiors in Surrey. The Drummond Mortuary Chapel is a jewel of 19th-century craftsmanship, with elaborate tile work, stained glass, and stonework of exceptional quality. The surrounding churchyard contains the grave of John Wesley's mother-in-law and gives long views across the estate.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Albury_park_view_from_gate.jpg/1280px-Albury_park_view_from_gate.jpg",
+    },
+    {
+        "slug": "newlands-corner",
+        "name": "Newlands Corner",
+        "type": "Viewpoint",
+        "summary": "One of the most celebrated viewpoints in the North Downs, Newlands Corner sits at 175 metres on the chalk escarpment above Albury and offers panoramic views stretching on clear days to the South Downs 30 miles away. The area is managed by Surrey Hills Area of Outstanding Natural Beauty. The Pilgrims' Way — the ancient route linking Winchester to Canterbury — passes directly below.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Albury_park_view_from_gate.jpg/1280px-Albury_park_view_from_gate.jpg",
+    },
+    {
+        "slug": "silent-pool",
+        "name": "The Silent Pool",
+        "type": "Natural Feature",
+        "summary": "A hauntingly beautiful chalk spring lake at the foot of the North Downs, the Silent Pool is surrounded by overhanging beeches and yews and is renowned for the extraordinary clarity of its water. Local legend connects it to King John and a shepherd's daughter. The adjacent Sherbourne Pond and the spring-fed stream create a complete chalk valley ecosystem. Agatha Christie is said to have used the pool as inspiration for a scene in one of her novels.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Albury_park_view_from_gate.jpg/1280px-Albury_park_view_from_gate.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["wotton-estate"] = [
+    {
+        "slug": "wotton-house",
+        "name": "Wotton House",
+        "type": "Historic House",
+        "summary": "The birthplace of John Evelyn, the great diarist and gardener, Wotton House is a handsome early 17th-century manor that was substantially remodelled following a fire in 1694. The house remains in private use but is occasionally opened for specialist tours. Evelyn's famous terraced gardens — one of the earliest landscape designs in England — survive in altered form in the grounds.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/%28C%29_Hayley_Bray_%284%29.jpg/1280px-%28C%29_Hayley_Bray_%284%29.jpg",
+    },
+    {
+        "slug": "leith-hill-tower",
+        "name": "Leith Hill & Tower",
+        "type": "Viewpoint",
+        "summary": "At 294 metres, Leith Hill is the highest point in south-east England. The Gothic tower, built in 1765 by Richard Hull and now managed by the National Trust, adds a further 18 metres. On an exceptionally clear day, the view from the top encompasses both St Paul's Cathedral and the English Channel simultaneously — a prospect covering more than 60 miles. The surrounding woodland is internationally important for nightjar and pied flycatcher.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+    },
+    {
+        "slug": "friday-street-hammer-pond",
+        "name": "Friday Street & Hammer Pond",
+        "type": "Historic Hamlet",
+        "summary": "One of the most secluded and beautiful hamlets in Surrey, Friday Street sits at the bottom of a wooded valley around a millpond created by the medieval iron industry. The Stephan Langton Inn is named after the Archbishop of Canterbury who drafted Magna Carta, allegedly born nearby. The hamlet has no through road and the surrounding beech woodland is especially magnificent in autumn.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+    },
+    {
+        "slug": "st-john-the-baptist-wotton",
+        "name": "St John the Baptist Church, Wotton",
+        "type": "Medieval Church",
+        "summary": "The hilltop church at Wotton is the burial place of John Evelyn, whose elaborate monument stands in the north chapel he built. The round tower is one of only a handful in Surrey and dates from the 12th century. The church retains original medieval floor tiles, good 17th-century woodwork, and views across the Wotton estate that Evelyn himself would have known.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/%28C%29_Hayley_Bray_%284%29.jpg/1280px-%28C%29_Hayley_Bray_%284%29.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["abinger-estate"] = [
+    {
+        "slug": "st-james-abinger-common",
+        "name": "St James the Apostle Church",
+        "type": "Medieval Church",
+        "summary": "The Norman church at Abinger Common is one of the oldest in Surrey, with a remarkable 11th-century crypt — one of only three in the county. The churchyard contains a Domesday survey stone marking the site of the original village, obliterated in the Black Death. The village stocks and whipping post outside the church door are among the best-preserved in England.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+    {
+        "slug": "leith-hill-from-abinger",
+        "name": "Leith Hill",
+        "type": "Viewpoint",
+        "summary": "The highest point in south-east England at 294 metres, Leith Hill is most dramatically approached from the Abinger direction along the ridge path through ancient yew and oak woodland. The National Trust tower offers views to the Channel and London on clear days. The surrounding woodland is part of the Surrey Hills AONB and contains some of the finest natural yew forest in England.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
+    },
+    {
+        "slug": "abinger-roughs",
+        "name": "Abinger Roughs",
+        "type": "Nature Reserve",
+        "summary": "A National Trust woodland and heathland reserve of particular ecological importance, Abinger Roughs contains ancient oak-birch woodland, chalk grassland, and heathy clearings that support a wide range of specialist plants and insects. The path through the roughs follows the spring line at the foot of the Greensand Ridge, passing old coppice stools and veteran trees.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+    {
+        "slug": "coldharbour-village",
+        "name": "Coldharbour Village",
+        "type": "Historic Village",
+        "summary": "Perched at almost 200 metres on the Greensand Ridge, Coldharbour is one of the highest villages in Surrey and retains an unusual atmosphere of remoteness despite being close to Leith Hill. The Plough Inn is a classic Surrey Hills local. The village green, cricket pitch, and surrounding woodland combine to create one of the most authentically rural settings in the county.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["parham-house"] = [
+    {
+        "slug": "parham-deer-park",
+        "name": "Parham Deer Park",
+        "type": "Parkland",
+        "summary": "The ancient deer park at Parham has been continuously grazed since the 14th century and retains the characteristic character of a medieval chase: wide-spreading veteran oaks, rough grass studded with wildflowers, and herds of fallow deer that are among the oldest established herds in Sussex. The park extends to over 800 acres and forms a distinctive landscape buffer between the house and the South Downs escarpment.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg/1200px-Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg",
+    },
+    {
+        "slug": "parham-walled-garden",
+        "name": "The Walled Garden",
+        "type": "Historic Garden",
+        "summary": "Parham's four-acre walled garden dates from 1796 and is one of the most productive historic kitchen gardens still managed in the traditional manner. Cut flowers, vegetables, soft fruit, and herbs are all grown here, supplying both the house and the garden shop. The borders are beautifully maintained and the whole enclosed space retains its original Georgian character, with espaliered fruit trees on the old brick walls.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg/1200px-Cedar_and_east_face_of_Parham_House%2C_West_Sussex%2C_England.jpg",
+    },
+    {
+        "slug": "chanctonbury-ring",
+        "name": "Chanctonbury Ring",
+        "type": "Archaeological Site",
+        "summary": "The Iron Age hill fort on the South Downs above Parham, crowned by a distinctive clump of beeches planted in 1760, is one of the most atmospheric landmarks in Sussex. The circular earthwork encloses a Romano-Celtic temple, and the views from the ridge in both directions — north to the Weald and south to the sea — are among the finest in England. The trees were severely damaged in the 1987 storm but the replanting is now maturing beautifully.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
+    },
+    {
+        "slug": "amberley-village",
+        "name": "Amberley Village & Castle",
+        "type": "Historic Village",
+        "summary": "One of the prettiest villages in West Sussex, Amberley sits below the chalk escarpment at the point where the Arun Valley cuts through the Downs. The castle — actually a fortified medieval bishop's palace — dominates the village, while thatched cottages and winding lanes create an exceptionally coherent historic streetscape. The nearby Amberley Museum tells the story of the rural crafts and industries of the Sussex Weald.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["leonardslee-gardens"] = [
+    {
+        "slug": "leonardslee-rhododendrons",
+        "name": "The Rhododendron Collection",
+        "type": "Garden Collection",
+        "summary": "Leonardslee holds one of the finest collections of species rhododendrons and hybrid azaleas in the world, assembled over 130 years by successive generations of the Loder family. The valley garden reaches its extraordinary peak in late April and May when the massed blooms create a tapestry of colour reflected in the seven hammer ponds below. The collection includes many first-generation Loder hybrids raised here in the 1890s and specimens introduced direct from Himalayan plant-hunting expeditions.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "leonardslee-hammer-ponds",
+        "name": "The Hammer Ponds",
+        "type": "Historic Waterway",
+        "summary": "The seven ponds at Leonardslee are former hammer ponds — reservoirs created to power the water wheels of the medieval Weald iron industry. The largest date from the 16th century and are now among the most beautiful ornamental lakes in the south of England, their banks clothed in ancient rhododendrons and towering conifers. Wallabies have roamed freely around the ponds since the 1890s.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "leonardslee-wallabies",
+        "name": "The Wallaby Colony",
+        "type": "Wildlife",
+        "summary": "One of the oldest and most unusual free-roaming wallaby populations in Europe lives among the woodland and ponds at Leonardslee. The colony was established in the 1890s when Sir Edmund Loder introduced a small number of Bennett's wallabies from Australia. Their descendants — now around 50 animals — roam the garden freely and can often be seen grazing on the meadow lawns in the early morning or evening.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "nymans-garden-nearby",
+        "name": "Nymans Garden (National Trust)",
+        "type": "Historic Garden",
+        "summary": "One of the National Trust's finest gardens, Nymans at Handcross is just four miles from Leonardslee and makes an outstanding companion visit. The romantic ruins of the burnt-out Nymans House form a backdrop for exceptional collections of rare and tender shrubs, old-fashioned roses, and woodland gardens. The Nymans collection of hybrid magnolias is internationally regarded.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+]
+
+PLACES_OF_INTEREST["firle-place"] = [
+    {
+        "slug": "firle-beacon",
+        "name": "Firle Beacon",
+        "type": "Viewpoint",
+        "summary": "At 217 metres, Firle Beacon is the highest point on this stretch of the South Downs and offers one of the most complete panoramas in the south of England: the English Channel to the south, the Weald to the north, Lewes and the Ouse Valley to the east, and the broad plains of the Cuckmere to the west. The Bronze Age burial mounds along the ridge are among the finest on the Downs.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+    },
+    {
+        "slug": "charleston-farmhouse",
+        "name": "Charleston Farmhouse",
+        "type": "Historic House & Museum",
+        "summary": "The country retreat of Vanessa Bell and Duncan Grant, and the heart of the Bloomsbury Group's Sussex existence, Charleston Farmhouse is one of the most extraordinary artistic interiors in Britain. Every surface — walls, furniture, textiles, ceramics — was decorated by Bell and Grant in their distinctive Post-Impressionist manner. The walled garden has been restored to its 1920s character. Open to the public from April to October.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+    },
+    {
+        "slug": "berwick-church-murals",
+        "name": "Berwick Church",
+        "type": "Historic Church",
+        "summary": "The small flint church at Berwick contains a remarkable set of mid-20th-century murals by Duncan Grant, Vanessa Bell and Quentin Bell, commissioned in 1941 as wartime decorations. The result is one of the most distinctive and beautiful Victorian-era church interiors in the country — Bloomsbury Group painting in a medieval setting. The church is free to enter and the murals are well lit.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+    },
+    {
+        "slug": "glyndebourne-opera-house",
+        "name": "Glyndebourne Opera House",
+        "type": "Arts Venue",
+        "summary": "One of the world's great opera houses, Glyndebourne sits in the Sussex Downs three miles from Firle. The famous summer festival (May to August) is an incomparable experience — world-class opera performed in an extraordinary setting, with a long dinner interval for picnicking on the lawn. Tickets are highly sought-after, but day tickets and returns are sometimes available. The autumn festival offers a more accessible alternative.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/06/Firle_Place%2C_Firle%2C_East_Sussex_-_geograph.org.uk_-_4176034.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["glynde-place"] = [
+    {
+        "slug": "mount-caburn",
+        "name": "Mount Caburn",
+        "type": "Archaeological Site & Viewpoint",
+        "summary": "The steep chalk hill rising behind Glynde village is the site of one of the most dramatic Iron Age hill forts in Sussex. The banks and ditches of the Caburn fort, built around 500 BC and occupied for 800 years, are still clearly visible on the summit, which offers commanding views across the Ouse Valley, towards Lewes and south to the sea. The hillside is managed as a chalk grassland nature reserve with an extraordinary range of downland wildflowers.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+    },
+    {
+        "slug": "glynde-forge",
+        "name": "Glynde Forge",
+        "type": "Working Craft",
+        "summary": "The village of Glynde has maintained a working forge since the medieval period. The current forge, adjacent to the village hall, continues to produce decorative ironwork in the traditional manner. The distinctive Glynde estate architecture — flint walls, red brick dressings, Georgian proportions — visible throughout the village reflects the long history of this estate village.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+    },
+    {
+        "slug": "glyndebourne-near-glynde",
+        "name": "Glyndebourne Opera House",
+        "type": "Arts Venue",
+        "summary": "The world-famous summer opera festival at Glyndebourne, just one mile from Glynde Place, combines performances of international standing with the picnicking rituals of an English summer evening. The long interval is taken on the lawns overlooking the Downs; the audience dresses formally and brings elaborate picnics. Tickets should be booked months in advance for the main festival; the autumn season is more accessible.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+    },
+    {
+        "slug": "lewes-town",
+        "name": "Lewes",
+        "type": "Historic Town",
+        "summary": "The county town of East Sussex, just four miles from Glynde, is one of the most rewarding small towns in England. The Norman castle, the High Street of Georgian and medieval buildings, the independent shops and bookshops, the Harvey's brewery, and the tradition of the world's most spectacular bonfire night celebration on 5 November all make Lewes an exceptional destination. The town also has important connections to Thomas Paine and the Bloomsbury Group.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Glynde_Place_Sussex_1880_edited.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["lullingstone-castle"] = [
+    {
+        "slug": "lullingstone-roman-villa",
+        "name": "Lullingstone Roman Villa",
+        "type": "Archaeological Site",
+        "summary": "One of the most important Roman sites in Britain, Lullingstone Villa was occupied from the 1st to the 4th century AD and contains the finest surviving 4th-century Christian chapel in Roman Britain — wall paintings depicting figures in prayer represent some of the earliest Christian images found north of the Alps. The villa's remarkable mosaics, including the abduction of Europa, are among the finest Roman floor mosaics in the country. Managed by English Heritage.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+    },
+    {
+        "slug": "lullingstone-world-garden",
+        "name": "The World Garden of Plants",
+        "type": "Botanical Garden",
+        "summary": "Tom Hart Dyke's extraordinary World Garden at Lullingstone Castle plots the world's plant diversity on a map of the globe, with specimens from every continent arranged according to their continent of origin. Hart Dyke was held hostage by guerrillas in Panama in 2000 while collecting plants; the garden is the direct result of that experience. Over 6,000 species are represented in a garden of genuine botanical significance and great visual beauty.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+    },
+    {
+        "slug": "eynsford-castle",
+        "name": "Eynsford Castle",
+        "type": "Medieval Castle",
+        "summary": "The well-preserved flint walls of Eynsford Castle, a Norman keep dating from the 11th century, stand in the attractive village of Eynsford just two miles from Lullingstone. The castle was the seat of the de Eynsford family, who famously came into conflict with Archbishop Thomas Becket in the 12th century. The nearby ford across the Darent — one of the few surviving public fords in Kent — is a picturesque scene.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+    },
+    {
+        "slug": "darent-valley-path",
+        "name": "The Darent Valley",
+        "type": "Walking Route",
+        "summary": "The River Darent cuts a chalk valley through the North Downs between Westerham and Dartford, and the Darent Valley Path follows its course for 19 miles through some of the most unspoilt countryside in Kent. Lullingstone lies midway along the route, with the Roman Villa and World Garden both accessible directly from the path. Swallows and kingfishers are regularly seen along the river.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+    },
+]
+
+PLACES_OF_INTEREST["groombridge-place"] = [
+    {
+        "slug": "groombridge-enchanted-forest",
+        "name": "The Enchanted Forest",
+        "type": "Woodland Garden",
+        "summary": "The 200 acres of ancient woodland above the formal gardens at Groombridge have been transformed into one of the most imaginative woodland experiences in England. Treetop walkways, carved sculptures, woodland play areas, and themed clearings create a landscape of genuine wonder, particularly for children. The forest is at its most magical in spring when the bluebells carpet the ancient beech and oak woodland below the sandstone outcrops.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+    },
+    {
+        "slug": "high-rocks",
+        "name": "High Rocks",
+        "type": "Natural Feature",
+        "summary": "One mile from Groombridge, High Rocks is an extraordinary outcrop of Tunbridge Wells Sandstone, with massive natural rock formations up to 20 metres high draped in ancient woodland. The site was occupied in the Mesolithic period and later became a fashionable Georgian promenade; the Victorian tea rooms survive. A series of licensed routes allows technical rock climbing on the overhanging sandstone faces.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+    },
+    {
+        "slug": "royal-tunbridge-wells",
+        "name": "Royal Tunbridge Wells",
+        "type": "Historic Spa Town",
+        "summary": "The elegant spa town of Royal Tunbridge Wells is four miles from Groombridge and offers excellent shopping, restaurants, and the extraordinary Pantiles — a colonnaded promenade dating from the 17th century when the chalybeate spring discovered here made the town fashionable. The town retains a handsome Victorian character and has excellent independent shops, cafes, and a good theatre.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+    },
+    {
+        "slug": "spa-valley-railway",
+        "name": "Spa Valley Railway",
+        "type": "Heritage Railway",
+        "summary": "The Spa Valley Railway operates steam and vintage diesel locomotives between Royal Tunbridge Wells West station and Eridge, passing directly through the Groombridge area. The line was originally part of the LBSCR and closed in 1985; it has since been restored by volunteers and now carries around 50,000 passengers a year through some of the most attractive countryside in Kent and East Sussex.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["exbury-gardens"] = [
+    {
+        "slug": "exbury-rhododendron-collection",
+        "name": "The Rhododendron & Azalea Collection",
+        "type": "Garden Collection",
+        "summary": "Created by Lionel de Rothschild from 1919 onwards, the Exbury collection is regarded as the greatest private planting of rhododendrons and azaleas in the world. Over 1,000 hybrid varieties were bred here, including the famous Exbury and Knap Hill azaleas that transformed ornamental gardening in the 20th century. The 200 acres of woodland garden reach their peak in April and May, when the display is genuinely overwhelming.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+    },
+    {
+        "slug": "exbury-steam-railway",
+        "name": "Exbury Steam Railway",
+        "type": "Heritage Railway",
+        "summary": "A delightful 12-inch gauge steam railway winds through the woodland gardens of Exbury, carrying visitors on a 1.25-mile circuit through the azalea and rhododendron plantings. The line was built in the 1990s using locomotives originally constructed for industrial use, and the combination of miniature steam train and spectacular garden scenery is a uniquely charming experience, particularly popular with families.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+    },
+    {
+        "slug": "bucklers-hard",
+        "name": "Buckler's Hard",
+        "type": "Historic Village",
+        "summary": "Two miles from Exbury, Buckler's Hard is one of the most perfectly preserved 18th-century industrial villages in England. The wide main street — really two rows of brick labourers' cottages facing a central green — runs straight down to the Beaulieu River, where ships for the Royal Navy were built from New Forest oak. Three of Nelson's ships at Trafalgar were built here. The maritime museum and riverside walks are excellent.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
+    },
+    {
+        "slug": "beaulieu-abbey-village",
+        "name": "Beaulieu Abbey & Village",
+        "type": "Historic Site",
+        "summary": "The village of Beaulieu, two miles from Exbury, is centred on the ruins of a Cistercian abbey founded by King John in 1204. The abbey gatehouse became Palace House, now the home of Lord Montagu, and the refectory became the parish church — a rare conversion in English ecclesiastical architecture. The adjacent National Motor Museum, with its extraordinary collection of over 250 vehicles, makes Beaulieu one of the most varied half-day visits in Hampshire.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["broadlands-estate"] = [
+    {
+        "slug": "broadlands-house",
+        "name": "Broadlands House",
+        "type": "Historic House",
+        "summary": "The elegant Palladian house at Broadlands was the home of Lord Palmerston, Prime Minister to Queen Victoria, and later of Earl Mountbatten of Burma, Supreme Allied Commander and last Viceroy of India. The house is open on select dates and contains an extraordinary collection of Mountbatten memorabilia, portraits by Reynolds and Van Dyck, and some of the finest plasterwork by Joseph Rose in England. The park, designed by Capability Brown, sweeps down to the River Test.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Broadlands.jpg/1280px-Broadlands.jpg",
+    },
+    {
+        "slug": "romsey-abbey",
+        "name": "Romsey Abbey",
+        "type": "Medieval Church",
+        "summary": "One of the finest Norman churches in England, Romsey Abbey was founded as a Benedictine nunnery in 907 AD and the current building dates largely from the 12th century. The interior is strikingly complete — vast, austere, and beautiful — with exceptional Norman arcading and two Saxon roods. The Abbey also contains a memorial to Lord Mountbatten, who is buried in the family vault. The surrounding market town of Romsey is well worth exploring.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
+    },
+    {
+        "slug": "river-test-fishing",
+        "name": "The River Test",
+        "type": "Natural Feature",
+        "summary": "The Test is England's most celebrated chalk stream and one of the birthplaces of modern dry-fly fishing. The river rises in the chalk at Overton and flows 40 miles to Southampton Water, maintaining the crystal clarity, steady flow, and abundant insect life that make chalk streams the most productive and beautiful freshwater habitats in the world. Brown trout, grayling, and water voles inhabit the river through the Broadlands estate.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
+    },
+    {
+        "slug": "mottisfont-abbey",
+        "name": "Mottisfont Abbey (National Trust)",
+        "type": "Historic House & Garden",
+        "summary": "Eight miles upstream from Broadlands, Mottisfont Abbey is famous for its National Collection of old-fashioned roses — over 300 varieties bloom in the walled garden in June, creating one of the most beautiful and fragrant garden spectacles in England. The house contains murals by Rex Whistler and the estate grounds extend through ancient woodland to the pure chalk springs that gave the place its name.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["stratfield-saye-estate"] = [
+    {
+        "slug": "stratfield-saye-house",
+        "name": "Stratfield Saye House",
+        "type": "Historic House",
+        "summary": "Stratfield Saye was given to the Duke of Wellington by a grateful nation following the Battle of Waterloo in 1815 and has remained in the Wellington family ever since. The house retains an unusually personal atmosphere — the duke's own library, personal possessions, and furnishings are preserved much as he left them. Copenhagen, his favourite charger at Waterloo, is buried in the grounds with a headstone erected by the duke himself.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+    },
+    {
+        "slug": "copenhagen-grave",
+        "name": "Copenhagen's Grave",
+        "type": "Historic Monument",
+        "summary": "In the grounds of Stratfield Saye House lies the grave of Copenhagen, the chestnut thoroughbred who carried the Duke of Wellington for 16 hours during the Battle of Waterloo. A full military funeral was given at his death in 1836, and the duke himself is reported to have wept. The headstone, inscribed with his name and a brief tribute, stands in a quiet corner of the park near the river.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+    },
+    {
+        "slug": "silchester-roman-amphitheatre",
+        "name": "Silchester Roman Town",
+        "type": "Archaeological Site",
+        "summary": "Calleva Atrebatum was one of the most important towns in Roman Britain and uniquely has never been built over since its abandonment in the 5th century. The entire circuit of its defensive walls stands to full height in many places, enclosing a large field where the street grid and buildings remain as earthworks. The amphitheatre is particularly impressive. English Heritage manages the site and the adjacent museum.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+    },
+    {
+        "slug": "the-vyne-nt",
+        "name": "The Vyne (National Trust)",
+        "type": "Historic House & Garden",
+        "summary": "Four miles from Stratfield Saye, The Vyne is a beautiful Tudor house with one of the earliest classical porticoes in England, added in 1654. The house passed through the hands of several distinguished families and contains exceptional Tudor linenfold panelling, a Flemish stained glass chapel, and furniture associated with Queen Elizabeth I's visits. The walled garden and grounds extend to a peaceful lake.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/eb/Stratfield_Saye_House_-_geograph.org.uk_-_1423277.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["avington-park"] = [
+    {
+        "slug": "avington-park-house",
+        "name": "Avington Park",
+        "type": "Historic House",
+        "summary": "One of the finest William and Mary houses in England, Avington Park was a favourite retreat of Charles II, who entertained his mistresses here, and later of George IV before his accession. The remarkable state rooms retain their original early 18th-century plasterwork and furnishings largely intact — the saloon is one of the most beautiful rooms in Hampshire. Open for guided tours on select summer Sundays.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Avington_Park_-_geograph.org.uk_-_899263.jpg",
+    },
+    {
+        "slug": "river-itchen",
+        "name": "The River Itchen",
+        "type": "Natural Feature",
+        "summary": "The Itchen is one of England's great chalk streams, rising near Alresford and flowing 28 miles to Southampton Water. The reach through the Avington estate is among its most beautiful — gin-clear water over gravel beds, fringed with water meadows, crowfoot, and watercress. The river at Avington was the favourite fishing ground of Izaak Walton, who described it as the best trout stream in England in The Compleat Angler.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Avington_Park_-_geograph.org.uk_-_899263.jpg",
+    },
+    {
+        "slug": "winchester-city",
+        "name": "Winchester",
+        "type": "Historic City",
+        "summary": "The ancient capital of Wessex and England, Winchester is five miles from Avington Park and contains a wealth of historic buildings, including the magnificent Gothic Cathedral — the longest medieval cathedral in Europe — the 13th-century Great Hall with its Arthurian Round Table, the College founded by William of Wykeham in 1382, and the medieval streets of the old city. Winchester is one of the most rewarding small cities in England.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Avington_Park_-_geograph.org.uk_-_899263.jpg",
+    },
+    {
+        "slug": "alresford",
+        "name": "New Alresford",
+        "type": "Historic Town",
+        "summary": "The attractive Georgian market town of New Alresford, four miles from Avington, was created in the 13th century as a planned wool town by the Bishops of Winchester. Broad Street is one of the most handsome Georgian streets in Hampshire. The town is the northern terminus of the Watercress Line — the Mid-Hants Railway — which runs steam trains south to Alton through the chalk hills.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/0a/Avington_Park_-_geograph.org.uk_-_899263.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["englefield-estate"] = [
+    {
+        "slug": "englefield-house-gardens",
+        "name": "Englefield House Gardens",
+        "type": "Historic Garden",
+        "summary": "The terraced gardens at Englefield House cascade down the hillside in a series of formal terraces with long views across the Thames Valley. The deer park, grazed by a herd of white fallow deer that have been at Englefield since the 18th century, sweeps around the house to the churchyard of St Mark's. The gardens are open on Monday afternoons throughout summer and the parkland paths are accessible at other times.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+    },
+    {
+        "slug": "pangbourne-thames",
+        "name": "Pangbourne & the River Thames",
+        "type": "Riverside Village",
+        "summary": "The attractive village of Pangbourne sits at the confluence of the Pang and Thames and has a long literary connection — Kenneth Grahame lived here and the Thames at Pangbourne is thought to have inspired stretches of The Wind in the Willows. The river is broad and beautiful at this point, with good walking on both banks and regular boats. The town has excellent independent shops and cafes.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+    },
+    {
+        "slug": "basildon-park",
+        "name": "Basildon Park (National Trust)",
+        "type": "Historic House & Garden",
+        "summary": "One of the finest 18th-century Palladian houses in Berkshire, Basildon Park was built for Sir Francis Sykes and is now managed by the National Trust. The house featured prominently as Netherfield in the 2005 BBC adaptation of Pride and Prejudice. The state rooms are beautifully furnished with 18th-century pieces; the surrounding parkland walks are extensive and the views across the Thames Valley from the terrace are exceptional.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+    },
+    {
+        "slug": "beale-park",
+        "name": "Beale Wildlife Park",
+        "type": "Wildlife Park",
+        "summary": "Beale Wildlife Park occupies a beautiful stretch of the Thames flood meadows near Pangbourne and houses an eclectic collection of exotic birds, red squirrels, deer, and alpacas against the backdrop of the river. The park hosts model boat weekends and other family events and has good riverside walks. The combination of wildlife, river, and meadow makes it a rewarding family half-day.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+    },
+]
+
+PLACES_OF_INTEREST["welford-park"] = [
+    {
+        "slug": "welford-snowdrops",
+        "name": "The Snowdrop Spectacle",
+        "type": "Seasonal Garden Event",
+        "summary": "For six weeks each February, Welford Park opens its woodlands to reveal one of the finest snowdrop displays in England. Thousands of Galanthus nivalis carpet the woodland floor beneath ancient yews and beeches in a spectacle that draws visitors from across the country. The combination of the historic house, the winding paths, and the sea of white flowers makes this one of the most photographed garden events of the English winter calendar.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "lambourn-valley-racing",
+        "name": "Lambourn Valley",
+        "type": "Horse Racing Country",
+        "summary": "The Lambourn Valley is the most concentrated thoroughbred horse-training area in Britain, with over 2,000 racehorses in training in and around the villages of Lambourn and East Garston. The early morning exercise lots on the downland gallops are a remarkable sight, and the village of Lambourn has a wealth of history in its ancient church, market square, and racing stables. The Valley of the Racehorse, as it is known, has been breeding champion horses since the 18th century.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "aldworth-ancient-oaks",
+        "name": "The Aldworth Giants",
+        "type": "Historic Church & Monument",
+        "summary": "St Mary's Church at Aldworth, just over the Berkshire Downs, contains nine of the finest medieval effigies in England — stone figures of the de la Beche family dating from the 14th century, known locally as the Aldworth Giants for their extraordinary size. The church is set in a picturesque downland village with an ancient yew tree in the churchyard that is believed to be over 1,000 years old.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "hungerford-town",
+        "name": "Hungerford",
+        "type": "Historic Market Town",
+        "summary": "The attractive Berkshire market town of Hungerford, four miles from Welford Park, has an exceptional concentration of antique dealers and independent shops along its long main street. The town straddles the Kennet and Avon Canal at a point where the river, canal, and water meadows create a beautiful setting. The Hocktide ceremony — a unique annual ritual in which the Constable's tithing men collect a penny from every household — takes place on the Tuesday after Easter.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+]
+
+PLACES_TO_EAT["abinger-estate"] = [
+    {
+        "slug": "stephan-langton-inn",
+        "name": "The Stephan Langton Inn",
+        "type": "pub",
+        "rating": 4.5,
+        "guide_price": "£16",
+        "open_today": "12:00–23:00",
+        "distance": "1.2 km",
+        "summary": "Named after the Archbishop of Canterbury who drafted Magna Carta — allegedly born in the hamlet of Friday Street — this remote Surrey Hills pub is one of the most characterful in the county. It sits beside a medieval hammer pond at the bottom of a wooded valley with no through road; the sense of seclusion is remarkable. The food is honest pub cooking done well: local meat pies, ploughman's, and a good selection of ales from Surrey microbreweries. The terrace overlooking the pond is perfect in summer.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+    {
+        "slug": "abinger-hatch-pub",
+        "name": "The Abinger Hatch",
+        "type": "pub",
+        "rating": 4.2,
+        "guide_price": "£14",
+        "open_today": "11:00–23:00",
+        "distance": "0.8 km",
+        "summary": "The village pub at Abinger Common is a classic Surrey Hills local, serving well-kept ales and straightforward food to walkers, cyclists, and estate workers alike. The 16th-century building has low beams, a large open fire, and a pleasant garden. The proximity to the Tillingbourne valley paths and the Leith Hill cycling network makes it a natural stopping point for those exploring the Surrey Hills AONB.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+    {
+        "slug": "volunteer-sutton-abinger",
+        "name": "The Volunteer, Sutton Abinger",
+        "type": "pub",
+        "rating": 4.1,
+        "guide_price": "£15",
+        "open_today": "12:00–22:00",
+        "distance": "2.1 km",
+        "summary": "A handsome Victorian pub in the hamlet of Sutton Abinger, the Volunteer is set on the green with long views across the valley. Local ales, freshly cooked bar food, and a friendly local atmosphere characterise this good, unpretentious village pub. The Sunday roast is particularly well-regarded among the local community.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+    {
+        "slug": "plough-coldharbour",
+        "name": "The Plough Inn, Coldharbour",
+        "type": "pub",
+        "rating": 4.3,
+        "guide_price": "£15",
+        "open_today": "11:30–22:30",
+        "distance": "3.4 km",
+        "summary": "At almost 200 metres, the Plough at Coldharbour claims to be one of the highest pubs in Surrey and certainly has some of the best views across the Weald. The long walk up through Leith Hill woodland makes the arrival all the more satisfying. Leith Hill Brewery ales are served on handpump alongside honest, seasonal food. A wood-burning stove and exposed beams give the interior real character.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Abinger_Common_Fields.jpg",
+    },
+]
+
+PLACES_TO_EAT["leonardslee-gardens"] = [
+    {
+        "slug": "leonardslee-restaurant",
+        "name": "Restaurant at Leonardslee",
+        "type": "restaurant",
+        "rating": 4.6,
+        "guide_price": "£55",
+        "open_today": "12:00–14:30, 18:00–21:00",
+        "distance": "on estate",
+        "summary": "The restaurant at Leonardslee is one of the best in West Sussex, occupying a beautifully restored Victorian stable block and offering modern British cuisine with produce from the estate kitchen garden. The eight-course tasting menu is the recommended way to experience the kitchen at its best, with wine pairings from an outstanding cellar that includes several prestige Burgundy and Rhone selections. Booking essential.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "leonardslee-garden-kitchen",
+        "name": "The Garden Kitchen",
+        "type": "cafe",
+        "rating": 4.3,
+        "guide_price": "£12",
+        "open_today": "10:00–17:00",
+        "distance": "on estate",
+        "summary": "The casual daytime cafe at Leonardslee serves excellent coffee, homemade cakes, light lunches, and afternoon teas in a light, relaxed setting. Sandwiches, soups, and salads use garden produce where possible; the cake selection changes daily. The terrace overlooking the upper lake makes this an ideal stopping point midway through a garden visit.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "white-hart-lower-beeding",
+        "name": "The White Hart, Lower Beeding",
+        "type": "pub",
+        "rating": 4.4,
+        "guide_price": "£22",
+        "open_today": "12:00–22:00",
+        "distance": "0.5 km",
+        "summary": "The gastro pub closest to Leonardslee, the White Hart at Lower Beeding serves well-executed modern pub food in a comfortable rural setting. Seasonal specials make the most of local produce from the Weald farms; the fish dishes are particularly good. The attractive garden is popular on summer weekends. Booking recommended at weekends.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+    {
+        "slug": "crabtree-inn-leonardslee",
+        "name": "The Crabtree Inn",
+        "type": "pub",
+        "rating": 4.1,
+        "guide_price": "£16",
+        "open_today": "12:00–22:00",
+        "distance": "1.8 km",
+        "summary": "A pleasant country pub near Horsham serving reliable food, well-kept ales, and a friendly welcome to walkers and visitors to the Leonardslee area. The menu offers classic pub fare alongside seasonal specials; the Sunday roast is reliably popular. Good children's menu and a large garden.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+    },
+]
+
+PLACES_TO_EAT["exbury-gardens"] = [
+    {
+        "slug": "exbury-restaurant",
+        "name": "The Restaurant at Exbury",
+        "type": "restaurant",
+        "rating": 4.2,
+        "guide_price": "£18",
+        "open_today": "10:00–17:00",
+        "distance": "on estate",
+        "summary": "The on-site restaurant at Exbury Gardens offers a warm welcome, good homemade food, and fine views across the estate. Hot lunches, soups, and salads feature local Hampshire produce; the cream teas are a garden visit staple. Licensed, with a good selection of local wines.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+    },
+    {
+        "slug": "master-builders-bucklers-hard",
+        "name": "The Master Builder's Hotel",
+        "type": "restaurant",
+        "rating": 4.3,
+        "guide_price": "£28",
+        "open_today": "12:00–21:00",
+        "distance": "3.2 km",
+        "summary": "Set in the historic shipbuilding village of Buckler's Hard, the Master Builder's Hotel occupies one of the original 18th-century shipyard buildings overlooking the Beaulieu River. The Riverside Restaurant offers modern British cuisine with emphasis on local New Forest produce and fresh fish. The terrace is one of the best settings for a long summer lunch in Hampshire.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
+    },
+    {
+        "slug": "royal-oak-beaulieu",
+        "name": "The Royal Oak, Beaulieu",
+        "type": "pub",
+        "rating": 4.2,
+        "guide_price": "£18",
+        "open_today": "11:00–22:30",
+        "distance": "4.1 km",
+        "summary": "The village pub at Beaulieu, opposite the gates to the abbey and motor museum, offers New Forest ales, straightforward food, and a warm welcome to visitors. The combination of an attractive village, historic buildings, and good local pub makes Beaulieu an excellent pit stop after visiting Exbury.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
+    },
+    {
+        "slug": "montagus-beaulieu",
+        "name": "Monty's Inn, Beaulieu",
+        "type": "pub",
+        "rating": 4.0,
+        "guide_price": "£20",
+        "open_today": "12:00–22:00",
+        "distance": "4.3 km",
+        "summary": "Named after Lord Montagu of Beaulieu, Monty's Inn is a relaxed restaurant and bar within the Beaulieu estate complex. The menu focuses on British pub classics, carvery lunches, and afternoon teas. The terrace looks across the formal garden towards the abbey ruins.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
+    },
+]
+
+PLACES_TO_EAT["welford-park"] = [
+    {
+        "slug": "jack-russell-lambourn",
+        "name": "The Jack Russell Inn, Lambourn",
+        "type": "pub",
+        "rating": 4.2,
+        "guide_price": "£16",
+        "open_today": "11:00–23:00",
+        "distance": "2.8 km",
+        "summary": "The Jack Russell is the heart of Lambourn village life, a traditional Berkshire pub with strong connections to the horse racing community. Well-kept West Berkshire ales, hearty food, and lively conversation about form and breeding make this the authentic Lambourn experience. A racing yard backs directly onto the pub garden.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "queens-arms-east-garston",
+        "name": "The Queen's Arms, East Garston",
+        "type": "pub",
+        "rating": 4.4,
+        "guide_price": "£22",
+        "open_today": "12:00–22:00",
+        "distance": "1.2 km",
+        "summary": "The Queen's Arms at East Garston, just a mile from Welford Park, is an excellent country pub with rooms, serving carefully sourced seasonal food in a relaxed setting. The kitchen uses local lamb, game from the Downs, and produce from nearby farms. The dining room, with its exposed beams and log fires, is particularly good in winter.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "three-tuns-hungerford",
+        "name": "The Three Tuns, Hungerford",
+        "type": "pub",
+        "rating": 4.1,
+        "guide_price": "£15",
+        "open_today": "11:00–23:00",
+        "distance": "5.2 km",
+        "summary": "One of the better pubs in Hungerford's High Street, the Three Tuns is a comfortable, traditional establishment offering good food, well-kept ales, and a warm welcome. The town's excellent antique shops make a natural companion visit — Hungerford has an extraordinary concentration of antique dealers for such a small town.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+    {
+        "slug": "dukes-hungerford",
+        "name": "The Bear Hotel, Hungerford",
+        "type": "restaurant",
+        "rating": 4.3,
+        "guide_price": "£28",
+        "open_today": "12:00–21:00",
+        "distance": "5.3 km",
+        "summary": "The Bear is a handsome coaching inn in the centre of Hungerford, serving modern British food in a civilised setting. The kitchen sources carefully from local farms and the menu changes seasonally. The wine list is one of the more interesting in the area, with good selections by the glass. The garden is pleasant in summer.",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+    },
+]
 LOCAL_PRODUCE = {
     "shere-manor-estate": [
         {
@@ -7152,7 +7805,7 @@ HISTORY["highclere-castle"] = {
         },
         {
             "title": "Downton Abbey and Today",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Highclere_Castle_02.jpg",
             "image_caption": "The north front of Highclere Castle, recognisable to millions of viewers worldwide as the exterior of Downton Abbey.",
             "paragraphs": [
                 "In 2010 the creator Julian Fellowes chose Highclere Castle as the exterior and principal interior location for Downton Abbey, the period drama that would become one of the most watched British television productions in history, eventually broadcasting to over 120 countries. The decision was, in one sense, straightforward: no other building in England so perfectly embodied the Edwardian aristocratic world that Fellowes wished to evoke. Yet the partnership between the castle and the production proved mutually transformative. The show introduced Highclere to audiences who had never previously heard of it, while the castle's genuine historical depth — the layers of family history, the Egyptian discoveries, the Capability Brown park — gave the fictional drama a resonance that a purpose-built set could never have provided.",
@@ -7908,7 +8561,7 @@ HISTORY["groombridge-place"] = {
         },
         {
             "title": "THE ENCHANTED FOREST",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Groombridge_Place_and_its_moat_-_geograph.org.uk_-_5406092.jpg",
             "image_caption": "Ancient sweet chestnut coppice stools in the woodland at Groombridge Place, some specimens estimated to be several centuries old, their multi-stemmed forms the direct legacy of medieval woodland management",
             "paragraphs": [
                 "The woodland that surrounds and extends beyond the formal gardens at Groombridge Place is ancient in the precise technical sense: it has been continuously wooded since at least the medieval period, its character shaped by centuries of coppice management that has produced the multi-stemmed sweet chestnut, oak, and beech stools that give the forest floor its extraordinary textural quality. Coppicing — the practice of cutting trees to the base on a rotation of seven to twenty years to produce successive crops of poles — was the dominant form of woodland management across the High Weald from the medieval period until the early twentieth century, fuelling the charcoal and iron industries that made this part of England one of the most industrially active landscapes in pre-industrial Britain. The great coppice stools at Groombridge are the direct legacy of that tradition, their age measurable in centuries.",
@@ -8054,7 +8707,7 @@ MOVIES["hever-castle"] = {
     "chapters": [
         {
             "title": "ANNE OF THE THOUSAND DAYS (1969)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/f/f6/Original_movie_poster_for_the_film_Anne_of_the_Thousand_Days.jpg",
             "image_caption": "Richard Burton as Henry VIII at Hever Castle, location for the 1969 Academy Award-nominated historical drama.",
             "paragraphs": [
                 "Universal Pictures' lavish adaptation of Maxwell Anderson's stage play was the production that first placed Hever Castle firmly on the cinematic map. Directed by Charles Jarrott and starring Richard Burton as Henry VIII and the French-Canadian actress Geneviève Bujold as Anne Boleyn, the film was shot largely on location in England between 1968 and 1969. Hever provided the castle's exterior and courtyard for the scenes depicting the Boleyn family home, with the moat, the drawbridge, and the turreted gatehouse lending the production an immediate authenticity that no studio set could have replicated. Burton and Bujold were photographed on location in the castle gardens, and portions of the film's domestic scenes were dressed and lit inside the Astor-restored interiors.",
@@ -8063,7 +8716,7 @@ MOVIES["hever-castle"] = {
         },
         {
             "title": "THE OTHER BOLEYN GIRL (2008)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/7/75/Other_boleyn_girl_post.jpg",
             "image_caption": "Hever Castle's Tudor interiors were dressed for the 2008 Focus Features production starring Natalie Portman and Scarlett Johansson.",
             "paragraphs": [
                 "Nearly four decades after Anne of the Thousand Days, Hever featured again in a major Boleyn production when Focus Features adapted Philippa Gregory's bestselling novel The Other Boleyn Girl. Directed by Justin Chadwick and starring Natalie Portman as Anne Boleyn and Scarlett Johansson as her sister Mary, the film used Hever's exterior, courtyard, and several interior spaces to represent the Boleyn family estate. The production team worked closely with Hever's curatorial staff to dress the Tudor rooms — panelled walls, carved fireplaces, and stone-flagged floors — to period, and the castle's compact layout meant that the intimate domestic scenes between the two sisters could be filmed with a convincing sense of confinement and proximity that served the story's claustrophobic tensions.",
@@ -8096,7 +8749,7 @@ MOVIES["highclere-castle"] = {
     "chapters": [
         {
             "title": "DOWNTON ABBEY (ITV, 2010–2015)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Highclere_Castle_02.jpg",
             "image_caption": "The north front of Highclere Castle, which serves as the exterior of Downton Abbey in Julian Fellowes's globally successful drama series.",
             "paragraphs": [
                 "When Julian Fellowes began developing Downton Abbey for ITV in the late 2000s, location scouts considered several Hampshire and Wiltshire houses before settling on Highclere as the one building that could carry the dramatic weight of the series. The north and south fronts of the castle, Barry's pinnacled roofline against the Hampshire sky, became the defining visual identity of what would grow into the most successful British television export of its era. The principal interior rooms — the Saloon, the Library, the Drawing Room, and the grand staircase — were used as primary filming locations throughout the series, their genuine late-Victorian fittings requiring minimal dressing to pass as the Edwardian and interwar interiors the scripts called for. The cast would arrive in the early morning, with filming typically concentrated across six-week blocks each summer when the castle was closed to the public.",
@@ -8105,7 +8758,7 @@ MOVIES["highclere-castle"] = {
         },
         {
             "title": "DOWNTON ABBEY: THE FILMS (2019 AND 2022)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Highclere_Castle_02.jpg",
             "image_caption": "The Downton Abbey feature films of 2019 and 2022 returned the full cast to Highclere for extended location shoots.",
             "paragraphs": [
                 "Following the conclusion of the television series, Focus Features produced two feature films that returned the principal cast to Highclere for extended location work. Downton Abbey (2019), directed by Michael Engler, centred on a royal visit by King George V and Queen Mary and required the castle to double as both the Crawley family home and the backdrop for scenes involving the sovereign's retinue. The film grossed over $194 million at the worldwide box office against a budget of approximately $13 million, confirming that the audience loyalty built across six television series had translated directly into theatrical appetite. Highclere's interiors and exterior featured prominently, including sequences filmed in the castle's Egyptian Exhibition cellars, which were visible to cinema audiences for the first time.",
@@ -8138,7 +8791,7 @@ MOVIES["beaulieu-estate"] = {
     "chapters": [
         {
             "title": "THE ITALIAN JOB (1969)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/6a/1960_Morris_Mini_-_The_Italian_Job_-_Coventry_Transport_Museum.jpg",
             "image_caption": "Beaulieu's grounds and Palace House exterior featured in the Paramount Pictures production of The Italian Job, filmed in 1968.",
             "paragraphs": [
                 "The original Italian Job, directed by Peter Collinson and starring Michael Caine, Noël Coward, and Benny Hill, remains one of the most celebrated British films of the late 1960s, and its production history is inseparable from Beaulieu. The National Motor Museum — then the Montagu Motor Museum, founded in 1952 by the 3rd Baron Montagu — provided vehicles and technical expertise that were central to the film's identity. More significantly, the Beaulieu grounds and approach roads featured in location filming for the production, exploiting the estate's unique combination of private roads, period architecture, and New Forest backdrop to serve the heist narrative's English sequences. The film's car-centred premise made the National Motor Museum's involvement a natural fit, and the two have remained associated in the public imagination ever since.",
@@ -8147,7 +8800,7 @@ MOVIES["beaulieu-estate"] = {
         },
         {
             "title": "JAMES BOND CONNECTIONS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d3/Aston.db5.coupe.300pix.jpg",
             "image_caption": "The National Motor Museum at Beaulieu houses an extensive On Screen Cars exhibition, including vehicles from James Bond productions spanning more than six decades.",
             "paragraphs": [
                 "While Beaulieu itself has not served as a primary filming location for the James Bond franchise, the connection between the estate and the Bond films is deep and genuine through the National Motor Museum's On Screen Cars exhibition — one of the most significant collections of film and television vehicles in the world. The exhibition brings together an extraordinary assembly of Bond cars across multiple films and eras, including the Aston Martin DB5 in its various iterations, the Lotus Esprit submarine car from The Spy Who Loved Me (1977), and a range of vehicles from the Roger Moore, Timothy Dalton, and Pierce Brosnan eras. The collection provides a physical history of the Bond franchise told through its machinery, and it draws fans to Beaulieu from around the world.",
@@ -8156,7 +8809,7 @@ MOVIES["beaulieu-estate"] = {
         },
         {
             "title": "CHITTY CHITTY BANG BANG (1968) AND THE MOTOR MUSEUM",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3d/Chitty_Chitty_Bang_Bang_at_the_National_Motor_Museum.jpg",
             "image_caption": "The National Motor Museum at Beaulieu houses the original Chitty Chitty Bang Bang car, built by production designer Ken Adam for the 1968 United Artists film.",
             "paragraphs": [
                 "Among the most beloved objects in the National Motor Museum is the original Chitty Chitty Bang Bang car, built by the production designer Ken Adam for the 1968 United Artists musical-fantasy directed by Ken Hughes and starring Dick Van Dyke and Sally Ann Howes. The car — formally designated GEN 11 and designed to appear as a fantastical Edwardian racing machine capable of flight and water travel — was fabricated by the Ford Motor Company's advanced styling studio in the United Kingdom and has remained one of cinema's most recognisable vehicles. The Beaulieu Motor Museum acquired it for permanent display, and it occupies a position of affectionate prominence in the collection, surrounded by film stills, production photographs, and the story of its creation.",
@@ -8180,7 +8833,7 @@ MOVIES["arundel-castle"] = {
     "chapters": [
         {
             "title": "THE MADNESS OF KING GEORGE (1994)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/5/52/Madness_of_king_george-715444.jpeg",
             "image_caption": "Arundel Castle doubled as Windsor Castle for Nicholas Hytner's acclaimed Goldcrest production, with Nigel Hawthorne in the title role.",
             "paragraphs": [
                 "Nicholas Hytner's The Madness of King George, adapted by Alan Bennett from his own stage play and released in 1994, remains one of the most admired British historical films of the modern era. Starring Nigel Hawthorne as the stricken George III — in a performance that earned him an Academy Award nomination for Best Actor — the film required a location capable of representing Windsor Castle's state apartments and exterior with sufficient authenticity to sustain the narrative's royal setting. Windsor itself was unavailable for the level of intrusion a major film production requires, and Arundel was identified as the outstanding alternative: its Victorian Gothic state rooms and great hall, dressed minimally to the period, read convincingly as the Georgian royal interiors the script demanded.",
@@ -8189,7 +8842,7 @@ MOVIES["arundel-castle"] = {
         },
         {
             "title": "THE YOUNG VICTORIA (2009)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/2/27/Young_victoria_poster.jpg",
             "image_caption": "Emily Blunt as Queen Victoria and Rupert Friend as Prince Albert, with Arundel's interiors standing in for Kensington Palace and Windsor in the 2009 production.",
             "paragraphs": [
                 "GK Films' The Young Victoria, directed by Jean-Marc Vallée and written by Julian Fellowes, used Arundel Castle as one of its principal interior locations for scenes depicting Victoria's early reign and her relationship with Prince Albert. Emily Blunt's portrayal of the young queen earned her a Golden Globe nomination, and Rupert Friend played Albert with a combination of intellectual gravity and personal warmth that the script's sympathetic characterisation demanded. Arundel's baronial hall and state apartments were dressed to represent a composite of Kensington Palace and Windsor Castle interiors, with the production's design team — led by the Oscar-winning Patrice Vermette — working with Arundel's curatorial staff to ensure that the Victorian furnishings already present in the castle could be supplemented with appropriate period dressing.",
@@ -8198,7 +8851,7 @@ MOVIES["arundel-castle"] = {
         },
         {
             "title": "THE CROWN AND BBC PERIOD DRAMAS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/1/18/The_Crown_Title_Card.jpg",
             "image_caption": "Arundel's library, great hall, and baron's chamber have served as locations for numerous BBC period dramas requiring authentic Victorian and Edwardian interiors.",
             "paragraphs": [
                 "Beyond its two major feature film credits, Arundel Castle has served as a location for a consistent stream of BBC and ITV period drama productions that have drawn on its extraordinary architectural variety. The castle's capacity to represent several distinct historical periods simultaneously — the medieval keep and towers for pre-modern settings, the Victorian Gothic state rooms for nineteenth-century interiors, and the parkland and gardens for outdoor scenes across a wide chronological range — makes it exceptionally useful to period drama location managers working to tight schedules and tighter budgets. The approach road through the park, with views of the castle rising above the River Arun, has appeared in numerous productions as a generic image of English aristocratic arrival.",
@@ -8222,7 +8875,7 @@ MOVIES["penshurst-place"] = {
     "chapters": [
         {
             "title": "THE WHITE QUEEN (BBC, 2013)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/c/c2/The_White_Queen_%28TV_series%29titlecard.jpg",
             "image_caption": "The Baron's Hall of Penshurst Place, built in 1341, served as a primary filming location for the BBC's adaptation of Philippa Gregory's Wars of the Roses novels.",
             "paragraphs": [
                 "The BBC's adaptation of Philippa Gregory's White Queen novels — broadcast in ten episodes in 2013 and directed by James Kent, Jamie Payne, and Colin Teague — brought the Wars of the Roses to mainstream British and international television with a production that made extensive use of Penshurst Place as one of its principal location settings. The Baron's Hall of 1341, with its arched chestnut columns, central hearth, and crown-post ceiling, was an ideal choice for the production's requirement of a convincing medieval great hall that could serve multiple dramatic purposes across the series: feasts, audiences, confrontations, and the domestic scenes that ground the political drama in a believable physical world. The hall's genuine medieval fabric — unaltered in its essential character since the fourteenth century — meant that the production team could dress and light it with a minimum of artificial intervention.",
@@ -8231,7 +8884,7 @@ MOVIES["penshurst-place"] = {
         },
         {
             "title": "THE HOLLOW CROWN (BBC, 2012 AND 2016)",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/4/47/HollowCrownFilmSeriesLeadActors.jpeg",
             "image_caption": "The Hollow Crown's adaptation of Shakespeare's history plays used Penshurst Place's medieval hall and exterior for key scenes depicting royal courts of medieval England.",
             "paragraphs": [
                 "The BBC's The Hollow Crown — an ambitious cycle of Shakespeare's history plays produced for the Diamond Jubilee year and broadcast in 2012, with a second series following in 2016 — was one of the most prestigious British drama productions of the decade, bringing together a cast of extraordinary depth and quality to perform the plays in cinematic form. Penshurst Place featured in the first series, which covered Richard II, Henry IV Parts 1 and 2, and Henry V, with the medieval hall and the castle's exterior providing locations for court and domestic scenes set in the late Plantagenet and early Lancastrian periods. The production's design team, led by production designer Richard Bridgland, used Penshurst's authentic medieval fabric as a foundation upon which to construct a visual world that was simultaneously historically grounded and cinematically dynamic.",
@@ -8297,7 +8950,7 @@ MOVIES["groombridge-place"] = {
     "chapters": [
         {
             "title": "THE SECRET GARDEN — FROM PAGE TO SCREEN",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/5/54/Secretgarden1993.jpg",
             "image_caption": "The walled gardens at Groombridge Place as they appeared during filming of the 1993 Warner Bros. adaptation of The Secret Garden, directed by Agnieszka Holland.",
             "paragraphs": [
                 "When director Agnieszka Holland set out to adapt Frances Hodgson Burnett's 1911 novel for Warner Bros. and American Zoetrope in 1993, she needed a location that could carry the full emotional weight of Misselthwaite Manor — a place that felt simultaneously grand and melancholy, forbidding on the outside and secretly alive within. Groombridge Place answered every requirement. Its formal walled gardens, softened by decades of naturalistic planting, became the film's central setting, standing in for the neglected garden that orphan Mary Lennox, played by Kate Maberly, discovers and coaxes back to life alongside Colin Craven, played by Heydon Prowse, and Dickon, played by Andrew Knott.",
@@ -8306,7 +8959,7 @@ MOVIES["groombridge-place"] = {
         },
         {
             "title": "A SECOND SECRET GARDEN",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/5/54/Secretgarden1993.jpg",
             "image_caption": "The south-facing walled garden at Groombridge Place dressed for the 2020 adaptation directed by Marc Munden, with the moat and manor visible in the background.",
             "paragraphs": [
                 "In 2020, director Marc Munden brought a new version of The Secret Garden to the screen for Studiocanal, starring Colin Firth as Archibald Craven, Julie Walters as Mrs Medlock, and Dixie Egerickx as Mary. Munden and his production team returned to Groombridge Place, knowing that Holland's film had already defined its visual identity for a generation of audiences. The decision speaks to something irreplaceable about the estate's character — no other location combined a working moat, a genuinely walled formal garden, and surrounding ancient woodland in quite the same proportions.",
@@ -8334,7 +8987,7 @@ GARDENS["hever-castle"] = {
     "chapters": [
         {
             "title": "THE ITALIAN GARDEN",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e1/Hever_Castle_Italian_Gardens2%282014-06-20%29.JPG",
             "image_caption": "The Pompeiian Wall in the Italian Garden at Hever Castle, displaying Astor's collection of ancient Greek and Roman statuary gathered during his time as US Ambassador to Italy.",
             "paragraphs": [
                 "The Italian Garden at Hever is the most ambitious garden creation of the Edwardian era. William Waldorf Astor, who had served as United States Ambassador to Italy, returned with a passion for Italian Renaissance garden design and a collection of ancient statuary that needed a setting worthy of it. The garden he created on the south side of the castle drew directly on the great villa gardens of Tuscany and the Veneto, translating their logic into the Kentish Weald.",
@@ -8344,7 +8997,7 @@ GARDENS["hever-castle"] = {
         },
         {
             "title": "THE TUDOR GARDEN & ROSE GARDEN",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/f/fb/Aerial_View_of_Rose_Garden_%28from_a_Ladder%29_%281163784753%29.jpg",
             "image_caption": "The Tudor Garden at Hever Castle, planted within the walls of a kitchen garden that was already old when Anne Boleyn walked here as a child in the early sixteenth century.",
             "paragraphs": [
                 "Between the castle and the Italian Garden lies the Tudor Garden, enclosed within walls whose origins predate Astor's arrival by four centuries. This is the area Anne Boleyn would have known — a walled enclosure where herbs, vegetables, and flowers grew in the practical medieval manner. Astor retained the bones of this ancient garden while transforming its planting, and the result has an intimacy quite unlike the grand spectacle of the Italian terraces.",
@@ -8354,7 +9007,7 @@ GARDENS["hever-castle"] = {
         },
         {
             "title": "THE LAKE & ANNE BOLEYN'S WALK",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8e/Hever_Castle_2014_06_20_1.jpg/1280px-Hever_Castle_2014_06_20_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/92/Half_Moon_Pond%2C_Hever_Castle_-_geograph.org.uk_-_5922095.jpg",
             "image_caption": "The thirty-eight-acre lake at Hever Castle, excavated between 1904 and 1908 as part of William Waldorf Astor's transformation of the estate.",
             "paragraphs": [
                 "The lake at Hever is one of the most significant landscape interventions of the twentieth century in the south-east of England. To create it, Astor's men excavated and dammed the course of the River Eden over a period of years. The scale of the undertaking had no real precedent in private garden-making since Capability Brown's lake constructions of the eighteenth century.",
@@ -8370,7 +9023,7 @@ GARDENS["penshurst-place"] = {
     "chapters": [
         {
             "title": "THE WALLED GARDENS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Arundel_Palace_Gardens_-_Sussex.jpg",
             "image_caption": "The Italian Garden at Penshurst Place, looking toward the house across the formal parterre beds.",
             "paragraphs": [
                 "The walled gardens at Penshurst are divided into a series of rooms by a system of yew hedges stretching over a mile in total length — one of the most extensive formal hedge networks in England. Each enclosure has a distinct character and planting scheme, creating a sequence of spaces that repays unhurried exploration. The structure of these divisions dates to the late sixteenth century, when Sir Henry Sidney undertook a comprehensive redesign of the gardens that had surrounded the house since the fourteenth century.",
@@ -8404,7 +9057,7 @@ GARDENS["groombridge-place"] = {
     "chapters": [
         {
             "title": "THE FORMAL WALLED GARDENS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Groombridge_Place_and_its_moat_-_geograph.org.uk_-_5406092.jpg",
             "image_caption": "The ornamental canal in the formal gardens at Groombridge Place, flanked by clipped yew hedges — a design that owes much to John Evelyn's influence in the 1670s.",
             "paragraphs": [
                 "The walled gardens at Groombridge Place were laid out in the 1670s, when the newly completed manor house was given grounds to match its formal architectural character. The design reflects the fashionable taste of Restoration England for compartmentalised gardens with strong structural geometry — clipped hedges defining rooms, canals providing reflective focal points, and planting subordinated to architectural effect.",
@@ -8414,7 +9067,7 @@ GARDENS["groombridge-place"] = {
         },
         {
             "title": "THE SECRET GARDEN CONNECTION",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/en/5/54/Secretgarden1993.jpg",
             "image_caption": "The south-facing walled kitchen garden at Groombridge Place dressed for the 1993 film adaptation of The Secret Garden.",
             "paragraphs": [
                 "When director Agnieszka Holland needed a location for the 1993 adaptation of Frances Hodgson Burnett's The Secret Garden, Groombridge Place answered every requirement — the moated manor, the enclosed walled gardens, and the ancient woodland beyond provided the full range of settings the story demanded. The south-facing walled garden became the central character of the film.",
@@ -8423,7 +9076,7 @@ GARDENS["groombridge-place"] = {
         },
         {
             "title": "THE ENCHANTED FOREST",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Groombridge_Place_and_its_moat_-_geograph.org.uk_-_5406092.jpg",
             "image_caption": "Ancient broadleaf woodland at the edge of the Enchanted Forest at Groombridge Place.",
             "paragraphs": [
                 "Beyond the formal walled gardens, the Enchanted Forest is a visitor experience built on the character of the ancient broadleaf woodland that frames the eastern side of the estate. The woodland itself is old growth — oaks and beeches that predate the manor house by centuries — and its atmosphere is genuinely distinct from the managed formality of the gardens.",
@@ -8448,7 +9101,7 @@ GARDENS["leonardslee-gardens"] = {
         },
         {
             "title": "THE PLANT COLLECTIONS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rhododendrons_or_Camellias_at_Leonardslee_Gardens_%28geograph_2310158%29.jpg",
             "image_caption": "A mature Rhododendron loderi specimen in the upper valley at Leonardslee Gardens — the hybrid developed by Sir Edmund Loder himself in 1901.",
             "paragraphs": [
                 "The plant collections at Leonardslee are of international botanical significance. Sir Edmund Loder developed several hybrid rhododendrons here, the most important of which — Rhododendron loderi, a cross between R. fortunei and R. griffithianum — is now distributed through gardens worldwide and named for the estate. The original plants from which all loderi hybrids descend still grow in the valley.",
@@ -8457,7 +9110,7 @@ GARDENS["leonardslee-gardens"] = {
         },
         {
             "title": "THE WALLABIES & WILDLIFE",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/c/c8/Leonardslee_026.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a3/Rhododendrons_or_Camellias_at_Leonardslee_Gardens_%28geograph_2310158%29.jpg",
             "image_caption": "Bennett's wallabies grazing in the parkland at Leonardslee Gardens — descendants of the animals introduced by Sir Edmund Loder in the 1890s.",
             "paragraphs": [
                 "Leonardslee is home to a colony of Bennett's wallabies that have lived in the parkland since Sir Edmund Loder introduced a small group in the 1890s. Unlike many similar introductions, the Leonardslee wallabies established themselves as a genuinely self-sustaining colony in the shelter of the valley, and today around sixty animals graze the parkland.",
@@ -8472,7 +9125,7 @@ GARDENS["lullingstone-castle"] = {
     "chapters": [
         {
             "title": "THE WORLD GARDEN OF PLANTS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lullingstone1Aerialview.jpg/1280px-Lullingstone1Aerialview.jpg",
             "image_caption": "The World Garden of Plants at Lullingstone Castle in spring, laid out in the form of a world map.",
             "paragraphs": [
                 "The World Garden of Plants at Lullingstone Castle is unlike any other garden in England. Created by Tom Hart Dyke — the current generation of the family that has owned the castle since 1361 — the garden was conceived during his nine months as a hostage of guerrillas in the Colombian jungle in 2000, when he and his companion Paul Winder planned an imaginary garden as a survival mechanism.",
@@ -8492,7 +9145,7 @@ GARDENS["lullingstone-castle"] = {
         },
         {
             "title": "THE DARENT VALLEY SETTING",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/4/42/Lullingstone.manor.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Lullingstone1Aerialview.jpg/1280px-Lullingstone1Aerialview.jpg",
             "image_caption": "The River Darent flowing through the grounds at Lullingstone Castle.",
             "paragraphs": [
                 "Lullingstone occupies a particularly rich stretch of the Darent valley, a chalk stream valley in west Kent that has attracted human settlement for at least two thousand years. The Roman villa on the edge of the estate — now in the care of English Heritage — was occupied from the first to the fourth century and contains some of the finest Romano-British mosaic floors surviving anywhere in the country.",
@@ -8507,7 +9160,7 @@ GARDENS["exbury-gardens"] = {
     "chapters": [
         {
             "title": "THE ROTHSCHILD COLLECTION",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Colourful_azaleas_in_Exbury_Gardens_-_geograph.org.uk_-_2260731.jpg",
             "image_caption": "The main woodland walk at Exbury Gardens in May, passing through banks of rhododendrons and azaleas in full flower.",
             "paragraphs": [
                 "Lionel de Rothschild came to Exbury in 1919 with a vision and the resources to realise it: to create the finest rhododendron garden in England. He employed over a hundred gardeners at the peak of the work, planted hundreds of thousands of bulbs, constructed miles of paths through the existing woodland, and collected specimens from plant hunters working in the Himalayas, China, and Burma.",
@@ -8541,7 +9194,7 @@ GARDENS["welford-park"] = {
     "chapters": [
         {
             "title": "THE SNOWDROP SEASON",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Welford_Park_Snowdrops_1.jpg",
             "image_caption": "Snowdrops carpeting the woodland floor at Welford Park in February.",
             "paragraphs": [
                 "Welford Park opens its grounds for just a few weeks each February specifically to allow visitors to experience the snowdrop display that has developed under its woodland trees over many years. The snowdrops form a continuous carpet under the mature trees of the formal garden and the woodland beyond, stretching across several acres.",
@@ -8688,7 +9341,7 @@ EVENTS["beaulieu-estate"] = {
     "chapters": [
         {
             "title": "THE INTERNATIONAL AUTOJUMBLE",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e2/Beaulieu_National_Motor_Museum_panorama.JPG",
             "image_caption": "Traders and visitors at the Beaulieu International Autojumble.",
             "paragraphs": [
                 "The Beaulieu International Autojumble is the largest event of its kind in Europe — a two-day gathering each September in which over thirty thousand enthusiasts descend on the estate to buy and sell automotive parts, memorabilia, automobilia, and complete vehicles. The event began in 1967 as a modest gathering of a few dozen traders and has grown into a fixture that attracts visitors from across the world.",
@@ -8698,7 +9351,7 @@ EVENTS["beaulieu-estate"] = {
         },
         {
             "title": "MUSEUM EVENTS & EXHIBITIONS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/BeaulieuAbbey5.JPG/1280px-BeaulieuAbbey5.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/a6/National_Motor_Museum_at_Beaulieu.jpg",
             "image_caption": "A special exhibition in the National Motor Museum at Beaulieu.",
             "paragraphs": [
                 "The National Motor Museum at Beaulieu runs a continuous programme of special exhibitions alongside its permanent collection. These exhibitions typically focus on a particular marque, period, or theme in automotive history and are developed in partnership with manufacturers, race teams, and private collectors.",
@@ -8755,7 +9408,7 @@ EVENTS["exbury-gardens"] = {
     "chapters": [
         {
             "title": "THE SPRING SEASON",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/6/64/Exbury_Garden.JPG",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/Colourful_azaleas_in_Exbury_Gardens_-_geograph.org.uk_-_2260731.jpg",
             "image_caption": "Visitors in the woodland at Exbury Gardens during the spring rhododendron season.",
             "paragraphs": [
                 "The spring season at Exbury runs from March through June, beginning with the camellias in early spring and building through magnolias to the main rhododendron and azalea season in April and May. The events programme during this time is focused on making the most of the flowering peak — specialist guided tours, plant identification walks, and photography mornings.",
@@ -8788,7 +9441,7 @@ EVENTS["penshurst-place"] = {
     "chapters": [
         {
             "title": "MEDIEVAL EVENTS & JOUSTING",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Penshurst_Place%2C_Penshurst%2C_Kent.jpg/1280px-Penshurst_Place%2C_Penshurst%2C_Kent.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Jousting_at_Middelaldercentret2.jpg",
             "image_caption": "A jousting tournament in the grounds at Penshurst Place.",
             "paragraphs": [
                 "The medieval character of Penshurst Place — the Baron's Hall at its core dates from 1341 — provides a natural context for reenactment events and heritage entertainment that few other private houses in England can match. The jousting tournaments held in the grounds during the summer season draw on this authenticity, using the estate's combination of a genuine medieval hall and extensive grounds.",
@@ -8855,7 +9508,7 @@ EVENTS["arundel-castle"] = {
     "chapters": [
         {
             "title": "THE TULIP FESTIVAL",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/d7/Tulips_at_Arundel_Castle_%2846444430275%29.jpg",
             "image_caption": "The walled garden at Arundel Castle during the Tulip Festival in April and May — the formal beds contain over 100,000 tulips planted each autumn in a programme that changes annually.",
             "paragraphs": [
                 "The Arundel Castle Tulip Festival takes place each April and May and has become one of the most significant spring garden events in England. The walled garden at the castle is planted each autumn with over one hundred thousand tulip bulbs across a programme that changes from year to year, with new varieties, new colour combinations, and new planting schemes that ensure the festival has a fresh character each season.",
@@ -8864,7 +9517,7 @@ EVENTS["arundel-castle"] = {
         },
         {
             "title": "JOUSTING & MEDIEVAL EVENTS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/1_castle_arundel_aerial_pano_2017.jpg/1280px-1_castle_arundel_aerial_pano_2017.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/18/Jousting_at_Middelaldercentret2.jpg",
             "image_caption": "A jousting tournament in the grounds of Arundel Castle, with the castle keep visible above the lists — the castle's medieval character provides an authentic setting for period reenactment.",
             "paragraphs": [
                 "The medieval character of Arundel Castle — parts of the structure date to the late eleventh century — makes it a natural setting for jousting tournaments and period reenactment events. The castle hosts several jousting weekends each year, with mounted knights in period armour competing in the grounds below the keep. The combination of the genuine medieval architecture and the reenactment programme creates an atmosphere with few equivalents in England.",
@@ -8888,7 +9541,7 @@ EVENTS["cowdray-park"] = {
     "chapters": [
         {
             "title": "THE POLO SEASON",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Cowdray_-_geograph.org.uk_-_5271047.jpg/1280px-Cowdray_-_geograph.org.uk_-_5271047.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/30th_St._Moritz_Polo_World_Cup_on_Snow_-_20140202_-_Cartier_vs_Ralph_Lauren_18.jpg",
             "image_caption": "Cowdray Park polo grounds during a summer fixture — the polo season runs from May into September, with the Gold Cup as the centrepiece and lower-handicap matches on most weekends.",
             "paragraphs": [
                 "The polo season at Cowdray runs from May into September, with matches played on five full-size grounds across the estate. The season builds from spring low-goal fixtures through medium-goal tournaments in June to the climax of the Veuve Clicquot Gold Cup — the English Open — in July. The Gold Cup draws the world's top players and is a genuine international sporting occasion that doubles as a social event of the English summer calendar.",
@@ -9086,7 +9739,7 @@ EVENTS["groombridge-place"] = {
     "chapters": [
         {
             "title": "THE ENCHANTED FOREST EVENTS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d1/Groombridge_Place_1.jpg/1280px-Groombridge_Place_1.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Groombridge_Place_and_its_moat_-_geograph.org.uk_-_5406092.jpg",
             "image_caption": "An evening event in the Enchanted Forest at Groombridge Place, with illuminations in the ancient woodland creating an atmosphere quite unlike the daytime garden experience.",
             "paragraphs": [
                 "The Enchanted Forest at Groombridge Place hosts a sequence of events through the year that use the woodland's atmospheric character to create experiences unlike anything available in the daytime garden. Halloween events in October transform the forest with theatrical installations and performers, and the combination of ancient oaks, autumn mist, and carefully constructed atmosphere makes these events genuinely striking.",
@@ -9128,7 +9781,7 @@ EVENTS["highclere-castle"] = {
         },
         {
             "title": "THE DOWNTON ABBEY CONNECTION",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Highclere_Castle_%282019%29.jpg/1280px-Highclere_Castle_%282019%29.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/ea/Highclere_Castle_02.jpg",
             "image_caption": "The great hall at Highclere Castle, where the Crawley family gathered throughout the television series — the hall is one of the castle's most dramatic interior spaces and features prominently in Downton Abbey.",
             "paragraphs": [
                 "The filming of Downton Abbey at Highclere from 2010 to 2015 transformed the castle's public profile and created a global audience that has sustained visitor interest at extraordinary levels. The castle's role as the exterior and interior of Crawley House — with a small number of other locations doubling for specific scenes — means that visitors who know the series will find the principal rooms immediately recognisable.",
@@ -9251,7 +9904,7 @@ EVENTS["welford-park"] = {
     "chapters": [
         {
             "title": "THE SNOWDROP SEASON",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/d/df/Welford_Park_House._-_geograph.org.uk_-_1643603.jpg",
+            "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ae/Welford_Park_Snowdrops_1.jpg",
             "image_caption": "Visitors walking through the snowdrop woodland at Welford Park in February — the few-week opening each year for the snowdrop season attracts visitors from across England.",
             "paragraphs": [
                 "The Welford Park snowdrop season opening is one of the most anticipated garden events on the English calendar, drawing visitors from across the country to see what many consider the finest snowdrop display in England. The estate opens for a few weeks each February when the snowdrops are at their peak, and the combination of the woodland display, the tea rooms in the stable courtyard, and the Queen Anne house as backdrop creates an experience that visitors return to year after year.",
@@ -9713,7 +10366,7 @@ CYCLING_ROUTES["hurtwood-estate"] = [
         "difficulty": "Moderate",
         "terrain": "MTB / Forest Track",
         "summary": "A shorter but satisfying loop taking in the heathland summit of Pitch Hill, with fast gravel descents through ancient oak woodland and views across the Surrey Hills.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
         "center": [51.1750, -0.3950],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -9760,7 +10413,7 @@ CYCLING_ROUTES["goodwood-estate"] = [
         "difficulty": "Easy",
         "terrain": "Road",
         "summary": "A fast, largely flat circuit of the Goodwood estate on estate roads and quiet country lanes, passing the motor circuit, racecourse, and aerodrome — a unique sporting landscape unlike anywhere else in Britain.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/a/ad/Goodwood_Circuit.jpg",
         "center": [50.8651, -0.7554],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -9805,7 +10458,7 @@ CYCLING_ROUTES["goodwood-estate"] = [
         "difficulty": "Moderate",
         "terrain": "Mixed / Gravel",
         "summary": "A challenging climb from the estate onto the open chalk downland of the Trundle — an Iron Age hill fort with exceptional views across the Solent to the Isle of Wight — followed by a sweeping descent back to the estate.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/The_Trundle_3.jpg/1280px-The_Trundle_3.jpg",
         "center": [50.8730, -0.7650],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -9853,7 +10506,7 @@ CYCLING_ROUTES["arundel-castle"] = [
         "difficulty": "Easy",
         "terrain": "Mixed / Track",
         "summary": "A largely flat ride following the River Arun south through the water meadows and floodplains below Arundel Castle — one of Sussex's most scenic cycling routes, with the castle's walls rising dramatically above the valley throughout.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/7/71/Stopham_Bridge.JPG",
         "center": [50.8561, -0.5510],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -9899,7 +10552,7 @@ CYCLING_ROUTES["arundel-castle"] = [
         "difficulty": "Challenging",
         "terrain": "Gravel / Off-road",
         "summary": "A demanding but spectacular ride along the South Downs escarpment west of Arundel, on chalk bridleways with sweeping views across the coastal plain, the castle, and on clear days the Isle of Wight beyond.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.8700, -0.5200],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -9992,7 +10645,7 @@ CYCLING_ROUTES["denbies-wine-estate"] = [
         "difficulty": "Moderate",
         "terrain": "Road / Gravel",
         "summary": "A longer circuit combining the Denbies estate with the chalk ridge of the North Downs Way — one of Surrey's finest road cycling routes, with a sustained climb rewarded by open downland and far-reaching views.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/24/Box_Hill_Salomons_Memorial.jpg",
         "center": [51.2450, -0.3300],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10040,7 +10693,7 @@ CYCLING_ROUTES["abinger-estate"] = [
         "difficulty": "Challenging",
         "terrain": "Road",
         "summary": "A classic Surrey Hills road cycling circuit taking in the lanes between Abinger Common, Leith Hill Tower, and Friday Street — demanding gradients, beautiful woodland, and some of the finest cycling scenery in the South East.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Holmbury_Hill_look_south.jpg/1280px-Holmbury_Hill_look_south.jpg",
         "center": [51.1900, -0.3800],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10086,7 +10739,7 @@ CYCLING_ROUTES["abinger-estate"] = [
         "difficulty": "Moderate",
         "terrain": "MTB / Forest Track",
         "summary": "A gentler off-road circuit through the Abinger Estate's ancient woodland and heathland, on well-maintained forest tracks with good surfaces — a more accessible introduction to Surrey Hills off-road cycling.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/0/07/Descending_Holmbury_Hill_-_geograph.org.uk_-_1094245.jpg",
         "center": [51.2070, -0.3980],
         "zoom": 14,
         "waypoint_zoom": 16,
@@ -10134,7 +10787,7 @@ CYCLING_ROUTES["loseley-park"] = [
         "difficulty": "Easy",
         "terrain": "Road / Towpath",
         "summary": "A gentle circuit following the River Wey from Loseley Park into Guildford and back, combining a section of the National Trust Wey Navigations towpath with quiet country lanes through the park estate.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/Elstead_Bridge_DSC_1620.jpg/1280px-Elstead_Bridge_DSC_1620.jpg",
         "center": [51.2109, -0.5889],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10183,7 +10836,7 @@ CYCLING_ROUTES["parham-house"] = [
         "difficulty": "Challenging",
         "terrain": "Gravel / Off-road",
         "summary": "A demanding but exhilarating section of the South Downs Way from the Arun Valley up onto the open chalk ridge — one of the finest long-distance cycling routes in England, with Parham's deer park providing the starting backdrop.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/8/8a/South_Downs_Way%2C_towards_Chanctonbury_Ring.jpg",
         "center": [50.9400, -0.4300],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10232,7 +10885,7 @@ CYCLING_ROUTES["highclere-castle"] = [
         "difficulty": "Easy",
         "terrain": "Road",
         "summary": "A gentle circuit of the Highclere estate on quiet Hampshire lanes through the Capability Brown parkland — one of England's most famous landscapes, familiar to millions as the setting of Downton Abbey.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/1f/View_from_Beacon_Hill_1.JPG",
         "center": [51.3247, -1.3635],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10280,7 +10933,7 @@ CYCLING_ROUTES["broadlands-estate"] = [
         "difficulty": "Easy",
         "terrain": "Road / Track",
         "summary": "A gentle ride along the chalk stream valley of the River Test from Broadlands — one of England's finest fly-fishing rivers — through the meadows and ancient water mills of the Test Valley toward Mottisfont.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Romsey_River_Test.jpg/1280px-Romsey_River_Test.jpg",
         "center": [51.0232, -1.5000],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10329,7 +10982,7 @@ CYCLING_ROUTES["exbury-gardens"] = [
         "difficulty": "Easy",
         "terrain": "Forest Track / Road",
         "summary": "A flat, scenic circuit through New Forest glades and along the tidal margins of the Beaulieu River — some of the most beautiful and peaceful cycling in Hampshire, with the possibility of spotting New Forest ponies, deer, and waders at the river's edge.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/31/Beech_trees_in_Mallard_Wood%2C_New_Forest_-_geograph.org.uk_-_779513.jpg",
         "center": [50.7999, -1.3699],
         "zoom": 13,
         "waypoint_zoom": 15,
@@ -10378,7 +11031,7 @@ CYCLING_ROUTES["englefield-estate"] = [
         "difficulty": "Easy",
         "terrain": "Road",
         "summary": "A gentle circuit combining the Englefield Estate lanes with a section of the Thames towpath — flat, scenic, and well-surfaced, making this one of Berkshire's most accessible cycling routes for all abilities.",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/98/Englefield_House_-_geograph.org.uk_-_1824880.jpg",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/1/17/Uk-pangbourne-centre.jpg",
         "center": [51.4270, -1.1110],
         "zoom": 13,
         "waypoint_zoom": 15,
