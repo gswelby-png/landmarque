@@ -112,13 +112,17 @@
 {% if page_content_html %}{{ page_content_html|safe }}{% else %}
 <div class="page-wrap" data-lm-editable-body>
 
-  <div class="page-title">Shopping</div>
-  <p class="page-subtitle">Shere and the surrounding villages have a wonderful collection of independent shops â€” the kind you rarely find in towns anymore. Browse homewares, lifestyle gifts, antiques, and local produce, and take a piece of the Surrey Hills home with you.</p>
+  <div class=”page-title”>Shopping</div>
+  <p class=”page-subtitle”>Discover the independent shops and local producers around {{ estate_name }}.</p>
 
-  <hr class="divider">
+  <hr class=”divider”>
+
+  {% if not shops %}
+  <p style=”font-size:.95rem;color:#888;font-weight:300;line-height:1.8;padding:1.5rem 0;”>We are compiling a shopping guide for {{ estate_name }}. Please check back soon.</p>
+  {% endif %}
 
   {% for shop in shops %}
-  {% if not loop.first %}<hr class="divider">{% endif %}
+  {% if not loop.first %}<hr class=”divider”>{% endif %}
 
   <div class="shop-name">{{ shop.name }}</div>
   <div class="shop-meta">{{ shop.type }}{% if shop.distance %} Â· {{ shop.distance }}{% endif %}</div>

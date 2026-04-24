@@ -84,6 +84,10 @@
 
   <hr class="divider">
 
+  {% if not places %}
+  <p style="font-size:.95rem;color:#888;font-weight:300;line-height:1.8;padding:1.5rem 0;">We are compiling our recommendations for {{ estate_name }}. Please check back soon — or ask at the estate office for local suggestions.</p>
+  {% endif %}
+
   {% for place in places %}
   {% if not loop.first %}<hr class="divider">{% endif %}
 

@@ -67,7 +67,11 @@
 <div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Walking Routes</div>
-  <p class="page-subtitle">Explore the beautiful walks around Shere. Each route is waymarked and suitable for most abilities.</p>
+  <p class="page-subtitle">Explore the walks and footpaths at {{ estate_name }}.</p>
+
+  {% if not walks %}
+  <p style="font-size:.95rem;color:#888;font-weight:300;line-height:1.8;padding:1.5rem 0;">We are mapping the walking routes at {{ estate_name }}. Please check back soon — the estate's footpaths are open to explore in the meantime.</p>
+  {% endif %}
 
   {% for walk in walks %}
   <a href="/location/{{ slug }}/visitor/walking/{{ walk.slug }}" class="walk-card">

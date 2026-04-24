@@ -68,13 +68,17 @@
 {% if page_content_html %}{{ page_content_html|safe }}{% else %}
 <div class="page-wrap" data-lm-editable-body>
 
-  <div class="page-title">Fun for Kids</div>
-  <p class="page-subtitle">Shere is a brilliant place for children â€” streams to paddle in, creatures to spot, ice cream to eat, and countryside to explore.</p>
+  <div class=”page-title”>Fun for Kids</div>
+  <p class=”page-subtitle”>{{ estate_name }} has much to offer younger visitors — from wildlife to explore to open countryside to roam.</p>
 
-  <hr class="divider">
+  <hr class=”divider”>
+
+  {% if not places %}
+  <p style=”font-size:.95rem;color:#888;font-weight:300;line-height:1.8;padding:1.5rem 0;”>We are putting together a family guide to {{ estate_name }}. Please check back soon.</p>
+  {% endif %}
 
   {% for place in places %}
-  {% if not loop.first %}<hr class="divider">{% endif %}
+  {% if not loop.first %}<hr class=”divider”>{% endif %}
 
   <div class="entry-name">{{ place.name }}</div>
   <div class="entry-meta">{{ place.type }} Â· {{ place.distance }}</div>
