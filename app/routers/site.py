@@ -1,6 +1,10 @@
-from fastapi import APIRouter, Request
-from fastapi.responses import HTMLResponse
+from fastapi import APIRouter, Depends, Form, Request
+from fastapi.responses import HTMLResponse, RedirectResponse
 from fastapi.templating import Jinja2Templates
+from sqlalchemy.orm import Session
+
+from ..database import get_db
+from ..models import ContactEnquiry
 
 router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
@@ -67,5 +71,20 @@ def site_about(request: Request):
 
 
 @router.get("/contact", response_class=HTMLResponse)
-def site_contact(request: Request):
-    return templates.TemplateResponse("site/contact.html", {"request": request})
+def site_contact(request: Request, sent: str = ""):
+    return templates.TemplateResponse("site/contact.html", {"request": request, "sent": bool(sent)})
+
+
+@router.post("/contact", response_class=HTMLResponse)
+def site_contact_post(
+    request: Request,
+    name: str = Form(...),
+    email: str = Form(...),
+    subject: str = Form(""),
+    message: str = Form(...),
+    db: Session = Depends(get_db),
+):
+    enquiry = ContactEnquiry(name=name, email=email, subject=subject or None, message=message)
+    db.add(enquiry)
+    db.commit()
+    return RedirectResponse(url="/contact?sent=1", status_code=303)

@@ -154,3 +154,14 @@ class Donation(Base):
     stripe_session_id = Column(String, nullable=True, unique=True)
     status = Column(Enum(DonationStatus), default=DonationStatus.pending)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class ContactEnquiry(Base):
+    __tablename__ = "contact_enquiries"
+
+    id = Column(Integer, primary_key=True)
+    name = Column(String, nullable=False)
+    email = Column(String, nullable=False)
+    subject = Column(String, nullable=True)
+    message = Column(Text, nullable=False)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

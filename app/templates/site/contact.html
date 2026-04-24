@@ -1,12 +1,71 @@
 {% extends "site/base.html" %}
+{% block title %}Contact — LandMarque{% endblock %}
+{% block extra_css %}
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; margin-top: 3rem; }
+  @media (max-width: 700px) { .contact-grid { grid-template-columns: 1fr; gap: 3rem; } }
+  .contact-detail { font-size: .82rem; font-weight: 300; color: rgba(255,255,255,.45); line-height: 2; margin-bottom: 2.5rem; }
+  .contact-detail strong { display: block; font-size: .55rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .3rem; }
+  .form-field { margin-bottom: 1.25rem; }
+  .form-field label { display: block; font-size: .55rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: .45rem; }
+  .form-input, .form-textarea {
+    width: 100%; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1);
+    border-radius: 3px; color: #fff; font-family: 'Raleway', sans-serif;
+    font-size: .88rem; padding: .85rem 1rem; transition: border-color .15s;
+  }
+  .form-input:focus, .form-textarea:focus { outline: none; border-color: rgba(184,154,90,.5); }
+  .form-textarea { height: 130px; resize: vertical; }
+  .form-submit {
+    background: var(--accent); color: #fff; border: none;
+    font-family: 'Raleway', sans-serif; font-size: .65rem; font-weight: 700;
+    letter-spacing: 2.5px; text-transform: uppercase; padding: 1rem 2.5rem;
+    border-radius: 3px; cursor: pointer; transition: filter .15s;
+  }
+  .form-submit:hover { filter: brightness(110%); }
+  .sent-notice { background: rgba(76,175,121,.08); border-left: 3px solid rgba(76,175,121,.4); border-radius: 3px; padding: 1.25rem 1.5rem; font-size: .88rem; color: rgba(150,255,180,.75); font-weight: 600; margin-bottom: 2rem; }
+{% endblock %}
 {% block content %}
 <p class="page-eyebrow">Get in touch</p>
-<h1 class="page-title">Contact Us</h1>
+<h1 class="page-title">Contact</h1>
 <div class="page-rule"></div>
 
-<p style="font-size:.95rem; font-weight:300; color:rgba(255,255,255,.5); line-height:1.85; max-width:560px; margin-bottom:2.5rem;">
-  Content coming soon.
-</p>
+{% if sent %}
+<div class="sent-notice">Thank you — we have received your message and will be in touch shortly.</div>
+{% endif %}
 
-<a href="/site/" class="back-link">← Home</a>
+<div class="contact-grid">
+  <div>
+    <div class="contact-detail">
+      <strong>General enquiries</strong>
+      hello@landmarque.co.uk
+    </div>
+    <div class="contact-detail">
+      <strong>Estate owners</strong>
+      If you manage or own an estate and would like to discuss joining the LandMarque network, please use the form or email us directly.
+    </div>
+    <div class="contact-detail">
+      <strong>Response time</strong>
+      We aim to respond to all enquiries within two working days.
+    </div>
+  </div>
+
+  <form method="post" action="/contact">
+    <div class="form-field">
+      <label for="name">Your name</label>
+      <input class="form-input" type="text" id="name" name="name" required placeholder="Full name">
+    </div>
+    <div class="form-field">
+      <label for="email">Email address</label>
+      <input class="form-input" type="email" id="email" name="email" required placeholder="you@example.com">
+    </div>
+    <div class="form-field">
+      <label for="subject">Subject <span style="opacity:.4">(optional)</span></label>
+      <input class="form-input" type="text" id="subject" name="subject" placeholder="e.g. Estate enquiry">
+    </div>
+    <div class="form-field">
+      <label for="message">Message</label>
+      <textarea class="form-textarea" id="message" name="message" required placeholder="How can we help?"></textarea>
+    </div>
+    <button type="submit" class="form-submit">Send Message</button>
+  </form>
+</div>
 {% endblock %}

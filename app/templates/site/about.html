@@ -1,12 +1,51 @@
 {% extends "site/base.html" %}
+{% block title %}About — LandMarque{% endblock %}
+{% block extra_css %}
+  .about-body { font-size: 1rem; font-weight: 300; color: rgba(255,255,255,.55); line-height: 1.95; max-width: 660px; margin-bottom: 1.75rem; }
+  .about-body strong { color: rgba(255,255,255,.8); font-weight: 600; }
+  .about-divider { border: none; border-top: 1px solid rgba(255,255,255,.07); margin: 3.5rem 0; }
+  .about-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem 3rem; margin-bottom: 3rem; }
+  @media (max-width: 600px) { .about-values { grid-template-columns: 1fr; } }
+  .value-label { font-size: .55rem; font-weight: 700; letter-spacing: 2.5px; text-transform: uppercase; color: var(--accent); margin-bottom: .5rem; }
+  .value-text { font-size: .9rem; font-weight: 300; color: rgba(255,255,255,.45); line-height: 1.8; }
+{% endblock %}
 {% block content %}
 <p class="page-eyebrow">Our story</p>
-<h1 class="page-title">About Us</h1>
+<h1 class="page-title">About LandMarque</h1>
 <div class="page-rule"></div>
 
-<p style="font-size:.95rem; font-weight:300; color:rgba(255,255,255,.5); line-height:1.85; max-width:560px; margin-bottom:2.5rem;">
-  Content coming soon.
-</p>
+<p class="about-body">LandMarque exists to connect people with the private estates, historic houses, and working landscapes that define the English countryside — and to help the families and organisations that steward these places sustain them for future generations.</p>
 
-<a href="/landmarque" class="back-link">← LandMarque</a>
+<p class="about-body">Many of the most remarkable places in England are privately owned: ancient deer parks, chalk-stream valleys, working farms, woodland gardens, and Georgian houses that never appear on a tourist map. These places are often open to the public in some form, but finding them, understanding them, and contributing to their upkeep has always been difficult.</p>
+
+<p class="about-body">We built LandMarque to change that. <strong>For visitors,</strong> it is a guide to the estates and landscapes around them — their history, their walking routes, their places to eat, and the people who look after them. <strong>For estate owners and managers,</strong> it is a platform that turns every visitor into a potential supporter: handling parking, donations, bench sponsorships, and legacy gifts in a way that respects the character of the estate and requires almost no effort to set up.</p>
+
+<hr class="about-divider">
+
+<p class="about-body" style="font-size:.75rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.25);margin-bottom:1.5rem;">What we believe</p>
+
+<div class="about-values">
+  <div>
+    <div class="value-label">Stewardship first</div>
+    <div class="value-text">The estates in our network are living landscapes, not tourist attractions. We design everything around long-term stewardship, not short-term footfall.</div>
+  </div>
+  <div>
+    <div class="value-label">Honest presentation</div>
+    <div class="value-text">We write about every estate with care and accuracy. We do not publish content we haven't verified, and we update it when things change.</div>
+  </div>
+  <div>
+    <div class="value-label">Light-touch technology</div>
+    <div class="value-text">A land agent should be able to set up a LandMarque page in an afternoon. We do not add complexity where simplicity serves.</div>
+  </div>
+  <div>
+    <div class="value-label">Direct benefit</div>
+    <div class="value-text">Every donation, parking fee, and bench sponsorship goes directly to the estate. LandMarque takes a small platform fee — nothing more.</div>
+  </div>
+</div>
+
+<hr class="about-divider">
+
+<p class="about-body">LandMarque is based in the Surrey Hills. If you manage an estate and would like to discuss joining the network, we would be glad to hear from you.</p>
+
+<a href="/contact" class="panel-cta" style="text-decoration:none;">Get in touch</a>
 {% endblock %}
