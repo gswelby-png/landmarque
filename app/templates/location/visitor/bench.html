@@ -18,18 +18,23 @@
       padding: 0 1.25rem 4rem;
     }
     .page-title {
-      font-size: 1.6rem; font-weight: 700; color: #000;
-      letter-spacing: .5px; padding: 6rem 0 1.25rem;
+      font-size: 1.75rem; font-weight: 800; color: #000;
+      letter-spacing: .3px; padding: 5.5rem 0 1rem;
+      position: relative; padding-bottom: 1rem;
+    }
+    .page-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 2px; background: var(--brand-accent, #B89A5A);
     }
     .page-subtitle {
-      font-size: .95rem; color: #666;
-      font-weight: 300; line-height: 1.7; margin-bottom: 2rem;
+      font-size: .92rem; color: #777;
+      font-weight: 300; line-height: 1.75; margin: 1.25rem 0 2rem;
     }
     .section-label {
-      font-size: .65rem; font-weight: 700; letter-spacing: 2px;
-      text-transform: uppercase; color: #999; margin-bottom: 1rem;
+      font-size: .6rem; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: #aaa; margin-bottom: 1rem;
     }
-    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 2.5rem 0; }
+    .divider { border: none; border-top: 1px solid #ececec; margin: 2.5rem 0; }
 
     /* Location cards */
     .locations-grid {

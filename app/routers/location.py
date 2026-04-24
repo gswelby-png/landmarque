@@ -11592,6 +11592,53 @@ def visitor_parking_payment(request: Request, slug: str, db: Session = Depends(g
     })
 
 
+@router.post("/{slug}/visitor/donate")
+async def visitor_donate(slug: str, request: Request, db: Session = Depends(get_db)):
+    from fastapi.responses import JSONResponse
+    estate = _get_estate(slug)
+    if not estate:
+        return JSONResponse({"error": "Estate not found"}, status_code=404)
+    try:
+        body = await request.json()
+        amount_pence = int(body.get("amount_pence", 0))
+        message = str(body.get("message", ""))[:500]
+    except Exception:
+        return JSONResponse({"error": "Invalid request"}, status_code=400)
+    if amount_pence < 100:
+        return JSONResponse({"error": "Minimum donation is £1"}, status_code=400)
+
+    stripe_key = os.getenv("STRIPE_SECRET_KEY")
+    if not stripe_key:
+        return JSONResponse({"error": "Payments not yet configured"}, status_code=503)
+
+    stripe.api_key = stripe_key
+    base_url = os.getenv("BASE_URL", "http://localhost:8000")
+    estate_name = estate["name"]
+
+    try:
+        session = stripe.checkout.Session.create(
+            payment_method_types=["card"],
+            line_items=[{
+                "price_data": {
+                    "currency": "gbp",
+                    "product_data": {
+                        "name": f"Donation — {estate_name}",
+                        "description": message or "Estate conservation & maintenance",
+                    },
+                    "unit_amount": amount_pence,
+                },
+                "quantity": 1,
+            }],
+            mode="payment",
+            success_url=f"{base_url}/location/{slug}/visitor/legacy?donated=1",
+            cancel_url=f"{base_url}/location/{slug}/visitor/legacy",
+            metadata={"type": "donation", "slug": slug, "message": message},
+        )
+        return JSONResponse({"url": session.url})
+    except Exception as e:
+        return JSONResponse({"error": str(e)}, status_code=500)
+
+
 @router.get("/{slug}/visitor/walking", response_class=HTMLResponse)
 def visitor_walking_list(request: Request, slug: str, db: Session = Depends(get_db)):
     estate = _get_estate(slug)

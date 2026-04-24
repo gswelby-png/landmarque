@@ -18,12 +18,17 @@
       padding: 0 1.25rem 4rem;
     }
     .page-title {
-      font-size: 1.6rem; font-weight: 700; color: #000;
-      letter-spacing: .5px; padding: 6rem 0 1.25rem;
+      font-size: 1.75rem; font-weight: 800; color: #000;
+      letter-spacing: .3px; padding: 5.5rem 0 1rem;
+      position: relative; padding-bottom: 1rem;
+    }
+    .page-title::after {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 36px; height: 2px; background: var(--brand-accent, #B89A5A);
     }
     .page-subtitle {
-      font-size: .95rem; color: #666;
-      font-weight: 300; line-height: 1.7; margin-bottom: 1.5rem;
+      font-size: .92rem; color: #777;
+      font-weight: 300; line-height: 1.75; margin: 1.25rem 0 1.5rem;
     }
     .hero-image {
       display: block; width: calc(100% + 2.5rem);
@@ -106,7 +111,7 @@
       font-size: .78rem; color: #aaa; text-align: center;
       line-height: 1.5;
     }
-    .divider { border: none; border-top: 1px solid #e0e0e0; margin: 2.25rem 0; }
+    .divider { border: none; border-top: 1px solid #ececec; margin: 2.25rem 0; }
     /* What your donation supports */
     .impact-list { list-style: none; margin: 0 0 1.5rem; padding: 0; }
     .impact-list li {
@@ -165,7 +170,10 @@
     <textarea id="donation-message" placeholder="A note for the estate team, or a dedication if you wish..."></textarea>
   </div>
 
-  <button class="donate-btn" onclick="handleDonate()">Donate Now</button>
+  <div id="donated-msg" style="display:none;background:#eaf7ea;border-radius:8px;padding:1.25rem;text-align:center;font-size:.95rem;color:#2a7a2a;font-weight:600;margin-bottom:1rem;">
+    Thank you — your donation means a great deal to us.
+  </div>
+  <button class="donate-btn" id="donate-btn" onclick="handleDonate()">Donate Now</button>
 
   <hr class="divider">
 
@@ -176,6 +184,11 @@
 </div>
 
 <script>
+  if (new URLSearchParams(window.location.search).get('donated') === '1') {
+    document.getElementById('donated-msg').style.display = 'block';
+    document.getElementById('donate-btn').style.display = 'none';
+  }
+
   let selectedAmount = null;
 
   function selectAmount(btn, amount) {
@@ -190,15 +203,30 @@
     selectedAmount = null;
   }
 
-  function handleDonate() {
+  async function handleDonate() {
     const custom = parseFloat(document.getElementById('custom-amount').value);
     const amount = custom || selectedAmount;
     if (!amount || amount < 1) {
       alert('Please select or enter a donation amount.');
       return;
     }
-    // TODO: integrate with Stripe Checkout or payment provider
-    alert('Thank you for your generosity. Payment processing will be integrated here.');
+    const btn = document.getElementById('donate-btn');
+    btn.disabled = true;
+    btn.textContent = 'Processing…';
+    const message = document.getElementById('donation-message').value;
+    const resp = await fetch('/location/{{ slug }}/visitor/donate', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({amount_pence: Math.round(amount * 100), message: message})
+    });
+    const data = await resp.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      btn.disabled = false;
+      btn.textContent = 'Donate Now';
+      alert(data.error || 'Something went wrong. Please try again.');
+    }
   }
 </script>
 {% endif %}
