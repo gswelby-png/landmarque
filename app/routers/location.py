@@ -11598,6 +11598,7 @@ def visitor_parking_payment(request: Request, slug: str, db: Session = Depends(g
 @router.post("/{slug}/visitor/donate")
 async def visitor_donate(slug: str, request: Request, db: Session = Depends(get_db)):
     from fastapi.responses import JSONResponse
+    from ..models import Donation, DonationStatus
     estate = _get_estate(slug)
     if not estate:
         return JSONResponse({"error": "Estate not found"}, status_code=404)
@@ -11633,10 +11634,19 @@ async def visitor_donate(slug: str, request: Request, db: Session = Depends(get_
                 "quantity": 1,
             }],
             mode="payment",
-            success_url=f"{base_url}/location/{slug}/visitor/legacy?donated=1",
+            success_url=f"{base_url}/location/{slug}/visitor/legacy?donated={{CHECKOUT_SESSION_ID}}",
             cancel_url=f"{base_url}/location/{slug}/visitor/legacy",
             metadata={"type": "donation", "slug": slug, "message": message},
         )
+        donation = Donation(
+            estate_slug=slug,
+            amount_pence=amount_pence,
+            message=message or None,
+            stripe_session_id=session.id,
+            status=DonationStatus.pending,
+        )
+        db.add(donation)
+        db.commit()
         return JSONResponse({"url": session.url})
     except Exception as e:
         return JSONResponse({"error": str(e)}, status_code=500)
@@ -11904,14 +11914,21 @@ async def visitor_bench_enquiry(slug: str, request: Request, db: Session = Depen
 
 
 @router.get("/{slug}/visitor/legacy", response_class=HTMLResponse)
-def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
+def visitor_legacy(request: Request, slug: str, donated: str = "", db: Session = Depends(get_db)):
+    from ..models import Donation, DonationStatus
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    if donated and donated.startswith("cs_"):
+        donation = db.query(Donation).filter(Donation.stripe_session_id == donated).first()
+        if donation and donation.status == DonationStatus.pending:
+            donation.status = DonationStatus.paid
+            db.commit()
     ctx = _base_ctx(request, slug, estate, car_park, "Legacy")
     ctx["page_content_html"] = _get_page_content_html(car_park, "legacy")
+    ctx["donated"] = bool(donated)
     return templates.TemplateResponse("location/visitor/legacy.html", ctx)
 
 

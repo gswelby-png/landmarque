@@ -137,3 +137,20 @@ class BenchEnquiry(Base):
     inscription = Column(String, nullable=True)
     notes = Column(Text, nullable=True)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class DonationStatus(str, enum.Enum):
+    pending = "pending"
+    paid = "paid"
+
+
+class Donation(Base):
+    __tablename__ = "donations"
+
+    id = Column(Integer, primary_key=True)
+    estate_slug = Column(String, nullable=False, index=True)
+    amount_pence = Column(Integer, nullable=False)
+    message = Column(String, nullable=True)
+    stripe_session_id = Column(String, nullable=True, unique=True)
+    status = Column(Enum(DonationStatus), default=DonationStatus.pending)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

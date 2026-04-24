@@ -179,7 +179,7 @@
 </div>
 
 <script>
-  if (new URLSearchParams(window.location.search).get('donated') === '1') {
+  if (new URLSearchParams(window.location.search).get('donated')) {
     document.getElementById('donated-msg').style.display = 'block';
     document.getElementById('donate-btn').style.display = 'none';
   }

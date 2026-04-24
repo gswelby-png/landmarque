@@ -12,7 +12,7 @@ from datetime import date, datetime, timezone
 from jose import JWTError
 
 from ..database import get_db
-from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType, SlugRedirect, BenchEnquiry
+from ..models import Owner, CarPark, PricingRule, Transaction, TransactionStatus, DayType, SlugRedirect, BenchEnquiry, Donation, DonationStatus
 from ..auth import hash_password, verify_password, create_token, decode_token
 
 router = APIRouter(prefix="/owner")
@@ -324,6 +324,31 @@ def dashboard(
             for r in rows
         ]
 
+    # ── Donations for this owner's estates ──────────────────────────────────
+    donation_rows = []
+    if owner_estate_slugs:
+        donation_rows = (
+            db.query(Donation)
+            .filter(
+                Donation.estate_slug.in_(owner_estate_slugs),
+                Donation.status == DonationStatus.paid,
+            )
+            .order_by(Donation.created_at.desc())
+            .limit(200)
+            .all()
+        )
+    donations = [
+        {
+            "id": r.id,
+            "estate_slug": r.estate_slug,
+            "amount": f"£{r.amount_pence / 100:.2f}",
+            "message": r.message or "",
+            "date": r.created_at.strftime("%d %b %Y") if r.created_at else "—",
+        }
+        for r in donation_rows
+    ]
+    total_donated_pence = sum(r.amount_pence for r in donation_rows)
+
     return templates.TemplateResponse("owner/dashboard.html", {
         "request": request,
         "owner_name": owner.name,
@@ -340,6 +365,8 @@ def dashboard(
         "total_txn_count": total_txn_count,
         "cp_data": cp_data,
         "bench_enquiries": bench_enquiries,
+        "donations": donations,
+        "total_donated_pence": total_donated_pence,
         "pw_ok": pw_ok,
         "pw_error": pw_error,
         "website_saved": website_saved,

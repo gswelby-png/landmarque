@@ -272,6 +272,10 @@
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
       Enquiries{% if bench_enquiries %} <span style="background:var(--gold);color:#000;font-size:.55rem;font-weight:800;border-radius:8px;padding:.1rem .4rem;margin-left:.3rem;vertical-align:middle;">{{ bench_enquiries|length }}</span>{% endif %}
     </button>
+    <button class="nav-item" data-sec="donations">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      Donations
+    </button>
     <button class="nav-item" data-sec="signage">
       <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="5" height="5"/><rect x="16" y="3" width="5" height="5"/><rect x="3" y="16" width="5" height="5"/><path d="M21 16h-3a2 2 0 0 0-2 2v3M16 21h5M21 16v5"/><rect x="11" y="11" width="3" height="3"/></svg>
       Signage
@@ -821,6 +825,61 @@
     <div style="margin-top:2.5rem;padding-top:2rem;border-top:1px solid var(--border);">
       <a href="/owner/logout" style="font-size:.62rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.2);text-decoration:none;transition:color .15s;" onmouseover="this.style.color='rgba(255,255,255,.45)'" onmouseout="this.style.color='rgba(255,255,255,.2)'">Sign out →</a>
     </div>
+  </section>
+
+  <section class="sec" id="sec-donations">
+    <p class="eyebrow">Visitor Giving</p>
+    <h2 class="sec-title">Donations</h2>
+    <div class="sec-rule"></div>
+
+    {% if donations %}
+    <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1.5rem;">
+      <div class="card" style="flex:1;min-width:160px;max-width:220px;">
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;">Total donated</div>
+          <div style="font-size:1.5rem;font-weight:800;color:var(--gold);">£{{ "%.2f"|format(total_donated_pence / 100) }}</div>
+        </div>
+      </div>
+      <div class="card" style="flex:1;min-width:160px;max-width:220px;">
+        <div style="padding:1.25rem 1.5rem;">
+          <div style="font-size:.6rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem;">Donations received</div>
+          <div style="font-size:1.5rem;font-weight:800;">{{ donations|length }}</div>
+        </div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-head">
+        <div><div class="card-title">Donation history</div><div class="card-sub" style="margin-top:.2rem;">All completed donations via the Legacy page</div></div>
+      </div>
+      <div style="overflow-x:auto;">
+        <table class="data-table" style="min-width:400px;">
+          <thead>
+            <tr>
+              <th>Date</th>
+              <th>Amount</th>
+              <th>Message</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for d in donations %}
+            <tr>
+              <td style="white-space:nowrap;color:var(--muted);font-size:.7rem;">{{ d.date }}</td>
+              <td style="font-weight:700;color:var(--gold);">{{ d.amount }}</td>
+              <td style="font-size:.78rem;color:var(--muted);max-width:300px;white-space:normal;line-height:1.4;font-style:{% if d.message %}normal{% else %}italic{% endif %};">{{ d.message or 'No message' }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    {% else %}
+    <div class="card" style="max-width:440px;">
+      <div style="padding:2rem 1.5rem;text-align:center;">
+        <div style="font-size:2rem;margin-bottom:.75rem;opacity:.3;">♥</div>
+        <div style="font-size:.88rem;color:var(--muted);line-height:1.7;">No donations yet. When visitors donate via the Legacy &amp; Giving page on your estate, completed donations will appear here.</div>
+      </div>
+    </div>
+    {% endif %}
   </section>
 
   <section class="sec" id="sec-enquiries">
