@@ -56,7 +56,7 @@ ESTATES = {
         "lat": 51.2337, "lng": -0.3357,
         "brand_primary": "#1a0a14",
         "brand_accent": "#8B1C3A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
+        "features": ["history", "walking", "winery", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
     },
     "abinger-estate": {
         "name": "Abinger Estate",
@@ -109,7 +109,7 @@ ESTATES = {
         "lat": 50.9900, "lng": -0.7400,
         "brand_primary": "#1c1408",
         "brand_accent": "#C5A55A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
+        "features": ["history", "walking", "polo", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "parham-house": {
         "name": "Parham House",
@@ -129,7 +129,7 @@ ESTATES = {
         "lat": 51.0280, "lng": -0.2710,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#5A8A3A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
     # ── East Sussex — private estates ────────────────────────────────────────────
@@ -165,7 +165,7 @@ ESTATES = {
         "lat": 51.1734, "lng": 0.1697,
         "brand_primary": "#18100a",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "hever-castle": {
         "name": "Hever Castle",
@@ -175,7 +175,7 @@ ESTATES = {
         "lat": 51.1908, "lng": 0.1097,
         "brand_primary": "#1a0e06",
         "brand_accent": "#C9A84C",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "lullingstone-castle": {
         "name": "Lullingstone Castle",
@@ -185,7 +185,7 @@ ESTATES = {
         "lat": 51.3810, "lng": 0.1610,
         "brand_primary": "#0a1812",
         "brand_accent": "#5A8A3A",
-        "features": ["history", "walking", "places-of-interest", "fun-for-kids", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "fun-for-kids", "benches", "legacy", "events"],
     },
     "groombridge-place": {
         "name": "Groombridge Place",
@@ -195,7 +195,7 @@ ESTATES = {
         "lat": 51.1120, "lng": 0.1740,
         "brand_primary": "#0a1a0e",
         "brand_accent": "#5A8A3A",
-        "features": ["history", "walking", "places-of-interest", "fun-for-kids", "movies", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "fun-for-kids", "movies", "benches", "legacy", "events"],
     },
 
     # ── Hampshire — private estates ───────────────────────────────────────────────
@@ -228,7 +228,7 @@ ESTATES = {
         "lat": 50.7999, "lng": -1.3699,
         "brand_primary": "#0a1a0a",
         "brand_accent": "#D05C7A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
     },
     "broadlands-estate": {
         "name": "Broadlands Estate",
@@ -281,7 +281,7 @@ ESTATES = {
         "lat": 51.4290, "lng": -1.4100,
         "brand_primary": "#0e1218",
         "brand_accent": "#B89A5A",
-        "features": ["history", "walking", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
+        "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
 }

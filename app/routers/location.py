@@ -8326,6 +8326,569 @@ MOVIES["groombridge-place"] = {
 }
 
 
+
+GARDENS = {}
+
+GARDENS["hever-castle"] = {
+    "subtitle": "The gardens at Hever Castle were created between 1904 and 1908 by William Waldorf Astor, who employed eight hundred men working for four years to transform a neglected estate into one of the most remarkable garden landscapes in England.",
+    "chapters": [
+        {
+            "title": "THE ITALIAN GARDEN",
+            "image_url": "",
+            "image_caption": "The Pompeiian Wall in the Italian Garden at Hever Castle, displaying Astor's collection of ancient Greek and Roman statuary gathered during his time as US Ambassador to Italy.",
+            "paragraphs": [
+                "The Italian Garden at Hever is the most ambitious garden creation of the Edwardian era. William Waldorf Astor, who had served as United States Ambassador to Italy, returned with a passion for Italian Renaissance garden design and a collection of ancient statuary that needed a setting worthy of it. The garden he created on the south side of the castle drew directly on the great villa gardens of Tuscany and the Veneto, translating their logic into the Kentish Weald.",
+                "At its heart is the Pompeiian Wall, a loggia of Portland stone colonnade running the full width of the garden, punctuated by niches containing pieces from Astor's collection — some genuinely ancient, some high-quality Edwardian reproductions. The statuary includes a Roman emperor in green marble, several Hellenistic figures, and a pair of colossal sphinxes flanking the central steps. The wall descends in terraces to the lakeside, where the loggia itself completes the composition.",
+                "The scale of earthworks required to create the sunken garden, the piazza, and the lake basin was staggering. Astor brought in workers from across Britain and as far as Italy to achieve what his architects had designed. The result is a garden that feels simultaneously English in its planting and thoroughly Italian in its bones.",
+            ]
+        },
+        {
+            "title": "THE TUDOR GARDEN & ROSE GARDEN",
+            "image_url": "",
+            "image_caption": "The Tudor Garden at Hever Castle, planted within the walls of a kitchen garden that was already old when Anne Boleyn walked here as a child in the early sixteenth century.",
+            "paragraphs": [
+                "Between the castle and the Italian Garden lies the Tudor Garden, enclosed within walls whose origins predate Astor's arrival by four centuries. This is the area Anne Boleyn would have known — a walled enclosure where herbs, vegetables, and flowers grew in the practical medieval manner. Astor retained the bones of this ancient garden while transforming its planting, and the result has an intimacy quite unlike the grand spectacle of the Italian terraces.",
+                "The Rose Garden occupies the former kitchen garden to the east of the castle and contains more than four thousand roses across some six hundred varieties, arranged by colour in a sequence that moves from white through cream and yellow to deep red. The collection represents one of the finest plantings of old-fashioned and heritage roses in the south-east of England. The walled enclosure holds warmth into the evening and the fragrance on a still summer day is remarkable.",
+                "Together the Tudor and Rose gardens offer a domestic counterpoint to the grandeur of the Italian Garden — a reminder that the scale of Astor's ambition did not overwhelm his sensitivity to the particular quality of the castle's own ancient character.",
+            ]
+        },
+        {
+            "title": "THE LAKE & ANNE BOLEYN'S WALK",
+            "image_url": "",
+            "image_caption": "The thirty-eight-acre lake at Hever Castle, excavated between 1904 and 1908 as part of William Waldorf Astor's transformation of the estate.",
+            "paragraphs": [
+                "The lake at Hever is one of the most significant landscape interventions of the twentieth century in the south-east of England. To create it, Astor's men excavated and dammed the course of the River Eden over a period of years. The scale of the undertaking had no real precedent in private garden-making since Capability Brown's lake constructions of the eighteenth century.",
+                "The lake is flanked on its north shore by Anne Boleyn's Walk, a broad tree-lined avenue of mature limes and chestnuts whose canopy now reaches thirty metres and gives the path a cathedral-like quality in summer. On the far bank, Sixteen Acre Island contains the Water Maze and the Japanese Tea House, both accessible only by bridge.",
+                "The view across the lake toward the loggia, with the castle towers visible above the tree line, is one of the iconic images of the Kentish garden landscape. In early morning, when mist lies on the water and the loggia is reflected in still conditions, it is genuinely extraordinary.",
+            ]
+        },
+    ]
+}
+
+GARDENS["penshurst-place"] = {
+    "subtitle": "The walled gardens at Penshurst Place are among the oldest continuously cultivated gardens in England, their layout little changed from the late sixteenth century when the Sidney family first enclosed them within the mile of yew hedge that still defines them today.",
+    "chapters": [
+        {
+            "title": "THE WALLED GARDENS",
+            "image_url": "",
+            "image_caption": "The Italian Garden at Penshurst Place, looking toward the house across the formal parterre beds.",
+            "paragraphs": [
+                "The walled gardens at Penshurst are divided into a series of rooms by a system of yew hedges stretching over a mile in total length — one of the most extensive formal hedge networks in England. Each enclosure has a distinct character and planting scheme, creating a sequence of spaces that repays unhurried exploration. The structure of these divisions dates to the late sixteenth century, when Sir Henry Sidney undertook a comprehensive redesign of the gardens that had surrounded the house since the fourteenth century.",
+                "The Union Jack Garden, so called for its geometric pattern of beds meeting at a central rose and flag, is perhaps the most photographed section — its symmetry particularly striking in spring when the tulip borders are in full colour. The Italian Garden offers a more formal Mediterranean character, with clipped topiary and a central pool. The Magnolia Garden, sheltered by high walls, contains varieties that have been here for over a century.",
+                "The productive kitchen garden occupies a large walled enclosure to the north and supplies the estate's restaurant and tea rooms with vegetables, herbs, and cut flowers through the season. It is a genuine working garden in continuous cultivation since Tudor times.",
+            ]
+        },
+        {
+            "title": "THE NUT GARDEN & ORCHARD",
+            "image_url": "",
+            "image_caption": "The nut walk in the Nut Garden at Penshurst Place in late winter, when the hazel catkins create a golden canopy along the tunnel before the leaves emerge.",
+            "paragraphs": [
+                "Beyond the formal walled sections, the Nut Garden offers one of the most unusual features of the Penshurst landscape — a long tunnel of trained hazelnuts that floods with catkins in February and casts a dappled shade over the path below through summer. This type of nut walk was fashionable in Tudor and Stuart gardens and is now increasingly rare; the example at Penshurst is one of the finest surviving instances.",
+                "The orchard adjoining the walled gardens contains a collection of traditional English apple varieties, many of them local to Kent and no longer available commercially. The Sidney family has maintained the orchard as a conservation planting, and the varieties include some that date to the sixteenth and seventeenth centuries. The orchard is at its best in blossom — typically from late April into May — and again in autumn when the fruit is being gathered.",
+            ]
+        },
+        {
+            "title": "GARDEN HISTORY & THE SIDNEY LEGACY",
+            "image_url": "",
+            "image_caption": "A detail of the formal parterre planting in the Italian Garden at Penshurst Place.",
+            "paragraphs": [
+                "The connection between the Sidney family and the gardens at Penshurst is one of the longest continuous associations between a private family and a designed landscape in England. Sir Philip Sidney — the Elizabethan poet, courtier, and soldier — grew up at Penshurst and wrote about his childhood garden in Arcadia. His description of an idealised English garden closely matches what the grounds at Penshurst were and have remained.",
+                "The gardens today are the result of four and a half centuries of continuous care rather than any single dramatic redesign. Elements from different periods — the Tudor yew structure, Victorian parterre planting, Edwardian rose beds — have been absorbed into a coherent whole without the kind of wholesale reinvention that overtook many great gardens in the eighteenth century. It is possible to trace the evolution of English garden fashion almost continuously from the sixteenth century to the present day.",
+            ]
+        },
+    ]
+}
+
+GARDENS["groombridge-place"] = {
+    "subtitle": "The formal walled gardens at Groombridge Place were designed in the seventeenth century, partly under the influence of John Evelyn, and have served as the backdrop for two acclaimed film adaptations of The Secret Garden.",
+    "chapters": [
+        {
+            "title": "THE FORMAL WALLED GARDENS",
+            "image_url": "",
+            "image_caption": "The ornamental canal in the formal gardens at Groombridge Place, flanked by clipped yew hedges — a design that owes much to John Evelyn's influence in the 1670s.",
+            "paragraphs": [
+                "The walled gardens at Groombridge Place were laid out in the 1670s, when the newly completed manor house was given grounds to match its formal architectural character. The design reflects the fashionable taste of Restoration England for compartmentalised gardens with strong structural geometry — clipped hedges defining rooms, canals providing reflective focal points, and planting subordinated to architectural effect.",
+                "John Evelyn, the great seventeenth-century diarist and garden theorist, was a friend of the Packer family who built Groombridge Place, and his influence on the garden's design is documented in his correspondence. The kitchen garden occupies a generous walled enclosure behind the pleasure grounds, and the two have coexisted in their current form for three and a half centuries.",
+                "The Drunken Garden — a section of clipped topiary in deliberately irregular forms — was added in the eighteenth century and has become one of the garden's most distinctive features. Each of the topiary pieces has a slight tilt or irregularity that gives the garden its name and its unsettling quality: perfection just slightly off kilter.",
+            ]
+        },
+        {
+            "title": "THE SECRET GARDEN CONNECTION",
+            "image_url": "",
+            "image_caption": "The south-facing walled kitchen garden at Groombridge Place dressed for the 1993 film adaptation of The Secret Garden.",
+            "paragraphs": [
+                "When director Agnieszka Holland needed a location for the 1993 adaptation of Frances Hodgson Burnett's The Secret Garden, Groombridge Place answered every requirement — the moated manor, the enclosed walled gardens, and the ancient woodland beyond provided the full range of settings the story demanded. The south-facing walled garden became the central character of the film.",
+                "The resonance between Groombridge and Burnett's story was not entirely coincidental. The enclosed, forgotten quality of the walled gardens has an emotional accuracy that no studio set could replicate. In 2020, director Marc Munden returned to Groombridge for a second adaptation of the same novel. No other garden in England can claim to have hosted two separate studio productions of the same film.",
+            ]
+        },
+        {
+            "title": "THE ENCHANTED FOREST",
+            "image_url": "",
+            "image_caption": "Ancient broadleaf woodland at the edge of the Enchanted Forest at Groombridge Place.",
+            "paragraphs": [
+                "Beyond the formal walled gardens, the Enchanted Forest is a visitor experience built on the character of the ancient broadleaf woodland that frames the eastern side of the estate. The woodland itself is old growth — oaks and beeches that predate the manor house by centuries — and its atmosphere is genuinely distinct from the managed formality of the gardens.",
+                "The activities and installations in the Enchanted Forest are designed to work with the woodland rather than against it. The treewalk, suspended among the canopy of mature beeches, offers views over the forest that cannot be experienced from ground level.",
+                "The combination of formal garden and ancient woodland at Groombridge is unusual among English estates. The contrast between the clipped geometry of the walled gardens and the unmanaged density of the forest, separated by only a short walk, is part of what makes the estate experience distinctive.",
+            ]
+        },
+    ]
+}
+
+GARDENS["leonardslee-gardens"] = {
+    "subtitle": "Leonardslee Gardens occupies a steep woodland valley in the Sussex Weald, its seven lakes reflecting a collection of rhododendrons, azaleas, camellias, and magnolias that Sir Edmund Loder began assembling in 1889 — one of the great private gardens of Victorian England.",
+    "chapters": [
+        {
+            "title": "THE VALLEY & THE LAKES",
+            "image_url": "",
+            "image_caption": "The lower lake at Leonardslee Gardens in May, reflecting banks of rhododendrons in full flower.",
+            "paragraphs": [
+                "Leonardslee occupies a natural valley carved by streams that feed a sequence of seven lakes descending through the woodland. Sir Edmund Loder came to the valley in 1889 and recognised immediately that its unusual microclimate — sheltered from frost, humid, and free-draining on the Wealden sandstone — was perfectly suited to the tender woodland plants that were transforming English garden practice in the late Victorian period.",
+                "The lakes themselves, formed by damming the valley streams, are as important to the garden's character as any planting. Their reflective surfaces double the spectacle of the flowering banks above them in spring. The valley is at its peak in late April and May when the rhododendrons are in flower, but the character of the garden changes significantly through the season — the Japanese maples and tree ferns coming into their own through summer, and the autumn colour of the deciduous woodland making October another outstanding month to visit.",
+            ]
+        },
+        {
+            "title": "THE PLANT COLLECTIONS",
+            "image_url": "",
+            "image_caption": "A mature Rhododendron loderi specimen in the upper valley at Leonardslee Gardens — the hybrid developed by Sir Edmund Loder himself in 1901.",
+            "paragraphs": [
+                "The plant collections at Leonardslee are of international botanical significance. Sir Edmund Loder developed several hybrid rhododendrons here, the most important of which — Rhododendron loderi, a cross between R. fortunei and R. griffithianum — is now distributed through gardens worldwide and named for the estate. The original plants from which all loderi hybrids descend still grow in the valley.",
+                "The camellia collection is one of the largest in England, with specimens that date to the Loder period now forming trees of considerable size. The garden also contains a Victorian rock garden, one of the most ambitious of its kind surviving in England — a constructed landscape of Sussex sandstone and ironstone blocks planted with alpines, ferns, and shade-loving perennials across several acres.",
+            ]
+        },
+        {
+            "title": "THE WALLABIES & WILDLIFE",
+            "image_url": "",
+            "image_caption": "Bennett's wallabies grazing in the parkland at Leonardslee Gardens — descendants of the animals introduced by Sir Edmund Loder in the 1890s.",
+            "paragraphs": [
+                "Leonardslee is home to a colony of Bennett's wallabies that have lived in the parkland since Sir Edmund Loder introduced a small group in the 1890s. Unlike many similar introductions, the Leonardslee wallabies established themselves as a genuinely self-sustaining colony in the shelter of the valley, and today around sixty animals graze the parkland.",
+                "The wallabies are entirely wild, though habituated to human presence, and can be seen grazing on the lower slopes of the valley throughout the day. The combination of a wallaby colony and world-class woodland garden in the Sussex Weald gives Leonardslee an irreproducible quality.",
+            ]
+        },
+    ]
+}
+
+GARDENS["lullingstone-castle"] = {
+    "subtitle": "The grounds at Lullingstone Castle contain one of the most unusual gardens in England — the World Garden of Plants, created by Tom Hart Dyke following his captivity in the Darien Gap, with living specimens from every country in the world.",
+    "chapters": [
+        {
+            "title": "THE WORLD GARDEN OF PLANTS",
+            "image_url": "",
+            "image_caption": "The World Garden of Plants at Lullingstone Castle in spring, laid out in the form of a world map.",
+            "paragraphs": [
+                "The World Garden of Plants at Lullingstone Castle is unlike any other garden in England. Created by Tom Hart Dyke — the current generation of the family that has owned the castle since 1361 — the garden was conceived during his nine months as a hostage of guerrillas in the Colombian jungle in 2000, when he and his companion Paul Winder planned an imaginary garden as a survival mechanism.",
+                "The garden, opened in 2005, is laid out on the plan of a world map, with planting zones corresponding to the continents and, within them, individual countries. Each zone is planted with specimens native to that country or region — a living encyclopaedia of world flora organised geographically. The garden contains plants from every country in the world, including several species that Tom collected personally on subsequent expeditions.",
+                "The concept is genuinely unique: no other garden in the world attempts to represent the complete flora of every sovereign state in a single designed landscape. The result is horticulturally extraordinary and personally moving — a garden that grew directly from one man's experience of captivity and his determination to find meaning in it.",
+            ]
+        },
+        {
+            "title": "THE CASTLE & MEDIEVAL GROUNDS",
+            "image_url": "",
+            "image_caption": "The Tudor gatehouse at Lullingstone Castle, dating from the early sixteenth century — the Hart Dyke family has lived here continuously since 1361.",
+            "paragraphs": [
+                "The castle at Lullingstone is not a castle in the conventional sense but a Tudor and Georgian house entered through one of the finest surviving brick gatehouses of the early sixteenth century. The Hart Dyke family has been here continuously since 1361 — one of the longest unbroken occupations of a private house in England.",
+                "The wider grounds include formal walled enclosures, a lake, and a sequence of garden rooms developed by successive generations of the family. The Norman church of St Botolph stands within the grounds and contains family monuments spanning six centuries.",
+                "The contrast between the ancient fabric of the castle and gatehouse and the modernity of the World Garden — conceived in captivity and opened less than a generation ago — is part of what makes Lullingstone distinctive.",
+            ]
+        },
+        {
+            "title": "THE DARENT VALLEY SETTING",
+            "image_url": "",
+            "image_caption": "The River Darent flowing through the grounds at Lullingstone Castle.",
+            "paragraphs": [
+                "Lullingstone occupies a particularly rich stretch of the Darent valley, a chalk stream valley in west Kent that has attracted human settlement for at least two thousand years. The Roman villa on the edge of the estate — now in the care of English Heritage — was occupied from the first to the fourth century and contains some of the finest Romano-British mosaic floors surviving anywhere in the country.",
+                "The valley setting gives the castle grounds a distinctive quality. The River Darent flows through the lower part of the estate, and the lake that feeds from it creates a broad watery expanse that the castle overlooks. The combination of chalk stream, medieval house, Tudor gatehouse, and the World Garden in a single valley is genuinely unusual.",
+            ]
+        },
+    ]
+}
+
+GARDENS["exbury-gardens"] = {
+    "subtitle": "Exbury Gardens was created by Lionel de Rothschild from 1919, transforming 200 acres of New Forest woodland into one of the world's great collections of rhododendrons, azaleas, camellias, and magnolias.",
+    "chapters": [
+        {
+            "title": "THE ROTHSCHILD COLLECTION",
+            "image_url": "",
+            "image_caption": "The main woodland walk at Exbury Gardens in May, passing through banks of rhododendrons and azaleas in full flower.",
+            "paragraphs": [
+                "Lionel de Rothschild came to Exbury in 1919 with a vision and the resources to realise it: to create the finest rhododendron garden in England. He employed over a hundred gardeners at the peak of the work, planted hundreds of thousands of bulbs, constructed miles of paths through the existing woodland, and collected specimens from plant hunters working in the Himalayas, China, and Burma.",
+                "The Exbury rhododendron hybrids — the Exbury azaleas — were developed by Lionel himself through a systematic breeding programme and are now distributed through gardens globally. The collection contains species that were virtually unknown in cultivation when Lionel began collecting them.",
+                "The scale of the garden — two hundred acres of managed woodland — means that it is never crowded even at the height of the season, and the experience of walking through the colour-saturated woodland at peak flower is genuinely overwhelming.",
+            ]
+        },
+        {
+            "title": "THE STEAM RAILWAY",
+            "image_url": "",
+            "image_caption": "The Exbury Steam Railway crossing the railway bridge in the lower garden.",
+            "paragraphs": [
+                "The Exbury Steam Railway — a fifteen-inch gauge steam railway running through the lower sections of the garden — was added in 1995 and has become one of the estate's most popular features. The railway carries visitors through parts of the garden that are difficult to reach on foot and provides access to the riverside and waterside sections of the lower estate.",
+                "The trains are genuine steam locomotives, maintained and operated by volunteers with a working knowledge of narrow gauge steam traction. For the annual Illuminations events in autumn and winter, the railway takes on a special character, with the carriages moving through a landscape of lights that transforms the garden after dark.",
+            ]
+        },
+        {
+            "title": "SEASONS & SPECIAL EVENTS",
+            "image_url": "",
+            "image_caption": "Exbury Gardens illuminated for the Autumn Illuminations event.",
+            "paragraphs": [
+                "Exbury is a garden of strong seasonal character. The main rhododendron and azalea season runs from late April into early June and is the most spectacular, but the camellia season from March onwards, the summer rose garden, and the autumn colour of the Japanese maples and ginkgos each offer compelling reasons to visit at other times.",
+                "The autumn and winter Illuminations programme, in which the garden is transformed by a sequence of light installations among the trees after dark, has established a second peak season from September into December. The event draws audiences from across the south of England and represents a significant expansion of the garden's visitor programme beyond its traditional spring focus.",
+            ]
+        },
+    ]
+}
+
+GARDENS["welford-park"] = {
+    "subtitle": "The grounds at Welford Park in the Lambourn valley are famous above all for their snowdrops — a display in early February that draws visitors from across England to what many consider the finest snowdrop garden in the country.",
+    "chapters": [
+        {
+            "title": "THE SNOWDROP SEASON",
+            "image_url": "",
+            "image_caption": "Snowdrops carpeting the woodland floor at Welford Park in February.",
+            "paragraphs": [
+                "Welford Park opens its grounds for just a few weeks each February specifically to allow visitors to experience the snowdrop display that has developed under its woodland trees over many years. The snowdrops form a continuous carpet under the mature trees of the formal garden and the woodland beyond, stretching across several acres.",
+                "The scale of the display is the result of decades of naturalisation rather than any systematic planting programme. Snowdrops spread slowly by seed and bulb offset, and the density of the Welford Park carpet reflects how long and undisturbed the planting has been. The word-of-mouth reputation of the display is such that the Welford Park opening is now a fixture in the calendars of snowdrop enthusiasts across England.",
+            ]
+        },
+        {
+            "title": "THE QUEEN ANNE HOUSE & GROUNDS",
+            "image_url": "",
+            "image_caption": "Welford Park house from the gardens — the Queen Anne facade dating from the early eighteenth century overlooks formal gardens that descend to the flood meadows of the River Lambourn.",
+            "paragraphs": [
+                "The house at Welford Park is a handsome Queen Anne building of the early eighteenth century, its south-facing facade of red brick and Bath stone typical of the period's domestic architecture at its most refined. The formal gardens around the house are relatively modest in scale but their quality of maintenance and the character of the planting give them a distinction beyond their size.",
+                "The Lambourn valley setting is itself a significant part of the estate's appeal. The valley is one of the most beautiful chalk stream valleys in the south of England, its clear water and the surrounding downland creating a landscape of considerable character throughout the year.",
+            ]
+        },
+        {
+            "title": "BEYOND THE SNOWDROPS",
+            "image_url": "",
+            "image_caption": "The walled kitchen garden at Welford Park in summer.",
+            "paragraphs": [
+                "Although the snowdrop season is Welford Park's most celebrated feature, the estate opens its grounds for other events through the year, including an NGS open day that allows visitors to see the gardens in their summer character — the herbaceous borders, the walled kitchen garden producing vegetables and cut flowers, and the orchard in full leaf.",
+                "The walled kitchen garden is a working garden, supplying the estate's tea room during the snowdrop season and for other events. It contains an unusually complete range of traditional kitchen garden features — fan-trained fruit on the south-facing walls, cold frames, a greenhouse, and vegetable beds — maintained in active production.",
+            ]
+        },
+    ]
+}
+
+WINERY = {}
+
+WINERY["denbies-wine-estate"] = {
+    "subtitle": "England's largest single-estate winery, with 265 acres of vines on the chalk slopes of the North Downs above Dorking — a working vineyard producing award-winning English wines from grape to bottle on a single Surrey estate.",
+    "chapters": [
+        {
+            "title": "THE VINEYARD",
+            "image_url": "",
+            "image_caption": "Rows of vines on the chalk slopes at Denbies Wine Estate above Dorking, looking south over the North Downs.",
+            "paragraphs": [
+                "The vine-growing at Denbies began in earnest in 1986 when Adrian White recognised that the chalk slopes of the North Downs above Dorking offered conditions analogous to those of Champagne — the same geology, a similar southerly aspect, and a microclimate moderated by the escarpment. The planting programme that followed established Denbies as the largest single-estate vineyard in England, with 265 acres under vine producing approximately half a million bottles per year.",
+                "The estate grows twelve grape varieties, with the primary focus on varieties suited to the English climate — Chardonnay, Pinot Noir, and Pinot Meunier for the sparkling programme, and Bacchus, Ortega, and Dornfelder for the still wines. The chalk and greensand soils of the North Downs give the wines a characteristic minerality that is becoming increasingly recognised as a distinctive expression of English terroir.",
+                "The vineyards are managed with an emphasis on sustainable viticulture — cover crops between the rows, minimal intervention in soil management, and a careful monitoring programme that allows the picking date to be optimised in each block. Walking the vineyard in late August or September, when the grapes are ripening, gives a perspective on the estate's scale that the winery building alone cannot convey.",
+            ]
+        },
+        {
+            "title": "THE WINERY & PRODUCTION",
+            "image_url": "",
+            "image_caption": "The production hall at Denbies Wine Estate during harvest.",
+            "paragraphs": [
+                "Denbies processes all its grapes on site, from the initial crush through fermentation, blending, and bottling — a genuinely complete farm-to-bottle operation of a kind that is rare even among the larger English estates. The winery building was purpose-designed to handle the estate's full production, and the scale of the equipment reflects the ambition of a business producing half a million bottles annually.",
+                "The sparkling wine programme — modelled on traditional Champagne method with secondary fermentation in the bottle — is the estate's most prestigious product. The wines go through a minimum of fifteen months on the lees before disgorgement, and some prestige cuvees spend considerably longer. The result is a sparkling wine with genuine complexity that rewards the patient production process.",
+                "The still wine programme covers a range from aromatic whites through to a red produced from Pinot Noir and Dornfelder. Denbies has been consistent in its conviction that the North Downs can produce serious red wine in good years, and the best vintages of the red are evidence in support of that argument.",
+            ]
+        },
+        {
+            "title": "TOURS & TASTINGS",
+            "image_url": "",
+            "image_caption": "Visitors at a wine tasting in the Denbies gallery, sampling the estate's current releases.",
+            "paragraphs": [
+                "The visitor programme at Denbies is one of the most extensive offered by any English vineyard, with a range of tours and tastings designed for visitors with different levels of interest and experience. The basic vineyard tour travels through the vines by trailer, explaining the growing season and the estate's approach to viticulture, before moving through the winery to see the production equipment and process.",
+                "The tasting programmes range from a quick four-wine flight in the gallery to extended tutored tastings led by the estate's own sommeliers, covering the full range of current releases and including library wines from older vintages. Private tastings can be arranged for groups, and the estate's event programme includes a number of harvest-season experiences that allow visitors to participate in picking and processing.",
+                "The gallery space and restaurant make Denbies a complete day out rather than merely a specialist visit. The restaurant's wine list draws exclusively from the estate's own production — a rare guarantee of provenance — and the views from the dining room across the vineyard and the North Downs are exceptional.",
+            ]
+        },
+    ]
+}
+
+POLO = {}
+
+POLO["cowdray-park"] = {
+    "subtitle": "Cowdray Park is the heartland of British high-goal polo, home to the Veuve Clicquot Gold Cup — the English Open — and the venue where the sport's highest echelons have gathered each summer for over a century.",
+    "chapters": [
+        {
+            "title": "THE VEUVE CLICQUOT GOLD CUP",
+            "image_url": "",
+            "image_caption": "The Cowdray Park polo grounds during the Veuve Clicquot Gold Cup in July, with the South Downs visible beyond and the ruins of Cowdray House in the background.",
+            "paragraphs": [
+                "The Veuve Clicquot Gold Cup — officially the English Open Polo Championship — is held at Cowdray Park each July and is the most prestigious polo tournament in England. The twenty-two-goal tournament draws the world's top players and the highest-rated teams, and the match quality is consistently among the best that can be seen in the northern hemisphere. The ground at Cowdray — fast, true, and framed by the South Downs — is considered one of the finest polo surfaces in the world.",
+                "The final of the Gold Cup is an occasion as much as a sporting event: a fixture on the English summer social calendar comparable to Goodwood Races or the Chelsea Flower Show. The combination of elite sport, the dramatic backdrop of the medieval ruins, and the easy informality of Cowdray's atmosphere gives the final a quality quite unlike more formal international polo venues.",
+                "Tickets for the final are available to the general public, and the standard of play at even the group stage matches — held on weekdays throughout July — is of a quality that rewards attendance. Visitors who have never seen high-goal polo before are consistently surprised by the speed and athleticism of the sport at this level.",
+            ]
+        },
+        {
+            "title": "A CENTURY OF POLO AT COWDRAY",
+            "image_url": "",
+            "image_caption": "A match in progress on the main ground at Cowdray Park.",
+            "paragraphs": [
+                "Polo has been played at Cowdray Park since before the First World War, when the Pearson family — who have owned the estate since 1908 — established the grounds on the flat flood meadows of the River Rother. The sport was fashionable among the Edwardian aristocracy, and Cowdray rapidly established itself as one of the leading venues in England.",
+                "The high-goal tournament at Cowdray grew steadily in prestige through the twentieth century, attracting Argentine, American, and British patrons and players. The Argentine influence in particular transformed the quality of play available in England from the 1950s onwards, and Cowdray's willingness to invite the world's best players gave the English Open an international character that it has maintained.",
+                "The current polo grounds include five full-size pitches and supporting facilities for both players and spectators. The season runs from May into September, with the Gold Cup as its centrepiece. Outside the Gold Cup period, matches at lower handicap levels take place most weekends and are freely accessible.",
+            ]
+        },
+        {
+            "title": "ATTENDING A MATCH",
+            "image_url": "",
+            "image_caption": "Spectators at the Cowdray Park polo grounds during the summer season.",
+            "paragraphs": [
+                "Attending a polo match at Cowdray Park requires no specialist knowledge and very little advance preparation. The grounds are open to the public for most matches throughout the season — a nominal admission charge applies during the Gold Cup, while many other matches are free to watch from the touchline. The sport is self-explanatory to a new viewer: the physical skill of the players and horses, the speed of the game, and the drama of the play make it immediately engaging.",
+                "The tradition of walking the divots at half-time — when spectators are invited onto the field to replace the turf thrown up during the first half — is one of the most charming rituals of the polo-watching experience, and the opportunity to stand on the ground itself gives a physical sense of the sport's scale that watching from the side cannot replicate.",
+                "The best arrangement for a first visit is to arrive early, settle near the third chukka flag where the most intensive play tends to concentrate, and let the game develop. The atmosphere at Cowdray — the South Downs behind, the ruins of Cowdray House visible beyond the playing field, the sound of hooves and mallets — is genuinely unlike anything else in the English sporting calendar.",
+            ]
+        },
+    ]
+}
+
+EVENTS = {}
+
+EVENTS["goodwood-estate"] = {
+    "subtitle": "Goodwood Estate is host to three of the most celebrated sporting events on the English calendar — the Festival of Speed, the Revival, and Glorious Goodwood — each drawing audiences of tens of thousands to the Sussex Downs.",
+    "chapters": [
+        {
+            "title": "THE FESTIVAL OF SPEED",
+            "image_url": "",
+            "image_caption": "Racing cars climbing the Goodwood hillclimb course during the Festival of Speed.",
+            "paragraphs": [
+                "The Goodwood Festival of Speed began in 1993 as an informal gathering of historic racing cars in the grounds of Goodwood House. It has grown into the largest automotive event in the world — a four-day gathering each June or July that attracts around two hundred thousand visitors and features the full spectrum of motorsport history from the earliest racing cars to the latest Formula One machinery.",
+                "The defining feature of the Festival is the hillclimb course — a 1.16-mile run from the house up the driveway to the motor circuit, lined with spectators who can stand at arm's length from cars and drivers at the limit of adhesion. The intimacy of the spectator experience at Goodwood has no equivalent at any other major motorsport event in the world.",
+                "The Festival has also become a significant showcase for new car manufacturers — particularly in the electric vehicle era — who use the hillclimb as a global launch platform. The combination of historic cars, current road cars, and concept machinery in a single event is unique to Goodwood.",
+            ]
+        },
+        {
+            "title": "THE REVIVAL",
+            "image_url": "",
+            "image_caption": "The Goodwood Revival motor circuit during the Revival weekend.",
+            "paragraphs": [
+                "The Goodwood Revival is the world's most significant historic motor racing event — a weekend each September in which the Goodwood Motor Circuit is returned to its original configuration and raced exclusively by cars eligible for the circuit's original period of operation, from its opening in 1948 to its closure in 1966.",
+                "What sets the Revival apart from every other historic motor racing event is its theatrical ambition. Every element of the weekend — from the RAF Spitfires and Hurricanes that overfly the circuit to the food vendors, the signage, and the dress code — is meticulously accurate to the period. Spectators are strongly encouraged to attend in period dress, and many do: the Revival is consistently the most elaborately costumed public event in Britain outside of theatrical performance.",
+                "The atmosphere the Revival creates is genuinely transporting. Standing at Lavant Corner watching a field of 1960s Formula Junior cars scrapping through the chicane, surrounded by spectators in 1950s summer frocks and demob suits, is an experience with no contemporary equivalent.",
+            ]
+        },
+        {
+            "title": "GLORIOUS GOODWOOD",
+            "image_url": "",
+            "image_caption": "The racecourse at Goodwood during Glorious Goodwood in July.",
+            "paragraphs": [
+                "Glorious Goodwood — the five-day flat racing festival held each July — takes its name from its setting as much as from the quality of its racing. The racecourse sits on the crest of the South Downs at two hundred and eighty metres above sea level, with views that extend from the Isle of Wight to the English Channel. No other racecourse in England commands a comparable landscape.",
+                "The quality of the racing matches the setting. The Goodwood Cup, the Sussex Stakes, and the Qatar Goodwood Festival consistently attract the highest-rated horses in training, and the five-day programme includes Group One racing on multiple days. The meeting has been a fixture in the flat racing calendar since 1802.",
+                "The social character of Glorious Goodwood distinguishes it from other flat race meetings. The combination of the outdoor setting, the downland air, and the informality of the hillside course — where spectators can picnic on the slopes directly above the track — gives the week a relaxed quality that Ascot and Newmarket cannot quite replicate.",
+            ]
+        },
+    ]
+}
+
+EVENTS["beaulieu-estate"] = {
+    "subtitle": "Beaulieu Estate hosts some of the most distinctive events in the south of England, from the world-famous International Autojumble to seasonal concerts and the continuous programme of the National Motor Museum.",
+    "chapters": [
+        {
+            "title": "THE INTERNATIONAL AUTOJUMBLE",
+            "image_url": "",
+            "image_caption": "Traders and visitors at the Beaulieu International Autojumble.",
+            "paragraphs": [
+                "The Beaulieu International Autojumble is the largest event of its kind in Europe — a two-day gathering each September in which over thirty thousand enthusiasts descend on the estate to buy and sell automotive parts, memorabilia, automobilia, and complete vehicles. The event began in 1967 as a modest gathering of a few dozen traders and has grown into a fixture that attracts visitors from across the world.",
+                "The Autojumble operates on the principle that everything is for sale. Stands range from professional dealers with containers full of stock to private individuals disposing of a single garage find. The range of material on offer — from pre-war carburettors to new-old-stock 1980s parts, from petrol station signs to complete cars in various states of restoration — is without parallel anywhere in Europe.",
+                "The event is not exclusively for those who need parts. The vehicles that arrive in the car parks — driven or trailered — are often as interesting as anything on the stands. For anyone with a serious interest in automotive history or culture, it is an annual pilgrimage.",
+            ]
+        },
+        {
+            "title": "MUSEUM EVENTS & EXHIBITIONS",
+            "image_url": "",
+            "image_caption": "A special exhibition in the National Motor Museum at Beaulieu.",
+            "paragraphs": [
+                "The National Motor Museum at Beaulieu runs a continuous programme of special exhibitions alongside its permanent collection. These exhibitions typically focus on a particular marque, period, or theme in automotive history and are developed in partnership with manufacturers, race teams, and private collectors.",
+                "The museum's collection of land speed record cars — including the original Bluebird and Thrust 2 — is one of the most significant groups of record-breaking vehicles in public ownership anywhere in the world. The stories attached to these cars, and the engineering solutions they represent, make them compelling objects regardless of any particular interest in speed records.",
+            ]
+        },
+        {
+            "title": "SEASONAL EVENTS & PALACE HOUSE",
+            "image_url": "",
+            "image_caption": "Palace House at Beaulieu decorated for the Christmas season.",
+            "paragraphs": [
+                "Beyond the Autojumble, Beaulieu's events programme includes a range of seasonal events. The Spring Autojumble — a smaller version of the September event — takes place in May. Outdoor concerts and garden events occupy the summer months. The Christmas programme makes use of Palace House and the abbey ruins to create seasonal experiences.",
+                "Palace House itself — the Victorian Gothic mansion built into the ruins of the fourteenth-century gatehouse of Beaulieu Abbey — is open for guided tours throughout the season. The abbey ruins, which survived the dissolution of the monasteries in 1538, are among the most atmospheric monastic remains in the south of England.",
+            ]
+        },
+    ]
+}
+
+EVENTS["loseley-park"] = {
+    "subtitle": "Loseley Park hosts an annual programme of outdoor theatre, summer concerts, fairs, and open days that bring visitors to its Elizabethan walled garden and parkland through the spring and summer months.",
+    "chapters": [
+        {
+            "title": "OPEN AIR THEATRE",
+            "image_url": "",
+            "image_caption": "A summer open air theatre performance in the grounds at Loseley Park.",
+            "paragraphs": [
+                "The open air theatre programme at Loseley Park has become one of the estate's most popular seasonal events, drawing audiences to the walled garden and the parkland for productions that range from Shakespeare and period comedy to contemporary theatre. The combination of an Elizabethan setting — the house dates from 1562 — and outdoor performance has a natural logic.",
+                "The walled garden at Loseley provides the most intimate performance setting, with the audience seated on the grass close to the stage and the flint and stone walls providing natural acoustic containment. The theatre season runs from late June through August, with performances typically on Friday and Saturday evenings and Sunday afternoons.",
+            ]
+        },
+        {
+            "title": "THE LOSELEY PLANT & GARDEN FAIR",
+            "image_url": "",
+            "image_caption": "The Loseley Plant and Garden Fair in the walled garden.",
+            "paragraphs": [
+                "The Loseley Plant and Garden Fair takes place each spring in the walled garden and the adjacent parkland, bringing together specialist nurseries, garden designers, horticultural suppliers, and food producers. The event has a particular focus on unusual and heritage plant varieties.",
+                "The walled garden provides the natural centrepiece for the fair, and the rose garden — planted with a collection of old-fashioned roses including several heritage varieties — is typically at or near its seasonal peak during the fair week.",
+            ]
+        },
+        {
+            "title": "ESTATE OPEN DAYS",
+            "image_url": "",
+            "image_caption": "Visitors in the walled garden at Loseley Park on an open day.",
+            "paragraphs": [
+                "Loseley Park opens its gardens and, on selected days, the house itself for public visits through the summer season. The house tour takes visitors through a series of rooms that have been occupied by the More-Molyneux family continuously since 1562 — a remarkable record of family continuity that gives the interiors a lived-in character quite different from the managed presentation of a National Trust property.",
+                "The walled garden, built from stone salvaged from Waverley Abbey following the dissolution, is the horticultural centrepiece of the estate. The main borders are planted in a colour-themed scheme that changes character through the season, and the herb garden is one of the most complete examples of a traditional kitchen herb garden in Surrey.",
+            ]
+        },
+    ]
+}
+
+EVENTS["exbury-gardens"] = {
+    "subtitle": "Exbury Gardens runs a year-round events programme that extends well beyond the famous spring rhododendron season, from autumn illuminations and steam railway events to plant sales and specialist gardening days.",
+    "chapters": [
+        {
+            "title": "THE SPRING SEASON",
+            "image_url": "",
+            "image_caption": "Visitors in the woodland at Exbury Gardens during the spring rhododendron season.",
+            "paragraphs": [
+                "The spring season at Exbury runs from March through June, beginning with the camellias in early spring and building through magnolias to the main rhododendron and azalea season in April and May. The events programme during this time is focused on making the most of the flowering peak — specialist guided tours, plant identification walks, and photography mornings.",
+                "The plant sales that accompany the spring season offer access to propagated material from the estate's own collection, including named Exbury azalea hybrids that originate in the Rothschild breeding programme. These plants — many of them unavailable through commercial nurseries — are a significant draw for serious garden visitors.",
+            ]
+        },
+        {
+            "title": "AUTUMN & WINTER ILLUMINATIONS",
+            "image_url": "",
+            "image_caption": "The Exbury Illuminations — light installations in the woodland garden during the autumn and winter season.",
+            "paragraphs": [
+                "The Illuminations programme at Exbury runs from September into January and has become one of the estate's most popular annual events. A series of light installations — combining projection, fibre optic planting, and large-scale structural lighting — transform the woodland garden after dark into a landscape of colour and movement.",
+                "The scale of the installations matches the scale of the garden itself. Individual tree canopies are lit from within; the lakes are used as reflective surfaces for projected imagery; and the steam railway operates on illuminated evening services. Christmas Eve and New Year's Eve events are the most popular single nights of the year and typically sell out months in advance.",
+            ]
+        },
+        {
+            "title": "RAILWAY EVENTS & FAMILY DAYS",
+            "image_url": "",
+            "image_caption": "The Exbury Steam Railway during a family day event.",
+            "paragraphs": [
+                "The Exbury Steam Railway operates a continuous timetabled service through the main visitor season and expands its programme during special events. On event weekends, visiting locomotives from other narrow gauge railways sometimes join the home fleet, drawing a dedicated audience of narrow gauge railway enthusiasts.",
+                "The family day programme runs through the school holidays and includes themed events — Thomas the Tank Engine weekends, Halloween events, and Christmas specials among them. These events combine the railway with seasonal activities across the garden and are designed for families with younger children.",
+            ]
+        },
+    ]
+}
+
+EVENTS["penshurst-place"] = {
+    "subtitle": "Penshurst Place runs a programme of events through the year that draws on its medieval character and its exceptional gardens — from jousting tournaments and archery displays to garden festivals and seasonal celebrations.",
+    "chapters": [
+        {
+            "title": "MEDIEVAL EVENTS & JOUSTING",
+            "image_url": "",
+            "image_caption": "A jousting tournament in the grounds at Penshurst Place.",
+            "paragraphs": [
+                "The medieval character of Penshurst Place — the Baron's Hall at its core dates from 1341 — provides a natural context for reenactment events and heritage entertainment that few other private houses in England can match. The jousting tournaments held in the grounds during the summer season draw on this authenticity, using the estate's combination of a genuine medieval hall and extensive grounds.",
+                "The jousting programme at Penshurst is conducted by specialist reenactment groups who work to historical standards of authenticity in costume, equipment, and the rules of engagement. Children's interactive sessions — including the chance to try on armour and handle medieval weapons under supervision — are a popular accompaniment.",
+                "The wider medieval events programme includes archery displays, falconry demonstrations, and living history encampments. The combination of the medieval hall, the walled gardens, and the South Downs landscape provides a setting that is genuinely evocative of the period.",
+            ]
+        },
+        {
+            "title": "THE GARDEN SEASON",
+            "image_url": "",
+            "image_caption": "The Union Jack Garden at Penshurst Place in spring.",
+            "paragraphs": [
+                "The garden events at Penshurst are built around the natural rhythm of the walled gardens, with the season opening formally in late spring when the tulip borders are at their peak. NGS open days, charity garden events, and specialist plant sales are distributed through the season.",
+                "The midsummer period — July and August — is when the borders reach their full height and the garden's character shifts from the formal precision of spring to a more exuberant abundance. This is the best time to see the full potential of the planting scheme.",
+            ]
+        },
+        {
+            "title": "AUTUMN & CHRISTMAS",
+            "image_url": "",
+            "image_caption": "Penshurst Place decorated for Christmas.",
+            "paragraphs": [
+                "The autumn programme at Penshurst focuses on the transition from the garden season to the house-based winter programme. Apple and produce days in the kitchen garden, autumn foraging walks, and guided tours of the house in its autumn character bridge the seasonal change.",
+                "The Christmas programme at Penshurst — candlelit tours of the house, decorated rooms, and seasonal events in the hall — is one of the most atmospheric in the south-east. The medieval Baron's Hall, with its original chestnut timber roof and great open fireplace, provides a context for Christmas celebration that is genuinely unmatched in the region. Events during December book out well in advance.",
+            ]
+        },
+    ]
+}
+
+CYCLING = {}
+
+CYCLING["hurtwood-estate"] = {
+    "subtitle": "Hurtwood Estate in the Surrey Hills is home to some of the finest mountain biking in south-east England — a network of trails through ancient woodland on the steep sandstone ridges above Peaslake that draws riders from across the region.",
+    "chapters": [
+        {
+            "title": "MOUNTAIN BIKING IN THE SURREY HILLS",
+            "image_url": "",
+            "image_caption": "Mountain bikers descending through the woodland on the Hurtwood Estate above Peaslake.",
+            "paragraphs": [
+                "The Surrey Hills around Hurtwood Estate contain the most technically challenging and rewarding mountain biking terrain in the south-east of England. The sandstone ridges rise sharply from the Tillingbourne valley, creating descents of sustained gradient that reward skilled riders with the kind of technical single-track that is usually only available in Wales or the Peak District. Within two hours of London, it is one of the most accessible serious mountain biking destinations in the country.",
+                "The estate actively supports mountain biking on the land it manages, recognising it as a legitimate recreational use of the woodland. Trail lines have been developed sensitively to work with the topography and to avoid causing lasting damage to the woodland floor.",
+                "The Hurtwood riding area is centred on the high ground above Peaslake village and extends across several square miles of open access land and managed estate. The variety of terrain means that riders of different skill levels can find appropriate challenges within a relatively small area.",
+            ]
+        },
+        {
+            "title": "THE TRAILS",
+            "image_url": "",
+            "image_caption": "A technical section of single-track trail in the Hurtwood woodland.",
+            "paragraphs": [
+                "The trails on Hurtwood Estate range from beginner-friendly green graded forest road riding to advanced black-grade single-track with roots, drops, and tight technical sections. The intermediate blue and red grade trails form the core of most visits — sustained descents with enough technical content to be engaging without being prohibitive.",
+                "The most celebrated section of the trail network is the descent from Holmbury Hill — a long, sustained drop through ancient oak woodland that combines roots, exposed rock sections, and off-camber turns. The trail is best in dry conditions from late spring through autumn.",
+                "The trail network is not formally signposted in the way of a purpose-built trail centre, which is part of its appeal for experienced riders seeking a more exploratory experience. Detailed maps are available from local bike shops in Peaslake, and the Singletrack and Trailforks websites carry accurate up-to-date trail information.",
+            ]
+        },
+        {
+            "title": "PEASLAKE & THE COMMUNITY",
+            "image_url": "",
+            "image_caption": "The centre of Peaslake village — the community has developed a strong mountain biking culture.",
+            "paragraphs": [
+                "The village of Peaslake, at the foot of the Hurtwood riding area, has developed an unusually close relationship with mountain biking. The Peaslake Village Stores functions as an informal hub for the riding community — it stocks trail food, basic bike supplies, and local knowledge. The Hurtwood Inn provides food and accommodation for riders wanting to make a weekend of the riding.",
+                "Specialized Bikes operates a dedicated trail centre at the edge of the village, offering demo bikes, guided rides, skills coaching, and a well-stocked shop. The presence of a major manufacturer's operation in the village reflects the significance of Hurtwood as a riding destination.",
+                "The relationship between the mountain biking community and the wider village is generally positive — riders are a significant source of income for local businesses. Respecting the land, avoiding closed trails during wet conditions, and spending time and money in the village are the principal expectations the community places on visiting riders.",
+            ]
+        },
+    ]
+}
+
+CYCLING["goodwood-estate"] = {
+    "subtitle": "Goodwood Estate offers road cyclists access to the Goodwood Motor Circuit for closed-road riding sessions and circuits of the estate's private roads — a unique opportunity to ride a legendary motorsport venue without the hazards of open traffic.",
+    "chapters": [
+        {
+            "title": "CYCLING THE MOTOR CIRCUIT",
+            "image_url": "",
+            "image_caption": "Road cyclists on the Goodwood Motor Circuit during a closed-road cycling session.",
+            "paragraphs": [
+                "The Goodwood Motor Circuit — the venue for the Revival motor racing event — is made available to cyclists for closed-road riding sessions through the Goodwood Cycling programme. The 2.4-mile circuit offers smooth tarmac in good condition, a technically interesting layout with a series of fast corners and shorter technical sections, and the extraordinary context of riding a track where motor racing history was made.",
+                "Cycling sessions on the circuit run throughout the year as part of the estate's events programme, and the format ranges from individual time trial events — where riders compete for fastest lap against the clock — to sportive-style social rides. The circuit is also available for private hire.",
+                "The physical experience of cycling the circuit gives a useful perspective on what racing drivers manage at race speeds. Corners that look straightforward from the spectator banks — Lavant, Woodcote, Madgwick — reveal their true characteristics at bicycle speed.",
+            ]
+        },
+        {
+            "title": "ESTATE ROAD CYCLING",
+            "image_url": "",
+            "image_caption": "Cyclists on the private roads of Goodwood Estate.",
+            "paragraphs": [
+                "Beyond the motor circuit, Goodwood Estate's network of private roads provides a substantial closed-road cycling environment across the estate. The roads pass through farmland, woodland, and the estate's racecourse, giving access to a varied landscape free from general traffic.",
+                "The Goodwood cycling programme organises regular rides on the estate roads, including sportive-style events that use the circuit and estate roads in combination to create routes of between fifteen and sixty kilometres. These events are graded by difficulty and accessible to riders of different fitness levels.",
+            ]
+        },
+        {
+            "title": "THE SOUTH DOWNS CYCLING",
+            "image_url": "",
+            "image_caption": "A cyclist near Goodwood Estate, with the South Downs National Park visible in the background.",
+            "paragraphs": [
+                "Goodwood Estate sits at the northern edge of the South Downs National Park, making it a natural starting point for road and gravel cycling into one of the finest cycling landscapes in the south of England. The South Downs Way — an eighty-mile off-road route from Winchester to Eastbourne — passes within a few miles of the estate.",
+                "The gravel riding opportunities on and around the estate are significant and relatively undiscovered compared to the motor circuit. The chalk downland tracks, the estate farm roads, and the bridleways of the South Downs National Park combine to provide a varied gravel cycling network that rewards exploration with views, solitude, and some of the most attractive downland riding in the south.",
+            ]
+        },
+    ]
+}
+
 # Bench types available for new bench orders
 BENCH_TYPES = [
     {
@@ -8849,6 +9412,71 @@ def visitor_movies(request: Request, slug: str, db: Session = Depends(get_db)):
     ctx["page_content_html"] = _get_page_content_html(car_park, "movies")
     ctx["movies_data"] = MOVIES.get(slug)
     return templates.TemplateResponse("location/visitor/movies.html", ctx)
+
+
+@router.get("/{slug}/visitor/gardens", response_class=HTMLResponse)
+def visitor_gardens(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    ctx = _base_ctx(request, slug, estate, car_park, "Gardens")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "gardens")
+    ctx["gardens_data"] = GARDENS.get(slug)
+    return templates.TemplateResponse("location/visitor/gardens.html", ctx)
+
+
+@router.get("/{slug}/visitor/winery", response_class=HTMLResponse)
+def visitor_winery(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    ctx = _base_ctx(request, slug, estate, car_park, "The Winery")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "winery")
+    ctx["winery_data"] = WINERY.get(slug)
+    return templates.TemplateResponse("location/visitor/winery.html", ctx)
+
+
+@router.get("/{slug}/visitor/polo", response_class=HTMLResponse)
+def visitor_polo(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    ctx = _base_ctx(request, slug, estate, car_park, "Polo")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "polo")
+    ctx["polo_data"] = POLO.get(slug)
+    return templates.TemplateResponse("location/visitor/polo.html", ctx)
+
+
+@router.get("/{slug}/visitor/events", response_class=HTMLResponse)
+def visitor_events(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    ctx = _base_ctx(request, slug, estate, car_park, "Events")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "events")
+    ctx["events_data"] = EVENTS.get(slug)
+    return templates.TemplateResponse("location/visitor/events.html", ctx)
+
+
+@router.get("/{slug}/visitor/cycling", response_class=HTMLResponse)
+def visitor_cycling(request: Request, slug: str, db: Session = Depends(get_db)):
+    estate = _get_estate(slug)
+    if not estate:
+        return RedirectResponse(url="/", status_code=302)
+    cp_slug = estate.get("car_park_slug")
+    car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
+    ctx = _base_ctx(request, slug, estate, car_park, "Cycling Routes")
+    ctx["page_content_html"] = _get_page_content_html(car_park, "cycling")
+    ctx["cycling_data"] = CYCLING.get(slug)
+    return templates.TemplateResponse("location/visitor/cycling.html", ctx)
 
 
 @router.get("/{slug}/visitor/history-test", response_class=HTMLResponse)
