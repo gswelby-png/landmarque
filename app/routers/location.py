@@ -11509,26 +11509,6 @@ async def visitor_checkout(
     amount_pence = calculate_price(rule, duration_hours, is_all_day)
     duration_label = "All day" if is_all_day else f"{duration_hours} hour{'s' if duration_hours > 1 else ''}"
 
-    brand = {
-        "primary": car_park.brand_primary or "#1e3a1e",
-        "accent": car_park.brand_accent or "#8B3A2A",
-        "text": car_park.brand_text or "#ffffff",
-    }
-    context = {
-        "request": request,
-        "estate_name": car_park.owner.name,
-        "car_park_name": car_park.name,
-        "car_park_slug": cp_slug,
-        "number_plate": number_plate.upper().replace(" ", ""),
-        "duration_label": duration_label,
-        "amount": f"£{amount_pence / 100:.2f}",
-        "logo_url": getattr(car_park, "logo_url", None) or "",
-        "welcome_text": getattr(car_park, "welcome_text", None) or "",
-        "brand": brand,
-    }
-    return templates.TemplateResponse("driver/payment_mockup.html", context)
-
-    # -- Stripe (live -- replace mockup block above when keys are ready) --
     commission_pence = int(amount_pence * car_park.owner.commission_pct / 100)
     owner_amount_pence = amount_pence - commission_pence
 
@@ -11882,13 +11862,45 @@ def visitor_legacy(request: Request, slug: str, db: Session = Depends(get_db)):
 
 
 @router.get("/{slug}/visitor/parking-receipt", response_class=HTMLResponse)
-def visitor_parking_receipt(request: Request, slug: str, db: Session = Depends(get_db)):
+def visitor_parking_receipt(request: Request, slug: str, txn: str = None, db: Session = Depends(get_db)):
+    from datetime import timedelta, timezone as _tz
     estate = _get_estate(slug)
     if not estate:
         return RedirectResponse(url="/", status_code=302)
     cp_slug = estate.get("car_park_slug")
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     accent = (car_park.brand_accent or "#8B3A2A") if car_park else "#8B3A2A"
+
+    plate, valid_until, amount_str, reference = "", "", "", ""
+
+    if txn:
+        try:
+            stripe.api_key = os.getenv("STRIPE_SECRET_KEY")
+            session = stripe.checkout.Session.retrieve(txn)
+            txn_id = (session.metadata or {}).get("txn_id")
+            if txn_id:
+                transaction = db.query(Transaction).filter(Transaction.id == int(txn_id)).first()
+                if transaction:
+                    if transaction.status == TransactionStatus.pending:
+                        now = datetime.now(timezone.utc)
+                        transaction.status = TransactionStatus.paid
+                        transaction.parked_at = now
+                        if transaction.is_all_day:
+                            transaction.expires_at = now.replace(hour=23, minute=59, second=59, microsecond=0)
+                        elif transaction.duration_hours:
+                            transaction.expires_at = now + timedelta(hours=transaction.duration_hours)
+                        db.commit()
+                        db.refresh(transaction)
+                    plate = transaction.number_plate
+                    amount_str = f"£{transaction.amount_pence / 100:.2f}"
+                    reference = f"PKC-{transaction.id:05d}"
+                    if transaction.expires_at:
+                        valid_until = transaction.expires_at.strftime("%a %d %b %Y at %H:%M")
+                    elif transaction.is_all_day:
+                        valid_until = "End of day"
+        except Exception:
+            pass
+
     return templates.TemplateResponse("driver/receipt_placeholder.html", {
         "request": request,
         "slug": slug,
@@ -11896,4 +11908,8 @@ def visitor_parking_receipt(request: Request, slug: str, db: Session = Depends(g
         "car_park_name": car_park.name if car_park else "",
         "logo_url": (getattr(car_park, "logo_url", None) or "") if car_park else "",
         "brand": {"accent": accent},
+        "plate": plate,
+        "valid_until": valid_until,
+        "amount": amount_str,
+        "reference": reference,
     })
