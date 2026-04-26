@@ -63,11 +63,11 @@
     #hamburger-menu.open { display: flex; }
     #hamburger-menu .menu-header {
       display: flex; align-items: center; justify-content: space-between;
-      padding: .85rem 1.25rem; border-bottom: 1px solid #222;
+      padding: 1.06rem 1.25rem; border-bottom: 1px solid #222;
       max-width: 520px; width: 100%; margin: 0 auto;
     }
     #hamburger-menu .menu-title {
-      font-weight: 700; font-size: .75rem; color: #fff;
+      font-weight: 700; font-size: .94rem; color: #fff;
       letter-spacing: 1.5px; text-transform: uppercase;
     }
     #close-btn {
@@ -177,7 +177,7 @@
   <style>
   @media (min-width: 780px) {
     #scroll-nav .nav-inner { max-width: 1400px !important; padding: .9rem 2.5rem !important; }
-    #hamburger-menu .menu-header { max-width: 1400px !important; }
+    #hamburger-menu .menu-header { max-width: 1400px !important; padding: .9rem 2.5rem !important; }
     #hamburger-menu nav { max-width: 1400px !important; padding: 1.5rem 2.5rem !important; }
     .all-estates-box { max-width: 1400px !important; }
     #visitor-main { max-width: 100%; padding: 1.5rem 2.5rem 0; }
@@ -578,16 +578,20 @@
     'walking': {
       title: 'Add Walking Route',
       fields: [
-        {n:'title',    l:'Route Name',   t:'text',     p:'e.g. North Downs Loop'},
-        {n:'distance', l:'Distance',     t:'text',     p:'e.g. 3.5 miles'},
-        {n:'summary',  l:'Description',  t:'textarea', p:'Brief description of the route…'},
-        {n:'image',    l:'Photo URL',    t:'url',      p:'https://… (optional)'},
+        {n:'title',     l:'Route Name',   t:'text',     p:'e.g. North Downs Loop'},
+        {n:'distance',  l:'Distance',     t:'text',     p:'e.g. 3.5 miles'},
+        {n:'summary',   l:'Description',  t:'textarea', p:'Brief description of the route…'},
+        {n:'route_url', l:'Route Link',   t:'url',      p:'https://… AllTrails, OS Maps etc. (optional)'},
+        {n:'image',     l:'Photo URL',    t:'url',      p:'https://… (optional)'},
       ],
       build: function(v) {
+        var href = v.route_url
+          ? esc(v.route_url)
+          : 'https://www.google.com/maps/search/?api=1&query=' + encodeURIComponent(v.title);
         var img = v.image
           ? '<img src="'+esc(v.image)+'" alt="'+esc(v.title)+'" class="walk-image" style="cursor:pointer;" title="Click to edit this image">'
           : '<div class="walk-image-placeholder">Image coming soon</div>';
-        return '<a href="#" class="walk-card">'
+        return '<a href="'+href+'" target="_blank" rel="noopener" class="walk-card">'
           +img
           +'<div class="walk-body">'
           +'<div class="walk-header">'
