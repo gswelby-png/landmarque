@@ -234,10 +234,16 @@ def landmarque_register_post(
     interest: str = Form(""),
     message: str = Form(""),
 ):
-    # Log enquiry to stdout (visible in Railway logs) until email/DB is wired
-    print(f"[REGISTER] {estate_name} | {county} | {contact_name} | {email} | {phone} | {interest}")
-    if message:
-        print(f"[REGISTER] message: {message}")
+    db = SessionLocal()
+    try:
+        db.add(models.LandownerEnquiry(
+            estate_name=estate_name, county=county, estate_size=estate_size,
+            contact_name=contact_name, role=role, email=email,
+            phone=phone, interest=interest, message=message or None,
+        ))
+        db.commit()
+    finally:
+        db.close()
     return templates.TemplateResponse("site/landowners_register.html", {
         "request": request,
         "success": True,
@@ -258,6 +264,11 @@ def explore_home(request: Request):
 def explore_estates(request: Request):
     estates_list = [{"slug": slug, **data} for slug, data in ESTATES.items()]
     return templates.TemplateResponse("explore/estates.html", {"request": request, "estates": estates_list})
+
+
+@app.get("/explore/wine-estates", response_class=HTMLResponse)
+def explore_wine_estates(request: Request):
+    return RedirectResponse(url="/explore/estates?feature=winery", status_code=301)
 
 
 @app.get("/explore/{slug}", response_class=HTMLResponse)
@@ -291,6 +302,12 @@ def landmarque_contact_get(request: Request, sent: bool = False):
 @app.post("/landmarque/contact")
 async def landmarque_contact_post(request: Request,
     name: str = Form(...), email: str = Form(...), message: str = Form(...)):
+    db = SessionLocal()
+    try:
+        db.add(models.ContactEnquiry(name=name, email=email, message=message))
+        db.commit()
+    finally:
+        db.close()
     return RedirectResponse(url="/landmarque/contact?sent=true", status_code=303)
 
 
@@ -309,11 +326,6 @@ def landmarque_places(request: Request):
     return templates.TemplateResponse("site/landowners_places.html", {"request": request})
 
 
-@app.get("/dev", response_class=HTMLResponse)
-def dev_index(request: Request):
-    return templates.TemplateResponse("dev_index.html", {"request": request})
-
-
 @app.get("/contact", response_class=HTMLResponse)
 def contact_get(request: Request, sent: bool = False):
     return templates.TemplateResponse("contact.html", {"request": request, "sent": sent})
@@ -327,8 +339,16 @@ async def contact_post(
     organisation: str = Form(""),
     message: str = Form(""),
 ):
-    # Log enquiry — email sending to be wired in later
-    print(f"ENQUIRY | {name} | {email} | {organisation} | {message}")
+    db = SessionLocal()
+    try:
+        db.add(models.ContactEnquiry(
+            name=name, email=email,
+            subject=organisation or None,
+            message=message,
+        ))
+        db.commit()
+    finally:
+        db.close()
     return RedirectResponse("/contact?sent=1", status_code=303)
 
 

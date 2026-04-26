@@ -165,3 +165,19 @@ class ContactEnquiry(Base):
     subject = Column(String, nullable=True)
     message = Column(Text, nullable=False)
     created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))
+
+
+class LandownerEnquiry(Base):
+    __tablename__ = "landowner_enquiries"
+
+    id = Column(Integer, primary_key=True)
+    estate_name = Column(String, nullable=False)
+    county = Column(String, nullable=True)
+    estate_size = Column(String, nullable=True)
+    contact_name = Column(String, nullable=False)
+    role = Column(String, nullable=True)
+    email = Column(String, nullable=False)
+    phone = Column(String, nullable=True)
+    interest = Column(String, nullable=True)
+    message = Column(Text, nullable=True)
+    created_at = Column(DateTime, default=lambda: datetime.now(timezone.utc))

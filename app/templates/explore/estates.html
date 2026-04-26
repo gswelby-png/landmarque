@@ -558,6 +558,26 @@
     document.getElementById('panel-overlay').classList.remove('open');
   }
 
+  // Pre-activate a feature filter from URL params (?feature=winery)
+  (function() {
+    const params = new URLSearchParams(window.location.search);
+    const feat = params.get('feature');
+    if (!feat) return;
+    const chip = document.querySelector('.feat-filter[data-feat="' + feat + '"]');
+    if (!chip) return;
+    document.querySelector('.feat-filter[data-feat=""]').classList.remove('active');
+    chip.classList.add('active');
+    activeFeats.add(feat);
+    _filtersEverChanged = true;
+    const titleMap = {
+      'winery': 'English Wine Estates — LandMarque',
+      'gardens': 'Estate Gardens — LandMarque',
+      'polo': 'Polo Estates — LandMarque',
+      'movies': 'Film Location Estates — LandMarque',
+    };
+    if (titleMap[feat]) document.title = titleMap[feat];
+  })();
+
   applyFilters();
 
   // Scroll-reveal cards with IntersectionObserver

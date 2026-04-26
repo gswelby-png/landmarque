@@ -11,7 +11,7 @@ from sqlalchemy import func
 from jose import JWTError
 
 from ..database import get_db
-from ..models import AdminUser, Owner, CarPark, PricingRule, Transaction, TransactionStatus, ContactEnquiry
+from ..models import AdminUser, Owner, CarPark, PricingRule, Transaction, TransactionStatus, ContactEnquiry, LandownerEnquiry
 from ..auth import hash_password, verify_password, create_token, decode_token
 
 router = APIRouter(prefix="/admin")
@@ -218,6 +218,14 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         .all()
     )
 
+    # ── Landowner enquiries ───────────────────────────────────────────────────
+    landowner_enquiries = (
+        db.query(LandownerEnquiry)
+        .order_by(LandownerEnquiry.created_at.desc())
+        .limit(50)
+        .all()
+    )
+
     # ── Automated flags ───────────────────────────────────────────────────────
     flags = []
     thirty_ago = today - timedelta(days=30)
@@ -265,6 +273,7 @@ def dashboard(request: Request, db: Session = Depends(get_db)):
         "owner_count": len(owners),
         "flags": flags,
         "contact_enquiries": contact_enquiries,
+        "landowner_enquiries": landowner_enquiries,
     })
 
 
