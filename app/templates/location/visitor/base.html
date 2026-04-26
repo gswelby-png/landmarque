@@ -429,7 +429,8 @@
       textSpan.spellcheck = false;
       textSpan.style.cssText = 'flex:1;outline:2px dashed transparent;border-radius:2px;cursor:text;transition:outline .1s;';
       textSpan.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
-      textSpan.addEventListener('blur',  function(){ heading.innerHTML = row.outerHTML; });
+      textSpan.addEventListener('blur',  function(){ this.style.outline='2px dashed transparent'; });
+      textSpan.addEventListener('input', function(){ _dirty = true; });
       var btn = makeDelBtn(function(){
         hr.remove();
         nodes.forEach(function(n){ if (n.parentNode) n.parentNode.removeChild(n); });
@@ -537,7 +538,11 @@
     var removeBtn = document.createElement('button');
     removeBtn.textContent = 'Remove image';
     removeBtn.style.cssText = 'background:rgba(255,60,60,.1);color:rgba(255,100,100,.85);border:1px solid rgba(255,60,60,.2);border-radius:3px;padding:.5rem 1rem;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;' + F;
-    removeBtn.onclick = function(){ img.style.display='none'; closeImgPopup(); };
+    removeBtn.onclick = function(){
+      if (img.parentNode) img.parentNode.removeChild(img);
+      _dirty = true;
+      closeImgPopup();
+    };
 
     actRow.appendChild(fileInput); actRow.appendChild(uploadBtn); actRow.appendChild(removeBtn);
     popup.appendChild(hdr); popup.appendChild(urlRow); popup.appendChild(actRow);
@@ -762,8 +767,16 @@
   /* ── Save page ── */
   saveBtn.onclick = function(){
     var clone = body.cloneNode(true);
-    /* Strip delete buttons and their wrappers for walk cards */
+    /* Strip delete buttons */
     clone.querySelectorAll('.lm-del-btn').forEach(function(b){ b.remove(); });
+    /* Unwrap heading row divs (added by addRemoveButtons) — keep only text content */
+    clone.querySelectorAll('.entry-name, .shop-name, .chapter-title').forEach(function(h){
+      var row = h.querySelector('div[style*="display:flex"]');
+      if (row) {
+        var span = row.querySelector('span[contenteditable]') || row.querySelector('span');
+        h.textContent = span ? span.textContent : row.textContent;
+      }
+    });
     /* Unwrap walk-card position wrappers added by addRemoveButtons */
     clone.querySelectorAll('div[style*="position:relative"]').forEach(function(wrap){
       var card = wrap.querySelector('.walk-card');
