@@ -12,11 +12,11 @@
     /* â”€â”€ Hero â”€â”€ */
     .welcome-header {
       position: relative;
-      min-height: 100svh; min-height: 100vh;
+      min-height: 100vh; min-height: 100dvh;
       display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
       padding: 0 1.5rem 3.5rem;
-      margin: 0 -1.25rem;
-      width: calc(100% + 2.5rem);
+      margin: 0;
+      width: 100%;
       background: #0a0a0a center/cover no-repeat;
       overflow: hidden;
     }
@@ -27,7 +27,7 @@
       z-index: 0;
     }
     .welcome-header > * { position: relative; z-index: 1; }
-    .welcome-logo { width: 48%; max-width: 120px; max-height: 120px; height: auto; margin-bottom: 1rem; filter: drop-shadow(0 2px 12px rgba(0,0,0,.5)); object-fit: contain; }
+    .welcome-logo { display: none; }
     .welcome-title {
       font-family: 'Raleway', sans-serif; font-weight: 800; color: #fff;
       text-transform: uppercase; text-align: center; line-height: 1.1;
@@ -60,7 +60,14 @@
     }
     .nsc-item:hover { border-color: rgba(184,154,90,.45); background: rgba(184,154,90,.07); }
     .nsc-item .nsc-sub, .nsc-item .nsc-arrow { display: none; }
-    .nsc-item .nsc-title { font-size: .78rem; font-weight: 700; color: #fff; letter-spacing: .3px; line-height: 1.3; text-align: center; word-break: break-word; overflow-wrap: break-word; }
+    .nsc-item .nsc-title { font-size: .78rem; font-weight: 700; color: #fff; line-height: 1.3; text-align: center; word-break: break-word; overflow-wrap: break-word; }
+    /* Welcome-page layout: hero fills viewport, content centred below */
+    #visitor-main { padding: 0 !important; max-width: 100% !important; }
+    .welcome-content { max-width: 520px; margin: 0 auto; padding: 0 1.25rem; }
+    @media (min-width: 780px) {
+      .welcome-content { max-width: 960px; padding: 0 2.5rem; }
+      .nearby-scroll { margin: 0 -2.5rem !important; padding: 0 2.5rem .5rem !important; }
+    }
     /* Full-width card (span-full class applied by JS) */
     .nsc-item.span-full {
       grid-column: 1 / -1; flex-direction: row; align-items: center;
@@ -286,6 +293,7 @@
 {% block page_intro %}{% endblock %}
 
 {% block content %}
+<div class="welcome-content">
 <div class="welcome-intro">
   <p class="welcome-intro-body"{% if edit_mode %} data-editable data-field="welcome_text" contenteditable="true" spellcheck="false" title="Click to edit"{% endif %}>{{ welcome_text or estate.description or estate.tagline }}</p>
 </div>
@@ -371,9 +379,10 @@
   </a>
 
 </div>
+</div>{# end .welcome-content #}
 
 {# â”€â”€ Sidebar â”€â”€ #}
-<div id="edit-sidebar">
+<div id=”edit-sidebar”>
   <div class="sb-head">
     <span class="sb-head-title">Page Elements</span>
   </div>
@@ -693,6 +702,7 @@
   {% endif %}
 
 </div>
+</div>{# end .welcome-content #}
 
 <script>
   // Smart nav grid layout

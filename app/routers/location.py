@@ -7610,7 +7610,7 @@ HISTORY = {
         "chapters": [
             {
                 "title": "Origins",
-                "image_url": "/static/images/memorial.jpg",
+                "image_url": "/static/images/village-ford.jpg",
                 "image_caption": "The village centre, Shere",
                 "paragraphs": [
                     "The name Shere is thought to derive from the Old English word scīr, meaning bright or clear — almost certainly a reference to the Tillingbourne, the chalk stream that runs through the heart of the village and has shaped its character for well over a thousand years. Settlement here is ancient: there is evidence of Bronze Age activity on the surrounding downland, and the Romans made use of the valley as part of their network of routes through the Surrey Hills.",
