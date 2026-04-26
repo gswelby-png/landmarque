@@ -1,6 +1,6 @@
 ﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Places to Eat â€” {{ estate_name }}{% endblock %}
+{% block title %}Places to Eat — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
     /* Nav bar */
@@ -116,8 +116,8 @@
   </div>
 
   <p class="entry-summary">{{ place.summary }}</p>
-  <a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
-     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+  {% if place.coords %}<a href="https://maps.google.com/?q={{ place.coords[0] }},{{ place.coords[1] }}"
+     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>{% endif %}
 
   {% endfor %}
 

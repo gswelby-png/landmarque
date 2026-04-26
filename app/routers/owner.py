@@ -850,6 +850,9 @@ async def save_estate_page(
     cp.custom_features = json.dumps(features) if features else None
     db.commit()
 
+    if "application/json" in request.headers.get("accept", ""):
+        from fastapi.responses import JSONResponse
+        return JSONResponse({"ok": True})
     return RedirectResponse("/owner/dashboard?website_saved=1", status_code=303)
 
 
@@ -891,7 +894,7 @@ def preview_estate(request: Request, cp_slug: str, db: Session = Depends(get_db)
         "request": request,
         "slug": _slug,
         "estate": estate,
-        "estate_name": owner_obj.name,
+        "estate_name": estate.get("name", cp.name),
         "car_park_name": "Welcome",
         "logo_url": cp.logo_url or "",
         "welcome_text": cp.welcome_text or "",

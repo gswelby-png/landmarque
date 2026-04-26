@@ -1,15 +1,15 @@
 ﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}{{ estate_name }} â€” Welcome{% endblock %}
+{% block title %}{{ estate_name }} — Welcome{% endblock %}
 
 {% block extra_css %}
-    /* â”€â”€ Nav bar â”€â”€ */
+    /* ── Nav bar ── */
     #scroll-nav { background: rgba(0,0,0,0) !important; border-bottom-color: transparent !important; transition: background .3s, border-color .3s; }
     #scroll-nav.scrolled { background: rgba(0,0,0,0.92) !important; border-bottom-color: rgba(255,255,255,.08) !important; backdrop-filter: blur(12px); }
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
     footer a { font-size: 1rem !important; padding: .6rem 0 !important; }
     div[style*="height:20vh"] { height: 6vh !important; min-height: 40px !important; }
-    /* â”€â”€ Hero â”€â”€ */
+    /* ── Hero ── */
     .welcome-header {
       position: relative;
       min-height: 100vh; min-height: 100dvh;
@@ -43,7 +43,7 @@
     }
     .hero-scroll-arrow { animation: heroArrow 2.2s ease-in-out infinite; }
     @keyframes heroArrow { 0%,100%{transform:translateY(0)} 55%{transform:translateY(7px)} }
-    /* â”€â”€ Welcome intro â”€â”€ */
+    /* ── Welcome intro ── */
     .welcome-intro { text-align: center; padding: 2.5rem 0 2.25rem; }
     .welcome-intro-title { font-size: 1.45rem; font-weight: 700; color: #fff; letter-spacing: .4px; margin-bottom: 1rem; }
     .welcome-intro-body { font-size: .92rem; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.75; }
@@ -159,7 +159,7 @@
     }
 
     {% if edit_mode %}
-    /* â”€â”€ Edit mode â”€â”€ */
+    /* ── Edit mode ── */
     body { padding-top: 52px; }
     #scroll-nav { top: 52px; }
 
@@ -323,7 +323,7 @@
 </div>
 
 {% if edit_mode %}
-{# â”€â”€ EDIT MODE: all cards pre-rendered, JS toggles visibility â”€â”€ #}
+{# ── EDIT MODE: all cards pre-rendered, JS toggles visibility ── #}
 <div class="nav-smart-grid" id="em-grid">
 
   <a href="/location/{{ slug }}/visitor/parking-select" class="nsc-item" data-feature="parking" data-navcard{% if 'parking' not in features %} style="display:none"{% endif %} onclick="setEditorBack()">
@@ -405,7 +405,7 @@
 </div>
 </div>{# end .welcome-content #}
 
-{# â”€â”€ Sidebar â”€â”€ #}
+{# ── Sidebar ── #}
 <div id=”edit-sidebar”>
   <div class="sb-head">
     <span class="sb-head-title">Page Elements</span>
@@ -450,7 +450,7 @@
   <div class="sb-hint">Click any card to open that page and edit its content directly. Toggle cards on/off with the switches above.</div>
 </div>
 
-{# â”€â”€ Edit toolbar â”€â”€ #}
+{# ── Edit toolbar ── #}
 <div id="edit-toolbar">
   <button class="tb-close" onclick="closeEditor()">
     <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
@@ -458,7 +458,7 @@
   </button>
   <div class="tb-group">
     <span class="tb-label">Logo URL</span>
-    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://â€¦/logo.png" oninput="updateLogo(this.value)">
+    <input class="tb-logo-input" id="tb-logo" type="url" value="{{ logo_url or '' }}" placeholder="https://…/logo.png" oninput="updateLogo(this.value)">
   </div>
   <div class="tb-group">
     <div class="tb-swatch-wrap">
@@ -478,7 +478,7 @@
   <button class="tb-save" onclick="saveChanges()">Save changes</button>
 </div>
 
-{# â”€â”€ Hidden form â”€â”€ #}
+{# ── Hidden form ── #}
 <form id="edit-form" method="POST" action="/owner/estate/edit/{{ cp_slug }}" style="display:none;">
   <input type="hidden" name="logo_url"           id="f-logo_url"           value="{{ logo_url or '' }}">
   <input type="hidden" name="brand_primary"       id="f-brand_primary"      value="{{ brand_primary or '#1e3a1e' }}">
@@ -495,9 +495,10 @@
 </form>
 
 <script>
-  // â”€â”€ Logo â”€â”€
+  // ── Logo ──
   function focusLogoInput() {
     const inp = document.getElementById('tb-logo');
+    if (!inp) return;
     inp.focus(); inp.select();
   }
   function updateLogo(url) {
@@ -507,7 +508,7 @@
     document.getElementById('f-logo_url').value = url;
   }
 
-  // â”€â”€ Colours â”€â”€
+  // ── Colours ──
   function applyColor(key, val) {
     if (key === 'primary') {
       document.documentElement.style.setProperty('--brand-primary', val);
@@ -523,7 +524,7 @@
     }
   }
 
-  // â”€â”€ Editable text â”€â”€
+  // ── Editable text ──
   document.querySelectorAll('[data-editable]').forEach(el => {
     el.addEventListener('input', () => {
       const hidden = document.getElementById('f-' + el.dataset.field);
@@ -534,7 +535,7 @@
     });
   });
 
-  // â”€â”€ Fix: clear the "back to editor" flag when the welcome editor loads â”€â”€
+  // ── Fix: clear the "back to editor" flag when the welcome editor loads ──
   sessionStorage.removeItem('lm_editor_back');
 
   // ── Smart nav grid: first card full-width, last card full-width if even total ──
@@ -567,22 +568,44 @@
 
   applyNavGrid(document.getElementById('em-grid'));
 
-  // â”€â”€ Nav card click: mark as coming from editor so sub-pages show edit bar â”€â”€
+  // ── Nav card click: mark as coming from editor so sub-pages show edit bar ──
   function setEditorBack() {
     sessionStorage.setItem('lm_editor_back', '1');
     sessionStorage.setItem('lm_editor_cp', '{{ cp_slug }}');
   }
 
-  // â”€â”€ Save welcome page changes â”€â”€
   function saveChanges() {
     document.querySelectorAll('[data-editable]').forEach(el => {
       const hidden = document.getElementById('f-' + el.dataset.field);
       if (hidden) hidden.value = el.innerText.trim();
     });
-    document.getElementById('edit-form').submit();
+    const btn = document.querySelector('.tb-save');
+    const savedEl = document.getElementById('tb-saved');
+    btn.textContent = 'Saving…'; btn.disabled = true;
+    const form = document.getElementById('edit-form');
+    fetch(form.action, {
+      method: 'POST',
+      body: new FormData(form),
+      headers: { 'Accept': 'application/json' }
+    })
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      btn.textContent = 'Save changes'; btn.disabled = false;
+      if (d.ok) {
+        savedEl.style.display = '';
+        setTimeout(function(){ savedEl.style.display = 'none'; }, 3000);
+      } else {
+        btn.textContent = 'Error — try again';
+        setTimeout(function(){ btn.textContent = 'Save changes'; }, 3000);
+      }
+    })
+    .catch(function() {
+      btn.textContent = 'Error — try again'; btn.disabled = false;
+      setTimeout(function(){ btn.textContent = 'Save changes'; }, 3000);
+    });
   }
 
-  // â”€â”€ Close â€” postMessage to parent dashboard â”€â”€
+  // ── Close — postMessage to parent dashboard ──
   function closeEditor() {
     sessionStorage.removeItem('lm_editor_back');
     if (window.parent && window.parent !== window) {

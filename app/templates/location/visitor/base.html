@@ -313,6 +313,7 @@
   if (TMPL_CP) sessionStorage.setItem('lm_editor_cp', TMPL_CP);
 
   var page    = window.location.pathname.split('/').filter(Boolean).pop();
+  var _dirty  = false;
   var F       = 'font-family:Raleway,Helvetica,Arial,sans-serif;';
   var INP_CSS = 'width:100%;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);border-radius:3px;color:#fff;font-size:.82rem;padding:.5rem .75rem;outline:none;font-family:inherit;box-sizing:border-box;';
 
@@ -326,9 +327,14 @@
   backBtn.onmouseenter = function(){ this.style.color='#B89A5A'; };
   backBtn.onmouseleave = function(){ this.style.color='rgba(255,255,255,.4)'; };
   backBtn.onclick = function(){
+    if (_dirty && !confirm('You have unsaved changes. Leave without saving?')) return;
     if (cpSlug) window.location.href = '/owner/estate/preview/' + cpSlug;
     else history.back();
   };
+
+  window.addEventListener('beforeunload', function(e) {
+    if (_dirty) { e.preventDefault(); e.returnValue = ''; }
+  });
 
   var lbl = document.createElement('span');
   lbl.style.cssText = 'font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;' + F;
@@ -387,7 +393,7 @@
         wrap.style.cssText = 'position:relative;display:block;';
         card.parentNode.insertBefore(wrap, card);
         wrap.appendChild(card);
-        var btn = makeDelBtn(function(e){ e.preventDefault(); e.stopPropagation(); wrap.remove(); });
+        var btn = makeDelBtn(function(e){ e.preventDefault(); e.stopPropagation(); wrap.remove(); _dirty = true; });
         btn.style.cssText += ';position:absolute;top:.6rem;right:.6rem;z-index:5;';
         wrap.appendChild(btn);
       });
@@ -426,6 +432,7 @@
       var btn = makeDelBtn(function(){
         hr.remove();
         nodes.forEach(function(n){ if (n.parentNode) n.parentNode.removeChild(n); });
+        _dirty = true;
       });
       row.appendChild(textSpan);
       row.appendChild(btn);
@@ -449,6 +456,7 @@
       el.style.transition = 'outline .1s';
       el.addEventListener('focus', function(){ this.style.outline='2px solid rgba(184,154,90,.55)'; });
       el.addEventListener('blur',  function(){ this.style.outline='2px dashed transparent'; });
+      el.addEventListener('input', function(){ _dirty = true; });
       el.addEventListener('keydown', function(e){
         if (e.key==='Enter' && !e.shiftKey){ e.preventDefault(); this.blur(); }
       });
@@ -500,7 +508,7 @@
     var applyBtn = document.createElement('button');
     applyBtn.textContent = 'Apply';
     applyBtn.style.cssText = 'flex-shrink:0;background:#B89A5A;color:#fff;border:none;border-radius:3px;padding:.5rem 1rem;font-size:.6rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;' + F;
-    applyBtn.onclick = function(){ img.src = urlInput.value; img.style.display=''; closeImgPopup(); };
+    applyBtn.onclick = function(){ img.src = urlInput.value; img.style.display=''; _dirty = true; closeImgPopup(); };
     urlRow.appendChild(urlInput); urlRow.appendChild(applyBtn);
 
     var actRow = document.createElement('div');
@@ -515,7 +523,7 @@
       fetch('/owner/upload-image', {method:'POST', body:fd})
         .then(function(r){return r.json();})
         .then(function(d){
-          if (d.url){ img.src = d.url; img.style.display=''; closeImgPopup(); }
+          if (d.url){ img.src = d.url; img.style.display=''; _dirty = true; closeImgPopup(); }
           else { uploadBtn.textContent = 'Error'; uploadBtn.disabled = false; }
         }).catch(function(){ uploadBtn.textContent = 'Error'; uploadBtn.disabled = false; });
     });
@@ -735,6 +743,7 @@
         tmp.innerHTML = html;
         while (tmp.firstChild) { body.appendChild(tmp.firstChild); }
         wireBody();
+        _dirty = true;
         closeAddPanel();
         /* Scroll new item into view */
         body.lastElementChild && body.lastElementChild.scrollIntoView({behavior:'smooth', block:'nearest'});
@@ -780,7 +789,8 @@
     })
     .then(function(r){return r.json();})
     .then(function(d){
-      saveBtn.textContent = d.ok ? 'Saved ✓' : 'Error';
+      if (d.ok) { saveBtn.textContent = 'Saved ✓'; _dirty = false; }
+      else saveBtn.textContent = 'Error — try again';
       saveBtn.disabled = false;
       setTimeout(function(){ saveBtn.textContent = 'Save page'; }, 2000);
     })

@@ -1,6 +1,6 @@
 ﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Shopping â€” {{ estate_name }}{% endblock %}
+{% block title %}Shopping — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
@@ -137,8 +137,8 @@
 
   <p class="shop-description">{{ shop.description }}</p>
 
-  <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
-     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
+  {% if shop.coords %}<a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
+     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>{% endif %}
   {% if shop.website %}
   <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website →</a>
   {% endif %}

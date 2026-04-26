@@ -1,6 +1,6 @@
 ﻿{% extends "location/visitor/base.html" %}
 
-{% block title %}Legacy â€” {{ estate_name }}{% endblock %}
+{% block title %}Legacy — {{ estate_name }}{% endblock %}
 
 {% block extra_css %}
     footer p { font-size: .85rem !important; color: rgba(255,255,255,.35) !important; }
@@ -126,9 +126,9 @@
 <div class="page-wrap" data-lm-editable-body>
 
   <div class="page-title">Legacy</div>
-  <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future â€” however modestly â€” your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
+  <p class="page-subtitle">This estate has been shaped by centuries of care, investment, and vision. If you would like to contribute to its future — however modestly — your gift goes directly to the conservation, maintenance, and improvement of the land, buildings, and community that make this place what it is.</p>
 
-  <p class="section-body">Every donation, large or small, is used directly on the estate. There are no administrative overheads and no third parties â€” your contribution goes straight to the ground beneath your feet.</p>
+  <p class="section-body">Every donation, large or small, is used directly on the estate. There are no administrative overheads and no third parties — your contribution goes straight to the ground beneath your feet.</p>
 
   <hr class="divider">
 
@@ -166,13 +166,13 @@
   </div>
 
   <div id="donated-msg" style="display:none;background:rgba(184,154,90,.1);border:1px solid rgba(184,154,90,.3);border-radius:8px;padding:1.25rem;text-align:center;font-size:.95rem;color:#8a6f30;font-weight:600;margin-bottom:1rem;">
-    Thank you â€” your donation means a great deal to us.
+    Thank you — your donation means a great deal to us.
   </div>
   <button class="donate-btn" id="donate-btn" onclick="handleDonate()">Donate Now</button>
 
   <hr class="divider">
 
-  <p class="section-body">This estate does not receive public funding. It is maintained entirely through the generosity of those who love it â€” and through the quiet determination of a small team who have dedicated themselves to keeping it alive for future generations.</p>
+  <p class="section-body">This estate does not receive public funding. It is maintained entirely through the generosity of those who love it — and through the quiet determination of a small team who have dedicated themselves to keeping it alive for future generations.</p>
   <p class="section-body">When you give, you are helping to protect ancient woodland, maintain the chalk stream that has run through this valley for thousands of years, restore buildings that would otherwise be lost, and keep footpaths open for everyone who walks here. None of that happens without people who care enough to contribute.</p>
   <p class="section-body">We are deeply grateful for every gift, whatever its size. The estate endures because people like you have always believed it is worth preserving.</p>
 
@@ -207,7 +207,7 @@
     }
     const btn = document.getElementById('donate-btn');
     btn.disabled = true;
-    btn.textContent = 'Processingâ€¦';
+    btn.textContent = 'Processing…';
     const message = document.getElementById('donation-message').value;
     const resp = await fetch('/location/{{ slug }}/visitor/donate', {
       method: 'POST',
