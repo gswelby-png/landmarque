@@ -338,7 +338,8 @@
 
   var lbl = document.createElement('span');
   lbl.style.cssText = 'font-size:.58rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:rgba(255,255,255,.28);white-space:nowrap;flex-shrink:0;' + F;
-  lbl.textContent = 'Editing: ' + (document.title.split('—')[0] || document.title).trim();
+  var _rawTitle = document.title.replace(/\s*[\|–—]\s*LandMarque\s*$/i, '');
+  lbl.textContent = 'Editing: ' + (_rawTitle.split(/\s*[–—]\s*/)[0] || _rawTitle).trim();
 
   var spacer = document.createElement('span'); spacer.style.flex = '1';
 
