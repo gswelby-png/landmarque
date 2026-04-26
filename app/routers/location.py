@@ -11373,7 +11373,7 @@ def visitor_welcome(request: Request, slug: str, db: Session = Depends(get_db)):
     car_park = db.query(CarPark).filter(CarPark.slug == cp_slug).first() if cp_slug else None
     ctx = _base_ctx(request, slug, estate, car_park, "Welcome")
     ctx.update({
-        "welcome_text": (getattr(car_park, "welcome_text", None) or "") if car_park else "",
+        "welcome_text": estate.get("description", "") or estate.get("tagline", ""),
         "car_park_tagline": (car_park.tagline or "") if car_park else estate["tagline"],
     })
     return templates.TemplateResponse("location/visitor/welcome.html", ctx)
