@@ -746,7 +746,7 @@ PLACES_TO_EAT = {
             "distance": "3 min walk",
             "coords": [51.21645, -0.44438],
             "summary": "Widely regarded as the finest restaurant in the Surrey Hills, Kinghams occupies a 17th-century cottage on Gomshall Lane. The cooking is modern British with classical technique — expect beautifully sourced local game, fish from the south coast, and a wine list that has clearly been assembled with care. Booking essential, particularly at weekends.",
-            "image_url": "https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,f_jpg,h_563,q_65,w_1920/v1/clients/surrey/Kinghams_Shere_copyright_GBC_Image_captured_by_Chris_Lacey_December_24_e4c4238c-9c4d-4472-bad4-b1d790121b63.jpg",
+            "image_url": "/static/images/kinghams.jpg",
         },
         {
             "slug": "william-iv",
@@ -758,7 +758,7 @@ PLACES_TO_EAT = {
             "distance": "45 min walk",
             "coords": [51.21554, -0.46509],
             "summary": "A destination pub tucked away in the hamlet of Little London near Albury Heath, with a serious reputation for seasonal, locally sourced food. The game dishes in autumn and winter are outstanding, and the low-ceilinged, beamed interior with open fire makes it especially rewarding after a long walk. Book well ahead for weekends.",
-            "image_url": "https://londontheinside.com/wp-content/uploads/2025/04/william-iv-1200x675.jpg",
+            "image_url": "https://www.london-unattached.com/wp-content/uploads/2025/02/William-IV-Exterior.jpg",
         },
         {
             "slug": "white-horse",
@@ -818,7 +818,7 @@ PLACES_TO_EAT = {
             "distance": "20 min walk",
             "coords": [51.21130, -0.42630],
             "summary": "A character-filled pub and dining venue in a converted watermill on the A25 in Gomshall, with a river terrace and mill-race views. Serves a broad, hearty menu in a relaxed setting — well suited to families and larger groups. The outdoor riverside seating is especially good in summer.",
-            "image_url": "https://gomshallmill.co.uk/wp-content/uploads/2023/01/Mill-View-1.jpg",
+            "image_url": "https://www.beautifulenglandphotos.uk/wp-content/uploads/2015/09/background-gomshall-mill-gomshall-4.jpg",
         },
     ]
 }
