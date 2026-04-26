@@ -47,10 +47,42 @@
     .welcome-intro { text-align: center; padding: 2.5rem 0 2.25rem; }
     .welcome-intro-title { font-size: 1.45rem; font-weight: 700; color: #fff; letter-spacing: .4px; margin-bottom: 1rem; }
     .welcome-intro-body { font-size: .92rem; color: rgba(255,255,255,.6); font-weight: 300; line-height: 1.75; }
-    /* â”€â”€ Nav grid â”€â”€ */
-    /* Smart nav grid: 2-col, first card full-width, last card full-width if total even */
+    /* ── Nav grid ── */
+    .nav-grid { padding: 0 0 2rem; }
+    .nav-card-full {
+      display: flex; align-items: center; gap: 1rem;
+      text-decoration: none;
+      background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px; padding: 1rem 1.1rem 1rem 1rem; margin-bottom: .65rem;
+      transition: border-color .2s, background .2s, transform .2s; position: relative;
+    }
+    .nav-card-full:hover { border-color: rgba(184,154,90,.45); background: rgba(184,154,90,.07); transform: translateX(3px); }
+    .nav-2col { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; margin-bottom: .65rem; }
+    .nav-2col.solo { grid-template-columns: 1fr; }
+    @media (max-width: 359px) { .nav-2col { grid-template-columns: 1fr; } }
+    .nav-card {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-decoration: none; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.09);
+      border-radius: 10px; padding: 1.25rem 1rem; gap: .55rem; min-height: 100px;
+      overflow: visible; transition: border-color .2s, background .2s;
+    }
+    .nav-card:hover { border-color: rgba(184,154,90,.45); background: rgba(184,154,90,.07); }
+    .nav-icon-wrap {
+      width: 38px; height: 38px; flex-shrink: 0; border-radius: 8px;
+      background: rgba(184,154,90,.12); display: flex; align-items: center; justify-content: center;
+      transition: background .2s;
+    }
+    .nav-card-full:hover .nav-icon-wrap,
+    .nav-card:hover .nav-icon-wrap { background: rgba(184,154,90,.22); }
+    .nav-icon { color: var(--brand-accent, #B89A5A); display: block; width: 20px; height: 20px; }
+    .nav-body { flex: 1; min-width: 0; }
+    .nav-title { font-size: .85rem; font-weight: 700; color: #fff; letter-spacing: .3px; line-height: 1.3; }
+    .nav-2col .nav-title { font-size: .78rem; text-align: center; word-break: break-word; overflow-wrap: break-word; }
+    .nav-subtitle { font-size: .68rem; color: rgba(255,255,255,.38); font-weight: 300; margin-top: .18rem; }
+    .nav-arrow { color: rgba(255,255,255,.18); flex-shrink: 0; transition: color .2s, transform .2s; }
+    .nav-card-full:hover .nav-arrow { color: var(--brand-accent, #B89A5A); transform: translateX(3px); }
+    /* Edit-mode grid */
     .nav-smart-grid { display: grid; grid-template-columns: 1fr 1fr; gap: .65rem; padding: 0 0 2rem; }
-    /* Base card style (half-width, column layout) */
     .nsc-item {
       display: flex; flex-direction: column; align-items: center; justify-content: center;
       text-decoration: none; color: #fff; gap: .55rem; min-height: 100px;
@@ -61,14 +93,6 @@
     .nsc-item:hover { border-color: rgba(184,154,90,.45); background: rgba(184,154,90,.07); }
     .nsc-item .nsc-sub, .nsc-item .nsc-arrow { display: none; }
     .nsc-item .nsc-title { font-size: .78rem; font-weight: 700; color: #fff; line-height: 1.3; text-align: center; word-break: break-word; overflow-wrap: break-word; }
-    /* Welcome-page layout: hero fills viewport, content centred below */
-    #visitor-main { padding: 0 !important; max-width: 100% !important; }
-    .welcome-content { max-width: 520px; margin: 0 auto; padding: 0 1.25rem; }
-    @media (min-width: 780px) {
-      .welcome-content { max-width: 960px; padding: 0 2.5rem; }
-      .nearby-scroll { margin: 0 -2.5rem !important; padding: 0 2.5rem .5rem !important; }
-    }
-    /* Full-width card (span-full class applied by JS) */
     .nsc-item.span-full {
       grid-column: 1 / -1; flex-direction: row; align-items: center;
       gap: 1rem; padding: 1rem 1.1rem; min-height: auto;
@@ -79,14 +103,14 @@
     .nsc-item.span-full:hover .nsc-arrow { color: var(--brand-accent,#B89A5A); transform: translateX(3px); }
     .nsc-item.span-full .nsc-title { font-size: .85rem; text-align: left; }
     .nsc-text { flex: 1; min-width: 0; }
-    /* Icon wrapper */
-    .nav-icon-wrap {
-      width: 38px; height: 38px; flex-shrink: 0; border-radius: 8px;
-      background: rgba(184,154,90,.12); display: flex; align-items: center; justify-content: center;
-      transition: background .2s;
-    }
     .nsc-item:hover .nav-icon-wrap { background: rgba(184,154,90,.22); }
-    .nav-icon { color: var(--brand-accent, #B89A5A); display: block; width: 20px; height: 20px; }
+    /* Welcome-page layout */
+    #visitor-main { padding: 0 !important; max-width: 100% !important; }
+    .welcome-content { max-width: 520px; margin: 0 auto; padding: 0 1.25rem; }
+    @media (min-width: 780px) {
+      .welcome-content { max-width: 960px; padding: 0 2.5rem; }
+      .nearby-scroll { margin: 0 -2.5rem !important; padding: 0 2.5rem .5rem !important; }
+    }
     /* Reveal animation */
     .reveal { opacity: 0; transform: translateY(18px); transition: opacity .5s ease, transform .5s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
@@ -576,112 +600,199 @@
 
 {% else %}
 {# ── Normal visitor nav grid ── #}
-<div class=”nav-smart-grid” id=”nav-grid-main”>
+<div class="nav-grid">
 
   {% if 'parking' in features %}
-  <a href=”/location/{{ slug }}/visitor/parking-select” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M4 17l3.5-9h17L28 17”/><rect x=”2” y=”17” width=”28” height=”9” rx=”2”/><circle cx=”8.5” cy=”26” r=”2.5”/><circle cx=”23.5” cy=”26” r=”2.5”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Parking</div><div class=”nsc-sub”>Pay &amp; display · Spaces available</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+  <a href="/location/{{ slug }}/visitor/parking-select" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 17l3.5-9h17L28 17"/><rect x="2" y="17" width="28" height="9" rx="2"/><circle cx="8.5" cy="26" r="2.5"/><circle cx="23.5" cy="26" r="2.5"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Parking</div><div class="nav-subtitle">Pay &amp; display · Spaces available</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
 
-  {% if 'history' in features %}
-  <a href=”/location/{{ slug }}/visitor/history” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Our History</div><div class=”nsc-sub”>Centuries of heritage</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+  {# Row 1: history + movies #}
+  {% set r1_items = [] %}
+  {% if 'history' in features %}{% set _ = r1_items.append('history') %}{% endif %}
+  {% if 'movies' in features %}{% set _ = r1_items.append('movies') %}{% endif %}
+  {% if r1_items|length == 2 %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/history" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg></div>
+      <div class="nav-title">Our History</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/movies" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="14" rx="2"/><path d="M22 14l8-4v12l-8-4V14z"/><circle cx="9" cy="17" r="2.5"/></svg></div>
+      <div class="nav-title">Movie Connections</div>
+    </a>
+  </div>
+  {% elif 'history' in features %}
+  <a href="/location/{{ slug }}/visitor/history" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4h16M8 28h16M10 4c0 8 12 7 12 14S10 24 10 28M22 4c0 8-12 7-12 14s12 8 12 10"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Our History</div><div class="nav-subtitle">Centuries of heritage</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif 'movies' in features %}
+  <a href="/location/{{ slug }}/visitor/movies" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="10" width="20" height="14" rx="2"/><path d="M22 14l8-4v12l-8-4V14z"/><circle cx="9" cy="17" r="2.5"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Movie Connections</div><div class="nav-subtitle">Silver screen stories</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'movies' in features %}
-  <a href=”/location/{{ slug }}/visitor/movies” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><rect x=”2” y=”10” width=”20” height=”14” rx=”2”/><path d=”M22 14l8-4v12l-8-4V14z”/><circle cx=”9” cy=”17” r=”2.5”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Movie Connections</div><div class=”nsc-sub”>Silver screen stories</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+
+  {# Row 2: places-to-eat + walking #}
+  {% set r2_items = [] %}
+  {% if 'places-to-eat' in features %}{% set _ = r2_items.append('eat') %}{% endif %}
+  {% if 'walking' in features %}{% set _ = r2_items.append('walk') %}{% endif %}
+  {% if r2_items|length == 2 %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/places-to-eat" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg></div>
+      <div class="nav-title">Places to Eat</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/walking" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg></div>
+      <div class="nav-title">Walking Routes</div>
+    </a>
+  </div>
+  {% elif 'places-to-eat' in features %}
+  <a href="/location/{{ slug }}/visitor/places-to-eat" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11"/><path d="M21 4v24M21 4c6 0 7 6 7 10l-7 4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Places to Eat</div><div class="nav-subtitle">Restaurants &amp; country pubs</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif 'walking' in features %}
+  <a href="/location/{{ slug }}/visitor/walking" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="19" cy="5" r="2.5"/><path d="M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Walking Routes</div><div class="nav-subtitle">Mapped trails &amp; footpaths</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'places-to-eat' in features %}
-  <a href=”/location/{{ slug }}/visitor/places-to-eat” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M8 4v8M11 4v8M14 4v8M8 12q0 5 3 5t3-5M11 17v11”/><path d=”M21 4v24M21 4c6 0 7 6 7 10l-7 4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Places to Eat</div><div class=”nsc-sub”>Restaurants &amp; country pubs</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+
+  {# Row 3: places-of-interest + fun-for-kids #}
+  {% set r3a = 'places-of-interest' in features %}
+  {% set r3b = 'fun-for-kids' in features %}
+  {% if r3a and r3b %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/places-of-interest" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/><circle cx="16" cy="12" r="3.5"/></svg></div>
+      <div class="nav-title">Places of Interest</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/fun-for-kids" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/></svg></div>
+      <div class="nav-title">Fun for Kids</div>
+    </a>
+  </div>
+  {% elif r3a %}
+  <a href="/location/{{ slug }}/visitor/places-of-interest" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z"/><circle cx="16" cy="12" r="3.5"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Places of Interest</div><div class="nav-subtitle">Local landmarks &amp; hidden gems</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif r3b %}
+  <a href="/location/{{ slug }}/visitor/fun-for-kids" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Fun for Kids</div><div class="nav-subtitle">Family adventures</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'walking' in features %}
-  <a href=”/location/{{ slug }}/visitor/walking” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><circle cx=”19” cy=”5” r=”2.5”/><path d=”M14 11l-4 7 5 2-2 9M14 11l7 3-3 6M10 18l-3 3M19 29l4-4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Walking Routes</div><div class=”nsc-sub”>Mapped trails &amp; footpaths</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+
+  {# Row 4: cycling + winery #}
+  {% set r4a = 'cycling' in features %}
+  {% set r4b = 'winery' in features %}
+  {% if r4a and r4b %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/cycling" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/><path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/></svg></div>
+      <div class="nav-title">Cycling Routes</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/winery" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4"/><path d="M16 20v8M10 28h12"/></svg></div>
+      <div class="nav-title">The Winery</div>
+    </a>
+  </div>
+  {% elif r4a %}
+  <a href="/location/{{ slug }}/visitor/cycling" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="8" cy="22" r="5"/><circle cx="24" cy="22" r="5"/><path d="M8 22l5-10h6l3 5M16 12l3 5"/><circle cx="20" cy="8" r="2"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Cycling Routes</div><div class="nav-subtitle">Bike-friendly rides &amp; trails</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif r4b %}
+  <a href="/location/{{ slug }}/visitor/winery" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4"/><path d="M16 20v8M10 28h12"/></svg></div>
+    <div class="nav-body"><div class="nav-title">The Winery</div><div class="nav-subtitle">Vineyard &amp; cellar door</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'places-of-interest' in features %}
-  <a href=”/location/{{ slug }}/visitor/places-of-interest” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M16 29S5 20 5 12a11 11 0 0122 0c0 8-11 17-11 17z”/><circle cx=”16” cy=”12” r=”3.5”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Places of Interest</div><div class=”nsc-sub”>Local landmarks &amp; hidden gems</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+
+  {# Row 5: gardens + events #}
+  {% set r5a = 'gardens' in features %}
+  {% set r5b = 'events' in features %}
+  {% if r5a and r5b %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/gardens" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6"/><path d="M12 14c-2-4 2-8 4-10 2 2 6 6 4 10"/><path d="M4 28h24"/></svg></div>
+      <div class="nav-title">Gardens</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/events" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/></svg></div>
+      <div class="nav-title">Events</div>
+    </a>
+  </div>
+  {% elif r5a %}
+  <a href="/location/{{ slug }}/visitor/gardens" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6"/><path d="M12 14c-2-4 2-8 4-10 2 2 6 6 4 10"/><path d="M4 28h24"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Gardens</div><div class="nav-subtitle">Estate grounds &amp; planting</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif r5b %}
+  <a href="/location/{{ slug }}/visitor/events" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="6" width="24" height="22" rx="2"/><path d="M4 12h24M10 4v4M22 4v4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Events</div><div class="nav-subtitle">Estate calendar</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'fun-for-kids' in features %}
-  <a href=”/location/{{ slug }}/visitor/fun-for-kids” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><polygon points=”16,3 20,12 30,13 23,20 25,30 16,25 7,30 9,20 2,13 12,12”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Fun for Kids</div><div class=”nsc-sub”>Family adventures</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+
+  {# Row 6: shopping + benches #}
+  {% set r6a = 'shopping' in features %}
+  {% set r6b = 'benches' in features %}
+  {% if r6a and r6b %}
+  <div class="nav-2col reveal">
+    <a href="/location/{{ slug }}/visitor/shopping" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24l-3 14H7L4 8z"/><circle cx="11" cy="27" r="2"/><circle cx="22" cy="27" r="2"/><path d="M2 4h3l1 4"/></svg></div>
+      <div class="nav-title">Shopping</div>
+    </a>
+    <a href="/location/{{ slug }}/visitor/sponsor-a-bench" class="nav-card">
+      <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6"/><path d="M11 14v-4M21 14v-4"/></svg></div>
+      <div class="nav-title">Sponsor a Bench</div>
+    </a>
+  </div>
+  {% elif r6a %}
+  <a href="/location/{{ slug }}/visitor/shopping" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8h24l-3 14H7L4 8z"/><circle cx="11" cy="27" r="2"/><circle cx="22" cy="27" r="2"/><path d="M2 4h3l1 4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Shopping</div><div class="nav-subtitle">Local crafts &amp; produce</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+  </a>
+  {% elif r6b %}
+  <a href="/location/{{ slug }}/visitor/sponsor-a-bench" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6"/><path d="M11 14v-4M21 14v-4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Sponsor a Bench</div><div class="nav-subtitle">Memorial seating</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
-  {% if 'cycling' in features %}
-  <a href=”/location/{{ slug }}/visitor/cycling” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><circle cx=”8” cy=”22” r=”5”/><circle cx=”24” cy=”22” r=”5”/><path d=”M8 22l5-10h6l3 5M16 12l3 5”/><circle cx=”20” cy=”8” r=”2”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Cycling Routes</div><div class=”nsc-sub”>Bike-friendly rides &amp; trails</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
-  {% if 'winery' in features %}
-  <a href=”/location/{{ slug }}/visitor/winery” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M12 4h8M10 4v8c0 6 3 8 6 8s6-2 6-8V4”/><path d=”M16 20v8M10 28h12”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>The Winery</div><div class=”nsc-sub”>Vineyard &amp; cellar door</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
-  {% if 'gardens' in features %}
-  <a href=”/location/{{ slug }}/visitor/gardens” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M16 28V14M8 20c2-6 8-6 8-6s6 0 8 6”/><path d=”M12 14c-2-4 2-8 4-10 2 2 6 6 4 10”/><path d=”M4 28h24”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Gardens</div><div class=”nsc-sub”>Estate grounds &amp; planting</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
-  {% if 'events' in features %}
-  <a href=”/location/{{ slug }}/visitor/events” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><rect x=”4” y=”6” width=”24” height=”22” rx=”2”/><path d=”M4 12h24M10 4v4M22 4v4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Events</div><div class=”nsc-sub”>Estate calendar</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
-  {% if 'shopping' in features %}
-  <a href=”/location/{{ slug }}/visitor/shopping” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M4 8h24l-3 14H7L4 8z”/><circle cx=”11” cy=”27” r=”2”/><circle cx=”22” cy=”27” r=”2”/><path d=”M2 4h3l1 4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Shopping</div><div class=”nsc-sub”>Local crafts &amp; produce</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
-  {% if 'benches' in features %}
-  <a href=”/location/{{ slug }}/visitor/sponsor-a-bench” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M4 20h24M4 24h24M8 20v4M24 20v4M8 20v-6h16v6”/><path d=”M11 14v-4M21 14v-4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Sponsor a Bench</div><div class=”nsc-sub”>Memorial seating</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
-  </a>
-  {% endif %}
+
   {% if 'polo' in features %}
-  <a href=”/location/{{ slug }}/visitor/polo” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><line x1=”23” y1=”4” x2=”17” y2=”21”/><rect x=”7” y=”20” width=”14” height=”5” rx=”2.5”/><circle cx=”25” cy=”27” r=”2.5”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Polo</div><div class=”nsc-sub”>Matches &amp; events</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+  <a href="/location/{{ slug }}/visitor/polo" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="23" y1="4" x2="17" y2="21"/><rect x="7" y="20" width="14" height="5" rx="2.5"/><circle cx="25" cy="27" r="2.5"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Polo</div><div class="nav-subtitle">Matches &amp; events</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
+
   {% if 'legacy' in features %}
-  <a href=”/location/{{ slug }}/visitor/legacy” class=”nsc-item reveal” data-navcard>
-    <div class=”nav-icon-wrap”><svg class=”nav-icon” viewBox=”0 0 32 32” fill=”none” stroke=”currentColor” stroke-width=”1.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M16 4C9 4 4 9 4 16s5 12 12 12 12-5 12-12S23 4 16 4z”/><path d=”M16 10v6l4 4”/></svg></div>
-    <div class=”nsc-text”><div class=”nsc-title”>Legacy</div><div class=”nsc-sub”>Charitable giving</div></div>
-    <svg class=”nsc-arrow” width=”14” height=”14” viewBox=”0 0 24 24” fill=”none” stroke=”currentColor” stroke-width=”2.5” stroke-linecap=”round” stroke-linejoin=”round”><path d=”M5 12h14M12 5l7 7-7 7”/></svg>
+  <a href="/location/{{ slug }}/visitor/legacy" class="nav-card-full reveal">
+    <div class="nav-icon-wrap"><svg class="nav-icon" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4C9 4 4 9 4 16s5 12 12 12 12-5 12-12S23 4 16 4z"/><path d="M16 10v6l4 4"/></svg></div>
+    <div class="nav-body"><div class="nav-title">Legacy</div><div class="nav-subtitle">Charitable giving</div></div>
+    <svg class="nav-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
   </a>
   {% endif %}
 
@@ -705,16 +816,6 @@
 </div>{# end .welcome-content #}
 
 <script>
-  // Smart nav grid layout
-  (function() {
-    var grid = document.getElementById('nav-grid-main');
-    if (!grid) return;
-    var cards = [].slice.call(grid.querySelectorAll('[data-navcard]'));
-    if (!cards.length) return;
-    cards[0].classList.add('span-full');
-    if (cards.length % 2 === 0) cards[cards.length - 1].classList.add('span-full');
-  })();
-
   // Scroll-aware transparent nav
   const nav = document.getElementById('scroll-nav');
   window.addEventListener('scroll', function() {
