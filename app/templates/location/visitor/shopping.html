@@ -126,7 +126,7 @@
   {% if not loop.first %}<hr class=”divider”>{% endif %}
 
   <div class="shop-name">{{ shop.name }}</div>
-  <div class="shop-meta">{{ shop.type }}{% if shop.distance %} Â· {{ shop.distance }}{% endif %}</div>
+  <div class="shop-meta">{{ shop.type }}{% if shop.distance %} · {{ shop.distance }}{% endif %}</div>
   {% if shop.hours %}<div class="shop-hours">{{ shop.hours }}</div>{% endif %}
 
   {% if shop.image_url %}
@@ -138,9 +138,9 @@
   <p class="shop-description">{{ shop.description }}</p>
 
   <a href="https://maps.google.com/?q={{ shop.coords[0] }},{{ shop.coords[1] }}"
-     target="_blank" rel="noopener" class="directions-link">Get Directions â†’</a>
+     target="_blank" rel="noopener" class="directions-link">Get Directions →</a>
   {% if shop.website %}
-  <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website â†’</a>
+  <a href="{{ shop.website }}" target="_blank" rel="noopener" class="website-link">Visit Website →</a>
   {% endif %}
 
   {% endfor %}
@@ -160,7 +160,7 @@
       <div class="produce-price">{{ item.price }}</div>
       <p class="produce-desc">{{ item.description }}</p>
       {% if item.buy_url %}
-      <a href="{{ item.buy_url }}" target="_blank" rel="noopener" class="produce-link">Buy direct â†—</a>
+      <a href="{{ item.buy_url }}" target="_blank" rel="noopener" class="produce-link">Buy direct ↗</a>
       {% endif %}
     </div>
   </div>
