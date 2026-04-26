@@ -14,8 +14,6 @@ ESTATES = {
         "county": "Surrey",
         "lat": 51.2164, "lng": -0.4444,
         "car_park_slug": "shere-manor",
-        "brand_primary": "#1e3a1e",
-        "brand_accent": "#B89A5A",
         "features": ["parking", "history", "movies", "places-to-eat", "walking", "places-of-interest", "fun-for-kids", "shopping", "benches", "legacy"],
     },
     "hurtwood-estate": {
@@ -24,9 +22,6 @@ ESTATES = {
         "description": "The Hurtwood Estate is one of the most significant private landholdings in the Surrey Hills AONB, covering moorland, ancient woodland, and heathland around Peaslake, Holmbury Hill, and Ewhurst. The estate generously allows public access to the majority of its land and manages several car parks serving the Surrey Hills walking and cycling community.",
         "county": "Surrey",
         "lat": 51.1834, "lng": -0.3883,
-        "logo_url": "https://hurtwood.co.uk/wp-content/themes/hurtwood19/images/hurtwood-logo.svg",
-        "brand_primary": "#121111",
-        "brand_accent": "#a4561e",
         "features": ["parking", "walking", "cycling", "places-of-interest", "benches", "legacy"],
     },
     "albury-estate": {
@@ -35,9 +30,6 @@ ESTATES = {
         "description": "Albury Park is a private estate in the Tillingbourne valley immediately east of Shere, landscaped by John Evelyn in the seventeenth century. The estate includes a remarkable series of terraced gardens, a Pugin chapel, and the former parish church of St Peter and St Paul — one of Surrey's finest Saxon buildings. Albury Organic Vineyard on the estate produces certified organic sparkling and still wines.",
         "county": "Surrey",
         "lat": 51.2133, "lng": -0.4233,
-        "logo_url": "https://alburyestate.co.uk/wp-content/uploads/2026/03/logo.svg",
-        "brand_primary": "#0B612D",
-        "brand_accent": "#BDA364",
         "features": ["history", "walking", "winery", "places-of-interest", "benches", "legacy"],
     },
     "wotton-estate": {
@@ -46,9 +38,6 @@ ESTATES = {
         "description": "Wotton House near Dorking is the ancestral home of the Evelyn family, most famous for the diarist John Evelyn who created the gardens here before lending his expertise to Albury Park. The estate grounds, with their temples, terraces, and ponds, were designed by Evelyn himself and restored in the late twentieth century.",
         "county": "Surrey",
         "lat": 51.2048, "lng": -0.4069,
-        "logo_url": "https://impro.usercontent.one/appid/oneComWsb/domain/wottonestate.co.uk/media/wottonestate.co.uk/onewebmedia/GRIFFIN%202018_edited1.jpg",
-        "brand_primary": "#12180e",
-        "brand_accent": "#A8924A",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
     "denbies-wine-estate": {
@@ -57,9 +46,6 @@ ESTATES = {
         "description": "Denbies Wine Estate near Dorking is England's largest single-estate winery, with 265 acres of vines on the chalk slopes of the North Downs. The estate offers vineyard tours, a winery, gallery, restaurant, and accommodation, and is one of Surrey's most popular visitor attractions.",
         "county": "Surrey",
         "lat": 51.2337, "lng": -0.3357,
-        "brand_primary": "#1a0a14",
-        "brand_accent": "#8B1C3A",
-        "logo_url": "https://denbies.wpenginepowered.com/wp-content/uploads/2023/06/Top-logo-landscape-1.png",
         "features": ["history", "walking", "winery", "cycling", "places-of-interest", "places-to-eat", "shopping", "events", "benches", "legacy"],
     },
     "abinger-estate": {
@@ -68,8 +54,6 @@ ESTATES = {
         "description": "The Abinger Estate encompasses the villages of Abinger Common and Abinger Hammer in the Surrey Hills, with ancient woodland, the Friday Street hammer pond, and walking routes onto Leith Hill. The estate has strong associations with E.M. Forster, who spent much of his life in the area.",
         "county": "Surrey",
         "lat": 51.2070, "lng": -0.3980,
-        "brand_primary": "#121a0e",
-        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "benches", "legacy"],
     },
     "loseley-park": {
@@ -78,9 +62,6 @@ ESTATES = {
         "description": "Loseley Park is a working farm and Elizabethan manor house on the edge of Guildford, home to the More-Molyneux family since 1562. The walled garden, built from stone salvaged from Waverley Abbey, is one of the finest in Surrey.",
         "county": "Surrey",
         "lat": 51.2109, "lng": -0.5889,
-        "brand_primary": "#0e160a",
-        "brand_accent": "#A8924A",
-        "logo_url": "https://loseleypark.co.uk/wp-content/uploads/2025/01/Loseley-Logo-navy-font-with-crest1-scaled.jpg",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
 
@@ -92,9 +73,6 @@ ESTATES = {
         "description": "Arundel Castle is the ancestral home of the Duke of Norfolk, one of the premier peers of England. The castle dates from the eleventh century and houses a remarkable collection of paintings, furniture, and personal possessions of Mary Queen of Scots.",
         "county": "West Sussex",
         "lat": 50.8561, "lng": -0.5510,
-        "brand_primary": "#1a0e0e",
-        "brand_accent": "#C9A84C",
-        "logo_url": "https://www.arundelcastle.org/wp-content/uploads/2019/10/arundel-castle-logo.png",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "goodwood-estate": {
@@ -103,9 +81,6 @@ ESTATES = {
         "description": "Goodwood Estate in West Sussex is one of Britain's most celebrated sporting estates, home to the Festival of Speed, Goodwood Revival, and the Glorious Goodwood horseracing festival. The estate farm, hotel, and golf course support a year-round visitor offer.",
         "county": "West Sussex",
         "lat": 50.8651, "lng": -0.7554,
-        "brand_primary": "#0d1a12",
-        "brand_accent": "#2B8A3E",
-        "logo_url": "https://www.goodwood.com/globalassets/brand-assets/logos/core-brand/png/goodwood-core-brand---logo---mono.png",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "cycling", "benches", "legacy", "events"],
     },
     "cowdray-park": {
@@ -114,9 +89,6 @@ ESTATES = {
         "description": "Cowdray Estate near Midhurst is a 16,500-acre sporting estate and one of Britain's leading polo venues. The estate contains the dramatic ruins of Cowdray House, destroyed by fire in 1793, and a working farm. The annual Cowdray Park Polo Gold Cup is one of the most prestigious in the world.",
         "county": "West Sussex",
         "lat": 50.9900, "lng": -0.7400,
-        "logo_url": "https://www.cowdray.co.uk/wp-content/uploads/2024/05/logo-cowdray-estate.png",
-        "brand_primary": "#2b2b2b",
-        "brand_accent": "#ffc03a",
         "features": ["history", "walking", "polo", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "benches", "legacy", "events"],
     },
     "parham-house": {
@@ -125,8 +97,6 @@ ESTATES = {
         "description": "Parham House is a privately owned Elizabethan house near Pulborough, set in a deer park below the South Downs. The house contains a collection of fine art, needlework, and furniture, and the four-acre walled garden is among the finest in Sussex.",
         "county": "West Sussex",
         "lat": 50.9330, "lng": -0.4420,
-        "brand_primary": "#180e0a",
-        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy", "events"],
     },
     "leonardslee-gardens": {
@@ -135,9 +105,6 @@ ESTATES = {
         "description": "Leonardslee Gardens near Horsham is a privately owned woodland garden in a steep valley, created by Sir Edmund Loder from 1889. Famous for its bluebells, rhododendrons, and wallabies, the garden reopened after restoration in 2019 and includes a luxury hotel and restaurant.",
         "county": "West Sussex",
         "lat": 51.0280, "lng": -0.2710,
-        "brand_primary": "#0a1a0a",
-        "brand_accent": "#5A8A3A",
-        "logo_url": "https://images.squarespace-cdn.com/content/v1/6076f00c6c78f01b3db89925/1618411757822-YFVQ421DSKW7AE64857G/Leonardslee+Logo+Long+White.png?format=1500w",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
@@ -149,9 +116,6 @@ ESTATES = {
         "description": "Firle Place is a privately owned country house in East Sussex, home to the Gage family since the fifteenth century. The house contains an outstanding collection of Old Master paintings and is set in the South Downs National Park below the chalk escarpment of Firle Beacon.",
         "county": "East Sussex",
         "lat": 50.8470, "lng": 0.0830,
-        "brand_primary": "#0e1218",
-        "brand_accent": "#B89A5A",
-        "logo_url": "https://firle.com/wp-content/uploads/2023/08/firle-logo.svg",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "glynde-place": {
@@ -160,9 +124,6 @@ ESTATES = {
         "description": "Glynde Place is a privately owned sixteenth-century house near Lewes, built from knapped flint and overlooking the South Downs. The house has been home to the Trevor and Brand families and retains an intimate, lived-in character.",
         "county": "East Sussex",
         "lat": 50.8660, "lng": 0.0520,
-        "logo_url": "https://images.squarespace-cdn.com/content/v1/59035473e6f2e12cc1676644/8cfc9c07-6d95-4707-b0c4-e164602df017/Glynde+Estates+Website+Header+Logo.png?format=1500w",
-        "brand_primary": "#4a5e7a",
-        "brand_accent": "#8b1a1a",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy"],
     },
 
@@ -174,9 +135,6 @@ ESTATES = {
         "description": "Penshurst Place has been home to the Sidney family since 1552, one of England's finest examples of a medieval baron's hall with rooms and furniture dating back to the fourteenth century. The walled gardens are among the oldest in England.",
         "county": "Kent",
         "lat": 51.1734, "lng": 0.1697,
-        "brand_primary": "#18100a",
-        "brand_accent": "#C9A84C",
-        "logo_url": "https://www.penshurstplace.com/public/uploads/browser/images/new-logo.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "hever-castle": {
@@ -185,9 +143,6 @@ ESTATES = {
         "description": "Hever Castle was the childhood home of Anne Boleyn, the second wife of Henry VIII. The thirteenth-century castle was later acquired by William Waldorf Astor, who added the award-winning gardens. Today the castle and grounds offer one of Kent's finest visitor experiences.",
         "county": "Kent",
         "lat": 51.1908, "lng": 0.1097,
-        "brand_primary": "#1a0e06",
-        "brand_accent": "#C9A84C",
-        "logo_url": "https://www.hevercastle.co.uk/wp-content/themes/Heaver/assets/images/logo-3.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "lullingstone-castle": {
@@ -196,8 +151,6 @@ ESTATES = {
         "description": "Lullingstone Castle is a privately owned Tudor and Georgian house in the Darent valley, home to the Hart Dyke family. The estate is home to the World Garden of Plants, created by Tom Hart Dyke after his capture in the Darien Gap, containing plants from every country in the world.",
         "county": "Kent",
         "lat": 51.3810, "lng": 0.1610,
-        "brand_primary": "#0a1812",
-        "brand_accent": "#5A8A3A",
         "features": ["history", "walking", "gardens", "places-of-interest", "fun-for-kids", "benches", "legacy", "events"],
     },
     "groombridge-place": {
@@ -206,8 +159,6 @@ ESTATES = {
         "description": "Groombridge Place is a privately owned seventeenth-century moated manor on the Kent-Sussex border, with formal walled gardens designed by John Evelyn and an enchanted forest attraction. The manor was used as the location for the 1993 film of The Secret Garden.",
         "county": "Kent",
         "lat": 51.1120, "lng": 0.1740,
-        "brand_primary": "#0a1a0e",
-        "brand_accent": "#5A8A3A",
         "features": ["history", "walking", "gardens", "places-of-interest", "fun-for-kids", "movies", "benches", "legacy", "events"],
     },
 
@@ -219,9 +170,6 @@ ESTATES = {
         "description": "Highclere Castle is the ancestral home of the Earl of Carnarvon and the filming location for all series of Downton Abbey. The Gothic Revival mansion sits in 1,000 acres of Capability Brown parkland and attracts over 200,000 visitors a year.",
         "county": "Hampshire",
         "lat": 51.3247, "lng": -1.3635,
-        "brand_primary": "#0d0d1a",
-        "brand_accent": "#D4AF37",
-        "logo_url": "https://www.highclerecastle.co.uk/backend/images/highclere-logo.png",
         "features": ["history", "walking", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "beaulieu-estate": {
@@ -230,9 +178,6 @@ ESTATES = {
         "description": "Beaulieu is a private estate in the New Forest, home to the Montagu family and the National Motor Museum. The estate includes Palace House, the ruins of Beaulieu Abbey, and extensive grounds on the Beaulieu River.",
         "county": "Hampshire",
         "lat": 50.8143, "lng": -1.4562,
-        "brand_primary": "#0a1a0a",
-        "brand_accent": "#7CAE7A",
-        "logo_url": "https://www.beaulieu.co.uk/wp-content/uploads/2018/07/Beaulieu-Logo-240-75.png",
         "features": ["history", "walking", "places-of-interest", "places-to-eat", "fun-for-kids", "shopping", "movies", "benches", "legacy", "events"],
     },
     "exbury-gardens": {
@@ -241,9 +186,6 @@ ESTATES = {
         "description": "Exbury Gardens in the New Forest was created by Lionel de Rothschild in the 1920s and contains one of the world's great collections of rhododendrons, azaleas, camellias, and magnolias. The steam railway and seasonal events make it one of Hampshire's leading visitor attractions.",
         "county": "Hampshire",
         "lat": 50.7999, "lng": -1.3699,
-        "brand_primary": "#0a1a0a",
-        "brand_accent": "#D05C7A",
-        "logo_url": "https://exbury.co.uk/wp-content/uploads/2025/03/exbury-wo.svg",
         "features": ["history", "walking", "gardens", "cycling", "places-of-interest", "places-to-eat", "fun-for-kids", "benches", "legacy", "events"],
     },
     "broadlands-estate": {
@@ -252,8 +194,6 @@ ESTATES = {
         "description": "Broadlands is a Palladian mansion near Romsey, the ancestral home of Lord Mountbatten and the honeymoon retreat of both The Queen and Prince Philip, and Princess Anne. The estate grounds run down to the River Test.",
         "county": "Hampshire",
         "lat": 51.0232, "lng": -1.5000,
-        "brand_primary": "#0e1218",
-        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy"],
     },
     "stratfield-saye-estate": {
@@ -262,9 +202,6 @@ ESTATES = {
         "description": "Stratfield Saye is the ancestral home of the Duke of Wellington, given to the first Duke by the nation following his victory at Waterloo. The house retains its Regency character and the estate runs a regular events and open day programme.",
         "county": "Hampshire",
         "lat": 51.3432, "lng": -1.0778,
-        "brand_primary": "#0e1218",
-        "brand_accent": "#C9A84C",
-        "logo_url": "https://stratfield-saye.co.uk/wp-content/uploads/main_crest.gif",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
     "avington-park": {
@@ -273,9 +210,6 @@ ESTATES = {
         "description": "Avington Park is a privately owned Georgian house near Winchester, set in parkland above the chalk stream of the River Itchen. The house was visited by Charles II and is one of a small number of privately owned houses that open to the public on a regular basis.",
         "county": "Hampshire",
         "lat": 51.0720, "lng": -1.2700,
-        "logo_url": "https://avington.com/media/b1hf0nwn/logo-colour.svg",
-        "brand_primary": "#3d4a35",
-        "brand_accent": "#555f4a",
         "features": ["history", "walking", "places-of-interest", "benches", "legacy", "events"],
     },
 
@@ -287,8 +221,6 @@ ESTATES = {
         "description": "Englefield Estate near Theale is one of the largest private estates in Berkshire, owned by the Benyon family. The house dates from the sixteenth century and the garden includes a walled kitchen garden and extensive woodland.",
         "county": "Berkshire",
         "lat": 51.4270, "lng": -1.1110,
-        "brand_primary": "#0e1218",
-        "brand_accent": "#B89A5A",
         "features": ["history", "walking", "cycling", "places-of-interest", "benches", "legacy", "events"],
     },
     "welford-park": {
@@ -297,9 +229,6 @@ ESTATES = {
         "description": "Welford Park is a privately owned Queen Anne house in the Lambourn valley near Newbury, with grounds that attract thousands of visitors each February for what is considered one of England's finest snowdrop gardens.",
         "county": "Berkshire",
         "lat": 51.4290, "lng": -1.4100,
-        "brand_primary": "#0e1218",
-        "brand_accent": "#B89A5A",
-        "logo_url": "https://www.welfordpark.co.uk/wp-content/uploads/logo-webv3.png",
         "features": ["history", "walking", "gardens", "places-of-interest", "places-to-eat", "benches", "legacy", "events"],
     },
 
@@ -311,9 +240,6 @@ ESTATES = {
         "description": "Chapel Down is England's most celebrated wine producer, with over 1,000 acres of vines across Kent and Sussex. The winery at Tenterden produces award-winning sparkling and still wines and is home to a restaurant, wine shop, and year-round visitor programme.",
         "county": "Kent",
         "lat": 51.0690, "lng": 0.6870,
-        "logo_url": "https://chapeldown.com/cdn/shop/files/Chapel_Down_Arch_small.png?v=1686648034",
-        "brand_primary": "#c83531",
-        "brand_accent": "#c8a96e",
         "features": ["winery", "places-to-eat", "shopping", "events"],
     },
     "gusbourne-estate": {
@@ -322,9 +248,6 @@ ESTATES = {
         "description": "Gusbourne Estate at Appledore in Kent is one of England's most acclaimed wine producers, known for its Blanc de Blancs and Brut Reserve sparkling wines grown on Romney Marsh soils. The winery offers tours, tastings, and a vineyard restaurant.",
         "county": "Kent",
         "lat": 51.0280, "lng": 0.8100,
-        "logo_url": "https://d2r9v3dg6pwsf4.cloudfront.net/assets/Gusbourne_Goose_White-c237b594520c2c623d66dca0299e0d6e569ef44c1cc841219e49587a847f7d66.png",
-        "brand_primary": "#1c1c1c",
-        "brand_accent": "#c8a06e",
         "features": ["winery", "places-to-eat", "events"],
     },
     "squerryes-estate": {
@@ -333,9 +256,6 @@ ESTATES = {
         "description": "Squerryes Estate near Westerham has been home to the Warde family since 1731. The estate's vineyard, established in 2000, produces sparkling wines from Chardonnay, Pinot Noir, and Pinot Meunier grown on the North Downs chalk escarpment — the same soils as Champagne.",
         "county": "Kent",
         "lat": 51.2600, "lng": 0.0770,
-        "logo_url": "https://www.squerryes.co.uk/img/logo-white.png",
-        "brand_primary": "#ab1a2d",
-        "brand_accent": "#f5f0e8",
         "features": ["history", "winery", "walking", "places-of-interest", "events"],
     },
     "hush-heath-estate": {
@@ -344,9 +264,6 @@ ESTATES = {
         "description": "Hush Heath Estate near Staplehurst in Kent is a 400-acre organic estate and the home of Balfour Winery. The estate produces a celebrated English Rosé as well as sparkling and still wines from its own vines, and is known for combining fine winemaking with a working farm.",
         "county": "Kent",
         "lat": 51.1510, "lng": 0.5490,
-        "logo_url": "https://balfourwinery.com/wp-content/themes/wp-bootstrap-starter-child/assets/images/Balfour-RGB_Full-Vertical-Center-Green.svg",
-        "brand_primary": "#13342b",
-        "brand_accent": "#d4c9b0",
         "features": ["winery", "places-to-eat", "shopping", "events"],
     },
     "nyetimber": {
@@ -355,8 +272,6 @@ ESTATES = {
         "description": "Nyetimber in West Sussex is England's oldest dedicated producer of sparkling wine, established in 1988 on a manor house estate with medieval origins. Its Classic Cuvée is one of the most awarded English wines and helped establish the credentials of the English wine industry internationally.",
         "county": "West Sussex",
         "lat": 50.9610, "lng": -0.4140,
-        "brand_primary": "#2e1117",
-        "brand_accent": "#ae936c",
         "features": ["history", "winery", "events"],
     },
     "ridgeview-wine-estate": {
@@ -365,9 +280,6 @@ ESTATES = {
         "description": "Ridgeview Wine Estate at Ditchling Common in East Sussex was founded by the Roberts family in 1995 with the single aim of producing world-class sparkling wine. Its Cavendish Blanc de Blancs has won the international Decanter World Wine Award and been served at royal and state occasions.",
         "county": "East Sussex",
         "lat": 50.9340, "lng": -0.1080,
-        "logo_url": "https://www.ridgeview.co.uk/wp-content/themes/ridgeview/img/logos/ridgeview-wordmark-light.svg",
-        "brand_primary": "#583d3e",
-        "brand_accent": "#ff5c39",
         "features": ["winery", "events"],
     },
     "bolney-wine-estate": {
@@ -376,9 +288,6 @@ ESTATES = {
         "description": "Bolney Wine Estate near Haywards Heath in West Sussex is one of England's longest-established vineyards, planted by Rodney and Janet Pratt in 1972. The estate produces an acclaimed range of sparkling, red, white, and rosé wines and is home to the Hay Barn restaurant and a busy events programme.",
         "county": "West Sussex",
         "lat": 51.0040, "lng": -0.1900,
-        "logo_url": "https://bolneywineestate.com/wp-content/themes/bolney-wine-estate/assets/images/svg/logo-bolney-light-v2.svg",
-        "brand_primary": "#1d1d1b",
-        "brand_accent": "#8a7a5a",
         "features": ["winery", "places-to-eat", "shopping", "events"],
     },
     "bluebell-vineyard-estates": {
@@ -387,9 +296,6 @@ ESTATES = {
         "description": "Bluebell Vineyard Estates at Furners Green in East Sussex is a certified organic vineyard producing sparkling and still wines from Chardonnay, Pinot Noir, and Pinot Gris. The estate hosts regular tours and tastings and is one of the leading producers in the Sussex wine scene.",
         "county": "East Sussex",
         "lat": 51.0240, "lng": 0.0280,
-        "logo_url": "https://bluebellwines.com/cdn/shop/files/Name_Colour_Logo.png?v=1691845517",
-        "brand_primary": "#0b1613",
-        "brand_accent": "#f0702c",
         "features": ["winery", "events"],
     },
     "wiston-estate-winery": {
@@ -398,9 +304,6 @@ ESTATES = {
         "description": "Wiston Estate near Steyning in West Sussex is a traditional farming estate on the South Downs National Park, producing fine sparkling wine from chalk soils. The Goring family has farmed the estate for generations and established the winery to take advantage of exceptional terroir.",
         "county": "West Sussex",
         "lat": 50.9140, "lng": -0.3730,
-        "logo_url": "https://www.wistonestate.com/wp-content/uploads/logo-4-e1661266073847.jpg",
-        "brand_primary": "#00303d",
-        "brand_accent": "#C4A265",
         "features": ["winery", "events"],
     },
     "hambledon-vineyard": {
@@ -409,9 +312,6 @@ ESTATES = {
         "description": "Hambledon Vineyard in Hampshire holds the distinction of being England's oldest commercial vineyard, originally planted by Major General Sir Guy Salisbury-Jones in 1952. The current estate produces classic méthode traditionnelle sparkling wines from Chardonnay, Pinot Noir, and Pinot Meunier on chalk soils above the village of Hambledon.",
         "county": "Hampshire",
         "lat": 50.9390, "lng": -1.0650,
-        "logo_url": "https://hambledonvineyard.co.uk/cdn/shop/files/HV_Logo_Normal_Chalk_HD_copy_3.png?v=1700073153",
-        "brand_primary": "#1d2649",
-        "brand_accent": "#9a8060",
         "features": ["history", "winery", "events"],
     },
     "hattingley-valley": {
@@ -420,9 +320,6 @@ ESTATES = {
         "description": "Hattingley Valley Wines near Alresford in Hampshire was established in 2008 and has quickly become one of England's most respected sparkling wine producers. The winery also offers contract winemaking services for many of England's smaller vineyards, playing a central role in the growth of the English wine industry.",
         "county": "Hampshire",
         "lat": 51.1100, "lng": -1.1700,
-        "logo_url": "https://hattingleyvalley.com/cdn/shop/files/Hattingley_Valley_Logo_White_Gold_Solid_Butterfly_copy_140x.png?v=1710161036",
-        "brand_primary": "#0e1141",
-        "brand_accent": "#d1ae79",
         "features": ["winery", "events"],
     },
     "black-chalk-winery": {
@@ -431,9 +328,6 @@ ESTATES = {
         "description": "Black Chalk Winery at Fullerton in Hampshire was founded by former Ridgeview head winemaker Jacob Leadley and produces small-batch English sparkling and still wines from estate and contracted Hampshire vineyards. The winery takes its name from the distinctive black flint chalk soils of the Test valley.",
         "county": "Hampshire",
         "lat": 51.1620, "lng": -1.4700,
-        "logo_url": "https://static.wixstatic.com/media/e87dab_abadd6345c47435bbd54888a34720aa7~mv2.png/v1/fill/w_307,h_89,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Black%20Chalk%20Logo%20transparent.png",
-        "brand_primary": "#1a1a1a",
-        "brand_accent": "#8a8a8a",
         "features": ["winery", "events"],
     },
     "jenkyn-place-vineyard": {
@@ -442,8 +336,6 @@ ESTATES = {
         "description": "Jenkyn Place Vineyard at Bentley in Hampshire is a garden estate producing sparkling wines from Chardonnay, Pinot Noir, and Pinot Meunier. The winery has received significant critical acclaim and the estate's historic walled garden provides a picturesque setting for vineyard visits.",
         "county": "Hampshire",
         "lat": 51.1570, "lng": -0.9010,
-        "brand_primary": "#0e180e",
-        "brand_accent": "#5A8A3A",
         "features": ["winery", "gardens", "events"],
     },
     "greyfriars-vineyard": {
@@ -452,9 +344,6 @@ ESTATES = {
         "description": "Greyfriars Vineyard at Puttenham in Surrey occupies a south-facing slope on the Hog's Back ridge, producing sparkling and still wines from chalk and greensand soils. The estate's Blanc de Blancs and Rosé have won numerous awards and the vineyard is one of Surrey's most visited.",
         "county": "Surrey",
         "lat": 51.1890, "lng": -0.6820,
-        "logo_url": "https://www.greyfriarsvineyard.co.uk/cdn/shop/files/GFV_BigG_black_1.jpg?v=1771516243",
-        "brand_primary": "#1a1a1a",
-        "brand_accent": "#5a6a3a",
         "features": ["winery", "events"],
     },
     "camel-valley": {
@@ -463,9 +352,6 @@ ESTATES = {
         "description": "Camel Valley Winery near Bodmin in Cornwall was established by the Lindo family in 1989 on a former sheep farm in the valley of the River Camel. The winery is best known for its sparkling 'Cornwall' wines made from Seyval Blanc and for its Bacchus — both have won numerous international awards.",
         "county": "Cornwall",
         "lat": 50.4620, "lng": -4.8380,
-        "logo_url": "https://www.camelvalley.com/storage/01HWCQJ3KZ9FN5WP6KGD3ZB64X.png",
-        "brand_primary": "#1b263c",
-        "brand_accent": "#af9c75",
         "features": ["winery", "places-to-eat", "shopping", "events"],
     },
     "three-choirs-vineyards": {
@@ -474,9 +360,6 @@ ESTATES = {
         "description": "Three Choirs Vineyards at Newent in Gloucestershire is one of England's largest wine estates, with around 100 acres of vines producing a wide range of still and sparkling English wines. The estate includes a vineyard restaurant and lodge accommodation and has been producing wine commercially since 1974.",
         "county": "Gloucestershire",
         "lat": 51.9290, "lng": -2.3870,
-        "logo_url": "https://irp.cdn-website.com/e0474644/dms3rep/multi/ThreeChoirsVineyards_logo_white.svg",
-        "brand_primary": "#08485d",
-        "brand_accent": "#18AAD2",
         "features": ["winery", "places-to-eat", "events"],
     },
     "pebblebed-vineyards": {
@@ -485,8 +368,6 @@ ESTATES = {
         "description": "Pebblebed Vineyards at Topsham in Devon produces certified organic wines from distinctive pebbly soils on the south-facing heaths above the Exe estuary. The estate is run by geoscientist and winemaker Geoff Bowen and produces sparkling and still wines that reflect the exceptional terroir of the East Devon Area of Outstanding Natural Beauty.",
         "county": "Devon",
         "lat": 50.6840, "lng": -3.4530,
-        "brand_primary": "#1a0e0a",
-        "brand_accent": "#8A5A2A",
         "features": ["winery", "events"],
     },
 
