@@ -8918,8 +8918,8 @@ MOVIES["shere-manor-estate"] = {
     "chapters": [
         {
             "title": "THE HOLIDAY — AN ENGLISH IDYLL ON SCREEN",
-            "image_url": "https://upload.wikimedia.org/wikipedia/en/6/60/Theholidayposter.jpg",
-            "image_caption": "Cameron Diaz as Amanda Woods approaches the snow-dusted lane leading to Rosehill Cottage in Shere, Surrey — the iconic exterior used for Iris Simpkins' fictional home in The Holiday (2006).",
+            "image_url": "/static/images/holiday-cottage.jpg",
+            "image_caption": "Rosehill Cottage on the edge of Shere village — the exterior used for Iris Simpkins' fictional home in The Holiday (2006), directed by Nancy Meyers.",
             "paragraphs": [
                 "When director Nancy Meyers set out to find the most quintessentially English village imaginable for her 2006 romantic comedy The Holiday, her location scouts landed in Shere — and the choice was immediately obvious. The film follows Iris Simpkins, played by Kate Winslet, swapping homes with American advertising executive Amanda Woods, played by Cameron Diaz, who arrives in the Surrey Hills to find herself in a picture-perfect cottage surrounded by frosted hedgerows and medieval lanes. The village was not merely a backdrop; Meyers named Iris's fictional home village 'Shere' in the script itself, making the real place inseparable from the story.",
                 "Rosehill Cottage on the edge of the village served as the exterior of Iris's home, and its appearance — stone walls, a low gate, and the gentle rise of the Surrey Hills behind it — became one of the most recognisable images in early twenty-first century romantic cinema. The film went on to gross over $200 million worldwide, and in the years since its release Shere has received a steady and devoted stream of visitors who arrive clutching screenshots, retracing Amanda's steps through the village lanes and seeking out the views that Meyers' camera lingered over so affectionately.",
@@ -8927,7 +8927,7 @@ MOVIES["shere-manor-estate"] = {
         },
         {
             "title": "SHERE THROUGH THE LENS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Shere_Church.jpg/1200px-Shere_Church.jpg",
+            "image_url": "/static/images/church.jpg",
             "image_caption": "The Norman tower of St James's Church rises above the timber-framed rooftops of Shere's medieval high street — a composition that has appeared in film and television productions spanning more than half a century.",
             "paragraphs": [
                 "Long before The Holiday brought global attention to Shere, the village had already established itself as one of the most consistently used locations in the British film and television industry. Its medieval street plan has remained largely unaltered for centuries, offering production designers a rare combination of Norman architecture, Tudor timber framing, a clear chalk stream — the Tillingbourne — running through the centre, and a village green unspoiled by modern intrusion. The Church of St James, with its twelfth-century tower and Norman doorway, has featured in period dramas, costume films, and contemporary productions alike, providing an instant visual shorthand for English rural tradition.",
@@ -8936,7 +8936,7 @@ MOVIES["shere-manor-estate"] = {
         },
         {
             "title": "VISITING THE FILM LOCATIONS",
-            "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Shere_Church.jpg/1200px-Shere_Church.jpg",
+            "image_url": "/static/images/middle-street.jpg",
             "image_caption": "Visitors pause outside the tea rooms on Shere's main street on a bright spring afternoon, the same view of timber-framed facades and the Tillingbourne that has been captured by film crews across generations of productions.",
             "paragraphs": [
                 "For visitors arriving in Shere as fans of The Holiday, the experience of recognition is immediate and deeply satisfying. The lane approaching Rosehill Cottage, the view of St James's Church tower from the village green, the narrow streets where Amanda Woods wanders bewildered and enchanted in the film's opening English scenes — all remain essentially unchanged from what appeared on screen in 2006. The village tea rooms, housed in buildings whose exteriors featured in background shots throughout the film, offer the natural first stop for film tourists.",
